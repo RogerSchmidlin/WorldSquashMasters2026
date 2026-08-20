@@ -245,3 +245,26 @@ footer a{color:var(--gold);font-weight:800}
   .player-detail-hero{padding-top:12px}
   .schedule-section{padding-top:0}
 }
+
+
+/* Mobile player schedules share the compact Vic Park match layout */
+.player-schedule-row .vic-fixture-line{flex-wrap:nowrap;min-width:0}
+.player-schedule-row .vic-fixture-line a{min-width:0;max-width:calc(50% - 18px)}
+.player-schedule-row .vic-fixture-line a b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.player-schedule-row .inline-flag{flex:0 0 auto}
+.past-games-label{font-family:Montserrat;font-weight:900;color:var(--gold);margin:30px 0 4px;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+
+@media(max-width:570px){
+  .nav-link[href*="#vicpark"]{white-space:normal!important;line-height:1.02;text-align:center;width:72px;padding-left:8px;padding-right:8px}
+  .nav{gap:4px}
+  .nav-link{padding:9px 10px;font-size:.79rem}
+  .player-schedule-row .vic-fixture-line{gap:5px;flex-wrap:nowrap}
+  .player-schedule-row .vic-fixture-line a{gap:5px;max-width:calc(50% - 14px)}
+  .player-schedule-row .vic-fixture-line b{font-size:.82rem!important}
+  .player-schedule-row .inline-flag{width:25px;height:17px}
+  .player-schedule-row .vic-vs{flex:0 0 auto;font-size:.6rem}
+  .player-detail-card{padding:14px}
+  .player-detail-id{gap:10px}
+  .player-detail-id h1{font-size:1.15rem!important}
+  .tracked-flag{width:46px;height:32px}
+}
