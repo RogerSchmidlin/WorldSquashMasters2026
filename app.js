@@ -79,7 +79,7 @@ function renderPlayers(){
 function setupPlayers(){
   const counts={}; data.players.forEach(p=>counts[p.country]=(counts[p.country]||0)+1);
   Object.keys(counts).sort().forEach(c=>qs('#countryFilter').insertAdjacentHTML('beforeend',`<option value="${esc(c)}">${esc(c)} (${counts[c]})</option>`));
-  const strip=qs('#countryStrip'); if(strip){const countries=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]||a.localeCompare(b)); strip.innerHTML=`<button class="country-chip active" data-country="all">All <span class="chip-count">${data.players.length}</span></button>`+countries.map(c=>{const p=data.players.find(x=>x.country===c);return `<button class="country-chip" data-country="${esc(c)}">${flagImg(p)}<span>${esc(c)}</span><span class="chip-count">${counts[c]}</span></button>`}).join(''); qsa('.country-chip').forEach(ch=>ch.addEventListener('click',()=>{qs('#countryFilter').value=ch.dataset.country;renderPlayers();}));}
+  const strip=qs('#countryStrip'); if(strip){const countries=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]||a.localeCompare(b)); strip.innerHTML=`<button class="country-chip active" data-country="all">All <span class="chip-count">${data.players.length}</span></button>`+countries.map(c=>{const p=data.players.find(x=>x.country===c);return `<button class="country-chip" data-country="${esc(c)}">${flagImg(p)}<span>${esc(c)}</span><span class="chip-count">${counts[c]}</span></button>`}).join(''); qsa('.country-chip').forEach(ch=>ch.addEventListener('click',()=>{qs('#countryFilter').value=ch.dataset.country;renderPlayers();setPage('players');}));}
   [...new Set(data.players.map(p=>p.ageGroup))].sort((a,b)=>a-b).forEach(a=>qs('#ageFilter').insertAdjacentHTML('beforeend',`<option value="${a}">${a}+</option>`));
   ['#playerSearch','#countryFilter','#genderFilter','#ageFilter'].forEach(s=>qs(s).addEventListener(s==='#playerSearch'?'input':'change',renderPlayers));
   qs('#countryCount').textContent=Object.keys(counts).length; renderPlayers(); setupParticipationMap(counts);
@@ -192,4 +192,4 @@ function to24(t){
 }
 function stamp(){const el=qs('#refreshStamp'); if(!el)return; el.textContent=data.refreshedAt?`Tournament data refreshed ${new Date(data.refreshedAt).toLocaleString('en-AU')}`:'Bundled snapshot — run npm run refresh to pull the latest TournamentSoftware data.';}
 setupPlayers(); setupGlass(); setupVicPark(); stamp();
-const initial=location.hash.slice(1); if(['players','glass','vicpark'].includes(initial))setPage(initial);
+const initial=location.hash.slice(1); if(['home','players','glass','vicpark'].includes(initial))setPage(initial);

@@ -71,3 +71,6 @@ VENUE LOGOS (v11)
 - Karrinyup Shopping Centre / AGC glass court uses karrinyup-glass-court-logo.png.
 - These images are also embedded into the generated index.html by app.js, so they survive npm run refresh / build-static.js and work when index.html is opened directly.
 - Vic Park date headings show the calendar date only (weekday label removed).
+
+
+V14 layout: The Home page contains the championship title, Vic Park introduction, participation map and country quick-filter list. Players, Glass Court and Vic Park Matches are intentionally compact for mobile use.
