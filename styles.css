@@ -184,3 +184,6 @@ footer a{color:var(--gold);font-weight:800}
 @media(max-width:570px){.partner-logo{min-width:0;flex:1}.player-match-fixture{grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);gap:6px}.player-match-side{gap:5px;font-size:.75rem}.player-match-side .match-flag{width:28px;height:20px}.player-match-vs{font-size:.56rem}}
 
 .hero-venue-title{display:flex;align-items:center;gap:11px;margin-bottom:8px}.hero-venue-title h3{margin:0}.hero-venue-title .venue-letter{width:38px;height:38px}
+
+/* v13: hero without featured Glass Court card */
+.hero.hero-simple{grid-template-columns:1fr;min-height:360px}.hero.hero-simple .hero-copy{max-width:900px}

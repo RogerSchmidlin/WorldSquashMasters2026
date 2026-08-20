@@ -98,7 +98,20 @@ function venueCode(m){
   return '';
 }
 function venueBadge(m){const code=venueCode(m);return code?`<span class="venue-letter venue-${code.toLowerCase()}" aria-label="${code==='G'?'Glass Court':code==='M'?'Mirrabooka':'Belmont'}">${code}</span>`:'';}
-function cleanVenuePlace(m){return [m.venue,m.court].filter(Boolean).join(' · ')||'Venue / court TBD';}
+function stripLocationDate(value){
+  return String(value||'')
+    .replace(/\b\d{4}-\d{1,2}-\d{1,2}\b/g,'')
+    .replace(/\b\d{1,2}[\/-]\d{1,2}(?:[\/-]\d{2,4})?\b/g,'')
+    .replace(/\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?:day)?\b[,]?\s*/gi,'')
+    .replace(/\b\d{1,2}\s+(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:\s+\d{4})?\b/gi,'')
+    .replace(/\s*[·|,\-–—]\s*$/g,'')
+    .replace(/\s{2,}/g,' ')
+    .trim();
+}
+function cleanVenuePlace(m){
+  const bits=[stripLocationDate(m.venue),stripLocationDate(m.court)].filter(Boolean);
+  return bits.join(' · ')||'Venue / court TBD';
+}
 
 function matchCard(m){
   const p1=playerByName(m.player1), p2=playerByName(m.player2);
