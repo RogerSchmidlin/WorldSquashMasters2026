@@ -1,0 +1,13 @@
+{
+  "name": "world-squash-masters-2026-vic-park",
+  "version": "1.4.0",
+  "private": true,
+  "scripts": {
+    "refresh": "node refresh-data.js",
+    "build": "node build-static.js",
+    "check": "node validate-data.js"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0"
+  }
+}

@@ -1,0 +1,11 @@
+# One player per line. Add or remove names here.
+Roger Schmidlin
+Ashton D'Vaz
+Tanya Chapman
+Louis Cotter
+Lisa Christou
+Julian Buczek
+Zoe Petrovansky
+Joannah Yue
+Susan Hillier
+Luke Missak
