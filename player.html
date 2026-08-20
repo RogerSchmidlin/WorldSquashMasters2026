@@ -187,7 +187,26 @@ footer a{color:var(--gold);font-weight:800}
 
 /* v13: hero without featured Glass Court card */
 .hero.hero-simple{grid-template-columns:1fr;min-height:360px}.hero.hero-simple .hero-copy{max-width:900px}
-\n\n/* v14: dedicated Home page, compact content pages */\n.home-page{padding-top:0}\n.home-page .hero{padding-bottom:34px}\n.home-intro{max-width:700px!important;margin:22px 0 0!important;color:#b6c7d9!important;font-size:1.02rem!important;line-height:1.65!important}\n#players.page,#glass.page,#vicpark.page{padding-top:34px}\n@media(max-width:850px){\n  .nav{overflow-x:auto;justify-content:flex-start;scrollbar-width:none;padding-bottom:2px}\n  .nav::-webkit-scrollbar{display:none}\n  .nav-link{white-space:nowrap;flex:0 0 auto}\n}\n@media(max-width:570px){\n  .home-page .hero{min-height:0;padding:34px 0 24px}\n  .home-page .hero h1{font-size:3rem}\n  .home-intro{font-size:.92rem!important;margin-top:18px!important}\n  .home-page .world-map-card{margin-top:2px}\n  #players.page,#glass.page,#vicpark.page{padding-top:24px}\n  #players .section-head,#glass .section-head,#vicpark .section-head{margin-bottom:18px}\n}\n</style></head><body><div class="ambient ambient-one"></div><div class="ambient ambient-two"></div><header class="topbar"><a class="brand" href="index.html#home"><div class="brand-mark">W</div><div><strong>WORLD SQUASH</strong><span>MASTERS 2026 <b class="edition-label">(VIC PARK SQUASH EDITION)</b></span></div></a><nav class="nav"><a href="index.html#home" class="nav-link">Home</a><a href="index.html#players" class="nav-link">Players</a><a href="index.html#glass" class="nav-link">Glass Court</a><a href="index.html#vicpark" class="nav-link">Vic Park Matches</a></nav><a class="official-link" href="index.html#players">← Back</a></header><main><section class="player-detail-hero"><div id="playerHeader"></div></section><section class="schedule-section"><div class="section-head"><div><div class="eyebrow">FULL PLAYER SCHEDULE</div><h2>All tournament matches</h2><p>Upcoming fixtures and completed games from the same refreshed match dataset.</p></div></div><div id="playerSchedule"></div></section></main><script>window.TOURNAMENT_DATA = {
+\n\n/* v14: dedicated Home page, compact content pages */\n.home-page{padding-top:0}\n.home-page .hero{padding-bottom:34px}\n.home-intro{max-width:700px!important;margin:22px 0 0!important;color:#b6c7d9!important;font-size:1.02rem!important;line-height:1.65!important}\n#players.page,#glass.page,#vicpark.page{padding-top:34px}\n@media(max-width:850px){\n  .nav{overflow-x:auto;justify-content:flex-start;scrollbar-width:none;padding-bottom:2px}\n  .nav::-webkit-scrollbar{display:none}\n  .nav-link{white-space:nowrap;flex:0 0 auto}\n}\n@media(max-width:570px){\n  .home-page .hero{min-height:0;padding:34px 0 24px}\n  .home-page .hero h1{font-size:3rem}\n  .home-intro{font-size:.92rem!important;margin-top:18px!important}\n  .home-page .world-map-card{margin-top:2px}\n  #players.page,#glass.page,#vicpark.page{padding-top:24px}\n  #players .section-head,#glass .section-head,#vicpark .section-head{margin-bottom:18px}\n}\n
+/* v15: compact content pages + shared mobile schedule rows */
+.compact-page-tools{display:flex;justify-content:flex-end;align-items:center;margin:0 0 14px;min-height:46px}
+#glass .date-tabs{margin-top:0}
+#glass .vic-match-row{margin-bottom:9px}
+.player-detail-hero{padding-top:22px}
+.schedule-section{padding-top:0}
+@media(max-width:570px){
+  .home-page .hero{padding-top:0!important;margin-top:0!important}
+  .home-page .hero-copy{padding-top:0!important}
+  .home-page .hero .eyebrow{margin-top:0}
+  .home-page .hero h1{margin-top:6px}
+  #players.page,#glass.page,#vicpark.page{padding-top:12px}
+  .compact-page-tools{min-height:38px;margin-bottom:10px}
+  .count-card,.watch-count{padding:9px 11px;min-width:0}
+  .count-card span,.watch-count span{font-size:1.45rem}
+  .player-detail-hero{padding-top:12px}
+  .schedule-section{padding-top:0}
+}
+</style></head><body><div class="ambient ambient-one"></div><div class="ambient ambient-two"></div><header class="topbar"><a class="brand" href="index.html#home"><div class="brand-mark">W</div><div><strong>WORLD SQUASH</strong><span>MASTERS 2026 <b class="edition-label">(VIC PARK SQUASH EDITION)</b></span></div></a><nav class="nav"><a href="index.html#home" class="nav-link">Home</a><a href="index.html#players" class="nav-link">Players</a><a href="index.html#glass" class="nav-link">Glass Court</a><a href="index.html#vicpark" class="nav-link">Vic Park Matches</a></nav><a class="official-link" href="index.html#players">← Back</a></header><main><section class="player-detail-hero"><div id="playerHeader"></div></section><section class="schedule-section"><div id="playerSchedule"></div></section></main><script>window.TOURNAMENT_DATA = {
   "tournament": {
     "id": "1d88743a-54e2-4073-bd30-a4f443a442f0",
     "name": "2026 World Squash Masters Championships",

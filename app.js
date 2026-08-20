@@ -117,11 +117,30 @@ function matchCard(m){
   const p1=playerByName(m.player1), p2=playerByName(m.player2);
   return `<article class="match-card"><div class="match-time">${esc(m.time||'TBD')}</div><div class="event-badge">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div><div class="fixture"><div class="player-side">${flagImg(p1)}<a class="match-player-link" href="player.html?name=${encodeURIComponent(m.player1)}">${esc(m.player1||'TBD')}</a></div><div class="vs">VS</div><div class="player-side right"><a class="match-player-link" href="player.html?name=${encodeURIComponent(m.player2)}">${esc(m.player2||'TBD')}</a>${flagImg(p2)}</div></div><div class="court-tag">${venueBadge(m)}<span>${esc(m.court||m.venue||'')}</span></div></article>`;
 }
+function compactScheduleRow(m,trackedNames=[]){
+  const p1=playerByName(m.player1), p2=playerByName(m.player2);
+  const p1Tracked=trackedNames.some(n=>sameName(n,m.player1));
+  const p2Tracked=trackedNames.some(n=>sameName(n,m.player2));
+  const v=venueVisual(m);
+  return `<article class="vic-match-row ${isPast(m)?'past':''}">
+    <div class="vic-time">${esc(m.time||'TBD')}</div>
+    <div class="vic-match-main">
+      <div class="vic-event">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div>
+      <div class="vic-fixture-line">
+        <a href="player.html?name=${encodeURIComponent(m.player1)}">${flagImg(p1)}<b class="${p1Tracked?'vic-tracked-name':''}">${esc(m.player1||'TBD')}</b></a>
+        <span class="vic-vs">vs</span>
+        <a href="player.html?name=${encodeURIComponent(m.player2)}">${flagImg(p2)}<b class="${p2Tracked?'vic-tracked-name':''}">${esc(m.player2||'TBD')}</b></a>
+        ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
+      </div>
+    </div>
+    <div class="vic-location" title="${esc(v.place)}">${v.code?`<span class="venue-letter venue-${v.code.toLowerCase()}" aria-hidden="true">${v.code}</span>`:''}<span>${esc(v.place)}</span></div>
+  </article>`;
+}
 function renderGlass(date){
   qsa('.date-tab').forEach(x=>x.classList.toggle('active',x.dataset.date===date));
   const dayMatches=data.matches.filter(m=>canonicalDate(m.date)===date);
   const ms=dayMatches.filter(isGlass).sort((a,b)=>to24(a.time||'').localeCompare(to24(b.time||'')));
-  qs('#glassMatches').innerHTML=ms.length?ms.map(matchCard).join(''):`<div class="schedule-empty"><strong>No AGC-tagged matches found for this day.</strong><br><span>${dayMatches.length?`${dayMatches.length} downloaded match(es) exist for ${fmtDate(date).long}, but none currently contain Karrinyup / AGC court metadata.`:'No downloaded matches exist for this date.'}</span></div>`;
+  qs('#glassMatches').innerHTML=ms.length?ms.map(m=>compactScheduleRow(m)).join(''):`<div class="schedule-empty"><strong>No AGC-tagged matches found for this day.</strong><br><span>${dayMatches.length?`${dayMatches.length} downloaded match(es) exist for ${fmtDate(date).long}, but none currently contain Karrinyup / AGC court metadata.`:'No downloaded matches exist for this date.'}</span></div>`;
   qs('#glassDayCount').textContent=ms.length;
 }
 function setupGlass(){
@@ -165,23 +184,7 @@ function setupVicPark(){
       const f=fmtDate(m.date);
       html+=`<div class="vic-day-heading"><strong>${esc(f.date)}</strong></div>`;
     }
-    const p1=playerByName(m.player1), p2=playerByName(m.player2);
-    const p1Tracked=tracked.some(n=>sameName(n,m.player1));
-    const p2Tracked=tracked.some(n=>sameName(n,m.player2));
-    const v=venueVisual(m);
-    html+=`<article class="vic-match-row ${isPast(m)?'past':''}">
-      <div class="vic-time">${esc(m.time||'TBD')}</div>
-      <div class="vic-match-main">
-        <div class="vic-event">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div>
-        <div class="vic-fixture-line">
-          <a href="player.html?name=${encodeURIComponent(m.player1)}">${flagImg(p1)}<b class="${p1Tracked?'vic-tracked-name':''}">${esc(m.player1||'TBD')}</b></a>
-          <span class="vic-vs">vs</span>
-          <a href="player.html?name=${encodeURIComponent(m.player2)}">${flagImg(p2)}<b class="${p2Tracked?'vic-tracked-name':''}">${esc(m.player2||'TBD')}</b></a>
-          ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
-        </div>
-      </div>
-      <div class="vic-location" title="${esc(v.place)}">${v.code?`<span class="venue-letter venue-${v.code.toLowerCase()}" aria-hidden="true">${v.code}</span>`:''}<span>${esc(v.place)}</span></div>
-    </article>`;
+    html+=compactScheduleRow(m,tracked);
   }
   container.innerHTML=html;
 }

@@ -187,7 +187,26 @@ footer a{color:var(--gold);font-weight:800}
 
 /* v13: hero without featured Glass Court card */
 .hero.hero-simple{grid-template-columns:1fr;min-height:360px}.hero.hero-simple .hero-copy{max-width:900px}
-\n\n/* v14: dedicated Home page, compact content pages */\n.home-page{padding-top:0}\n.home-page .hero{padding-bottom:34px}\n.home-intro{max-width:700px!important;margin:22px 0 0!important;color:#b6c7d9!important;font-size:1.02rem!important;line-height:1.65!important}\n#players.page,#glass.page,#vicpark.page{padding-top:34px}\n@media(max-width:850px){\n  .nav{overflow-x:auto;justify-content:flex-start;scrollbar-width:none;padding-bottom:2px}\n  .nav::-webkit-scrollbar{display:none}\n  .nav-link{white-space:nowrap;flex:0 0 auto}\n}\n@media(max-width:570px){\n  .home-page .hero{min-height:0;padding:34px 0 24px}\n  .home-page .hero h1{font-size:3rem}\n  .home-intro{font-size:.92rem!important;margin-top:18px!important}\n  .home-page .world-map-card{margin-top:2px}\n  #players.page,#glass.page,#vicpark.page{padding-top:24px}\n  #players .section-head,#glass .section-head,#vicpark .section-head{margin-bottom:18px}\n}\n</style></head><body>
+\n\n/* v14: dedicated Home page, compact content pages */\n.home-page{padding-top:0}\n.home-page .hero{padding-bottom:34px}\n.home-intro{max-width:700px!important;margin:22px 0 0!important;color:#b6c7d9!important;font-size:1.02rem!important;line-height:1.65!important}\n#players.page,#glass.page,#vicpark.page{padding-top:34px}\n@media(max-width:850px){\n  .nav{overflow-x:auto;justify-content:flex-start;scrollbar-width:none;padding-bottom:2px}\n  .nav::-webkit-scrollbar{display:none}\n  .nav-link{white-space:nowrap;flex:0 0 auto}\n}\n@media(max-width:570px){\n  .home-page .hero{min-height:0;padding:34px 0 24px}\n  .home-page .hero h1{font-size:3rem}\n  .home-intro{font-size:.92rem!important;margin-top:18px!important}\n  .home-page .world-map-card{margin-top:2px}\n  #players.page,#glass.page,#vicpark.page{padding-top:24px}\n  #players .section-head,#glass .section-head,#vicpark .section-head{margin-bottom:18px}\n}\n
+/* v15: compact content pages + shared mobile schedule rows */
+.compact-page-tools{display:flex;justify-content:flex-end;align-items:center;margin:0 0 14px;min-height:46px}
+#glass .date-tabs{margin-top:0}
+#glass .vic-match-row{margin-bottom:9px}
+.player-detail-hero{padding-top:22px}
+.schedule-section{padding-top:0}
+@media(max-width:570px){
+  .home-page .hero{padding-top:0!important;margin-top:0!important}
+  .home-page .hero-copy{padding-top:0!important}
+  .home-page .hero .eyebrow{margin-top:0}
+  .home-page .hero h1{margin-top:6px}
+  #players.page,#glass.page,#vicpark.page{padding-top:12px}
+  .compact-page-tools{min-height:38px;margin-bottom:10px}
+  .count-card,.watch-count{padding:9px 11px;min-width:0}
+  .count-card span,.watch-count span{font-size:1.45rem}
+  .player-detail-hero{padding-top:12px}
+  .schedule-section{padding-top:0}
+}
+</style></head><body>
 <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
 <header class="topbar"><a class="brand" href="#home" data-page="home"><div class="brand-mark">W</div><div><strong>WORLD SQUASH</strong><span>MASTERS 2026 <b class="edition-label">(VIC PARK SQUASH EDITION)</b></span></div></a><nav class="nav"><a href="#home" data-page="home" class="nav-link active">Home</a><a href="#players" data-page="players" class="nav-link">Players</a><a href="#glass" data-page="glass" class="nav-link">Glass Court</a><a href="#vicpark" data-page="vicpark" class="nav-link">Vic Park Matches</a></nav><a class="official-link" target="_blank" rel="noreferrer" href="https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches">Official site ↗</a></header>
 <main>
@@ -196,9 +215,9 @@ footer a{color:var(--gold);font-weight:800}
   <div class="world-map-card"><div class="world-map-head"><div><div class="mini-label">GLOBAL FIELD</div><h3>Participating countries</h3></div><div class="map-stat"><strong id="countryCount">0</strong><span>countries / territories</span></div></div><div id="participationMap" class="participation-map"></div></div>
   <div id="countryStrip" class="country-strip" aria-label="Country quick filters"></div>
 </section>
-<section id="players" class="page"><div class="section-head"><div><div class="eyebrow">PLAYER DIRECTORY</div><h2>Players by country</h2></div><div class="count-card"><span id="playerCount">0</span><small>players shown</small></div></div><div class="toolbar"><div class="search-box"><span>⌕</span><input id="playerSearch" type="search" placeholder="Search player..."></div><select id="countryFilter"><option value="all">All countries</option></select><select id="genderFilter"><option value="all">All genders</option><option value="Men">Men</option><option value="Women">Women</option></select><select id="ageFilter"><option value="all">All age groups</option></select></div><div id="playerGrid" class="player-grid"></div><div class="data-note"><strong>Official tournament dataset</strong><p>The directory and every schedule view are generated from the same refreshable dataset.</p><div class="refresh-stamp" id="refreshStamp"></div></div></section>
-<section id="glass" class="page"><div class="section-head"><div><div class="eyebrow">KARRINYUP SHOPPING CENTRE · AGC</div><h2>Glass Court schedule</h2><p>Every published AGC match, filtered from the complete refreshed tournament match list.</p></div><div class="live-pill"><i></i><span id="glassDayCount">0</span>&nbsp; MATCHES</div></div><div class="date-tabs" id="dateTabs"></div><div id="glassMatches" class="match-list"></div></section>
-<section id="vicpark" class="page"><div class="section-head current-matches-head"><div><div class="eyebrow">YOUR WATCHLIST</div><h2>Vic Park Matches</h2><p>Upcoming and past games for the Vic Park players you want to follow.</p></div><div class="watch-count"><span id="trackedCount">0</span><small id="trackedCountLabel">players tracked</small></div></div><div id="trackedPlayers" class="tracked-players"></div></section>
+<section id="players" class="page"><div class="compact-page-tools"><div class="count-card"><span id="playerCount">0</span><small>players shown</small></div></div><div class="toolbar"><div class="search-box"><span>⌕</span><input id="playerSearch" type="search" placeholder="Search player..."></div><select id="countryFilter"><option value="all">All countries</option></select><select id="genderFilter"><option value="all">All genders</option><option value="Men">Men</option><option value="Women">Women</option></select><select id="ageFilter"><option value="all">All age groups</option></select></div><div id="playerGrid" class="player-grid"></div><div class="data-note"><strong>Official tournament dataset</strong><p>The directory and every schedule view are generated from the same refreshable dataset.</p><div class="refresh-stamp" id="refreshStamp"></div></div></section>
+<section id="glass" class="page"><div class="compact-page-tools"><div class="live-pill"><i></i><span id="glassDayCount">0</span>&nbsp; MATCHES</div></div><div class="date-tabs" id="dateTabs"></div><div id="glassMatches" class="tracked-players"></div></section>
+<section id="vicpark" class="page"><div class="compact-page-tools"><div class="watch-count"><span id="trackedCount">0</span><small id="trackedCountLabel">players tracked</small></div></div><div id="trackedPlayers" class="tracked-players"></div></section>
 </main><footer><div><strong>WORLD SQUASH MASTERS 2026</strong><span>Unofficial companion view · Perth, Western Australia</span></div><a target="_blank" rel="noreferrer" href="https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches">TournamentSoftware ↗</a></footer>
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script><script>window.TOURNAMENT_DATA = {
   "tournament": {
@@ -7751,11 +7770,30 @@ function matchCard(m){
   const p1=playerByName(m.player1), p2=playerByName(m.player2);
   return `<article class="match-card"><div class="match-time">${esc(m.time||'TBD')}</div><div class="event-badge">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div><div class="fixture"><div class="player-side">${flagImg(p1)}<a class="match-player-link" href="player.html?name=${encodeURIComponent(m.player1)}">${esc(m.player1||'TBD')}</a></div><div class="vs">VS</div><div class="player-side right"><a class="match-player-link" href="player.html?name=${encodeURIComponent(m.player2)}">${esc(m.player2||'TBD')}</a>${flagImg(p2)}</div></div><div class="court-tag">${venueBadge(m)}<span>${esc(m.court||m.venue||'')}</span></div></article>`;
 }
+function compactScheduleRow(m,trackedNames=[]){
+  const p1=playerByName(m.player1), p2=playerByName(m.player2);
+  const p1Tracked=trackedNames.some(n=>sameName(n,m.player1));
+  const p2Tracked=trackedNames.some(n=>sameName(n,m.player2));
+  const v=venueVisual(m);
+  return `<article class="vic-match-row ${isPast(m)?'past':''}">
+    <div class="vic-time">${esc(m.time||'TBD')}</div>
+    <div class="vic-match-main">
+      <div class="vic-event">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div>
+      <div class="vic-fixture-line">
+        <a href="player.html?name=${encodeURIComponent(m.player1)}">${flagImg(p1)}<b class="${p1Tracked?'vic-tracked-name':''}">${esc(m.player1||'TBD')}</b></a>
+        <span class="vic-vs">vs</span>
+        <a href="player.html?name=${encodeURIComponent(m.player2)}">${flagImg(p2)}<b class="${p2Tracked?'vic-tracked-name':''}">${esc(m.player2||'TBD')}</b></a>
+        ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
+      </div>
+    </div>
+    <div class="vic-location" title="${esc(v.place)}">${v.code?`<span class="venue-letter venue-${v.code.toLowerCase()}" aria-hidden="true">${v.code}</span>`:''}<span>${esc(v.place)}</span></div>
+  </article>`;
+}
 function renderGlass(date){
   qsa('.date-tab').forEach(x=>x.classList.toggle('active',x.dataset.date===date));
   const dayMatches=data.matches.filter(m=>canonicalDate(m.date)===date);
   const ms=dayMatches.filter(isGlass).sort((a,b)=>to24(a.time||'').localeCompare(to24(b.time||'')));
-  qs('#glassMatches').innerHTML=ms.length?ms.map(matchCard).join(''):`<div class="schedule-empty"><strong>No AGC-tagged matches found for this day.</strong><br><span>${dayMatches.length?`${dayMatches.length} downloaded match(es) exist for ${fmtDate(date).long}, but none currently contain Karrinyup / AGC court metadata.`:'No downloaded matches exist for this date.'}</span></div>`;
+  qs('#glassMatches').innerHTML=ms.length?ms.map(m=>compactScheduleRow(m)).join(''):`<div class="schedule-empty"><strong>No AGC-tagged matches found for this day.</strong><br><span>${dayMatches.length?`${dayMatches.length} downloaded match(es) exist for ${fmtDate(date).long}, but none currently contain Karrinyup / AGC court metadata.`:'No downloaded matches exist for this date.'}</span></div>`;
   qs('#glassDayCount').textContent=ms.length;
 }
 function setupGlass(){
@@ -7799,23 +7837,7 @@ function setupVicPark(){
       const f=fmtDate(m.date);
       html+=`<div class="vic-day-heading"><strong>${esc(f.date)}</strong></div>`;
     }
-    const p1=playerByName(m.player1), p2=playerByName(m.player2);
-    const p1Tracked=tracked.some(n=>sameName(n,m.player1));
-    const p2Tracked=tracked.some(n=>sameName(n,m.player2));
-    const v=venueVisual(m);
-    html+=`<article class="vic-match-row ${isPast(m)?'past':''}">
-      <div class="vic-time">${esc(m.time||'TBD')}</div>
-      <div class="vic-match-main">
-        <div class="vic-event">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div>
-        <div class="vic-fixture-line">
-          <a href="player.html?name=${encodeURIComponent(m.player1)}">${flagImg(p1)}<b class="${p1Tracked?'vic-tracked-name':''}">${esc(m.player1||'TBD')}</b></a>
-          <span class="vic-vs">vs</span>
-          <a href="player.html?name=${encodeURIComponent(m.player2)}">${flagImg(p2)}<b class="${p2Tracked?'vic-tracked-name':''}">${esc(m.player2||'TBD')}</b></a>
-          ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
-        </div>
-      </div>
-      <div class="vic-location" title="${esc(v.place)}">${v.code?`<span class="venue-letter venue-${v.code.toLowerCase()}" aria-hidden="true">${v.code}</span>`:''}<span>${esc(v.place)}</span></div>
-    </article>`;
+    html+=compactScheduleRow(m,tracked);
   }
   container.innerHTML=html;
 }
