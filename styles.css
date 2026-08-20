@@ -107,7 +107,26 @@ footer a{color:var(--gold);font-weight:800}
  .fixture .player-side{width:44%}.roger-banner{align-items:flex-start;gap:16px;flex-direction:column}.roger-fixture .name{font-size:.95rem}
  footer{flex-direction:column;gap:15px}
 }
-\n\n/* Current Matches watchlist + compact hero */\n.hero{min-height:390px;padding:52px 0 42px}\n.hero-copy{align-self:center}\n.inline-flag{width:25px;height:17px;object-fit:cover;border-radius:3px;box-shadow:0 0 0 1px rgba(255,255,255,.18);flex:0 0 auto}\n.watch-count{min-width:150px;background:rgba(255,255,255,.055);border:1px solid var(--line);padding:15px 18px;border-radius:15px}\n.watch-count span{font-family:Montserrat;font-size:2rem;font-weight:900;display:block;color:var(--gold)}\n.watch-count small{font-weight:800;text-transform:uppercase;font-size:.65rem;letter-spacing:.08em;color:var(--muted)}\n.tracked-players{display:grid;gap:20px}\n.tracked-player-card{background:linear-gradient(145deg,rgba(18,42,72,.98),rgba(9,26,46,.98));border:1px solid var(--line);border-radius:22px;padding:22px}\n.tracked-player-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:20px;border-bottom:1px solid var(--line)}\n.tracked-person{display:flex;align-items:center;gap:15px}.tracked-person h3{font-family:Montserrat;font-size:1.65rem;margin:5px 0 0}.tracked-flag{width:68px;height:46px;object-fit:cover;border-radius:8px;box-shadow:0 0 0 1px rgba(255,255,255,.16)}\n.tracked-section-label{display:flex;justify-content:space-between;align-items:center;margin:20px 0 10px;color:#c8d6e5;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.tracked-section-label b{color:var(--gold)}\n.tracked-match-list{display:grid;gap:10px}.tracked-match{border:1px solid rgba(245,200,76,.26);background:rgba(5,18,34,.43);border-radius:16px;padding:18px}\n.tracked-match-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.tracked-match-top b,.tracked-match-top span{display:block}.tracked-match-top b{font-size:.9rem}.tracked-match-top span{color:var(--muted);font-size:.76rem;margin-top:4px}.tracked-match-top strong{font-family:Montserrat;color:var(--gold);font-size:1.08rem}\n.tracked-fixture{display:grid;grid-template-columns:1fr 56px 1fr;align-items:center;margin:22px 0 16px}.tracked-side{display:flex;align-items:center;gap:12px}.tracked-side.right{justify-content:flex-end;text-align:right}.tracked-side small,.tracked-side b{display:block}.tracked-side small{font-size:.58rem;letter-spacing:.13em;color:#7f96ad;font-weight:900;margin-bottom:4px}.tracked-side b{font-family:Montserrat;font-size:1rem}.match-flag{width:48px;height:32px;object-fit:cover;border-radius:5px;box-shadow:0 0 0 1px rgba(255,255,255,.16)}.versus-badge{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;margin:auto;background:rgba(255,255,255,.07);color:#8199b1;font-size:.65rem;font-weight:900}\n.past-games{margin-top:18px;border-top:1px solid var(--line);padding-top:16px}.past-games summary{cursor:pointer;list-style:none;font-weight:800;color:#bdccda;font-size:.82rem}.past-games summary::-webkit-details-marker{display:none}.past-games summary span{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 7px;border-radius:999px;background:rgba(255,255,255,.07);margin-left:6px;color:var(--muted)}.past-games-body{margin-top:12px;display:grid;gap:10px}\n@media(max-width:570px){.hero{min-height:320px;padding-top:38px}.tracked-player-head{align-items:flex-start;flex-direction:column}.tracked-fixture{grid-template-columns:1fr 36px 1fr}.tracked-side{gap:7px}.tracked-side b{font-size:.82rem}.match-flag{width:36px;height:25px}.tracked-player-card{padding:16px}.current-matches-head{gap:16px}}\n
+
+
+/* Current Matches watchlist + compact hero */
+.hero{min-height:390px;padding:52px 0 42px}
+.hero-copy{align-self:center}
+.inline-flag{width:25px;height:17px;object-fit:cover;border-radius:3px;box-shadow:0 0 0 1px rgba(255,255,255,.18);flex:0 0 auto}
+.watch-count{min-width:150px;background:rgba(255,255,255,.055);border:1px solid var(--line);padding:15px 18px;border-radius:15px}
+.watch-count span{font-family:Montserrat;font-size:2rem;font-weight:900;display:block;color:var(--gold)}
+.watch-count small{font-weight:800;text-transform:uppercase;font-size:.65rem;letter-spacing:.08em;color:var(--muted)}
+.tracked-players{display:grid;gap:20px}
+.tracked-player-card{background:linear-gradient(145deg,rgba(18,42,72,.98),rgba(9,26,46,.98));border:1px solid var(--line);border-radius:22px;padding:22px}
+.tracked-player-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.tracked-person{display:flex;align-items:center;gap:15px}.tracked-person h3{font-family:Montserrat;font-size:1.65rem;margin:5px 0 0}.tracked-flag{width:68px;height:46px;object-fit:cover;border-radius:8px;box-shadow:0 0 0 1px rgba(255,255,255,.16)}
+.tracked-section-label{display:flex;justify-content:space-between;align-items:center;margin:20px 0 10px;color:#c8d6e5;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.tracked-section-label b{color:var(--gold)}
+.tracked-match-list{display:grid;gap:10px}.tracked-match{border:1px solid rgba(245,200,76,.26);background:rgba(5,18,34,.43);border-radius:16px;padding:18px}
+.tracked-match-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.tracked-match-top b,.tracked-match-top span{display:block}.tracked-match-top b{font-size:.9rem}.tracked-match-top span{color:var(--muted);font-size:.76rem;margin-top:4px}.tracked-match-top strong{font-family:Montserrat;color:var(--gold);font-size:1.08rem}
+.tracked-fixture{display:grid;grid-template-columns:1fr 56px 1fr;align-items:center;margin:22px 0 16px}.tracked-side{display:flex;align-items:center;gap:12px}.tracked-side.right{justify-content:flex-end;text-align:right}.tracked-side small,.tracked-side b{display:block}.tracked-side small{font-size:.58rem;letter-spacing:.13em;color:#7f96ad;font-weight:900;margin-bottom:4px}.tracked-side b{font-family:Montserrat;font-size:1rem}.match-flag{width:48px;height:32px;object-fit:cover;border-radius:5px;box-shadow:0 0 0 1px rgba(255,255,255,.16)}.versus-badge{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;margin:auto;background:rgba(255,255,255,.07);color:#8199b1;font-size:.65rem;font-weight:900}
+.past-games{margin-top:18px;border-top:1px solid var(--line);padding-top:16px}.past-games summary{cursor:pointer;list-style:none;font-weight:800;color:#bdccda;font-size:.82rem}.past-games summary::-webkit-details-marker{display:none}.past-games summary span{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 7px;border-radius:999px;background:rgba(255,255,255,.07);margin-left:6px;color:var(--muted)}.past-games-body{margin-top:12px;display:grid;gap:10px}
+@media(max-width:570px){.hero{min-height:320px;padding-top:38px}.tracked-player-head{align-items:flex-start;flex-direction:column}.tracked-fixture{grid-template-columns:1fr 36px 1fr}.tracked-side{gap:7px}.tracked-side b{font-size:.82rem}.match-flag{width:36px;height:25px}.tracked-player-card{padding:16px}.current-matches-head{gap:16px}}
+
 .hero h1 em{display:inline-block;margin-left:.22em;font-family:Inter,system-ui,sans-serif;font-size:clamp(.82rem,1.3vw,1.08rem);font-style:normal;font-weight:700;letter-spacing:.01em;color:#a9bdd2;-webkit-text-stroke:0;vertical-align:middle;white-space:nowrap}
 .world-map-card{margin:0 0 24px;background:linear-gradient(145deg,rgba(16,38,65,.96),rgba(9,27,47,.96));border:1px solid var(--line);border-radius:20px;padding:20px;overflow:hidden}
 .world-map-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:8px}.world-map-head h3{font-family:Montserrat;margin:6px 0 0;font-size:1.35rem}.map-stat{text-align:right}.map-stat strong{display:block;font-family:Montserrat;font-size:1.7rem;color:var(--gold)}.map-stat span{display:block;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;font-weight:800}
@@ -187,7 +206,27 @@ footer a{color:var(--gold);font-weight:800}
 
 /* v13: hero without featured Glass Court card */
 .hero.hero-simple{grid-template-columns:1fr;min-height:360px}.hero.hero-simple .hero-copy{max-width:900px}
-\n\n/* v14: dedicated Home page, compact content pages */\n.home-page{padding-top:0}\n.home-page .hero{padding-bottom:34px}\n.home-intro{max-width:700px!important;margin:22px 0 0!important;color:#b6c7d9!important;font-size:1.02rem!important;line-height:1.65!important}\n#players.page,#glass.page,#vicpark.page{padding-top:34px}\n@media(max-width:850px){\n  .nav{overflow-x:auto;justify-content:flex-start;scrollbar-width:none;padding-bottom:2px}\n  .nav::-webkit-scrollbar{display:none}\n  .nav-link{white-space:nowrap;flex:0 0 auto}\n}\n@media(max-width:570px){\n  .home-page .hero{min-height:0;padding:34px 0 24px}\n  .home-page .hero h1{font-size:3rem}\n  .home-intro{font-size:.92rem!important;margin-top:18px!important}\n  .home-page .world-map-card{margin-top:2px}\n  #players.page,#glass.page,#vicpark.page{padding-top:24px}\n  #players .section-head,#glass .section-head,#vicpark .section-head{margin-bottom:18px}\n}\n
+
+
+/* v14: dedicated Home page, compact content pages */
+.home-page{padding-top:0}
+.home-page .hero{padding-bottom:34px}
+.home-intro{max-width:700px!important;margin:22px 0 0!important;color:#b6c7d9!important;font-size:1.02rem!important;line-height:1.65!important}
+#players.page,#glass.page,#vicpark.page{padding-top:34px}
+@media(max-width:850px){
+  .nav{overflow-x:auto;justify-content:flex-start;scrollbar-width:none;padding-bottom:2px}
+  .nav::-webkit-scrollbar{display:none}
+  .nav-link{white-space:nowrap;flex:0 0 auto}
+}
+@media(max-width:570px){
+  .home-page .hero{min-height:0;padding:34px 0 24px}
+  .home-page .hero h1{font-size:3rem}
+  .home-intro{font-size:.92rem!important;margin-top:18px!important}
+  .home-page .world-map-card{margin-top:2px}
+  #players.page,#glass.page,#vicpark.page{padding-top:24px}
+  #players .section-head,#glass .section-head,#vicpark .section-head{margin-bottom:18px}
+}
+
 /* v15: compact content pages + shared mobile schedule rows */
 .compact-page-tools{display:flex;justify-content:flex-end;align-items:center;margin:0 0 14px;min-height:46px}
 #glass .date-tabs{margin-top:0}

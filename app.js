@@ -1,4 +1,5 @@
 const data = window.TOURNAMENT_DATA;
+const VIC_PARK_PLAYERS = Array.isArray(window.VIC_PARK_PLAYERS) ? window.VIC_PARK_PLAYERS : [];
 function canonicalDate(v){
   if(!v)return '';
   const s=String(v).trim();
@@ -155,7 +156,7 @@ function venueVisual(m){
   return {place:cleanVenuePlace(m),code:venueCode(m)};
 }
 function setupVicPark(){
-  const names=data.trackedNames||[];
+  const names=VIC_PARK_PLAYERS;
   qs('#trackedCount').textContent=names.length;
   qs('#trackedCountLabel').textContent=names.length===1?'player tracked':'players tracked';
 
@@ -172,7 +173,7 @@ function setupVicPark(){
 
   const container=qs('#trackedPlayers');
   if(!rows.length){
-    container.innerHTML=`<div class="schedule-empty"><strong>No Vic Park matches found in the refreshed match data.</strong><br><span>${names.length?`Tracking: ${names.map(esc).join(', ')}`:'Add players to vic-park-players.txt.'}</span></div>`;
+    container.innerHTML=`<div class="schedule-empty"><strong>No Vic Park matches found in the refreshed match data.</strong><br><span>${names.length?`Tracking: ${names.map(esc).join(', ')}`:'Add players to vic-park-players.js.'}</span></div>`;
     return;
   }
 

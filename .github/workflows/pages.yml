@@ -1,0 +1,89 @@
+name: Refresh tournament data and deploy Pages
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Every hour at 17 minutes past the hour (UTC).
+    # Using :17 avoids the busiest top-of-hour scheduling window.
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: world-squash-masters-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        if: github.event_name != 'push'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install refresher dependencies
+        if: github.event_name != 'push'
+        run: |
+          npm install
+          npx playwright install --with-deps chromium
+
+      - name: Refresh TournamentSoftware data
+        if: github.event_name != 'push'
+        env:
+          CI: 'true'
+          HEADLESS: '1'
+        run: npm run refresh
+
+      - name: Validate refreshed data
+        if: github.event_name != 'push'
+        run: npm run check
+
+      - name: Commit data.js when it changed
+        if: github.event_name != 'push'
+        shell: bash
+        run: |
+          if git diff --quiet -- data.js player-links.json 2>/dev/null; then
+            echo "Tournament data did not change."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data.js
+            if [ -f player-links.json ]; then git add player-links.json; fi
+            git commit -m "Refresh tournament data"
+            git push
+          fi
+
+      - name: Prepare GitHub Pages artifact
+        run: |
+          rm -rf _site
+          mkdir _site
+          cp index.html player.html styles.css app.js player-app.js data.js vic-park-players.js .nojekyll _site/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

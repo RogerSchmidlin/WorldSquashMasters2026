@@ -1,5 +1,5 @@
 /*
-  World Squash Masters 2026 TournamentSoftware refresher - v8
+  World Squash Masters 2026 TournamentSoftware refresher - reliable separated-data edition
   ------------------------------------------------------------
   Strategy:
   1. Load the official Players page and collect the official player profile links.
@@ -52,12 +52,25 @@ function loadExisting(){
 }
 
 function loadTrackedNames(){
-  const out=[]; const add=v=>{const n=clean(typeof v==='string'?v:v&&v.name);if(n&&!out.some(x=>sameName(x,n)))out.push(n)};
-  const jp=path.join(DIR,'vic-park-players.json');
-  if(fs.existsSync(jp)){try{const x=JSON.parse(fs.readFileSync(jp,'utf8'));(Array.isArray(x)?x:(x.players||x.trackedPlayers||[])).forEach(add)}catch(e){console.warn('Could not read vic-park-players.json:',e.message)}}
-  const tp=path.join(DIR,'vic-park-players.txt');
-  if(fs.existsSync(tp)) for(const line of fs.readFileSync(tp,'utf8').split(/\r?\n/)){const s=line.replace(/^\s*[-*]\s*/,'').replace(/\s*#.*$/,'').trim();if(s)add(s)}
-  return out;
+  const fp=path.join(DIR,'vic-park-players.js');
+  if(!fs.existsSync(fp)) return [];
+  try{
+    const ctx={window:{}}; vm.createContext(ctx);
+    vm.runInContext(fs.readFileSync(fp,'utf8'),ctx);
+    return Array.isArray(ctx.window.VIC_PARK_PLAYERS)?ctx.window.VIC_PARK_PLAYERS.map(clean).filter(Boolean):[];
+  }catch(e){ console.warn('Could not read vic-park-players.js:',e.message); return []; }
+}
+
+function loadCachedPlayerLinks(canonicalPlayers){
+  const fp=path.join(DIR,'player-links.json');
+  if(!fs.existsSync(fp)) return [];
+  try{
+    const rows=JSON.parse(fs.readFileSync(fp,'utf8'));
+    if(!Array.isArray(rows)) return [];
+    const names=new Set(canonicalPlayers.map(p=>nameKey(p.name)));
+    const good=rows.filter(x=>x&&x.name&&x.href&&names.has(nameKey(x.name))&&/^https?:\/\//i.test(x.href));
+    return good.length>=850?good:[];
+  }catch{return []}
 }
 
 function parseDate(s){
@@ -285,12 +298,19 @@ function hasPlayer(m,n){return sameName(m.player1,n)||sameName(m.player2,n)}
   if(canonicalPlayers.length<900)throw new Error(`Canonical player snapshot has only ${canonicalPlayers.length} players; refusing refresh.`);
   const browser=await launchBrowser();
   const context=await browser.newContext({viewport:{width:1440,height:1000},locale:'en-AU',timezoneId:'Australia/Perth'});
-  const seed=await context.newPage();
-  console.log('Loading official player directory...');
-  const links=await collectOfficialPlayerLinks(seed,canonicalPlayers);
-  await seed.close();
-  console.log(`Found ${links.length} official player profile links (expected about 911).`);
-  if(links.length<850){await browser.close();throw new Error(`Only ${links.length} player profile links were found. Existing data.js was left unchanged.`)}
+  let links=loadCachedPlayerLinks(canonicalPlayers);
+  if(links.length>=850){
+    console.log(`Using ${links.length} cached official player profile links.`);
+  }else{
+    const seed=await context.newPage();
+    console.log('Loading official player directory to build player-link cache...');
+    links=await collectOfficialPlayerLinks(seed,canonicalPlayers);
+    await seed.close();
+    console.log(`Found ${links.length} official player profile links (expected about 911).`);
+    if(links.length<850){await browser.close();throw new Error(`Only ${links.length} player profile links were found. Existing data.js was left unchanged.`)}
+    fs.writeFileSync(path.join(DIR,'player-links.json'),JSON.stringify(links,null,2));
+    console.log('Saved player-links.json for faster future refreshes.');
+  }
   const lookup=buildPlayerLookup(canonicalPlayers,links);
   const all=[]; let done=0, failed=0, candidateTotal=0;
   const queue=[...links];
@@ -320,8 +340,8 @@ function hasPlayer(m,n){return sameName(m.player1,n)||sameName(m.player2,n)}
     throw new Error(`Refresh coverage looks incomplete: ${matches.length} unique confirmed matches, ${all.length} raw observations, ${failed} profile failures. Existing data.js was left unchanged. See refresh-audit.json and refresh-matches.json.`);
   }
 
-  const next={...existing,refreshedAt:new Date().toISOString(),players:canonicalPlayers,matches,trackedNames};
+  const next={...existing,refreshedAt:new Date().toISOString(),players:canonicalPlayers,matches};
+  delete next.trackedNames;
   fs.writeFileSync(path.join(DIR,'data.js'),`window.TOURNAMENT_DATA = ${JSON.stringify(next,null,2)};\n`);
-  console.log('Data validation passed. Rebuilding self-contained pages...');
-  require('./build-static.js');
+  console.log('Data validation passed. Updated data.js only. Design pages and vic-park-players.js were not changed.');
 })().catch(err=>{console.error('\nRefresh failed:',err.message);process.exit(1)});

@@ -1,76 +1,179 @@
-WORLD SQUASH MASTERS 2026 — VIC PARK SQUASH EDITION — REFRESHABLE V7
+IMPORTANT REFRESH ARCHITECTURE (v2.1)
+===================================
+Hourly refresh does NOT fetch the Players page. The 911-player directory in data.js is treated as canonical.
+`npm run refresh` refreshes only match data from the TournamentSoftware Matches section and updates only data.js.
+This means a temporary Players-page rendering/selector change cannot block hourly match refreshes.
 
-REFRESH
--------
-First time in this folder:
+WORLD SQUASH MASTERS 2026 - VIC PARK EDITION
+============================================
+
+ARCHITECTURE
+------------
+The website is now deliberately split into three independent parts:
+
+1. DESIGN / WEBSITE
+   index.html
+   player.html
+   styles.css
+   app.js
+   player-app.js
+
+2. TOURNAMENT DATA
+   data.js
+
+   This contains the complete player directory and the master matches array.
+   Both Glass Court, Vic Park Matches and individual player schedules are derived
+   from this same match array.
+
+3. VIC PARK WATCHLIST
+   vic-park-players.js
+
+   Edit this file whenever you want to add/remove club members. No TournamentSoftware
+   refresh is needed.
+
+LOCAL DATA REFRESH
+------------------
+First time in a new folder:
+
   npm install
+  npx playwright install chromium
 
 Then refresh at any time with:
+
   npm run refresh
 
-The refresher opens your installed Chrome first (Edge/Playwright Chromium are fallbacks).
-Leave the browser open until the crawl finishes.
+The refresher updates ONLY data.js. It does not rebuild or modify the HTML/CSS/JS design.
 
-HOW V7 GETS MATCHES
---------------------
-V7 no longer relies on the global TournamentSoftware Matches page, because that page was only exposing a small paginated slice to automation.
+Check the current dataset with:
 
-Instead it:
-1. Reads the official TournamentSoftware Players page.
-2. Collects the official profile link for each player.
-3. Visits every player profile and reads that player's scheduled/played matches.
-4. Deduplicates the same match seen from both players.
-5. Requires at least 500 unique matches before replacing data.js.
-6. Rebuilds index.html and player.html only after validation succeeds.
-
-This makes player schedules the primary source of truth.
+  npm run check
 
 VIC PARK PLAYERS
 ----------------
-Edit vic-park-players.txt. Put one player name on each line, for example:
-  Roger Schmidlin
-  Ashton D'Vaz
-  Tanya Chapman
+Edit vic-park-players.js directly, for example:
 
-Vic Park Matches only accepts explicit player1/player2 identity matches. It no longer searches raw page text, which prevents unrelated matches being assigned to tracked players.
+  window.VIC_PARK_PLAYERS = [
+    "Roger Schmidlin",
+    "Susan Hillier"
+  ];
 
-DIAGNOSTICS
------------
-After every crawl V7 writes:
-  refresh-audit.json
-  refresh-matches.json
+Save/push that one file. No npm refresh is required.
 
-If fewer than 500 unique matches are found, the refresh fails and the existing website data remains untouched.
+FAST MATCH REFRESH
+------------------
+refresh-data.js now uses the TournamentSoftware Matches tab day-by-day rather than
+visiting all 911 player profiles. It attempts to load/expand every page for each of
+30 Aug through 6 Sep, captures both rendered match rows and TournamentSoftware JSON/XHR
+responses, deduplicates them, and writes a single matches[] array.
 
-Run:
-  npm run check
+A safety threshold prevents a tiny partial result from replacing a healthy data.js.
+If TournamentSoftware changes its page structure, the workflow fails rather than
+publishing an obviously incomplete match list.
 
-to show player count, total matches, Glass Court matches, and each tracked player's linked match count.
+GITHUB PAGES / HOURLY REFRESH
+-----------------------------
+The included file:
 
-GLASS COURT
------------
-Glass Court is built from the same master match list and only includes records whose normalized venue/court explicitly identifies Karrinyup or AGC.
+  .github/workflows/pages.yml
+
+has two modes:
+
+A) Normal push to main
+   - Does NOT fetch TournamentSoftware.
+   - Immediately deploys your changed design/watchlist/data files to GitHub Pages.
+
+B) Hourly schedule or manual Run workflow
+   - Installs Playwright Chromium.
+   - Runs npm run refresh.
+   - Updates ONLY data.js.
+   - Commits data.js back to the repository if it changed.
+   - Deploys the current website to GitHub Pages.
+
+The schedule is 17 minutes past every hour:
+
+  17 * * * *
+
+GITHUB SETUP
+------------
+1. Copy all files/folders in this package into the root of your GitHub repository.
+   Make sure the hidden .github folder is included.
+
+2. Commit and push everything to your main branch.
+
+3. On GitHub open:
+      Repository -> Settings -> Pages
+   Under Build and deployment, set Source to:
+      GitHub Actions
+
+4. Open:
+      Repository -> Settings -> Actions -> General
+   Under Workflow permissions, make sure the workflow is allowed to write repository
+   contents. If your repository/organisation policy permits it, choose:
+      Read and write permissions
+
+5. Open the Actions tab. Select:
+      Refresh tournament data and deploy Pages
+   Choose Run workflow once manually.
+
+6. Watch the log. A successful refresh should print player count, per-day match counts,
+   total unique matches and Glass Court matches.
+
+After that GitHub will run it every hour automatically.
+
+IMPORTANT DEPLOYMENT NOTES
+--------------------------
+- Changing design: push index.html/player.html/styles.css/app.js/player-app.js.
+  No data fetch happens on that push.
+
+- Changing Vic Park players: edit/push vic-park-players.js only.
+  No data fetch happens on that push.
+
+- Tournament update: scheduled workflow updates data.js automatically.
+
+- Manual local data refresh: upload/push only data.js afterward if you want.
+
+- The public site itself does not run Node.js or Playwright. GitHub Actions performs
+  the refresh; GitHub Pages only serves static files.
 
 
-V8 refresh notes
-----------------
-- Validation is based on crawl coverage, not an incorrect 500-confirmed-match threshold.
-- 911 players can produce fewer than 500 currently confirmed player-v-player matches because later rounds are still TBD and first-round byes reduce pairings.
-- Player association now uses TournamentSoftware profile-link identity as well as player names.
-- A successful refresh rebuilds data.js even when the confirmed unique match count is in the 400s, provided profile coverage is strong.
+REFRESH v2.2: Uses the legacy server-rendered /sport/matches.aspx day pages first, with p/ps pagination, and only falls back to the modern Matches UI. This avoids the modern 10-row slice.
 
-V9 changes
-----------
-- A dated/time schedule row on a player's own TournamentSoftware profile is retained even when the opponent cannot yet be canonicalised; it displays as TBD and is enriched when another profile resolves it.
-- Opponent player links may use TournamentSoftware's visible name even if it differs from the canonical snapshot.
-- Vic Park Matches removes the duplicate tracked-player subline, enlarges the tracked player's name, and puts venue/court at the far right with a venue icon.
+RELIABLE HOURLY REFRESH MODE
+----------------------------
+The hourly refresh intentionally uses the reliable player-profile crawler again.
+TournamentSoftware's Matches tab currently exposes only 10 rows per day to automation,
+so it is not used as the authoritative source.
 
-VENUE LOGOS (v11)
-- WA State Squash Centre / Belmont uses belmont-venue-logo.jpg.
-- Squashworld Mirrabooka uses mirrabooka-venue-logo.jpg.
-- Karrinyup Shopping Centre / AGC glass court uses karrinyup-glass-court-logo.png.
-- These images are also embedded into the generated index.html by app.js, so they survive npm run refresh / build-static.js and work when index.html is opened directly.
-- Vic Park date headings show the calendar date only (weekday label removed).
+The first successful refresh creates player-links.json. Future refreshes reuse that cache,
+which avoids re-reading the 911-player directory. The crawler still visits player profiles
+because that is the method that previously returned the complete confirmed schedule.
 
+A refresh changes only:
+  data.js
+  player-links.json (only when the link cache is first built or rebuilt)
 
-V14 layout: The Home page contains the championship title, Vic Park introduction, participation map and country quick-filter list. Players, Glass Court and Vic Park Matches are intentionally compact for mobile use.
+It does NOT change:
+  index.html
+  player.html
+  styles.css
+  app.js
+  player-app.js
+  vic-park-players.js
+
+IMPORTANT: WHY THE PROFILE CRAWLER IS BACK
+------------------------------------------
+The modern TournamentSoftware Matches page currently exposes only about 10 rows per day
+to automated browser sessions. Earlier attempts to speed up the refresh by using that page
+therefore produced incomplete data (around 70 matches total).
+
+This package deliberately restores the previously successful player-profile crawler. In the
+user's earlier run it produced 1,067 raw observations, 426 unique confirmed matches and
+22 Glass Court matches from 911 profiles.
+
+The site architecture remains separated:
+  - data.js = tournament players + matches
+  - vic-park-players.js = editable watchlist
+  - HTML/CSS/JS = design
+
+You can redesign the site or change vic-park-players.js without fetching tournament data.
+Hourly GitHub refreshes update only data.js (and player-links.json when the cache is created).

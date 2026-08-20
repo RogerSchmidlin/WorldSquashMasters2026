@@ -1,22 +1,15 @@
 @echo off
 cd /d "%~dp0"
-echo.
-echo World Squash Masters - refresh tournament data
-echo ================================================
-echo.
-if not exist node_modules (
-  echo Installing Node packages for first use...
-  call npm install || goto :error
+echo Refreshing TournamentSoftware data only...
+npm run refresh
+if errorlevel 1 (
+  echo.
+  echo Refresh failed. data.js was not overwritten.
+  pause
+  exit /b 1
 )
-call npx playwright install chromium || goto :error
-call npm run refresh || goto :error
 echo.
-echo Refresh completed successfully.
-echo Open index.html to view the updated website.
-pause
-exit /b 0
-:error
+npm run check
 echo.
-echo Refresh failed. See any refresh-debug files in this folder.
+echo Done. Only data.js needs uploading for a data-only update.
 pause
-exit /b 1

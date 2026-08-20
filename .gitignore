@@ -1,0 +1,5 @@
+node_modules/
+refresh-audit.json
+refresh-matches.json
+refresh-debug*
+.DS_Store
