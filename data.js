@@ -5,7 +5,7 @@ window.TOURNAMENT_DATA = {
     "startDate": "2026-08-30",
     "endDate": "2026-09-06"
   },
-  "refreshedAt": "2026-08-20T09:30:07.412Z",
+  "refreshedAt": "2026-08-20T21:11:06.057Z",
   "players": [
     {
       "iso3": "AUS",
@@ -11376,21 +11376,6 @@ window.TOURNAMENT_DATA = {
       "rawText": "Men's +70 Stan Voges [5/8] H2H Mon 31/08/2026 12:10 Squashworld Mirrabooka - SC1 Men's +70 Stan Voges [5/8] W Bye H2H",
       "sourcePlayer": "Stan Voges",
       "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=537"
-    },
-    {
-      "date": "2026-08-31",
-      "time": "12:50",
-      "event": "Men's 60+",
-      "round": "",
-      "venue": "Squashworld Mirrabooka",
-      "court": "Mon 31",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Yawar Abbas",
-      "player2": "TBD",
-      "rawText": "Men's +60 Yawar Abbas [3/4] H2H Mon 31/08/2026 12:50 Squashworld Mirrabooka - SC11 Men's +60 Yawar Abbas [3/4] W Bye H2H",
-      "sourcePlayer": "Yawar Abbas",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=725"
     },
     {
       "date": "2026-08-31",

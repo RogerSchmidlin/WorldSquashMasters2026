@@ -11,5 +11,6 @@ window.VIC_PARK_PLAYERS = [
   "Joannah Yue",
   "Susan Hillier",
   "Luke Missak",
-  "Onnie Biswas"
+  "Onnie Biswas",
+  "Van Tran"
 ];

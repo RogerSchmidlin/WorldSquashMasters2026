@@ -6,7 +6,7 @@ on:
   schedule:
     # Every hour at 17 minutes past the hour (UTC).
     # Using :17 avoids the busiest top-of-hour scheduling window.
-    - cron: '17 * * * *'
+    - cron: '17 */4 * * *'
   workflow_dispatch:
 
 permissions:
