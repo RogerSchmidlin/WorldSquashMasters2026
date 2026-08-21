@@ -87,7 +87,10 @@ function setupPlayers(){
 }
 function setupParticipationMap(counts){
   if(!window.Plotly){qs('#participationMap').innerHTML='<div class="empty">Map unavailable while offline.</div>';return;}
-  const grouped={}; data.players.forEach(p=>{if(!p.iso3)return; grouped[p.iso3]??={name:p.country,count:0}; grouped[p.iso3].count++;});
+  // TournamentSoftware uses some sporting country codes that differ from ISO-3166 alpha-3.
+  // Plotly's world map requires ISO-3166 alpha-3 (e.g. South Africa is ZAF, not RSA).
+  const mapIso3 = code => ({ RSA:'ZAF' }[String(code||'').toUpperCase()] || String(code||'').toUpperCase());
+  const grouped={}; data.players.forEach(p=>{const iso=mapIso3(p.iso3);if(!iso)return; grouped[iso]??={name:p.country,count:0}; grouped[iso].count++;});
   const locations=Object.keys(grouped), z=locations.map(()=>1), text=locations.map(k=>`${grouped[k].name}: ${grouped[k].count} player${grouped[k].count===1?'':'s'}`);
   Plotly.newPlot('participationMap',[{type:'choropleth',locationmode:'ISO-3',locations,z,text,hovertemplate:'%{text}<extra></extra>',colorscale:[[0,'#f5c84c'],[1,'#f5c84c']],showscale:false,marker:{line:{color:'#071427',width:.7}}}],{margin:{l:0,r:0,t:0,b:0},paper_bgcolor:'rgba(0,0,0,0)',geo:{projection:{type:'natural earth'},showframe:false,showcoastlines:false,showcountries:true,countrycolor:'#294462',showland:true,landcolor:'#152b45',showocean:true,oceancolor:'rgba(5,19,35,.35)',bgcolor:'rgba(0,0,0,0)'}},{displayModeBar:false,responsive:true});
 }
