@@ -23775,6 +23775,21 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-08-31",
       "time": "12:50",
+      "event": "Men's 60+",
+      "round": "",
+      "venue": "Squashworld Mirrabooka",
+      "court": "Mon 31",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Yawar Abbas",
+      "player2": "TBD",
+      "rawText": "Men's +60 Yawar Abbas [3/4] H2H Mon 31/08/2026 12:50 Squashworld Mirrabooka - SC11 Men's +60 Yawar Abbas [3/4] W Bye H2H",
+      "sourcePlayer": "Yawar Abbas",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=725"
+    },
+    {
+      "date": "2026-08-31",
+      "time": "12:50",
       "event": "Men's 50+",
       "round": "",
       "venue": "Belmont Squash Centre",
