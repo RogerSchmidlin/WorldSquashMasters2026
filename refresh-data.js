@@ -220,7 +220,9 @@ async function launchBrowser(headlessOverride=null){
   let last;
   for(const channel of channels){
     try{
-      const autoHeadless = process.env.HEADLESS === '1' || String(process.env.GITHUB_ACTIONS || '').toLowerCase() === 'true';
+      const explicitHeadless = String(process.env.HEADLESS || '').trim();
+      const githubActions = String(process.env.GITHUB_ACTIONS || '').toLowerCase() === 'true';
+      const autoHeadless = explicitHeadless === '1' ? true : explicitHeadless === '0' ? false : githubActions;
       const opts={headless:headlessOverride===null?autoHeadless:!!headlessOverride}; if(channel)opts.channel=channel;
       const b=await chromium.launch(opts);
       console.log(`Browser: ${channel||'Playwright Chromium'}`); return b;

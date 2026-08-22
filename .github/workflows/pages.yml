@@ -33,11 +33,11 @@ jobs:
         env:
           SQUASHLEVELS_EMAIL: ${{ secrets.SQUASHLEVELS_EMAIL }}
           SQUASHLEVELS_PASSWORD: ${{ secrets.SQUASHLEVELS_PASSWORD }}
-          HEADLESS: '1'
+          HEADLESS: '0'
           # Optional later: these take precedence over email/password if you add them.
           SQUASHLEVELS_STORAGE_STATE_B64: ${{ secrets.SQUASHLEVELS_STORAGE_STATE_B64 }}
           SQUASHLEVELS_SESSION_STORAGE_B64: ${{ secrets.SQUASHLEVELS_SESSION_STORAGE_B64 }}
-        run: npm run refresh
+        run: xvfb-run --auto-servernum npm run refresh
 
       - name: Commit refreshed data
         shell: bash
