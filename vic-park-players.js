@@ -15,5 +15,6 @@ window.VIC_PARK_PLAYERS = [
   "Van Tran",
   "Michael Corren",
   "Jason Patmore",
-  "Joan Naarstig"
+  "Joan Naarstig",
+  "Jahangir Khan"
 ];
