@@ -1,5 +1,6 @@
-node_modules/
-refresh-audit.json
-refresh-matches.json
-refresh-debug*
-.DS_Store
+config.json
+squashlevels-profile-debug.json
+squashlevels-debug.json
+squashlevels-session-check.json
+squashlevels-storage-state.json
+squashlevels-session-storage.json

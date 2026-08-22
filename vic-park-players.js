@@ -12,5 +12,8 @@ window.VIC_PARK_PLAYERS = [
   "Susan Hillier",
   "Luke Missak",
   "Onnie Biswas",
-  "Van Tran"
+  "Van Tran",
+  "Michael Corren",
+  "Jason Patmore",
+  "Joan Naarstig"
 ];

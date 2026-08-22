@@ -1,89 +1,52 @@
-name: Refresh tournament data and deploy Pages
+name: Refresh World Squash Masters data
 
 on:
-  push:
-    branches: [main]
-  schedule:
-    # Every hour at 17 minutes past the hour (UTC).
-    # Using :17 avoids the busiest top-of-hour scheduling window.
-    - cron: '17 */4 * * *'
   workflow_dispatch:
+  schedule:
+    - cron: '17 */4 * * *'
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: world-squash-masters-pages
-  cancel-in-progress: false
 
 jobs:
-  build:
+  refresh:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
+    timeout-minutes: 120
 
-      - name: Setup Node.js
-        if: github.event_name != 'push'
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '20'
+          cache: npm
 
-      - name: Install refresher dependencies
-        if: github.event_name != 'push'
-        run: |
-          npm install
-          npx playwright install --with-deps chromium
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Refresh TournamentSoftware data
-        if: github.event_name != 'push'
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Refresh tournament data
         env:
-          CI: 'true'
-          HEADLESS: '1'
+          SQUASHLEVELS_EMAIL: ${{ secrets.SQUASHLEVELS_EMAIL }}
+          SQUASHLEVELS_PASSWORD: ${{ secrets.SQUASHLEVELS_PASSWORD }}
+          # Optional later: these take precedence over email/password if you add them.
+          SQUASHLEVELS_STORAGE_STATE_B64: ${{ secrets.SQUASHLEVELS_STORAGE_STATE_B64 }}
+          SQUASHLEVELS_SESSION_STORAGE_B64: ${{ secrets.SQUASHLEVELS_SESSION_STORAGE_B64 }}
         run: npm run refresh
 
-      - name: Validate refreshed data
-        if: github.event_name != 'push'
-        run: npm run check
-
-      - name: Commit data.js when it changed
-        if: github.event_name != 'push'
+      - name: Commit refreshed data
         shell: bash
         run: |
-          if git diff --quiet -- data.js player-links.json 2>/dev/null; then
-            echo "Tournament data did not change."
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data.js
-            if [ -f player-links.json ]; then git add player-links.json; fi
-            git commit -m "Refresh tournament data"
-            git push
+          if git diff --quiet -- data.js summary-data.js players-data.js matches-data.js vicpark-data.js; then
+            echo "No data changes to commit."
+            exit 0
           fi
-
-      - name: Prepare GitHub Pages artifact
-        run: |
-          rm -rf _site
-          mkdir _site
-          cp index.html player.html styles.css app.js player-app.js data.js vic-park-players.js .nojekyll _site/
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: _site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.js summary-data.js players-data.js matches-data.js vicpark-data.js
+          git commit -m "Refresh tournament data"
+          git push
