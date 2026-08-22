@@ -222,11 +222,14 @@ async function launchBrowser(headlessOverride=null){
     try{
       const explicitHeadless = String(process.env.HEADLESS || '').trim();
       const githubActions = String(process.env.GITHUB_ACTIONS || '').toLowerCase() === 'true';
-      // GitHub-hosted Linux runners have no X server by default. Always force
-      // headless mode in GitHub Actions regardless of HEADLESS=0 in an older workflow.
-      // Local interactive-login mode can still explicitly request headed Chrome.
+      const linuxWithoutDisplay = process.platform === 'linux' && !String(process.env.DISPLAY || '').trim();
+      // GitHub-hosted runners and other Linux CI environments normally have no X server.
+      // Force headless whenever Linux has no DISPLAY, even if an older workflow says HEADLESS=0.
       const configuredHeadless = explicitHeadless === '1' ? true : explicitHeadless === '0' ? false : false;
-      const effectiveHeadless = githubActions ? true : (headlessOverride===null ? configuredHeadless : !!headlessOverride);
+      const effectiveHeadless = (githubActions || linuxWithoutDisplay)
+        ? true
+        : (headlessOverride===null ? configuredHeadless : !!headlessOverride);
+      console.log(`Browser launch: headless=${effectiveHeadless} platform=${process.platform} GITHUB_ACTIONS=${process.env.GITHUB_ACTIONS || ''} DISPLAY=${process.env.DISPLAY || ''}`);
       const opts={headless:effectiveHeadless}; if(channel)opts.channel=channel;
       const b=await chromium.launch(opts);
       console.log(`Browser: ${channel||'Playwright Chromium'}`); return b;
