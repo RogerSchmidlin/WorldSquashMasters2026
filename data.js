@@ -5,7 +5,7 @@ window.TOURNAMENT_DATA = {
     "startDate": "2026-08-30",
     "endDate": "2026-09-06"
   },
-  "refreshedAt": "2026-08-22T02:12:21.994Z",
+  "refreshedAt": "2026-08-22T05:11:36.610Z",
   "players": [
     {
       "iso3": "AUS",
@@ -7990,6 +7990,21 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-08-30",
       "time": "10:50",
+      "event": "Men's 40+",
+      "round": "",
+      "venue": "Karrinyup Shopping Centre",
+      "court": "Sun 30",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Khawar Abbas",
+      "player2": "Nathan Turnbull",
+      "rawText": "Men's +40 Nathan Turnbull [9/16] Khawar Abbas H2H Sun 30/08/2026 10:50 Karrinyup Shopping Centre - AGC",
+      "sourcePlayer": "Khawar Abbas",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=786"
+    },
+    {
+      "date": "2026-08-30",
+      "time": "10:50",
       "event": "Men's 60+",
       "round": "",
       "venue": "Squashworld Mirrabooka",
@@ -8301,21 +8316,6 @@ window.TOURNAMENT_DATA = {
       "rawText": "Men's +60 Van Tran Keven Stander H2H Sun 30/08/2026 10:50 Squashworld Mirrabooka - SC1",
       "sourcePlayer": "Keven Stander",
       "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=87"
-    },
-    {
-      "date": "2026-08-30",
-      "time": "10:50",
-      "event": "Men's 40+",
-      "round": "",
-      "venue": "Karrinyup Shopping Centre",
-      "court": "Sun 30",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Nathan Turnbull",
-      "player2": "Khawar Abbas",
-      "rawText": "Men's +40 Nathan Turnbull [9/16] Khawar Abbas H2H Sun 30/08/2026 10:50 Karrinyup Shopping Centre - AGC",
-      "sourcePlayer": "Nathan Turnbull",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=210"
     },
     {
       "date": "2026-08-30",
