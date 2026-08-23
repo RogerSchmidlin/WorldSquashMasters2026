@@ -5,7 +5,7 @@ window.TOURNAMENT_DATA = {
     "startDate": "2026-08-30",
     "endDate": "2026-09-06"
   },
-  "refreshedAt": "2026-08-21T17:29:00.612Z",
+  "refreshedAt": "2026-08-23T01:16:00.491Z",
   "players": [
     {
       "iso3": "AUS",
@@ -18753,6 +18753,24 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-08-30",
       "time": "09:30",
+      "event": "Men's 60+",
+      "round": "",
+      "venue": "",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Steve Abbott",
+      "player1Id": "q:player:925",
+      "player2": "Harnesh Singh",
+      "player2Id": "q:player:891",
+      "rawText": "Match schedule Sunday, 30 August 2026 09:30 Men's +40 Harnesh Singh Alex Preston [5/8] H2H Men's +60 Freddy Ho Paul Cutler H2H Men's +60 Domingo Mihovilovic Bruce Peatman H2H Men's +60 Lorenzo Fernandez Gunther Tzschoppe [17/32] H2H Men's +60 Alec Webber Mick Regan H2H Men's +60 Peter Sinodinos Alain Martin H2H Men's +60 Dino Petrarolo Shaun Billowes H2H Men's +60 James Barr Trevor Walker H2H Men's +60 Steve Abbott Norbert Suttner [17/32] H2H Men's +60 Clark Ellery [17/32] James Herbert H2H Men's +60 Peter Hart Gavin Cunningham H2H Men's +60 Gianni Morselli Robert Jones H2H Men's +60 Christiaan Roetgering Garry Piggott H2H Men's +60 Christopher Rowland Matthew Joy H2H Men's +60 Peter Burrows Frank Bomhardt [17/32] H2H Men's +40 Ashley Ingham Hannes Schoeman [17/32] H2H Men's +40 Muhammad Mehdi [17/32] Tim Rosenow H2H Men's +40 Matthew Brown Murukesh Mani [9/16] H2H Men's +40 Eric Dingle [9/16] Vipul Kashyap H2H Men's +40 Kamran Kamran David Hunt [17/32] H2H Men's +40 Jimmy Van Niekerk [17/32] Jake Markwart H2H Men's +40 Yeshan Ekanayake Ty Cameron [17/32] H2H Men's +40 Mohamed Abouzeid [17/32] Jonathan Down H2H",
+      "sourcePlayer": "Steve Abbott",
+      "sourcePlayerId": "q:player:925",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=925"
+    },
+    {
+      "date": "2026-08-30",
+      "time": "09:30",
       "event": "Men's 40+",
       "round": "",
       "venue": "Belmont Squash Centre",
@@ -19581,6 +19599,24 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-08-30",
       "time": "10:50",
+      "event": "Men's 40+",
+      "round": "",
+      "venue": "Karrinyup Shopping Centre",
+      "court": "Sun 30",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Khawar Abbas",
+      "player1Id": "q:player:786",
+      "player2": "Nathan Turnbull",
+      "player2Id": "q:player:210",
+      "rawText": "Men's +40 Nathan Turnbull [9/16] Khawar Abbas H2H Sun 30/08/2026 10:50 Karrinyup Shopping Centre - AGC",
+      "sourcePlayer": "Khawar Abbas",
+      "sourcePlayerId": "q:player:786",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=786"
+    },
+    {
+      "date": "2026-08-30",
+      "time": "10:50",
       "event": "Men's 60+",
       "round": "",
       "venue": "Squashworld Mirrabooka",
@@ -19955,24 +19991,6 @@ window.TOURNAMENT_DATA = {
       "sourcePlayer": "Keven Stander",
       "sourcePlayerId": "q:player:87",
       "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=87"
-    },
-    {
-      "date": "2026-08-30",
-      "time": "10:50",
-      "event": "Men's 40+",
-      "round": "",
-      "venue": "Karrinyup Shopping Centre",
-      "court": "Sun 30",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Nathan Turnbull",
-      "player1Id": "q:player:210",
-      "player2": "Khawar Abbas",
-      "player2Id": "q:player:786",
-      "rawText": "Men's +40 Nathan Turnbull [9/16] Khawar Abbas H2H Sun 30/08/2026 10:50 Karrinyup Shopping Centre - AGC",
-      "sourcePlayer": "Nathan Turnbull",
-      "sourcePlayerId": "q:player:210",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=210"
     },
     {
       "date": "2026-08-30",
@@ -22705,7 +22723,7 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:750",
       "player2": "Bryan Jackson",
       "player2Id": "q:player:618",
-      "rawText": "Men's +70 Bryan Jackson [9/16] Phillip Eason H2H Mon 31/08/2026 10:50 Squashworld Mirrabooka - SC9 Men's +70 Bye Phillip Eason W H2H",
+      "rawText": "Men's +70 Bryan Jackson [9/16] Phillip Eason H2H Mon 31/08/2026 10:50 Squashworld Mirrabooka - SC9 Men's +70 Bryan Jackson [9/16] W Bye H2H",
       "sourcePlayer": "Phillip Eason",
       "sourcePlayerId": "q:player:750",
       "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=750"
@@ -23782,9 +23800,12 @@ window.TOURNAMENT_DATA = {
       "result": "",
       "status": "scheduled",
       "player1": "Yawar Abbas",
-      "player2": "TBD",
+      "player1Id": "q:player:725",
+      "player2": "Bye",
+      "player2Id": "",
       "rawText": "Men's +60 Yawar Abbas [3/4] H2H Mon 31/08/2026 12:50 Squashworld Mirrabooka - SC11 Men's +60 Yawar Abbas [3/4] W Bye H2H",
       "sourcePlayer": "Yawar Abbas",
+      "sourcePlayerId": "q:player:725",
       "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=725"
     },
     {
