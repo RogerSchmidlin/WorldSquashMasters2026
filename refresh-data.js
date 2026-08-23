@@ -1590,7 +1590,17 @@ function hasPlayer(m,n){return sameName(m.player1,n)||sameName(m.player2,n)}
       delete p.squashLevelsPlayerId;delete p.squashLevelsUrl;delete p.squashLevelsIdentityVerified;delete p.squashLevelsIdentityVerifiedAt;delete p.squashLevelsMatchedCountry;delete p.squashLevelsMatchedAge;delete p.squashLevelsSearchCheckedAt;delete p.squashLevelsProfileCheckedAt;delete p.squashLevelsWorldRank;delete p.squashLevelsLevel;delete p.squashLevelsLevelProvisional;
     }
   }
-  await enrichSquashLevels(canonicalPlayers);
+  // SquashLevels is enrichment only for a normal tournament refresh.
+  // Do not throw away a successful TournamentSoftware refresh just because
+  // SquashLevels blocks/partially authenticates an automated CI session.
+  // canonicalPlayers started as a copy of the existing dataset, so if this
+  // phase fails the last known valid SquashLevels values remain intact.
+  try{
+    await enrichSquashLevels(canonicalPlayers);
+  }catch(e){
+    console.warn(`SquashLevels enrichment skipped: ${e.message}`);
+    console.warn('Continuing with TournamentSoftware/Vic Park publish and preserving previously stored SquashLevels values.');
+  }
   const next={...existing,refreshedAt:new Date().toISOString(),players:canonicalPlayers,matches};
   delete next.trackedNames;
   writeDataFiles(next);
