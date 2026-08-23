@@ -5,7 +5,7 @@ window.TOURNAMENT_DATA = {
     "startDate": "2026-08-30",
     "endDate": "2026-09-06"
   },
-  "refreshedAt": "2026-08-23T01:16:00.491Z",
+  "refreshedAt": "2026-08-23T02:22:51.626Z",
   "players": [
     {
       "iso3": "AUS",
