@@ -4,3 +4,5 @@ squashlevels-debug.json
 squashlevels-session-check.json
 squashlevels-storage-state.json
 squashlevels-session-storage.json
+squashlevels-session-storage.b64.txt
+squashlevels-storage-state.b64.txt
