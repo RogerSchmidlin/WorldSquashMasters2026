@@ -37,6 +37,8 @@ const SQUASHLEVELS_ONLY = process.argv.includes(':squashlevels');
 const SQUASHLEVELS_LOGIN_SETUP = process.argv.includes(':squashlevels-login');
 const SQUASHLEVELS_STORAGE_FILE = path.join(DIR,'squashlevels-storage-state.json');
 const SQUASHLEVELS_SESSION_FILE = path.join(DIR,'squashlevels-session-storage.json');
+const SQUASHLEVELS_STORAGE_B64_FILE = path.join(DIR,'squashlevels-storage-state.b64.txt');
+const SQUASHLEVELS_SESSION_B64_FILE = path.join(DIR,'squashlevels-session-storage.b64.txt');
 if([FULL_REBUILD,SQUASHLEVELS_ONLY,SQUASHLEVELS_LOGIN_SETUP].filter(Boolean).length>1){
   throw new Error('Use only one of :full, :squashlevels or :squashlevels-login.');
 }
@@ -1100,19 +1102,13 @@ async function setupInteractiveSquashLevelsLogin(players){
       await waitForEnter('In the Chrome window: accept cookie preferences, log in, and complete any SquashLevels human verification. It is OK if SquashLevels leaves you on the dashboard.');
 
       // SquashLevels normally redirects to its dashboard after a successful login.
-      // Capture the authenticated browser state THERE, before navigating away.
       const dashboardUrl=page.url();
       console.log(`\nLogin window currently at: ${dashboardUrl}`);
-      const capturedStorageState=await context.storageState();
-      const capturedSession=await page.evaluate(()=>{
-        const out={};
-        try{for(let i=0;i<sessionStorage.length;i++){const k=sessionStorage.key(i);if(k!=null)out[k]=sessionStorage.getItem(k);}}catch{}
-        return out;
-      }).catch(()=>({}));
-      console.log(`Captured login state from current page: ${capturedStorageState.cookies?.length||0} cookie(s), ${Object.keys(capturedSession||{}).length} sessionStorage item(s).`);
 
       // Do NOT expect the dashboard itself to contain player-profile markers.
       // Deliberately navigate this exact same authenticated tab to a known player profile.
+      // We capture the state AFTER that verification because SquashLevels can update
+      // cookies/localStorage/sessionStorage while entering an authenticated profile.
       let result=null;
       try{
         result=await verifySquashLevelsProfileSession(page,context,players,'SquashLevels interactive-login profile verification');
@@ -1121,14 +1117,31 @@ async function setupInteractiveSquashLevelsLogin(players){
       }
 
       if(result&&result.state&&result.state.compareWithMe&&result.exact){
-        // Save the state captured immediately after the user's successful login/dashboard redirect.
+        const capturedStorageState=await context.storageState();
+        const capturedSession=await page.evaluate(()=>{
+          const out={};
+          try{for(let i=0;i<sessionStorage.length;i++){const k=sessionStorage.key(i);if(k!=null)out[k]=sessionStorage.getItem(k);}}catch{}
+          return out;
+        }).catch(()=>({}));
+
         fs.writeFileSync(SQUASHLEVELS_STORAGE_FILE,JSON.stringify(capturedStorageState,null,2));
         fs.writeFileSync(SQUASHLEVELS_SESSION_FILE,JSON.stringify(capturedSession||{},null,2));
+
+        // Also create one-line Base64 files specifically for GitHub Actions secrets.
+        // Do not print the secret values to the console.
+        const storageB64=Buffer.from(JSON.stringify(capturedStorageState),'utf8').toString('base64');
+        const sessionB64=Buffer.from(JSON.stringify(capturedSession||{}),'utf8').toString('base64');
+        fs.writeFileSync(SQUASHLEVELS_STORAGE_B64_FILE,storageB64+'\n');
+        fs.writeFileSync(SQUASHLEVELS_SESSION_B64_FILE,sessionB64+'\n');
+
         console.log(`\nAuthenticated SquashLevels state saved successfully.`);
         console.log(`  ${path.basename(SQUASHLEVELS_STORAGE_FILE)}`);
         console.log(`  ${path.basename(SQUASHLEVELS_SESSION_FILE)}`);
+        console.log(`  ${path.basename(SQUASHLEVELS_STORAGE_B64_FILE)}  -> GitHub secret SQUASHLEVELS_STORAGE_STATE_B64`);
+        console.log(`  ${path.basename(SQUASHLEVELS_SESSION_B64_FILE)} -> GitHub secret SQUASHLEVELS_SESSION_STORAGE_B64`);
         console.log(`  Verified exact Level: ${result.exact.raw}`);
-        console.log('You can now run: npm run refresh:squashlevels');
+        console.log('Keep these session files private; do not commit them.');
+        console.log('After updating the two GitHub secrets, run a new GitHub Actions workflow.');
         return;
       }
 
