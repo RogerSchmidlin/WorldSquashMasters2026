@@ -1,65 +1,308 @@
 {
   "groups": [
-    ["Francisco", "Frank"],
-    ["William", "Willie", "Will", "Bill", "Billy"],
-    ["Susan", "Sue"],
-    ["Steven", "Stephen", "Steve"],
-    ["Walter", "Wally"],
-    ["Robert", "Bob", "Rob", "Robbie", "Bobby"],
-    ["James", "Jim", "Jimmy"],
-    ["Michael", "Mike", "Mick", "Mickey"],
-    ["David", "Dave"],
-    ["Daniel", "Dan", "Danny"],
-    ["Matthew", "Matt"],
-    ["Christopher", "Chris"],
-    ["Christian", "Chris"],
-    ["Thomas", "Tom", "Tommy"],
-    ["Timothy", "Tim"],
-    ["Anthony", "Tony"],
-    ["Andrew", "Andy"],
-    ["Alexander", "Alex"],
-    ["Alexandra", "Alex"],
-    ["Nicholas", "Nick"],
-    ["Peter", "Pete"],
-    ["Philip", "Phillip", "Phil", "Philippe", "Plillipe"],
-    ["Richard", "Rick", "Ricky", "Dick"],
-    ["Ronald", "Ron", "Ronnie"],
-    ["Edward", "Ed", "Eddie", "Ted"],
-    ["Joseph", "Joe", "Joey", "Jo"],
-    ["Joshua", "Josh", "Jo"],
-    ["Samuel", "Sam"],
-    ["Samantha", "Sam"],
-    ["Benjamin", "Ben"],
-    ["Jonathan", "Jon", "Johnny", "Johnnie"],
-    ["John", "Jon", "Johnny", "Johnnie", "Jack"],
-    ["Elizabeth", "Liz", "Beth", "Betty", "Betsy"],
-    ["Katherine", "Katharine", "Catherine", "Kat", "Kate", "Katie", "Kathy", "Cathy"],
-    ["Katrin", "Kat"],
-    ["Jennifer", "Jen", "Jenny"],
-    ["Margaret", "Maggie", "Meg"],
-    ["Patrick", "Pat"],
-    ["Patricia", "Pat"],
-    ["Deborah", "Deb", "Debbie"],
-    ["Pamela", "Pam"],
-    ["Joanna", "Jo", "Joanne", "Jo-Anne"],
-    ["Janet", "Jan"],
-    ["Janice", "Jan"],
-    ["Janine", "Jan"],
-    ["Sandra", "Sandy"],
-    ["Terence", "Terry"],
-    ["Theresa", "Terry"],
-    ["Gerald", "Gerry", "Jerry"],
-    ["Raymond", "Ray"],
-    ["Gregory", "Greg"],
-    ["Geoffrey", "Geoff", "Jeff"],
-    ["Jeffrey", "Jeffery", "Jeff"],
-    ["Douglas", "Doug"],
-    ["Kenneth", "Ken"],
-    ["Leonard", "Len"],
-    ["Leslie", "Les"],
-    ["Alan", "Allan", "Al"],
-    ["Albert", "Al"],
-    ["Charles", "Charlie", "Chuck"],
-    ["Kamaron", "Kam"]
+    [
+      "Francisco",
+      "Frank"
+    ],
+    [
+      "William",
+      "Willie",
+      "Will",
+      "Bill",
+      "Billy"
+    ],
+    [
+      "Susan",
+      "Sue"
+    ],
+    [
+      "Steven",
+      "Stephen",
+      "Steve"
+    ],
+    [
+      "Walter",
+      "Wally"
+    ],
+    [
+      "Robert",
+      "Bob",
+      "Rob",
+      "Robbie",
+      "Bobby"
+    ],
+    [
+      "James",
+      "Jim",
+      "Jimmy"
+    ],
+    [
+      "Michael",
+      "Mike",
+      "Mick",
+      "Mickey"
+    ],
+    [
+      "David",
+      "Dave"
+    ],
+    [
+      "Daniel",
+      "Dan",
+      "Danny"
+    ],
+    [
+      "Matthew",
+      "Matt"
+    ],
+    [
+      "Christopher",
+      "Chris"
+    ],
+    [
+      "Christian",
+      "Chris"
+    ],
+    [
+      "Thomas",
+      "Tom",
+      "Tommy"
+    ],
+    [
+      "Timothy",
+      "Tim"
+    ],
+    [
+      "Anthony",
+      "Tony"
+    ],
+    [
+      "Andrew",
+      "Andy"
+    ],
+    [
+      "Alexander",
+      "Alex"
+    ],
+    [
+      "Alexandra",
+      "Alex"
+    ],
+    [
+      "Nicholas",
+      "Nick"
+    ],
+    [
+      "Peter",
+      "Pete"
+    ],
+    [
+      "Philip",
+      "Phillip",
+      "Phil",
+      "Philippe",
+      "Plillipe"
+    ],
+    [
+      "Richard",
+      "Rick",
+      "Ricky",
+      "Dick"
+    ],
+    [
+      "Ronald",
+      "Ron",
+      "Ronnie"
+    ],
+    [
+      "Edward",
+      "Ed",
+      "Eddie",
+      "Ted"
+    ],
+    [
+      "Joseph",
+      "Joe",
+      "Joey",
+      "Jo"
+    ],
+    [
+      "Joshua",
+      "Josh",
+      "Jo"
+    ],
+    [
+      "Samuel",
+      "Sam"
+    ],
+    [
+      "Samantha",
+      "Sam"
+    ],
+    [
+      "Benjamin",
+      "Ben"
+    ],
+    [
+      "Jonathan",
+      "Jon",
+      "Johnny",
+      "Johnnie"
+    ],
+    [
+      "John",
+      "Jon",
+      "Johnny",
+      "Johnnie",
+      "Jack"
+    ],
+    [
+      "Elizabeth",
+      "Liz",
+      "Beth",
+      "Betty",
+      "Betsy"
+    ],
+    [
+      "Katherine",
+      "Katharine",
+      "Catherine",
+      "Kat",
+      "Kate",
+      "Katie",
+      "Kathy",
+      "Cathy",
+      "Kitty"
+    ],
+    [
+      "Katrin",
+      "Kat"
+    ],
+    [
+      "Jennifer",
+      "Jen",
+      "Jenny"
+    ],
+    [
+      "Margaret",
+      "Maggie",
+      "Meg"
+    ],
+    [
+      "Patrick",
+      "Pat"
+    ],
+    [
+      "Patricia",
+      "Pat"
+    ],
+    [
+      "Deborah",
+      "Deb",
+      "Debbie"
+    ],
+    [
+      "Pamela",
+      "Pam"
+    ],
+    [
+      "Joanna",
+      "Jo",
+      "Joanne",
+      "Jo-Anne"
+    ],
+    [
+      "Janet",
+      "Jan"
+    ],
+    [
+      "Janice",
+      "Jan"
+    ],
+    [
+      "Janine",
+      "Jan"
+    ],
+    [
+      "Sandra",
+      "Sandy"
+    ],
+    [
+      "Terence",
+      "Terry"
+    ],
+    [
+      "Theresa",
+      "Terry"
+    ],
+    [
+      "Gerald",
+      "Gerry",
+      "Jerry"
+    ],
+    [
+      "Raymond",
+      "Ray"
+    ],
+    [
+      "Gregory",
+      "Greg"
+    ],
+    [
+      "Geoffrey",
+      "Geoff",
+      "Jeff"
+    ],
+    [
+      "Jeffrey",
+      "Jeffery",
+      "Jeff"
+    ],
+    [
+      "Douglas",
+      "Doug"
+    ],
+    [
+      "Kenneth",
+      "Ken"
+    ],
+    [
+      "Leonard",
+      "Len"
+    ],
+    [
+      "Leslie",
+      "Les"
+    ],
+    [
+      "Alan",
+      "Allan",
+      "Al"
+    ],
+    [
+      "Albert",
+      "Al"
+    ],
+    [
+      "Charles",
+      "Charlie",
+      "Chuck"
+    ],
+    [
+      "Kamaron",
+      "Kam"
+    ],
+    [
+      "Alison",
+      "Allie"
+    ],
+    [
+      "Andreas",
+      "Andy"
+    ],
+    [
+      "Donald",
+      "Don"
+    ]
   ]
 }

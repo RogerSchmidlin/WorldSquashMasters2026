@@ -893,6 +893,16 @@ async function searchSquashLevels(player){
   }finally{clearTimeout(timer)}
 }
 
+function squashLevelsCleanApiPersonName(value){
+  let v=clean(value);
+  // SquashLevels search labels commonly append an age group to the person's name,
+  // e.g. "Greg Lawton (O50)". Age/country are parsed separately from the raw API
+  // candidate, so remove display metadata before surname/nickname comparison.
+  v=v.replace(/\s*\(\s*O\s*(?:35|40|45|50|55|60|65|70|75|80|85)\s*\)\s*/gi,' ');
+  v=v.replace(/,\s*[A-Z]{3}\s*$/i,' ');
+  return clean(v);
+}
+
 async function searchSquashLevelsByName(searchName,targetName){
   const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),20000);
   try{
@@ -917,7 +927,7 @@ async function searchSquashLevelsByName(searchName,targetName){
       if(seen.has(key))continue;
       seen.add(key);
       out.push({
-        url,playerId,name:clean(c.name),raw:c.raw,parent:c.parent,
+        url,playerId,name:squashLevelsCleanApiPersonName(c.name),raw:c.raw,parent:c.parent,
         apiCountryCode:squashLevelsCountryCodeFromApiCandidate(c),
         apiAge:squashLevelsAgeFromApiCandidate(c)
       });
@@ -1004,6 +1014,161 @@ async function chooseSquashLevelsNicknameCandidate(page,candidates,player){
     return null;
   }
   return nicknameMatches[0];
+}
+
+
+function squashLevelsHyphenFallbackSearches(playerName){
+  const {first,last}=splitPersonName(playerName);
+  if(!first||!last||!/[-‐‑‒–—―]/.test(first))return [];
+
+  const givenParts=first.split(/[-‐‑‒–—―]+/).map(clean).filter(Boolean);
+  if(givenParts.length<2)return [];
+
+  // Only used after normal + nickname matching have failed.
+  // Jean-Marie Hospied => Jean Marie Hospied, Jean Hospied, Hospied.
+  return [...new Set([
+    `${givenParts.join(' ')} ${last}`,
+    `${givenParts[0]} ${last}`,
+    last
+  ].map(clean).filter(Boolean))];
+}
+
+function squashLevelsHyphenCandidateNameMatches(candidateName,playerName){
+  const {first,last}=splitPersonName(playerName);
+  if(!first||!last||!/[-‐‑‒–—―]/.test(first))return false;
+
+  const givenParts=first.split(/[-‐‑‒–—―]+/).map(clean).filter(Boolean);
+  if(givenParts.length<2)return false;
+
+  const tokens=clean(candidateName)
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/\(\s*O\s*\d{2}\s*\)/gi,' ')
+    .replace(/[-‐‑‒–—―]/g,' ')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g,' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+
+  const primary=norm(givenParts[0]);
+  const surname=norm(last);
+
+  // Order-independent on purpose:
+  // "Jean-Marie Hospied" may appear as "Hospied Jean Marie (O70)".
+  return tokens.includes(primary)&&tokens.includes(surname);
+}
+
+async function searchSquashLevelsHyphenFallback(player){
+  const searches=squashLevelsHyphenFallbackSearches(player.name);
+  if(!searches.length)return [];
+
+  const combined=[],seen=new Set();
+  for(const q of searches){
+    const rows=await searchSquashLevelsByName(q,q);
+    for(const c of rows){
+      if(!squashLevelsHyphenCandidateNameMatches(c.name,player.name))continue;
+      const key=c.playerId?`id:${c.playerId}`:`url:${canonicalSquashLevelsProfileUrl(c.url).toLowerCase()}`;
+      if(seen.has(key))continue;
+      seen.add(key);
+      combined.push({...c,url:canonicalSquashLevelsProfileUrl(c.url),hyphenSearchName:q});
+    }
+  }
+  return combined;
+}
+
+async function chooseSquashLevelsHyphenCandidate(candidates,player){
+  if(!candidates.length)return null;
+
+  let pool=candidates.map(c=>{
+    const countryCode=clean(c.apiCountryCode).toUpperCase();
+    const age=c.apiAge==null?null:Number(c.apiAge);
+    const expectedCodes=squashLevelsExpectedCountryCodes(player);
+    const expectedAge=squashLevelsExpectedAge(player);
+    return {...c,identity:{
+      countryCode,age,expectedCodes,expectedAge,
+      countryMatch:countryCode?expectedCodes.includes(countryCode):null,
+      ageMatch:age==null||expectedAge==null?null:age===expectedAge
+    }};
+  });
+
+  // Same safety philosophy as the existing nickname fallback:
+  // exact country preferred; explicit mismatches rejected.
+  const countryExact=pool.filter(x=>x.identity.countryMatch===true);
+  if(countryExact.length)pool=countryExact;
+  else{
+    const unknown=pool.filter(x=>x.identity.countryMatch==null);
+    if(!unknown.length)return null;
+    pool=unknown;
+  }
+
+  // Exact age preferred; explicit mismatches rejected.
+  const ageExact=pool.filter(x=>x.identity.ageMatch===true);
+  if(ageExact.length)pool=ageExact;
+  else{
+    const unknown=pool.filter(x=>x.identity.ageMatch==null);
+    if(!unknown.length)return null;
+    pool=unknown;
+  }
+
+  return pool.length===1?pool[0]:null;
+}
+
+
+function squashLevelsNameTokens(value){
+  return clean(value)
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/\(\s*O\s*\d{2}\s*\)/gi,' ')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g,' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .sort();
+}
+
+function squashLevelsSameNameTokensDifferentOrder(a,b){
+  const aa=squashLevelsNameTokens(a),bb=squashLevelsNameTokens(b);
+  if(aa.length<2||aa.length!==bb.length)return false;
+  return aa.every((x,i)=>x===bb[i]);
+}
+
+async function searchSquashLevelsNameOrderFallback(player){
+  const rows=await searchSquashLevelsByName(player.name,player.name);
+  return rows.filter(c=>squashLevelsSameNameTokensDifferentOrder(c.name,player.name));
+}
+
+async function chooseSquashLevelsNameOrderCandidate(candidates,player){
+  if(!candidates.length)return null;
+
+  let pool=candidates.map(c=>{
+    const countryCode=clean(c.apiCountryCode).toUpperCase();
+    const age=c.apiAge==null?null:Number(c.apiAge);
+    const expectedCodes=squashLevelsExpectedCountryCodes(player);
+    const expectedAge=squashLevelsExpectedAge(player);
+    return {...c,identity:{
+      countryCode,age,expectedCodes,expectedAge,
+      countryMatch:countryCode?expectedCodes.includes(countryCode):null,
+      ageMatch:age==null||expectedAge==null?null:age===expectedAge
+    }};
+  });
+
+  const countryExact=pool.filter(x=>x.identity.countryMatch===true);
+  if(countryExact.length)pool=countryExact;
+  else{
+    const unknown=pool.filter(x=>x.identity.countryMatch==null);
+    if(!unknown.length)return null;
+    pool=unknown;
+  }
+
+  const ageExact=pool.filter(x=>x.identity.ageMatch===true);
+  if(ageExact.length)pool=ageExact;
+  else{
+    const unknown=pool.filter(x=>x.identity.ageMatch==null);
+    if(!unknown.length)return null;
+    pool=unknown;
+  }
+
+  return pool.length===1?pool[0]:null;
 }
 
 function groupedInteger(value){
@@ -1364,6 +1529,9 @@ async function verifySquashLevelsProfileSession(page,context,players,label='Squa
   console.log(`  Player: ${probe.name}`);
   console.log(`  Profile authenticated marker (#compare_with_me): ${state.compareWithMe?'YES':'NO'}`);
   console.log(`  SquashLevels cookies on profile: ${cookies.length}`);
+  console.log(`  Login form present on profile: ${state.loginForm?'YES':'NO'}`);
+  console.log(`  Logout text present on profile: ${state.logoutText?'YES':'NO'}`);
+  console.log(`  Final profile URL: ${state.finalUrl||page.url()}`);
   console.log(`  Headline Level: ${state.headlineLevel||'(missing)'}`);
   console.log(`  Level stats -> Current: ${state.currentLevel||'(missing)'}`);
   console.log(`  World ranking: ${state.world||'(missing)'}`);
@@ -1462,10 +1630,25 @@ async function openSavedSquashLevelsSession(context,players){
   const page=await context.newPage();
   try{
     const result=await verifySquashLevelsProfileSession(page,context,players);
-    if(!result.state.compareWithMe||!result.exact){
-      throw new Error('Saved SquashLevels login is no longer an authenticated exact-Level session. Run `npm run refresh:squashlevels-login` again.');
+
+    // SquashLevels has changed its profile markup over time. Do not treat a missing
+    // #compare_with_me marker or a missing probe-profile Level/ranking as proof that
+    // the saved login is invalid. Those are parsing/UI signals, not authentication.
+    //
+    // Fail only on an explicit authentication failure: the profile has redirected to
+    // a login URL or a password/login form is actually present.
+    const finalUrl=String(result.state.finalUrl||page.url()||'');
+    const explicitLoginRedirect=/\blogin\b|sign[-_ ]?in/i.test(finalUrl);
+    if(result.state.loginForm||explicitLoginRedirect){
+      throw new Error('Saved SquashLevels login appears to have expired (login page/form detected). Run `npm run refresh:squashlevels-login` again.');
     }
-    console.log(`SquashLevels saved login verified with exact Level ${result.exact.raw}.`);
+
+    if(result.state.compareWithMe&&result.exact){
+      console.log(`SquashLevels saved login verified with exact Level ${result.exact.raw}.`);
+    }else{
+      console.log('SquashLevels saved-session warning: authentication was not explicitly rejected, but the probe profile did not expose the old authenticated markers/metrics.');
+      console.log('Continuing with the refresh. Per-player exact metric parsing will still reject masked/non-numeric Levels.');
+    }
     return page;
   }catch(e){
     await page.close().catch(()=>{});
@@ -1720,6 +1903,31 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
           }
         }
       }
+      // Absolute last-resort fallback for hyphenated given names only.
+      // This runs only after the original exact matching and nickname matching have failed.
+      if(!accepted&&!p.squashLevelsUrl&&squashLevelsHyphenFallbackSearches(p.name).length){
+        const hyphenFallback=await searchSquashLevelsHyphenFallback(p);
+        const hyphenAccepted=await chooseSquashLevelsHyphenCandidate(hyphenFallback,p);
+        if(hyphenAccepted){
+          accepted=hyphenAccepted;
+          console.log(`  Hyphen-name match: ${p.name} -> ${hyphenAccepted.name} via "${hyphenAccepted.hyphenSearchName}"`);
+        }else if(hyphenFallback.length){
+          console.log(`  Hyphen-name fallback unresolved for ${p.name}; ${hyphenFallback.length} candidate(s) found.`);
+        }
+      }
+
+      // Last-resort name-order fallback only:
+      // "De Zeeuw Jean Luc" <-> "Jean Luc de Zeeuw".
+      // Candidate must contain exactly the same normalized name tokens.
+      if(!accepted&&!p.squashLevelsUrl){
+        const orderFallback=await searchSquashLevelsNameOrderFallback(p);
+        const orderAccepted=await chooseSquashLevelsNameOrderCandidate(orderFallback,p);
+        if(orderAccepted){
+          accepted=orderAccepted;
+          console.log(`  Name-order match: ${p.name} -> ${orderAccepted.name}`);
+        }
+      }
+
       if(accepted){
         const wasMissing=!p.squashLevelsUrl;
         p.squashLevelsUrl=canonicalSquashLevelsProfileUrl(accepted.url);
