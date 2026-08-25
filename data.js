@@ -5,7 +5,7 @@ window.TOURNAMENT_DATA = {
     "startDate": "2026-08-30",
     "endDate": "2026-09-06"
   },
-  "refreshedAt": "2026-08-24T14:00:40.943Z",
+  "refreshedAt": "2026-08-25T02:39:47.815Z",
   "players": [
     {
       "iso3": "AUS",
@@ -11738,7 +11738,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "219114",
       "squashLevelsIdentityVerified": true,
       "squashLevelsSearchCheckedAt": "2026-08-22T05:03:31.412Z",
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": 4629,
       "squashLevelsLevel": 565,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:32.659Z",
@@ -11805,7 +11805,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:27:46.502Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
-      "squashLevelsLevel": 580,
+      "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
     },
     {
@@ -11825,7 +11825,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:27:46.804Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
-      "squashLevelsWorldRank": 4768,
+      "squashLevelsWorldRank": null,
       "squashLevelsLevel": 541,
       "squashLevelsLevelProvisional": false
     },
@@ -18879,6 +18879,24 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-08-30",
       "time": "09:30",
+      "event": "Men's 60+",
+      "round": "",
+      "venue": "Squashworld Mirrabooka",
+      "court": "Sun 30",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Steve Abbott",
+      "player1Id": "q:player:925",
+      "player2": "Norbert Suttner",
+      "player2Id": "q:player:680",
+      "rawText": "Men's +60 Steve Abbott Norbert Suttner [17/32] H2H Sun 30/08/2026 09:30 Squashworld Mirrabooka - SC8",
+      "sourcePlayer": "Steve Abbott",
+      "sourcePlayerId": "q:player:925",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=925"
+    },
+    {
+      "date": "2026-08-30",
+      "time": "09:30",
       "event": "Men's 40+",
       "round": "",
       "venue": "Belmont Squash Centre",
@@ -19271,24 +19289,6 @@ window.TOURNAMENT_DATA = {
       "sourcePlayer": "Mick Regan",
       "sourcePlayerId": "q:player:414",
       "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=414"
-    },
-    {
-      "date": "2026-08-30",
-      "time": "09:30",
-      "event": "Men's 60+",
-      "round": "",
-      "venue": "Squashworld Mirrabooka",
-      "court": "Sun 30",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Norbert Suttner",
-      "player1Id": "q:player:680",
-      "player2": "Steve Abbott",
-      "player2Id": "q:player:925",
-      "rawText": "Men's +60 Steve Abbott Norbert Suttner [17/32] H2H Sun 30/08/2026 09:30 Squashworld Mirrabooka - SC8",
-      "sourcePlayer": "Norbert Suttner",
-      "sourcePlayerId": "q:player:680",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=680"
     },
     {
       "date": "2026-08-30",
@@ -23897,24 +23897,6 @@ window.TOURNAMENT_DATA = {
       "sourcePlayer": "John Willems",
       "sourcePlayerId": "q:player:63",
       "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=63"
-    },
-    {
-      "date": "2026-08-31",
-      "time": "12:50",
-      "event": "Men's 60+",
-      "round": "",
-      "venue": "Squashworld Mirrabooka",
-      "court": "Mon 31",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Yawar Abbas",
-      "player1Id": "q:player:725",
-      "player2": "Bye",
-      "player2Id": "",
-      "rawText": "Men's +60 Yawar Abbas [3/4] H2H Mon 31/08/2026 12:50 Squashworld Mirrabooka - SC11 Men's +60 Yawar Abbas [3/4] W Bye H2H",
-      "sourcePlayer": "Yawar Abbas",
-      "sourcePlayerId": "q:player:725",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=725"
     },
     {
       "date": "2026-08-31",
