@@ -129,7 +129,7 @@ const nameKey=s=>{
 const sameName=(a,b)=>!!a&&!!b&&(norm(a)===norm(b)||nameKey(a)===nameKey(b));
 const playerByName=name=>data.players.find(p=>sameName(p.name,name))||vicParkPlayers.find(p=>sameName(p.name,name));
 const playerById=id=>id?(data.players.find(p=>String(p.officialPlayerId||'')===String(id))||vicParkPlayers.find(p=>String(p.officialPlayerId||'')===String(id))):null;
-const playerPageUrl=(name,id='')=>{const p=playerById(id)||playerByName(name);const q=new URLSearchParams();if(p?.officialPlayerId)q.set('id',p.officialPlayerId);q.set('name',p?.name||name||'');return `player.html?${q.toString()}`;};
+const playerPageUrl=(name,id='')=>{const byId=playerById(id);const p=(byId&&sameName(byId.name,name)?byId:null)||playerByName(name);const q=new URLSearchParams();if(p?.officialPlayerId)q.set('id',p.officialPlayerId);q.set('name',p?.name||name||'');return `player.html?${q.toString()}`;};
 const flagUrl=p=>p?.flagCode?`https://flagcdn.com/w80/${p.flagCode}.png`:'';
 const flagImg=(p,cls='inline-flag')=>p?.flagCode?`<img class="${cls}" src="${flagUrl(p)}" alt="${p.country||''} flag">`:'<span class="flag-fallback">🌐</span>';
 const flagForName=name=>flagImg(playerByName(name));

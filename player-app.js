@@ -42,7 +42,7 @@ const requested=params.get('name')||'';
 const p=(requestedId?data.players.find(x=>String(x.officialPlayerId||'')===String(requestedId)):null)||data.players.find(x=>sameName(x.name,requested));
 const name=p?.name||requested;
 const officialPlayerId=p?.officialPlayerId||requestedId;
-const playerPageUrl=(n,id='')=>{const px=(id?data.players.find(x=>String(x.officialPlayerId||'')===String(id)):null)||data.players.find(x=>sameName(x.name,n));const q=new URLSearchParams();if(px?.officialPlayerId)q.set('id',px.officialPlayerId);q.set('name',px?.name||n||'');return `player.html?${q.toString()}`;};
+const playerPageUrl=(n,id='')=>{const byId=id?data.players.find(x=>String(x.officialPlayerId||'')===String(id)):null;const px=(byId&&sameName(byId.name,n)?byId:null)||data.players.find(x=>sameName(x.name,n));const q=new URLSearchParams();if(px?.officialPlayerId)q.set('id',px.officialPlayerId);q.set('name',px?.name||n||'');return `player.html?${q.toString()}`;};
 const flagImg=(x,cls='inline-flag')=>x?.flagCode?`<img class="${cls}" src="https://flagcdn.com/w160/${x.flagCode}.png" alt="${esc(x.country)} flag">`:'<span class="flag-fallback">🌐</span>';
 const squashMetric=v=>{const n=Number(String(v??'').replace(/,/g,''));return Number.isFinite(n)&&n>0?n.toLocaleString('en-AU'):esc(v)};
 const rankBadge=x=>{
@@ -59,7 +59,7 @@ const levelBadge=x=>{
 const squashBadges=x=>`<span class="squash-metrics">${rankBadge(x)}${levelBadge(x)}</span>`;
 const playerNameStack=(x,n,current=false)=>`<span class="player-name-stack"><b class="${current?'vic-tracked-name':''}">${esc(n||'TBD')}</b>${squashBadges(x)}</span>`;
 const fmt=d=>{const x=new Date(d+'T12:00:00');return Number.isNaN(x.getTime())?{long:esc(d),day:''}:{long:x.toLocaleDateString('en-AU',{day:'numeric',month:'long'}),day:x.toLocaleDateString('en-AU',{weekday:'short'})}};
-const has=(m,n)=>{if(officialPlayerId&&(String(m.player1Id||'')===String(officialPlayerId)||String(m.player2Id||'')===String(officialPlayerId)))return true;return !m.player1Id&&!m.player2Id&&(sameName(m.player1,n)||sameName(m.player2,n));};
+const has=(m,n)=>{if(officialPlayerId&&(String(m.player1Id||'')===String(officialPlayerId)||String(m.player2Id||'')===String(officialPlayerId)))return true;return sameName(m.player1,n)||sameName(m.player2,n);};
 const opp=m=>sameName(m.player1,name)?m.player2:(sameName(m.player2,name)?m.player1:(namesFromRecord(m).find(n=>!sameName(n,name))||''));
 const pb=n=>data.players.find(x=>sameName(x.name,n));
 const past=m=>String(m.status||'').toLowerCase()==='completed'||String(m.status||'').toLowerCase()==='played'||!!m.result;
