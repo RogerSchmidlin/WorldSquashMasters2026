@@ -65,7 +65,18 @@ const pb=n=>data.players.find(x=>sameName(x.name,n));
 const past=m=>String(m.status||'').toLowerCase()==='completed'||String(m.status||'').toLowerCase()==='played'||!!m.result;
 const venueCode=m=>{const place=[m.venue,m.court].filter(Boolean).join(' · ');if(/Karrinyup|\bAGC\b|Glass/i.test(place))return 'G';if(/Mirrabooka|Squashworld/i.test(place))return 'M';if(/Belmont|WA\s*State\s*Squash/i.test(place))return 'B';return '';};
 const venueBadge=m=>{const c=venueCode(m);return c?`<span class="venue-letter venue-${c.toLowerCase()}" aria-hidden="true">${c}</span>`:'';};
-const venuePlace=m=>[m.venue,m.court].filter(Boolean).join(' · ')||'Venue / court TBD';
+function stripLocationDate(value){
+  return String(value||'')
+    .replace(/\b\d{4}-\d{1,2}-\d{1,2}\b/g,'')
+    .replace(/\b\d{1,2}[\/-]\d{1,2}(?:[\/-]\d{2,4})?\b/g,'')
+    .replace(/\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?:day)?\b[,]?\s*/gi,'')
+    .replace(/\b\d{1,2}\s+(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:\s+\d{4})?\b/gi,'')
+    .replace(/^\s*\d{1,2}\s*$/g,'')
+    .replace(/\s*[·|,\-–—]\s*$/g,'')
+    .replace(/\s{2,}/g,' ')
+    .trim();
+}
+const venuePlace=m=>[stripLocationDate(m.venue),stripLocationDate(m.court)].filter(Boolean).join(' · ')||'Venue / court TBD';
 
 function playerMatchRow(m){
   const p1=pb(m.player1),p2=pb(m.player2);
