@@ -291,9 +291,9 @@ function compactScheduleRow(m,trackedNames=[]){
     <div class="vic-match-main">
       <div class="vic-event">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div>
       <div class="vic-fixture-line">
-        <a href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}<span class="vic-player-name-wrap">${playerNameStack(p1,m.player1,p1Tracked)}${p1?.country?`<small class="vic-player-country">${esc(p1.country)}</small>`:''}</span></a>
+        <a class="${p1Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}<span class="vic-player-name-wrap">${playerNameStack(p1,m.player1,p1Tracked)}${p1?.country?`<small class="vic-player-country">${esc(p1.country)}</small>`:''}</span></a>
         <span class="vic-vs">vs</span>
-        <a href="${playerPageUrl(m.player2,m.player2Id)}">${flagImg(p2)}<span class="vic-player-name-wrap">${playerNameStack(p2,m.player2,p2Tracked)}${p2?.country?`<small class="vic-player-country">${esc(p2.country)}</small>`:''}</span></a>
+        <a class="${p2Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,m.player2Id)}">${flagImg(p2)}<span class="vic-player-name-wrap">${playerNameStack(p2,m.player2,p2Tracked)}${p2?.country?`<small class="vic-player-country">${esc(p2.country)}</small>`:''}</span></a>
         ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
       </div>
     </div>

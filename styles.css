@@ -367,3 +367,23 @@ footer a{color:var(--gold);font-weight:800}
   opacity:.72;
   font-weight:600;
 }
+
+
+/* Highlight players explicitly listed in vic-park-players.js */
+.vic-fixture-line a.vic-tracked-player{
+  padding:7px 10px;
+  border:1px solid rgba(245,200,76,.62);
+  border-radius:11px;
+  background:rgba(245,200,76,.08);
+  box-shadow:inset 0 0 0 1px rgba(245,200,76,.05);
+}
+.vic-fixture-line a.vic-tracked-player:hover{
+  border-color:var(--gold);
+  background:rgba(245,200,76,.13);
+}
+@media(max-width:570px){
+  .vic-fixture-line a.vic-tracked-player{
+    padding:5px 7px;
+    border-radius:9px;
+  }
+}
