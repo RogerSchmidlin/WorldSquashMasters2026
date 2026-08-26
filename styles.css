@@ -387,3 +387,39 @@ footer a{color:var(--gold);font-weight:800}
     border-radius:9px;
   }
 }
+
+
+/* Compact Vic Park tracked-player count */
+#vicpark .compact-page-tools{
+  margin-bottom:0;
+  padding-bottom:0;
+}
+#vicpark .watch-count{
+  display:inline-flex;
+  flex-direction:row;
+  align-items:baseline;
+  gap:6px;
+  width:auto;
+  min-width:0;
+  padding:0;
+  margin:0 0 2px 0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+#vicpark .watch-count span,
+#vicpark .watch-count small{
+  display:inline;
+  margin:0;
+  padding:0;
+  line-height:1.2;
+}
+#vicpark .watch-count span{
+  font-size:1rem;
+}
+#vicpark .watch-count small{
+  font-size:.78rem;
+}
+#vicpark .vic-day-heading:first-child{
+  margin-top:0;
+}
