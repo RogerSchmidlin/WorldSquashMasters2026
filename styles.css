@@ -645,3 +645,31 @@ footer a{color:var(--gold);font-weight:800}
     margin-top:2px;
   }
 }
+
+
+/* Mobile: keep search box sticky together with the player filters */
+@media(max-width:570px){
+  #players .toolbar{
+    position:sticky;
+    top:0;
+    z-index:30;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+    padding:6px 0;
+    margin-top:3px;
+    background:var(--bg, #071427);
+  }
+
+  #players .toolbar .search-box{
+    grid-column:1 / -1;
+    position:static;
+    top:auto;
+    z-index:auto;
+    width:100%;
+  }
+
+  #players .toolbar .search-box input{
+    width:100%;
+  }
+}
