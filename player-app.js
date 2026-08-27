@@ -97,27 +97,59 @@ const venuePlace=m=>{
 
 function playerMatchRow(m){
   const p1=pb(m.player1),p2=pb(m.player2);
-  const p1Current=officialPlayerId?String(m.player1Id||'')===String(officialPlayerId)||sameName(m.player1,name):sameName(m.player1,name);
-  const p2Current=officialPlayerId?String(m.player2Id||'')===String(officialPlayerId)||sameName(m.player2,name):sameName(m.player2,name);
+  const p1Current=officialPlayerId
+    ? String(m.player1Id||'')===String(officialPlayerId)||sameName(m.player1,name)
+    : sameName(m.player1,name);
+  const p2Current=officialPlayerId
+    ? String(m.player2Id||'')===String(officialPlayerId)||sameName(m.player2,name)
+    : sameName(m.player2,name);
   const place=venuePlace(m);
+
   return `<article class="vic-match-row player-schedule-row ${past(m)?'past':''}">
-    <div class="vic-time"><span class="vic-time-value">${esc(m.time||'TBD')}</span><span class="vic-time-age">${esc(m.event||'')}</span></div>
+    <div class="vic-time">
+      <span class="vic-time-value">${esc(m.time||'TBD')}</span>
+      <span class="vic-time-age">${esc(m.event||'')}</span>
+    </div>
     <div class="vic-match-main">
       <div class="vic-event">
         <span class="vic-mobile-meta">
           <span class="vic-mobile-time">${esc(m.time||'TBD')}</span>
-          <span class="vic-mobile-location">${venueBadge(m)}<span>${esc(place)}</span></span>
+          <span class="vic-mobile-location">${esc(place)}</span>
           <span class="vic-mobile-age">${esc(m.event||'')}</span>
         </span>
-        <span class="vic-desktop-event">${esc([m.event,m.round].filter(Boolean).join(' · '))}</span>
+        <span class="vic-desktop-event">
+          <span class="vic-event-category">${esc(m.event||'')}</span>
+          ${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}
+        </span>
       </div>
+
       <div class="vic-fixture-line">
-        <a class="player-detail-fixture-player ${p1Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}${playerNameStack(p1,m.player1,p1Current)}</a>
+        <a class="${p1Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">
+          ${flagImg(p1)}
+          <span class="vic-player-name-wrap">
+            <span class="vic-player-name-meta-line">
+              ${playerNameStack(p1,m.player1,p1Current)}
+              ${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}
+            </span>
+          </span>
+        </a>
+
         <span class="vic-vs">vs</span>
-        <a class="player-detail-fixture-player ${p2Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,m.player2Id)}">${flagImg(p2)}${playerNameStack(p2,m.player2,p2Current)}</a>
+
+        <a class="${p2Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,m.player2Id)}">
+          ${flagImg(p2)}
+          <span class="vic-player-name-wrap">
+            <span class="vic-player-name-meta-line">
+              ${playerNameStack(p2,m.player2,p2Current)}
+              ${p2?.country?`<small class="vic-player-inline-meta">${esc(p2.country)}</small>`:''}
+            </span>
+          </span>
+        </a>
+
         ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
       </div>
     </div>
+
     <div class="vic-location">${venueBadge(m)}<span>${esc(place)}</span></div>
   </article>`;
 }

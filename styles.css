@@ -1653,3 +1653,271 @@ footer a{color:var(--gold);font-weight:800}
     padding:2px!important;
   }
 }
+
+
+/* AUTHORITATIVE player-detail mobile match layout: identical to Vic Park */
+@media(max-width:820px){
+  .schedule-section{
+    padding-left:0!important;
+    padding-right:0!important;
+  }
+
+  #playerSchedule,
+  #playerSchedule .schedule-group{
+    width:100%;
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+
+  #playerSchedule .schedule-group{
+    margin-top:0!important;
+  }
+
+  #playerSchedule .vic-day-heading{
+    margin-top:6px!important;
+    margin-bottom:2px!important;
+  }
+
+  #playerSchedule .player-schedule-row{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:0!important;
+    width:100%!important;
+    box-sizing:border-box!important;
+    margin:0 0 2px 0!important;
+    padding:3px!important;
+    border:1px solid var(--line)!important;
+    border-radius:10px!important;
+    background:linear-gradient(145deg,rgba(18,42,72,.96),rgba(9,26,46,.96))!important;
+  }
+
+  #playerSchedule .player-schedule-row > .vic-time,
+  #playerSchedule .player-schedule-row > .vic-location{
+    display:none!important;
+  }
+
+  #playerSchedule .vic-match-main{
+    grid-column:1!important;
+    width:100%!important;
+    min-width:0!important;
+  }
+
+  #playerSchedule .vic-event{
+    margin:0 0 5px 0!important;
+    padding:0!important;
+  }
+
+  #playerSchedule .vic-desktop-event{
+    display:none!important;
+  }
+
+  #playerSchedule .vic-mobile-meta{
+    display:flex!important;
+    align-items:center!important;
+    flex-wrap:nowrap!important;
+    gap:4px!important;
+    width:100%!important;
+    min-width:0!important;
+    overflow:visible!important;
+  }
+
+  #playerSchedule .vic-mobile-time{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    height:22px!important;
+    min-width:43px!important;
+    margin:0!important;
+    padding:0 5px!important;
+    border-radius:6px!important;
+    background:rgba(245,200,76,.12)!important;
+    color:#f5c84c!important;
+    font-family:Montserrat,Inter,sans-serif!important;
+    font-size:.72rem!important;
+    font-weight:900!important;
+    line-height:22px!important;
+    white-space:nowrap!important;
+    flex:0 0 auto!important;
+  }
+
+  #playerSchedule .vic-mobile-location{
+    display:inline-flex!important;
+    align-items:center!important;
+    height:22px!important;
+    width:auto!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0 5px!important;
+    border:1px solid rgba(255,255,255,.10)!important;
+    border-radius:6px!important;
+    background:rgba(255,255,255,.04)!important;
+    color:#b9c8d7!important;
+    font-size:.59rem!important;
+    line-height:22px!important;
+    white-space:nowrap!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    flex:0 0 auto!important;
+  }
+
+  #playerSchedule .vic-mobile-age{
+    display:inline-block!important;
+    min-width:0!important;
+    color:var(--muted)!important;
+    font-size:.59rem!important;
+    font-weight:800!important;
+    line-height:1!important;
+    letter-spacing:.04em!important;
+    text-transform:uppercase!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+
+  #playerSchedule .vic-fixture-line{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;
+    align-items:stretch!important;
+    gap:2px!important;
+    width:100%!important;
+    min-width:0!important;
+    flex-wrap:nowrap!important;
+  }
+
+  #playerSchedule .vic-fixture-line > a{
+    display:flex!important;
+    align-items:center!important;
+    gap:3px!important;
+    min-width:0!important;
+    max-width:none!important;
+    width:100%!important;
+    padding:3px 4px!important;
+    border:1px solid rgba(255,255,255,.10)!important;
+    border-radius:7px!important;
+    background:rgba(255,255,255,.035)!important;
+    box-sizing:border-box!important;
+  }
+
+  #playerSchedule .vic-fixture-line > a.vic-tracked-player{
+    border-color:rgba(245,200,76,.62)!important;
+    background:rgba(245,200,76,.08)!important;
+  }
+
+  #playerSchedule .vic-fixture-line .inline-flag{
+    width:24px!important;
+    height:16px!important;
+    flex:0 0 auto!important;
+  }
+
+  #playerSchedule .vic-player-name-wrap{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    min-width:0!important;
+    flex:1 1 auto!important;
+  }
+
+  #playerSchedule .vic-player-name-meta-line{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    min-width:0!important;
+    width:100%!important;
+  }
+
+  #playerSchedule .player-name-stack{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    min-width:0!important;
+    width:100%!important;
+  }
+
+  #playerSchedule .player-name-stack > b{
+    display:block!important;
+    max-width:100%!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    white-space:nowrap!important;
+    font-size:.82rem!important;
+    line-height:1.05!important;
+  }
+
+  #playerSchedule .player-name-stack .squash-metrics{
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:baseline!important;
+    gap:5px!important;
+    margin-top:3px!important;
+    min-width:0!important;
+  }
+
+  #playerSchedule .player-name-stack .world-rank,
+  #playerSchedule .player-name-stack .squash-level{
+    display:inline-block!important;
+    margin:0!important;
+    padding:0!important;
+    font-size:.64rem!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+
+  #playerSchedule .vic-player-inline-meta,
+  #playerSchedule .vic-player-country{
+    display:none!important;
+  }
+
+  #playerSchedule .vic-vs{
+    align-self:center!important;
+    justify-self:center!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    margin:0!important;
+    padding:0 1px!important;
+    font-size:.62rem!important;
+    line-height:1!important;
+  }
+
+  #playerSchedule .vic-result{
+    grid-column:1 / -1!important;
+    margin-top:2px!important;
+  }
+}
+
+@media(max-width:570px){
+  #playerSchedule .player-schedule-row{
+    margin-bottom:1px!important;
+    padding:2px 3px!important;
+    border-radius:8px!important;
+  }
+
+  #playerSchedule .vic-fixture-line{
+    gap:1px!important;
+  }
+
+  #playerSchedule .vic-fixture-line > a{
+    padding:2px 3px!important;
+    border-radius:6px!important;
+    gap:2px!important;
+  }
+
+  #playerSchedule .vic-fixture-line .inline-flag{
+    width:21px!important;
+    height:14px!important;
+  }
+
+  #playerSchedule .player-name-stack > b{
+    font-size:.76rem!important;
+  }
+
+  #playerSchedule .player-name-stack .world-rank,
+  #playerSchedule .player-name-stack .squash-level{
+    font-size:.60rem!important;
+  }
+
+  #playerSchedule .vic-vs{
+    padding:0!important;
+    font-size:.56rem!important;
+  }
+}
