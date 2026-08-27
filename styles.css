@@ -3256,3 +3256,78 @@ footer a{color:var(--gold);font-weight:800}
     padding:0!important;
   }
 }
+
+
+/* Feature Court: court selector becomes the page title */
+#featureCourtTitle{
+  display:none!important;
+}
+
+/* Hide the old "Venue" label text while keeping the select visible */
+label:has(#featureVenue){
+  font-size:0!important;
+  line-height:0!important;
+  display:block!important;
+  width:100%!important;
+  margin:22px 0 20px!important;
+}
+
+/* The selection itself is now the visual page title */
+#featureVenue{
+  display:block!important;
+  width:auto!important;
+  min-width:280px!important;
+  max-width:100%!important;
+  margin:0!important;
+  padding:12px 42px 12px 16px!important;
+  border-radius:12px!important;
+  font-family:Montserrat,Inter,sans-serif!important;
+  font-size:1.35rem!important;
+  font-weight:900!important;
+  line-height:1.2!important;
+  letter-spacing:.01em!important;
+  color:var(--text)!important;
+}
+
+/* Keep a little breathing room before the date tabs / matches */
+#featureVenue + *,
+label:has(#featureVenue) + *{
+  margin-top:8px;
+}
+
+@media(max-width:570px){
+  label:has(#featureVenue){
+    margin:14px 0 14px!important;
+  }
+
+  #featureVenue{
+    width:100%!important;
+    min-width:0!important;
+    padding:10px 36px 10px 12px!important;
+    border-radius:10px!important;
+    font-size:1.12rem!important;
+    line-height:1.2!important;
+  }
+}
+
+
+/* Feature Court selector: readable dark theme */
+#featureVenue{
+  background:#0d2238!important;
+  color:#f5c84c!important;
+  border:1px solid rgba(245,200,76,.55)!important;
+  box-shadow:0 0 0 1px rgba(245,200,76,.05) inset!important;
+}
+
+#featureVenue:hover,
+#featureVenue:focus{
+  background:#102b47!important;
+  color:#ffd96a!important;
+  border-color:rgba(245,200,76,.82)!important;
+  outline:none!important;
+}
+
+#featureVenue option{
+  background:#0d2238!important;
+  color:#eaf2f8!important;
+}
