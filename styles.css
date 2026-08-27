@@ -1921,3 +1921,363 @@ footer a{color:var(--gold);font-weight:800}
     font-size:.56rem!important;
   }
 }
+
+
+/* Mobile Vic Park polish: near-zero gap between match records, but a little breathing room around VS */
+@media(max-width:820px){
+  #vicpark .vic-match-row{
+    margin-bottom:1px!important;
+  }
+
+  #vicpark .vic-fixture-line{
+    gap:3px!important;
+  }
+
+  #vicpark .vic-vs{
+    padding:0 1px!important;
+    margin:0!important;
+  }
+
+  #vicpark .vic-mobile-location{
+    display:inline-flex!important;
+    align-items:center!important;
+    gap:4px!important;
+    max-width:none!important;
+    width:auto!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    white-space:nowrap!important;
+    flex:0 0 auto!important;
+  }
+
+  #vicpark .vic-mobile-location .venue-letter{
+    width:16px!important;
+    height:16px!important;
+    min-width:16px!important;
+    font-size:.52rem!important;
+  }
+}
+
+@media(max-width:570px){
+  #vicpark .vic-match-row{
+    margin-bottom:0!important;
+  }
+
+  #vicpark .vic-fixture-line{
+    gap:2px!important;
+  }
+}
+
+/* Feature Court mobile: same compact framed match layout */
+@media(max-width:820px){
+  #feature .vic-match-row,
+  #glasscourt .vic-match-row,
+  #featurecourt .vic-match-row{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:0!important;
+    width:100%!important;
+    box-sizing:border-box!important;
+    margin:0 0 1px 0!important;
+    padding:3px!important;
+    border:1px solid var(--line)!important;
+    border-radius:10px!important;
+    background:linear-gradient(145deg,rgba(18,42,72,.96),rgba(9,26,46,.96))!important;
+  }
+
+  #feature .vic-match-row > .vic-time,
+  #feature .vic-match-row > .vic-location,
+  #glasscourt .vic-match-row > .vic-time,
+  #glasscourt .vic-match-row > .vic-location,
+  #featurecourt .vic-match-row > .vic-time,
+  #featurecourt .vic-match-row > .vic-location{
+    display:none!important;
+  }
+
+  #feature .vic-match-main,
+  #glasscourt .vic-match-main,
+  #featurecourt .vic-match-main{
+    grid-column:1!important;
+    width:100%!important;
+    min-width:0!important;
+  }
+
+  #feature .vic-event,
+  #glasscourt .vic-event,
+  #featurecourt .vic-event{
+    margin:0 0 5px 0!important;
+    padding:0!important;
+  }
+
+  #feature .vic-desktop-event,
+  #glasscourt .vic-desktop-event,
+  #featurecourt .vic-desktop-event{
+    display:none!important;
+  }
+
+  #feature .vic-mobile-meta,
+  #glasscourt .vic-mobile-meta,
+  #featurecourt .vic-mobile-meta{
+    display:flex!important;
+    align-items:center!important;
+    flex-wrap:nowrap!important;
+    gap:4px!important;
+    width:100%!important;
+    min-width:0!important;
+    overflow:visible!important;
+  }
+
+  #feature .vic-mobile-time,
+  #glasscourt .vic-mobile-time,
+  #featurecourt .vic-mobile-time{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    height:22px!important;
+    min-width:43px!important;
+    margin:0!important;
+    padding:0 5px!important;
+    border-radius:6px!important;
+    background:rgba(245,200,76,.12)!important;
+    color:#f5c84c!important;
+    font-family:Montserrat,Inter,sans-serif!important;
+    font-size:.72rem!important;
+    font-weight:900!important;
+    line-height:22px!important;
+    white-space:nowrap!important;
+    flex:0 0 auto!important;
+  }
+
+  #feature .vic-mobile-location,
+  #glasscourt .vic-mobile-location,
+  #featurecourt .vic-mobile-location{
+    display:inline-flex!important;
+    align-items:center!important;
+    gap:4px!important;
+    height:22px!important;
+    width:auto!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0 5px!important;
+    border:1px solid rgba(255,255,255,.10)!important;
+    border-radius:6px!important;
+    background:rgba(255,255,255,.04)!important;
+    color:#b9c8d7!important;
+    font-size:.59rem!important;
+    line-height:22px!important;
+    white-space:nowrap!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    flex:0 0 auto!important;
+  }
+
+  #feature .vic-mobile-location .venue-letter,
+  #glasscourt .vic-mobile-location .venue-letter,
+  #featurecourt .vic-mobile-location .venue-letter{
+    width:16px!important;
+    height:16px!important;
+    min-width:16px!important;
+    font-size:.52rem!important;
+  }
+
+  #feature .vic-mobile-age,
+  #glasscourt .vic-mobile-age,
+  #featurecourt .vic-mobile-age{
+    display:inline-block!important;
+    min-width:0!important;
+    color:var(--muted)!important;
+    font-size:.59rem!important;
+    font-weight:800!important;
+    line-height:1!important;
+    letter-spacing:.04em!important;
+    text-transform:uppercase!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+
+  #feature .vic-fixture-line,
+  #glasscourt .vic-fixture-line,
+  #featurecourt .vic-fixture-line{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;
+    align-items:stretch!important;
+    gap:3px!important;
+    width:100%!important;
+    min-width:0!important;
+    flex-wrap:nowrap!important;
+  }
+
+  #feature .vic-fixture-line > a,
+  #glasscourt .vic-fixture-line > a,
+  #featurecourt .vic-fixture-line > a{
+    display:flex!important;
+    align-items:center!important;
+    gap:3px!important;
+    min-width:0!important;
+    max-width:none!important;
+    width:100%!important;
+    padding:3px 4px!important;
+    border:1px solid rgba(255,255,255,.10)!important;
+    border-radius:7px!important;
+    background:rgba(255,255,255,.035)!important;
+    box-sizing:border-box!important;
+  }
+
+  #feature .vic-fixture-line > a.vic-tracked-player,
+  #glasscourt .vic-fixture-line > a.vic-tracked-player,
+  #featurecourt .vic-fixture-line > a.vic-tracked-player{
+    border-color:rgba(245,200,76,.62)!important;
+    background:rgba(245,200,76,.08)!important;
+  }
+
+  #feature .vic-fixture-line .inline-flag,
+  #glasscourt .vic-fixture-line .inline-flag,
+  #featurecourt .vic-fixture-line .inline-flag{
+    width:24px!important;
+    height:16px!important;
+    flex:0 0 auto!important;
+  }
+
+  #feature .vic-player-name-wrap,
+  #glasscourt .vic-player-name-wrap,
+  #featurecourt .vic-player-name-wrap{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    min-width:0!important;
+    flex:1 1 auto!important;
+  }
+
+  #feature .vic-player-name-meta-line,
+  #glasscourt .vic-player-name-meta-line,
+  #featurecourt .vic-player-name-meta-line{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    min-width:0!important;
+    width:100%!important;
+  }
+
+  #feature .player-name-stack,
+  #glasscourt .player-name-stack,
+  #featurecourt .player-name-stack{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    min-width:0!important;
+    width:100%!important;
+  }
+
+  #feature .player-name-stack > b,
+  #glasscourt .player-name-stack > b,
+  #featurecourt .player-name-stack > b{
+    display:block!important;
+    max-width:100%!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    white-space:nowrap!important;
+    font-size:.82rem!important;
+    line-height:1.05!important;
+  }
+
+  #feature .player-name-stack .squash-metrics,
+  #glasscourt .player-name-stack .squash-metrics,
+  #featurecourt .player-name-stack .squash-metrics{
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:baseline!important;
+    gap:5px!important;
+    margin-top:3px!important;
+    min-width:0!important;
+  }
+
+  #feature .player-name-stack .world-rank,
+  #feature .player-name-stack .squash-level,
+  #glasscourt .player-name-stack .world-rank,
+  #glasscourt .player-name-stack .squash-level,
+  #featurecourt .player-name-stack .world-rank,
+  #featurecourt .player-name-stack .squash-level{
+    display:inline-block!important;
+    margin:0!important;
+    padding:0!important;
+    font-size:.64rem!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+
+  #feature .vic-player-inline-meta,
+  #feature .vic-player-country,
+  #glasscourt .vic-player-inline-meta,
+  #glasscourt .vic-player-country,
+  #featurecourt .vic-player-inline-meta,
+  #featurecourt .vic-player-country{
+    display:none!important;
+  }
+
+  #feature .vic-vs,
+  #glasscourt .vic-vs,
+  #featurecourt .vic-vs{
+    align-self:center!important;
+    justify-self:center!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    margin:0!important;
+    padding:0 1px!important;
+    font-size:.62rem!important;
+    line-height:1!important;
+  }
+}
+
+@media(max-width:570px){
+  #feature .vic-match-row,
+  #glasscourt .vic-match-row,
+  #featurecourt .vic-match-row{
+    margin-bottom:0!important;
+    padding:2px 3px!important;
+    border-radius:8px!important;
+  }
+
+  #feature .vic-fixture-line,
+  #glasscourt .vic-fixture-line,
+  #featurecourt .vic-fixture-line{
+    gap:2px!important;
+  }
+
+  #feature .vic-fixture-line > a,
+  #glasscourt .vic-fixture-line > a,
+  #featurecourt .vic-fixture-line > a{
+    padding:2px 3px!important;
+    border-radius:6px!important;
+    gap:2px!important;
+  }
+
+  #feature .vic-fixture-line .inline-flag,
+  #glasscourt .vic-fixture-line .inline-flag,
+  #featurecourt .vic-fixture-line .inline-flag{
+    width:21px!important;
+    height:14px!important;
+  }
+
+  #feature .player-name-stack > b,
+  #glasscourt .player-name-stack > b,
+  #featurecourt .player-name-stack > b{
+    font-size:.76rem!important;
+  }
+
+  #feature .player-name-stack .world-rank,
+  #feature .player-name-stack .squash-level,
+  #glasscourt .player-name-stack .world-rank,
+  #glasscourt .player-name-stack .squash-level,
+  #featurecourt .player-name-stack .world-rank,
+  #featurecourt .player-name-stack .squash-level{
+    font-size:.60rem!important;
+  }
+
+  #feature .vic-vs,
+  #glasscourt .vic-vs,
+  #featurecourt .vic-vs{
+    font-size:.56rem!important;
+  }
+}

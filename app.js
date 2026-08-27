@@ -305,7 +305,7 @@ function compactScheduleRow(m,trackedNames=[]){
   return `<article class="vic-match-row ${isPast(m)?'past':''}">
     <div class="vic-time"><span class="vic-time-value">${esc(m.time||'TBD')}</span><span class="vic-time-age">${esc(m.event||'')}</span></div>
     <div class="vic-match-main">
-      <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${esc(m.time||'TBD')}</span><span class="vic-mobile-location">${esc(cleanVenuePlace(m))}</span><span class="vic-mobile-age">${esc(m.event||'')}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(m.event||'')}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
+      <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${esc(m.time||'TBD')}</span><span class="vic-mobile-location">${venueBadge(m)}<span>${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(m.event||'')}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(m.event||'')}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
       <div class="vic-fixture-line">
         <a class="${p1Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p1,m.player1,p1Tracked)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span></span></a>
         <span class="vic-vs">vs</span>
