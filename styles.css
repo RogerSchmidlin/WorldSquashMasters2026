@@ -1096,3 +1096,79 @@ footer a{color:var(--gold);font-weight:800}
   #vicpark .player-name-stack .squash-level{font-size:.54rem!important}
   #vicpark .vic-vs{font-size:.56rem}
 }
+
+
+/* Mobile Players: World + Level + SquashLevels on one aligned line */
+@media(max-width:570px){
+  #players .player-level-line{
+    display:flex;
+    flex-direction:row;
+    align-items:baseline;
+    flex-wrap:nowrap;
+    gap:6px;
+    margin-top:3px;
+    min-width:0;
+    white-space:nowrap;
+  }
+
+  #players .player-level-line .squash-metrics{
+    display:inline-flex;
+    flex-direction:row;
+    align-items:baseline;
+    flex-wrap:nowrap;
+    gap:6px;
+    margin:0;
+    min-width:0;
+    white-space:nowrap;
+  }
+
+  #players .player-level-line .world-rank,
+  #players .player-level-line .squash-level{
+    display:inline-block;
+    margin:0;
+    padding:0;
+    font-size:.64rem!important;
+    line-height:1!important;
+    white-space:nowrap;
+    vertical-align:baseline;
+  }
+
+  #players .player-level-line .squash-level{
+    word-break:keep-all;
+  }
+
+  #players .player-level-line .squashlevels-list-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 auto;
+    width:auto;
+    min-width:0;
+    margin:0;
+    padding:2px 4px;
+    border-radius:5px;
+    font-size:.56rem;
+    line-height:1;
+    white-space:nowrap;
+  }
+}
+
+/* Mobile Vic Park: tighter rows and larger ranking/level */
+@media(max-width:820px){
+  #vicpark .vic-match-row{
+    margin-bottom:2px!important;
+  }
+
+  #vicpark .player-name-stack .world-rank,
+  #vicpark .player-name-stack .squash-level{
+    font-size:.64rem!important;
+    line-height:1!important;
+  }
+}
+
+@media(max-width:570px){
+  #vicpark .player-name-stack .world-rank,
+  #vicpark .player-name-stack .squash-level{
+    font-size:.6rem!important;
+  }
+}
