@@ -2994,3 +2994,265 @@ footer a{color:var(--gold);font-weight:800}
     font-size:.56rem!important;
   }
 }
+
+
+/* FINAL desktop alignment: Feature Court + Player Details = Vic Park match layout */
+@media(min-width:821px){
+  /* Same three-column match geometry */
+  #glassMatches .vic-match-row,
+  #playerSchedule .vic-match-row{
+    display:grid!important;
+    grid-template-columns:92px minmax(0,1fr) minmax(190px,300px)!important;
+    gap:18px!important;
+    align-items:center!important;
+    width:100%!important;
+    box-sizing:border-box!important;
+    margin:0 0 4px 0!important;
+    padding:8px 10px!important;
+    border:1px solid var(--line)!important;
+    border-radius:16px!important;
+    background:linear-gradient(145deg,rgba(18,42,72,.96),rgba(9,26,46,.96))!important;
+  }
+
+  /* Time and age group on the left, exactly like Vic Park */
+  #glassMatches .vic-match-row > .vic-time,
+  #playerSchedule .vic-match-row > .vic-time{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:3px!important;
+    grid-column:auto!important;
+    font-family:Montserrat,Inter,sans-serif!important;
+    font-size:1.25rem!important;
+    font-weight:900!important;
+    color:var(--gold)!important;
+    text-align:center!important;
+  }
+
+  #glassMatches .vic-time-value,
+  #playerSchedule .vic-time-value{
+    display:block!important;
+    line-height:1!important;
+  }
+
+  #glassMatches .vic-time-age,
+  #playerSchedule .vic-time-age{
+    display:block!important;
+    color:var(--muted)!important;
+    font-size:.74rem!important;
+    line-height:1.15!important;
+    font-weight:800!important;
+    letter-spacing:.05em!important;
+    text-transform:uppercase!important;
+    white-space:nowrap!important;
+  }
+
+  /* Middle player/fixture column */
+  #glassMatches .vic-match-main,
+  #playerSchedule .vic-match-main{
+    grid-column:auto!important;
+    width:auto!important;
+    min-width:0!important;
+  }
+
+  #glassMatches .vic-event,
+  #playerSchedule .vic-event{
+    display:block!important;
+    margin:0 0 7px 0!important;
+    padding:0!important;
+    font-size:.7rem!important;
+    letter-spacing:.08em!important;
+    text-transform:uppercase!important;
+    color:var(--muted)!important;
+    font-weight:800!important;
+  }
+
+  #glassMatches .vic-mobile-meta,
+  #playerSchedule .vic-mobile-meta{
+    display:none!important;
+  }
+
+  #glassMatches .vic-desktop-event,
+  #playerSchedule .vic-desktop-event{
+    display:inline!important;
+  }
+
+  /* Age/event is already below the time, matching Vic Park */
+  #glassMatches .vic-desktop-event .vic-event-category,
+  #playerSchedule .vic-desktop-event .vic-event-category{
+    display:none!important;
+  }
+
+  #glassMatches .vic-desktop-event .vic-event-round,
+  #playerSchedule .vic-desktop-event .vic-event-round{
+    margin-left:0!important;
+  }
+
+  #glassMatches .vic-fixture-line,
+  #playerSchedule .vic-fixture-line{
+    display:flex!important;
+    grid-template-columns:none!important;
+    align-items:center!important;
+    gap:10px!important;
+    width:auto!important;
+    min-width:0!important;
+    flex-wrap:wrap!important;
+  }
+
+  #glassMatches .vic-fixture-line > a,
+  #playerSchedule .vic-fixture-line > a{
+    display:inline-flex!important;
+    align-items:center!important;
+    gap:8px!important;
+    width:auto!important;
+    max-width:none!important;
+    min-width:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    color:var(--text)!important;
+    text-decoration:none!important;
+  }
+
+  /* Keep tracked/current player highlighting exactly like Vic Park */
+  #glassMatches .vic-fixture-line > a.vic-tracked-player,
+  #playerSchedule .vic-fixture-line > a.vic-tracked-player{
+    padding:7px 10px!important;
+    border:1px solid rgba(245,200,76,.62)!important;
+    border-radius:11px!important;
+    background:rgba(245,200,76,.08)!important;
+    box-shadow:inset 0 0 0 1px rgba(245,200,76,.05)!important;
+  }
+
+  #glassMatches .vic-vs,
+  #playerSchedule .vic-vs{
+    display:inline!important;
+    align-self:auto!important;
+    justify-self:auto!important;
+    margin:0!important;
+    padding:0!important;
+    color:#7690aa!important;
+    font-size:.72rem!important;
+    font-weight:900!important;
+    line-height:1!important;
+    text-transform:uppercase!important;
+  }
+
+  /* Same desktop player-name presentation as Vic Park */
+  #glassMatches .vic-player-name-wrap,
+  #playerSchedule .vic-player-name-wrap{
+    display:inline-flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    min-width:0!important;
+  }
+
+  #glassMatches .vic-player-name-meta-line,
+  #playerSchedule .vic-player-name-meta-line{
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:baseline!important;
+    gap:7px!important;
+    min-width:0!important;
+    width:auto!important;
+  }
+
+  #glassMatches .vic-player-inline-meta,
+  #playerSchedule .vic-player-inline-meta{
+    display:inline!important;
+    color:var(--muted)!important;
+    font-size:.68rem!important;
+    font-weight:650!important;
+    white-space:nowrap!important;
+  }
+
+  #glassMatches .player-name-stack,
+  #playerSchedule .player-name-stack{
+    display:inline-flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    min-width:0!important;
+    width:auto!important;
+  }
+
+  #glassMatches .player-name-stack .squash-metrics,
+  #playerSchedule .player-name-stack .squash-metrics{
+    display:inline-flex!important;
+    flex-direction:row!important;
+    align-items:baseline!important;
+    gap:8px!important;
+    margin-top:4px!important;
+    line-height:1.2!important;
+  }
+
+  #glassMatches .player-name-stack .world-rank,
+  #glassMatches .player-name-stack .squash-level,
+  #playerSchedule .player-name-stack .world-rank,
+  #playerSchedule .player-name-stack .squash-level{
+    display:inline-block!important;
+    margin:0!important;
+    padding:0!important;
+    font-size:.68rem!important;
+    line-height:1.2!important;
+    vertical-align:baseline!important;
+    white-space:nowrap!important;
+  }
+
+  /* Same right-hand location column, including icon */
+  #glassMatches .vic-match-row > .vic-location,
+  #playerSchedule .vic-match-row > .vic-location{
+    display:flex!important;
+    grid-column:auto!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    justify-self:end!important;
+    gap:9px!important;
+    width:auto!important;
+    margin:0!important;
+    text-align:right!important;
+    color:#b9c8d7!important;
+    font-size:.78rem!important;
+    line-height:1.3!important;
+  }
+
+  #glassMatches .vic-location .venue-letter,
+  #playerSchedule .vic-location .venue-letter{
+    display:inline-flex!important;
+    width:38px!important;
+    height:38px!important;
+    min-width:38px!important;
+  }
+
+  /* Player-detail groups should not add extra spacing between the actual match cards */
+  #playerSchedule .schedule-group{
+    margin-bottom:0!important;
+  }
+}
+
+
+/* Center venue letter inside location badge on Feature Court + Player Details */
+#glassMatches .venue-letter,
+#playerSchedule .venue-letter{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  line-height:1!important;
+  padding:0!important;
+  box-sizing:border-box!important;
+}
+
+@media(min-width:821px){
+  #glassMatches .vic-location .venue-letter,
+  #playerSchedule .vic-location .venue-letter{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    line-height:1!important;
+    padding:0!important;
+  }
+}
