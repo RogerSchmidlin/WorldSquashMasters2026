@@ -752,3 +752,242 @@ footer a{color:var(--gold);font-weight:800}
     justify-self:start !important;
   }
 }
+
+
+/* Players page: compact metadata and SquashLevels alignment */
+#players .player-card-copy{min-width:0}
+#players .player-name-stack{width:100%}
+#players .player-name-meta-line{
+  display:flex;align-items:baseline;gap:7px;min-width:0;flex-wrap:wrap;
+}
+#players .player-inline-meta{
+  color:var(--muted);font-size:.72rem;font-weight:650;white-space:nowrap;
+}
+#players .player-level-line{
+  display:flex;align-items:center;gap:7px;margin-top:3px;min-height:22px;
+}
+#players .player-level-line .squash-metrics{
+  display:inline-flex;align-items:center;gap:5px;
+}
+#players .player-level-line .world-rank,
+#players .player-level-line .squash-level{margin-top:0}
+#players .player-level-line .squashlevels-list-btn{
+  margin:0;padding:4px 6px;font-size:.58rem;line-height:1;align-self:center;
+}
+
+/* Desktop Vic Park remains unchanged */
+.vic-mobile-meta{display:none}
+.vic-desktop-event{display:inline}
+
+/* Vic Park mobile: time -> location -> age on one compact line */
+@media(max-width:820px){
+  #vicpark .vic-desktop-event{display:none!important}
+  #vicpark .vic-mobile-meta{
+    display:flex!important;align-items:center;gap:5px;min-width:0;flex-wrap:nowrap;
+  }
+  #vicpark .vic-mobile-time{
+    display:inline-flex!important;align-items:center;justify-content:center;
+    height:24px;min-width:46px;padding:0 6px;margin:0;border-radius:6px;
+    background:rgba(245,200,76,.12);color:#f5c84c;
+    font-family:Montserrat,Inter,sans-serif;font-size:.76rem;font-weight:900;
+    line-height:24px;white-space:nowrap;flex:0 0 auto;
+  }
+  #vicpark .vic-mobile-location{
+    display:inline-flex;align-items:center;height:24px;max-width:110px;padding:0 6px;
+    border:1px solid rgba(255,255,255,.10);border-radius:6px;
+    background:rgba(255,255,255,.04);color:#b9c8d7;font-size:.64rem;
+    line-height:24px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:0 1 auto;
+  }
+  #vicpark .vic-mobile-age{
+    display:inline-block;color:var(--muted);font-size:.64rem;font-weight:800;
+    letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis;min-width:0;
+  }
+  #vicpark .vic-location{display:none!important}
+  #vicpark .vic-event{margin-bottom:5px}
+}
+
+@media(max-width:570px){
+  #players .player-name-meta-line{gap:5px;flex-wrap:nowrap}
+  #players .player-card-name-link{min-width:0}
+  #players .player-card-name-link b{
+    display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  #players .player-inline-meta{font-size:.66rem;flex:0 0 auto}
+  #players .player-level-line{gap:5px;margin-top:2px}
+  #players .player-level-line .squashlevels-list-btn{padding:3px 5px;font-size:.54rem}
+
+  #vicpark .vic-mobile-meta{gap:4px}
+  #vicpark .vic-mobile-time{
+    height:22px;min-width:43px;padding:0 5px;font-size:.72rem;line-height:22px;
+  }
+  #vicpark .vic-mobile-location{
+    height:22px;max-width:88px;padding:0 5px;font-size:.59rem;line-height:22px;
+  }
+  #vicpark .vic-mobile-age{font-size:.59rem}
+}
+
+
+/* Desktop: make World ranking the same height as Level on Players and Vic Park */
+@media(min-width:571px){
+  #players .world-rank,
+  #players .squash-level,
+  #vicpark .world-rank,
+  #vicpark .squash-level{
+    font-size:.61rem;
+    line-height:1.15;
+  }
+}
+
+
+/* Desktop: add a little more space between player name and ranking/level */
+@media(min-width:571px){
+  #players .player-name-stack .squash-metrics,
+  #vicpark .player-name-stack .squash-metrics{
+    margin-top:4px;
+  }
+}
+
+
+/* Desktop Players page: larger World ranking and Level text */
+@media(min-width:571px){
+  #players .world-rank,
+  #players .squash-level{
+    font-size:.72rem;
+    line-height:1.2;
+  }
+}
+
+
+/* Desktop Players page: align World ranking and Level on the same baseline */
+@media(min-width:571px){
+  #players .player-level-line .squash-metrics{
+    display:inline-flex;
+    flex-direction:row;
+    align-items:baseline;
+    gap:8px;
+    line-height:1.2;
+  }
+
+  #players .player-level-line .world-rank,
+  #players .player-level-line .squash-level{
+    display:inline-block;
+    margin:0;
+    padding:0;
+    line-height:1.2;
+    vertical-align:baseline;
+  }
+}
+
+
+/* Desktop Vic Park: mirror compact Players-page player presentation */
+@media(min-width:821px){
+  #vicpark .vic-player-name-wrap{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:flex-start;
+    min-width:0;
+  }
+
+  #vicpark .vic-player-name-meta-line{
+    display:flex;
+    align-items:baseline;
+    gap:7px;
+    min-width:0;
+  }
+
+  #vicpark .vic-player-inline-meta{
+    color:var(--muted);
+    font-size:.68rem;
+    font-weight:650;
+    white-space:nowrap;
+  }
+
+  #vicpark .player-name-stack{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:flex-start;
+    min-width:0;
+  }
+
+  #vicpark .player-name-stack .squash-metrics{
+    display:inline-flex;
+    flex-direction:row;
+    align-items:baseline;
+    gap:8px;
+    margin-top:4px;
+    line-height:1.2;
+  }
+
+  #vicpark .player-name-stack .world-rank,
+  #vicpark .player-name-stack .squash-level{
+    display:inline-block;
+    margin:0;
+    padding:0;
+    font-size:.68rem;
+    line-height:1.2;
+    vertical-align:baseline;
+  }
+
+  #vicpark .vic-player-country{
+    display:none;
+  }
+}
+
+
+/* Desktop Vic Park: age group under time in left column */
+@media(min-width:821px){
+  #vicpark .vic-time{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+  }
+
+  #vicpark .vic-time-value{
+    display:block;
+    line-height:1;
+  }
+
+  #vicpark .vic-time-age{
+    display:block;
+    color:var(--muted);
+    font-size:.62rem;
+    line-height:1.1;
+    font-weight:800;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+
+  /* Event/age is now represented under the time, so hide duplicate event text. */
+  #vicpark .vic-desktop-event .vic-event-category{
+    display:none;
+  }
+
+  #vicpark .vic-desktop-event .vic-event-round{
+    margin-left:0;
+  }
+}
+
+/* Keep mobile time display exactly as before */
+@media(max-width:820px){
+  #vicpark .vic-time-age{
+    display:none;
+  }
+}
+
+
+/* Desktop Vic Park: tighter match rows */
+@media(min-width:821px){
+  #vicpark .vic-match-row{
+    margin-bottom:4px;
+    padding:8px 10px;
+  }
+
+  #vicpark .vic-time-age{
+    font-size:.74rem;
+    line-height:1.15;
+  }
+}

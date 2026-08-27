@@ -211,7 +211,7 @@ function renderPlayers(){
     });
   qs('#playerCount').textContent=rows.length;
   qsa('.country-chip').forEach(ch=>ch.classList.toggle('active',ch.dataset.country===country));
-  qs('#playerGrid').innerHTML=rows.map(p=>`<div class="player-card"><a class="player-card-flag-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><div class="flag-avatar">${flagImg(p,'flag-img')}</div></a><div class="player-card-copy"><div class="player-card-name-line"><div class="player-name-stack"><a class="player-card-name-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><b>${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(p.name)}</b></a>${squashBadges(p)}</div>${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(p.name)} on SquashLevels">SquashLevels</a>`:''}</div><small>${esc(p.country)} · ${esc(p.gender)} ${p.ageGroup}+</small></div></div>`).join('');
+  qs('#playerGrid').innerHTML=rows.map(p=>`<div class="player-card"><a class="player-card-flag-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><div class="flag-avatar">${flagImg(p,'flag-img')}</div></a><div class="player-card-copy"><div class="player-card-name-line"><div class="player-name-stack"><div class="player-name-meta-line"><a class="player-card-name-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><b>${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(p.name)}</b></a><small class="player-inline-meta">${esc(p.country)} · ${p.ageGroup}+</small></div><div class="player-level-line">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(p.name)} on SquashLevels">SquashLevels</a>`:''}</div></div></div></div></div>`).join('');
 }
 function summaryCountries(){
   if(Array.isArray(data.countries)&&data.countries.length)return data.countries;
@@ -287,13 +287,13 @@ function compactScheduleRow(m,trackedNames=[]){
   const p2Tracked=trackedNames.some(n=>sameName(n,m.player2));
   const v=venueVisual(m);
   return `<article class="vic-match-row ${isPast(m)?'past':''}">
-    <div class="vic-time">${esc(m.time||'TBD')}</div>
+    <div class="vic-time"><span class="vic-time-value">${esc(m.time||'TBD')}</span><span class="vic-time-age">${esc(m.event||'')}</span></div>
     <div class="vic-match-main">
-      <div class="vic-event"><span class="vic-event-category">${esc(m.event||'')}</span><span class="vic-mobile-time">${esc(m.time||'TBD')}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</div>
+      <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${esc(m.time||'TBD')}</span><span class="vic-mobile-location">${esc(cleanVenuePlace(m))}</span><span class="vic-mobile-age">${esc(m.event||'')}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(m.event||'')}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
       <div class="vic-fixture-line">
-        <a class="${p1Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}<span class="vic-player-name-wrap">${playerNameStack(p1,m.player1,p1Tracked)}${p1?.country?`<small class="vic-player-country">${esc(p1.country)}</small>`:''}</span></a>
+        <a class="${p1Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p1,m.player1,p1Tracked)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span></span></a>
         <span class="vic-vs">vs</span>
-        <a class="${p2Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,m.player2Id)}">${flagImg(p2)}<span class="vic-player-name-wrap">${playerNameStack(p2,m.player2,p2Tracked)}${p2?.country?`<small class="vic-player-country">${esc(p2.country)}</small>`:''}</span></a>
+        <a class="${p2Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,m.player2Id)}">${flagImg(p2)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p2,m.player2,p2Tracked)}${p2?.country?`<small class="vic-player-inline-meta">${esc(p2.country)}</small>`:''}</span></span></a>
         ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
       </div>
     </div>
