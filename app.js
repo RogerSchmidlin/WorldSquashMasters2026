@@ -273,9 +273,22 @@ function stripLocationDate(value,{keepStandaloneNumber=false}={}){
     .replace(/\s{2,}/g,' ')
     .trim();
 }
+function actualCourt(m){
+  const raw=String(m?.rawText||'');
+  // Prefer an explicit court token from the TournamentSoftware row.
+  // Important: keep the generic coded-court regex case-sensitive so "Mon 31"
+  // can never be mistaken for a court.
+  const explicit=(raw.match(/\b(AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i)||[])[1]||'';
+  const coded=(raw.match(/\b([A-Z]{2,5}\s*\d+)\b/)||[])[1]||'';
+  if(explicit||coded)return String(explicit||coded).replace(/\s+/g,' ').trim();
+
+  const current=stripLocationDate(m?.court,{keepStandaloneNumber:true});
+  if(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?:day)?\s*\d{1,2}$/i.test(current))return '';
+  return current;
+}
 function cleanVenuePlace(m){
   const venue=stripLocationDate(m.venue);
-  const court=stripLocationDate(m.court,{keepStandaloneNumber:true});
+  const court=actualCourt(m);
   const bits=[venue,court].filter(Boolean);
   return bits.join(' · ')||'Venue / court TBD';
 }

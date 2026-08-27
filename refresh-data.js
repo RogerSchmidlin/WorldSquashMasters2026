@@ -211,7 +211,10 @@ function deriveFields(text, fallbackEvent=''){
   else if(/Mirrabooka/i.test(text)) venue='Squashworld Mirrabooka';
   else if(/Marmion/i.test(text)) venue='Marmion Squash Club';
   else if(/Belmont/i.test(text)) venue='Belmont Squash Centre';
-  const court=(text.match(/\b(AGC|SC\s*\d+|Court\s*\d+|[A-Z]{2,5}\s*\d+)\b/i)||[])[1]||'';
+  // Explicit court patterns may be case-insensitive, but the generic coded court
+  // pattern must be case-sensitive so a date heading such as "Mon 31" is not a court.
+  const court=((text.match(/\b(AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i)||[])[1]||
+               (text.match(/\b([A-Z]{2,5}\s*\d+)\b/)||[])[1]||'');
   const score=(text.match(/\b\d{1,2}[-–]\d{1,2}(?:\s*,\s*\d{1,2}[-–]\d{1,2}){1,4}\b/)||[])[0]||'';
   return {date:parseDate(text),time:parseTime(text),event:clean(event),round:clean(round),venue,court:clean(court),result:score,status:score?'completed':'scheduled'};
 }
@@ -445,7 +448,9 @@ async function scrapeOneProfile(page,current,lookup,networkBucket){
 }
 
 function matchKey(m){
-  const identities=[m.player1Id||nameKey(m.player1),m.player2Id||nameKey(m.player2)].sort().join('~');
+  // Use the displayed canonical player names for fixture identity. Some profile rows
+  // expose an incorrect player id for the opponent, which otherwise creates duplicates.
+  const identities=[nameKey(m.player1),nameKey(m.player2)].filter(Boolean).sort().join('~');
   return [m.date,clean(m.time).toLowerCase(),identities].join('|');
 }
 function mergeMatches(list){

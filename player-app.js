@@ -77,52 +77,89 @@ function stripLocationDate(value,{keepStandaloneNumber=false}={}){
     .replace(/\s{2,}/g,' ')
     .trim();
 }
+function actualCourt(m){
+  const raw=String(m?.rawText||'');
+  const explicit=(raw.match(/\b(AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i)||[])[1]||'';
+  // Deliberately case-sensitive: prevents a date heading such as "Mon 31"
+  // from matching the generic coded-court pattern.
+  const coded=(raw.match(/\b([A-Z]{2,5}\s*\d+)\b/)||[])[1]||'';
+  if(explicit||coded)return String(explicit||coded).replace(/\s+/g,' ').trim();
+
+  const current=stripLocationDate(m?.court,{keepStandaloneNumber:true});
+  if(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?:day)?\s*\d{1,2}$/i.test(current))return '';
+  return current;
+}
 const venuePlace=m=>{
   const venue=stripLocationDate(m.venue);
-  const court=stripLocationDate(m.court,{keepStandaloneNumber:true});
+  const court=actualCourt(m);
   return [venue,court].filter(Boolean).join(' · ')||'Venue / court TBD';
 };
 
 function playerMatchRow(m){
   const p1=pb(m.player1),p2=pb(m.player2);
-  const p1Current=officialPlayerId?String(m.player1Id||'')===String(officialPlayerId):sameName(m.player1,name),p2Current=officialPlayerId?String(m.player2Id||'')===String(officialPlayerId):sameName(m.player2,name);
+  const p1Current=officialPlayerId?String(m.player1Id||'')===String(officialPlayerId)||sameName(m.player1,name):sameName(m.player1,name);
+  const p2Current=officialPlayerId?String(m.player2Id||'')===String(officialPlayerId)||sameName(m.player2,name):sameName(m.player2,name);
+  const place=venuePlace(m);
   return `<article class="vic-match-row player-schedule-row ${past(m)?'past':''}">
-    <div class="vic-time">${esc(m.time||'TBD')}</div>
+    <div class="vic-time"><span class="vic-time-value">${esc(m.time||'TBD')}</span><span class="vic-time-age">${esc(m.event||'')}</span></div>
     <div class="vic-match-main">
-      <div class="vic-event">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div>
+      <div class="vic-event">
+        <span class="vic-mobile-meta">
+          <span class="vic-mobile-time">${esc(m.time||'TBD')}</span>
+          <span class="vic-mobile-location">${venueBadge(m)}<span>${esc(place)}</span></span>
+          <span class="vic-mobile-age">${esc(m.event||'')}</span>
+        </span>
+        <span class="vic-desktop-event">${esc([m.event,m.round].filter(Boolean).join(' · '))}</span>
+      </div>
       <div class="vic-fixture-line">
-        <a class="player-detail-fixture-player" href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}${playerNameStack(p1,m.player1,p1Current)}</a>
+        <a class="player-detail-fixture-player ${p1Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}${playerNameStack(p1,m.player1,p1Current)}</a>
         <span class="vic-vs">vs</span>
-        <a class="player-detail-fixture-player" href="${playerPageUrl(m.player2,m.player2Id)}">${flagImg(p2)}${playerNameStack(p2,m.player2,p2Current)}</a>
+        <a class="player-detail-fixture-player ${p2Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,m.player2Id)}">${flagImg(p2)}${playerNameStack(p2,m.player2,p2Current)}</a>
         ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
       </div>
     </div>
-    <div class="vic-location">${venueBadge(m)}<span>${esc(venuePlace(m))}</span></div>
+    <div class="vic-location">${venueBadge(m)}<span>${esc(place)}</span></div>
   </article>`;
 }
 
 function playerDetailMatchKey(m){
   const d=canonicalDate(m.date||'');
   const t=String(m.time||'').trim().toLowerCase();
-  const event=basicNorm(m.event||'');
-  const round=basicNorm(m.round||'');
-  const venue=basicNorm(m.venue||'');
-  const court=basicNorm(m.court||'');
-  const ids=[String(m.player1Id||''),String(m.player2Id||'')].filter(Boolean).sort();
-  const names=[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean).sort();
-  const players=ids.length===2?ids.join('|'):names.join('|');
-  return [d,t,event,round,venue,court,players].join('||');
+  const names=[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean).sort().join('|');
+  // Names are intentionally authoritative here. TournamentSoftware copies of the
+  // same fixture can carry a wrong player id when collected from the other profile.
+  return [d,t,names].join('||');
 }
 
 function dedupePlayerDetailMatches(matches){
-  const seen=new Set(),out=[];
+  const byKey=new Map();
   for(const m of matches){
     const k=playerDetailMatchKey(m);
-    if(seen.has(k))continue;
-    seen.add(k);
-    out.push(m);
+    const existing=byKey.get(k);
+    if(!existing){
+      byKey.set(k,{...m});
+      continue;
+    }
+
+    // Merge the two observations so the richer source wins rather than simply
+    // keeping whichever orientation happened to appear first.
+    for(const fld of ['event','round','venue','result','status']){
+      if((!existing[fld]||String(existing[fld]).length<String(m[fld]||'').length)&&m[fld]){
+        existing[fld]=m[fld];
+      }
+    }
+    if(String(m.rawText||'').length>String(existing.rawText||'').length)existing.rawText=m.rawText;
+
+    const existingCourt=actualCourt(existing);
+    const incomingCourt=actualCourt(m);
+    if(!existingCourt&&incomingCourt)existing.court=incomingCourt;
+
+    // Prefer a player id only when it belongs to the corresponding displayed name.
+    const p1=pb(existing.player1),p2=pb(existing.player2);
+    if(p1?.officialPlayerId)existing.player1Id=p1.officialPlayerId;
+    if(p2?.officialPlayerId)existing.player2Id=p2.officialPlayerId;
   }
-  return out;
+  return [...byKey.values()];
 }
 
 function groupedMatches(ms){

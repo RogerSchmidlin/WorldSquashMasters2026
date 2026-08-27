@@ -1467,3 +1467,189 @@ footer a{color:var(--gold);font-weight:800}
     margin-top:1px!important;
   }
 }
+
+
+/* FINAL player-detail mobile layout: same structure as Vic Park mobile */
+@media(max-width:820px){
+  .player-schedule-row{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:0!important;
+    width:100%;
+    margin-bottom:2px!important;
+    padding:3px!important;
+    box-sizing:border-box;
+  }
+
+  .player-schedule-row > .vic-time,
+  .player-schedule-row > .vic-location{
+    display:none!important;
+  }
+
+  .player-schedule-row .vic-match-main{
+    width:100%;
+    min-width:0;
+  }
+
+  .player-schedule-row .vic-event{
+    margin:0 0 4px!important;
+  }
+
+  .player-schedule-row .vic-desktop-event{
+    display:none!important;
+  }
+
+  .player-schedule-row .vic-mobile-meta{
+    display:flex!important;
+    align-items:center;
+    flex-wrap:nowrap;
+    gap:4px;
+    width:100%;
+    min-width:0;
+  }
+
+  .player-schedule-row .vic-mobile-time{
+    display:inline-flex!important;
+    align-items:center;
+    justify-content:center;
+    height:22px;
+    min-width:43px;
+    margin:0!important;
+    padding:0 5px;
+    border-radius:6px;
+    background:rgba(245,200,76,.12);
+    color:#f5c84c;
+    font-family:Montserrat,Inter,sans-serif;
+    font-size:.72rem;
+    font-weight:900;
+    line-height:22px;
+    white-space:nowrap;
+    flex:0 0 auto;
+  }
+
+  .player-schedule-row .vic-mobile-location{
+    display:inline-flex!important;
+    align-items:center;
+    gap:4px;
+    height:22px;
+    width:auto;
+    max-width:none!important;
+    padding:0 5px;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:6px;
+    background:rgba(255,255,255,.04);
+    color:#b9c8d7;
+    font-size:.59rem;
+    line-height:22px;
+    white-space:nowrap;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    flex:0 0 auto;
+  }
+
+  .player-schedule-row .vic-mobile-location .venue-letter{
+    width:16px;
+    height:16px;
+    min-width:16px;
+    font-size:.52rem;
+  }
+
+  .player-schedule-row .vic-mobile-age{
+    display:inline-block!important;
+    color:var(--muted);
+    font-size:.59rem;
+    font-weight:800;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    min-width:0;
+  }
+
+  .player-schedule-row .vic-fixture-line{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;
+    align-items:stretch;
+    gap:1px!important;
+    width:100%;
+    min-width:0;
+  }
+
+  .player-schedule-row .vic-fixture-line > a.player-detail-fixture-player{
+    display:flex!important;
+    align-items:center;
+    min-width:0;
+    max-width:none!important;
+    width:100%;
+    gap:2px!important;
+    padding:2px 3px!important;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:6px;
+    background:rgba(255,255,255,.035);
+    box-sizing:border-box;
+  }
+
+  .player-schedule-row .vic-fixture-line > a.player-detail-fixture-player.vic-tracked-player{
+    border-color:rgba(245,200,76,.62);
+    background:rgba(245,200,76,.08);
+  }
+
+  .player-schedule-row .inline-flag{
+    width:21px!important;
+    height:14px!important;
+    flex:0 0 auto;
+  }
+
+  .player-schedule-row .player-name-stack{
+    width:100%;
+    min-width:0;
+  }
+
+  .player-schedule-row .player-name-stack > b{
+    display:block;
+    max-width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:.76rem!important;
+    line-height:1.05;
+  }
+
+  .player-schedule-row .squash-metrics{
+    display:flex!important;
+    flex-direction:row;
+    align-items:baseline;
+    gap:5px;
+    margin-top:3px;
+  }
+
+  .player-schedule-row .world-rank,
+  .player-schedule-row .squash-level{
+    display:inline-block!important;
+    margin:0!important;
+    padding:0!important;
+    font-size:.60rem!important;
+    line-height:1!important;
+    white-space:nowrap;
+  }
+
+  .player-schedule-row .vic-vs{
+    align-self:center;
+    justify-self:center;
+    margin:0!important;
+    padding:0!important;
+    font-size:.56rem;
+  }
+
+  .player-schedule-row .vic-result{
+    grid-column:1 / -1;
+  }
+}
+
+@media(max-width:570px){
+  .player-schedule-row{
+    margin-bottom:1px!important;
+    padding:2px!important;
+  }
+}
