@@ -1172,3 +1172,169 @@ footer a{color:var(--gold);font-weight:800}
     font-size:.6rem!important;
   }
 }
+
+
+/* Mobile Vic Park: minimum spacing around player frames */
+@media(max-width:820px){
+  #vicpark .vic-fixture-line{
+    gap:2px!important;
+  }
+
+  #vicpark .vic-fixture-line > a{
+    padding:3px 4px!important;
+    border-radius:7px!important;
+    gap:3px!important;
+  }
+
+  #vicpark .vic-vs{
+    padding:0 1px!important;
+    margin:0!important;
+  }
+}
+
+@media(max-width:570px){
+  #vicpark .vic-match-row{
+    padding-left:3px!important;
+    padding-right:3px!important;
+  }
+
+  #vicpark .vic-fixture-line{
+    gap:1px!important;
+  }
+
+  #vicpark .vic-fixture-line > a{
+    padding:2px 3px!important;
+    border-radius:6px!important;
+    gap:2px!important;
+  }
+
+  #vicpark .vic-vs{
+    padding:0!important;
+    margin:0!important;
+  }
+}
+
+
+/* Vic Park mobile: show full location name and badge */
+@media(max-width:820px){
+  #vicpark .vic-mobile-location{
+    max-width:none!important;
+    width:auto!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    white-space:nowrap!important;
+    flex:0 0 auto!important;
+  }
+
+  #vicpark .vic-mobile-meta{
+    overflow:visible!important;
+  }
+}
+
+@media(max-width:570px){
+  #vicpark .vic-mobile-location{
+    max-width:none!important;
+  }
+}
+
+
+/* Player detail mobile: use the same compact framed fixture layout as Vic Park */
+@media(max-width:820px){
+  .player-schedule-row .vic-fixture-line{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+    align-items:stretch;
+    gap:2px!important;
+    width:100%;
+    min-width:0;
+  }
+
+  .player-schedule-row .vic-fixture-line > a.player-detail-fixture-player{
+    display:flex!important;
+    align-items:center;
+    gap:3px!important;
+    min-width:0;
+    max-width:none!important;
+    width:100%;
+    padding:3px 4px!important;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:7px;
+    background:rgba(255,255,255,.035);
+    box-sizing:border-box;
+  }
+
+  .player-schedule-row .vic-fixture-line > a.player-detail-fixture-player .inline-flag{
+    flex:0 0 auto;
+    width:24px;
+    height:16px;
+  }
+
+  .player-schedule-row .vic-fixture-line > a.player-detail-fixture-player .player-name-stack{
+    min-width:0;
+    width:100%;
+  }
+
+  .player-schedule-row .vic-fixture-line > a.player-detail-fixture-player .player-name-stack > b{
+    display:block;
+    max-width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+
+  .player-schedule-row .vic-fixture-line > a.player-detail-fixture-player .squash-metrics{
+    display:flex;
+    flex-direction:row;
+    align-items:baseline;
+    gap:5px;
+    margin-top:3px;
+  }
+
+  .player-schedule-row .vic-fixture-line > a.player-detail-fixture-player .world-rank,
+  .player-schedule-row .vic-fixture-line > a.player-detail-fixture-player .squash-level{
+    display:inline-block;
+    margin:0;
+    padding:0;
+    font-size:.64rem!important;
+    line-height:1!important;
+  }
+
+  .player-schedule-row .vic-vs{
+    align-self:center;
+    justify-self:center;
+    padding:0 1px!important;
+    margin:0!important;
+  }
+}
+
+@media(max-width:570px){
+  .player-schedule-row{
+    padding-left:3px!important;
+    padding-right:3px!important;
+  }
+
+  .player-schedule-row .vic-fixture-line{
+    gap:1px!important;
+  }
+
+  .player-schedule-row .vic-fixture-line > a.player-detail-fixture-player{
+    padding:2px 3px!important;
+    border-radius:6px;
+    gap:2px!important;
+  }
+
+  .player-schedule-row .vic-fixture-line > a.player-detail-fixture-player .inline-flag{
+    width:21px;
+    height:14px;
+  }
+
+  .player-schedule-row .vic-fixture-line > a.player-detail-fixture-player .world-rank,
+  .player-schedule-row .vic-fixture-line > a.player-detail-fixture-player .squash-level{
+    font-size:.6rem!important;
+  }
+
+  .player-schedule-row .vic-vs{
+    padding:0!important;
+    margin:0!important;
+  }
+}

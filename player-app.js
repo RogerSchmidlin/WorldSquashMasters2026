@@ -86,15 +86,40 @@ function playerMatchRow(m){
     <div class="vic-match-main">
       <div class="vic-event">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div>
       <div class="vic-fixture-line">
-        <a href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}${playerNameStack(p1,m.player1,p1Current)}</a>
+        <a class="player-detail-fixture-player" href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}${playerNameStack(p1,m.player1,p1Current)}</a>
         <span class="vic-vs">vs</span>
-        <a href="${playerPageUrl(m.player2,m.player2Id)}">${flagImg(p2)}${playerNameStack(p2,m.player2,p2Current)}</a>
+        <a class="player-detail-fixture-player" href="${playerPageUrl(m.player2,m.player2Id)}">${flagImg(p2)}${playerNameStack(p2,m.player2,p2Current)}</a>
         ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
       </div>
     </div>
     <div class="vic-location">${venueBadge(m)}<span>${esc(venuePlace(m))}</span></div>
   </article>`;
 }
+
+function playerDetailMatchKey(m){
+  const d=canonicalDate(m.date||'');
+  const t=String(m.time||'').trim().toLowerCase();
+  const event=basicNorm(m.event||'');
+  const round=basicNorm(m.round||'');
+  const venue=basicNorm(m.venue||'');
+  const court=basicNorm(m.court||'');
+  const ids=[String(m.player1Id||''),String(m.player2Id||'')].filter(Boolean).sort();
+  const names=[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean).sort();
+  const players=ids.length===2?ids.join('|'):names.join('|');
+  return [d,t,event,round,venue,court,players].join('||');
+}
+
+function dedupePlayerDetailMatches(matches){
+  const seen=new Set(),out=[];
+  for(const m of matches){
+    const k=playerDetailMatchKey(m);
+    if(seen.has(k))continue;
+    seen.add(k);
+    out.push(m);
+  }
+  return out;
+}
+
 function groupedMatches(ms){
   if(!ms.length)return '<div class="schedule-empty">No matches currently published.</div>';
   const groups={};
@@ -106,7 +131,7 @@ if(!p){
   qs('#playerHeader').innerHTML='<div class="schedule-empty">Player not found.</div>';
   qs('#playerSchedule').innerHTML='';
 }else{
-  const ms=data.matches.filter(m=>has(m,name)).sort((a,b)=>`${a.date||''} ${a.time||''}`.localeCompare(`${b.date||''} ${b.time||''}`));
+  const ms=dedupePlayerDetailMatches(data.matches.filter(m=>has(m,name))).sort((a,b)=>`${a.date||''} ${a.time||''}`.localeCompare(`${b.date||''} ${b.time||''}`));
   qs('#playerHeader').innerHTML=`<div class="player-detail-card"><div class="player-detail-id">${flagImg(p,'tracked-flag')}<div><div class="eyebrow">${esc(p.country)} · ${esc(p.gender)} ${p.ageGroup}+</div><div class="player-name-line"><div class="player-name-stack player-detail-name-stack"><h1>${esc(p.name)}</h1>${squashBadges(p)}</div>${p.squashLevelsUrl?`<a class="squashlevels-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer">SquashLevels</a>`:''}</div></div></div><div class="player-detail-actions"><div class="status-chip">${ms.filter(m=>!past(m)).length} UPCOMING</div></div></div>`;
   const up=ms.filter(m=>!past(m)),done=ms.filter(past);
   qs('#playerSchedule').innerHTML=`<div class="schedule-group">${groupedMatches(up)}</div>${done.length?`<div class="schedule-group past-games-group"><div class="past-games-label">Past games</div>${groupedMatches(done)}</div>`:''}`;
