@@ -681,3 +681,31 @@ footer a{color:var(--gold);font-weight:800}
     overflow:visible;
   }
 }
+
+
+/* Vic Park mobile: put match time beside age group/event to save width */
+.vic-mobile-time{
+  display:none;
+}
+
+@media(max-width:570px){
+  #vicpark .vic-time{
+    display:none;
+  }
+
+  #vicpark .vic-mobile-time{
+    display:inline;
+    margin-left:7px;
+    color:#f5c84c;
+    font-weight:800;
+    white-space:nowrap;
+  }
+
+  #vicpark .vic-match-row{
+    grid-template-columns:minmax(0,1fr) auto;
+  }
+
+  #vicpark .vic-match-main{
+    min-width:0;
+  }
+}

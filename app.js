@@ -289,7 +289,7 @@ function compactScheduleRow(m,trackedNames=[]){
   return `<article class="vic-match-row ${isPast(m)?'past':''}">
     <div class="vic-time">${esc(m.time||'TBD')}</div>
     <div class="vic-match-main">
-      <div class="vic-event">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div>
+      <div class="vic-event">${esc([m.event,m.round].filter(Boolean).join(' · '))}<span class="vic-mobile-time">${esc(m.time||'TBD')}</span></div>
       <div class="vic-fixture-line">
         <a class="${p1Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}<span class="vic-player-name-wrap">${playerNameStack(p1,m.player1,p1Tracked)}${p1?.country?`<small class="vic-player-country">${esc(p1.country)}</small>`:''}</span></a>
         <span class="vic-vs">vs</span>
