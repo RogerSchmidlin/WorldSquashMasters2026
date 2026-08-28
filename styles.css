@@ -4701,3 +4701,20 @@ label:has(#featureVenue) + *{
     gap:6px;
   }
 }
+
+
+/* SquashLevels club/location on player detail page */
+.player-detail-club-location{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.2;
+}
+
+@media(max-width:570px){
+  .player-detail-club-location{
+    margin-top:4px;
+    font-size:.7rem;
+  }
+}

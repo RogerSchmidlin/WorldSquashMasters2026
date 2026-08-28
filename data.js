@@ -15,7 +15,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:33.052Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:53:26.979Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:27:44.943Z",
       "officialPlayerId": "q:player:220",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=220",
       "squashLevelsWorldRank": 304,
@@ -27,7 +27,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:53:28.904Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 35,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:30:53.874Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:04.858Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "SIN",
@@ -38,18 +39,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:27:33.024Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26183",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:30:55.677Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:06.663Z",
       "officialPlayerId": "q:player:657",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=657",
       "squashLevelsPlayerId": "26183",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:15:51.227Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:27:45.488Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:15:54.073Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 460,
       "squashLevelsLevel": 17539,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "SGP"
     },
     {
       "iso3": "ENG",
@@ -60,18 +62,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:27:33.071Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=4216",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:30:57.470Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:08.457Z",
       "officialPlayerId": "q:player:787",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=787",
       "squashLevelsPlayerId": "4216",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:15:51.225Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:27:46.014Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:15:53.853Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 484,
       "squashLevelsLevel": 17209,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Redland, Avon, ENG"
     },
     {
       "iso3": "RSA",
@@ -82,18 +85,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:27:33.646Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=216792",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:30:59.272Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:10.244Z",
       "officialPlayerId": "q:player:886",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=886",
       "squashLevelsPlayerId": "216792",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:15:51.224Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:27:46.556Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:15:53.522Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 831,
       "squashLevelsLevel": 13270,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Johannesburg Country Club, Gauteng, ZAF"
     },
     {
       "iso3": "GUY",
@@ -104,17 +108,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gy",
       "squashLevelsCheckedAt": "2026-08-21T07:27:33.699Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=356247",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:02.439Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:12.129Z",
       "officialPlayerId": "q:player:950",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=950",
       "squashLevelsPlayerId": "356247",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:15:56.801Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:22:23.491Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 564,
       "squashLevelsLevel": 16156,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:27:47.094Z",
+      "squashLevelsClubLocation": "Grove Park, Cheshire, FRA"
     },
     {
       "iso3": "NZL",
@@ -125,7 +131,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:33.717Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=5916",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:04.235Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:13.926Z",
       "officialPlayerId": "q:player:223",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=223",
       "squashLevelsPlayerId": "5916",
@@ -135,7 +141,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 649,
       "squashLevelsLevel": 15119,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:27:53.695Z",
+      "squashLevelsClubLocation": "Whanganui Rackets INC, Central, NZL"
     },
     {
       "iso3": "SIN",
@@ -146,7 +154,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:27:34.268Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=179678",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:06.129Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:16.049Z",
       "officialPlayerId": "q:player:434",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=434",
       "squashLevelsPlayerId": "179678",
@@ -156,7 +164,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 13121,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:27:54.252Z",
+      "squashLevelsClubLocation": "SGP"
     },
     {
       "iso3": "BEL",
@@ -167,7 +177,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "be",
       "squashLevelsCheckedAt": "2026-08-21T07:27:34.310Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=97363",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:07.928Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:17.858Z",
       "officialPlayerId": "q:player:507",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=507",
       "squashLevelsPlayerId": "97363",
@@ -177,7 +187,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 792,
       "squashLevelsLevel": 13619,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:27:54.848Z",
+      "squashLevelsClubLocation": "Squash Club Ettelbruck, Luxembourg, FRA"
     },
     {
       "iso3": "POL",
@@ -188,7 +200,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pl",
       "squashLevelsCheckedAt": "2026-08-21T07:27:34.358Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=279449",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:10.498Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:19.733Z",
       "officialPlayerId": "q:player:858",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=858",
       "squashLevelsPlayerId": "279449",
@@ -198,7 +210,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 6056,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:27:55.368Z",
+      "squashLevelsClubLocation": "Aveiro District, POL"
     },
     {
       "iso3": "AUS",
@@ -209,7 +223,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:34.847Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221359",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:12.310Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:21.545Z",
       "squashLevelsWorldRank": 3775,
       "officialPlayerId": "q:player:807",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=807",
@@ -219,7 +233,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsLevel": 5841,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:27:55.892Z",
+      "squashLevelsClubLocation": "Bunbury Squash Club, Western Australia, AUS"
     },
     {
       "iso3": "NZL",
@@ -229,19 +245,20 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:34.976Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=318415",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:14.185Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=399556",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:31.482Z",
       "officialPlayerId": "q:player:474",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=474",
-      "squashLevelsPlayerId": "318415",
+      "squashLevelsPlayerId": "399556",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:16:03.305Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:16:15.721Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:27:56.464Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:28:03.946Z",
+      "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 299,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": null,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "NZL"
     },
     {
       "iso3": "AUS",
@@ -252,7 +269,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:35.013Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222866",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:16.281Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:33.335Z",
       "officialPlayerId": "q:player:766",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=766",
       "squashLevelsPlayerId": "222866",
@@ -262,7 +279,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 6056,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:04.937Z",
+      "squashLevelsClubLocation": "Next Generation, South Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -273,7 +292,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:35.519Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=5367",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:18.191Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:35.112Z",
       "squashLevelsWorldRank": 1501,
       "officialPlayerId": "q:player:478",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=478",
@@ -283,7 +302,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsLevel": 9707,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:05.463Z",
+      "squashLevelsClubLocation": "Katanning Squash Club, Western Australia, AUS"
     },
     {
       "iso3": "IND",
@@ -294,17 +315,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:27:35.617Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=25092",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:20.120Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:36.959Z",
       "officialPlayerId": "q:player:984",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=984",
       "squashLevelsPlayerId": "25092",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:16:07.135Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:28:09.021Z",
+      "squashLevelsMatchedCountry": "IND",
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 20292,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:05.992Z",
+      "squashLevelsClubLocation": "Maharashtra, IND"
     },
     {
       "iso3": "AUS",
@@ -315,7 +338,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:35.639Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221159",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:21.930Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:38.742Z",
       "officialPlayerId": "q:player:839",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=839",
       "squashLevelsPlayerId": "221159",
@@ -325,7 +348,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 2671,
       "squashLevelsLevel": 7054,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:09.547Z",
+      "squashLevelsClubLocation": "Scottvale Park, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -336,17 +361,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:36.126Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218536",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:23.829Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:40.607Z",
       "officialPlayerId": "q:player:417",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=417",
       "squashLevelsPlayerId": "218536",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:16:10.242Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:28:13.250Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 5645,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:10.072Z",
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "NZL",
@@ -357,7 +384,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:36.245Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=348288",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:26.236Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:43.140Z",
       "officialPlayerId": "q:player:980",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=980",
       "squashLevelsPlayerId": "348288",
@@ -367,7 +394,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 5733,
       "squashLevelsLevel": 4592,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:13.769Z",
+      "squashLevelsClubLocation": "Manurewa, Auckland, NZL"
     },
     {
       "iso3": "BRA",
@@ -378,18 +407,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "br",
       "squashLevelsCheckedAt": "2026-08-21T07:27:36.268Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=365978",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:29.194Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:44.942Z",
       "officialPlayerId": "q:player:400",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=400",
       "squashLevelsPlayerId": "365978",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:16:14.573Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:14.328Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:16:16.753Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 9512,
       "squashLevelsLevel": 3299,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "BH Squash, Minas Gerais, BRA"
     },
     {
       "iso3": "AUS",
@@ -400,18 +430,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:36.736Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222704",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:31.000Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:46.743Z",
       "officialPlayerId": "q:player:734",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=734",
       "squashLevelsPlayerId": "222704",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:16:14.532Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:16:16.772Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:14.835Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:22:47.514Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 15824,
       "squashLevelsLevel": 2262,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Marmion, Western Australia, AUS"
     },
     {
       "iso3": "MRI",
@@ -422,7 +453,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "mu",
       "squashLevelsCheckedAt": "2026-08-21T07:27:36.979Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=434348",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:33.099Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:48.625Z",
       "officialPlayerId": "q:player:789",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=789",
       "squashLevelsPlayerId": "434348",
@@ -432,7 +463,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 10737,
       "squashLevelsLevel": 3042,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:18.299Z",
+      "squashLevelsClubLocation": "Blue Gum, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -443,18 +476,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:36.945Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=546156",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:34.940Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:50.407Z",
       "officialPlayerId": "q:player:702",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=702",
       "squashLevelsPlayerId": "546156",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:00:09.333Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:18.818Z",
       "squashLevelsWorldRank": 9875,
       "squashLevelsLevel": 3219,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:00:10.568Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -464,7 +498,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:37.303Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:53:55.504Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:40.631Z",
       "officialPlayerId": "q:player:28",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=28",
       "squashLevelsWorldRank": null,
@@ -480,19 +514,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:37.590Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=398869",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:36.822Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=243015",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:52.261Z",
       "officialPlayerId": "q:player:859",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=859",
-      "squashLevelsPlayerId": "398869",
+      "squashLevelsPlayerId": "243015",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:16:21.004Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:16:27.036Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:19.349Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:28:25.192Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 4211,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 7773,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Dampier, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -502,17 +537,18 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:37.687Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=229476",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:38.602Z",
-      "squashLevelsWorldRank": 15315,
-      "squashLevelsPlayerId": "229476",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=230074",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:54.124Z",
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsPlayerId": "230074",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:16:22.451Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:16:31.506Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:25.931Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:28:37.683Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 35,
-      "squashLevelsLevel": 2323,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 1607,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Ipswich PCYC Squash Centre, Queensland, AUS"
     },
     {
       "iso3": "NZL",
@@ -523,7 +559,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:37.860Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=318020",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:40.392Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:56.199Z",
       "squashLevelsWorldRank": 21523,
       "officialPlayerId": "q:player:383",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=383",
@@ -533,7 +569,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsLevel": 1727,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:38.750Z",
+      "squashLevelsClubLocation": "Hamilton, Waikato, NZL"
     },
     {
       "iso3": "POL",
@@ -544,7 +582,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pl",
       "squashLevelsCheckedAt": "2026-08-21T07:27:38.130Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=419326",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:42.290Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:58.069Z",
       "officialPlayerId": "q:player:878",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=878",
       "squashLevelsPlayerId": "419326",
@@ -554,7 +592,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3023,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:39.374Z",
+      "squashLevelsClubLocation": "Svanen Squash, Hovedstaden, POL"
     },
     {
       "iso3": "AUS",
@@ -564,7 +604,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:38.243Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:53:30.367Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:39.877Z",
       "officialPlayerId": "q:player:831",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=831",
       "squashLevelsWorldRank": 12425,
@@ -576,7 +616,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:53:30.792Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 35,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:45.890Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:59.860Z",
+      "squashLevelsClubLocation": "Carrington Park Family Leisure, Victoria, AUS"
     },
     {
       "iso3": "GER",
@@ -587,7 +628,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:27:38.401Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=309252",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:47.700Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:01.647Z",
       "officialPlayerId": "q:player:413",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=413",
       "squashLevelsPlayerId": "309252",
@@ -597,7 +638,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 10810,
       "squashLevelsLevel": 3027,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:40.387Z",
+      "squashLevelsClubLocation": "Coburger Squash Club, Bayern, GER"
     },
     {
       "iso3": "EGY",
@@ -608,17 +651,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "eg",
       "squashLevelsCheckedAt": "2026-08-21T07:27:38.702Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=497924",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:49.578Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:03.531Z",
       "officialPlayerId": "q:player:889",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=889",
       "squashLevelsPlayerId": "497924",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:16:33.183Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:28:43.929Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2967,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:40.990Z",
+      "squashLevelsClubLocation": "Île-de-France, FRA"
     },
     {
       "iso3": "AUS",
@@ -629,7 +674,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:38.847Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221345",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:51.403Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:05.331Z",
       "officialPlayerId": "q:player:22",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=22",
       "squashLevelsPlayerId": "221345",
@@ -639,7 +684,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 16344,
       "squashLevelsLevel": 2204,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:44.418Z",
+      "squashLevelsClubLocation": "Eastside & Parsons TSA, Tasmania, AUS"
     },
     {
       "iso3": "USA",
@@ -649,18 +696,20 @@ window.TOURNAMENT_DATA = {
       "country": "United States",
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:27:38.996Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=17537",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:53.322Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438766",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:07.197Z",
       "officialPlayerId": "q:player:977",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=977",
-      "squashLevelsPlayerId": "17537",
+      "squashLevelsPlayerId": "438766",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:16:34.654Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:28:49.425Z",
+      "squashLevelsMatchedCountry": "USA",
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 3607,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 3389,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:44.940Z",
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "SIN",
@@ -671,18 +720,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:27:39.314Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=17798",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:55.230Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:09.017Z",
       "officialPlayerId": "q:player:569",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=569",
       "squashLevelsPlayerId": "17798",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:00:12.402Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:50.140Z",
       "squashLevelsWorldRank": 7197,
       "squashLevelsLevel": 3975,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:00:13.650Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "NUSS, SGP"
     },
     {
       "iso3": "PAK",
@@ -692,7 +742,7 @@ window.TOURNAMENT_DATA = {
       "country": "Pakistan",
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:27:39.414Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:53:56.244Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:41.134Z",
       "officialPlayerId": "q:player:726",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=726",
       "squashLevelsWorldRank": null,
@@ -709,7 +759,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:39.544Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=540660",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:57.048Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:10.822Z",
       "officialPlayerId": "q:player:356",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=356",
       "squashLevelsPlayerId": "540660",
@@ -719,7 +769,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 36008,
       "squashLevelsLevel": 891,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:50.665Z",
+      "squashLevelsClubLocation": "Marmion, Western Australia, AUS"
     },
     {
       "iso3": "PAK",
@@ -729,7 +781,7 @@ window.TOURNAMENT_DATA = {
       "country": "Pakistan",
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:27:39.865Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:53:56.964Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:41.675Z",
       "officialPlayerId": "q:player:407",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=407",
       "squashLevelsWorldRank": null,
@@ -746,7 +798,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:39.962Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=25478",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:31:58.865Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:12.660Z",
       "officialPlayerId": "q:player:224",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=224",
       "squashLevelsPlayerId": "25478",
@@ -756,7 +808,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 307,
       "squashLevelsLevel": 5166,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:51.197Z",
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -767,7 +821,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:40.076Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=142549",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:01.022Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:14.493Z",
       "squashLevelsWorldRank": 319,
       "officialPlayerId": "q:player:518",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=518",
@@ -777,7 +831,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsLevel": 5071,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:51.729Z",
+      "squashLevelsClubLocation": "Brisbane City, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -788,7 +844,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:40.448Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221879",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:02.810Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:16.299Z",
       "officialPlayerId": "q:player:791",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=791",
       "squashLevelsPlayerId": "221879",
@@ -798,7 +854,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 476,
       "squashLevelsLevel": 4082,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:52.243Z",
+      "squashLevelsClubLocation": "Scottvale Park, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -809,7 +867,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:40.538Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219072",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:06.274Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:18.106Z",
       "officialPlayerId": "q:player:225",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=225",
       "squashLevelsPlayerId": "219072",
@@ -819,7 +877,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 445,
       "squashLevelsLevel": 4216,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:52.761Z",
+      "squashLevelsClubLocation": "Sandgate, Queensland, AUS"
     },
     {
       "iso3": "ENG",
@@ -830,7 +890,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:27:40.696Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=267596",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:08.192Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:19.982Z",
       "officialPlayerId": "q:player:522",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=522",
       "squashLevelsPlayerId": "267596",
@@ -840,7 +900,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 1112,
       "squashLevelsLevel": 2333,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:53.285Z",
+      "squashLevelsClubLocation": "Solihull Arden, Midlands, ENG"
     },
     {
       "iso3": "NZL",
@@ -851,7 +913,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:41.013Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=216379",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:09.997Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:21.802Z",
       "officialPlayerId": "q:player:559",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=559",
       "squashLevelsPlayerId": "216379",
@@ -861,7 +923,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 730,
       "squashLevelsLevel": 3148,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:53.802Z",
+      "squashLevelsClubLocation": "Royal Oak Racquets, Auckland, NZL"
     },
     {
       "iso3": "AUS",
@@ -871,7 +935,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:41.135Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T06:41:48.416Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:54.354Z",
       "officialPlayerId": "q:player:16",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=16",
       "squashLevelsWorldRank": 1493,
@@ -883,7 +947,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T06:41:51.608Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 35,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:11.788Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:23.598Z",
+      "squashLevelsClubLocation": "Busselton Squash Club, Western Australia, AUS"
     },
     {
       "iso3": "RSA",
@@ -894,7 +959,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:27:41.302Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=27761",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:13.583Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:25.403Z",
       "officialPlayerId": "q:player:607",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=607",
       "squashLevelsPlayerId": "27761",
@@ -904,7 +969,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 1037,
       "squashLevelsLevel": 2450,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:54.893Z",
+      "squashLevelsClubLocation": "Bryanston Sports, Gauteng, ZAF"
     },
     {
       "iso3": "MEX",
@@ -914,7 +981,7 @@ window.TOURNAMENT_DATA = {
       "country": "Mexico",
       "flagCode": "mx",
       "squashLevelsCheckedAt": "2026-08-21T07:27:41.554Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:53:57.706Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:42.196Z",
       "officialPlayerId": "q:player:5",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=5",
       "squashLevelsWorldRank": null,
@@ -931,7 +998,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:41.726Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=376848",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:15.371Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:27.210Z",
       "officialPlayerId": "q:player:857",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=857",
       "squashLevelsPlayerId": "376848",
@@ -941,7 +1008,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 2255,
       "squashLevelsLevel": 1293,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:55.403Z",
+      "squashLevelsClubLocation": "Fiordland, Southland, NZL"
     },
     {
       "iso3": "HKG",
@@ -951,7 +1020,7 @@ window.TOURNAMENT_DATA = {
       "country": "Hong Kong",
       "flagCode": "hk",
       "squashLevelsCheckedAt": "2026-08-21T07:27:41.854Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:53:58.443Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:42.835Z",
       "officialPlayerId": "q:player:35",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=35",
       "squashLevelsWorldRank": null,
@@ -968,7 +1037,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:42.073Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235405",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:17.162Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:29.013Z",
       "officialPlayerId": "q:player:826",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=826",
       "squashLevelsPlayerId": "235405",
@@ -978,7 +1047,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 35,
       "squashLevelsWorldRank": 2811,
       "squashLevelsLevel": 1026,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:55.970Z",
+      "squashLevelsClubLocation": "Blue Gum, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -989,7 +1060,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:42.254Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=147709",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:18.960Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:30.815Z",
       "officialPlayerId": "q:player:275",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=275",
       "squashLevelsPlayerId": "147709",
@@ -999,7 +1070,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 640,
       "squashLevelsLevel": 15202,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:56.539Z",
+      "squashLevelsClubLocation": "Bondi Waverley, New South Wales, AUS"
     },
     {
       "iso3": "RSA",
@@ -1010,7 +1083,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:27:42.383Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=214445",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:20.783Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:33.112Z",
       "officialPlayerId": "q:player:585",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=585",
       "squashLevelsPlayerId": "214445",
@@ -1020,7 +1093,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 727,
       "squashLevelsLevel": 14327,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:57.112Z",
+      "squashLevelsClubLocation": "Western Rackets Squash Club, Gauteng, ZAF"
     },
     {
       "iso3": "AUS",
@@ -1031,17 +1106,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:42.613Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219952",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:22.613Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:34.899Z",
       "officialPlayerId": "q:player:550",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=550",
       "squashLevelsPlayerId": "219952",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:16:53.347Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:29:00.707Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 872,
       "squashLevelsLevel": 12989,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:28:57.677Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "NZL",
@@ -1052,17 +1129,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:42.814Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=72542",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:24.421Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:36.732Z",
       "officialPlayerId": "q:player:524",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=524",
       "squashLevelsPlayerId": "72542",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:16:53.548Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:23:32.501Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 832,
       "squashLevelsLevel": 13267,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:01.255Z",
+      "squashLevelsClubLocation": "Canterbury, NZL"
     },
     {
       "iso3": "IND",
@@ -1073,7 +1152,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:27:42.927Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=25091",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:26.348Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:38.647Z",
       "officialPlayerId": "q:player:571",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=571",
       "squashLevelsPlayerId": "25091",
@@ -1083,7 +1162,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 21520,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:06.251Z",
+      "squashLevelsClubLocation": "Services, IND"
     },
     {
       "iso3": "UKR",
@@ -1094,7 +1175,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ua",
       "squashLevelsCheckedAt": "2026-08-21T07:27:43.138Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=215814",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:28.136Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:40.452Z",
       "officialPlayerId": "q:player:196",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=196",
       "squashLevelsPlayerId": "215814",
@@ -1104,7 +1185,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 1072,
       "squashLevelsLevel": 11485,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:06.765Z",
+      "squashLevelsClubLocation": "UKR"
     },
     {
       "iso3": "USA",
@@ -1115,7 +1198,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:27:43.329Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=276144",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:31.090Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:42.327Z",
       "officialPlayerId": "q:player:525",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=525",
       "squashLevelsPlayerId": "276144",
@@ -1125,7 +1208,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 7991,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:07.327Z",
+      "squashLevelsClubLocation": "PAK"
     },
     {
       "iso3": "ENG",
@@ -1136,7 +1221,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:27:43.546Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=48361",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:32.887Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:44.126Z",
       "officialPlayerId": "q:player:308",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=308",
       "squashLevelsPlayerId": "48361",
@@ -1146,7 +1231,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 1202,
       "squashLevelsLevel": 10866,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:07.869Z",
+      "squashLevelsClubLocation": "Tring, Bucks, ENG"
     },
     {
       "iso3": "CAN",
@@ -1157,7 +1244,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:27:43.755Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=242617",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:34.764Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:45.980Z",
       "officialPlayerId": "q:player:515",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=515",
       "squashLevelsPlayerId": "242617",
@@ -1167,7 +1254,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 11674,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:08.392Z",
+      "squashLevelsClubLocation": "Glencoe, Quebec, CAN"
     },
     {
       "iso3": "AUS",
@@ -1178,17 +1267,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:43.893Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233568",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:36.570Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:47.780Z",
       "squashLevelsWorldRank": 1327,
       "officialPlayerId": "q:player:276",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=276",
       "squashLevelsPlayerId": "233568",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:17:00.002Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:23:39.830Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsLevel": 10324,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:08.924Z",
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "IND",
@@ -1199,7 +1290,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:27:44.083Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=50954",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:38.482Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:49.663Z",
       "officialPlayerId": "q:player:410",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=410",
       "squashLevelsPlayerId": "50954",
@@ -1209,7 +1300,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 11187,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:14.380Z",
+      "squashLevelsClubLocation": "Maharashtra, IND"
     },
     {
       "iso3": "RSA",
@@ -1220,7 +1313,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:27:44.277Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=246384",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:40.266Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:51.453Z",
       "officialPlayerId": "q:player:592",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=592",
       "squashLevelsPlayerId": "246384",
@@ -1230,7 +1323,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 2153,
       "squashLevelsLevel": 8033,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:14.979Z",
+      "squashLevelsClubLocation": "Nelson Mandela University ( NMU), Eastern Cape, ZAF"
     },
     {
       "iso3": "RSF",
@@ -1241,7 +1336,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ru",
       "squashLevelsCheckedAt": "2026-08-21T07:27:44.418Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=528596",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:42.129Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:53.323Z",
       "officialPlayerId": "q:player:367",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=367",
       "squashLevelsPlayerId": "528596",
@@ -1251,7 +1346,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 10416,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:15.482Z",
+      "squashLevelsClubLocation": "TBD"
     },
     {
       "iso3": "IND",
@@ -1262,7 +1359,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:27:44.608Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220204",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:43.924Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:55.118Z",
       "officialPlayerId": "q:player:279",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=279",
       "squashLevelsPlayerId": "220204",
@@ -1272,7 +1369,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 960,
       "squashLevelsLevel": 12225,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:15.990Z",
+      "squashLevelsClubLocation": "Tamil Nadu, ENG"
     },
     {
       "iso3": "ENG",
@@ -1283,7 +1382,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:27:44.892Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=53811",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:46.881Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:56.910Z",
       "officialPlayerId": "q:player:890",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=890",
       "squashLevelsPlayerId": "53811",
@@ -1293,7 +1392,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 1685,
       "squashLevelsLevel": 9137,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:16.501Z",
+      "squashLevelsClubLocation": "Hants, ENG"
     },
     {
       "iso3": "AUS",
@@ -1304,7 +1405,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:45.045Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=178809",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:48.701Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:58.720Z",
       "officialPlayerId": "q:player:210",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=210",
       "squashLevelsPlayerId": "178809",
@@ -1314,7 +1415,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 1114,
       "squashLevelsLevel": 11284,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:17.120Z",
+      "squashLevelsClubLocation": "Sandgate, Queensland, AUS"
     },
     {
       "iso3": "EGY",
@@ -1324,7 +1427,7 @@ window.TOURNAMENT_DATA = {
       "country": "Egypt",
       "flagCode": "eg",
       "squashLevelsCheckedAt": "2026-08-21T07:27:45.201Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:53:59.182Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:43.482Z",
       "officialPlayerId": "q:player:926",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=926",
       "squashLevelsWorldRank": null,
@@ -1341,7 +1444,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:45.435Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=215934",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:52.139Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:00.545Z",
       "officialPlayerId": "q:player:141",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=141",
       "squashLevelsPlayerId": "215934",
@@ -1351,7 +1454,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 3527,
       "squashLevelsLevel": 6064,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:17.784Z",
+      "squashLevelsClubLocation": "Cooma Squash Club, New South Wales, AUS"
     },
     {
       "iso3": "SUI",
@@ -1361,7 +1466,7 @@ window.TOURNAMENT_DATA = {
       "country": "Switzerland",
       "flagCode": "ch",
       "squashLevelsCheckedAt": "2026-08-21T07:27:45.575Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:00.055Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:44.154Z",
       "officialPlayerId": "q:player:792",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=792",
       "squashLevelsWorldRank": null,
@@ -1378,7 +1483,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:45.836Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=430968",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:53.996Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:02.393Z",
       "officialPlayerId": "q:player:743",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=743",
       "squashLevelsPlayerId": "430968",
@@ -1388,7 +1493,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 1843,
       "squashLevelsLevel": 8735,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:18.285Z",
+      "squashLevelsClubLocation": "Raymond Terrace, New South Wales, AUS"
     },
     {
       "iso3": "POR",
@@ -1399,18 +1506,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pt",
       "squashLevelsCheckedAt": "2026-08-21T07:27:46.359Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=64057",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:32:55.778Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:04.188Z",
       "squashLevelsWorldRank": 2772,
       "officialPlayerId": "q:player:517",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=517",
       "squashLevelsPlayerId": "64057",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:17:16.719Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:18.874Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:17:19.305Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsLevel": 6916,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Lisbon, PRT"
     },
     {
       "iso3": "AUS",
@@ -1421,7 +1529,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:46.531Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235072",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:00.280Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:05.983Z",
       "squashLevelsWorldRank": 2950,
       "officialPlayerId": "q:player:810",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=810",
@@ -1431,7 +1539,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsLevel": 6686,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:19.377Z",
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -1441,19 +1551,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:46.768Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=172535",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:03.478Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=315417",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:07.881Z",
       "officialPlayerId": "q:player:445",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=445",
-      "squashLevelsPlayerId": "172535",
+      "squashLevelsPlayerId": "315417",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:00:17.950Z",
-      "squashLevelsWorldRank": 6203,
-      "squashLevelsLevel": 4370,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:20.009Z",
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 872,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:00:27.955Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:29:31.850Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Aberdeen Sports Village, Aberdeen City, SCO"
     },
     {
       "iso3": "AUS",
@@ -1464,17 +1575,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:47.295Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222345",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:06.512Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:09.704Z",
       "squashLevelsWorldRank": 4034,
       "officialPlayerId": "q:player:656",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=656",
       "squashLevelsPlayerId": "222345",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:17:19.337Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:29:44.414Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 40,
       "squashLevelsLevel": 5644,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:32.519Z",
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "MAS",
@@ -1485,7 +1598,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "my",
       "squashLevelsCheckedAt": "2026-08-21T07:27:47.476Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=229440",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:09.030Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:11.513Z",
       "officialPlayerId": "q:player:622",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=622",
       "squashLevelsPlayerId": "229440",
@@ -1495,7 +1608,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 4024,
       "squashLevelsLevel": 5652,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:45.076Z",
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "SIN",
@@ -1505,7 +1620,7 @@ window.TOURNAMENT_DATA = {
       "country": "Singapore",
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:27:47.820Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:00.786Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:44.747Z",
       "officialPlayerId": "q:player:202",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=202",
       "squashLevelsWorldRank": null,
@@ -1522,17 +1637,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:27:48.181Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=255800",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:10.855Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:13.305Z",
       "officialPlayerId": "q:player:665",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=665",
       "squashLevelsPlayerId": "255800",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:17:23.504Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:24:16.111Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 3058,
       "squashLevelsLevel": 6539,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:45.617Z",
+      "squashLevelsClubLocation": "Browns Bay, Auckland, NZL"
     },
     {
       "iso3": "PAK",
@@ -1542,7 +1659,7 @@ window.TOURNAMENT_DATA = {
       "country": "Pakistan",
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:27:48.584Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:01.603Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:45.369Z",
       "officialPlayerId": "q:player:626",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=626",
       "squashLevelsWorldRank": null,
@@ -1559,18 +1676,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:48.602Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=49619",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:12.719Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:15.122Z",
       "officialPlayerId": "q:player:534",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=534",
       "squashLevelsPlayerId": "49619",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:17:27.629Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:52.122Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:17:29.717Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 4356,
       "squashLevelsLevel": 5401,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Marlborough College Old Boys, Canterbury, NZL"
     },
     {
       "iso3": "NZL",
@@ -1581,18 +1699,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:48.867Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232896",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:15.278Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:16.946Z",
       "squashLevelsWorldRank": 2728,
       "officialPlayerId": "q:player:298",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=298",
       "squashLevelsPlayerId": "232896",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:00:29.896Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:52.656Z",
       "squashLevelsLevel": 6980,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:00:31.148Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Christchurch, Canterbury, NZL"
     },
     {
       "iso3": "AUS",
@@ -1603,18 +1722,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:49.294Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=168443",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:18.502Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:19.051Z",
       "officialPlayerId": "q:player:841",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=841",
       "squashLevelsPlayerId": "168443",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:17:34.016Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:53.314Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:17:36.154Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": 2543,
       "squashLevelsLevel": 7279,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "RSA",
@@ -1625,18 +1745,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:27:49.276Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=255867",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:22.825Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:20.926Z",
       "squashLevelsWorldRank": 1819,
       "officialPlayerId": "q:player:138",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=138",
       "squashLevelsPlayerId": "255867",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:17:34.497Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:53.930Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:17:36.641Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsLevel": 8800,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Gonubie Squash Club, Eastern Cape, ZAF"
     },
     {
       "iso3": "PAK",
@@ -1646,7 +1767,7 @@ window.TOURNAMENT_DATA = {
       "country": "Pakistan",
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:27:49.520Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:02.446Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:46.055Z",
       "officialPlayerId": "q:player:786",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=786",
       "squashLevelsWorldRank": null,
@@ -1663,18 +1784,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:49.909Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=240095",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:27.560Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:22.778Z",
       "officialPlayerId": "q:player:736",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=736",
       "squashLevelsPlayerId": "240095",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:00:32.271Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:54.465Z",
       "squashLevelsWorldRank": 6628,
       "squashLevelsLevel": 4185,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:00:33.520Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Dickson Squash Club, Australian Capital Territory, AUS"
     },
     {
       "iso3": "AUS",
@@ -1685,18 +1807,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:49.949Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438863",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:29.453Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:24.707Z",
       "officialPlayerId": "q:player:303",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=303",
       "squashLevelsPlayerId": "438863",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:17:39.600Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:17:41.632Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:29:55.050Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:24:30.277Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2263,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Coolhurst, Middx, ENG"
     },
     {
       "iso3": "AUS",
@@ -1707,18 +1830,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:50.135Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=466283",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:31.599Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:26.491Z",
       "squashLevelsWorldRank": 32677,
       "officialPlayerId": "q:player:80",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=80",
       "squashLevelsPlayerId": "466283",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:17:40.118Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:07.670Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:17:42.168Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsLevel": 1049,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Vic Park, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -1729,7 +1853,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:50.451Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222202",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:33.403Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:28.282Z",
       "officialPlayerId": "q:player:985",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=985",
       "squashLevelsPlayerId": "222202",
@@ -1739,7 +1863,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 6221,
       "squashLevelsLevel": 4361,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:08.209Z",
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -1750,7 +1876,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:50.528Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=423459",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:35.207Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:30.096Z",
       "officialPlayerId": "q:player:904",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=904",
       "squashLevelsPlayerId": "423459",
@@ -1760,7 +1886,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 13388,
       "squashLevelsLevel": 2575,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:08.813Z",
+      "squashLevelsClubLocation": "Raymond Terrace, New South Wales, AUS"
     },
     {
       "iso3": "SUI",
@@ -1771,18 +1899,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ch",
       "squashLevelsCheckedAt": "2026-08-21T07:27:50.709Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=158801",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:37.102Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:31.962Z",
       "officialPlayerId": "q:player:98",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=98",
       "squashLevelsPlayerId": "158801",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:00:34.020Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:09.346Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2443,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:00:35.262Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Tring, Herts, ENG"
     },
     {
       "iso3": "AUS",
@@ -1792,7 +1921,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:51.020Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:03.236Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:46.909Z",
       "officialPlayerId": "q:player:699",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=699",
       "squashLevelsWorldRank": null,
@@ -1809,7 +1938,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:51.100Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233513",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:38.913Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:33.748Z",
       "officialPlayerId": "q:player:907",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=907",
       "squashLevelsPlayerId": "233513",
@@ -1819,7 +1948,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 8224,
       "squashLevelsLevel": 3635,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:09.867Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -1830,7 +1961,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:51.248Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=468336",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:40.705Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:35.552Z",
       "officialPlayerId": "q:player:359",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=359",
       "squashLevelsPlayerId": "468336",
@@ -1840,7 +1971,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 23227,
       "squashLevelsLevel": 1600,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:10.406Z",
+      "squashLevelsClubLocation": "Vic Park, Western Australia, AUS"
     },
     {
       "iso3": "NZL",
@@ -1851,7 +1984,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:51.617Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228354",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:42.578Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:37.408Z",
       "officialPlayerId": "q:player:652",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=652",
       "squashLevelsPlayerId": "228354",
@@ -1861,7 +1994,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3976,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:10.922Z",
+      "squashLevelsClubLocation": "Hong Kong Cricket Club, Hong Kong Island, HKG"
     },
     {
       "iso3": "AUS",
@@ -1872,17 +2007,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:51.775Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=148805",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:44.377Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:39.197Z",
       "officialPlayerId": "q:player:867",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=867",
       "squashLevelsPlayerId": "148805",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:17:50.567Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:24:40.046Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 4516,
       "squashLevelsLevel": 5292,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:11.762Z",
+      "squashLevelsClubLocation": "Brisbane City, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -1893,7 +2030,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:51.852Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234270",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:46.266Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:41.074Z",
       "officialPlayerId": "q:player:709",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=709",
       "squashLevelsPlayerId": "234270",
@@ -1903,7 +2040,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2388,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:18.307Z",
+      "squashLevelsClubLocation": "Royal Kings Park, Western Australia, AUS"
     },
     {
       "iso3": "PAK",
@@ -1913,7 +2052,7 @@ window.TOURNAMENT_DATA = {
       "country": "Pakistan",
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:27:52.228Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:04.028Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:47.516Z",
       "officialPlayerId": "q:player:589",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=589",
       "squashLevelsWorldRank": null,
@@ -1930,7 +2069,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:52.323Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233279",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:48.054Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:42.877Z",
       "squashLevelsWorldRank": 6258,
       "officialPlayerId": "q:player:372",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=372",
@@ -1940,7 +2079,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsLevel": 4344,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:18.809Z",
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -1950,7 +2091,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:52.463Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:04.854Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:48.236Z",
       "officialPlayerId": "q:player:818",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=818",
       "squashLevelsWorldRank": null,
@@ -1967,7 +2108,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:52.758Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220037",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:49.854Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:44.690Z",
       "officialPlayerId": "q:player:15",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=15",
       "squashLevelsPlayerId": "220037",
@@ -1977,7 +2118,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 15091,
       "squashLevelsLevel": 2348,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:19.395Z",
+      "squashLevelsClubLocation": "Acacia Ridge, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -1988,7 +2131,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:52.936Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220814",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:51.697Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:46.499Z",
       "officialPlayerId": "q:player:147",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=147",
       "squashLevelsPlayerId": "220814",
@@ -1998,7 +2141,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 22232,
       "squashLevelsLevel": 1675,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:19.990Z",
+      "squashLevelsClubLocation": "Vic Park, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -2009,18 +2154,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:52.985Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218534",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:53.495Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:48.331Z",
       "officialPlayerId": "q:player:830",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=830",
       "squashLevelsPlayerId": "218534",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:17:56.368Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:20.513Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:17:58.466Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 26141,
       "squashLevelsLevel": 1409,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "RSA",
@@ -2031,7 +2177,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:27:53.323Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=230658",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:55.293Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:50.137Z",
       "officialPlayerId": "q:player:532",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=532",
       "squashLevelsPlayerId": "230658",
@@ -2041,7 +2187,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 7436,
       "squashLevelsLevel": 3892,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:21.088Z",
+      "squashLevelsClubLocation": "Daisy Hill, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -2051,7 +2199,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:53.528Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:53:43.001Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:21.608Z",
       "officialPlayerId": "q:player:133",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=133",
       "squashLevelsWorldRank": 12750,
@@ -2063,7 +2211,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:53:44.172Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 40,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:57.094Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:51.961Z",
+      "squashLevelsClubLocation": "Ballarat & Racquetball, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -2074,7 +2223,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:53.523Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=500400",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:33:58.910Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:53.749Z",
       "officialPlayerId": "q:player:262",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=262",
       "squashLevelsPlayerId": "500400",
@@ -2084,7 +2233,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 34062,
       "squashLevelsLevel": 981,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:22.120Z",
+      "squashLevelsClubLocation": "Cambridge, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -2094,19 +2245,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:53.853Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=457702",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:00.845Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=37286",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:55.612Z",
       "officialPlayerId": "q:player:95",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=95",
-      "squashLevelsPlayerId": "457702",
+      "squashLevelsPlayerId": "37286",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:17:59.493Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:18:06.087Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:22.635Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:24:49.828Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
-      "squashLevelsWorldRank": 32258,
-      "squashLevelsLevel": 1071,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 2001,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Stourport, Worcs, ENG"
     },
     {
       "iso3": "AUS",
@@ -2117,17 +2269,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:54.129Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=260256",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:02.635Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:57.417Z",
       "officialPlayerId": "q:player:21",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=21",
       "squashLevelsPlayerId": "260256",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:18:00.790Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:24:52.944Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 13474,
       "squashLevelsLevel": 2562,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:26.098Z",
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -2138,17 +2292,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:54.133Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235483",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:04.514Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:59.202Z",
       "officialPlayerId": "q:player:891",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=891",
       "squashLevelsPlayerId": "235483",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:18:01.453Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:24:56.048Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": 30313,
       "squashLevelsLevel": 1170,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:29.616Z",
+      "squashLevelsClubLocation": "Canterbury Leagues, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -2159,18 +2315,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:54.390Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=130951",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:06.532Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:01.102Z",
       "officialPlayerId": "q:player:310",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=310",
       "squashLevelsPlayerId": "130951",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:00:37.854Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:33.071Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 947,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:00:41.606Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:25:00.412Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "OWs, Northants, ENG"
     },
     {
       "iso3": "NZL",
@@ -2180,7 +2337,7 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:54.649Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:07.032Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:48.870Z",
       "officialPlayerId": "q:player:893",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=893",
       "squashLevelsWorldRank": null,
@@ -2197,18 +2354,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:27:54.664Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=60671",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:08.412Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:02.965Z",
       "officialPlayerId": "q:player:896",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=896",
       "squashLevelsPlayerId": "60671",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:00:42.616Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:38.457Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2517,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:00:47.606Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:25:07.210Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Forres, Moray, SCO"
     },
     {
       "iso3": "AUS",
@@ -2218,18 +2376,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:54.943Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=311575",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:10.221Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232235",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:04.835Z",
       "officialPlayerId": "q:player:780",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=780",
-      "squashLevelsPlayerId": "311575",
+      "squashLevelsPlayerId": "232235",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:18:09.518Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:30:49.558Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 40,
-      "squashLevelsWorldRank": 8599,
-      "squashLevelsLevel": 3536,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 794,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:45.034Z",
+      "squashLevelsClubLocation": "Devonport, Tasmania, AUS"
     },
     {
       "iso3": "ENG",
@@ -2240,7 +2400,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:27:55.294Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=141443",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:12.017Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:09.121Z",
       "officialPlayerId": "q:player:539",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=539",
       "squashLevelsPlayerId": "141443",
@@ -2250,7 +2410,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 18826,
       "squashLevelsLevel": 1951,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:50.554Z",
+      "squashLevelsClubLocation": "Tanglin Club, SGP"
     },
     {
       "iso3": "NZL",
@@ -2261,7 +2423,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:55.193Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=25942",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:13.890Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:11.279Z",
       "officialPlayerId": "q:player:637",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=637",
       "squashLevelsPlayerId": "25942",
@@ -2271,7 +2433,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3516,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:51.134Z",
+      "squashLevelsClubLocation": "Mount Maunganui, Bay of Plenty, NZL"
     },
     {
       "iso3": "AUS",
@@ -2282,18 +2446,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:55.470Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=24599",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:15.732Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:13.076Z",
       "officialPlayerId": "q:player:756",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=756",
       "squashLevelsPlayerId": "24599",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:18:17.015Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:51.680Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:18:19.119Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 778,
       "squashLevelsLevel": 3034,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Kooyong, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -2304,18 +2469,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:55.717Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=27354",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:17.526Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:14.884Z",
       "officialPlayerId": "q:player:161",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=161",
       "squashLevelsPlayerId": "27354",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:18:18.355Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:52.331Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:18:20.529Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 683,
       "squashLevelsLevel": 3268,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Scarborough Squash Club, Queensland, AUS"
     },
     {
       "iso3": "NZL",
@@ -2325,7 +2491,7 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:55.933Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:53:45.506Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:52.987Z",
       "officialPlayerId": "q:player:561",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=561",
       "squashLevelsWorldRank": 754,
@@ -2337,7 +2503,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:53:45.951Z",
       "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 40,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:19.314Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:16.665Z",
+      "squashLevelsClubLocation": "Mount Maunganui, Bay of Plenty, NZL"
     },
     {
       "iso3": "AUS",
@@ -2348,18 +2515,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:56.096Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235986",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:21.107Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:18.466Z",
       "officialPlayerId": "q:player:348",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=348",
       "squashLevelsPlayerId": "235986",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:18:18.525Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:53.716Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:18:20.906Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 2233,
       "squashLevelsLevel": 1303,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Darwin, Northern Territory, AUS"
     },
     {
       "iso3": "NZL",
@@ -2369,7 +2537,7 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:56.326Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:07.803Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:49.385Z",
       "officialPlayerId": "q:player:591",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=591",
       "squashLevelsWorldRank": null,
@@ -2386,7 +2554,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "bb",
       "squashLevelsCheckedAt": "2026-08-21T07:27:56.593Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=315323",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:23.052Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:20.344Z",
       "officialPlayerId": "q:player:972",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=972",
       "squashLevelsPlayerId": "315323",
@@ -2396,7 +2564,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1319,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:54.400Z",
+      "squashLevelsClubLocation": "Christ Church, BRB"
     },
     {
       "iso3": "AUS",
@@ -2406,7 +2576,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:56.671Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:08.568Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:49.948Z",
       "officialPlayerId": "q:player:973",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=973",
       "squashLevelsWorldRank": null,
@@ -2423,7 +2593,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:56.869Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219413",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:24.845Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:22.153Z",
       "officialPlayerId": "q:player:609",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=609",
       "squashLevelsPlayerId": "219413",
@@ -2433,7 +2603,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 4769,
       "squashLevelsLevel": 534,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:55.014Z",
+      "squashLevelsClubLocation": "Vic Park, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -2444,7 +2616,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:57.125Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222112",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:26.629Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:23.943Z",
       "officialPlayerId": "q:player:9",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=9",
       "squashLevelsPlayerId": "222112",
@@ -2454,7 +2626,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 4928,
       "squashLevelsLevel": 510,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:55.623Z",
+      "squashLevelsClubLocation": "Busselton Squash Club, Western Australia, AUS"
     },
     {
       "iso3": "NZL",
@@ -2465,7 +2639,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:27:57.286Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=402099",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:28.421Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:26.906Z",
       "officialPlayerId": "q:player:584",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=584",
       "squashLevelsPlayerId": "402099",
@@ -2475,7 +2649,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 3698,
       "squashLevelsLevel": 756,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:56.249Z",
+      "squashLevelsClubLocation": "Bay of Plenty, NZL"
     },
     {
       "iso3": "AUS",
@@ -2485,7 +2661,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:57.390Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:09.391Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:50.505Z",
       "officialPlayerId": "q:player:662",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=662",
       "squashLevelsWorldRank": null,
@@ -2502,7 +2678,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:57.723Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233243",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:30.207Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:28.733Z",
       "officialPlayerId": "q:player:331",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=331",
       "squashLevelsPlayerId": "233243",
@@ -2512,7 +2688,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 40,
       "squashLevelsWorldRank": 5075,
       "squashLevelsLevel": 486,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:56.770Z",
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "SIN",
@@ -2522,7 +2700,7 @@ window.TOURNAMENT_DATA = {
       "country": "Singapore",
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:27:57.817Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:10.161Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:51.031Z",
       "officialPlayerId": "q:player:396",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=396",
       "squashLevelsWorldRank": null,
@@ -2538,7 +2716,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:57.954Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:10.934Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:57.320Z",
       "officialPlayerId": "q:player:777",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=777",
       "squashLevelsWorldRank": "TBD",
@@ -2550,7 +2728,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-27T20:54:13.874Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": null,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:40.294Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:39.085Z",
+      "squashLevelsClubLocation": ""
     },
     {
       "iso3": "ENG",
@@ -2561,17 +2740,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:27:58.252Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=426223",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:42.100Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:40.892Z",
       "squashLevelsWorldRank": 349,
       "officialPlayerId": "q:player:930",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=930",
       "squashLevelsPlayerId": "426223",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:18:27.818Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:25:22.030Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsLevel": 20021,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:30:57.930Z",
+      "squashLevelsClubLocation": "Cleaver, Leics, ENG"
     },
     {
       "iso3": "NED",
@@ -2582,7 +2763,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nl",
       "squashLevelsCheckedAt": "2026-08-21T07:27:58.339Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=216408",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:43.931Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:42.698Z",
       "officialPlayerId": "q:player:986",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=986",
       "squashLevelsPlayerId": "216408",
@@ -2592,7 +2773,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 743,
       "squashLevelsLevel": 14123,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:01.452Z",
+      "squashLevelsClubLocation": "Squash Utrecht, Utrecht, NLD"
     },
     {
       "iso3": "ESP",
@@ -2603,7 +2786,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "es",
       "squashLevelsCheckedAt": "2026-08-21T07:27:58.570Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=48070",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:45.825Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:44.594Z",
       "officialPlayerId": "q:player:333",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=333",
       "squashLevelsPlayerId": "48070",
@@ -2613,7 +2796,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 11776,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:01.959Z",
+      "squashLevelsClubLocation": "Comunitat Valenciana, ESP"
     },
     {
       "iso3": "HKG",
@@ -2624,18 +2809,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "hk",
       "squashLevelsCheckedAt": "2026-08-21T07:27:58.874Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=19246",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:47.724Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:46.447Z",
       "officialPlayerId": "q:player:723",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=723",
       "squashLevelsPlayerId": "19246",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:00:51.696Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:02.545Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 659,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:00:54.180Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:25:26.276Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "TBD"
     },
     {
       "iso3": "IND",
@@ -2646,7 +2832,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:27:58.889Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220462",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:49.539Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:48.256Z",
       "officialPlayerId": "q:player:428",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=428",
       "squashLevelsPlayerId": "220462",
@@ -2656,7 +2842,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 531,
       "squashLevelsLevel": 16569,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:06.064Z",
+      "squashLevelsClubLocation": "Karnataka, IND"
     },
     {
       "iso3": "AUS",
@@ -2667,7 +2855,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:59.139Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=156973",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:51.338Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:50.355Z",
       "officialPlayerId": "q:player:915",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=915",
       "squashLevelsPlayerId": "156973",
@@ -2677,7 +2865,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 1187,
       "squashLevelsLevel": 10942,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:06.660Z",
+      "squashLevelsClubLocation": "Southport Squash Club, Queensland, AUS"
     },
     {
       "iso3": "USA",
@@ -2688,7 +2878,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:27:59.518Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=27678",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:53.213Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:52.244Z",
       "officialPlayerId": "q:player:132",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=132",
       "squashLevelsPlayerId": "27678",
@@ -2698,7 +2888,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 11413,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:07.315Z",
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "GER",
@@ -2709,7 +2901,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:27:59.518Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=257005",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:55.016Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:54.030Z",
       "officialPlayerId": "q:player:313",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=313",
       "squashLevelsPlayerId": "257005",
@@ -2719,7 +2911,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 1488,
       "squashLevelsLevel": 9755,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:07.853Z",
+      "squashLevelsClubLocation": "Airport Squash, Berlin-Brandenburg, ENG"
     },
     {
       "iso3": "AUS",
@@ -2730,17 +2924,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:27:59.675Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238318",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:56.817Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:55.826Z",
       "officialPlayerId": "q:player:355",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=355",
       "squashLevelsPlayerId": "238318",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:18:36.964Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:31:11.876Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 3028,
       "squashLevelsLevel": 6575,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:08.922Z",
+      "squashLevelsClubLocation": "Sandgate, Queensland, AUS"
     },
     {
       "iso3": "BRA",
@@ -2751,7 +2947,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "br",
       "squashLevelsCheckedAt": "2026-08-21T07:28:00.165Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=256537",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:34:58.805Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:57.700Z",
       "officialPlayerId": "q:player:370",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=370",
       "squashLevelsPlayerId": "256537",
@@ -2761,7 +2957,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 7738,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:12.405Z",
+      "squashLevelsClubLocation": "Paissandu Atlético Clube, Rio de Janeiro, BRA"
     },
     {
       "iso3": "PAK",
@@ -2772,17 +2970,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:00.138Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438625",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:00.697Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:59.555Z",
       "officialPlayerId": "q:player:195",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=195",
       "squashLevelsPlayerId": "438625",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:18:38.961Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:31:15.928Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 5429,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:13.012Z",
+      "squashLevelsClubLocation": "PAK"
     },
     {
       "iso3": "SRI",
@@ -2793,18 +2993,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "lk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:00.241Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=421637",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:02.583Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:01.443Z",
       "officialPlayerId": "q:player:944",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=944",
       "squashLevelsPlayerId": "421637",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:00:54.687Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:16.491Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 8675,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:00:55.930Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "LKA"
     },
     {
       "iso3": "AUS",
@@ -2815,7 +3016,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:00.766Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=180795",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:04.380Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:03.236Z",
       "officialPlayerId": "q:player:884",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=884",
       "squashLevelsPlayerId": "180795",
@@ -2825,7 +3026,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 5584,
       "squashLevelsLevel": 4678,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:17.116Z",
+      "squashLevelsClubLocation": "Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -2836,7 +3039,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:00.792Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=162741",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:06.198Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:05.032Z",
       "officialPlayerId": "q:player:116",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=116",
       "squashLevelsPlayerId": "162741",
@@ -2846,7 +3049,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 5481,
       "squashLevelsLevel": 4736,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:17.631Z",
+      "squashLevelsClubLocation": "Wodonga Squash & Racquetball Assoc, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -2857,7 +3062,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:00.851Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219109",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:08.004Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:06.847Z",
       "officialPlayerId": "q:player:190",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=190",
       "squashLevelsPlayerId": "219109",
@@ -2867,7 +3072,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 5129,
       "squashLevelsLevel": 4929,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:18.135Z",
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "NZL",
@@ -2878,7 +3085,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:01.405Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219340",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:09.805Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:09.016Z",
       "officialPlayerId": "q:player:851",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=851",
       "squashLevelsPlayerId": "219340",
@@ -2888,7 +3095,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 3327,
       "squashLevelsLevel": 6240,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:18.651Z",
+      "squashLevelsClubLocation": "Blue Gum, Western Australia, NZL"
     },
     {
       "iso3": "BRA",
@@ -2899,7 +3108,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "br",
       "squashLevelsCheckedAt": "2026-08-21T07:28:01.414Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=361633",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:11.704Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:12.014Z",
       "officialPlayerId": "q:player:266",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=266",
       "squashLevelsPlayerId": "361633",
@@ -2909,7 +3118,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 4348,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:19.282Z",
+      "squashLevelsClubLocation": "Clube Campestre de Nogueira, Rio de Janeiro, BRA"
     },
     {
       "iso3": "RSA",
@@ -2920,7 +3131,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:01.383Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=226274",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:13.501Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:13.815Z",
       "officialPlayerId": "q:player:54",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=54",
       "squashLevelsPlayerId": "226274",
@@ -2930,7 +3141,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 8184,
       "squashLevelsLevel": 3648,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:19.822Z",
+      "squashLevelsClubLocation": "Dural, New South Wales, AUS"
     },
     {
       "iso3": "NAM",
@@ -2940,19 +3153,20 @@ window.TOURNAMENT_DATA = {
       "country": "Namibia",
       "flagCode": "na",
       "squashLevelsCheckedAt": "2026-08-21T07:28:02.039Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=420981",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:15.398Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=328174",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:15.680Z",
       "officialPlayerId": "q:player:737",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=737",
-      "squashLevelsPlayerId": "420981",
+      "squashLevelsPlayerId": "328174",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:18:49.146Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:18:54.114Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:20.385Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:25:46.614Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 675,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 992,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Hermanus, Western Cape, ZAF"
     },
     {
       "iso3": "AUS",
@@ -2963,7 +3177,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:02.030Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=216140",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:18.241Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:17.506Z",
       "officialPlayerId": "q:player:465",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=465",
       "squashLevelsPlayerId": "216140",
@@ -2971,9 +3185,11 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:18:48.423Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": 6296,
       "squashLevelsLevel": 4327,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:28.602Z",
+      "squashLevelsClubLocation": "Dgen, New South Wales, AUS"
     },
     {
       "iso3": "CAN",
@@ -2984,7 +3200,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:28:01.950Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=50540",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:20.359Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:19.379Z",
       "officialPlayerId": "q:player:291",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=291",
       "squashLevelsPlayerId": "50540",
@@ -2994,7 +3210,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 4212,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:29.157Z",
+      "squashLevelsClubLocation": "Contenders Athletic, British Columbia, CAN"
     },
     {
       "iso3": "AUS",
@@ -3005,7 +3223,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:02.553Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=239626",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:22.276Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:21.157Z",
       "officialPlayerId": "q:player:514",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=514",
       "squashLevelsPlayerId": "239626",
@@ -3013,9 +3231,11 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:18:51.557Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": 5221,
       "squashLevelsLevel": 4873,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:29.697Z",
+      "squashLevelsClubLocation": "Maroochy, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -3026,18 +3246,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:02.614Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=277007",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:24.215Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:23.061Z",
       "officialPlayerId": "q:player:552",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=552",
       "squashLevelsPlayerId": "277007",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:00:56.435Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:30.308Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 354,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:00:57.686Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Devon & Exeter, Devon, ENG"
     },
     {
       "iso3": "NED",
@@ -3048,7 +3269,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nl",
       "squashLevelsCheckedAt": "2026-08-21T07:28:02.554Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=353773",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:26.023Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:24.886Z",
       "officialPlayerId": "q:player:379",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=379",
       "squashLevelsPlayerId": "353773",
@@ -3058,7 +3279,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 7413,
       "squashLevelsLevel": 3897,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:30.871Z",
+      "squashLevelsClubLocation": "Frans Otten Stadion, Noord-Holland, NLD"
     },
     {
       "iso3": "USA",
@@ -3069,7 +3292,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:28:03.105Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438655",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:27.922Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:26.784Z",
       "officialPlayerId": "q:player:558",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=558",
       "squashLevelsPlayerId": "438655",
@@ -3079,7 +3302,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3928,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:31.782Z",
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "RSA",
@@ -3090,18 +3315,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:03.140Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=65963",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:29.710Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:28.580Z",
       "officialPlayerId": "q:player:955",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=955",
       "squashLevelsPlayerId": "65963",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:18:58.487Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:00.521Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:32.858Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:25:54.978Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 8010,
       "squashLevelsLevel": 3695,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Wanderers Squash Club (Sandton), Gauteng, ZAF"
     },
     {
       "iso3": "NZL",
@@ -3111,19 +3337,20 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:03.223Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=379186",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:31.503Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=50847",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:30.441Z",
       "officialPlayerId": "q:player:667",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=667",
-      "squashLevelsPlayerId": "379186",
+      "squashLevelsPlayerId": "50847",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:18:58.580Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:04.051Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:38.333Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:25:58.009Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
-      "squashLevelsWorldRank": 7532,
-      "squashLevelsLevel": 3859,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 9778,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "NZL"
     },
     {
       "iso3": "MEX",
@@ -3134,7 +3361,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "mx",
       "squashLevelsCheckedAt": "2026-08-21T07:28:03.670Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=5125",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:33.327Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:32.227Z",
       "officialPlayerId": "q:player:390",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=390",
       "squashLevelsPlayerId": "5125",
@@ -3144,7 +3371,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 8417,
       "squashLevelsLevel": 3582,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:41.858Z",
+      "squashLevelsClubLocation": "MEX"
     },
     {
       "iso3": "ENG",
@@ -3155,7 +3384,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:28:03.723Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238845",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:35.151Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:34.320Z",
       "officialPlayerId": "q:player:168",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=168",
       "squashLevelsPlayerId": "238845",
@@ -3165,7 +3394,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 5198,
       "squashLevelsLevel": 4886,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:42.424Z",
+      "squashLevelsClubLocation": "Westerfolds, Victoria, AUS"
     },
     {
       "iso3": "IND",
@@ -3176,7 +3407,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:28:03.779Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=330723",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:37.034Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:36.201Z",
       "officialPlayerId": "q:player:143",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=143",
       "squashLevelsPlayerId": "330723",
@@ -3186,7 +3417,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 5146,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:42.980Z",
+      "squashLevelsClubLocation": "Maharashtra, IND"
     },
     {
       "iso3": "AUS",
@@ -3197,17 +3430,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:04.224Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=364913",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:38.912Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:38.087Z",
       "officialPlayerId": "q:player:189",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=189",
       "squashLevelsPlayerId": "364913",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:06.593Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:31:47.977Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 148,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:43.520Z",
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "IND",
@@ -3217,18 +3452,20 @@ window.TOURNAMENT_DATA = {
       "country": "India",
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:28:04.317Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=126487",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:40.839Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=126315",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:48.147Z",
       "officialPlayerId": "q:player:459",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=459",
-      "squashLevelsPlayerId": "126487",
+      "squashLevelsPlayerId": "126315",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:07.160Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:31:51.892Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 6998,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": null,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:48.939Z",
+      "squashLevelsClubLocation": "Maharashtra, IND"
     },
     {
       "iso3": "PAK",
@@ -3238,7 +3475,7 @@ window.TOURNAMENT_DATA = {
       "country": "Pakistan",
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:04.332Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:14.282Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:51.562Z",
       "officialPlayerId": "q:player:541",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=541",
       "squashLevelsWorldRank": null,
@@ -3255,7 +3492,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:28:04.856Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=447873",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:42.749Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:50.383Z",
       "officialPlayerId": "q:player:151",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=151",
       "squashLevelsPlayerId": "447873",
@@ -3265,7 +3502,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2761,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:52.403Z",
+      "squashLevelsClubLocation": "Kowloon, HKG"
     },
     {
       "iso3": "IRL",
@@ -3276,17 +3515,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ie",
       "squashLevelsCheckedAt": "2026-08-21T07:28:04.946Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=237498",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:44.542Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:52.219Z",
       "officialPlayerId": "q:player:932",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=932",
       "squashLevelsPlayerId": "237498",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:09.431Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:31:55.952Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 27103,
       "squashLevelsLevel": 1350,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:52.920Z",
+      "squashLevelsClubLocation": "Daisy Hill, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -3297,17 +3538,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:04.961Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=82069",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:46.363Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:54.053Z",
       "officialPlayerId": "q:player:357",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=357",
       "squashLevelsPlayerId": "82069",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:11.618Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:26:18.317Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 12845,
       "squashLevelsLevel": 2657,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:31:56.495Z",
+      "squashLevelsClubLocation": "Hunts County, Cambs, ENG"
     },
     {
       "iso3": "RSA",
@@ -3318,7 +3561,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:05.473Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=303328",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:48.164Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:55.868Z",
       "officialPlayerId": "q:player:419",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=419",
       "squashLevelsPlayerId": "303328",
@@ -3328,7 +3571,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 14593,
       "squashLevelsLevel": 2412,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:02.984Z",
+      "squashLevelsClubLocation": "Beacon Bay, Eastern Cape, ZAF"
     },
     {
       "iso3": "SLE",
@@ -3338,7 +3583,7 @@ window.TOURNAMENT_DATA = {
       "country": "Sierra Leone",
       "flagCode": "sl",
       "squashLevelsCheckedAt": "2026-08-21T07:28:05.591Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:15.023Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:52.075Z",
       "officialPlayerId": "q:player:489",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=489",
       "squashLevelsWorldRank": null,
@@ -3355,7 +3600,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:05.574Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=262874",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:35:58.209Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:05.916Z",
       "officialPlayerId": "q:player:42",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=42",
       "squashLevelsPlayerId": "262874",
@@ -3365,7 +3610,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": null,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:03.579Z",
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "AUS",
@@ -3376,17 +3623,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:06.114Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218625",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:00.047Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:07.741Z",
       "officialPlayerId": "q:player:254",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=254",
       "squashLevelsPlayerId": "218625",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:14.181Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:26:24.900Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 25932,
       "squashLevelsLevel": 1423,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:04.190Z",
+      "squashLevelsClubLocation": "Cambridge, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -3397,7 +3646,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:06.226Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=253818",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:01.901Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:09.542Z",
       "squashLevelsWorldRank": 49253,
       "officialPlayerId": "q:player:27",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=27",
@@ -3407,7 +3656,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsLevel": 402,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:07.721Z",
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -3418,7 +3669,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:06.263Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238400",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:03.735Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:11.380Z",
       "squashLevelsWorldRank": 29926,
       "officialPlayerId": "q:player:491",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=491",
@@ -3428,7 +3679,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsLevel": 1190,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:08.239Z",
+      "squashLevelsClubLocation": "Belmont Saints, Western Australia, AUS"
     },
     {
       "iso3": "SLE",
@@ -3439,18 +3692,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sl",
       "squashLevelsCheckedAt": "2026-08-21T07:28:06.653Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=39409",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:13.805Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:21.294Z",
       "officialPlayerId": "q:player:360",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=360",
       "squashLevelsPlayerId": "39409",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:00:59.356Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:08.769Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:01:00.592Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "SLE"
     },
     {
       "iso3": "NOR",
@@ -3461,18 +3715,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "no",
       "squashLevelsCheckedAt": "2026-08-21T07:28:06.790Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=181851",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:15.712Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:23.161Z",
       "officialPlayerId": "q:player:941",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=941",
       "squashLevelsPlayerId": "181851",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:01:01.133Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:09.305Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1998,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:01:02.368Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "NOR"
     },
     {
       "iso3": "AUS",
@@ -3483,7 +3738,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:06.818Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=214189",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:17.520Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:24.959Z",
       "officialPlayerId": "q:player:197",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=197",
       "squashLevelsPlayerId": "214189",
@@ -3493,7 +3748,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 9557,
       "squashLevelsLevel": 3290,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:09.832Z",
+      "squashLevelsClubLocation": "Dapto Squash Club, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -3504,7 +3761,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:07.201Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=260370",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:19.342Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:26.750Z",
       "officialPlayerId": "q:player:707",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=707",
       "squashLevelsPlayerId": "260370",
@@ -3514,7 +3771,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 17396,
       "squashLevelsLevel": 2091,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:10.351Z",
+      "squashLevelsClubLocation": "RACV, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -3525,7 +3784,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:07.324Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233898",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:21.304Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:28.545Z",
       "officialPlayerId": "q:player:587",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=587",
       "squashLevelsPlayerId": "233898",
@@ -3533,9 +3792,11 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:24.396Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": 9129,
       "squashLevelsLevel": 3394,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:10.865Z",
+      "squashLevelsClubLocation": "Dapto Squash Club, New South Wales, AUS"
     },
     {
       "iso3": "SLE",
@@ -3545,7 +3806,7 @@ window.TOURNAMENT_DATA = {
       "country": "Sierra Leone",
       "flagCode": "sl",
       "squashLevelsCheckedAt": "2026-08-21T07:28:07.359Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:15.779Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:52.593Z",
       "officialPlayerId": "q:player:497",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=497",
       "squashLevelsWorldRank": null,
@@ -3561,7 +3822,7 @@ window.TOURNAMENT_DATA = {
       "country": "Pakistan",
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:07.715Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:17.490Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:54.616Z",
       "officialPlayerId": "q:player:871",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=871",
       "squashLevelsWorldRank": null,
@@ -3577,7 +3838,7 @@ window.TOURNAMENT_DATA = {
       "country": "Pakistan",
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:07.919Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:18.256Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:55.152Z",
       "officialPlayerId": "q:player:590",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=590",
       "squashLevelsWorldRank": null,
@@ -3593,7 +3854,7 @@ window.TOURNAMENT_DATA = {
       "country": "Pakistan",
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:07.955Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:19.249Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:55.747Z",
       "officialPlayerId": "q:player:814",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=814",
       "squashLevelsWorldRank": null,
@@ -3610,7 +3871,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:08.252Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238855",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:23.254Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:30.338Z",
       "officialPlayerId": "q:player:660",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=660",
       "squashLevelsPlayerId": "238855",
@@ -3618,9 +3879,11 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:24.711Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": 23754,
       "squashLevelsLevel": 1561,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:11.379Z",
+      "squashLevelsClubLocation": "Canterbury Leagues, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -3631,7 +3894,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:08.503Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233866",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:25.645Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:32.138Z",
       "officialPlayerId": "q:player:221",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=221",
       "squashLevelsPlayerId": "233866",
@@ -3641,7 +3904,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 11516,
       "squashLevelsLevel": 2887,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:11.898Z",
+      "squashLevelsClubLocation": "Cardiff, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -3652,7 +3917,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:08.572Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228926",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:27.457Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:33.956Z",
       "officialPlayerId": "q:player:765",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=765",
       "squashLevelsPlayerId": "228926",
@@ -3662,7 +3927,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 27181,
       "squashLevelsLevel": 1346,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:12.432Z",
+      "squashLevelsClubLocation": "Daisy Hill, Queensland, AUS"
     },
     {
       "iso3": "PAK",
@@ -3672,7 +3939,7 @@ window.TOURNAMENT_DATA = {
       "country": "Pakistan",
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:08.816Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:20.139Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:56.496Z",
       "officialPlayerId": "q:player:879",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=879",
       "squashLevelsWorldRank": null,
@@ -3688,7 +3955,7 @@ window.TOURNAMENT_DATA = {
       "country": "Mauritius",
       "flagCode": "mu",
       "squashLevelsCheckedAt": "2026-08-21T07:28:09.134Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:21.046Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:57.067Z",
       "officialPlayerId": "q:player:391",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=391",
       "squashLevelsWorldRank": null,
@@ -3704,7 +3971,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:09.280Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:21.856Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:57.611Z",
       "officialPlayerId": "q:player:261",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=261",
       "squashLevelsWorldRank": null,
@@ -3721,7 +3988,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:09.456Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222459",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:29.366Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:35.834Z",
       "officialPlayerId": "q:player:773",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=773",
       "squashLevelsPlayerId": "222459",
@@ -3731,7 +3998,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3430,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:12.993Z",
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "MAS",
@@ -3742,7 +4011,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "my",
       "squashLevelsCheckedAt": "2026-08-21T07:28:09.773Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=318216",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:31.163Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:37.639Z",
       "officialPlayerId": "q:player:681",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=681",
       "squashLevelsPlayerId": "318216",
@@ -3752,7 +4021,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 15836,
       "squashLevelsLevel": 2260,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:13.569Z",
+      "squashLevelsClubLocation": "KLCC Squash, Kuala Lumpur, MYS"
     },
     {
       "iso3": "AUS",
@@ -3763,7 +4034,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:09.978Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=531305",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:32.988Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:39.446Z",
       "officialPlayerId": "q:player:779",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=779",
       "squashLevelsPlayerId": "531305",
@@ -3773,7 +4044,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 9327,
       "squashLevelsLevel": 3338,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:14.149Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "SIN",
@@ -3784,18 +4057,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:28:10.160Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=513460",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:34.870Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:41.302Z",
       "officialPlayerId": "q:player:265",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=265",
       "squashLevelsPlayerId": "513460",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:01:06.548Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:14.848Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1046,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:01:07.788Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "SGP"
     },
     {
       "iso3": "SIN",
@@ -3806,7 +4080,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:28:10.405Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=434051",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:36.670Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:43.086Z",
       "officialPlayerId": "q:player:462",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=462",
       "squashLevelsPlayerId": "434051",
@@ -3816,7 +4090,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 415,
       "squashLevelsLevel": 4412,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:15.385Z",
+      "squashLevelsClubLocation": "Belmont Saints, Western Australia, AUS"
     },
     {
       "iso3": "RSA",
@@ -3827,7 +4103,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:10.679Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=283379",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:38.585Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:44.880Z",
       "officialPlayerId": "q:player:790",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=790",
       "squashLevelsPlayerId": "283379",
@@ -3835,9 +4111,11 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:34.343Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": 485,
       "squashLevelsLevel": 4006,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:15.934Z",
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -3848,7 +4126,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:10.794Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=472168",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:40.388Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:48.358Z",
       "officialPlayerId": "q:player:961",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=961",
       "squashLevelsPlayerId": "472168",
@@ -3858,7 +4136,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 882,
       "squashLevelsLevel": 2763,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:16.697Z",
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "RSA",
@@ -3869,7 +4149,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:11.049Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=180215",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:42.195Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:50.164Z",
       "squashLevelsWorldRank": 1170,
       "officialPlayerId": "q:player:134",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=134",
@@ -3879,7 +4159,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsLevel": 2238,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:17.360Z",
+      "squashLevelsClubLocation": "Johannesburg Country Club, Gauteng, ZAF"
     },
     {
       "iso3": "AUS",
@@ -3890,7 +4172,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:11.395Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219395",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:43.989Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:51.979Z",
       "officialPlayerId": "q:player:575",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=575",
       "squashLevelsPlayerId": "219395",
@@ -3900,7 +4182,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 1605,
       "squashLevelsLevel": 1742,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:18.028Z",
+      "squashLevelsClubLocation": "Vic Park, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -3911,7 +4195,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:11.528Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235703",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:45.883Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:53.804Z",
       "officialPlayerId": "q:player:350",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=350",
       "squashLevelsPlayerId": "235703",
@@ -3919,9 +4203,11 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:38.687Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": 1136,
       "squashLevelsLevel": 2305,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:18.547Z",
+      "squashLevelsClubLocation": "Dgen, New South Wales, AUS"
     },
     {
       "iso3": "CAN",
@@ -3932,17 +4218,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:28:11.681Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=439068",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:47.789Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:55.675Z",
       "officialPlayerId": "q:player:661",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=661",
       "squashLevelsPlayerId": "439068",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:40.501Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:26:42.272Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1668,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:19.070Z",
+      "squashLevelsClubLocation": "CAN"
     },
     {
       "iso3": "AUS",
@@ -3953,18 +4241,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:11.961Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=514058",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:49.600Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:57.473Z",
       "officialPlayerId": "q:player:533",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=533",
       "squashLevelsPlayerId": "514058",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:01:08.293Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:25.651Z",
       "squashLevelsWorldRank": 1871,
       "squashLevelsLevel": 1526,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:01:09.539Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": ""
     },
     {
       "iso3": "AUS",
@@ -3975,7 +4264,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:12.185Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222164",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:51.397Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T06:59:59.273Z",
       "officialPlayerId": "q:player:292",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=292",
       "squashLevelsPlayerId": "222164",
@@ -3985,7 +4274,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 3603,
       "squashLevelsLevel": 782,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:26.402Z",
+      "squashLevelsClubLocation": "Eastern Goldfields INC, Western Australia, AUS"
     },
     {
       "iso3": "NZL",
@@ -3996,7 +4287,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:12.270Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=405452",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:53.199Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:01.067Z",
       "officialPlayerId": "q:player:381",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=381",
       "squashLevelsPlayerId": "405452",
@@ -4006,7 +4297,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 6459,
       "squashLevelsLevel": 322,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:27.136Z",
+      "squashLevelsClubLocation": "Taneatua, Bay of Plenty, NZL"
     },
     {
       "iso3": "AUS",
@@ -4017,7 +4310,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:12.604Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235639",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:55.089Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:02.873Z",
       "officialPlayerId": "q:player:227",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=227",
       "squashLevelsPlayerId": "235639",
@@ -4025,9 +4318,11 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:45.567Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": 1925,
       "squashLevelsLevel": 1491,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:27.665Z",
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -4038,18 +4333,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:12.737Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=312660",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:56.887Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:04.675Z",
       "officialPlayerId": "q:player:78",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=78",
       "squashLevelsPlayerId": "312660",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:19:47.212Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:28.226Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:49.248Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 4238,
       "squashLevelsLevel": 632,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -4060,17 +4356,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:12.914Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=284162",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:36:58.689Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:06.468Z",
       "officialPlayerId": "q:player:679",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=679",
       "squashLevelsPlayerId": "284162",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:47.852Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:26:49.064Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 2550,
       "squashLevelsLevel": 1134,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:28.817Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "ENG",
@@ -4081,7 +4379,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:28:13.129Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=48365",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:00.521Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:08.306Z",
       "officialPlayerId": "q:player:249",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=249",
       "squashLevelsPlayerId": "48365",
@@ -4091,7 +4389,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 45,
       "squashLevelsWorldRank": 1881,
       "squashLevelsLevel": 1519,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:32.378Z",
+      "squashLevelsClubLocation": "Tring, Herts, ENG"
     },
     {
       "iso3": "AUS",
@@ -4102,7 +4402,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:13.262Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=385342",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:02.346Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:10.376Z",
       "officialPlayerId": "q:player:547",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=547",
       "squashLevelsPlayerId": "385342",
@@ -4112,7 +4412,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 330,
       "squashLevelsLevel": 20546,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:33.067Z",
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "RSA",
@@ -4123,17 +4425,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:13.432Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=239695",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:04.176Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:12.175Z",
       "squashLevelsWorldRank": 2013,
       "officialPlayerId": "q:player:952",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=952",
       "squashLevelsPlayerId": "239695",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:51.555Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:32:36.708Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsLevel": 8342,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:33.787Z",
+      "squashLevelsClubLocation": "Johannesburg Country Club, Gauteng, ZAF"
     },
     {
       "iso3": "USA",
@@ -4144,17 +4448,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:28:13.668Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438602",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:06.070Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:14.052Z",
       "officialPlayerId": "q:player:304",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=304",
       "squashLevelsPlayerId": "438602",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:52.185Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:32:40.339Z",
+      "squashLevelsMatchedCountry": "USA",
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 15213,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:37.327Z",
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "IRL",
@@ -4164,7 +4470,7 @@ window.TOURNAMENT_DATA = {
       "country": "Ireland",
       "flagCode": "ie",
       "squashLevelsCheckedAt": "2026-08-21T07:28:13.773Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:53:59.563Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:40.976Z",
       "officialPlayerId": "q:player:971",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=971",
       "squashLevelsWorldRank": 2611,
@@ -4176,7 +4482,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:53:59.956Z",
       "squashLevelsMatchedCountry": "IRL",
       "squashLevelsMatchedAge": 50,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:07.856Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:15.837Z",
+      "squashLevelsClubLocation": "Dulwich, Warwicks, IRL"
     },
     {
       "iso3": "ENG",
@@ -4187,7 +4494,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:28:13.978Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=430444",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:09.654Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:17.630Z",
       "officialPlayerId": "q:player:802",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=802",
       "squashLevelsPlayerId": "430444",
@@ -4197,7 +4504,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 1737,
       "squashLevelsLevel": 8997,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:41.510Z",
+      "squashLevelsClubLocation": "Hants, ENG"
     },
     {
       "iso3": "ESP",
@@ -4207,7 +4516,7 @@ window.TOURNAMENT_DATA = {
       "country": "Spain",
       "flagCode": "es",
       "squashLevelsCheckedAt": "2026-08-21T07:28:14.226Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:22.840Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:58.156Z",
       "officialPlayerId": "q:player:236",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=236",
       "squashLevelsWorldRank": null,
@@ -4224,18 +4533,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:14.324Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=147665",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:11.440Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:19.472Z",
       "squashLevelsWorldRank": 1902,
       "officialPlayerId": "q:player:259",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=259",
       "squashLevelsPlayerId": "147665",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:19:57.050Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:42.032Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:59.122Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsLevel": 8595,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "CAN",
@@ -4245,19 +4555,20 @@ window.TOURNAMENT_DATA = {
       "country": "Canada",
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:28:14.748Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=341719",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:13.316Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219681",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:21.366Z",
       "officialPlayerId": "q:player:374",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=374",
-      "squashLevelsPlayerId": "341719",
+      "squashLevelsPlayerId": "219681",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:19:57.323Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:59.451Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:42.796Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:32:54.734Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 11154,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 2203,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Hibiscus Squash & Volleyball Centre, Queensland, AUS"
     },
     {
       "iso3": "CAN",
@@ -4268,18 +4579,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:28:14.759Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=210539",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:15.200Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:23.231Z",
       "officialPlayerId": "q:player:483",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=483",
       "squashLevelsPlayerId": "210539",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:19:57.487Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:19:59.548Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:32:57.322Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:27:14.067Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 5449,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "British Columbia, CAN"
     },
     {
       "iso3": "AUS",
@@ -4290,7 +4602,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:14.885Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233575",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:16.996Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:25.043Z",
       "officialPlayerId": "q:player:748",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=748",
       "squashLevelsPlayerId": "233575",
@@ -4300,7 +4612,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 3667,
       "squashLevelsLevel": 5925,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:02.816Z",
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -4311,7 +4625,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:15.378Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=157089",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:18.863Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:26.942Z",
       "officialPlayerId": "q:player:949",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=949",
       "squashLevelsPlayerId": "157089",
@@ -4321,7 +4635,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 5169,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:03.419Z",
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -4332,7 +4648,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:15.376Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=423468",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:20.661Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:28.764Z",
       "officialPlayerId": "q:player:160",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=160",
       "squashLevelsPlayerId": "423468",
@@ -4342,7 +4658,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 3718,
       "squashLevelsLevel": 5884,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:04.026Z",
+      "squashLevelsClubLocation": "Scarborough Squash Club, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -4353,7 +4671,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:15.412Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219111",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:22.454Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:30.561Z",
       "officialPlayerId": "q:player:385",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=385",
       "squashLevelsPlayerId": "219111",
@@ -4363,7 +4681,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 3244,
       "squashLevelsLevel": 6340,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:04.540Z",
+      "squashLevelsClubLocation": "Belmont Saints, Western Australia, AUS"
     },
     {
       "iso3": "NZL",
@@ -4373,19 +4693,20 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:16.007Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=109789",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:24.242Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=547133",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:32.348Z",
       "officialPlayerId": "q:player:330",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=330",
-      "squashLevelsPlayerId": "109789",
+      "squashLevelsPlayerId": "547133",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:20:06.880Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:12.472Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:05.058Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:27:19.980Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
-      "squashLevelsWorldRank": 2634,
-      "squashLevelsLevel": 7101,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": 2070,
+      "squashLevelsLevel": 8205,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "FRA",
@@ -4396,7 +4717,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "fr",
       "squashLevelsCheckedAt": "2026-08-21T07:28:16.013Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=209863",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:26.029Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:34.145Z",
       "officialPlayerId": "q:player:351",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=351",
       "squashLevelsPlayerId": "209863",
@@ -4406,7 +4727,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 1200,
       "squashLevelsLevel": 10867,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:08.630Z",
+      "squashLevelsClubLocation": "Nouvelle-Aquitaine, FRA"
     },
     {
       "iso3": "WAL",
@@ -4417,7 +4740,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-wls",
       "squashLevelsCheckedAt": "2026-08-21T07:28:16.004Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238971",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:27.948Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:35.952Z",
       "officialPlayerId": "q:player:106",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=106",
       "squashLevelsPlayerId": "238971",
@@ -4427,7 +4750,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 3643,
       "squashLevelsLevel": 5952,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:09.208Z",
+      "squashLevelsClubLocation": "Bondi Waverley, New South Wales, AUS"
     },
     {
       "iso3": "NZL",
@@ -4438,7 +4763,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:16.588Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=255824",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:29.743Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:38.172Z",
       "squashLevelsWorldRank": 3125,
       "officialPlayerId": "q:player:856",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=856",
@@ -4448,7 +4773,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsLevel": 6467,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:09.746Z",
+      "squashLevelsClubLocation": "Browns Bay, Auckland, NZL"
     },
     {
       "iso3": "AUS",
@@ -4459,17 +4786,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:16.593Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218747",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:31.549Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:39.972Z",
       "squashLevelsWorldRank": 5049,
       "officialPlayerId": "q:player:49",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=49",
       "squashLevelsPlayerId": "218747",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:11.714Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:27:26.150Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsLevel": 4964,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:10.356Z",
+      "squashLevelsClubLocation": "Brisbane City, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -4480,7 +4809,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:16.642Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220944",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:33.376Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:41.751Z",
       "officialPlayerId": "q:player:649",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=649",
       "squashLevelsPlayerId": "220944",
@@ -4490,7 +4819,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 5374,
       "squashLevelsLevel": 4791,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:15.784Z",
+      "squashLevelsClubLocation": "Mandurah, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -4501,7 +4832,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:17.144Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=216142",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:35.499Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:43.622Z",
       "officialPlayerId": "q:player:492",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=492",
       "squashLevelsPlayerId": "216142",
@@ -4511,7 +4842,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 4090,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:16.332Z",
+      "squashLevelsClubLocation": "T L C Health, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -4522,17 +4855,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:17.158Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=442848",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:37.300Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:45.412Z",
       "officialPlayerId": "q:player:809",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=809",
       "squashLevelsPlayerId": "442848",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:15.560Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:27:35.425Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 4704,
       "squashLevelsLevel": 5172,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:16.939Z",
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -4543,7 +4878,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:17.232Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220945",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:39.092Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:47.229Z",
       "officialPlayerId": "q:player:471",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=471",
       "squashLevelsPlayerId": "220945",
@@ -4553,7 +4888,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 4705,
       "squashLevelsLevel": 5171,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:26.774Z",
+      "squashLevelsClubLocation": "Mandurah, Western Australia, AUS"
     },
     {
       "iso3": "NZL",
@@ -4564,18 +4901,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:17.785Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=6118",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:40.990Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:49.745Z",
       "officialPlayerId": "q:player:472",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=472",
       "squashLevelsPlayerId": "6118",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:01:11.087Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:27.314Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 4042,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:01:14.826Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:27:40.385Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "NZL"
     },
     {
       "iso3": "AUS",
@@ -4586,7 +4924,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:17.790Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233612",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:42.786Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:51.536Z",
       "officialPlayerId": "q:player:473",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=473",
       "squashLevelsPlayerId": "233612",
@@ -4596,7 +4934,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 5241,
       "squashLevelsLevel": 4865,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:33.249Z",
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "PAK",
@@ -4607,18 +4947,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:17.763Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438697",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:44.665Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:53.406Z",
       "officialPlayerId": "q:player:426",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=426",
       "squashLevelsPlayerId": "438697",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:01:15.413Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:33.807Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 93064,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:01:19.142Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:27:45.376Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "PAK"
     },
     {
       "iso3": "AUS",
@@ -4628,7 +4969,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:18.397Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:23.844Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:58.679Z",
       "officialPlayerId": "q:player:257",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=257",
       "squashLevelsWorldRank": null,
@@ -4645,17 +4986,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:18.419Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=216262",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:46.451Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:55.199Z",
       "officialPlayerId": "q:player:320",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=320",
       "squashLevelsPlayerId": "216262",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:21.360Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:27:48.422Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 4544,
       "squashLevelsLevel": 5279,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:39.441Z",
+      "squashLevelsClubLocation": "Hibiscus Squash & Volleyball Centre, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -4666,18 +5009,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:18.316Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=227960",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:48.264Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:56.994Z",
       "officialPlayerId": "q:player:883",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=883",
       "squashLevelsPlayerId": "227960",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:20:24.849Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:43.155Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:26.942Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 7818,
       "squashLevelsLevel": 3759,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "ENG",
@@ -4688,18 +5032,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:28:18.875Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=433880",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:50.077Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:00:58.800Z",
       "officialPlayerId": "q:player:53",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=53",
       "squashLevelsPlayerId": "433880",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:20:26.349Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:47.901Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:28.358Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 6822,
       "squashLevelsLevel": 4115,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Petersfield, Hants, ENG"
     },
     {
       "iso3": "AUS",
@@ -4710,7 +5055,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:18.997Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219993",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:51.874Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:00.628Z",
       "officialPlayerId": "q:player:395",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=395",
       "squashLevelsPlayerId": "219993",
@@ -4720,7 +5065,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 5335,
       "squashLevelsLevel": 4809,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:48.939Z",
+      "squashLevelsClubLocation": "Alex Hills, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -4730,18 +5077,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:19.073Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=216131",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:53.669Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=526186",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:10.708Z",
       "officialPlayerId": "q:player:480",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=480",
-      "squashLevelsPlayerId": "216131",
+      "squashLevelsPlayerId": "526186",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:30.104Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:33:58.818Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
-      "squashLevelsWorldRank": 6376,
-      "squashLevelsLevel": 4295,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": null,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:49.946Z",
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "AUS",
@@ -4752,7 +5101,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:19.422Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=208619",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:55.461Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:12.506Z",
       "officialPlayerId": "q:player:721",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=721",
       "squashLevelsPlayerId": "208619",
@@ -4762,7 +5111,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 7290,
       "squashLevelsLevel": 3940,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:33:59.809Z",
+      "squashLevelsClubLocation": "Kooyong, Victoria, AUS"
     },
     {
       "iso3": "NZL",
@@ -4773,7 +5124,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:19.605Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=384966",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:57.253Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:14.304Z",
       "officialPlayerId": "q:player:214",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=214",
       "squashLevelsPlayerId": "384966",
@@ -4783,7 +5134,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 4247,
       "squashLevelsLevel": 5482,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:00.328Z",
+      "squashLevelsClubLocation": "Tawa, Wellington, NZL"
     },
     {
       "iso3": "PAK",
@@ -4793,7 +5146,7 @@ window.TOURNAMENT_DATA = {
       "country": "Pakistan",
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:19.604Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:24.901Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:59.593Z",
       "officialPlayerId": "q:player:728",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=728",
       "squashLevelsWorldRank": null,
@@ -4810,7 +5163,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:28:19.957Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=216418",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:37:59.138Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:16.166Z",
       "officialPlayerId": "q:player:324",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=324",
       "squashLevelsPlayerId": "216418",
@@ -4820,7 +5173,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1349,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:00.856Z",
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "AUS",
@@ -4831,18 +5186,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:20.133Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=505763",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:09.175Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:26.465Z",
       "officialPlayerId": "q:player:119",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=119",
       "squashLevelsPlayerId": "505763",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:20:34.305Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:37.278Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:01.369Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:34:04.279Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": null,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "AUS",
@@ -4853,17 +5209,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:20.133Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=170799",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:10.979Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:28.247Z",
       "officialPlayerId": "q:player:463",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=463",
       "squashLevelsPlayerId": "170799",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:34.479Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:06.612Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 16931,
       "squashLevelsLevel": 2141,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:04.806Z",
+      "squashLevelsClubLocation": "Raymond Terrace, New South Wales, AUS"
     },
     {
       "iso3": "ENG",
@@ -4874,7 +5232,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:28:20.501Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=277914",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:12.789Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:30.118Z",
       "officialPlayerId": "q:player:418",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=418",
       "squashLevelsPlayerId": "277914",
@@ -4882,9 +5240,11 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:35.796Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
-      "squashLevelsWorldRank": 29474,
+      "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1213,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:09.005Z",
+      "squashLevelsClubLocation": "Vic Park, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -4894,7 +5254,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:20.756Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:25.659Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:00.128Z",
       "officialPlayerId": "q:player:691",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=691",
       "squashLevelsWorldRank": null,
@@ -4911,7 +5271,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:20.755Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=528014",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:14.581Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:32.425Z",
       "officialPlayerId": "q:player:340",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=340",
       "squashLevelsPlayerId": "528014",
@@ -4921,7 +5281,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 28405,
       "squashLevelsLevel": 1274,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:09.648Z",
+      "squashLevelsClubLocation": "Gauteng, ZAF"
     },
     {
       "iso3": "AUS",
@@ -4932,17 +5294,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:21.042Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=37055",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:16.406Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:34.233Z",
       "officialPlayerId": "q:player:931",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=931",
       "squashLevelsPlayerId": "37055",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:38.987Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:12.172Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 9574,
       "squashLevelsLevel": 3286,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:10.582Z",
+      "squashLevelsClubLocation": "Cambridge, Western Australia, AUS"
     },
     {
       "iso3": "NZL",
@@ -4952,18 +5316,20 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:21.309Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219094",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:18.198Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=299885",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:36.105Z",
       "officialPlayerId": "q:player:795",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=795",
-      "squashLevelsPlayerId": "219094",
+      "squashLevelsPlayerId": "299885",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:40.092Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:34:27.783Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
-      "squashLevelsWorldRank": 8095,
-      "squashLevelsLevel": 3675,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 858,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:15.704Z",
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -4974,7 +5340,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:21.319Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=265555",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:20.090Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:38.015Z",
       "officialPlayerId": "q:player:745",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=745",
       "squashLevelsPlayerId": "265555",
@@ -4984,7 +5350,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 427,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:28.902Z",
+      "squashLevelsClubLocation": "Albury Squash & Racquetball Association, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -4995,17 +5363,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:21.630Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233638",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:21.900Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:39.842Z",
       "officialPlayerId": "q:player:441",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=441",
       "squashLevelsPlayerId": "233638",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:41.746Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:27.955Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 13619,
       "squashLevelsLevel": 2539,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:29.540Z",
+      "squashLevelsClubLocation": "Springwood, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -5016,17 +5386,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:21.953Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235840",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:23.729Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:41.630Z",
       "officialPlayerId": "q:player:41",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=41",
       "squashLevelsPlayerId": "235840",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:42.821Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:33.488Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 8331,
       "squashLevelsLevel": 3606,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:34.727Z",
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -5037,7 +5409,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:21.940Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233365",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:25.535Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:43.452Z",
       "officialPlayerId": "q:player:490",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=490",
       "squashLevelsPlayerId": "233365",
@@ -5047,7 +5419,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 38630,
       "squashLevelsLevel": 783,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:41.670Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -5058,7 +5432,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:22.166Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=227947",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:27.335Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:45.307Z",
       "officialPlayerId": "q:player:613",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=613",
       "squashLevelsPlayerId": "227947",
@@ -5068,7 +5442,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 13801,
       "squashLevelsLevel": 2514,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:42.190Z",
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -5079,7 +5455,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:22.482Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233473",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:29.137Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:47.092Z",
       "officialPlayerId": "q:player:801",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=801",
       "squashLevelsPlayerId": "233473",
@@ -5089,7 +5465,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 15498,
       "squashLevelsLevel": 2304,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:42.733Z",
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -5100,7 +5478,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:22.478Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=215427",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:31.028Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:48.884Z",
       "officialPlayerId": "q:player:749",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=749",
       "squashLevelsPlayerId": "215427",
@@ -5110,7 +5488,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 14729,
       "squashLevelsLevel": 2393,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:43.265Z",
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -5121,7 +5501,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:22.699Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233716",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:32.838Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:50.687Z",
       "officialPlayerId": "q:player:377",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=377",
       "squashLevelsPlayerId": "233716",
@@ -5131,7 +5511,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 26286,
       "squashLevelsLevel": 1399,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:43.784Z",
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -5142,7 +5524,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:23.002Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=172357",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:34.638Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:52.522Z",
       "officialPlayerId": "q:player:943",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=943",
       "squashLevelsPlayerId": "172357",
@@ -5152,7 +5534,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 15166,
       "squashLevelsLevel": 2340,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:44.296Z",
+      "squashLevelsClubLocation": "Next Generation, South Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -5163,7 +5547,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:23.003Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=436648",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:36.431Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:54.306Z",
       "officialPlayerId": "q:player:755",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=755",
       "squashLevelsPlayerId": "436648",
@@ -5173,7 +5557,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 17266,
       "squashLevelsLevel": 2104,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:44.817Z",
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "AUS",
@@ -5184,17 +5570,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:23.237Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=313170",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:38.227Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:56.102Z",
       "officialPlayerId": "q:player:12",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=12",
       "squashLevelsPlayerId": "313170",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:50.588Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:43.548Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 12021,
       "squashLevelsLevel": 2795,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:45.381Z",
+      "squashLevelsClubLocation": "Tomaree, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -5205,7 +5593,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:23.532Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=236559",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:40.035Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:57.900Z",
       "officialPlayerId": "q:player:423",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=423",
       "squashLevelsPlayerId": "236559",
@@ -5215,7 +5603,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 21389,
       "squashLevelsLevel": 1738,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:51.882Z",
+      "squashLevelsClubLocation": "Blue Gum, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -5226,7 +5616,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:23.531Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220791",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:41.833Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:01:59.707Z",
       "officialPlayerId": "q:player:946",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=946",
       "squashLevelsPlayerId": "220791",
@@ -5236,7 +5626,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 7223,
       "squashLevelsLevel": 3966,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:52.424Z",
+      "squashLevelsClubLocation": "Bunbury Squash Club, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -5247,7 +5639,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:23.809Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219506",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:43.626Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:01.516Z",
       "officialPlayerId": "q:player:910",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=910",
       "squashLevelsPlayerId": "219506",
@@ -5257,7 +5649,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 32716,
       "squashLevelsLevel": 1047,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:52.960Z",
+      "squashLevelsClubLocation": "Albury Squash & Racquetball Association, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -5268,18 +5662,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:24.079Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=216009",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:45.414Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:03.316Z",
       "officialPlayerId": "q:player:69",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=69",
       "squashLevelsPlayerId": "216009",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:20:56.418Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:53.549Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:58.486Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 8829,
       "squashLevelsLevel": 3471,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Belmont Saints, Western Australia, AUS"
     },
     {
       "iso3": "ENG",
@@ -5290,18 +5685,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:28:24.104Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=52446",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:47.198Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:05.120Z",
       "officialPlayerId": "q:player:554",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=554",
       "squashLevelsPlayerId": "52446",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:20:56.434Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:54.109Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:58.769Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 10540,
       "squashLevelsLevel": 3079,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Belmont Saints, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -5312,18 +5708,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:24.342Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=462395",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:48.983Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:06.942Z",
       "officialPlayerId": "q:player:13",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=13",
       "squashLevelsPlayerId": "462395",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:20:56.844Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:54.664Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:20:59.036Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 25803,
       "squashLevelsLevel": 1430,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -5334,18 +5731,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:24.611Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=513767",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:50.861Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:08.905Z",
       "officialPlayerId": "q:player:808",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=808",
       "squashLevelsPlayerId": "513767",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:01:21.200Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:55.366Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2993,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:01:23.690Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:49.849Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -5356,18 +5754,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:24.641Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=5443",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:52.694Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:10.837Z",
       "officialPlayerId": "q:player:817",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=817",
       "squashLevelsPlayerId": "5443",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:21:02.207Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:21:04.293Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:34:58.853Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:53.013Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 15388,
       "squashLevelsLevel": 2316,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Eastside & Parsons TSA, Tasmania, AUS"
     },
     {
       "iso3": "BRA",
@@ -5377,7 +5776,7 @@ window.TOURNAMENT_DATA = {
       "country": "Brazil",
       "flagCode": "br",
       "squashLevelsCheckedAt": "2026-08-21T07:28:24.889Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:26.983Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:01.053Z",
       "officialPlayerId": "q:player:449",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=449",
       "squashLevelsWorldRank": null,
@@ -5394,18 +5793,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:25.139Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=236013",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:54.502Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:13.012Z",
       "officialPlayerId": "q:player:623",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=623",
       "squashLevelsPlayerId": "236013",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:21:02.653Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:02.537Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:21:04.707Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 28570,
       "squashLevelsLevel": 1265,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -5416,7 +5816,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:25.162Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=229825",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:56.335Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:14.807Z",
       "officialPlayerId": "q:player:820",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=820",
       "squashLevelsPlayerId": "229825",
@@ -5426,7 +5826,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 9411,
       "squashLevelsLevel": 3320,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:03.350Z",
+      "squashLevelsClubLocation": "Mandurah, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -5437,17 +5839,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:25.425Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219176",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:38:58.143Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:16.602Z",
       "officialPlayerId": "q:player:664",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=664",
       "squashLevelsPlayerId": "219176",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:21:08.198Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:57.561Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 11175,
       "squashLevelsLevel": 2953,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:03.893Z",
+      "squashLevelsClubLocation": "Belmont Saints, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -5458,18 +5862,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:25.678Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=548050",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:08.204Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:26.738Z",
       "officialPlayerId": "q:player:822",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=822",
       "squashLevelsPlayerId": "548050",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:21:11.349Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:21:22.055Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:09.109Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:35:14.980Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": null,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "AUS",
@@ -5479,7 +5884,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:25.698Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:27.812Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:01.691Z",
       "officialPlayerId": "q:player:823",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=823",
       "squashLevelsWorldRank": null,
@@ -5496,7 +5901,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:25.966Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=340831",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:10.035Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:33.636Z",
       "officialPlayerId": "q:player:115",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=115",
       "squashLevelsPlayerId": "340831",
@@ -5504,9 +5909,11 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:21:11.502Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
-      "squashLevelsWorldRank": 6665,
+      "squashLevelsWorldRank": null,
       "squashLevelsLevel": 4171,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:15.622Z",
+      "squashLevelsClubLocation": "Hamilton, NZL"
     },
     {
       "iso3": "USA",
@@ -5517,18 +5924,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:28:26.235Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=251009",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:20.077Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:43.466Z",
       "officialPlayerId": "q:player:77",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=77",
       "squashLevelsPlayerId": "251009",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:01:25.394Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:16.189Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:01:26.647Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "TBD"
     },
     {
       "iso3": "AUS",
@@ -5539,17 +5947,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:26.254Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228027",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:21.882Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:45.266Z",
       "officialPlayerId": "q:player:599",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=599",
       "squashLevelsPlayerId": "228027",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:21:14.485Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:29:08.685Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 26227,
       "squashLevelsLevel": 1403,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:16.834Z",
+      "squashLevelsClubLocation": "Victoria, AUS"
     },
     {
       "iso3": "EGY",
@@ -5559,7 +5969,7 @@ window.TOURNAMENT_DATA = {
       "country": "Egypt",
       "flagCode": "eg",
       "squashLevelsCheckedAt": "2026-08-21T07:28:26.497Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:29.218Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:03.160Z",
       "officialPlayerId": "q:player:600",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=600",
       "squashLevelsWorldRank": null,
@@ -5575,7 +5985,7 @@ window.TOURNAMENT_DATA = {
       "country": "Japan",
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:28:26.759Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:29.960Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:03.696Z",
       "officialPlayerId": "q:player:504",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=504",
       "squashLevelsWorldRank": null,
@@ -5592,17 +6002,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:28:26.816Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=241238",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:23.775Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:47.153Z",
       "officialPlayerId": "q:player:892",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=892",
       "squashLevelsPlayerId": "241238",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:21:17.520Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:29:11.725Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 7097,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:22.960Z",
+      "squashLevelsClubLocation": "Delhi, IND"
     },
     {
       "iso3": "GER",
@@ -5613,17 +6025,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:28:27.089Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=302728",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:25.657Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:49.007Z",
       "officialPlayerId": "q:player:172",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=172",
       "squashLevelsPlayerId": "302728",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:21:17.366Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:29:14.781Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3191,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:27.389Z",
+      "squashLevelsClubLocation": "MAC"
     },
     {
       "iso3": "HKG",
@@ -5634,7 +6048,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "hk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:27.298Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=329824",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:27.568Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:50.871Z",
       "officialPlayerId": "q:player:149",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=149",
       "squashLevelsPlayerId": "329824",
@@ -5644,7 +6058,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2091,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:31.328Z",
+      "squashLevelsClubLocation": "Hong Kong Football Club, Hong Kong Island, HKG"
     },
     {
       "iso3": "MAS",
@@ -5654,19 +6070,20 @@ window.TOURNAMENT_DATA = {
       "country": "Malaysia",
       "flagCode": "my",
       "squashLevelsCheckedAt": "2026-08-21T07:28:27.354Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=141065",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:29.454Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=342622",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:52.783Z",
       "officialPlayerId": "q:player:895",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=895",
-      "squashLevelsPlayerId": "141065",
+      "squashLevelsPlayerId": "342622",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:01:28.247Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:33.135Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 5626,
+      "squashLevelsLevel": 657,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:01:35.714Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:35:41.996Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "SGP"
     },
     {
       "iso3": "NZL",
@@ -5677,17 +6094,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:27.689Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=6967",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:31.365Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:56.006Z",
       "officialPlayerId": "q:player:62",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=62",
       "squashLevelsPlayerId": "6967",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:21:23.157Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:29:34.188Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 9640,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:42.672Z",
+      "squashLevelsClubLocation": "Wigan Squash Club, Lancs, ENG"
     },
     {
       "iso3": "AUS",
@@ -5698,7 +6117,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:27.816Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=216138",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:33.211Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:57.810Z",
       "officialPlayerId": "q:player:481",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=481",
       "squashLevelsPlayerId": "216138",
@@ -5708,7 +6127,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 6386,
       "squashLevelsLevel": 4293,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:55.050Z",
+      "squashLevelsClubLocation": "Dapto Squash Club, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -5719,7 +6140,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:27.879Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232993",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:35.091Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:02:59.664Z",
       "officialPlayerId": "q:player:311",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=311",
       "squashLevelsPlayerId": "232993",
@@ -5729,7 +6150,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1791,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:55.587Z",
+      "squashLevelsClubLocation": "Marmion, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -5740,18 +6163,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:28.261Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38355",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:36.988Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:01.558Z",
       "officialPlayerId": "q:player:117",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=117",
       "squashLevelsPlayerId": "38355",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:01:36.417Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:35:56.128Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 5258,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:01:46.480Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:29:47.370Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Herts, USA"
     },
     {
       "iso3": "RSA",
@@ -5761,7 +6185,7 @@ window.TOURNAMENT_DATA = {
       "country": "South Africa",
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:28.379Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:30.794Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:04.274Z",
       "officialPlayerId": "q:player:96",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=96",
       "squashLevelsWorldRank": null,
@@ -5778,7 +6202,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:28.459Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234442",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:38.788Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:03.862Z",
       "officialPlayerId": "q:player:979",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=979",
       "squashLevelsPlayerId": "234442",
@@ -5788,7 +6212,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 7754,
       "squashLevelsLevel": 3780,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:09.970Z",
+      "squashLevelsClubLocation": "Dapto Squash Club, New South Wales, AUS"
     },
     {
       "iso3": "IND",
@@ -5799,18 +6225,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:28:28.790Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26793",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:40.714Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:07.773Z",
       "officialPlayerId": "q:player:461",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=461",
       "squashLevelsPlayerId": "26793",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:01:48.065Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:10.861Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 710,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:01:49.315Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "IND"
     },
     {
       "iso3": "AUS",
@@ -5821,7 +6248,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:28.970Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221163",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:42.606Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:09.864Z",
       "officialPlayerId": "q:player:231",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=231",
       "squashLevelsPlayerId": "221163",
@@ -5831,7 +6258,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 7500,
       "squashLevelsLevel": 3870,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:11.726Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -5842,17 +6271,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:29.043Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=25988",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:44.407Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:11.678Z",
       "officialPlayerId": "q:player:761",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=761",
       "squashLevelsPlayerId": "25988",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:21:37.868Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:29:53.926Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 555,
       "squashLevelsLevel": 3714,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:13.105Z",
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -5863,17 +6294,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:29.362Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=149093",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:46.251Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:13.490Z",
       "officialPlayerId": "q:player:430",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=430",
       "squashLevelsPlayerId": "149093",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:21:37.916Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:36:24.580Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 496,
       "squashLevelsLevel": 3964,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:18.698Z",
+      "squashLevelsClubLocation": "Carrara, Queensland, AUS"
     },
     {
       "iso3": "RSA",
@@ -5884,7 +6317,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:29.504Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=255182",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:48.051Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:15.307Z",
       "officialPlayerId": "q:player:742",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=742",
       "squashLevelsPlayerId": "255182",
@@ -5894,7 +6327,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 689,
       "squashLevelsLevel": 3239,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:25.557Z",
+      "squashLevelsClubLocation": "PE Crusaders Sports Club, Eastern Cape, ZAF"
     },
     {
       "iso3": "AUS",
@@ -5905,7 +6340,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:29.565Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=253348",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:49.850Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:17.099Z",
       "officialPlayerId": "q:player:877",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=877",
       "squashLevelsPlayerId": "253348",
@@ -5915,7 +6350,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 766,
       "squashLevelsLevel": 3069,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:26.074Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "NZL",
@@ -5926,7 +6363,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:29.901Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=25792",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:51.659Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:18.915Z",
       "officialPlayerId": "q:player:799",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=799",
       "squashLevelsPlayerId": "25792",
@@ -5936,7 +6373,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 1255,
       "squashLevelsLevel": 2130,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:26.607Z",
+      "squashLevelsClubLocation": "Taumarunui Rackets, Waikato, NZL"
     },
     {
       "iso3": "NZL",
@@ -5947,7 +6386,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:30.125Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=378774",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:53.448Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:20.749Z",
       "squashLevelsWorldRank": 1034,
       "officialPlayerId": "q:player:235",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=235",
@@ -5957,7 +6396,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsLevel": 2454,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:27.135Z",
+      "squashLevelsClubLocation": "Greymouth, Canterbury, NZL"
     },
     {
       "iso3": "ENG",
@@ -5968,7 +6409,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:28:30.086Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=314689",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:55.263Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:22.545Z",
       "officialPlayerId": "q:player:967",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=967",
       "squashLevelsPlayerId": "314689",
@@ -5978,7 +6419,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 1642,
       "squashLevelsLevel": 1716,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:27.742Z",
+      "squashLevelsClubLocation": "Adelaide Malibu, South Australia, AUS"
     },
     {
       "iso3": "RSA",
@@ -5989,7 +6432,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:30.438Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=180204",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:57.061Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:24.347Z",
       "officialPlayerId": "q:player:845",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=845",
       "squashLevelsPlayerId": "180204",
@@ -5999,7 +6442,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 1659,
       "squashLevelsLevel": 1701,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:28.289Z",
+      "squashLevelsClubLocation": "Camps Bay, Western Cape, ZAF"
     },
     {
       "iso3": "AUS",
@@ -6010,7 +6455,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:30.685Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=229068",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:39:58.979Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:26.218Z",
       "officialPlayerId": "q:player:732",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=732",
       "squashLevelsPlayerId": "229068",
@@ -6020,7 +6465,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1343,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:28.833Z",
+      "squashLevelsClubLocation": "Northern Territory, AUS"
     },
     {
       "iso3": "AUS",
@@ -6031,7 +6478,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:30.652Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219603",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:00.785Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:28.098Z",
       "officialPlayerId": "q:player:692",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=692",
       "squashLevelsPlayerId": "219603",
@@ -6041,7 +6488,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 2101,
       "squashLevelsLevel": 1373,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:29.386Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "CAN",
@@ -6052,7 +6501,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:28:31.043Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438633",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:02.731Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:30.028Z",
       "officialPlayerId": "q:player:342",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=342",
       "squashLevelsPlayerId": "438633",
@@ -6062,7 +6511,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1341,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:29.906Z",
+      "squashLevelsClubLocation": "CAN"
     },
     {
       "iso3": "AUS",
@@ -6073,7 +6524,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:31.173Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220007",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:04.840Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:33.414Z",
       "officialPlayerId": "q:player:516",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=516",
       "squashLevelsPlayerId": "220007",
@@ -6083,7 +6534,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 2499,
       "squashLevelsLevel": 1157,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:30.428Z",
+      "squashLevelsClubLocation": "Alex Hills, Queensland, AUS"
     },
     {
       "iso3": "ENG",
@@ -6094,7 +6547,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:28:31.211Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=64405",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:06.642Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:35.327Z",
       "officialPlayerId": "q:player:306",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=306",
       "squashLevelsPlayerId": "64405",
@@ -6104,7 +6557,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 1752,
       "squashLevelsLevel": 1614,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:30.948Z",
+      "squashLevelsClubLocation": "David Lloyd Gidea Park, Essex, ENG"
     },
     {
       "iso3": "CHN",
@@ -6114,7 +6569,7 @@ window.TOURNAMENT_DATA = {
       "country": "China",
       "flagCode": "cn",
       "squashLevelsCheckedAt": "2026-08-21T07:28:31.557Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:31.583Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:04.839Z",
       "officialPlayerId": "q:player:158",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=158",
       "squashLevelsWorldRank": null,
@@ -6131,7 +6586,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:31.693Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218879",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:08.437Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:38.330Z",
       "officialPlayerId": "q:player:870",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=870",
       "squashLevelsPlayerId": "218879",
@@ -6141,7 +6596,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 1735,
       "squashLevelsLevel": 1627,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:31.471Z",
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "NZL",
@@ -6152,7 +6609,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:31.744Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=50655",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:10.233Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:41.074Z",
       "officialPlayerId": "q:player:162",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=162",
       "squashLevelsPlayerId": "50655",
@@ -6162,7 +6619,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 1794,
       "squashLevelsLevel": 1574,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:31.997Z",
+      "squashLevelsClubLocation": "Marlborough Rackets, Canterbury, NZL"
     },
     {
       "iso3": "NZL",
@@ -6173,7 +6632,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:32.083Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=380387",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:12.094Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:43.410Z",
       "officialPlayerId": "q:player:928",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=928",
       "squashLevelsPlayerId": "380387",
@@ -6183,7 +6642,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 5170,
       "squashLevelsLevel": 473,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:32.537Z",
+      "squashLevelsClubLocation": "Gore Town & Country, Southland, NZL"
     },
     {
       "iso3": "JPN",
@@ -6194,7 +6655,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:28:32.226Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=27126",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:13.986Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:45.550Z",
       "officialPlayerId": "q:player:470",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=470",
       "squashLevelsPlayerId": "27126",
@@ -6204,7 +6665,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 818,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:33.065Z",
+      "squashLevelsClubLocation": "JPN"
     },
     {
       "iso3": "AUS",
@@ -6215,17 +6678,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:32.374Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=459058",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:15.777Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:47.340Z",
       "officialPlayerId": "q:player:443",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=443",
       "squashLevelsPlayerId": "459058",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:22:00.376Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:30:11.080Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 3627,
       "squashLevelsLevel": 774,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:33.604Z",
+      "squashLevelsClubLocation": "Maroochy, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -6236,7 +6701,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:32.629Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=528812",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:17.568Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:49.167Z",
       "officialPlayerId": "q:player:520",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=520",
       "squashLevelsPlayerId": "528812",
@@ -6246,7 +6711,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 3025,
       "squashLevelsLevel": 947,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:37.143Z",
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "HUN",
@@ -6257,18 +6724,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "hu",
       "squashLevelsCheckedAt": "2026-08-21T07:28:32.757Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438746",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:19.380Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:51.537Z",
       "officialPlayerId": "q:player:380",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=380",
       "squashLevelsPlayerId": "438746",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:22:03.480Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:37.705Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:22:09.313Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 2354,
       "squashLevelsLevel": 1238,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": ""
     },
     {
       "iso3": "AUS",
@@ -6279,7 +6747,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:32.907Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=476536",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:21.178Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:53.735Z",
       "officialPlayerId": "q:player:523",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=523",
       "squashLevelsPlayerId": "476536",
@@ -6289,7 +6757,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 3844,
       "squashLevelsLevel": 723,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:38.334Z",
+      "squashLevelsClubLocation": "Carrington Park Family Leisure, Victoria, AUS"
     },
     {
       "iso3": "NAM",
@@ -6300,7 +6770,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "na",
       "squashLevelsCheckedAt": "2026-08-21T07:28:33.146Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38720",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:22.968Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:56.709Z",
       "officialPlayerId": "q:player:128",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=128",
       "squashLevelsPlayerId": "38720",
@@ -6310,7 +6780,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 2744,
       "squashLevelsLevel": 1050,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:38.920Z",
+      "squashLevelsClubLocation": "Khomas Region, NAM"
     },
     {
       "iso3": "AUS",
@@ -6321,7 +6793,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:33.290Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=213821",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:24.749Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:03:58.507Z",
       "officialPlayerId": "q:player:621",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=621",
       "squashLevelsPlayerId": "213821",
@@ -6331,7 +6803,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 3801,
       "squashLevelsLevel": 733,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:39.521Z",
+      "squashLevelsClubLocation": "Daisy Hill, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -6342,18 +6816,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:33.437Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=487494",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:26.536Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:00.301Z",
       "officialPlayerId": "q:player:772",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=772",
       "squashLevelsPlayerId": "487494",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:01:50.436Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:40.046Z",
       "squashLevelsWorldRank": 32532,
       "squashLevelsLevel": 1057,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:01:51.679Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": ""
     },
     {
       "iso3": "JPN",
@@ -6363,7 +6838,7 @@ window.TOURNAMENT_DATA = {
       "country": "Japan",
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:28:33.683Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:32.358Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:05.364Z",
       "officialPlayerId": "q:player:603",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=603",
       "squashLevelsWorldRank": null,
@@ -6379,18 +6854,20 @@ window.TOURNAMENT_DATA = {
       "country": "Canada",
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:28:33.827Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=470295",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:28.429Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38729",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:02.391Z",
       "officialPlayerId": "q:player:415",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=415",
-      "squashLevelsPlayerId": "470295",
+      "squashLevelsPlayerId": "38729",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:22:14.133Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:36:43.546Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 843,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 445,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:40.572Z",
+      "squashLevelsClubLocation": "CAN"
     },
     {
       "iso3": "AUS",
@@ -6401,7 +6878,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:33.964Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219490",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:30.364Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:04.911Z",
       "officialPlayerId": "q:player:230",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=230",
       "squashLevelsPlayerId": "219490",
@@ -6411,7 +6888,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 50,
       "squashLevelsWorldRank": 4084,
       "squashLevelsLevel": 667,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:44.069Z",
+      "squashLevelsClubLocation": "Mandurah, Western Australia, AUS"
     },
     {
       "iso3": "CAN",
@@ -6421,19 +6900,20 @@ window.TOURNAMENT_DATA = {
       "country": "Canada",
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:28:34.262Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=239602",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:32.312Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=14949",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:06.784Z",
       "officialPlayerId": "q:player:849",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=849",
-      "squashLevelsPlayerId": "239602",
+      "squashLevelsPlayerId": "14949",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:01:52.807Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:44.698Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 921,
+      "squashLevelsLevel": 130,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:00.288Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:36:53.602Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "TBD"
     },
     {
       "iso3": "HKG",
@@ -6443,7 +6923,7 @@ window.TOURNAMENT_DATA = {
       "country": "Hong Kong",
       "flagCode": "hk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:34.383Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:33.091Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:05.964Z",
       "officialPlayerId": "q:player:173",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=173",
       "squashLevelsWorldRank": null,
@@ -6459,18 +6939,20 @@ window.TOURNAMENT_DATA = {
       "country": "Guyana",
       "flagCode": "gy",
       "squashLevelsCheckedAt": "2026-08-21T07:28:34.532Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=461891",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:34.217Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=37141",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:09.751Z",
       "officialPlayerId": "q:player:24",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=24",
-      "squashLevelsPlayerId": "461891",
+      "squashLevelsPlayerId": "37141",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:22:18.498Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:36:58.751Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 9682,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 550,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:54.242Z",
+      "squashLevelsClubLocation": "Evesham, Worcs, ENG"
     },
     {
       "iso3": "USA",
@@ -6481,7 +6963,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:28:34.774Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=322041",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:36.100Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:12.768Z",
       "officialPlayerId": "q:player:74",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=74",
       "squashLevelsPlayerId": "322041",
@@ -6491,7 +6973,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 9598,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:36:59.812Z",
+      "squashLevelsClubLocation": "Not Applicable, ENG"
     },
     {
       "iso3": "CAN",
@@ -6502,17 +6986,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:28:34.973Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=50585",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:37.984Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:14.662Z",
       "officialPlayerId": "q:player:386",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=386",
       "squashLevelsPlayerId": "50585",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:22:22.397Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:30:35.902Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 7062,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:00.454Z",
+      "squashLevelsClubLocation": "British Columbia, CAN"
     },
     {
       "iso3": "BEL",
@@ -6523,7 +7009,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "be",
       "squashLevelsCheckedAt": "2026-08-21T07:28:35.058Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=97919",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:39.773Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:16.474Z",
       "officialPlayerId": "q:player:635",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=635",
       "squashLevelsPlayerId": "97919",
@@ -6533,7 +7019,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 1781,
       "squashLevelsLevel": 8926,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:05.594Z",
+      "squashLevelsClubLocation": "BEL"
     },
     {
       "iso3": "SWE",
@@ -6543,18 +7031,20 @@ window.TOURNAMENT_DATA = {
       "country": "Sweden",
       "flagCode": "se",
       "squashLevelsCheckedAt": "2026-08-21T07:28:35.299Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234882",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:41.569Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=522499",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:20.601Z",
       "officialPlayerId": "q:player:981",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=981",
-      "squashLevelsPlayerId": "234882",
+      "squashLevelsPlayerId": "522499",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:22:26.417Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:37:09.154Z",
+      "squashLevelsMatchedCountry": "SWE",
       "squashLevelsMatchedAge": 55,
-      "squashLevelsWorldRank": 1984,
-      "squashLevelsLevel": 8419,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 3624,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:06.143Z",
+      "squashLevelsClubLocation": "Uppsala Squash Club, Uppsala län, SWE"
     },
     {
       "iso3": "IND",
@@ -6565,7 +7055,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:28:35.506Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220321",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:43.438Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:22.463Z",
       "officialPlayerId": "q:player:435",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=435",
       "squashLevelsPlayerId": "220321",
@@ -6575,7 +7065,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 13886,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:09.658Z",
+      "squashLevelsClubLocation": "Karnataka, IND"
     },
     {
       "iso3": "SCO",
@@ -6586,7 +7078,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-sct",
       "squashLevelsCheckedAt": "2026-08-21T07:28:35.590Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=54482",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:45.371Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:25.972Z",
       "officialPlayerId": "q:player:965",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=965",
       "squashLevelsPlayerId": "54482",
@@ -6596,7 +7088,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 2141,
       "squashLevelsLevel": 8057,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:10.174Z",
+      "squashLevelsClubLocation": "Edinburgh Sports, Edinburgh, SCO"
     },
     {
       "iso3": "ESP",
@@ -6607,7 +7101,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "es",
       "squashLevelsCheckedAt": "2026-08-21T07:28:35.829Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=66485",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:47.268Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:27.858Z",
       "officialPlayerId": "q:player:677",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=677",
       "squashLevelsPlayerId": "66485",
@@ -6617,7 +7111,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 9455,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:10.684Z",
+      "squashLevelsClubLocation": "ESP"
     },
     {
       "iso3": "NZL",
@@ -6627,7 +7123,7 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:36.068Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:33.814Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:06.458Z",
       "officialPlayerId": "q:player:935",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=935",
       "squashLevelsWorldRank": null,
@@ -6644,7 +7140,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ie",
       "squashLevelsCheckedAt": "2026-08-21T07:28:36.123Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26623",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:49.079Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:29.707Z",
       "officialPlayerId": "q:player:404",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=404",
       "squashLevelsPlayerId": "26623",
@@ -6654,7 +7150,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 2436,
       "squashLevelsLevel": 7444,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:11.230Z",
+      "squashLevelsClubLocation": "Puidoux, Vaud, IRL"
     },
     {
       "iso3": "NZL",
@@ -6665,17 +7163,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:36.370Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=6119",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:50.866Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:31.556Z",
       "officialPlayerId": "q:player:442",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=442",
       "squashLevelsPlayerId": "6119",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:22:33.068Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:30:45.726Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 3027,
       "squashLevelsLevel": 6580,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:11.754Z",
+      "squashLevelsClubLocation": "Christchurch, Canterbury, NZL"
     },
     {
       "iso3": "MEX",
@@ -6686,18 +7186,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "mx",
       "squashLevelsCheckedAt": "2026-08-21T07:28:36.591Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438635",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:53.174Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:33.462Z",
       "officialPlayerId": "q:player:705",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=705",
       "squashLevelsPlayerId": "438635",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:02.030Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:15.201Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 7337,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:03.272Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "MEX"
     },
     {
       "iso3": "GER",
@@ -6708,7 +7209,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:28:36.664Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=434029",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:54.973Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:35.263Z",
       "squashLevelsWorldRank": 2751,
       "officialPlayerId": "q:player:583",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=583",
@@ -6718,7 +7219,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsLevel": 6949,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:15.730Z",
+      "squashLevelsClubLocation": "WeCare Squash Germering, Bayern, GER"
     },
     {
       "iso3": "NCL",
@@ -6728,7 +7231,7 @@ window.TOURNAMENT_DATA = {
       "country": "New Caledonia",
       "flagCode": "nc",
       "squashLevelsCheckedAt": "2026-08-21T07:28:36.901Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:34.578Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:06.966Z",
       "officialPlayerId": "q:player:706",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=706",
       "squashLevelsWorldRank": null,
@@ -6745,7 +7248,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "fr",
       "squashLevelsCheckedAt": "2026-08-21T07:28:37.186Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=495315",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:56.778Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:37.070Z",
       "officialPlayerId": "q:player:528",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=528",
       "squashLevelsPlayerId": "495315",
@@ -6755,7 +7258,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 3226,
       "squashLevelsLevel": 6356,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:16.245Z",
+      "squashLevelsClubLocation": "Squash club de lyon, Nouvelle-Aquitaine, FRA"
     },
     {
       "iso3": "NZL",
@@ -6766,7 +7271,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:37.188Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=381147",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:40:58.583Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:38.858Z",
       "officialPlayerId": "q:player:432",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=432",
       "squashLevelsPlayerId": "381147",
@@ -6776,7 +7281,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 3011,
       "squashLevelsLevel": 6606,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:16.756Z",
+      "squashLevelsClubLocation": "Christchurch, Canterbury, NZL"
     },
     {
       "iso3": "PAK",
@@ -6787,18 +7294,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:37.504Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=444369",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:00.467Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:42.296Z",
       "officialPlayerId": "q:player:251",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=251",
       "squashLevelsPlayerId": "444369",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:04.460Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:17.268Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 5234,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:05.720Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "PAK"
     },
     {
       "iso3": "AUS",
@@ -6809,17 +7317,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:37.826Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234957",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:02.366Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:44.425Z",
       "officialPlayerId": "q:player:23",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=23",
       "squashLevelsPlayerId": "234957",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:22:42.809Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:00.845Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 4976,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:17.816Z",
+      "squashLevelsClubLocation": "Maroochy, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -6830,7 +7340,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:37.791Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=175043",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:04.164Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:46.222Z",
       "officialPlayerId": "q:player:3",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=3",
       "squashLevelsPlayerId": "175043",
@@ -6840,7 +7350,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 5183,
       "squashLevelsLevel": 4894,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:30.381Z",
+      "squashLevelsClubLocation": "Wentworthville Leagues, New South Wales, AUS"
     },
     {
       "iso3": "NZL",
@@ -6851,17 +7363,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:38.036Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=376561",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:05.969Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:48.766Z",
       "officialPlayerId": "q:player:513",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=513",
       "squashLevelsPlayerId": "376561",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:22:45.664Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:04.971Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 6138,
       "squashLevelsLevel": 4398,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:30.926Z",
+      "squashLevelsClubLocation": "Marlborough Rackets, Canterbury, NZL"
     },
     {
       "iso3": "AUS",
@@ -6872,17 +7386,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:38.375Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228931",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:07.760Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:52.595Z",
       "officialPlayerId": "q:player:57",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=57",
       "squashLevelsPlayerId": "228931",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:22:46.495Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:10.604Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 5353,
       "squashLevelsLevel": 4803,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:34.524Z",
+      "squashLevelsClubLocation": "Carrara, Queensland, AUS"
     },
     {
       "iso3": "NZL",
@@ -6893,7 +7409,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:38.432Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=247031",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:09.562Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:54.398Z",
       "officialPlayerId": "q:player:703",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=703",
       "squashLevelsPlayerId": "247031",
@@ -6903,7 +7419,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 5222,
       "squashLevelsLevel": 4873,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:41.206Z",
+      "squashLevelsClubLocation": "Browns Bay, Auckland, NZL"
     },
     {
       "iso3": "SUI",
@@ -6913,7 +7431,7 @@ window.TOURNAMENT_DATA = {
       "country": "Switzerland",
       "flagCode": "ch",
       "squashLevelsCheckedAt": "2026-08-21T07:28:38.579Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T08:14:33.096Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:41.758Z",
       "officialPlayerId": "q:player:343",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=343",
       "squashLevelsWorldRank": 4232,
@@ -6925,7 +7443,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T08:14:33.624Z",
       "squashLevelsMatchedCountry": "SUI",
       "squashLevelsMatchedAge": 55,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:11.368Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:56.693Z",
+      "squashLevelsClubLocation": "Squash Club Uster, Zurich, SUI"
     },
     {
       "iso3": "AUS",
@@ -6936,7 +7455,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:38.904Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=177650",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:13.162Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:04:58.495Z",
       "officialPlayerId": "q:player:909",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=909",
       "squashLevelsPlayerId": "177650",
@@ -6946,7 +7465,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 4218,
       "squashLevelsLevel": 5505,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:42.405Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "NZL",
@@ -6957,7 +7478,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:38.959Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=72547",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:14.955Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:00.303Z",
       "officialPlayerId": "q:player:444",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=444",
       "squashLevelsPlayerId": "72547",
@@ -6967,7 +7488,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 7191,
       "squashLevelsLevel": 3977,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:42.936Z",
+      "squashLevelsClubLocation": "Fiordland, Southland, NZL"
     },
     {
       "iso3": "AUS",
@@ -6978,7 +7501,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:39.185Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233277",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:16.767Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:02.099Z",
       "officialPlayerId": "q:player:475",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=475",
       "squashLevelsPlayerId": "233277",
@@ -6988,7 +7511,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 6236,
       "squashLevelsLevel": 4354,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:43.468Z",
+      "squashLevelsClubLocation": "Dapto Squash Club, New South Wales, AUS"
     },
     {
       "iso3": "USA",
@@ -6999,7 +7524,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:28:39.480Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=434033",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:18.675Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:04.399Z",
       "officialPlayerId": "q:player:114",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=114",
       "squashLevelsPlayerId": "434033",
@@ -7009,7 +7534,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 6111,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:44.000Z",
+      "squashLevelsClubLocation": "Delhi, USA"
     },
     {
       "iso3": "RSA",
@@ -7020,7 +7547,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:39.487Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26808",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:20.512Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:06.476Z",
       "officialPlayerId": "q:player:633",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=633",
       "squashLevelsPlayerId": "26808",
@@ -7030,7 +7557,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 4905,
       "squashLevelsLevel": 5052,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:44.519Z",
+      "squashLevelsClubLocation": "CBC & TUT Squash Club, Gauteng, ZAF"
     },
     {
       "iso3": "AUS",
@@ -7040,19 +7569,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:39.720Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=229824",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:22.393Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=151419",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:08.812Z",
       "officialPlayerId": "q:player:169",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=169",
-      "squashLevelsPlayerId": "229824",
+      "squashLevelsPlayerId": "151419",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:22:55.076Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:00.466Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:45.067Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:21.901Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 4142,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 4160,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Southampton Uni, Hants, ENG"
     },
     {
       "iso3": "RSA",
@@ -7063,17 +7593,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:40.139Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=226729",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:24.195Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:11.548Z",
       "officialPlayerId": "q:player:335",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=335",
       "squashLevelsPlayerId": "226729",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:22:54.913Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:32.763Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 6005,
       "squashLevelsLevel": 4461,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:37:55.345Z",
+      "squashLevelsClubLocation": "PE Crusaders Sports Club, Eastern Cape, ZAF"
     },
     {
       "iso3": "BRA",
@@ -7084,7 +7616,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "br",
       "squashLevelsCheckedAt": "2026-08-21T07:28:40.116Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26800",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:26.019Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:13.380Z",
       "officialPlayerId": "q:player:286",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=286",
       "squashLevelsPlayerId": "26800",
@@ -7094,7 +7626,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 7146,
       "squashLevelsLevel": 3989,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:08.206Z",
+      "squashLevelsClubLocation": "Squash Wall, São Paulo, BRA"
     },
     {
       "iso3": "FIN",
@@ -7105,18 +7639,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "fi",
       "squashLevelsCheckedAt": "2026-08-21T07:28:40.256Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26813",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:27.818Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:15.172Z",
       "officialPlayerId": "q:player:137",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=137",
       "squashLevelsPlayerId": "26813",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:22:58.278Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:08.845Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:00.274Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 6285,
       "squashLevelsLevel": 4333,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "FIN"
     },
     {
       "iso3": "AUS",
@@ -7127,18 +7662,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:40.647Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221595",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:29.602Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:18.359Z",
       "squashLevelsWorldRank": 19214,
       "officialPlayerId": "q:player:689",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=689",
       "squashLevelsPlayerId": "221595",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:06.827Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:09.389Z",
       "squashLevelsLevel": 1915,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:10.613Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:38.550Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Sandgate, Queensland, AUS"
     },
     {
       "iso3": "USA",
@@ -7149,18 +7685,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:28:40.682Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=146813",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:31.478Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:22.208Z",
       "officialPlayerId": "q:player:1",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=1",
       "squashLevelsPlayerId": "146813",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:11.158Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:14.398Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1762,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:12.399Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "NZL",
@@ -7171,17 +7708,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:40.786Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238009",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:33.261Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:24.291Z",
       "officialPlayerId": "q:player:337",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=337",
       "squashLevelsPlayerId": "238009",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:04.124Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:42.359Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 13113,
       "squashLevelsLevel": 2615,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:14.937Z",
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -7192,7 +7731,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:41.184Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222865",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:35.056Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:26.098Z",
       "squashLevelsWorldRank": 9296,
       "officialPlayerId": "q:player:512",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=512",
@@ -7202,7 +7741,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsLevel": 3348,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:18.727Z",
+      "squashLevelsClubLocation": "Onkaparinga, South Australia, AUS"
     },
     {
       "iso3": "USA",
@@ -7213,18 +7754,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:28:41.245Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438802",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:36.936Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:27.977Z",
       "officialPlayerId": "q:player:934",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=934",
       "squashLevelsPlayerId": "438802",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:23:11.046Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:19.597Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:13.141Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1392,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "AUS",
@@ -7235,18 +7777,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:41.338Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=307772",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:38.728Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:30.718Z",
       "officialPlayerId": "q:player:746",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=746",
       "squashLevelsPlayerId": "307772",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:23:11.626Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:13.736Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:20.164Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:47.849Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 15238,
       "squashLevelsLevel": 2332,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Blue Gum, Western Australia, AUS"
     },
     {
       "iso3": "SLE",
@@ -7256,7 +7799,7 @@ window.TOURNAMENT_DATA = {
       "country": "Sierra Leone",
       "flagCode": "sl",
       "squashLevelsCheckedAt": "2026-08-21T07:28:41.792Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:35.302Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:07.587Z",
       "officialPlayerId": "q:player:488",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=488",
       "squashLevelsWorldRank": null,
@@ -7273,18 +7816,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:41.803Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218384",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:40.526Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:32.528Z",
       "officialPlayerId": "q:player:421",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=421",
       "squashLevelsPlayerId": "218384",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:23:11.624Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:25.290Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:13.679Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 22082,
       "squashLevelsLevel": 1687,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "RACV, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -7295,7 +7839,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:41.902Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=476391",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:42.333Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:34.321Z",
       "officialPlayerId": "q:player:798",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=798",
       "squashLevelsPlayerId": "476391",
@@ -7305,7 +7849,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 33098,
       "squashLevelsLevel": 1029,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:25.921Z",
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "NZL",
@@ -7316,17 +7862,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:42.435Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=374680",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:44.126Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:36.116Z",
       "officialPlayerId": "q:player:939",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=939",
       "squashLevelsPlayerId": "374680",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:17.009Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:53.333Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 8586,
       "squashLevelsLevel": 3539,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:26.554Z",
+      "squashLevelsClubLocation": "Herne Bay Ponsonby Rackets, Auckland, NZL"
     },
     {
       "iso3": "AUS",
@@ -7337,17 +7885,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:42.435Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=315896",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:45.998Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:37.935Z",
       "officialPlayerId": "q:player:122",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=122",
       "squashLevelsPlayerId": "315896",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:17.070Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:56.354Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 16981,
       "squashLevelsLevel": 2136,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:32.126Z",
+      "squashLevelsClubLocation": "Marconi, New South Wales, AUS"
     },
     {
       "iso3": "BRA",
@@ -7358,7 +7908,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "br",
       "squashLevelsCheckedAt": "2026-08-21T07:28:42.424Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=362173",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:48.014Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:39.802Z",
       "officialPlayerId": "q:player:142",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=142",
       "squashLevelsPlayerId": "362173",
@@ -7368,7 +7918,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2061,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:35.934Z",
+      "squashLevelsClubLocation": "Complexo de Raquetes Clube Elase, Santa Catarina, BRA"
     },
     {
       "iso3": "CAN",
@@ -7378,7 +7930,7 @@ window.TOURNAMENT_DATA = {
       "country": "Canada",
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:28:43.042Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:54:12.798Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:36.796Z",
       "officialPlayerId": "q:player:378",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=378",
       "squashLevelsWorldRank": "TBD",
@@ -7390,7 +7942,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:54:14.550Z",
       "squashLevelsMatchedCountry": "CAN",
       "squashLevelsMatchedAge": 55,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:49.901Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:41.670Z",
+      "squashLevelsClubLocation": "Meadow Park Recreation Center, British Columbia, CAN"
     },
     {
       "iso3": "GER",
@@ -7401,7 +7954,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:28:43.053Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=151869",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:51.707Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:43.466Z",
       "officialPlayerId": "q:player:8",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=8",
       "squashLevelsPlayerId": "151869",
@@ -7411,7 +7964,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 30669,
       "squashLevelsLevel": 1151,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:37.701Z",
+      "squashLevelsClubLocation": "1. Darmstaedter Squash Club 1979, Hessen, GER"
     },
     {
       "iso3": "AUS",
@@ -7422,7 +7977,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:43.079Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=471911",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:53.499Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:45.259Z",
       "officialPlayerId": "q:player:362",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=362",
       "squashLevelsPlayerId": "471911",
@@ -7432,7 +7987,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 39932,
       "squashLevelsLevel": 729,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:38.572Z",
+      "squashLevelsClubLocation": "Daisy Hill, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -7443,7 +8000,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:43.734Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232994",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:55.293Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:47.342Z",
       "officialPlayerId": "q:player:860",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=860",
       "squashLevelsPlayerId": "232994",
@@ -7453,7 +8010,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 14681,
       "squashLevelsLevel": 2400,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:39.403Z",
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -7464,7 +8023,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:43.736Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221933",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:57.077Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:49.147Z",
       "officialPlayerId": "q:player:50",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=50",
       "squashLevelsPlayerId": "221933",
@@ -7474,7 +8033,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 10807,
       "squashLevelsLevel": 3028,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:40.292Z",
+      "squashLevelsClubLocation": "Geraldton, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -7484,10 +8045,10 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:43.735Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:54:15.051Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:41.153Z",
       "officialPlayerId": "q:player:271",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=271",
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": null,
       "squashLevelsLevel": 1596,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerified": true,
@@ -7496,7 +8057,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:54:15.438Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 55,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:41:58.960Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:05:58.149Z",
+      "squashLevelsClubLocation": "Dapto, New South Wales, AUS"
     },
     {
       "iso3": "RSA",
@@ -7506,7 +8068,7 @@ window.TOURNAMENT_DATA = {
       "country": "South Africa",
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:44.459Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T04:03:07.856Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:42.035Z",
       "officialPlayerId": "q:player:67",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=67",
       "squashLevelsWorldRank": "TBD",
@@ -7518,7 +8080,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T04:03:08.628Z",
       "squashLevelsMatchedCountry": "ZAF",
       "squashLevelsMatchedAge": 55,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:01.085Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:00.990Z",
+      "squashLevelsClubLocation": "Collegians Club Pietermaritzburg, KwaZulu-Natal, ZAF"
     },
     {
       "iso3": "AUS",
@@ -7529,18 +8092,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:44.362Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=312246",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:11.121Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:11.072Z",
       "officialPlayerId": "q:player:586",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=586",
       "squashLevelsPlayerId": "312246",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:14.947Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:42.949Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:16.207Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Civil Service, Victoria, ENG"
     },
     {
       "iso3": "NZL",
@@ -7550,19 +8114,20 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:44.363Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=236263",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:13.018Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=368000",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:12.914Z",
       "officialPlayerId": "q:player:51",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=51",
-      "squashLevelsPlayerId": "236263",
+      "squashLevelsPlayerId": "368000",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:23:25.541Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:31.082Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:44.792Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:32:12.543Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 1586,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 2037,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "3 1 5, Lancs, ENG"
     },
     {
       "iso3": "SLE",
@@ -7572,7 +8137,7 @@ window.TOURNAMENT_DATA = {
       "country": "Sierra Leone",
       "flagCode": "sl",
       "squashLevelsCheckedAt": "2026-08-21T07:28:44.999Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:36.353Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:08.678Z",
       "officialPlayerId": "q:player:496",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=496",
       "squashLevelsWorldRank": null,
@@ -7589,17 +8154,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:28:44.974Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=136619",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:14.856Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:14.715Z",
       "squashLevelsWorldRank": 8892,
       "officialPlayerId": "q:player:102",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=102",
       "squashLevelsPlayerId": "136619",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:26.787Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:32:16.167Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsLevel": 3456,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:38:57.605Z",
+      "squashLevelsClubLocation": "Middx, ENG"
     },
     {
       "iso3": "AUS",
@@ -7610,17 +8177,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:45.083Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218568",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:16.656Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:16.505Z",
       "officialPlayerId": "q:player:94",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=94",
       "squashLevelsPlayerId": "218568",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:29.985Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:32:21.837Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 7323,
       "squashLevelsLevel": 3929,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:01.084Z",
+      "squashLevelsClubLocation": "Brisbane City, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -7630,19 +8199,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:45.575Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219651",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:18.538Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=496276",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:18.392Z",
       "officialPlayerId": "q:player:951",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=951",
-      "squashLevelsPlayerId": "219651",
+      "squashLevelsPlayerId": "496276",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:23:31.104Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:35.974Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:07.526Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:39:14.974Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 2242,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 4305,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Nouvelle-Aquitaine, FRA"
     },
     {
       "iso3": "AUT",
@@ -7653,7 +8223,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "at",
       "squashLevelsCheckedAt": "2026-08-21T07:28:45.610Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=456109",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:20.324Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:20.190Z",
       "officialPlayerId": "q:player:239",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=239",
       "squashLevelsPlayerId": "456109",
@@ -7663,7 +8233,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 38973,
       "squashLevelsLevel": 769,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:15.951Z",
+      "squashLevelsClubLocation": "Belmont Saints, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -7674,7 +8246,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:45.650Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238828",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:22.129Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:21.988Z",
       "officialPlayerId": "q:player:619",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=619",
       "squashLevelsPlayerId": "238828",
@@ -7684,7 +8256,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 21980,
       "squashLevelsLevel": 1694,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:16.472Z",
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -7694,19 +8268,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:46.166Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=316509",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:23.940Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=134712",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:23.885Z",
       "officialPlayerId": "q:player:127",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=127",
-      "squashLevelsPlayerId": "316509",
+      "squashLevelsPlayerId": "134712",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:23:36.657Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:41.527Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:17.042Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:32:35.337Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
-      "squashLevelsWorldRank": 24649,
-      "squashLevelsLevel": 1504,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 2503,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Cumberland, Middx, ENG"
     },
     {
       "iso3": "AUS",
@@ -7717,17 +8292,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:46.169Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219663",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:25.732Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:25.682Z",
       "officialPlayerId": "q:player:81",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=81",
       "squashLevelsPlayerId": "219663",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:37.343Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:32:38.423Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 13426,
       "squashLevelsLevel": 2569,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:20.518Z",
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "DEN",
@@ -7738,7 +8315,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "dk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:46.268Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=430997",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:27.609Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:27.560Z",
       "officialPlayerId": "q:player:277",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=277",
       "squashLevelsPlayerId": "430997",
@@ -7748,7 +8325,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2054,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:24.009Z",
+      "squashLevelsClubLocation": "Maroochy, Queensland, AUS"
     },
     {
       "iso3": "TUR",
@@ -7759,7 +8338,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "tr",
       "squashLevelsCheckedAt": "2026-08-21T07:28:46.732Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=423182",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:29.405Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:30.539Z",
       "officialPlayerId": "q:player:382",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=382",
       "squashLevelsPlayerId": "423182",
@@ -7769,7 +8348,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 7139,
       "squashLevelsLevel": 3991,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:24.641Z",
+      "squashLevelsClubLocation": "Squash Club Fit Fun, Berlin-Brandenburg, GER"
     },
     {
       "iso3": "AUS",
@@ -7780,7 +8361,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:46.742Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38556",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:31.197Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:32.346Z",
       "officialPlayerId": "q:player:821",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=821",
       "squashLevelsPlayerId": "38556",
@@ -7790,7 +8371,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 11457,
       "squashLevelsLevel": 2898,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:25.164Z",
+      "squashLevelsClubLocation": "Vic Park, Western Australia, AUS"
     },
     {
       "iso3": "ESP",
@@ -7801,17 +8384,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "es",
       "squashLevelsCheckedAt": "2026-08-21T07:28:46.839Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=421559",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:33.086Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:34.213Z",
       "officialPlayerId": "q:player:84",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=84",
       "squashLevelsPlayerId": "421559",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:43.761Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:39:28.740Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2131,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:25.795Z",
+      "squashLevelsClubLocation": "ARG"
     },
     {
       "iso3": "AUS",
@@ -7822,7 +8407,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:47.314Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=522786",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:34.883Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:36.035Z",
       "officialPlayerId": "q:player:959",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=959",
       "squashLevelsPlayerId": "522786",
@@ -7832,7 +8417,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 28450,
       "squashLevelsLevel": 1271,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:29.256Z",
+      "squashLevelsClubLocation": "Goodlife Fitzroy, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -7842,19 +8429,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:47.274Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=7774",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:42:50.021Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235542",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:37.876Z",
       "officialPlayerId": "q:player:666",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=666",
-      "squashLevelsPlayerId": "7774",
+      "squashLevelsPlayerId": "235542",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:17.227Z",
-      "squashLevelsWorldRank": null,
-      "squashLevelsLevel": null,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:29.770Z",
+      "squashLevelsWorldRank": 45190,
+      "squashLevelsLevel": 533,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:19.722Z",
-      "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:39:32.772Z",
+      "squashLevelsMatchedCountry": "AUS",
+      "squashLevelsMatchedAge": 55,
+      "squashLevelsClubLocation": "Vic Park, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -7865,7 +8453,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:47.406Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232413",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:05.145Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:39.680Z",
       "officialPlayerId": "q:player:499",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=499",
       "squashLevelsPlayerId": "232413",
@@ -7873,9 +8461,11 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:46.799Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
-      "squashLevelsWorldRank": null,
-      "squashLevelsLevel": null,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": 16496,
+      "squashLevelsLevel": 2188,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:33.302Z",
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "NZL",
@@ -7886,7 +8476,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:47.811Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=392847",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:06.943Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:41.547Z",
       "officialPlayerId": "q:player:594",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=594",
       "squashLevelsPlayerId": "392847",
@@ -7896,7 +8486,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 50591,
       "squashLevelsLevel": 364,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:33.856Z",
+      "squashLevelsClubLocation": "Makarewa, Southland, NZL"
     },
     {
       "iso3": "PAK",
@@ -7906,7 +8498,7 @@ window.TOURNAMENT_DATA = {
       "country": "Pakistan",
       "flagCode": "pk",
       "squashLevelsCheckedAt": "2026-08-21T07:28:47.831Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:37.076Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:09.206Z",
       "officialPlayerId": "q:player:61",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=61",
       "squashLevelsWorldRank": null,
@@ -7922,18 +8514,20 @@ window.TOURNAMENT_DATA = {
       "country": "Ireland",
       "flagCode": "ie",
       "squashLevelsCheckedAt": "2026-08-21T07:28:47.958Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233579",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:08.991Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=455658",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:43.419Z",
       "officialPlayerId": "q:player:258",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=258",
-      "squashLevelsPlayerId": "233579",
+      "squashLevelsPlayerId": "455658",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:49.953Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:39:44.814Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
-      "squashLevelsWorldRank": 10382,
-      "squashLevelsLevel": 3111,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 1445,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:34.415Z",
+      "squashLevelsClubLocation": "Wodonga & Racquetball Assoc, New South Wales, AUS"
     },
     {
       "iso3": "ENG",
@@ -7944,7 +8538,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:28:48.406Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=359360",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:10.910Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:45.964Z",
       "officialPlayerId": "q:player:389",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=389",
       "squashLevelsPlayerId": "359360",
@@ -7954,7 +8548,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 8062,
       "squashLevelsLevel": 3682,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:45.952Z",
+      "squashLevelsClubLocation": "Alderley Edge, Cheshire, ENG"
     },
     {
       "iso3": "EGY",
@@ -7964,7 +8560,7 @@ window.TOURNAMENT_DATA = {
       "country": "Egypt",
       "flagCode": "eg",
       "squashLevelsCheckedAt": "2026-08-21T07:28:48.434Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:37.814Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:09.744Z",
       "officialPlayerId": "q:player:715",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=715",
       "squashLevelsWorldRank": null,
@@ -7981,18 +8577,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:28:48.526Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438686",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:12.893Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:47.861Z",
       "officialPlayerId": "q:player:148",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=148",
       "squashLevelsPlayerId": "438686",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:23:51.824Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:53.827Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:49.143Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:39:52.064Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 543,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "JPN"
     },
     {
       "iso3": "SIN",
@@ -8003,17 +8600,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:28:49.027Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=283764",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:14.717Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:49.665Z",
       "officialPlayerId": "q:player:205",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=205",
       "squashLevelsPlayerId": "283764",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:23:52.765Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:33:12.466Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 10702,
       "squashLevelsLevel": 3049,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:39:53.464Z",
+      "squashLevelsClubLocation": "New Pioneer Squash Club, SGP"
     },
     {
       "iso3": "AUS",
@@ -8024,18 +8623,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:49.076Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=227795",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:16.606Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:51.541Z",
       "officialPlayerId": "q:player:562",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=562",
       "squashLevelsPlayerId": "227795",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:21.259Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:06.345Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1186,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:27.533Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:33:19.480Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Ipswich PCYC Squash Centre, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -8046,7 +8646,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:49.059Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38394",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:18.486Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:53.461Z",
       "officialPlayerId": "q:player:43",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=43",
       "squashLevelsPlayerId": "38394",
@@ -8056,7 +8656,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3801,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:14.867Z",
+      "squashLevelsClubLocation": "Mirrabooka, Yorks, AUS"
     },
     {
       "iso3": "AUS",
@@ -8066,7 +8668,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:49.647Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:38.772Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:10.294Z",
       "officialPlayerId": "q:player:673",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=673",
       "squashLevelsWorldRank": null,
@@ -8083,18 +8685,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:49.670Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218113",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:20.277Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:55.257Z",
       "officialPlayerId": "q:player:412",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=412",
       "squashLevelsPlayerId": "218113",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:28.934Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:15.398Z",
       "squashLevelsWorldRank": 24680,
       "squashLevelsLevel": 1502,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:30.195Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Somerton, South Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -8105,7 +8708,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:49.989Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221262",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:22.138Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:57.047Z",
       "officialPlayerId": "q:player:834",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=834",
       "squashLevelsPlayerId": "221262",
@@ -8115,7 +8718,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 16829,
       "squashLevelsLevel": 2152,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:15.996Z",
+      "squashLevelsClubLocation": "Marmion, Western Australia, AUS"
     },
     {
       "iso3": "USA",
@@ -8126,18 +8731,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:28:50.199Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438586",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:24.014Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:06:58.923Z",
       "officialPlayerId": "q:player:457",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=457",
       "squashLevelsPlayerId": "438586",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:30.697Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:16.588Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2410,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:31.951Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "NED",
@@ -8148,18 +8754,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nl",
       "squashLevelsCheckedAt": "2026-08-21T07:28:50.282Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=305393",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:25.803Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:00.740Z",
       "officialPlayerId": "q:player:170",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=170",
       "squashLevelsPlayerId": "305393",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:32.461Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:17.155Z",
       "squashLevelsWorldRank": 18474,
       "squashLevelsLevel": 1983,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:33.717Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Houtrust, Zuid-Holland, NLD"
     },
     {
       "iso3": "SIN",
@@ -8169,7 +8776,7 @@ window.TOURNAMENT_DATA = {
       "country": "Singapore",
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:28:50.508Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:40.446Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:11.780Z",
       "officialPlayerId": "q:player:263",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=263",
       "squashLevelsWorldRank": null,
@@ -8186,18 +8793,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:50.768Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=325263",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:27.682Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:02.618Z",
       "officialPlayerId": "q:player:188",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=188",
       "squashLevelsPlayerId": "325263",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:24:07.868Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:17.672Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:24:09.894Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2668,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Collegians Club Pietermaritzburg, KwaZulu-Natal, ZAF"
     },
     {
       "iso3": "GER",
@@ -8208,18 +8816,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:28:50.847Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26817",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:29.474Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:04.426Z",
       "officialPlayerId": "q:player:605",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=605",
       "squashLevelsPlayerId": "26817",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:34.828Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:18.191Z",
       "squashLevelsWorldRank": 11893,
       "squashLevelsLevel": 2821,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:36.081Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "SC Heidenkopf, Saarland, GER"
     },
     {
       "iso3": "AUS",
@@ -8230,18 +8839,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:51.018Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219297",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:31.269Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:06.517Z",
       "officialPlayerId": "q:player:678",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=678",
       "squashLevelsPlayerId": "219297",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:36.603Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:18.706Z",
       "squashLevelsWorldRank": 10650,
       "squashLevelsLevel": 3058,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:37.882Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -8252,18 +8862,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:51.350Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219088",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:33.142Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:08.397Z",
       "officialPlayerId": "q:player:244",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=244",
       "squashLevelsPlayerId": "219088",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:24:13.868Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:19.272Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:24:15.986Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3322,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -8274,18 +8885,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:51.407Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=230113",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:34.925Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:10.196Z",
       "officialPlayerId": "q:player:894",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=894",
       "squashLevelsPlayerId": "230113",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:24:14.095Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:19.776Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:24:16.253Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 29896,
       "squashLevelsLevel": 1191,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Australian Capital Territory, AUS"
     },
     {
       "iso3": "AUS",
@@ -8296,7 +8908,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:51.556Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=237056",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:36.734Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:12.005Z",
       "officialPlayerId": "q:player:920",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=920",
       "squashLevelsPlayerId": "237056",
@@ -8306,7 +8918,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 7859,
       "squashLevelsLevel": 3744,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:20.296Z",
+      "squashLevelsClubLocation": "Blue Gum, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -8317,18 +8931,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:51.930Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=472090",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:38.523Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:13.805Z",
       "officialPlayerId": "q:player:460",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=460",
       "squashLevelsPlayerId": "472090",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:24:20.245Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:20.824Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:24:22.246Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 8524,
       "squashLevelsLevel": 3555,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Dural, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -8338,7 +8953,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:51.957Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:41.274Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:12.316Z",
       "officialPlayerId": "q:player:847",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=847",
       "squashLevelsWorldRank": null,
@@ -8355,18 +8970,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:52.094Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=76227",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:40.303Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:15.599Z",
       "officialPlayerId": "q:player:110",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=110",
       "squashLevelsPlayerId": "76227",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:24:19.616Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:21.328Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:24:21.624Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 20172,
       "squashLevelsLevel": 1836,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Mossel Bay, Western Cape, ZAF"
     },
     {
       "iso3": "AUS",
@@ -8377,7 +8993,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:52.472Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=312365",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:42.092Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:17.400Z",
       "officialPlayerId": "q:player:685",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=685",
       "squashLevelsPlayerId": "312365",
@@ -8387,7 +9003,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 12972,
       "squashLevelsLevel": 2637,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:21.839Z",
+      "squashLevelsClubLocation": "Busselton Squash Club, Western Australia, AUS"
     },
     {
       "iso3": "GER",
@@ -8398,7 +9016,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:28:52.461Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=181933",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:43.891Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:19.188Z",
       "officialPlayerId": "q:player:900",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=900",
       "squashLevelsPlayerId": "181933",
@@ -8408,7 +9026,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 16020,
       "squashLevelsLevel": 2239,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:22.355Z",
+      "squashLevelsClubLocation": "SC Heidenkopf, Saarland, GER"
     },
     {
       "iso3": "ENG",
@@ -8419,17 +9039,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:28:52.620Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=386049",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:45.718Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:21.103Z",
       "officialPlayerId": "q:player:287",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=287",
       "squashLevelsPlayerId": "386049",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:24:24.449Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:33:34.205Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 38312,
       "squashLevelsLevel": 796,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:22.929Z",
+      "squashLevelsClubLocation": "Huntly, Waikato, NZL"
     },
     {
       "iso3": "CAN",
@@ -8440,17 +9062,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:28:53.012Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=332873",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:47.629Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:23.022Z",
       "officialPlayerId": "q:player:987",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=987",
       "squashLevelsPlayerId": "332873",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:24:25.284Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:33:39.002Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 4787,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:26.389Z",
+      "squashLevelsClubLocation": "CAN"
     },
     {
       "iso3": "AUS",
@@ -8461,7 +9085,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:52.998Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=529714",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:49.426Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:24.839Z",
       "officialPlayerId": "q:player:364",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=364",
       "squashLevelsPlayerId": "529714",
@@ -8471,7 +9095,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 544,
       "squashLevelsLevel": 3739,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:31.870Z",
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -8482,7 +9108,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:53.140Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26421",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:51.215Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:26.628Z",
       "officialPlayerId": "q:player:387",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=387",
       "squashLevelsPlayerId": "26421",
@@ -8492,7 +9118,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 696,
       "squashLevelsLevel": 3222,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:32.705Z",
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -8503,7 +9131,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:53.632Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=25985",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:53.051Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:28.455Z",
       "officialPlayerId": "q:player:630",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=630",
       "squashLevelsPlayerId": "25985",
@@ -8513,7 +9141,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 1017,
       "squashLevelsLevel": 2489,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:33.816Z",
+      "squashLevelsClubLocation": "Canterbury Leagues, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -8523,7 +9153,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:53.622Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:54:21.669Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:34.587Z",
       "officialPlayerId": "q:player:697",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=697",
       "squashLevelsWorldRank": 844,
@@ -8535,7 +9165,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:54:22.063Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 55,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:54.934Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:30.257Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "ENG",
@@ -8546,7 +9177,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:28:53.661Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=27583",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:56.766Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:32.060Z",
       "officialPlayerId": "q:player:672",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=672",
       "squashLevelsPlayerId": "27583",
@@ -8556,7 +9187,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 891,
       "squashLevelsLevel": 2744,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:35.522Z",
+      "squashLevelsClubLocation": "Caversham, Berks, ENG"
     },
     {
       "iso3": "AUS",
@@ -8567,7 +9200,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:54.203Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218581",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:43:58.723Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:33.879Z",
       "squashLevelsWorldRank": 876,
       "officialPlayerId": "q:player:394",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=394",
@@ -8577,7 +9210,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsLevel": 2778,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:36.337Z",
+      "squashLevelsClubLocation": "Blue Gum, Western Australia, AUS"
     },
     {
       "iso3": "CAN",
@@ -8588,7 +9223,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:28:54.155Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=36961",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:00.816Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:35.770Z",
       "officialPlayerId": "q:player:776",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=776",
       "squashLevelsPlayerId": "36961",
@@ -8598,7 +9233,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3844,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:37.180Z",
+      "squashLevelsClubLocation": "CAN"
     },
     {
       "iso3": "AUS",
@@ -8609,7 +9246,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:54.242Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=236432",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:02.638Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:37.555Z",
       "officialPlayerId": "q:player:2",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=2",
       "squashLevelsPlayerId": "236432",
@@ -8619,7 +9256,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 1837,
       "squashLevelsLevel": 1548,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:37.923Z",
+      "squashLevelsClubLocation": "Marconi, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -8630,7 +9269,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:54.756Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=226806",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:04.435Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:39.437Z",
       "officialPlayerId": "q:player:576",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=576",
       "squashLevelsPlayerId": "226806",
@@ -8640,7 +9279,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 913,
       "squashLevelsLevel": 2709,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:38.702Z",
+      "squashLevelsClubLocation": "Campbelltown Squash Club, South Australia, AUS"
     },
     {
       "iso3": "GER",
@@ -8651,7 +9292,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:28:54.737Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26832",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:06.265Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:41.246Z",
       "officialPlayerId": "q:player:329",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=329",
       "squashLevelsPlayerId": "26832",
@@ -8661,7 +9302,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 1560,
       "squashLevelsLevel": 1789,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:39.593Z",
+      "squashLevelsClubLocation": "Park Squash Nymphenburg, Bayern, GER"
     },
     {
       "iso3": "AUS",
@@ -8672,7 +9315,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:54.822Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=230405",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:08.175Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:43.123Z",
       "officialPlayerId": "q:player:297",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=297",
       "squashLevelsPlayerId": "230405",
@@ -8682,7 +9325,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1609,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:40.421Z",
+      "squashLevelsClubLocation": "Darwin, Northern Territory, AUS"
     },
     {
       "iso3": "AUS",
@@ -8693,7 +9338,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:55.396Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=237117",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:10.062Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:44.993Z",
       "officialPlayerId": "q:player:332",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=332",
       "squashLevelsPlayerId": "237117",
@@ -8703,7 +9348,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1603,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:42.099Z",
+      "squashLevelsClubLocation": "Maash, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -8714,7 +9361,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:55.335Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=284161",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:11.859Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:47.084Z",
       "officialPlayerId": "q:player:636",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=636",
       "squashLevelsPlayerId": "284161",
@@ -8724,7 +9371,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 1613,
       "squashLevelsLevel": 1737,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:42.940Z",
+      "squashLevelsClubLocation": "Scarborough Squash Club, Queensland, AUS"
     },
     {
       "iso3": "NZL",
@@ -8735,7 +9384,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:55.403Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=372226",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:13.649Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:48.959Z",
       "squashLevelsWorldRank": 2174,
       "officialPlayerId": "q:player:687",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=687",
@@ -8745,7 +9394,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsLevel": 1333,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:44.650Z",
+      "squashLevelsClubLocation": "Mount Maunganui, Bay of Plenty, NZL"
     },
     {
       "iso3": "NZL",
@@ -8756,17 +9407,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:28:56.049Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228371",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:15.533Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:50.829Z",
       "officialPlayerId": "q:player:688",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=688",
       "squashLevelsPlayerId": "228371",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:24:39.273Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:33:51.599Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1487,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:45.502Z",
+      "squashLevelsClubLocation": "Marmion, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -8777,7 +9430,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:56.045Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=227397",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:17.344Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:53.166Z",
       "officialPlayerId": "q:player:177",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=177",
       "squashLevelsPlayerId": "227397",
@@ -8787,7 +9440,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 2648,
       "squashLevelsLevel": 1089,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:50.854Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -8797,7 +9452,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:56.037Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:42.694Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:13.758Z",
       "officialPlayerId": "q:player:735",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=735",
       "squashLevelsWorldRank": null,
@@ -8814,7 +9469,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:56.715Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=229869",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:19.158Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:54.974Z",
       "officialPlayerId": "q:player:936",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=936",
       "squashLevelsPlayerId": "229869",
@@ -8824,7 +9479,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 2251,
       "squashLevelsLevel": 1295,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:51.481Z",
+      "squashLevelsClubLocation": "Scarborough Squash Club, Queensland, AUS"
     },
     {
       "iso3": "CAN",
@@ -8835,18 +9492,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:28:56.717Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=332685",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:21.072Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:56.846Z",
       "officialPlayerId": "q:player:578",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=578",
       "squashLevelsPlayerId": "332685",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:40.436Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:52.023Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1075,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:41.689Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "British Columbia, CAN"
     },
     {
       "iso3": "AUS",
@@ -8857,7 +9515,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:56.715Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=229433",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:22.957Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:07:58.728Z",
       "officialPlayerId": "q:player:579",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=579",
       "squashLevelsPlayerId": "229433",
@@ -8867,7 +9525,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 921,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:52.538Z",
+      "squashLevelsClubLocation": "Tonic Squash and Gym, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -8878,7 +9538,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:57.431Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228554",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:24.849Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:01.037Z",
       "officialPlayerId": "q:player:363",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=363",
       "squashLevelsPlayerId": "228554",
@@ -8888,7 +9548,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 902,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:53.135Z",
+      "squashLevelsClubLocation": "Tonic Squash and Gym, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -8899,7 +9561,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:57.380Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=230901",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:26.933Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:03.214Z",
       "officialPlayerId": "q:player:408",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=408",
       "squashLevelsPlayerId": "230901",
@@ -8909,7 +9571,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 3246,
       "squashLevelsLevel": 874,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:53.726Z",
+      "squashLevelsClubLocation": "Dural, New South Wales, AUS"
     },
     {
       "iso3": "RSA",
@@ -8920,7 +9584,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:57.377Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=324972",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:28.729Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:05.011Z",
       "officialPlayerId": "q:player:811",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=811",
       "squashLevelsPlayerId": "324972",
@@ -8930,7 +9594,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 2837,
       "squashLevelsLevel": 1014,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:54.262Z",
+      "squashLevelsClubLocation": "Western Province Cricket Club (Squash), Western Cape, ZAF"
     },
     {
       "iso3": "GER",
@@ -8940,7 +9606,7 @@ window.TOURNAMENT_DATA = {
       "country": "Germany",
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:28:57.997Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:43.427Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:14.297Z",
       "officialPlayerId": "q:player:108",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=108",
       "squashLevelsWorldRank": null,
@@ -8957,7 +9623,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:57.901Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=323907",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:30.553Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:06.827Z",
       "officialPlayerId": "q:player:768",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=768",
       "squashLevelsPlayerId": "323907",
@@ -8967,7 +9633,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 4373,
       "squashLevelsLevel": 604,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:54.786Z",
+      "squashLevelsClubLocation": "Westville Country, KwaZulu-Natal, ZAF"
     },
     {
       "iso3": "AUS",
@@ -8978,7 +9646,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:58.037Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438428",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:32.392Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:08.634Z",
       "officialPlayerId": "q:player:598",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=598",
       "squashLevelsPlayerId": "438428",
@@ -8988,7 +9656,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 3914,
       "squashLevelsLevel": 705,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:55.432Z",
+      "squashLevelsClubLocation": "Bankstown Sports, New South Wales, AUS"
     },
     {
       "iso3": "RSA",
@@ -8999,18 +9669,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:28:58.482Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=279022",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:34.273Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:10.424Z",
       "officialPlayerId": "q:player:336",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=336",
       "squashLevelsPlayerId": "279022",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:24:51.259Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:24:58.961Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:40:56.061Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:41:08.981Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": 3319,
       "squashLevelsLevel": 851,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "PE Crusaders Sports Club, Eastern Cape, ZAF"
     },
     {
       "iso3": "USA",
@@ -9021,7 +9692,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:28:58.607Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=468533",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:36.396Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:12.291Z",
       "officialPlayerId": "q:player:171",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=171",
       "squashLevelsPlayerId": "468533",
@@ -9031,7 +9702,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 493,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:09.969Z",
+      "squashLevelsClubLocation": "TBD"
     },
     {
       "iso3": "AUS",
@@ -9042,18 +9715,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:58.594Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=522024",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:38.191Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:14.086Z",
       "officialPlayerId": "q:player:838",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=838",
       "squashLevelsPlayerId": "522024",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:42.751Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:10.481Z",
       "squashLevelsWorldRank": 4422,
       "squashLevelsLevel": 595,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:44.003Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": ""
     },
     {
       "iso3": "AUS",
@@ -9064,7 +9738,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:59.014Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=434816",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:40.355Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:16.376Z",
       "officialPlayerId": "q:player:37",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=37",
       "squashLevelsPlayerId": "434816",
@@ -9074,7 +9748,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 4583,
       "squashLevelsLevel": 567,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:11.003Z",
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -9084,7 +9760,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:59.141Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T08:14:45.581Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:11.516Z",
       "officialPlayerId": "q:player:212",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=212",
       "squashLevelsWorldRank": 4224,
@@ -9096,7 +9772,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T08:14:46.008Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 55,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:42.137Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:18.183Z",
+      "squashLevelsClubLocation": "Dapto Squash Club, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -9107,17 +9784,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:28:59.423Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=227863",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:43.940Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:20.004Z",
       "officialPlayerId": "q:player:948",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=948",
       "squashLevelsPlayerId": "227863",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:24:57.441Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:34:23.185Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsWorldRank": 6187,
       "squashLevelsLevel": 347,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:12.333Z",
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "MAS",
@@ -9128,18 +9807,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "my",
       "squashLevelsCheckedAt": "2026-08-21T07:28:59.559Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=361306",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:53.978Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:30.066Z",
       "officialPlayerId": "q:player:813",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=813",
       "squashLevelsPlayerId": "361306",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:45.065Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:24.807Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:46.327Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "TBD"
     },
     {
       "iso3": "FRA",
@@ -9150,18 +9830,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "fr",
       "squashLevelsCheckedAt": "2026-08-21T07:28:59.700Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26856",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:55.835Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:31.874Z",
       "officialPlayerId": "q:player:982",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=982",
       "squashLevelsPlayerId": "26856",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:46.864Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:25.323Z",
       "squashLevelsWorldRank": 1040,
       "squashLevelsLevel": 11668,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:48.108Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Nouvelle-Aquitaine, FRA"
     },
     {
       "iso3": "SWE",
@@ -9172,7 +9853,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "se",
       "squashLevelsCheckedAt": "2026-08-21T07:28:59.935Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=358633",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:57.751Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:33.663Z",
       "officialPlayerId": "q:player:640",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=640",
       "squashLevelsPlayerId": "358633",
@@ -9182,7 +9863,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 1658,
       "squashLevelsLevel": 9224,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:25.845Z",
+      "squashLevelsClubLocation": "Team Göteborg Squashklubb, Västsvenska Squashförbundet, SWE"
     },
     {
       "iso3": "ENG",
@@ -9193,7 +9876,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:29:00.082Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=25617",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:44:59.586Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:35.470Z",
       "officialPlayerId": "q:player:725",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=725",
       "squashLevelsPlayerId": "25617",
@@ -9203,7 +9886,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 2116,
       "squashLevelsLevel": 8109,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:26.397Z",
+      "squashLevelsClubLocation": "Grove Park, D & C, ENG"
     },
     {
       "iso3": "RSA",
@@ -9214,18 +9899,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:00.220Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=5901",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:01.408Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:37.317Z",
       "officialPlayerId": "q:player:975",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=975",
       "squashLevelsPlayerId": "5901",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:48.604Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:26.915Z",
       "squashLevelsWorldRank": 2765,
       "squashLevelsLevel": 6922,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:49.848Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Parkview Squash Centre, Gauteng, ZAF"
     },
     {
       "iso3": "ENG",
@@ -9236,7 +9922,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:29:00.458Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=209495",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:03.219Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:39.116Z",
       "officialPlayerId": "q:player:439",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=439",
       "squashLevelsPlayerId": "209495",
@@ -9246,7 +9932,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 2146,
       "squashLevelsLevel": 8047,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:27.500Z",
+      "squashLevelsClubLocation": "The Oakwood, Middx, ENG"
     },
     {
       "iso3": "ENG",
@@ -9257,7 +9945,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:29:00.609Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=51456",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:05.024Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:40.931Z",
       "officialPlayerId": "q:player:824",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=824",
       "squashLevelsPlayerId": "51456",
@@ -9267,7 +9955,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 2404,
       "squashLevelsLevel": 7510,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:28.018Z",
+      "squashLevelsClubLocation": "Chichester, Hants, ENG"
     },
     {
       "iso3": "AUS",
@@ -9278,18 +9968,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:00.767Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218822",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:06.815Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:42.737Z",
       "officialPlayerId": "q:player:565",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=565",
       "squashLevelsPlayerId": "218822",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:50.384Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:28.619Z",
       "squashLevelsWorldRank": 5581,
       "squashLevelsLevel": 4680,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:56.621Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:34:34.079Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Oregon, AUS"
     },
     {
       "iso3": "SUI",
@@ -9300,7 +9991,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ch",
       "squashLevelsCheckedAt": "2026-08-21T07:29:00.981Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38513",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:08.608Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:44.535Z",
       "officialPlayerId": "q:player:352",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=352",
       "squashLevelsPlayerId": "38513",
@@ -9310,7 +10001,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 3107,
       "squashLevelsLevel": 6482,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:36.937Z",
+      "squashLevelsClubLocation": "Squash Club Royal Cham, Zug, SUI"
     },
     {
       "iso3": "IND",
@@ -9321,7 +10014,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:29:01.153Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=472631",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:10.567Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:46.409Z",
       "officialPlayerId": "q:player:176",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=176",
       "squashLevelsPlayerId": "472631",
@@ -9331,7 +10024,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 8369,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:37.462Z",
+      "squashLevelsClubLocation": "Maharashtra, IND"
     },
     {
       "iso3": "AUS",
@@ -9341,7 +10036,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:01.286Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:54:24.433Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:37.974Z",
       "officialPlayerId": "q:player:704",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=704",
       "squashLevelsWorldRank": 2207,
@@ -9353,7 +10048,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:54:26.354Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:12.360Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:48.223Z",
+      "squashLevelsClubLocation": "Cardiff, New South Wales, AUS"
     },
     {
       "iso3": "IND",
@@ -9364,7 +10060,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:29:01.493Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=116765",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:14.243Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:50.133Z",
       "officialPlayerId": "q:player:365",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=365",
       "squashLevelsPlayerId": "116765",
@@ -9374,7 +10070,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 12332,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:38.542Z",
+      "squashLevelsClubLocation": "Delhi, IND"
     },
     {
       "iso3": "NZL",
@@ -9385,7 +10083,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:01.683Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=379029",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:16.053Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:51.950Z",
       "officialPlayerId": "q:player:222",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=222",
       "squashLevelsPlayerId": "379029",
@@ -9395,7 +10093,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 3492,
       "squashLevelsLevel": 6093,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:39.126Z",
+      "squashLevelsClubLocation": "Howick, Auckland, NZL"
     },
     {
       "iso3": "AUS",
@@ -9406,7 +10106,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:01.803Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233534",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:17.860Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:53.745Z",
       "officialPlayerId": "q:player:668",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=668",
       "squashLevelsPlayerId": "233534",
@@ -9416,7 +10116,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 7080,
       "squashLevelsLevel": 4013,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:39.719Z",
+      "squashLevelsClubLocation": "Lilydale Squash Club, Victoria, AUS"
     },
     {
       "iso3": "RSA",
@@ -9426,7 +10128,7 @@ window.TOURNAMENT_DATA = {
       "country": "South Africa",
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:02.005Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:54:26.963Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:40.258Z",
       "officialPlayerId": "q:player:960",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=960",
       "squashLevelsWorldRank": 4604,
@@ -9438,7 +10140,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:54:27.418Z",
       "squashLevelsMatchedCountry": "ZAF",
       "squashLevelsMatchedAge": 60,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:19.661Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:55.555Z",
+      "squashLevelsClubLocation": "Westville Country, KwaZulu-Natal, ZAF"
     },
     {
       "iso3": "GER",
@@ -9449,7 +10152,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:29:02.198Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38431",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:21.460Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:57.356Z",
       "officialPlayerId": "q:player:917",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=917",
       "squashLevelsPlayerId": "38431",
@@ -9459,7 +10162,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 1994,
       "squashLevelsLevel": 8380,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:40.760Z",
+      "squashLevelsClubLocation": "SC Turnhalle Niederrhein, Nordrhein-Westfalen, GER"
     },
     {
       "iso3": "SUI",
@@ -9470,7 +10175,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ch",
       "squashLevelsCheckedAt": "2026-08-21T07:29:02.327Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=96529",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:23.284Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:08:59.148Z",
       "officialPlayerId": "q:player:211",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=211",
       "squashLevelsPlayerId": "96529",
@@ -9480,7 +10185,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 4247,
       "squashLevelsLevel": 5482,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:41.365Z",
+      "squashLevelsClubLocation": "GCZ, Zurich, SUI"
     },
     {
       "iso3": "MEX",
@@ -9491,18 +10198,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "mx",
       "squashLevelsCheckedAt": "2026-08-21T07:29:02.522Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438743",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:25.180Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:01.013Z",
       "officialPlayerId": "q:player:302",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=302",
       "squashLevelsPlayerId": "438743",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:02:58.385Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:42.000Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3937,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:02:59.640Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "MEX"
     },
     {
       "iso3": "GER",
@@ -9513,7 +10221,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:29:02.710Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=181875",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:27.057Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:02.889Z",
       "officialPlayerId": "q:player:111",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=111",
       "squashLevelsPlayerId": "181875",
@@ -9523,7 +10231,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 4282,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:42.496Z",
+      "squashLevelsClubLocation": "Squash Club Buschkrug, Berlin-Brandenburg, GER"
     },
     {
       "iso3": "NZL",
@@ -9534,7 +10244,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:02.857Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=372767",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:28.845Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:04.698Z",
       "squashLevelsWorldRank": 8221,
       "officialPlayerId": "q:player:234",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=234",
@@ -9544,7 +10254,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsLevel": 3637,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:43.013Z",
+      "squashLevelsClubLocation": "Greymouth, Canterbury, NZL"
     },
     {
       "iso3": "AUS",
@@ -9555,7 +10267,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:03.054Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=215769",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:30.638Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:06.499Z",
       "officialPlayerId": "q:player:469",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=469",
       "squashLevelsPlayerId": "215769",
@@ -9565,7 +10277,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 6153,
       "squashLevelsLevel": 4391,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:43.631Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "CAN",
@@ -9576,7 +10290,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:29:03.242Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38593",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:32.533Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:08.382Z",
       "officialPlayerId": "q:player:616",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=616",
       "squashLevelsPlayerId": "38593",
@@ -9586,7 +10300,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 5058,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:44.224Z",
+      "squashLevelsClubLocation": "Ontario, CAN"
     },
     {
       "iso3": "AUS",
@@ -9597,7 +10313,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:03.369Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228134",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:34.349Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:10.181Z",
       "squashLevelsWorldRank": 7098,
       "officialPlayerId": "q:player:199",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=199",
@@ -9607,7 +10323,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsLevel": 4008,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:44.715Z",
+      "squashLevelsClubLocation": "Tanglin Club, 1, SGP"
     },
     {
       "iso3": "SIN",
@@ -9617,7 +10335,7 @@ window.TOURNAMENT_DATA = {
       "country": "Singapore",
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:29:03.577Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:44.157Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:14.815Z",
       "officialPlayerId": "q:player:911",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=911",
       "squashLevelsWorldRank": null,
@@ -9633,7 +10351,7 @@ window.TOURNAMENT_DATA = {
       "country": "Singapore",
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:29:03.844Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:44.906Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:15.328Z",
       "officialPlayerId": "q:player:712",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=712",
       "squashLevelsWorldRank": null,
@@ -9650,7 +10368,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:03.933Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=246852",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:36.163Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:11.998Z",
       "officialPlayerId": "q:player:130",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=130",
       "squashLevelsPlayerId": "246852",
@@ -9660,7 +10378,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 7502,
       "squashLevelsLevel": 3869,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:45.246Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "FRA",
@@ -9671,17 +10391,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "fr",
       "squashLevelsCheckedAt": "2026-08-21T07:29:04.155Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=489476",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:37.956Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:13.803Z",
       "officialPlayerId": "q:player:500",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=500",
       "squashLevelsPlayerId": "489476",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:25:32.666Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:34:50.596Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 6573,
       "squashLevelsLevel": 4205,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:45.748Z",
+      "squashLevelsClubLocation": "Brittany, FRA"
     },
     {
       "iso3": "IRL",
@@ -9692,17 +10414,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ie",
       "squashLevelsCheckedAt": "2026-08-21T07:29:04.450Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=242809",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:40.138Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:15.633Z",
       "squashLevelsWorldRank": 7091,
       "officialPlayerId": "q:player:334",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=334",
       "squashLevelsPlayerId": "242809",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:25:33.322Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:34:54.929Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsLevel": 4009,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:49.235Z",
+      "squashLevelsClubLocation": "Hallamshire, Yorks, IRL"
     },
     {
       "iso3": "GER",
@@ -9713,7 +10437,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:29:04.514Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=112161",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:41.976Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:17.497Z",
       "officialPlayerId": "q:player:680",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=680",
       "squashLevelsPlayerId": "112161",
@@ -9723,7 +10447,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 7933,
       "squashLevelsLevel": 3718,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:54.691Z",
+      "squashLevelsClubLocation": "Park Squash Nymphenburg, Bayern, GER"
     },
     {
       "iso3": "GER",
@@ -9734,7 +10460,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:29:04.666Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438681",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:43.859Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:19.386Z",
       "officialPlayerId": "q:player:109",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=109",
       "squashLevelsPlayerId": "438681",
@@ -9744,7 +10470,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3439,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:55.236Z",
+      "squashLevelsClubLocation": "Squash Club Buschkrug, Berlin-Brandenburg, GER"
     },
     {
       "iso3": "NZL",
@@ -9755,7 +10483,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:05.092Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26839",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:45.872Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:21.181Z",
       "officialPlayerId": "q:player:191",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=191",
       "squashLevelsPlayerId": "26839",
@@ -9765,7 +10493,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 4981,
       "squashLevelsLevel": 5006,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:55.764Z",
+      "squashLevelsClubLocation": "Panmure Rackets, Auckland, NZL"
     },
     {
       "iso3": "FIN",
@@ -9776,7 +10506,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "fi",
       "squashLevelsCheckedAt": "2026-08-21T07:29:05.139Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=522592",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:47.723Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:22.983Z",
       "officialPlayerId": "q:player:322",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=322",
       "squashLevelsPlayerId": "522592",
@@ -9786,7 +10516,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 5432,
       "squashLevelsLevel": 4763,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:56.288Z",
+      "squashLevelsClubLocation": "Squash Club Grabs, St. Gallen, SUI"
     },
     {
       "iso3": "GER",
@@ -9797,7 +10529,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:29:05.293Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=258032",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:49.519Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:24.782Z",
       "officialPlayerId": "q:player:923",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=923",
       "squashLevelsPlayerId": "258032",
@@ -9807,7 +10539,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 7066,
       "squashLevelsLevel": 4018,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:56.837Z",
+      "squashLevelsClubLocation": "1.SC Kempten, Bayern, GER"
     },
     {
       "iso3": "AUS",
@@ -9818,17 +10552,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:05.717Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=236185",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:51.403Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:26.653Z",
       "officialPlayerId": "q:player:925",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=925",
       "squashLevelsPlayerId": "236185",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:25:39.910Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:35:03.351Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2036,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:41:57.374Z",
+      "squashLevelsClubLocation": "Engadine Squash and Swim Centre, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -9839,18 +10575,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:05.747Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220962",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:53.333Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:28.464Z",
       "officialPlayerId": "q:player:729",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=729",
       "squashLevelsPlayerId": "220962",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:25:41.913Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:00.867Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:25:43.961Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 30737,
       "squashLevelsLevel": 1147,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Cambridge, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -9861,7 +10598,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:05.820Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=316749",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:55.211Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:30.333Z",
       "officialPlayerId": "q:player:730",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=730",
       "squashLevelsPlayerId": "316749",
@@ -9871,7 +10608,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3318,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:01.371Z",
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -9882,17 +10621,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:06.339Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219949",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:57.075Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:32.143Z",
       "officialPlayerId": "q:player:437",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=437",
       "squashLevelsPlayerId": "219949",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:25:42.907Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:35:09.625Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 12718,
       "squashLevelsLevel": 2678,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:01.902Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -9903,7 +10644,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:06.360Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219709",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:45:58.893Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:33.954Z",
       "officialPlayerId": "q:player:288",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=288",
       "squashLevelsPlayerId": "219709",
@@ -9913,7 +10654,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 29399,
       "squashLevelsLevel": 1217,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:07.345Z",
+      "squashLevelsClubLocation": "Alex Hills, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -9924,17 +10667,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:06.419Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218689",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:00.684Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:35.761Z",
       "officialPlayerId": "q:player:690",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=690",
       "squashLevelsPlayerId": "218689",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:25:46.501Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:42:19.730Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 32245,
       "squashLevelsLevel": 1072,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:07.918Z",
+      "squashLevelsClubLocation": "Cambridge, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -9945,7 +10690,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:06.980Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219672",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:02.472Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:37.558Z",
       "officialPlayerId": "q:player:572",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=572",
       "squashLevelsPlayerId": "219672",
@@ -9955,7 +10700,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 34351,
       "squashLevelsLevel": 968,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:20.742Z",
+      "squashLevelsClubLocation": "Daisy Hill, Queensland, AUS"
     },
     {
       "iso3": "HKG",
@@ -9965,7 +10712,7 @@ window.TOURNAMENT_DATA = {
       "country": "Hong Kong",
       "flagCode": "hk",
       "squashLevelsCheckedAt": "2026-08-21T07:29:06.978Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:45.700Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:15.941Z",
       "officialPlayerId": "q:player:317",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=317",
       "squashLevelsWorldRank": null,
@@ -9982,7 +10729,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:07.045Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219728",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:04.273Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:39.378Z",
       "officialPlayerId": "q:player:144",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=144",
       "squashLevelsPlayerId": "219728",
@@ -9992,7 +10739,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 41271,
       "squashLevelsLevel": 677,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:21.374Z",
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -10003,17 +10752,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:07.685Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238180",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:06.057Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:41.180Z",
       "squashLevelsWorldRank": 9452,
       "officialPlayerId": "q:player:741",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=741",
       "squashLevelsPlayerId": "238180",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:25:49.803Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:35:27.036Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsLevel": 3313,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:22.008Z",
+      "squashLevelsClubLocation": "Geraldton, Western Australia, AUS"
     },
     {
       "iso3": "GER",
@@ -10024,7 +10775,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:29:07.606Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=456077",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:07.874Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:43.054Z",
       "officialPlayerId": "q:player:647",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=647",
       "squashLevelsPlayerId": "456077",
@@ -10034,7 +10785,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 14159,
       "squashLevelsLevel": 2465,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:32.653Z",
+      "squashLevelsClubLocation": "SFI Boasters Germersheim, Rheinland-Pfalz, GER"
     },
     {
       "iso3": "AUS",
@@ -10045,7 +10798,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:07.669Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=468747",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:09.664Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:44.855Z",
       "officialPlayerId": "q:player:485",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=485",
       "squashLevelsPlayerId": "468747",
@@ -10055,7 +10808,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 51880,
       "squashLevelsLevel": 329,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:33.572Z",
+      "squashLevelsClubLocation": "Deloraine Squash Club, Tasmania, AUS"
     },
     {
       "iso3": "AUS",
@@ -10065,7 +10820,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:08.208Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:46.423Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:16.461Z",
       "officialPlayerId": "q:player:744",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=744",
       "squashLevelsWorldRank": null,
@@ -10081,7 +10836,7 @@ window.TOURNAMENT_DATA = {
       "country": "South Africa",
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:08.274Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:54:30.160Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:34.402Z",
       "officialPlayerId": "q:player:40",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=40",
       "squashLevelsWorldRank": 34379,
@@ -10093,7 +10848,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:54:30.568Z",
       "squashLevelsMatchedCountry": "ZAF",
       "squashLevelsMatchedAge": 60,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:11.453Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:47.139Z",
+      "squashLevelsClubLocation": "North West, ZAF"
     },
     {
       "iso3": "AUS",
@@ -10103,7 +10859,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:08.264Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:54:31.078Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:35.198Z",
       "officialPlayerId": "q:player:216",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=216",
       "squashLevelsWorldRank": 26719,
@@ -10115,7 +10871,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:54:31.460Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:13.255Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:48.950Z",
+      "squashLevelsClubLocation": "Australian Capital Territory, AUS"
     },
     {
       "iso3": "AUS",
@@ -10126,7 +10883,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:08.834Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221668",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:15.137Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:51.059Z",
       "officialPlayerId": "q:player:937",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=937",
       "squashLevelsPlayerId": "221668",
@@ -10136,7 +10893,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1122,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:36.003Z",
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -10147,7 +10906,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:08.833Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=276403",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:17.036Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:52.945Z",
       "officialPlayerId": "q:player:612",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=612",
       "squashLevelsPlayerId": "276403",
@@ -10157,7 +10916,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2240,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:36.823Z",
+      "squashLevelsClubLocation": "Masters, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -10168,7 +10929,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:08.877Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=150971",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:18.841Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:54.757Z",
       "officialPlayerId": "q:player:154",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=154",
       "squashLevelsPlayerId": "150971",
@@ -10178,7 +10939,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 23490,
       "squashLevelsLevel": 1581,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:37.686Z",
+      "squashLevelsClubLocation": "Alex Hills, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -10189,7 +10952,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:09.410Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=487505",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:20.715Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:56.686Z",
       "officialPlayerId": "q:player:698",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=698",
       "squashLevelsPlayerId": "487505",
@@ -10199,7 +10962,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1657,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:39.268Z",
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "GER",
@@ -10210,7 +10975,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:29:09.343Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38460",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:22.646Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:09:58.575Z",
       "officialPlayerId": "q:player:293",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=293",
       "squashLevelsPlayerId": "38460",
@@ -10220,7 +10985,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2141,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:40.067Z",
+      "squashLevelsClubLocation": "GER"
     },
     {
       "iso3": "NZL",
@@ -10230,7 +10997,7 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:09.455Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:47.139Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:17.008Z",
       "officialPlayerId": "q:player:940",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=940",
       "squashLevelsWorldRank": null,
@@ -10247,18 +11014,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:09.896Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218874",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:24.463Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:00.369Z",
       "officialPlayerId": "q:player:906",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=906",
       "squashLevelsPlayerId": "218874",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:03.979Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:40.889Z",
       "squashLevelsWorldRank": 38715,
       "squashLevelsLevel": 780,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:05.235Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -10269,7 +11037,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:09.926Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=229803",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:26.341Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:02.248Z",
       "officialPlayerId": "q:player:361",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=361",
       "squashLevelsPlayerId": "229803",
@@ -10279,7 +11047,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1037,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:41.674Z",
+      "squashLevelsClubLocation": "Tonic Squash and Gym, Victoria, AUS"
     },
     {
       "iso3": "NZL",
@@ -10290,7 +11060,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:10.008Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=374431",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:28.207Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:04.102Z",
       "officialPlayerId": "q:player:493",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=493",
       "squashLevelsPlayerId": "374431",
@@ -10300,7 +11070,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 33005,
       "squashLevelsLevel": 1034,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:42.530Z",
+      "squashLevelsClubLocation": "Christchurch Football, Canterbury, NZL"
     },
     {
       "iso3": "AUS",
@@ -10311,7 +11083,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:10.455Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228557",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:30.003Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:05.916Z",
       "officialPlayerId": "q:player:11",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=11",
       "squashLevelsPlayerId": "228557",
@@ -10321,7 +11093,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 15641,
       "squashLevelsLevel": 2286,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:43.365Z",
+      "squashLevelsClubLocation": "Stafford, Queensland, AUS"
     },
     {
       "iso3": "SUI",
@@ -10332,7 +11106,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ch",
       "squashLevelsCheckedAt": "2026-08-21T07:29:10.444Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438709",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:31.960Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:07.810Z",
       "officialPlayerId": "q:player:582",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=582",
       "squashLevelsPlayerId": "438709",
@@ -10342,7 +11116,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1076,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:44.176Z",
+      "squashLevelsClubLocation": "SUI"
     },
     {
       "iso3": "FRA",
@@ -10353,7 +11129,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "fr",
       "squashLevelsCheckedAt": "2026-08-21T07:29:10.570Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=479315",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:33.756Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:09.612Z",
       "officialPlayerId": "q:player:804",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=804",
       "squashLevelsPlayerId": "479315",
@@ -10363,7 +11139,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 16734,
       "squashLevelsLevel": 2163,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:45.782Z",
+      "squashLevelsClubLocation": "Île-de-France, FRA"
     },
     {
       "iso3": "RSA",
@@ -10374,17 +11152,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:11.008Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26688",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:35.538Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:11.421Z",
       "officialPlayerId": "q:player:107",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=107",
       "squashLevelsPlayerId": "26688",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:26:05.672Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:35:40.691Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 22012,
       "squashLevelsLevel": 1692,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:46.588Z",
+      "squashLevelsClubLocation": "St John's DSG School for Girls (PMB), Kwazulu-Natal, ZAF"
     },
     {
       "iso3": "NZL",
@@ -10395,7 +11175,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:10.988Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=374912",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:37.350Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:13.213Z",
       "officialPlayerId": "q:player:945",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=945",
       "squashLevelsPlayerId": "374912",
@@ -10405,7 +11185,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 13421,
       "squashLevelsLevel": 2570,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:50.536Z",
+      "squashLevelsClubLocation": "Devonport, Auckland, NZL"
     },
     {
       "iso3": "AUS",
@@ -10416,17 +11198,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:11.147Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=231745",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:39.140Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:15.003Z",
       "officialPlayerId": "q:player:68",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=68",
       "squashLevelsPlayerId": "231745",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:26:08.073Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:35:46.930Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 23914,
       "squashLevelsLevel": 1551,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:51.479Z",
+      "squashLevelsClubLocation": "Wodonga & Racquetball Assoc, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -10437,17 +11221,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:11.536Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218900",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:40.960Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:16.861Z",
       "officialPlayerId": "q:player:145",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=145",
       "squashLevelsPlayerId": "218900",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:26:09.888Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:43:01.002Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 12660,
       "squashLevelsLevel": 2687,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:42:58.067Z",
+      "squashLevelsClubLocation": "Newstead, Tasmania, AUS"
     },
     {
       "iso3": "AUS",
@@ -10458,7 +11244,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:11.568Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233247",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:42.852Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:18.723Z",
       "officialPlayerId": "q:player:113",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=113",
       "squashLevelsPlayerId": "233247",
@@ -10468,7 +11254,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2437,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:01.514Z",
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "RSA",
@@ -10479,7 +11267,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:11.671Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=464329",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:44.763Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:20.795Z",
       "officialPlayerId": "q:player:345",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=345",
       "squashLevelsPlayerId": "464329",
@@ -10489,7 +11277,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 43552,
       "squashLevelsLevel": 592,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:02.098Z",
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -10500,7 +11290,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:12.149Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235624",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:46.650Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:22.658Z",
       "officialPlayerId": "q:player:346",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=346",
       "squashLevelsPlayerId": "235624",
@@ -10510,7 +11300,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2643,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:02.607Z",
+      "squashLevelsClubLocation": "Maash, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -10521,7 +11313,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:12.180Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=169475",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:48.942Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:24.469Z",
       "officialPlayerId": "q:player:759",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=759",
       "squashLevelsPlayerId": "169475",
@@ -10531,7 +11323,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 11713,
       "squashLevelsLevel": 2850,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:03.159Z",
+      "squashLevelsClubLocation": "Australian Capital Territory, AUS"
     },
     {
       "iso3": "HKG",
@@ -10541,19 +11335,20 @@ window.TOURNAMENT_DATA = {
       "country": "Hong Kong",
       "flagCode": "hk",
       "squashLevelsCheckedAt": "2026-08-21T07:29:12.226Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=315443",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:50.815Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38393",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:26.780Z",
       "officialPlayerId": "q:player:274",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=274",
-      "squashLevelsPlayerId": "315443",
+      "squashLevelsPlayerId": "38393",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:26:15.302Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:26:20.662Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:03.699Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:43:13.978Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 154,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 1652,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Hong Kong Island, HKG"
     },
     {
       "iso3": "AUS",
@@ -10564,17 +11359,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:12.759Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=242819",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:53.744Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:29.072Z",
       "officialPlayerId": "q:player:424",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=424",
       "squashLevelsPlayerId": "242819",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:26:16.601Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:36:05.263Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 26719,
       "squashLevelsLevel": 1373,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:14.616Z",
+      "squashLevelsClubLocation": "Bathurst Panthers, New South Wales, AUS"
     },
     {
       "iso3": "NED",
@@ -10585,7 +11382,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nl",
       "squashLevelsCheckedAt": "2026-08-21T07:29:12.683Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=263807",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:55.540Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:30.905Z",
       "officialPlayerId": "q:player:425",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=425",
       "squashLevelsPlayerId": "263807",
@@ -10595,7 +11392,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 34576,
       "squashLevelsLevel": 957,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:18.093Z",
+      "squashLevelsClubLocation": "Hermes DVS, Zuid-Holland, NLD"
     },
     {
       "iso3": "IND",
@@ -10606,7 +11405,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:29:12.811Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222785",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:57.446Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:32.694Z",
       "officialPlayerId": "q:player:710",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=710",
       "squashLevelsPlayerId": "222785",
@@ -10616,7 +11415,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 12737,
       "squashLevelsLevel": 2675,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:18.602Z",
+      "squashLevelsClubLocation": "Rackets & Strings, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -10627,17 +11428,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:13.263Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238771",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:46:59.279Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:34.527Z",
       "officialPlayerId": "q:player:815",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=815",
       "squashLevelsPlayerId": "238771",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:26:20.740Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:43:22.293Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 35041,
       "squashLevelsLevel": 934,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:19.237Z",
+      "squashLevelsClubLocation": "RACV, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -10648,7 +11451,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:13.353Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219353",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:01.088Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:36.341Z",
       "officialPlayerId": "q:player:711",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=711",
       "squashLevelsPlayerId": "219353",
@@ -10658,7 +11461,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 46639,
       "squashLevelsLevel": 484,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:22.868Z",
+      "squashLevelsClubLocation": "Eastside & Parsons TSA, Tasmania, AUS"
     },
     {
       "iso3": "AUS",
@@ -10669,7 +11474,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:13.334Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232908",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:02.981Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:38.209Z",
       "officialPlayerId": "q:player:874",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=874",
       "squashLevelsPlayerId": "232908",
@@ -10679,7 +11484,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1738,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:23.389Z",
+      "squashLevelsClubLocation": "TBD"
     },
     {
       "iso3": "GER",
@@ -10690,7 +11497,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:29:13.851Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=282168",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:04.779Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:40.010Z",
       "officialPlayerId": "q:player:450",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=450",
       "squashLevelsPlayerId": "282168",
@@ -10700,7 +11507,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 24063,
       "squashLevelsLevel": 1543,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:23.890Z",
+      "squashLevelsClubLocation": "SC Heidenkopf, Saarland, GER"
     },
     {
       "iso3": "AUS",
@@ -10711,18 +11520,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:13.877Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=529549",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:06.705Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:41.884Z",
       "officialPlayerId": "q:player:560",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=560",
       "squashLevelsPlayerId": "529549",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:05.828Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:24.474Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1274,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:07.082Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "TBD"
     },
     {
       "iso3": "AUS",
@@ -10733,7 +11543,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:13.941Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=437007",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:08.508Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:43.703Z",
       "officialPlayerId": "q:player:203",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=203",
       "squashLevelsPlayerId": "437007",
@@ -10743,7 +11553,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 14913,
       "squashLevelsLevel": 2369,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:25.008Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -10753,19 +11565,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:14.617Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=28472",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:10.400Z",
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=377454",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:45.506Z",
+      "squashLevelsWorldRank": 1356,
       "officialPlayerId": "q:player:60",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=60",
-      "squashLevelsPlayerId": "28472",
+      "squashLevelsPlayerId": "377454",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:26:28.335Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:26:33.478Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:25.724Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:43:37.493Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
-      "squashLevelsLevel": 5139,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 10215,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Royal Oak Racquets, Auckland, NZL"
     },
     {
       "iso3": "AUS",
@@ -10776,18 +11589,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:14.510Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221172",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:12.326Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:47.389Z",
       "officialPlayerId": "q:player:956",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=956",
       "squashLevelsPlayerId": "221172",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:07.864Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:39.822Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1173,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:09.116Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -10798,18 +11612,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:14.626Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232480",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:14.236Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:49.250Z",
       "officialPlayerId": "q:player:714",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=714",
       "squashLevelsPlayerId": "232480",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:09.642Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:41.388Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 821,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:10.906Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Melbourne University Squash Club, Victoria, AUS"
     },
     {
       "iso3": "USA",
@@ -10820,7 +11635,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:29:15.071Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=434044",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:16.122Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:51.122Z",
       "officialPlayerId": "q:player:319",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=319",
       "squashLevelsPlayerId": "434044",
@@ -10830,7 +11645,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2492,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:42.254Z",
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "AUS",
@@ -10841,7 +11658,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:15.165Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=245833",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:17.997Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:53.001Z",
       "officialPlayerId": "q:player:163",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=163",
       "squashLevelsPlayerId": "245833",
@@ -10851,7 +11668,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1688,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:45.262Z",
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -10862,7 +11681,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:15.264Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228631",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:19.787Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:54.804Z",
       "squashLevelsWorldRank": 25086,
       "officialPlayerId": "q:player:880",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=880",
@@ -10872,7 +11691,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsLevel": 1476,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:46.124Z",
+      "squashLevelsClubLocation": "Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -10883,7 +11704,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:15.599Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=532902",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:21.585Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:56.612Z",
       "officialPlayerId": "q:player:827",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=827",
       "squashLevelsPlayerId": "532902",
@@ -10893,7 +11714,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 23931,
       "squashLevelsLevel": 1550,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:47.003Z",
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "NZL",
@@ -10903,7 +11726,7 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:15.804Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:47.874Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:17.561Z",
       "officialPlayerId": "q:player:767",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=767",
       "squashLevelsWorldRank": null,
@@ -10920,7 +11743,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:15.861Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=236522",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:23.399Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:10:58.416Z",
       "officialPlayerId": "q:player:105",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=105",
       "squashLevelsPlayerId": "236522",
@@ -10930,7 +11753,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 17125,
       "squashLevelsLevel": 2119,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:47.863Z",
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "MEX",
@@ -10941,7 +11766,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "mx",
       "squashLevelsCheckedAt": "2026-08-21T07:29:16.153Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=259197",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:25.319Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:00.287Z",
       "officialPlayerId": "q:player:770",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=770",
       "squashLevelsPlayerId": "259197",
@@ -10951,7 +11776,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2932,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:48.741Z",
+      "squashLevelsClubLocation": "MEX"
     },
     {
       "iso3": "RSA",
@@ -10962,7 +11789,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:16.387Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=76523",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:27.201Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:02.156Z",
       "officialPlayerId": "q:player:433",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=433",
       "squashLevelsPlayerId": "76523",
@@ -10972,7 +11799,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1510,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:50.199Z",
+      "squashLevelsClubLocation": "Wanderers Squash Club (Sandton), Gauteng, ZAF"
     },
     {
       "iso3": "AUS",
@@ -10983,7 +11812,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:16.450Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=214757",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:29.730Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:04.944Z",
       "officialPlayerId": "q:player:885",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=885",
       "squashLevelsPlayerId": "214757",
@@ -10993,7 +11822,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 11630,
       "squashLevelsLevel": 2867,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:51.178Z",
+      "squashLevelsClubLocation": "Dgen, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -11004,7 +11835,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:16.744Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=178776",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:31.641Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:06.784Z",
       "officialPlayerId": "q:player:282",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=282",
       "squashLevelsPlayerId": "178776",
@@ -11014,7 +11845,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 13859,
       "squashLevelsLevel": 2506,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:52.091Z",
+      "squashLevelsClubLocation": "Somerton, South Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -11025,7 +11858,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:16.971Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=154675",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:33.454Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:08.603Z",
       "squashLevelsWorldRank": 19426,
       "officialPlayerId": "q:player:531",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=531",
@@ -11035,7 +11868,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsLevel": 1898,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:53.801Z",
+      "squashLevelsClubLocation": "Wavell, Queensland, AUS"
     },
     {
       "iso3": "ENG",
@@ -11045,7 +11880,7 @@ window.TOURNAMENT_DATA = {
       "country": "England",
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:29:17.038Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:48.720Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:18.079Z",
       "officialPlayerId": "q:player:634",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=634",
       "squashLevelsWorldRank": null,
@@ -11062,7 +11897,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ie",
       "squashLevelsCheckedAt": "2026-08-21T07:29:17.282Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=137687",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:35.264Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:10.407Z",
       "officialPlayerId": "q:player:414",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=414",
       "squashLevelsPlayerId": "137687",
@@ -11072,7 +11907,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 13001,
       "squashLevelsLevel": 2633,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:54.906Z",
+      "squashLevelsClubLocation": "Alderley Edge, Cheshire, ENG"
     },
     {
       "iso3": "AUS",
@@ -11083,7 +11920,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:17.497Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233349",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:37.147Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:12.355Z",
       "officialPlayerId": "q:player:45",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=45",
       "squashLevelsPlayerId": "233349",
@@ -11093,7 +11930,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1025,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:55.958Z",
+      "squashLevelsClubLocation": "Hiscoes Squash Centre, New South Wales, AUS"
     },
     {
       "iso3": "NED",
@@ -11104,18 +11943,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nl",
       "squashLevelsCheckedAt": "2026-08-21T07:29:17.569Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=293164",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:39.260Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:15.174Z",
       "officialPlayerId": "q:player:86",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=86",
       "squashLevelsPlayerId": "293164",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:13.017Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:57.756Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1272,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:14.260Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "R.C. Borne, NLD"
     },
     {
       "iso3": "AUS",
@@ -11125,7 +11965,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:17.809Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:54:35.446Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:43:58.772Z",
       "officialPlayerId": "q:player:436",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=436",
       "squashLevelsWorldRank": 29086,
@@ -11137,7 +11977,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:54:35.869Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:41.554Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:17.003Z",
+      "squashLevelsClubLocation": "Goodlife Fitzroy, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -11148,7 +11989,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:18.029Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222110",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:43.410Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:18.856Z",
       "officialPlayerId": "q:player:135",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=135",
       "squashLevelsPlayerId": "222110",
@@ -11158,7 +11999,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 20226,
       "squashLevelsLevel": 1832,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:00.436Z",
+      "squashLevelsClubLocation": "Vic Park, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -11169,7 +12012,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:18.093Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233233",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:45.262Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:20.719Z",
       "officialPlayerId": "q:player:968",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=968",
       "squashLevelsPlayerId": "233233",
@@ -11179,7 +12022,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 22221,
       "squashLevelsLevel": 1676,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:01.294Z",
+      "squashLevelsClubLocation": "Briars @ Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "SIN",
@@ -11190,7 +12035,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:29:18.387Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=231267",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:47.064Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:22.522Z",
       "officialPlayerId": "q:player:136",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=136",
       "squashLevelsPlayerId": "231267",
@@ -11200,7 +12045,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 15131,
       "squashLevelsLevel": 2344,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:02.334Z",
+      "squashLevelsClubLocation": "NUSS, SGP"
     },
     {
       "iso3": "RSA",
@@ -11211,7 +12058,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:18.641Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=433539",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:48.983Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:24.394Z",
       "officialPlayerId": "q:player:87",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=87",
       "squashLevelsPlayerId": "433539",
@@ -11221,7 +12068,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2444,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:05.093Z",
+      "squashLevelsClubLocation": "TBD"
     },
     {
       "iso3": "NZL",
@@ -11232,7 +12081,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:18.690Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=177959",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:50.784Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:26.193Z",
       "officialPlayerId": "q:player:245",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=245",
       "squashLevelsPlayerId": "177959",
@@ -11242,7 +12091,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 24780,
       "squashLevelsLevel": 1495,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:07.074Z",
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -11252,19 +12103,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:18.922Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=343151",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:52.658Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=363294",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:28.068Z",
       "officialPlayerId": "q:player:79",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=79",
-      "squashLevelsPlayerId": "343151",
+      "squashLevelsPlayerId": "363294",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:15.306Z",
-      "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 915,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:09.027Z",
+      "squashLevelsWorldRank": 40981,
+      "squashLevelsLevel": 687,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:19.038Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:44:13.408Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Vic Park, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -11275,18 +12127,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:19.183Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=385341",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:54.543Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:29.936Z",
       "officialPlayerId": "q:player:722",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=722",
       "squashLevelsPlayerId": "385341",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:20.255Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:14.096Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2455,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:22.733Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:36:48.140Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Henderson, Auckland, NZL"
     },
     {
       "iso3": "AUS",
@@ -11297,18 +12150,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:19.230Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=435568",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:56.454Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:31.824Z",
       "officialPlayerId": "q:player:213",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=213",
       "squashLevelsPlayerId": "435568",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:23.348Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:17.481Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2600,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:25.863Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:44:20.542Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Manor, Derbyshire, ENG"
     },
     {
       "iso3": "AUS",
@@ -11319,18 +12173,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:19.494Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=520083",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:47:58.435Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:33.683Z",
       "officialPlayerId": "q:player:568",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=568",
       "squashLevelsPlayerId": "520083",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:27:14.280Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:27:19.716Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:21.069Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:44:31.568Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": 21693,
       "squashLevelsLevel": 1715,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Geraldton, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -11341,18 +12196,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:19.711Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=284323",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:08.482Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:43.777Z",
       "officialPlayerId": "q:player:192",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=192",
       "squashLevelsPlayerId": "284323",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:27:14.386Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:32.620Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:27:16.587Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": null,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "GER",
@@ -11362,7 +12218,7 @@ window.TOURNAMENT_DATA = {
       "country": "Germany",
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:29:19.738Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:50.689Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:20.203Z",
       "officialPlayerId": "q:player:416",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=416",
       "squashLevelsWorldRank": null,
@@ -11378,19 +12234,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:20.045Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=435168",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:10.420Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=462468",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:45.684Z",
       "officialPlayerId": "q:player:312",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=312",
-      "squashLevelsPlayerId": "435168",
+      "squashLevelsPlayerId": "462468",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:27:15.251Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:27:27.944Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:33.253Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:44:45.243Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 1277,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 706,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Hook, Berks, ENG"
     },
     {
       "iso3": "AUS",
@@ -11400,7 +12257,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:20.295Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:54:36.972Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:46.811Z",
       "officialPlayerId": "q:player:344",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=344",
       "squashLevelsWorldRank": 380,
@@ -11412,7 +12269,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:54:37.441Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:12.265Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:48.423Z",
+      "squashLevelsClubLocation": "Vic Park, Western Australia, AUS"
     },
     {
       "iso3": "USA",
@@ -11423,7 +12281,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:29:20.327Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=439055",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:14.153Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:50.297Z",
       "officialPlayerId": "q:player:897",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=897",
       "squashLevelsPlayerId": "439055",
@@ -11433,7 +12291,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 4276,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:47.933Z",
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "CAN",
@@ -11444,7 +12304,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:29:20.570Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=177818",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:17.119Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:52.198Z",
       "officialPlayerId": "q:player:825",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=825",
       "squashLevelsPlayerId": "177818",
@@ -11454,7 +12314,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3811,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:48.839Z",
+      "squashLevelsClubLocation": "CAN"
     },
     {
       "iso3": "AUS",
@@ -11465,7 +12327,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:20.824Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221212",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:18.916Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:54.002Z",
       "officialPlayerId": "q:player:248",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=248",
       "squashLevelsPlayerId": "221212",
@@ -11475,7 +12337,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 1090,
       "squashLevelsLevel": 2373,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:49.353Z",
+      "squashLevelsClubLocation": "Stafford, Queensland, AUS"
     },
     {
       "iso3": "RSA",
@@ -11486,7 +12350,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:20.862Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38770",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:21.120Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:55.797Z",
       "officialPlayerId": "q:player:314",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=314",
       "squashLevelsPlayerId": "38770",
@@ -11496,7 +12360,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 1868,
       "squashLevelsLevel": 1527,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:44:49.888Z",
+      "squashLevelsClubLocation": "Old Selbornian Squash Club, Eastern Cape, ZAF"
     },
     {
       "iso3": "IRL",
@@ -11507,7 +12373,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ie",
       "squashLevelsCheckedAt": "2026-08-21T07:29:21.115Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=40700",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:22.910Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:57.585Z",
       "officialPlayerId": "q:player:853",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=853",
       "squashLevelsPlayerId": "40700",
@@ -11517,7 +12383,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 2083,
       "squashLevelsLevel": 1384,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:01.880Z",
+      "squashLevelsClubLocation": "Fitzwilliam LTC, Dublin, IRL"
     },
     {
       "iso3": "RSA",
@@ -11528,18 +12396,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:21.347Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26868",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:24.781Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:11:59.456Z",
       "officialPlayerId": "q:player:146",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=146",
       "squashLevelsPlayerId": "26868",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:27.393Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:02.417Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3133,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:28.648Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Johannesburg Country Club, Gauteng, ZAF"
     },
     {
       "iso3": "JPN",
@@ -11550,7 +12419,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:29:21.408Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=27044",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:26.672Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:01.339Z",
       "officialPlayerId": "q:player:529",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=529",
       "squashLevelsPlayerId": "27044",
@@ -11560,7 +12429,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1357,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:02.933Z",
+      "squashLevelsClubLocation": "JPN"
     },
     {
       "iso3": "AUS",
@@ -11571,18 +12442,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:21.685Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228122",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:28.557Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:03.214Z",
       "officialPlayerId": "q:player:175",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=175",
       "squashLevelsPlayerId": "228122",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:29.137Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:03.457Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1087,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:30.393Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Northern Territory, AUS"
     },
     {
       "iso3": "AUS",
@@ -11593,7 +12465,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:21.936Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221642",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:30.349Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:05.046Z",
       "officialPlayerId": "q:player:29",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=29",
       "squashLevelsPlayerId": "221642",
@@ -11603,7 +12475,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 2775,
       "squashLevelsLevel": 1041,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:03.958Z",
+      "squashLevelsClubLocation": "Eastern Goldfields INC, Western Australia, AUS"
     },
     {
       "iso3": "ENG",
@@ -11614,7 +12488,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:29:21.996Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=27068",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:32.160Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:06.867Z",
       "officialPlayerId": "q:player:125",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=125",
       "squashLevelsPlayerId": "27068",
@@ -11624,7 +12498,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 2073,
       "squashLevelsLevel": 1389,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:04.533Z",
+      "squashLevelsClubLocation": "Hamptons, Essex, ENG"
     },
     {
       "iso3": "RSA",
@@ -11635,7 +12511,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:22.225Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=76383",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:34.050Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:08.755Z",
       "officialPlayerId": "q:player:71",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=71",
       "squashLevelsPlayerId": "76383",
@@ -11645,7 +12521,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1042,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:05.050Z",
+      "squashLevelsClubLocation": "ZAF"
     },
     {
       "iso3": "AUS",
@@ -11656,7 +12534,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:22.500Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=284379",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:35.846Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:10.580Z",
       "officialPlayerId": "q:player:83",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=83",
       "squashLevelsPlayerId": "284379",
@@ -11666,7 +12544,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 2438,
       "squashLevelsLevel": 1190,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:05.598Z",
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -11677,7 +12557,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:22.569Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219374",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:37.632Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:12.403Z",
       "officialPlayerId": "q:player:455",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=455",
       "squashLevelsPlayerId": "219374",
@@ -11687,7 +12567,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 2968,
       "squashLevelsLevel": 972,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:06.121Z",
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "RSA",
@@ -11697,7 +12579,7 @@ window.TOURNAMENT_DATA = {
       "country": "South Africa",
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:22.774Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:54:37.971Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:06.688Z",
       "officialPlayerId": "q:player:228",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=228",
       "squashLevelsWorldRank": 2686,
@@ -11709,7 +12591,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:54:38.378Z",
       "squashLevelsMatchedCountry": "ZAF",
       "squashLevelsMatchedAge": 60,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:39.425Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:14.208Z",
+      "squashLevelsClubLocation": "Lynwood Squash Club, KwaZulu-Natal, ZAF"
     },
     {
       "iso3": "AUS",
@@ -11720,17 +12603,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:23.049Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218687",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:41.207Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:16.007Z",
       "officialPlayerId": "q:player:978",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=978",
       "squashLevelsPlayerId": "218687",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:27:39.764Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:37:27.402Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 2827,
       "squashLevelsLevel": 1018,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:07.219Z",
+      "squashLevelsClubLocation": "Cambridge, Western Australia, AUS"
     },
     {
       "iso3": "NZL",
@@ -11741,7 +12626,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:23.117Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=280838",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:43.085Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:17.875Z",
       "officialPlayerId": "q:player:193",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=193",
       "squashLevelsPlayerId": "280838",
@@ -11751,7 +12636,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 843,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:15.273Z",
+      "squashLevelsClubLocation": "Wentworthville Leagues, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -11762,18 +12649,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:23.323Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219114",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:44.868Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:19.950Z",
       "officialPlayerId": "q:player:339",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=339",
       "squashLevelsPlayerId": "219114",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:31.412Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:15.816Z",
       "squashLevelsWorldRank": 4559,
       "squashLevelsLevel": 570,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:32.659Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Nerang, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -11784,17 +12672,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:23.598Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222389",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:46.655Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:21.837Z",
       "officialPlayerId": "q:player:487",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=487",
       "squashLevelsPlayerId": "222389",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:27:43.330Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:37:31.611Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 6555,
       "squashLevelsLevel": 312,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:16.367Z",
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -11805,7 +12695,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:23.666Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232909",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:58.123Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:23.643Z",
       "officialPlayerId": "q:player:294",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=294",
       "squashLevelsPlayerId": "232909",
@@ -11813,9 +12703,11 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:27:43.641Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
-      "squashLevelsWorldRank": null,
+      "squashLevelsWorldRank": 5346,
       "squashLevelsLevel": 447,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:19.823Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -11826,7 +12718,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:23.862Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=230289",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:48:59.927Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:25.456Z",
       "squashLevelsWorldRank": 4504,
       "officialPlayerId": "q:player:181",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=181",
@@ -11836,7 +12728,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsLevel": 581,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:20.332Z",
+      "squashLevelsClubLocation": "Stafford, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -11847,7 +12741,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:24.204Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221983",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:01.739Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:27.243Z",
       "officialPlayerId": "q:player:327",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=327",
       "squashLevelsPlayerId": "221983",
@@ -11857,7 +12751,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 4697,
       "squashLevelsLevel": 548,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:20.840Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -11868,7 +12764,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:24.273Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228386",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:03.542Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:29.060Z",
       "officialPlayerId": "q:player:182",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=182",
       "squashLevelsPlayerId": "228386",
@@ -11878,7 +12774,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 3652,
       "squashLevelsLevel": 767,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:21.358Z",
+      "squashLevelsClubLocation": "Eastern Goldfields INC, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -11889,7 +12787,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:24.410Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=540716",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:05.352Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:30.881Z",
       "officialPlayerId": "q:player:872",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=872",
       "squashLevelsPlayerId": "540716",
@@ -11899,7 +12797,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 2998,
       "squashLevelsLevel": 957,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:21.871Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -11910,7 +12810,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:24.822Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218578",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:09.096Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:32.694Z",
       "officialPlayerId": "q:player:620",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=620",
       "squashLevelsPlayerId": "218578",
@@ -11920,7 +12820,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 6922,
       "squashLevelsLevel": 281,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:22.408Z",
+      "squashLevelsClubLocation": "Blue Gum, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -11931,7 +12833,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:24.890Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218690",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:11.187Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:34.489Z",
       "officialPlayerId": "q:player:183",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=183",
       "squashLevelsPlayerId": "218690",
@@ -11941,7 +12843,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 4284,
       "squashLevelsLevel": 624,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:22.917Z",
+      "squashLevelsClubLocation": "Kensington INC, Western Australia, AUS"
     },
     {
       "iso3": "JPN",
@@ -11952,18 +12856,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:29:25.028Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219491",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:13.074Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:36.389Z",
       "officialPlayerId": "q:player:593",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=593",
       "squashLevelsPlayerId": "219491",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:27:53.339Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:23.446Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:27:55.423Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 687,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Marmion, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -11974,7 +12879,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:25.423Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232242",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:14.868Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:38.219Z",
       "officialPlayerId": "q:player:769",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=769",
       "squashLevelsPlayerId": "232242",
@@ -11984,7 +12889,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 7722,
       "squashLevelsLevel": 222,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:23.965Z",
+      "squashLevelsClubLocation": "Tasmania, AUS"
     },
     {
       "iso3": "AUS",
@@ -11995,18 +12902,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:25.488Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220937",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:16.657Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:40.059Z",
       "officialPlayerId": "q:player:918",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=918",
       "squashLevelsPlayerId": "220937",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:33.635Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:24.544Z",
       "squashLevelsWorldRank": 4953,
       "squashLevelsLevel": 507,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:34.893Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Kensington, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -12017,7 +12925,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:25.589Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218514",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:18.451Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:41.901Z",
       "officialPlayerId": "q:player:966",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=966",
       "squashLevelsPlayerId": "218514",
@@ -12027,7 +12935,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 3216,
       "squashLevelsLevel": 883,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:25.074Z",
+      "squashLevelsClubLocation": "MCC Squash Club, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -12038,18 +12948,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:25.998Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221926",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:20.525Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:43.705Z",
       "officialPlayerId": "q:player:39",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=39",
       "squashLevelsPlayerId": "221926",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:35.644Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:25.596Z",
       "squashLevelsWorldRank": 5904,
       "squashLevelsLevel": 379,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:36.890Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Geraldton, Western Australia, AUS"
     },
     {
       "iso3": "BAR",
@@ -12060,7 +12971,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "bb",
       "squashLevelsCheckedAt": "2026-08-21T07:29:26.069Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438835",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:22.319Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:45.503Z",
       "officialPlayerId": "q:player:89",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=89",
       "squashLevelsPlayerId": "438835",
@@ -12070,7 +12981,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 60,
       "squashLevelsWorldRank": 4333,
       "squashLevelsLevel": 613,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:26.106Z",
+      "squashLevelsClubLocation": "BRB"
     },
     {
       "iso3": "JPN",
@@ -12080,7 +12993,7 @@ window.TOURNAMENT_DATA = {
       "country": "Japan",
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:29:26.187Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:51.469Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:20.714Z",
       "officialPlayerId": "q:player:447",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=447",
       "squashLevelsWorldRank": null,
@@ -12096,7 +13009,7 @@ window.TOURNAMENT_DATA = {
       "country": "Japan",
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:29:26.530Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:52.205Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:21.328Z",
       "officialPlayerId": "q:player:595",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=595",
       "squashLevelsWorldRank": null,
@@ -12112,7 +13025,7 @@ window.TOURNAMENT_DATA = {
       "country": "Japan",
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:29:26.668Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:52.930Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:21.841Z",
       "officialPlayerId": "q:player:597",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=597",
       "squashLevelsWorldRank": null,
@@ -12128,7 +13041,7 @@ window.TOURNAMENT_DATA = {
       "country": "Mexico",
       "flagCode": "mx",
       "squashLevelsCheckedAt": "2026-08-21T07:29:26.736Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:53.663Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:22.376Z",
       "officialPlayerId": "q:player:674",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=674",
       "squashLevelsWorldRank": null,
@@ -12144,7 +13057,7 @@ window.TOURNAMENT_DATA = {
       "country": "Japan",
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:29:27.079Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:54.422Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:22.912Z",
       "officialPlayerId": "q:player:602",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=602",
       "squashLevelsWorldRank": null,
@@ -12160,7 +13073,7 @@ window.TOURNAMENT_DATA = {
       "country": "Japan",
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:29:27.289Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:55.141Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:23.412Z",
       "officialPlayerId": "q:player:606",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=606",
       "squashLevelsWorldRank": null,
@@ -12177,7 +13090,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:27.261Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=236299",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:24.111Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:47.306Z",
       "officialPlayerId": "q:player:938",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=938",
       "squashLevelsPlayerId": "236299",
@@ -12187,7 +13100,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 4138,
       "squashLevelsLevel": 5571,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:26.616Z",
+      "squashLevelsClubLocation": "Maash, New South Wales, AUS"
     },
     {
       "iso3": "IRL",
@@ -12197,7 +13112,7 @@ window.TOURNAMENT_DATA = {
       "country": "Ireland",
       "flagCode": "ie",
       "squashLevelsCheckedAt": "2026-08-21T07:29:27.618Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:55.864Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:23.962Z",
       "officialPlayerId": "q:player:865",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=865",
       "squashLevelsWorldRank": null,
@@ -12214,7 +13129,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:27.892Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235048",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:26.020Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:49.147Z",
       "officialPlayerId": "q:player:752",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=752",
       "squashLevelsPlayerId": "235048",
@@ -12224,7 +13139,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 4703,
       "squashLevelsLevel": 5174,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:27.127Z",
+      "squashLevelsClubLocation": "Lilydale Squash Club, Victoria, AUS"
     },
     {
       "iso3": "RSA",
@@ -12235,7 +13152,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:27.902Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=255498",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:27.863Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:50.938Z",
       "officialPlayerId": "q:player:848",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=848",
       "squashLevelsPlayerId": "255498",
@@ -12245,7 +13162,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 2679,
       "squashLevelsLevel": 7046,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T05:25:27.651Z",
+      "squashLevelsClubLocation": "Centurion Squash Club, Gauteng, ZAF"
     },
     {
       "iso3": "AUS",
@@ -12256,7 +13175,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:28.166Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=505063",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:29.747Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:52.829Z",
       "officialPlayerId": "q:player:713",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=713",
       "squashLevelsPlayerId": "505063",
@@ -12266,7 +13185,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 12785,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:03.043Z",
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "BAR",
@@ -12277,18 +13198,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "bb",
       "squashLevelsCheckedAt": "2026-08-21T07:29:28.597Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26699",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:31.636Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:54.697Z",
       "officialPlayerId": "q:player:775",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=775",
       "squashLevelsPlayerId": "26699",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:41.165Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:04.401Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 6372,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:43.676Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:37:43.428Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "BRB"
     },
     {
       "iso3": "RSA",
@@ -12299,18 +13221,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:28.526Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438773",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:33.518Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:56.590Z",
       "officialPlayerId": "q:player:112",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=112",
       "squashLevelsPlayerId": "438773",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:44.192Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:07.907Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 7405,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:45.442Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "ZAF"
     },
     {
       "iso3": "ENG",
@@ -12321,7 +13244,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:29:28.798Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=25632",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:35.313Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:12:58.392Z",
       "officialPlayerId": "q:player:686",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=686",
       "squashLevelsPlayerId": "25632",
@@ -12331,7 +13254,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 2210,
       "squashLevelsLevel": 7899,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:08.464Z",
+      "squashLevelsClubLocation": "Hanse Squash Hamburg 79, Hamburg, ENG"
     },
     {
       "iso3": "IND",
@@ -12342,7 +13267,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:29:29.127Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38617",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:37.116Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:00.239Z",
       "officialPlayerId": "q:player:97",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=97",
       "squashLevelsPlayerId": "38617",
@@ -12352,7 +13277,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 7603,
       "squashLevelsLevel": 3832,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:08.998Z",
+      "squashLevelsClubLocation": "Maharashtra, IND"
     },
     {
       "iso3": "USA",
@@ -12362,7 +13289,7 @@ window.TOURNAMENT_DATA = {
       "country": "United States",
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:29:29.231Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:57.876Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:26.235Z",
       "officialPlayerId": "q:player:855",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=855",
       "squashLevelsWorldRank": null,
@@ -12379,18 +13306,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "in",
       "squashLevelsCheckedAt": "2026-08-21T07:29:29.398Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=128677",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:38.984Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:02.107Z",
       "officialPlayerId": "q:player:402",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=402",
       "squashLevelsPlayerId": "128677",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:28:14.540Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:09.524Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:28:16.660Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 6200,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Telangana, IND"
     },
     {
       "iso3": "FRA",
@@ -12400,7 +13328,7 @@ window.TOURNAMENT_DATA = {
       "country": "France",
       "flagCode": "fr",
       "squashLevelsCheckedAt": "2026-08-21T07:29:29.716Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:58.625Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:26.790Z",
       "officialPlayerId": "q:player:273",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=273",
       "squashLevelsWorldRank": null,
@@ -12417,18 +13345,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:29:29.815Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26380",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:40.773Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:03.921Z",
       "officialPlayerId": "q:player:916",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=916",
       "squashLevelsPlayerId": "26380",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:47.105Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:10.052Z",
       "squashLevelsWorldRank": 9762,
       "squashLevelsLevel": 3242,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:48.371Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Squash-Pointers Gießen, Hessen, GER"
     },
     {
       "iso3": "USA",
@@ -12439,18 +13368,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:29:29.934Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438627",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:42.643Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:05.798Z",
       "officialPlayerId": "q:player:718",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=718",
       "squashLevelsPlayerId": "438627",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:48.866Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:10.578Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 4164,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:50.118Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "PER",
@@ -12461,7 +13391,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pe",
       "squashLevelsCheckedAt": "2026-08-21T07:29:30.271Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438674",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:44.534Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:07.705Z",
       "officialPlayerId": "q:player:187",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=187",
       "squashLevelsPlayerId": "438674",
@@ -12471,7 +13401,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3116,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:11.104Z",
+      "squashLevelsClubLocation": "GER"
     },
     {
       "iso3": "AND",
@@ -12482,17 +13414,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ad",
       "squashLevelsCheckedAt": "2026-08-21T07:29:30.407Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=457191",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:46.407Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:09.597Z",
       "officialPlayerId": "q:player:638",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=638",
       "squashLevelsPlayerId": "457191",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:28:20.032Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:45:14.685Z",
+      "squashLevelsMatchedCountry": "AND",
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 8539,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:11.645Z",
+      "squashLevelsClubLocation": "AND"
     },
     {
       "iso3": "AUS",
@@ -12503,7 +13437,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:30.492Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=215286",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:48.193Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:11.769Z",
       "officialPlayerId": "q:player:929",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=929",
       "squashLevelsPlayerId": "215286",
@@ -12513,7 +13447,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 15480,
       "squashLevelsLevel": 2306,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:15.222Z",
+      "squashLevelsClubLocation": "Dural, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -12524,18 +13460,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:30.801Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221706",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:49.988Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:13.567Z",
       "officialPlayerId": "q:player:740",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=740",
       "squashLevelsPlayerId": "221706",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:28:24.189Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:15.838Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:28:26.333Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 14082,
       "squashLevelsLevel": 2476,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Squash WA, Western Australia, AUS"
     },
     {
       "iso3": "HKG",
@@ -12546,7 +13483,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "hk",
       "squashLevelsCheckedAt": "2026-08-21T07:29:30.957Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38485",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:51.926Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:15.479Z",
       "officialPlayerId": "q:player:651",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=651",
       "squashLevelsPlayerId": "38485",
@@ -12556,7 +13493,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2444,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:16.447Z",
+      "squashLevelsClubLocation": "Elanora, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -12567,18 +13506,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:31.016Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221703",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:53.731Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:17.646Z",
       "squashLevelsWorldRank": 13745,
       "officialPlayerId": "q:player:942",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=942",
       "squashLevelsPlayerId": "221703",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:28:25.307Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:16.964Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:28:28.032Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsLevel": 2521,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "CAN",
@@ -12589,18 +13529,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:29:31.333Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=439287",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:55.615Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:19.527Z",
       "officialPlayerId": "q:player:30",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=30",
       "squashLevelsPlayerId": "439287",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:50.641Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:17.541Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3132,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:03:51.901Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "TBD"
     },
     {
       "iso3": "AUS",
@@ -12610,7 +13551,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:31.547Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:54:45.590Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:18.079Z",
       "officialPlayerId": "q:player:863",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=863",
       "squashLevelsWorldRank": 21073,
@@ -12622,7 +13563,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:54:46.448Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:57.412Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:21.325Z",
+      "squashLevelsClubLocation": ""
     },
     {
       "iso3": "AUS",
@@ -12632,7 +13574,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:31.610Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:54:47.006Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:18.664Z",
       "officialPlayerId": "q:player:659",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=659",
       "squashLevelsWorldRank": "TBD",
@@ -12644,7 +13586,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:54:47.918Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:49:59.291Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:23.402Z",
+      "squashLevelsClubLocation": "Macquarie University Squash Club, New South Wales, AUS"
     },
     {
       "iso3": "CAN",
@@ -12655,17 +13598,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:29:31.860Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222882",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:01.832Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:25.525Z",
       "officialPlayerId": "q:player:498",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=498",
       "squashLevelsPlayerId": "222882",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:28:29.602Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:37:58.003Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3250,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:19.298Z",
+      "squashLevelsClubLocation": "Ontario, CAN"
     },
     {
       "iso3": "AUS",
@@ -12675,18 +13620,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:32.086Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228930",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:03.924Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=531318",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:35.470Z",
       "officialPlayerId": "q:player:901",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=901",
-      "squashLevelsPlayerId": "228930",
+      "squashLevelsPlayerId": "531318",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:28:31.030Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:45:30.808Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
-      "squashLevelsWorldRank": 16516,
-      "squashLevelsLevel": 2186,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": null,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:24.698Z",
+      "squashLevelsClubLocation": "South Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -12696,19 +13643,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:32.235Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=19355",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:05.802Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=231737",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:37.349Z",
       "officialPlayerId": "q:player:388",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=388",
-      "squashLevelsPlayerId": "19355",
+      "squashLevelsPlayerId": "231737",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:03:53.818Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:31.873Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 4649,
+      "squashLevelsLevel": 3507,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:01.322Z",
-      "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:45:41.066Z",
+      "squashLevelsMatchedCountry": "AUS",
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -12719,18 +13667,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:32.391Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=439963",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:07.685Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:39.244Z",
       "officialPlayerId": "q:player:596",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=596",
       "squashLevelsPlayerId": "439963",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:02.365Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:41.687Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2394,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:04.872Z",
-      "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:45:44.736Z",
+      "squashLevelsMatchedCountry": "AUS",
+      "squashLevelsMatchedAge": 60,
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "SCO",
@@ -12741,18 +13690,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-sct",
       "squashLevelsCheckedAt": "2026-08-21T07:29:32.624Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=547611",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:09.479Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:41.032Z",
       "officialPlayerId": "q:player:353",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=353",
       "squashLevelsPlayerId": "547611",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:05.520Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:45.305Z",
       "squashLevelsWorldRank": 6600,
       "squashLevelsLevel": 4199,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:08.032Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:38:18.531Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "SCO"
     },
     {
       "iso3": "ENG",
@@ -12763,18 +13713,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:29:32.767Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438795",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:11.362Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:42.936Z",
       "officialPlayerId": "q:player:843",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=843",
       "squashLevelsPlayerId": "438795",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:08.542Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:48.769Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3154,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:09.802Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Wilsden, Yorks, ENG"
     },
     {
       "iso3": "SIN",
@@ -12785,18 +13736,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:29:32.915Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=299733",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:13.172Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:44.734Z",
       "officialPlayerId": "q:player:782",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=782",
       "squashLevelsPlayerId": "299733",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:10.431Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:49.405Z",
       "squashLevelsWorldRank": 14585,
       "squashLevelsLevel": 2413,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:11.682Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "SAFRA SQUASH CLUB, SGP"
     },
     {
       "iso3": "HKG",
@@ -12807,18 +13759,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "hk",
       "squashLevelsCheckedAt": "2026-08-21T07:29:33.170Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=321737",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:15.050Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:46.646Z",
       "officialPlayerId": "q:player:301",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=301",
       "squashLevelsPlayerId": "321737",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:28:49.928Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:50.026Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:28:52.355Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2861,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "HKG"
     },
     {
       "iso3": "AUS",
@@ -12829,18 +13782,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:33.299Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222209",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:17.015Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:48.533Z",
       "officialPlayerId": "q:player:642",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=642",
       "squashLevelsPlayerId": "222209",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:28:49.864Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:50.603Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:28:52.008Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3826,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "FRA",
@@ -12851,18 +13805,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "fr",
       "squashLevelsCheckedAt": "2026-08-21T07:29:33.438Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=488804",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:18.810Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:50.397Z",
       "officialPlayerId": "q:player:644",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=644",
       "squashLevelsPlayerId": "488804",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:28:51.285Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:28:53.390Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:51.125Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:45:54.129Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 20561,
       "squashLevelsLevel": 1805,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Nouvelle-Aquitaine, FRA"
     },
     {
       "iso3": "JPN",
@@ -12873,7 +13828,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:29:33.696Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=77317",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:20.686Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:52.306Z",
       "officialPlayerId": "q:player:511",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=511",
       "squashLevelsPlayerId": "77317",
@@ -12883,7 +13838,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 965,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:54.662Z",
+      "squashLevelsClubLocation": "JPN"
     },
     {
       "iso3": "AUS",
@@ -12894,17 +13851,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:33.816Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219726",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:23.295Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:54.136Z",
       "officialPlayerId": "q:player:153",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=153",
       "squashLevelsPlayerId": "219726",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:28:56.114Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:45:58.214Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 29163,
       "squashLevelsLevel": 1229,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:55.174Z",
+      "squashLevelsClubLocation": "Carrington Park Family Leisure, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -12915,7 +13874,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:33.964Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=170959",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:25.087Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:55.985Z",
       "officialPlayerId": "q:player:4",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=4",
       "squashLevelsPlayerId": "170959",
@@ -12925,7 +13884,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 23931,
       "squashLevelsLevel": 1550,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:58.748Z",
+      "squashLevelsClubLocation": "Sandgate, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -12936,7 +13897,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:34.209Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233226",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:26.888Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:57.799Z",
       "officialPlayerId": "q:player:290",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=290",
       "squashLevelsPlayerId": "233226",
@@ -12946,7 +13907,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 35914,
       "squashLevelsLevel": 895,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:59.371Z",
+      "squashLevelsClubLocation": "Elanora, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -12957,7 +13920,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:34.327Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=239261",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:28.682Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:13:59.605Z",
       "officialPlayerId": "q:player:739",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=739",
       "squashLevelsPlayerId": "239261",
@@ -12967,7 +13930,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 34402,
       "squashLevelsLevel": 966,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:45:59.884Z",
+      "squashLevelsClubLocation": "Eastside & Parsons TSA, Tasmania, AUS"
     },
     {
       "iso3": "CHI",
@@ -12978,17 +13943,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "cl",
       "squashLevelsCheckedAt": "2026-08-21T07:29:34.487Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=113055",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:30.482Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:01.401Z",
       "officialPlayerId": "q:player:252",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=252",
       "squashLevelsPlayerId": "113055",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:29:00.440Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:38:33.084Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 23698,
       "squashLevelsLevel": 1565,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:00.392Z",
+      "squashLevelsClubLocation": "CHL"
     },
     {
       "iso3": "USA",
@@ -12998,18 +13965,20 @@ window.TOURNAMENT_DATA = {
       "country": "United States",
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:29:34.752Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219774",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:32.391Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38528",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:03.288Z",
       "officialPlayerId": "q:player:194",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=194",
-      "squashLevelsPlayerId": "219774",
+      "squashLevelsPlayerId": "38528",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:29:02.147Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:46:11.568Z",
+      "squashLevelsMatchedCountry": "USA",
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 2494,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 1007,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:03.918Z",
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "AUS",
@@ -13020,7 +13989,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:34.839Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=504534",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:34.217Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:05.659Z",
       "officialPlayerId": "q:player:794",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=794",
       "squashLevelsPlayerId": "504534",
@@ -13030,7 +13999,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 53793,
       "squashLevelsLevel": 280,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:12.206Z",
+      "squashLevelsClubLocation": "Deloraine Squash Club, Tasmania, AUS"
     },
     {
       "iso3": "IRL",
@@ -13041,18 +14012,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ie",
       "squashLevelsCheckedAt": "2026-08-21T07:29:35.007Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=229323",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:36.117Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:07.553Z",
       "officialPlayerId": "q:player:574",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=574",
       "squashLevelsPlayerId": "229323",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:12.197Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:12.741Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1512,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:13.452Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Alsaa, Dublin, IRL"
     },
     {
       "iso3": "AUS",
@@ -13063,7 +14035,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:35.281Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233918",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:37.905Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:09.400Z",
       "officialPlayerId": "q:player:903",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=903",
       "squashLevelsPlayerId": "233918",
@@ -13073,7 +14045,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 24094,
       "squashLevelsLevel": 1541,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:13.344Z",
+      "squashLevelsClubLocation": "Dapto Squash Club, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -13084,7 +14058,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:35.423Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=245618",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:39.829Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:11.209Z",
       "officialPlayerId": "q:player:933",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=933",
       "squashLevelsPlayerId": "245618",
@@ -13094,7 +14068,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 26300,
       "squashLevelsLevel": 1398,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:13.982Z",
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "USA",
@@ -13105,18 +14081,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:29:35.521Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26887",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:41.719Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:13.102Z",
       "officialPlayerId": "q:player:403",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=403",
       "squashLevelsPlayerId": "26887",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:29:10.539Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:14.652Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:29:12.841Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1584,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "NZL",
@@ -13127,18 +14104,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:35.825Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=378293",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:43.616Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:14.910Z",
       "officialPlayerId": "q:player:376",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=376",
       "squashLevelsPlayerId": "378293",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:29:10.301Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:15.183Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:29:12.458Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 21227,
       "squashLevelsLevel": 1750,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Queenstown, Otago, NZL"
     },
     {
       "iso3": "CAN",
@@ -13148,19 +14126,20 @@ window.TOURNAMENT_DATA = {
       "country": "Canada",
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:29:36.064Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=78057",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:45.503Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=331986",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:16.794Z",
       "officialPlayerId": "q:player:577",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=577",
-      "squashLevelsPlayerId": "78057",
+      "squashLevelsPlayerId": "331986",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:29:10.764Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:29:16.967Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:15.738Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:38:51.116Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 729,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": 946,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Edmonton, Alberta, CAN"
     },
     {
       "iso3": "AUS",
@@ -13171,7 +14150,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:36.046Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38465",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:47.798Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:18.603Z",
       "officialPlayerId": "q:player:406",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=406",
       "squashLevelsPlayerId": "38465",
@@ -13181,7 +14160,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 31800,
       "squashLevelsLevel": 1093,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:23.885Z",
+      "squashLevelsClubLocation": "Springwood, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -13192,17 +14173,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:36.357Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232342",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:49.593Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:20.415Z",
       "officialPlayerId": "q:player:581",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=581",
       "squashLevelsPlayerId": "232342",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:29:16.358Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:46:28.786Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 32436,
       "squashLevelsLevel": 1062,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:24.398Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -13212,7 +14195,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:36.672Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:54:59.364Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:27.289Z",
       "officialPlayerId": "q:player:861",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=861",
       "squashLevelsWorldRank": null,
@@ -13229,18 +14212,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:29:36.590Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=209389",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:51.386Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:22.223Z",
       "officialPlayerId": "q:player:371",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=371",
       "squashLevelsPlayerId": "209389",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:14.612Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:30.874Z",
       "squashLevelsWorldRank": 15726,
       "squashLevelsLevel": 2274,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:15.884Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "SRC Erding, Bayern, GER"
     },
     {
       "iso3": "AUS",
@@ -13251,18 +14235,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:36.998Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=460455",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:53.559Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:24.040Z",
       "officialPlayerId": "q:player:754",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=754",
       "squashLevelsPlayerId": "460455",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:16.475Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:31.505Z",
       "squashLevelsWorldRank": 33311,
       "squashLevelsLevel": 1017,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:17.721Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Belmont Saints, Western Australia, AUS"
     },
     {
       "iso3": "BRU",
@@ -13273,18 +14258,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "bn",
       "squashLevelsCheckedAt": "2026-08-21T07:29:37.225Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=439913",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:55.459Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:25.920Z",
       "officialPlayerId": "q:player:947",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=947",
       "squashLevelsPlayerId": "439913",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:18.241Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:32.018Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1429,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:19.500Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "NZL"
     },
     {
       "iso3": "AUS",
@@ -13295,7 +14281,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:37.281Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219703",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:57.251Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:27.728Z",
       "officialPlayerId": "q:player:58",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=58",
       "squashLevelsPlayerId": "219703",
@@ -13305,7 +14291,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 46954,
       "squashLevelsLevel": 474,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:32.601Z",
+      "squashLevelsClubLocation": "Hibiscus Squash & Volleyball Centre, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -13316,18 +14304,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:37.615Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38524",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:50:59.131Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:29.609Z",
       "officialPlayerId": "q:player:272",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=272",
       "squashLevelsPlayerId": "38524",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:29:26.585Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:29:28.625Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:33.239Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:39:01.313Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 893,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Australian Capital Territory, AUS"
     },
     {
       "iso3": "AUS",
@@ -13338,18 +14327,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:37.809Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228548",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:00.944Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:31.448Z",
       "officialPlayerId": "q:player:557",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=557",
       "squashLevelsPlayerId": "228548",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:20.021Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:36.735Z",
       "squashLevelsWorldRank": 14890,
       "squashLevelsLevel": 2372,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:21.271Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -13360,7 +14350,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:37.893Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=237708",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:02.742Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:33.256Z",
       "officialPlayerId": "q:player:52",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=52",
       "squashLevelsPlayerId": "237708",
@@ -13370,7 +14360,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 45234,
       "squashLevelsLevel": 532,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:37.325Z",
+      "squashLevelsClubLocation": "Raymond Terrace, New South Wales, AUS"
     },
     {
       "iso3": "SWE",
@@ -13381,7 +14373,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "se",
       "squashLevelsCheckedAt": "2026-08-21T07:29:38.236Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=528272",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:04.539Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:35.046Z",
       "officialPlayerId": "q:player:812",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=812",
       "squashLevelsPlayerId": "528272",
@@ -13391,7 +14383,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 38232,
       "squashLevelsLevel": 799,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:37.961Z",
+      "squashLevelsClubLocation": "SWE"
     },
     {
       "iso3": "AUS",
@@ -13402,18 +14396,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:38.363Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=458758",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:06.332Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:36.857Z",
       "officialPlayerId": "q:player:953",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=953",
       "squashLevelsPlayerId": "458758",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:21.816Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:38.594Z",
       "squashLevelsWorldRank": 31641,
       "squashLevelsLevel": 1100,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:23.078Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "SGP"
     },
     {
       "iso3": "SIN",
@@ -13423,7 +14418,7 @@ window.TOURNAMENT_DATA = {
       "country": "Singapore",
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:29:38.453Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:00.180Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:27.801Z",
       "officialPlayerId": "q:player:819",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=819",
       "squashLevelsWorldRank": null,
@@ -13440,17 +14435,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "cz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:38.769Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=143023",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:08.118Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:38.662Z",
       "officialPlayerId": "q:player:103",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=103",
       "squashLevelsPlayerId": "143023",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:29:32.769Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:39:06.458Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 22396,
       "squashLevelsLevel": 1662,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:39.280Z",
+      "squashLevelsClubLocation": "NRW, CZE"
     },
     {
       "iso3": "RSA",
@@ -13461,7 +14458,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:38.882Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=309181",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:09.906Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:40.753Z",
       "officialPlayerId": "q:player:184",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=184",
       "squashLevelsPlayerId": "309181",
@@ -13471,7 +14468,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 17090,
       "squashLevelsLevel": 2123,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:43.208Z",
+      "squashLevelsClubLocation": "Chamber Exiles, Gauteng, ZAF"
     },
     {
       "iso3": "RSA",
@@ -13482,7 +14481,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:38.977Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26693",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:11.783Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:42.627Z",
       "officialPlayerId": "q:player:501",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=501",
       "squashLevelsPlayerId": "26693",
@@ -13492,7 +14491,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1560,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:43.790Z",
+      "squashLevelsClubLocation": "ZAF"
     },
     {
       "iso3": "AUS",
@@ -13503,7 +14504,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:39.331Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=436898",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:13.570Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:44.438Z",
       "officialPlayerId": "q:player:431",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=431",
       "squashLevelsPlayerId": "436898",
@@ -13513,7 +14514,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 21980,
       "squashLevelsLevel": 1694,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:44.410Z",
+      "squashLevelsClubLocation": "Port Macquarie, New South Wales, AUS"
     },
     {
       "iso3": "JPN",
@@ -13523,7 +14526,7 @@ window.TOURNAMENT_DATA = {
       "country": "Japan",
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:29:39.430Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:01.009Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:28.352Z",
       "officialPlayerId": "q:player:670",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=670",
       "squashLevelsWorldRank": null,
@@ -13540,7 +14543,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:39.489Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220828",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:15.352Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:46.237Z",
       "officialPlayerId": "q:player:914",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=914",
       "squashLevelsPlayerId": "220828",
@@ -13550,7 +14553,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 21731,
       "squashLevelsLevel": 1712,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:44.996Z",
+      "squashLevelsClubLocation": "Busselton Squash Club, Western Australia, AUS"
     },
     {
       "iso3": "USA",
@@ -13560,7 +14565,7 @@ window.TOURNAMENT_DATA = {
       "country": "United States",
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:29:39.852Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:01.745Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:28.956Z",
       "officialPlayerId": "q:player:76",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=76",
       "squashLevelsWorldRank": null,
@@ -13577,7 +14582,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:40.028Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=471706",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:17.314Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:48.117Z",
       "officialPlayerId": "q:player:104",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=104",
       "squashLevelsPlayerId": "471706",
@@ -13587,7 +14592,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1896,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:45.494Z",
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -13598,7 +14605,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:40.077Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220827",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:19.421Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:49.980Z",
       "officialPlayerId": "q:player:632",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=632",
       "squashLevelsPlayerId": "220827",
@@ -13608,7 +14615,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 15480,
       "squashLevelsLevel": 2306,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:46.015Z",
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "USA",
@@ -13619,18 +14628,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:29:40.406Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=342042",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:21.333Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:51.856Z",
       "officialPlayerId": "q:player:226",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=226",
       "squashLevelsPlayerId": "342042",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:25.346Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:46.554Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2185,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:26.600Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Washington, USA"
     },
     {
       "iso3": "RSA",
@@ -13641,17 +14651,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:40.559Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=250263",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:23.148Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:53.667Z",
       "officialPlayerId": "q:player:167",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=167",
       "squashLevelsPlayerId": "250263",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:29:42.842Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:46:50.122Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 1790,
       "squashLevelsLevel": 1577,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:47.139Z",
+      "squashLevelsClubLocation": "Collegians Club Pietermaritzburg, KwaZulu-Natal, ZAF"
     },
     {
       "iso3": "AUS",
@@ -13662,7 +14674,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:40.614Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=230242",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:25.165Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:55.557Z",
       "officialPlayerId": "q:player:835",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=835",
       "squashLevelsPlayerId": "230242",
@@ -13672,7 +14684,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 867,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:50.686Z",
+      "squashLevelsClubLocation": "Willoughby, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -13683,18 +14697,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:40.969Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234303",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:26.982Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:57.361Z",
       "officialPlayerId": "q:player:564",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=564",
       "squashLevelsPlayerId": "234303",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:29:46.480Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:29:48.604Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:46:51.245Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:47:03.340Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 20720,
       "squashLevelsLevel": 1791,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Katanning Squash Club, Western Australia, AUS"
     },
     {
       "iso3": "CAN",
@@ -13705,7 +14720,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:29:41.159Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438749",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:28.886Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:14:59.244Z",
       "officialPlayerId": "q:player:241",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=241",
       "squashLevelsPlayerId": "438749",
@@ -13715,7 +14730,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1917,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:03.969Z",
+      "squashLevelsClubLocation": "CAN"
     },
     {
       "iso3": "AUS",
@@ -13726,18 +14743,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:41.215Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=267474",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:30.709Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:01.057Z",
       "officialPlayerId": "q:player:309",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=309",
       "squashLevelsPlayerId": "267474",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:27.124Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:04.486Z",
       "squashLevelsWorldRank": 16991,
       "squashLevelsLevel": 2134,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:30.864Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:47:08.883Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Lilydale, Victoria, AUS"
     },
     {
       "iso3": "CAN",
@@ -13748,7 +14766,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:29:41.512Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=363891",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:32.520Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:02.916Z",
       "officialPlayerId": "q:player:243",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=243",
       "squashLevelsPlayerId": "363891",
@@ -13758,7 +14776,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 30701,
       "squashLevelsLevel": 1149,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:09.640Z",
+      "squashLevelsClubLocation": "CAN"
     },
     {
       "iso3": "AUS",
@@ -13769,7 +14789,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:41.687Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219239",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:34.338Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:05.001Z",
       "officialPlayerId": "q:player:207",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=207",
       "squashLevelsPlayerId": "219239",
@@ -13779,7 +14799,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 34144,
       "squashLevelsLevel": 977,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:10.173Z",
+      "squashLevelsClubLocation": "Stafford, Queensland, AUS"
     },
     {
       "iso3": "NZL",
@@ -13790,7 +14812,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:41.754Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=376640",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:36.152Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:06.832Z",
       "officialPlayerId": "q:player:368",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=368",
       "squashLevelsPlayerId": "376640",
@@ -13800,7 +14822,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 16940,
       "squashLevelsLevel": 2140,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:10.710Z",
+      "squashLevelsClubLocation": "Taieri, Otago, NZL"
     },
     {
       "iso3": "SIN",
@@ -13811,18 +14835,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:29:42.036Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=283614",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:37.968Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:08.654Z",
       "officialPlayerId": "q:player:535",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=535",
       "squashLevelsPlayerId": "283614",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:31.379Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:11.250Z",
       "squashLevelsWorldRank": 16912,
       "squashLevelsLevel": 2143,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:33.889Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:39:35.008Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "United Condo Squash Club, SGP"
     },
     {
       "iso3": "AUS",
@@ -13833,18 +14858,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:42.209Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218909",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:39.783Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:10.478Z",
       "officialPlayerId": "q:player:247",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=247",
       "squashLevelsPlayerId": "218909",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:34.403Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:14.738Z",
       "squashLevelsWorldRank": 22507,
       "squashLevelsLevel": 1655,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:35.649Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -13855,18 +14881,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:42.270Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232775",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:41.600Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:12.277Z",
       "officialPlayerId": "q:player:778",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=778",
       "squashLevelsPlayerId": "232775",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:30:05.478Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:15.249Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:30:07.552Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 41132,
       "squashLevelsLevel": 682,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Eastside & Parsons TSA, Tasmania, AUS"
     },
     {
       "iso3": "ENG",
@@ -13877,18 +14904,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:29:42.674Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=214963",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:43.459Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:14.074Z",
       "officialPlayerId": "q:player:299",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=299",
       "squashLevelsPlayerId": "214963",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:36.167Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:15.838Z",
       "squashLevelsWorldRank": 21403,
       "squashLevelsLevel": 1737,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:37.435Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -13899,7 +14927,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:42.797Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=283599",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:45.385Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:15.954Z",
       "officialPlayerId": "q:player:974",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=974",
       "squashLevelsPlayerId": "283599",
@@ -13909,7 +14937,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1045,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:16.396Z",
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -13919,7 +14949,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:42.864Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:54:51.121Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:17.028Z",
       "officialPlayerId": "q:player:846",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=846",
       "squashLevelsWorldRank": 27001,
@@ -13931,7 +14961,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:54:51.571Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:47.198Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:17.799Z",
+      "squashLevelsClubLocation": "Alex Hills, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -13942,7 +14973,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:43.197Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235988",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:49.114Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:19.726Z",
       "officialPlayerId": "q:player:139",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=139",
       "squashLevelsPlayerId": "235988",
@@ -13952,7 +14983,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1477,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:17.651Z",
+      "squashLevelsClubLocation": "Elanora, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -13963,7 +14996,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:43.384Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=352881",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:51.232Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:22.486Z",
       "officialPlayerId": "q:player:215",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=215",
       "squashLevelsPlayerId": "352881",
@@ -13973,7 +15006,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 35634,
       "squashLevelsLevel": 908,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:18.386Z",
+      "squashLevelsClubLocation": "Dural, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -13984,18 +15019,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:43.450Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218447",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:53.044Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:24.323Z",
       "officialPlayerId": "q:player:64",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=64",
       "squashLevelsPlayerId": "218447",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:30:11.881Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:19.076Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:30:13.950Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 23758,
       "squashLevelsLevel": 1561,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Royal South Yarra, Victoria, AUS"
     },
     {
       "iso3": "CAN",
@@ -14006,7 +15042,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:29:43.724Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=27067",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:54.946Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:26.203Z",
       "officialPlayerId": "q:player:548",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=548",
       "squashLevelsPlayerId": "27067",
@@ -14016,7 +15052,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2345,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:19.701Z",
+      "squashLevelsClubLocation": "Dublin, IRL"
     },
     {
       "iso3": "ENG",
@@ -14027,7 +15065,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:29:43.902Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=276283",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:56.760Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:28.018Z",
       "officialPlayerId": "q:player:866",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=866",
       "squashLevelsPlayerId": "276283",
@@ -14037,7 +15075,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 1627,
       "squashLevelsLevel": 1722,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:20.307Z",
+      "squashLevelsClubLocation": "Bexley, Kent, ENG"
     },
     {
       "iso3": "AUS",
@@ -14048,7 +15088,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:43.970Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218204",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:51:58.571Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:29.858Z",
       "officialPlayerId": "q:player:48",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=48",
       "squashLevelsPlayerId": "218204",
@@ -14058,7 +15098,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 1968,
       "squashLevelsLevel": 1463,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:20.931Z",
+      "squashLevelsClubLocation": "Squash Qld, Queensland, AUS"
     },
     {
       "iso3": "IRL",
@@ -14069,7 +15111,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ie",
       "squashLevelsCheckedAt": "2026-08-21T07:29:44.260Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=274969",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:00.388Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:31.721Z",
       "squashLevelsWorldRank": 2592,
       "officialPlayerId": "q:player:803",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=803",
@@ -14079,7 +15121,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsLevel": 1112,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:21.554Z",
+      "squashLevelsClubLocation": "Woodford Wells, Essex, IRL"
     },
     {
       "iso3": "AUS",
@@ -14089,18 +15133,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:44.436Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232897",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:02.295Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=547260",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:41.809Z",
       "officialPlayerId": "q:player:7",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=7",
-      "squashLevelsPlayerId": "232897",
+      "squashLevelsPlayerId": "547260",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:30:17.857Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:47:25.168Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 1042,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevel": null,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:22.161Z",
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "RSA",
@@ -14111,7 +15157,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:44.490Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38811",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:04.119Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:43.969Z",
       "officialPlayerId": "q:player:369",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=369",
       "squashLevelsPlayerId": "38811",
@@ -14121,7 +15167,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 2433,
       "squashLevelsLevel": 1192,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:25.687Z",
+      "squashLevelsClubLocation": "Western Province Cricket Club (Squash), Western Cape, ZAF"
     },
     {
       "iso3": "NZL",
@@ -14132,7 +15180,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:44.794Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=377699",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:05.933Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:46.118Z",
       "officialPlayerId": "q:player:198",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=198",
       "squashLevelsPlayerId": "377699",
@@ -14142,7 +15190,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 2627,
       "squashLevelsLevel": 1095,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:26.231Z",
+      "squashLevelsClubLocation": "Morrinsville, Waikato, NZL"
     },
     {
       "iso3": "RSA",
@@ -14153,7 +15203,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:44.953Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=324255",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:07.748Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:47.975Z",
       "officialPlayerId": "q:player:828",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=828",
       "squashLevelsPlayerId": "324255",
@@ -14163,7 +15213,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 2947,
       "squashLevelsLevel": 978,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:26.841Z",
+      "squashLevelsClubLocation": "PE Crusaders Sports Club, Eastern Cape, ZAF"
     },
     {
       "iso3": "USA",
@@ -14174,18 +15226,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:29:45.009Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=343054",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:09.662Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:49.854Z",
       "officialPlayerId": "q:player:509",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=509",
       "squashLevelsPlayerId": "343054",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:38.577Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:27.432Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 766,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:39.834Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "TBD"
     },
     {
       "iso3": "AUS",
@@ -14196,7 +15249,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:45.375Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221018",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:11.499Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:51.660Z",
       "officialPlayerId": "q:player:542",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=542",
       "squashLevelsPlayerId": "221018",
@@ -14206,7 +15259,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 3875,
       "squashLevelsLevel": 715,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:28.028Z",
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -14217,7 +15272,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:45.492Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218929",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:13.330Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:53.505Z",
       "officialPlayerId": "q:player:467",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=467",
       "squashLevelsPlayerId": "218929",
@@ -14227,7 +15282,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 3475,
       "squashLevelsLevel": 812,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:28.542Z",
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "USA",
@@ -14238,18 +15295,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:29:45.563Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438604",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:15.231Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:55.387Z",
       "officialPlayerId": "q:player:760",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=760",
       "squashLevelsPlayerId": "438604",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:40.487Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:29.060Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1325,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:43.003Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:47:32.030Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "AUS",
@@ -14260,18 +15318,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:46.021Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221520",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:17.049Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:57.203Z",
       "officialPlayerId": "q:player:527",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=527",
       "squashLevelsPlayerId": "221520",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:43.517Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:32.543Z",
       "squashLevelsWorldRank": 3510,
       "squashLevelsLevel": 803,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:44.779Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Cardiff, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -14282,7 +15341,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:46.017Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222385",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:18.866Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:15:59.005Z",
       "squashLevelsWorldRank": 2858,
       "officialPlayerId": "q:player:717",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=717",
@@ -14292,7 +15351,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsLevel": 1008,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:33.068Z",
+      "squashLevelsClubLocation": "South Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -14303,7 +15364,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:46.178Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=441437",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:20.686Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:00.814Z",
       "officialPlayerId": "q:player:844",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=844",
       "squashLevelsPlayerId": "441437",
@@ -14313,7 +15374,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 3092,
       "squashLevelsLevel": 924,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:33.687Z",
+      "squashLevelsClubLocation": "Grace Park Hawthorn, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -14324,18 +15387,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:46.652Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234580",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:22.589Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:02.728Z",
       "officialPlayerId": "q:player:781",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=781",
       "squashLevelsPlayerId": "234580",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:45.402Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:34.225Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 831,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:46.662Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Sierra, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -14346,7 +15410,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:46.639Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218692",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:24.400Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:04.523Z",
       "officialPlayerId": "q:player:927",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=927",
       "squashLevelsPlayerId": "218692",
@@ -14356,7 +15420,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 4702,
       "squashLevelsLevel": 547,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:34.857Z",
+      "squashLevelsClubLocation": "Kensington INC, Western Australia, AUS"
     },
     {
       "iso3": "JPN",
@@ -14367,18 +15433,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:29:46.691Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=76973",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:26.395Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:06.392Z",
       "officialPlayerId": "q:player:510",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=510",
       "squashLevelsPlayerId": "76973",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:47.204Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:35.386Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 468,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:48.447Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "JPN"
     },
     {
       "iso3": "AUS",
@@ -14389,7 +15456,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:47.275Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232146",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:28.214Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:08.195Z",
       "officialPlayerId": "q:player:152",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=152",
       "squashLevelsPlayerId": "232146",
@@ -14399,7 +15466,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 5039,
       "squashLevelsLevel": 492,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:35.894Z",
+      "squashLevelsClubLocation": "Mixed, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -14410,7 +15479,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:47.280Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=230292",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:30.035Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:10.001Z",
       "officialPlayerId": "q:player:341",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=341",
       "squashLevelsPlayerId": "230292",
@@ -14420,7 +15489,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 4284,
       "squashLevelsLevel": 624,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:36.404Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -14431,7 +15502,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:47.214Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219620",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:31.849Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:11.809Z",
       "officialPlayerId": "q:player:305",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=305",
       "squashLevelsPlayerId": "219620",
@@ -14441,7 +15512,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 3280,
       "squashLevelsLevel": 863,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:37.041Z",
+      "squashLevelsClubLocation": "Cardiff, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -14452,7 +15525,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:47.829Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=230899",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:33.670Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:13.621Z",
       "officialPlayerId": "q:player:318",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=318",
       "squashLevelsPlayerId": "230899",
@@ -14462,7 +15535,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 3854,
       "squashLevelsLevel": 719,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:37.591Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -14473,7 +15548,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:47.876Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234318",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:35.506Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:15.448Z",
       "officialPlayerId": "q:player:617",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=617",
       "squashLevelsPlayerId": "234318",
@@ -14483,7 +15558,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 4496,
       "squashLevelsLevel": 582,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:38.128Z",
+      "squashLevelsClubLocation": "Springwood, New South Wales, AUS"
     },
     {
       "iso3": "NZL",
@@ -14494,7 +15571,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:47.794Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=373210",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:37.318Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:17.261Z",
       "officialPlayerId": "q:player:328",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=328",
       "squashLevelsPlayerId": "373210",
@@ -14504,7 +15581,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 3741,
       "squashLevelsLevel": 745,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:38.656Z",
+      "squashLevelsClubLocation": "Te Puke, Bay of Plenty, NZL"
     },
     {
       "iso3": "AUS",
@@ -14515,7 +15594,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:48.330Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=213779",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:39.134Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:19.347Z",
       "officialPlayerId": "q:player:349",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=349",
       "squashLevelsPlayerId": "213779",
@@ -14525,7 +15604,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 3817,
       "squashLevelsLevel": 730,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:39.182Z",
+      "squashLevelsClubLocation": "Acacia Ridge, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -14536,18 +15617,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:48.425Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218864",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:41.039Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:21.444Z",
       "officialPlayerId": "q:player:17",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=17",
       "squashLevelsPlayerId": "218864",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:48.965Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:39.719Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 746,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:50.238Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -14558,18 +15640,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:48.467Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218863",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:43.162Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:23.648Z",
       "officialPlayerId": "q:player:164",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=164",
       "squashLevelsPlayerId": "218863",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:50.744Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:40.290Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 655,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:51.996Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -14580,18 +15663,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:48.886Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=50200",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:46.335Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:27.689Z",
       "officialPlayerId": "q:player:882",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=882",
       "squashLevelsPlayerId": "50200",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:52.516Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:40.931Z",
       "squashLevelsWorldRank": 3302,
       "squashLevelsLevel": 857,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:53.783Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -14602,7 +15686,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:48.981Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=227381",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:48.168Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:29.550Z",
       "officialPlayerId": "q:player:300",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=300",
       "squashLevelsPlayerId": "227381",
@@ -14612,7 +15696,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 4070,
       "squashLevelsLevel": 670,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:41.549Z",
+      "squashLevelsClubLocation": ""
     },
     {
       "iso3": "NZL",
@@ -14623,7 +15709,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:48.981Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=372310",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:50.027Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:31.438Z",
       "officialPlayerId": "q:player:641",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=641",
       "squashLevelsPlayerId": "372310",
@@ -14633,7 +15719,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 3658,
       "squashLevelsLevel": 766,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:42.215Z",
+      "squashLevelsClubLocation": "Waimea, Canterbury, NZL"
     },
     {
       "iso3": "AUS",
@@ -14644,7 +15732,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:49.453Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=59437",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:51.848Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:33.265Z",
       "officialPlayerId": "q:player:684",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=684",
       "squashLevelsPlayerId": "59437",
@@ -14654,7 +15742,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 4208,
       "squashLevelsLevel": 638,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:43.079Z",
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -14665,7 +15755,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:49.547Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221478",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:53.669Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:35.089Z",
       "officialPlayerId": "q:player:645",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=645",
       "squashLevelsPlayerId": "221478",
@@ -14675,7 +15765,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 6953,
       "squashLevelsLevel": 279,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:43.704Z",
+      "squashLevelsClubLocation": "Eastside & Parsons TSA, Tasmania, AUS"
     },
     {
       "iso3": "RSA",
@@ -14686,7 +15778,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:49.558Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=77811",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:55.488Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:37.334Z",
       "officialPlayerId": "q:player:796",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=796",
       "squashLevelsPlayerId": "77811",
@@ -14696,7 +15788,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 6220,
       "squashLevelsLevel": 344,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:44.301Z",
+      "squashLevelsClubLocation": "Fish Hoek, Western Cape, ZAF"
     },
     {
       "iso3": "AUS",
@@ -14707,7 +15801,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:50.097Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=476361",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:57.311Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:39.424Z",
       "officialPlayerId": "q:player:805",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=805",
       "squashLevelsPlayerId": "476361",
@@ -14717,7 +15811,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": 5813,
       "squashLevelsLevel": 389,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:45.046Z",
+      "squashLevelsClubLocation": "Auckland, NZL"
     },
     {
       "iso3": "CAN",
@@ -14727,7 +15823,7 @@ window.TOURNAMENT_DATA = {
       "country": "Canada",
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:29:50.179Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:02.939Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:30.019Z",
       "officialPlayerId": "q:player:653",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=653",
       "squashLevelsWorldRank": null,
@@ -14743,19 +15839,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:50.182Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222179",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:52:59.139Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=35413",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:41.297Z",
       "officialPlayerId": "q:player:34",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=34",
-      "squashLevelsPlayerId": "222179",
+      "squashLevelsPlayerId": "35413",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:31:03.211Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:31:09.523Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:45.635Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:40:05.277Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
-      "squashLevelsWorldRank": 7352,
-      "squashLevelsLevel": 248,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 857,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "York Rackets, Yorks, ENG"
     },
     {
       "iso3": "RSA",
@@ -14766,7 +15863,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:50.896Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=77407",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:01.090Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:43.169Z",
       "officialPlayerId": "q:player:536",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=536",
       "squashLevelsPlayerId": "77407",
@@ -14776,7 +15873,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 65,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 416,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:49.126Z",
+      "squashLevelsClubLocation": "ZAF"
     },
     {
       "iso3": "CAY",
@@ -14787,7 +15886,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ky",
       "squashLevelsCheckedAt": "2026-08-21T07:29:50.905Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=231445",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:03.002Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:45.069Z",
       "officialPlayerId": "q:player:764",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=764",
       "squashLevelsPlayerId": "231445",
@@ -14797,7 +15896,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 4497,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:49.661Z",
+      "squashLevelsClubLocation": "CYM"
     },
     {
       "iso3": "IRL",
@@ -14808,7 +15909,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ie",
       "squashLevelsCheckedAt": "2026-08-21T07:29:50.898Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=277856",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:04.821Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:46.875Z",
       "officialPlayerId": "q:player:797",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=797",
       "squashLevelsPlayerId": "277856",
@@ -14818,7 +15919,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 14585,
       "squashLevelsLevel": 2413,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:50.216Z",
+      "squashLevelsClubLocation": "Ennis CBS, Clare, IRL"
     },
     {
       "iso3": "RSA",
@@ -14829,7 +15932,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:51.828Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=77051",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:06.794Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:48.744Z",
       "officialPlayerId": "q:player:763",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=763",
       "squashLevelsPlayerId": "77051",
@@ -14839,7 +15942,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3320,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:50.724Z",
+      "squashLevelsClubLocation": "Gauteng, ZAF"
     },
     {
       "iso3": "AUS",
@@ -14850,7 +15955,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:51.871Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38611",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:08.606Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:50.568Z",
       "officialPlayerId": "q:player:669",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=669",
       "squashLevelsPlayerId": "38611",
@@ -14860,7 +15965,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 12287,
       "squashLevelsLevel": 2750,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:51.242Z",
+      "squashLevelsClubLocation": "Bundaberg, Queensland, AUS"
     },
     {
       "iso3": "CAN",
@@ -14871,7 +15978,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:29:51.848Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=27074",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:10.509Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:52.447Z",
       "officialPlayerId": "q:player:118",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=118",
       "squashLevelsPlayerId": "27074",
@@ -14881,7 +15988,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2115,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:51.771Z",
+      "squashLevelsClubLocation": "CAN"
     },
     {
       "iso3": "CAN",
@@ -14892,17 +16001,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:29:52.765Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=315266",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:12.412Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:54.347Z",
       "officialPlayerId": "q:player:563",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=563",
       "squashLevelsPlayerId": "315266",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:31:12.236Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:40:11.515Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1631,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:52.315Z",
+      "squashLevelsClubLocation": "Evergreen, British Columbia, CAN"
     },
     {
       "iso3": "ENG",
@@ -14913,17 +16024,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:29:52.778Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=231393",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:14.316Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:56.223Z",
       "officialPlayerId": "q:player:20",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=20",
       "squashLevelsPlayerId": "231393",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:31:13.518Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:40:17.076Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3350,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:47:55.953Z",
+      "squashLevelsClubLocation": "SCO"
     },
     {
       "iso3": "RSA",
@@ -14934,7 +16047,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:52.761Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26916",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:16.134Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:58.034Z",
       "officialPlayerId": "q:player:537",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=537",
       "squashLevelsPlayerId": "26916",
@@ -14944,7 +16057,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 15537,
       "squashLevelsLevel": 2298,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:03.446Z",
+      "squashLevelsClubLocation": "Western Cape, ZAF"
     },
     {
       "iso3": "GER",
@@ -14955,7 +16070,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "squashLevelsCheckedAt": "2026-08-21T07:29:53.563Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26913",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:18.040Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:16:59.897Z",
       "officialPlayerId": "q:player:401",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=401",
       "squashLevelsPlayerId": "26913",
@@ -14965,7 +16080,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1831,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:04.233Z",
+      "squashLevelsClubLocation": "1.SC Würzburg, Bayern, GER"
     },
     {
       "iso3": "RSA",
@@ -14976,7 +16093,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:53.571Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=77683",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:19.864Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:01.714Z",
       "officialPlayerId": "q:player:255",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=255",
       "squashLevelsPlayerId": "77683",
@@ -14986,7 +16103,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 15015,
       "squashLevelsLevel": 2357,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:05.034Z",
+      "squashLevelsClubLocation": "Maritzburg Golf Club, KwaZulu-Natal, ZAF"
     },
     {
       "iso3": "GBR",
@@ -14997,17 +16116,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb",
       "squashLevelsCheckedAt": "2026-08-21T07:29:53.570Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=90717",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:21.680Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:03.510Z",
       "officialPlayerId": "q:player:618",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=618",
       "squashLevelsPlayerId": "90717",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:31:17.602Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:40:22.242Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 19970,
       "squashLevelsLevel": 1853,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:06.768Z",
+      "squashLevelsClubLocation": "Stirling, SCO"
     },
     {
       "iso3": "CAN",
@@ -15018,7 +16139,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:29:54.471Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=50553",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:23.588Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:05.438Z",
       "officialPlayerId": "q:player:373",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=373",
       "squashLevelsPlayerId": "50553",
@@ -15028,7 +16149,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1980,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:10.521Z",
+      "squashLevelsClubLocation": "Evergreen, British Columbia, CAN"
     },
     {
       "iso3": "AUS",
@@ -15039,18 +16162,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:54.497Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26730",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:25.494Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:07.335Z",
       "officialPlayerId": "q:player:14",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=14",
       "squashLevelsPlayerId": "26730",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:54.841Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:11.240Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2577,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:56.116Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "NZL",
@@ -15060,7 +16184,7 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:54.493Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:03.771Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:30.532Z",
       "officialPlayerId": "q:player:913",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=913",
       "squashLevelsWorldRank": null,
@@ -15076,7 +16200,7 @@ window.TOURNAMENT_DATA = {
       "country": "England",
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:29:55.311Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:06.143Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:32.906Z",
       "officialPlayerId": "q:player:671",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=671",
       "squashLevelsWorldRank": null,
@@ -15093,7 +16217,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:29:55.362Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=361294",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:27.405Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:09.221Z",
       "officialPlayerId": "q:player:321",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=321",
       "squashLevelsPlayerId": "361294",
@@ -15103,7 +16227,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2025,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:11.920Z",
+      "squashLevelsClubLocation": "Singapore, SGP"
     },
     {
       "iso3": "AUS",
@@ -15113,19 +16239,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:55.406Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38668",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:29.216Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=372855",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:11.127Z",
       "officialPlayerId": "q:player:440",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=440",
-      "squashLevelsPlayerId": "38668",
+      "squashLevelsPlayerId": "372855",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:31:22.895Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:31:46.723Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:12.711Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:48:24.644Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
-      "squashLevelsWorldRank": 21821,
-      "squashLevelsLevel": 1705,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 1735,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Nelson, Canterbury, NZL"
     },
     {
       "iso3": "AUS",
@@ -15136,7 +16263,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:55.947Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=229397",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:31.041Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:12.926Z",
       "officialPlayerId": "q:player:464",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=464",
       "squashLevelsPlayerId": "229397",
@@ -15146,7 +16273,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 19744,
       "squashLevelsLevel": 1871,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:25.586Z",
+      "squashLevelsClubLocation": "Barossa Valley, South Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -15157,18 +16286,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:55.961Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=215665",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:32.860Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:14.734Z",
       "officialPlayerId": "q:player:544",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=544",
       "squashLevelsPlayerId": "215665",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:57.641Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:26.217Z",
       "squashLevelsWorldRank": 23297,
       "squashLevelsLevel": 1595,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:04:58.896Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Cardiff, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -15179,18 +16309,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:56.050Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=243344",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:34.675Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:16.542Z",
       "officialPlayerId": "q:player:695",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=695",
       "squashLevelsPlayerId": "243344",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:31:28.290Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:26.805Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:31:30.856Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 26460,
       "squashLevelsLevel": 1390,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -15200,19 +16331,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:56.612Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=132563",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:36.493Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=510422",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:18.418Z",
       "officialPlayerId": "q:player:696",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=696",
-      "squashLevelsPlayerId": "132563",
+      "squashLevelsPlayerId": "510422",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:31:32.489Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:31:34.517Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:27.346Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:48:31.894Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 70,
-      "squashLevelsWorldRank": 21476,
-      "squashLevelsLevel": 1730,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 1724,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Coffs Harbour Squash & Swim Centre, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -15223,17 +16355,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:56.606Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218385",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:38.317Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:20.717Z",
       "officialPlayerId": "q:player:549",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=549",
       "squashLevelsPlayerId": "218385",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:31:33.844Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:48:35.964Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 27644,
       "squashLevelsLevel": 1319,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:32.923Z",
+      "squashLevelsClubLocation": "Campbelltown Squash Club, South Australia, AUS"
     },
     {
       "iso3": "AUT",
@@ -15244,18 +16378,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "at",
       "squashLevelsCheckedAt": "2026-08-21T07:29:56.817Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=181881",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:40.258Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:22.546Z",
       "officialPlayerId": "q:player:31",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=31",
       "squashLevelsPlayerId": "181881",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:04:59.450Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:36.471Z",
       "squashLevelsWorldRank": 25016,
       "squashLevelsLevel": 1480,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:00.691Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "AUT"
     },
     {
       "iso3": "AUS",
@@ -15266,18 +16401,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:57.317Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232904",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:42.090Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:24.404Z",
       "officialPlayerId": "q:player:411",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=411",
       "squashLevelsPlayerId": "232904",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:01.208Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:37.007Z",
       "squashLevelsWorldRank": 25119,
       "squashLevelsLevel": 1474,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:02.471Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Dgen, New South Wales, AUS"
     },
     {
       "iso3": "ENG",
@@ -15288,18 +16424,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:29:57.324Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=67659",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:43.912Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:26.207Z",
       "officialPlayerId": "q:player:453",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=453",
       "squashLevelsPlayerId": "67659",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:02.982Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:37.528Z",
       "squashLevelsWorldRank": 29057,
       "squashLevelsLevel": 1235,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:04.230Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Barnard Castle Squash Club, D & C, ENG"
     },
     {
       "iso3": "RSA",
@@ -15310,7 +16447,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:29:57.542Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=76975",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:45.728Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:28.018Z",
       "officialPlayerId": "q:player:260",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=260",
       "squashLevelsPlayerId": "76975",
@@ -15320,7 +16457,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 23688,
       "squashLevelsLevel": 1566,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:38.151Z",
+      "squashLevelsClubLocation": "Durbanville, Western Cape, ZAF"
     },
     {
       "iso3": "NZL",
@@ -15331,18 +16470,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:57.967Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=374049",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:47.603Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:29.821Z",
       "officialPlayerId": "q:player:479",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=479",
       "squashLevelsPlayerId": "374049",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:31:47.031Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:31:51.913Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:38.679Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:48:41.765Z",
+      "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 34351,
       "squashLevelsLevel": 968,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Canterbury, NZL"
     },
     {
       "iso3": "AUS",
@@ -15353,18 +16493,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:58.107Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=239893",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:49.512Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:31.630Z",
       "officialPlayerId": "q:player:458",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=458",
       "squashLevelsPlayerId": "239893",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:31:48.652Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:31:50.710Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:42.271Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:48:45.305Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 70,
-      "squashLevelsWorldRank": "TBD",
+      "squashLevelsWorldRank": 26400,
       "squashLevelsLevel": 1393,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -15375,7 +16516,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:58.255Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=487465",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:51.415Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:33.722Z",
       "officialPlayerId": "q:player:206",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=206",
       "squashLevelsPlayerId": "487465",
@@ -15385,7 +16526,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1330,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:45.805Z",
+      "squashLevelsClubLocation": "TBD"
     },
     {
       "iso3": "NZL",
@@ -15396,7 +16539,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:29:58.594Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=374048",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:53.226Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:35.556Z",
       "officialPlayerId": "q:player:676",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=676",
       "squashLevelsPlayerId": "374048",
@@ -15406,7 +16549,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 38715,
       "squashLevelsLevel": 780,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:46.339Z",
+      "squashLevelsClubLocation": "Christchurch, Canterbury, NZL"
     },
     {
       "iso3": "AUS",
@@ -15417,18 +16562,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:58.782Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38652",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:55.048Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:37.353Z",
       "officialPlayerId": "q:player:264",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=264",
       "squashLevelsPlayerId": "38652",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:04.740Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:46.950Z",
       "squashLevelsWorldRank": 28492,
       "squashLevelsLevel": 1269,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:05.991Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Nerang & Racquet, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -15439,7 +16585,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:58.902Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=239619",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:56.865Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:39.148Z",
       "officialPlayerId": "q:player:508",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=508",
       "squashLevelsPlayerId": "239619",
@@ -15449,7 +16595,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 41045,
       "squashLevelsLevel": 685,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:47.502Z",
+      "squashLevelsClubLocation": "Sydney Uni, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -15460,18 +16608,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:59.157Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=540634",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:53:58.687Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:40.946Z",
       "officialPlayerId": "q:player:90",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=90",
       "squashLevelsPlayerId": "540634",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:31:56.028Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:48.014Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:31:58.123Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 33845,
       "squashLevelsLevel": 992,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Australian Capital Territory, AUS"
     },
     {
       "iso3": "AUS",
@@ -15482,7 +16631,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:59.297Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=300610",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:00.502Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:42.790Z",
       "officialPlayerId": "q:player:316",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=316",
       "squashLevelsPlayerId": "300610",
@@ -15492,7 +16641,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 33755,
       "squashLevelsLevel": 996,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:48.637Z",
+      "squashLevelsClubLocation": "SGP"
     },
     {
       "iso3": "USA",
@@ -15502,7 +16653,7 @@ window.TOURNAMENT_DATA = {
       "country": "United States",
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:29:59.426Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:06.898Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:33.579Z",
       "officialPlayerId": "q:player:484",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=484",
       "squashLevelsWorldRank": null,
@@ -15519,18 +16670,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:59.696Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219388",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:02.315Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:44.569Z",
       "officialPlayerId": "q:player:747",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=747",
       "squashLevelsPlayerId": "219388",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:31:59.963Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:49.184Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:32:02.060Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 36662,
       "squashLevelsLevel": 862,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Vic Park, Western Australia, AUS"
     },
     {
       "iso3": "SRI",
@@ -15540,7 +16692,7 @@ window.TOURNAMENT_DATA = {
       "country": "Sri Lanka",
       "flagCode": "lk",
       "squashLevelsCheckedAt": "2026-08-21T07:29:59.827Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:09.007Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:35.244Z",
       "officialPlayerId": "q:player:905",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=905",
       "squashLevelsWorldRank": null,
@@ -15557,7 +16709,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:29:59.996Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219897",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:04.136Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:46.362Z",
       "officialPlayerId": "q:player:800",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=800",
       "squashLevelsPlayerId": "219897",
@@ -15567,7 +16719,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 37905,
       "squashLevelsLevel": 812,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:49.843Z",
+      "squashLevelsClubLocation": "Grace Park Hawthorn, Victoria, AUS"
     },
     {
       "iso3": "BEL",
@@ -15577,7 +16731,7 @@ window.TOURNAMENT_DATA = {
       "country": "Belgium",
       "flagCode": "be",
       "squashLevelsCheckedAt": "2026-08-21T07:30:00.305Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:09.763Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:35.748Z",
       "officialPlayerId": "q:player:217",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=217",
       "squashLevelsWorldRank": null,
@@ -15593,19 +16747,20 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:00.545Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=375762",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:05.960Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=351002",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:48.238Z",
       "officialPlayerId": "q:player:358",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=358",
-      "squashLevelsPlayerId": "375762",
+      "squashLevelsPlayerId": "351002",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:32:01.419Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:32:12.678Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:50.499Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:40:59.995Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
-      "squashLevelsWorldRank": 39932,
-      "squashLevelsLevel": 729,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 1106,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "WSRC, Bucks, ENG"
     },
     {
       "iso3": "NZL",
@@ -15616,7 +16771,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:00.619Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=374466",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:07.776Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:50.017Z",
       "officialPlayerId": "q:player:650",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=650",
       "squashLevelsPlayerId": "374466",
@@ -15626,7 +16781,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 46029,
       "squashLevelsLevel": 504,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:53.958Z",
+      "squashLevelsClubLocation": "Christchurch, Canterbury, NZL"
     },
     {
       "iso3": "AUS",
@@ -15637,7 +16794,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:00.824Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=261862",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:09.596Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:52.122Z",
       "officialPlayerId": "q:player:750",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=750",
       "squashLevelsPlayerId": "261862",
@@ -15647,7 +16804,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 47478,
       "squashLevelsLevel": 458,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:54.505Z",
+      "squashLevelsClubLocation": "Canterbury Leagues, New South Wales, AUS"
     },
     {
       "iso3": "ENG",
@@ -15658,18 +16817,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:30:01.176Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=250610",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:11.499Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:54.059Z",
       "officialPlayerId": "q:player:155",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=155",
       "squashLevelsPlayerId": "250610",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:08.056Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:55.123Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1186,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:10.590Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:48:58.170Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Barnsley, D & C, ENG"
     },
     {
       "iso3": "AUS",
@@ -15680,17 +16840,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:01.241Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=430967",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:13.314Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:55.862Z",
       "officialPlayerId": "q:player:156",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=156",
       "squashLevelsPlayerId": "430967",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:32:13.305Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:41:07.139Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 43468,
       "squashLevelsLevel": 595,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:48:58.709Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -15701,18 +16863,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:01.381Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235142",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:15.216Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:57.784Z",
       "officialPlayerId": "q:player:99",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=99",
       "squashLevelsPlayerId": "235142",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:11.152Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:02.294Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 776,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:12.413Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Wyong, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -15723,7 +16886,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:01.757Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235688",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:17.031Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:17:59.592Z",
       "officialPlayerId": "q:player:757",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=757",
       "squashLevelsPlayerId": "235688",
@@ -15733,7 +16896,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 42968,
       "squashLevelsLevel": 614,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:02.880Z",
+      "squashLevelsClubLocation": "Canterbury Leagues, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -15744,18 +16909,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:01.757Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=522412",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:18.845Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:01.404Z",
       "officialPlayerId": "q:player:708",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=708",
       "squashLevelsPlayerId": "522412",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:12.929Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:03.420Z",
       "squashLevelsWorldRank": 33656,
       "squashLevelsLevel": 1001,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:14.181Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Grace Park Hawthorn, Victoria, AUS"
     },
     {
       "iso3": "BEL",
@@ -15765,7 +16931,7 @@ window.TOURNAMENT_DATA = {
       "country": "Belgium",
       "flagCode": "be",
       "squashLevelsCheckedAt": "2026-08-21T07:30:01.919Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T06:42:50.128Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:04.049Z",
       "officialPlayerId": "q:player:219",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=219",
       "squashLevelsWorldRank": "TBD",
@@ -15777,7 +16943,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T06:42:51.438Z",
       "squashLevelsMatchedCountry": "BEL",
       "squashLevelsMatchedAge": 70,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:20.751Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:04.766Z",
+      "squashLevelsClubLocation": ""
     },
     {
       "iso3": "AUS",
@@ -15788,18 +16955,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:02.400Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26727",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:22.572Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:06.591Z",
       "officialPlayerId": "q:player:32",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=32",
       "squashLevelsPlayerId": "26727",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:32:23.019Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:04.675Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:32:25.129Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 35563,
       "squashLevelsLevel": 911,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Maash, New South Wales, AUS"
     },
     {
       "iso3": "JPN",
@@ -15810,18 +16978,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:30:02.425Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26778",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:24.485Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:08.466Z",
       "officialPlayerId": "q:player:409",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=409",
       "squashLevelsPlayerId": "26778",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:16.279Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:05.345Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 574,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:17.540Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "JPN"
     },
     {
       "iso3": "HKG",
@@ -15832,18 +17001,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "hk",
       "squashLevelsCheckedAt": "2026-08-21T07:30:02.605Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=326402",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:26.320Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:10.270Z",
       "officialPlayerId": "q:player:72",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=72",
       "squashLevelsPlayerId": "326402",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:18.212Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:05.991Z",
       "squashLevelsWorldRank": 34721,
       "squashLevelsLevel": 950,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:19.461Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Hong Kong Cricket Club, Hong Kong Island, HKG"
     },
     {
       "iso3": "AUS",
@@ -15854,18 +17024,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:02.997Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232574",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:28.144Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:12.080Z",
       "officialPlayerId": "q:player:816",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=816",
       "squashLevelsPlayerId": "232574",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:32:29.167Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:06.517Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:32:31.234Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 42021,
       "squashLevelsLevel": 649,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Eastside & Parsons TSA, Tasmania, AUS"
     },
     {
       "iso3": "USA",
@@ -15876,7 +17047,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:30:03.047Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=256955",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:30.051Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:13.950Z",
       "officialPlayerId": "q:player:82",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=82",
       "squashLevelsPlayerId": "256955",
@@ -15886,7 +17057,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 759,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:07.069Z",
+      "squashLevelsClubLocation": "Not Applicable, ENG"
     },
     {
       "iso3": "RSA",
@@ -15897,18 +17070,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:30:03.169Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=531896",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:31.871Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:15.765Z",
       "officialPlayerId": "q:player:452",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=452",
       "squashLevelsPlayerId": "531896",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:19.976Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:07.729Z",
       "squashLevelsWorldRank": 28288,
       "squashLevelsLevel": 1280,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:21.241Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Milnerton Squash Club, Western Cape, ZAF"
     },
     {
       "iso3": "AUS",
@@ -15918,7 +17092,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:03.611Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:10.628Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:36.257Z",
       "officialPlayerId": "q:player:876",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=876",
       "squashLevelsWorldRank": null,
@@ -15934,7 +17108,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:03.582Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:11.906Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:37.276Z",
       "officialPlayerId": "q:player:429",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=429",
       "squashLevelsWorldRank": null,
@@ -15951,18 +17125,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:03.711Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=548979",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:33.690Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:17.561Z",
       "officialPlayerId": "q:player:958",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=958",
       "squashLevelsPlayerId": "548979",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:22.750Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:08.289Z",
       "squashLevelsWorldRank": 58347,
       "squashLevelsLevel": 179,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:24.008Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": ""
     },
     {
       "iso3": "SUI",
@@ -15973,18 +17148,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ch",
       "squashLevelsCheckedAt": "2026-08-21T07:30:04.359Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=433411",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:35.604Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:19.434Z",
       "officialPlayerId": "q:player:75",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=75",
       "squashLevelsPlayerId": "433411",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:24.592Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:08.860Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 811,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:25.860Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": ""
     },
     {
       "iso3": "AUS",
@@ -15994,19 +17170,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:04.380Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=292606",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:37.438Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=284856",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:21.358Z",
       "officialPlayerId": "q:player:166",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=166",
-      "squashLevelsPlayerId": "292606",
+      "squashLevelsPlayerId": "284856",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:26.405Z",
-      "squashLevelsWorldRank": 2757,
-      "squashLevelsLevel": 6941,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:09.714Z",
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 407,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:33.955Z",
-      "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:49:18.659Z",
+      "squashLevelsMatchedCountry": "AUS",
+      "squashLevelsMatchedAge": 55,
+      "squashLevelsClubLocation": "Benalla, Victoria, AUS"
     },
     {
       "iso3": "SIN",
@@ -16017,18 +17194,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "squashLevelsCheckedAt": "2026-08-21T07:30:04.363Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=299424",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:39.354Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:23.699Z",
       "officialPlayerId": "q:player:716",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=716",
       "squashLevelsPlayerId": "299424",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:34.562Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:19.289Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1053,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:35.819Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "United Condo Squash Club, SGP"
     },
     {
       "iso3": "RSA",
@@ -16039,18 +17217,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:30:05.160Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=323893",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:41.184Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:25.499Z",
       "officialPlayerId": "q:player:963",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=963",
       "squashLevelsPlayerId": "323893",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:36.326Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:19.833Z",
       "squashLevelsWorldRank": 35792,
       "squashLevelsLevel": 900,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:37.591Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "KwaZulu-Natal, ZAF"
     },
     {
       "iso3": "AUS",
@@ -16061,7 +17240,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:05.232Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218589",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:43.148Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:27.397Z",
       "officialPlayerId": "q:player:833",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=833",
       "squashLevelsPlayerId": "218589",
@@ -16071,7 +17250,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1093,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:20.386Z",
+      "squashLevelsClubLocation": "Marmion, Western Australia, AUS"
     },
     {
       "iso3": "BRA",
@@ -16082,7 +17263,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "br",
       "squashLevelsCheckedAt": "2026-08-21T07:30:05.175Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=76919",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:45.150Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:29.272Z",
       "officialPlayerId": "q:player:284",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=284",
       "squashLevelsPlayerId": "76919",
@@ -16092,7 +17273,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 984,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:20.956Z",
+      "squashLevelsClubLocation": "BRA"
     },
     {
       "iso3": "AUS",
@@ -16103,17 +17286,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:05.747Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221875",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:46.982Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:31.083Z",
       "officialPlayerId": "q:player:675",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=675",
       "squashLevelsPlayerId": "221875",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:32:50.612Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:41:28.214Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 34663,
       "squashLevelsLevel": 953,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:21.496Z",
+      "squashLevelsClubLocation": "Scottvale Park, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -16123,7 +17308,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:05.808Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:12.660Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:37.783Z",
       "officialPlayerId": "q:player:209",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=209",
       "squashLevelsWorldRank": null,
@@ -16140,7 +17325,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:30:05.854Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=303693",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:48.827Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:41.191Z",
       "officialPlayerId": "q:player:47",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=47",
       "squashLevelsPlayerId": "303693",
@@ -16148,9 +17333,11 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:32:51.511Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
-      "squashLevelsWorldRank": 35674,
+      "squashLevelsWorldRank": null,
       "squashLevelsLevel": 906,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:25.152Z",
+      "squashLevelsClubLocation": "Gillitts Sports Club, KwaZulu-Natal, ZAF"
     },
     {
       "iso3": "AUS",
@@ -16161,18 +17348,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:06.374Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=179330",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:50.729Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:43.579Z",
       "officialPlayerId": "q:player:976",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=976",
       "squashLevelsPlayerId": "179330",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:38.726Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:25.812Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2093,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:45.082Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:41:35.555Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Bells Sports, Perth and Kinross, SCO"
     },
     {
       "iso3": "AUS",
@@ -16182,7 +17370,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:06.413Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:13.568Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:38.407Z",
       "officialPlayerId": "q:player:898",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=898",
       "squashLevelsWorldRank": null,
@@ -16199,18 +17387,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:06.514Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219602",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:52.677Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:45.444Z",
       "officialPlayerId": "q:player:63",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=63",
       "squashLevelsPlayerId": "219602",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:46.277Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:34.643Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 850,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:47.540Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -16220,7 +17409,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:06.956Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:14.434Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:38.948Z",
       "officialPlayerId": "q:player:783",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=783",
       "squashLevelsWorldRank": null,
@@ -16237,7 +17426,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-sct",
       "squashLevelsCheckedAt": "2026-08-21T07:30:07.141Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=267621",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:55.314Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:48.184Z",
       "officialPlayerId": "q:player:700",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=700",
       "squashLevelsPlayerId": "267621",
@@ -16247,7 +17436,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 1644,
       "squashLevelsLevel": 1715,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:35.147Z",
+      "squashLevelsClubLocation": "Not Applicable, SCO"
     },
     {
       "iso3": "AUS",
@@ -16258,18 +17449,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:07.146Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=158695",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:57.128Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:49.989Z",
       "officialPlayerId": "q:player:627",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=627",
       "squashLevelsPlayerId": "158695",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:48.545Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:35.721Z",
       "squashLevelsWorldRank": 2160,
       "squashLevelsLevel": 1341,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:51.032Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:41:40.216Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Eastside & Parsons TSA, Tasmania, AUS"
     },
     {
       "iso3": "AUS",
@@ -16280,18 +17472,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:07.840Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219075",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:54:58.944Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:52.073Z",
       "officialPlayerId": "q:player:438",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=438",
       "squashLevelsPlayerId": "219075",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:51.545Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:39.248Z",
       "squashLevelsWorldRank": 2741,
       "squashLevelsLevel": 1051,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:52.806Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -16302,18 +17495,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:08.079Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=216978",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:00.755Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:53.908Z",
       "officialPlayerId": "q:player:720",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=720",
       "squashLevelsPlayerId": "216978",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:53.290Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:39.870Z",
       "squashLevelsWorldRank": 2690,
       "squashLevelsLevel": 1071,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:54.539Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "South Australia, AUS"
     },
     {
       "iso3": "BAR",
@@ -16324,18 +17518,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "bb",
       "squashLevelsCheckedAt": "2026-08-21T07:30:07.975Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38816",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:02.665Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:55.829Z",
       "officialPlayerId": "q:player:92",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=92",
       "squashLevelsPlayerId": "38816",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:55.044Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:40.479Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 914,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:56.305Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "BRB"
     },
     {
       "iso3": "RSA",
@@ -16346,18 +17541,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:30:08.544Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=77187",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:04.482Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:57.638Z",
       "officialPlayerId": "q:player:448",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=448",
       "squashLevelsPlayerId": "77187",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:56.825Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:40.995Z",
       "squashLevelsWorldRank": 3614,
       "squashLevelsLevel": 779,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:58.104Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Harlequins Squash Club, ZAF"
     },
     {
       "iso3": "AUS",
@@ -16368,18 +17564,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:08.707Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222215",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:06.412Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:18:59.539Z",
       "officialPlayerId": "q:player:399",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=399",
       "squashLevelsPlayerId": "222215",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:05:58.636Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:41.509Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 882,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:05:59.890Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "ENG",
@@ -16390,18 +17587,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:30:08.748Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=487673",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:08.333Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:01.422Z",
       "officialPlayerId": "q:player:850",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=850",
       "squashLevelsPlayerId": "487673",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:00.384Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:42.026Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1098,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:01.627Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "ENG"
     },
     {
       "iso3": "AUS",
@@ -16412,18 +17610,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:09.281Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=284993",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:10.158Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:03.225Z",
       "squashLevelsWorldRank": 3672,
       "officialPlayerId": "q:player:405",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=405",
       "squashLevelsPlayerId": "284993",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:33:20.482Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:42.563Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:33:22.771Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsLevel": 763,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "NZL",
@@ -16434,7 +17633,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:09.281Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=374034",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:11.970Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:05.018Z",
       "officialPlayerId": "q:player:615",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=615",
       "squashLevelsPlayerId": "374034",
@@ -16444,7 +17643,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 3510,
       "squashLevelsLevel": 803,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:43.070Z",
+      "squashLevelsClubLocation": "Devoy, Bay of Plenty, NZL"
     },
     {
       "iso3": "AUS",
@@ -16455,7 +17656,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:09.490Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=487499",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:13.867Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:06.920Z",
       "officialPlayerId": "q:player:124",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=124",
       "squashLevelsPlayerId": "487499",
@@ -16465,7 +17666,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 678,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:43.588Z",
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "AUS",
@@ -16476,18 +17679,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:09.928Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=520963",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:15.678Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:08.734Z",
       "officialPlayerId": "q:player:658",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=658",
       "squashLevelsPlayerId": "520963",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:02.129Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:44.092Z",
       "squashLevelsWorldRank": 3801,
       "squashLevelsLevel": 733,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:03.391Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -16497,7 +17701,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:09.839Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:55:02.745Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:44.678Z",
       "officialPlayerId": "q:player:954",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=954",
       "squashLevelsWorldRank": 3812,
@@ -16509,7 +17713,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:55:04.477Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 70,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:17.544Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:10.535Z",
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -16520,18 +17725,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:10.043Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219120",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:19.361Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:12.329Z",
       "officialPlayerId": "q:player:208",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=208",
       "squashLevelsPlayerId": "219120",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:04.488Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:45.285Z",
       "squashLevelsWorldRank": 4113,
       "squashLevelsLevel": 660,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:05.733Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -16542,18 +17748,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:10.432Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=236527",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:21.186Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:14.124Z",
       "officialPlayerId": "q:player:506",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=506",
       "squashLevelsPlayerId": "236527",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:06.235Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:45.797Z",
       "squashLevelsWorldRank": 3349,
       "squashLevelsLevel": 843,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:07.485Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Wentworthville Leagues, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -16564,18 +17771,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:10.543Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=220967",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:23.358Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:15.917Z",
       "officialPlayerId": "q:player:724",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=724",
       "squashLevelsPlayerId": "220967",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:33:31.415Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:46.391Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:33:33.452Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 3854,
       "squashLevelsLevel": 719,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Daisy Hill, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -16586,18 +17794,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:10.591Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219693",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:25.175Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:17.729Z",
       "officialPlayerId": "q:player:573",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=573",
       "squashLevelsPlayerId": "219693",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:08.001Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:46.911Z",
       "squashLevelsWorldRank": 5878,
       "squashLevelsLevel": 382,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:10.505Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:41:50.584Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Blue Gum, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -16608,18 +17817,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:11.061Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234781",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:27.076Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:19.603Z",
       "officialPlayerId": "q:player:648",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=648",
       "squashLevelsPlayerId": "234781",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:11.045Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:50.347Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 309,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:12.297Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "USA",
@@ -16630,18 +17840,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:30:11.153Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=439049",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:28.973Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:21.474Z",
       "officialPlayerId": "q:player:269",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=269",
       "squashLevelsPlayerId": "439049",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:12.915Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:50.861Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 498,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:14.170Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "AUS",
@@ -16652,18 +17863,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:11.205Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=237768",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:30.894Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:23.407Z",
       "officialPlayerId": "q:player:610",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=610",
       "squashLevelsPlayerId": "237768",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:14.769Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:51.371Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 395,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:16.020Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -16674,18 +17886,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:11.639Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235521",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:32.716Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:25.205Z",
       "officialPlayerId": "q:player:468",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=468",
       "squashLevelsPlayerId": "235521",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:16.516Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:51.902Z",
       "squashLevelsWorldRank": 6555,
       "squashLevelsLevel": 312,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:17.768Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -16696,18 +17909,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:11.775Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222387",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:34.546Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:27.023Z",
       "officialPlayerId": "q:player:551",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=551",
       "squashLevelsPlayerId": "222387",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:18.271Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:52.423Z",
       "squashLevelsWorldRank": 6628,
       "squashLevelsLevel": 306,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:19.540Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Kingborough Squash Club, Tasmania, AUS"
     },
     {
       "iso3": "FRA",
@@ -16718,18 +17932,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "fr",
       "squashLevelsCheckedAt": "2026-08-21T07:30:11.777Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=483026",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:36.501Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:29.342Z",
       "officialPlayerId": "q:player:494",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=494",
       "squashLevelsPlayerId": "483026",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:33:43.333Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:53.017Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:33:45.349Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 384,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Nouvelle-Aquitaine, FRA"
     },
     {
       "iso3": "AUS",
@@ -16740,18 +17955,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:12.165Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238186",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:38.321Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:31.129Z",
       "officialPlayerId": "q:player:295",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=295",
       "squashLevelsPlayerId": "238186",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:33:43.738Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:33:45.778Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:53.613Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:41:57.086Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 5611,
       "squashLevelsLevel": 412,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Nerang & Racquet, Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -16762,7 +17978,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:12.414Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=329855",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:40.138Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:33.629Z",
       "officialPlayerId": "q:player:654",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=654",
       "squashLevelsPlayerId": "329855",
@@ -16772,7 +17988,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 6725,
       "squashLevelsLevel": 298,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:57.239Z",
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -16783,18 +18001,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:12.406Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=229486",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:42.051Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:35.599Z",
       "officialPlayerId": "q:player:625",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=625",
       "squashLevelsPlayerId": "229486",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:20.033Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:57.761Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 620,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:21.286Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "NZL",
@@ -16805,18 +18024,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:12.705Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=373139",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:44.169Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:38.104Z",
       "officialPlayerId": "q:player:628",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=628",
       "squashLevelsPlayerId": "373139",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:21.800Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:58.287Z",
       "squashLevelsWorldRank": 5684,
       "squashLevelsLevel": 403,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:23.048Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Cambridge Racquets, Waikato, NZL"
     },
     {
       "iso3": "AUS",
@@ -16827,18 +18047,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:13.016Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=239238",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:45.995Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:39.935Z",
       "officialPlayerId": "q:player:629",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=629",
       "squashLevelsPlayerId": "239238",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:33:50.962Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:58.846Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:33:53.043Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": 4898,
       "squashLevelsLevel": 515,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "USA",
@@ -16848,7 +18069,7 @@ window.TOURNAMENT_DATA = {
       "country": "United States",
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:30:13.026Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:15.181Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:39.506Z",
       "officialPlayerId": "q:player:165",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=165",
       "squashLevelsWorldRank": null,
@@ -16865,7 +18086,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:30:13.241Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=439044",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:47.954Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:41.815Z",
       "officialPlayerId": "q:player:393",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=393",
       "squashLevelsPlayerId": "439044",
@@ -16875,7 +18096,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 292,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:59.408Z",
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "AUS",
@@ -16886,18 +18109,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:13.578Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221609",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:49.823Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:43.617Z",
       "officialPlayerId": "q:player:140",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=140",
       "squashLevelsPlayerId": "221609",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:24.037Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:49:59.938Z",
       "squashLevelsWorldRank": 5137,
       "squashLevelsLevel": 477,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:25.289Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Kalgoorlie, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -16908,18 +18132,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:13.554Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=541300",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:55:59.880Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:53.702Z",
       "officialPlayerId": "q:player:88",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=88",
       "squashLevelsPlayerId": "541300",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:33:56.518Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:34:01.601Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:00.469Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:50:03.418Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 70,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": null,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "HKG",
@@ -16930,7 +18155,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "hk",
       "squashLevelsCheckedAt": "2026-08-21T07:30:13.764Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=321755",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:01.811Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:56.261Z",
       "officialPlayerId": "q:player:268",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=268",
       "squashLevelsPlayerId": "321755",
@@ -16940,7 +18165,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3784,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:04.055Z",
+      "squashLevelsClubLocation": "Kowloon, HKG"
     },
     {
       "iso3": "ENG",
@@ -16951,18 +18178,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:30:14.202Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=41734",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:03.632Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:19:58.193Z",
       "officialPlayerId": "q:player:862",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=862",
       "squashLevelsPlayerId": "41734",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:34:00.575Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:34:02.698Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:04.720Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:42:14.425Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": 12942,
       "squashLevelsLevel": 2641,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Middleton, Sussex, ENG"
     },
     {
       "iso3": "AUS",
@@ -16973,18 +18201,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:14.211Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26949",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:05.760Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:00.004Z",
       "squashLevelsWorldRank": 29980,
       "officialPlayerId": "q:player:466",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=466",
       "squashLevelsPlayerId": "26949",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:34:01.155Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:17.531Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:34:03.215Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 75,
       "squashLevelsLevel": 1187,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "ENG",
@@ -16995,7 +18224,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:30:14.733Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26978",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:08.348Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:01.847Z",
       "officialPlayerId": "q:player:751",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=751",
       "squashLevelsPlayerId": "26978",
@@ -17005,7 +18234,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": 20321,
       "squashLevelsLevel": 1825,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:18.037Z",
+      "squashLevelsClubLocation": "Hants, ENG"
     },
     {
       "iso3": "CAN",
@@ -17016,18 +18247,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:30:14.919Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=76217",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:10.267Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:03.728Z",
       "officialPlayerId": "q:player:694",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=694",
       "squashLevelsPlayerId": "76217",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:25.813Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:18.577Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1515,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:28.318Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:50:21.569Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "CAN"
     },
     {
       "iso3": "CAN",
@@ -17038,7 +18270,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:30:14.813Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26770",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:12.179Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:05.615Z",
       "officialPlayerId": "q:player:237",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=237",
       "squashLevelsPlayerId": "26770",
@@ -17048,7 +18280,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1759,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:22.079Z",
+      "squashLevelsClubLocation": "CAN"
     },
     {
       "iso3": "NZL",
@@ -17059,7 +18293,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:15.310Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=109803",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:14.002Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:07.434Z",
       "officialPlayerId": "q:player:873",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=873",
       "squashLevelsPlayerId": "109803",
@@ -17069,7 +18303,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": 25582,
       "squashLevelsLevel": 1443,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:22.661Z",
+      "squashLevelsClubLocation": "Kaitaia & Rackets, Northland, NZL"
     },
     {
       "iso3": "AUS",
@@ -17080,7 +18316,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:15.383Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=424475",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:15.817Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:09.242Z",
       "officialPlayerId": "q:player:384",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=384",
       "squashLevelsPlayerId": "424475",
@@ -17090,7 +18326,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": 30802,
       "squashLevelsLevel": 1143,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:23.186Z",
+      "squashLevelsClubLocation": "Tomaree, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -17101,7 +18339,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:15.460Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=445821",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:17.637Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:11.065Z",
       "officialPlayerId": "q:player:727",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=727",
       "squashLevelsPlayerId": "445821",
@@ -17111,7 +18349,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": 32987,
       "squashLevelsLevel": 1035,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:23.739Z",
+      "squashLevelsClubLocation": "Engadine Squash and Swim Centre, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -17122,18 +18362,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:15.830Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218327",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:19.499Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:12.886Z",
       "officialPlayerId": "q:player:91",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=91",
       "squashLevelsPlayerId": "218327",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:34:14.158Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:24.368Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:34:16.229Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": 28040,
       "squashLevelsLevel": 1294,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "RACV, Victoria, AUS"
     },
     {
       "iso3": "NZL",
@@ -17143,7 +18384,7 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:15.918Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:15.939Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:40.036Z",
       "officialPlayerId": "q:player:962",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=962",
       "squashLevelsWorldRank": null,
@@ -17160,18 +18401,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:15.987Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221234",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:21.323Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:14.697Z",
       "officialPlayerId": "q:player:392",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=392",
       "squashLevelsPlayerId": "221234",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:29.383Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:24.991Z",
       "squashLevelsWorldRank": 27343,
       "squashLevelsLevel": 1336,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:30.640Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Cardiff, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -17182,18 +18424,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:16.390Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221707",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:23.138Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:16.515Z",
       "officialPlayerId": "q:player:842",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=842",
       "squashLevelsPlayerId": "221707",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:31.144Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:25.525Z",
       "squashLevelsWorldRank": 26376,
       "squashLevelsLevel": 1394,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:32.402Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Belmont Saints, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -17204,18 +18447,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:16.493Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=48591",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:25.050Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:18.420Z",
       "officialPlayerId": "q:player:899",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=899",
       "squashLevelsPlayerId": "48591",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:32.957Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:26.056Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2187,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:34.204Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Royal Berkshire, Berks, ENG"
     },
     {
       "iso3": "AUS",
@@ -17225,7 +18469,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:16.602Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:17.283Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:41.045Z",
       "officialPlayerId": "q:player:683",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=683",
       "squashLevelsWorldRank": null,
@@ -17242,18 +18486,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:16.965Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219601",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:26.964Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:20.320Z",
       "officialPlayerId": "q:player:922",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=922",
       "squashLevelsPlayerId": "219601",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:35.330Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:26.597Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 725,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:36.595Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Cairns Squash Club - Sportsworld Gym & Fitness, Queensland, AUS"
     },
     {
       "iso3": "WAL",
@@ -17263,19 +18508,20 @@ window.TOURNAMENT_DATA = {
       "country": "Wales",
       "flagCode": "gb-wls",
       "squashLevelsCheckedAt": "2026-08-21T07:30:17.061Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=30295",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:28.876Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=66721",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:22.221Z",
       "officialPlayerId": "q:player:315",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=315",
-      "squashLevelsPlayerId": "30295",
+      "squashLevelsPlayerId": "66721",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:37.114Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:27.151Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 2825,
+      "squashLevelsLevel": 953,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:44.616Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:50:36.205Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Pembroke, Wales, WAL"
     },
     {
       "iso3": "ENG",
@@ -17286,18 +18532,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:30:17.163Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=206573",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:30.795Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:24.986Z",
       "officialPlayerId": "q:player:733",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=733",
       "squashLevelsPlayerId": "206573",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:34:26.921Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:37.226Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:34:28.980Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": 39970,
       "squashLevelsLevel": 727,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "South Australia, AUS"
     },
     {
       "iso3": "RSA",
@@ -17307,7 +18554,7 @@ window.TOURNAMENT_DATA = {
       "country": "South Africa",
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:30:17.480Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:18.587Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:42.023Z",
       "officialPlayerId": "q:player:608",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=608",
       "squashLevelsWorldRank": null,
@@ -17324,18 +18571,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "na",
       "squashLevelsCheckedAt": "2026-08-21T07:30:17.590Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38657",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:32.631Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:26.800Z",
       "officialPlayerId": "q:player:738",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=738",
       "squashLevelsPlayerId": "38657",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:45.762Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:37.763Z",
       "squashLevelsWorldRank": 43468,
       "squashLevelsLevel": 595,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:47.007Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Khomas Region, NAM"
     },
     {
       "iso3": "USA",
@@ -17346,18 +18594,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:30:17.683Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438825",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:34.553Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:28.713Z",
       "officialPlayerId": "q:player:232",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=232",
       "squashLevelsPlayerId": "438825",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:47.504Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:38.279Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 591,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:48.765Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "AUS",
@@ -17368,18 +18617,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:18.051Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=245288",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:36.464Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:30.591Z",
       "officialPlayerId": "q:player:611",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=611",
       "squashLevelsPlayerId": "245288",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:49.268Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:38.801Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 727,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:50.518Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Lords, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -17390,18 +18640,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:18.218Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228552",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:38.381Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:32.559Z",
       "officialPlayerId": "q:player:753",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=753",
       "squashLevelsPlayerId": "228552",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:51.026Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:39.330Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 285,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:52.275Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -17412,7 +18663,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:18.280Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=437174",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:40.194Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:34.359Z",
       "officialPlayerId": "q:player:126",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=126",
       "squashLevelsPlayerId": "437174",
@@ -17422,7 +18673,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": 35557,
       "squashLevelsLevel": 911,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:39.938Z",
+      "squashLevelsClubLocation": "Squash WA Club, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -17433,18 +18686,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:18.575Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233697",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:42.099Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:36.241Z",
       "officialPlayerId": "q:player:556",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=556",
       "squashLevelsPlayerId": "233697",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:34:39.913Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:40.480Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:34:42.183Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 887,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Mulgrave, Victoria, AUS"
     },
     {
       "iso3": "JPN",
@@ -17455,18 +18709,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "squashLevelsCheckedAt": "2026-08-21T07:30:18.748Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26733",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:44.662Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:38.769Z",
       "officialPlayerId": "q:player:427",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=427",
       "squashLevelsPlayerId": "26733",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:52.903Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:41.089Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 887,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:55.566Z",
-      "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:50:44.162Z",
+      "squashLevelsMatchedCountry": "JPN",
+      "squashLevelsMatchedAge": 70,
+      "squashLevelsClubLocation": "JPN"
     },
     {
       "iso3": "AUS",
@@ -17476,7 +18731,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:18.807Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:19.567Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:42.595Z",
       "officialPlayerId": "q:player:988",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=988",
       "squashLevelsWorldRank": null,
@@ -17492,19 +18747,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:19.113Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234310",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:46.488Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=431144",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:40.637Z",
       "officialPlayerId": "q:player:881",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=881",
-      "squashLevelsPlayerId": "234310",
+      "squashLevelsPlayerId": "431144",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:34:44.133Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:34:46.250Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:44.707Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:50:54.588Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 75,
-      "squashLevelsWorldRank": 39829,
-      "squashLevelsLevel": 733,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 293,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "WAL",
@@ -17515,7 +18771,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-wls",
       "squashLevelsCheckedAt": "2026-08-21T07:30:19.331Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=523003",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:48.311Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:42.448Z",
       "officialPlayerId": "q:player:774",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=774",
       "squashLevelsPlayerId": "523003",
@@ -17525,7 +18781,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": 43524,
       "squashLevelsLevel": 593,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:55.251Z",
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "RSA",
@@ -17536,18 +18794,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:30:19.392Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=324665",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:50.220Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:44.333Z",
       "officialPlayerId": "q:player:566",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=566",
       "squashLevelsPlayerId": "324665",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:56.637Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:55.766Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 837,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:06:57.892Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Riviera on Vaal Country Club, Gauteng, ZAF"
     },
     {
       "iso3": "AUS",
@@ -17557,7 +18816,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:19.635Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:55:08.460Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:56.402Z",
       "officialPlayerId": "q:player:505",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=505",
       "squashLevelsWorldRank": 42937,
@@ -17569,7 +18828,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:55:09.750Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 75,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:52.038Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:46.172Z",
+      "squashLevelsClubLocation": "Australian Capital Territory, AUS"
     },
     {
       "iso3": "USA",
@@ -17580,17 +18840,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:30:19.870Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=439023",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:53.953Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:48.049Z",
       "officialPlayerId": "q:player:567",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=567",
       "squashLevelsPlayerId": "439023",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:34:50.609Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:01.501Z",
+      "squashLevelsMatchedCountry": "USA",
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 636,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:50:57.010Z",
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "TPE",
@@ -17600,7 +18862,7 @@ window.TOURNAMENT_DATA = {
       "country": "Chinese Taipei",
       "flagCode": "tw",
       "squashLevelsCheckedAt": "2026-08-21T07:30:19.904Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:20.417Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:43.173Z",
       "officialPlayerId": "q:player:546",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=546",
       "squashLevelsWorldRank": null,
@@ -17616,7 +18878,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:20.160Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:22.481Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:43.697Z",
       "officialPlayerId": "q:player:701",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=701",
       "squashLevelsWorldRank": null,
@@ -17633,18 +18895,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:20.395Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=374133",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:55.780Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:49.848Z",
       "officialPlayerId": "q:player:180",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=180",
       "squashLevelsPlayerId": "374133",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:34:52.359Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:34:57.335Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:02.131Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:05.210Z",
+      "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": 54354,
       "squashLevelsLevel": 267,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Turangi, NZL"
     },
     {
       "iso3": "AUS",
@@ -17655,18 +18918,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:20.426Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=236771",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:56:57.692Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:51.751Z",
       "officialPlayerId": "q:player:806",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=806",
       "squashLevelsPlayerId": "236771",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:34:54.160Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:05.738Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:34:56.221Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 456,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Next Gen Health Ryde, New South Wales, AUS"
     },
     {
       "iso3": "NZL",
@@ -17677,17 +18941,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:20.700Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=380914",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:00.311Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:54.555Z",
       "officialPlayerId": "q:player:588",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=588",
       "squashLevelsPlayerId": "380914",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:34:54.602Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:09.373Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": 46598,
       "squashLevelsLevel": 485,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:06.309Z",
+      "squashLevelsClubLocation": "Wānaka, Otago, NZL"
     },
     {
       "iso3": "NZL",
@@ -17698,18 +18964,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:21.007Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26736",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:02.211Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:56.425Z",
       "officialPlayerId": "q:player:762",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=762",
       "squashLevelsPlayerId": "26736",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:06:59.959Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:09.883Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1180,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:02.472Z",
-      "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:12.872Z",
+      "squashLevelsMatchedCountry": "NZL",
+      "squashLevelsMatchedAge": 65,
+      "squashLevelsClubLocation": "NZL"
     },
     {
       "iso3": "AUS",
@@ -17720,18 +18987,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:20.951Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=294316",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:04.112Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:20:58.221Z",
       "officialPlayerId": "q:player:983",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=983",
       "squashLevelsPlayerId": "294316",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:03.009Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:13.422Z",
       "squashLevelsWorldRank": 45064,
       "squashLevelsLevel": 538,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:04.273Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "ITA",
@@ -17741,7 +19009,7 @@ window.TOURNAMENT_DATA = {
       "country": "Italy",
       "flagCode": "it",
       "squashLevelsCheckedAt": "2026-08-21T07:30:21.237Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:23.585Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:44.608Z",
       "officialPlayerId": "q:player:964",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=964",
       "squashLevelsWorldRank": null,
@@ -17758,18 +19026,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:21.554Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26941",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:05.924Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:00.026Z",
       "officialPlayerId": "q:player:44",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=44",
       "squashLevelsPlayerId": "26941",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:05.318Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:13.998Z",
       "squashLevelsWorldRank": 59418,
       "squashLevelsLevel": 158,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:06.580Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Royal Oak Racquets, Auckland, NZL"
     },
     {
       "iso3": "AUS",
@@ -17780,18 +19049,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:21.595Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234576",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:07.933Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:01.905Z",
       "officialPlayerId": "q:player:887",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=887",
       "squashLevelsPlayerId": "234576",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:07.167Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:14.523Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 441,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:08.431Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -17802,18 +19072,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:21.762Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=522995",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:09.749Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:03.715Z",
       "officialPlayerId": "q:player:503",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=503",
       "squashLevelsPlayerId": "522995",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:08.972Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:15.098Z",
       "squashLevelsWorldRank": 48016,
       "squashLevelsLevel": 441,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:11.464Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:43:04.492Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -17823,7 +19094,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:22.074Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:25.388Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:46.564Z",
       "officialPlayerId": "q:player:970",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=970",
       "squashLevelsWorldRank": null,
@@ -17839,7 +19110,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:22.109Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:27.462Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:48.332Z",
       "officialPlayerId": "q:player:784",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=784",
       "squashLevelsWorldRank": null,
@@ -17856,18 +19127,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:30:22.287Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=27144",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:11.570Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:05.528Z",
       "officialPlayerId": "q:player:555",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=555",
       "squashLevelsPlayerId": "27144",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:12.970Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:18.575Z",
       "squashLevelsWorldRank": 5481,
       "squashLevelsLevel": 428,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:14.225Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Kelvin Grove Squash Club, Western Cape, ZAF"
     },
     {
       "iso3": "FRA",
@@ -17878,18 +19150,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "fr",
       "squashLevelsCheckedAt": "2026-08-21T07:30:22.684Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=267508",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:13.389Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:07.354Z",
       "officialPlayerId": "q:player:646",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=646",
       "squashLevelsPlayerId": "267508",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:35:14.782Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:19.062Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:35:16.980Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 75,
       "squashLevelsWorldRank": 2605,
       "squashLevelsLevel": 1104,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "FRA"
     },
     {
       "iso3": "AUS",
@@ -17900,18 +19173,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:22.718Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219084",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:15.206Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:09.426Z",
       "officialPlayerId": "q:player:454",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=454",
       "squashLevelsPlayerId": "219084",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:14.742Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:19.652Z",
       "squashLevelsWorldRank": 4422,
       "squashLevelsLevel": 595,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:15.996Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -17922,18 +19196,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:22.821Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218435",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:17.116Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:11.379Z",
       "officialPlayerId": "q:player:538",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=538",
       "squashLevelsPlayerId": "218435",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:16.499Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:20.223Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 461,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:17.759Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -17944,18 +19219,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:23.198Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=230279",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:18.956Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:13.475Z",
       "officialPlayerId": "q:player:854",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=854",
       "squashLevelsPlayerId": "230279",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:18.262Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:20.730Z",
       "squashLevelsWorldRank": 5396,
       "squashLevelsLevel": 439,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:19.506Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -17965,7 +19241,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:23.235Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:28.439Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:48.876Z",
       "officialPlayerId": "q:player:545",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=545",
       "squashLevelsWorldRank": null,
@@ -17981,7 +19257,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:23.344Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:29.221Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:49.445Z",
       "officialPlayerId": "q:player:420",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=420",
       "squashLevelsWorldRank": null,
@@ -17998,18 +19274,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:23.802Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=396884",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:20.859Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:15.362Z",
       "officialPlayerId": "q:player:604",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=604",
       "squashLevelsPlayerId": "396884",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:21.040Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:21.269Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 460,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:22.293Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Tokoroa, Bay of Plenty, NZL"
     },
     {
       "iso3": "AUS",
@@ -18020,18 +19297,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:23.855Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=231942",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:22.674Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:17.155Z",
       "officialPlayerId": "q:player:788",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=788",
       "squashLevelsPlayerId": "231942",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:22.795Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:21.808Z",
       "squashLevelsWorldRank": 6713,
       "squashLevelsLevel": 299,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:24.042Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Eastside & Parsons TSA, Tasmania, AUS"
     },
     {
       "iso3": "AUS",
@@ -18041,7 +19319,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:24.328Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:29.971Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:50.099Z",
       "officialPlayerId": "q:player:179",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=179",
       "squashLevelsWorldRank": null,
@@ -18058,18 +19336,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:24.529Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=487522",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:24.486Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:18.968Z",
       "officialPlayerId": "q:player:326",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=326",
       "squashLevelsPlayerId": "487522",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:25.058Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:22.346Z",
       "squashLevelsWorldRank": 5796,
       "squashLevelsLevel": 391,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:26.309Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "NSW, AUS"
     },
     {
       "iso3": "AUS",
@@ -18080,18 +19359,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:24.550Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218694",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:26.301Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:20.758Z",
       "officialPlayerId": "q:player:422",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=422",
       "squashLevelsPlayerId": "218694",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:26.818Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:22.895Z",
       "squashLevelsWorldRank": 7998,
       "squashLevelsLevel": 205,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:28.081Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -18102,18 +19382,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:25.026Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228642",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:28.210Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:22.636Z",
       "officialPlayerId": "q:player:663",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=663",
       "squashLevelsPlayerId": "228642",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:28.589Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:23.505Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 267,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:29.853Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -18124,18 +19405,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:25.263Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38793",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:30.024Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:24.448Z",
       "officialPlayerId": "q:player:451",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=451",
       "squashLevelsPlayerId": "38793",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:30.359Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:24.108Z",
       "squashLevelsWorldRank": 6590,
       "squashLevelsLevel": 309,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:31.629Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Springwood, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -18145,7 +19427,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:25.223Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:30.707Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:50.649Z",
       "officialPlayerId": "q:player:631",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=631",
       "squashLevelsWorldRank": null,
@@ -18162,18 +19444,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:25.697Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221029",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:31.846Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:26.288Z",
       "officialPlayerId": "q:player:921",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=921",
       "squashLevelsPlayerId": "221029",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:32.618Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:24.643Z",
       "squashLevelsWorldRank": 7153,
       "squashLevelsLevel": 263,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:33.876Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "iso3": "CAN",
@@ -18184,18 +19467,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:30:25.875Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=144731",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:33.759Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:28.205Z",
       "officialPlayerId": "q:player:307",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=307",
       "squashLevelsPlayerId": "144731",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:34.378Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:25.264Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1791,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:35.660Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "CAN"
     },
     {
       "iso3": "ESP",
@@ -18205,19 +19489,20 @@ window.TOURNAMENT_DATA = {
       "country": "Spain",
       "flagCode": "es",
       "squashLevelsCheckedAt": "2026-08-21T07:30:25.947Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=454598",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:35.667Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=474998",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:30.143Z",
       "officialPlayerId": "q:player:643",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=643",
-      "squashLevelsPlayerId": "454598",
+      "squashLevelsPlayerId": "474998",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:36.237Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:25.821Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 1789,
+      "squashLevelsLevel": 4030,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:39.995Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:30.298Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "ESP"
     },
     {
       "iso3": "CAN",
@@ -18228,18 +19513,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "squashLevelsCheckedAt": "2026-08-21T07:30:26.236Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=147043",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:37.615Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:32.019Z",
       "officialPlayerId": "q:player:65",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=65",
       "squashLevelsPlayerId": "147043",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:40.608Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:30.982Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1612,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:41.859Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "CAN"
     },
     {
       "iso3": "USA",
@@ -18250,18 +19536,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:30:26.506Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=50456",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:39.441Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:33.814Z",
       "officialPlayerId": "q:player:526",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=526",
       "squashLevelsPlayerId": "50456",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:42.379Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:31.530Z",
       "squashLevelsWorldRank": 23914,
       "squashLevelsLevel": 1551,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:43.636Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "ENG"
     },
     {
       "iso3": "AUS",
@@ -18271,7 +19558,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:26.554Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:31.447Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:51.207Z",
       "officialPlayerId": "q:player:178",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=178",
       "squashLevelsWorldRank": null,
@@ -18288,18 +19575,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:26.789Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=471587",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:41.259Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:35.618Z",
       "officialPlayerId": "q:player:869",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=869",
       "squashLevelsPlayerId": "471587",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:44.627Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:32.107Z",
       "squashLevelsWorldRank": 39174,
       "squashLevelsLevel": 760,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:45.888Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "NZL",
@@ -18310,18 +19598,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:27.044Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=236631",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:43.076Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:37.613Z",
       "officialPlayerId": "q:player:912",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=912",
       "squashLevelsPlayerId": "236631",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:35:45.507Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:32.698Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:35:47.589Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 80,
       "squashLevelsWorldRank": 34174,
       "squashLevelsLevel": 976,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Blue Gum, Western Australia, AUS"
     },
     {
       "iso3": "ENG",
@@ -18331,19 +19620,20 @@ window.TOURNAMENT_DATA = {
       "country": "England",
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:30:27.180Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=304870",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:44.889Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26353",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:39.489Z",
       "officialPlayerId": "q:player:837",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=837",
-      "squashLevelsPlayerId": "304870",
+      "squashLevelsPlayerId": "26353",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:46.438Z",
-      "squashLevelsWorldRank": 17761,
-      "squashLevelsLevel": 2056,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:33.276Z",
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 895,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:56.420Z",
-      "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:45.305Z",
+      "squashLevelsMatchedCountry": "ENG",
+      "squashLevelsMatchedAge": 80,
+      "squashLevelsClubLocation": "Kent, ENG"
     },
     {
       "iso3": "RSA",
@@ -18354,7 +19644,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:30:27.327Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=76517",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:46.792Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:42.253Z",
       "officialPlayerId": "q:player:289",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=289",
       "squashLevelsPlayerId": "76517",
@@ -18364,7 +19654,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 80,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 455,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:49.454Z",
+      "squashLevelsClubLocation": "Kelvin Grove Squash Club, ZAF"
     },
     {
       "iso3": "RSA",
@@ -18374,7 +19666,7 @@ window.TOURNAMENT_DATA = {
       "country": "South Africa",
       "flagCode": "za",
       "squashLevelsCheckedAt": "2026-08-21T07:30:27.560Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:32.196Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:51.776Z",
       "officialPlayerId": "q:player:693",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=693",
       "squashLevelsWorldRank": null,
@@ -18391,7 +19683,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "squashLevelsCheckedAt": "2026-08-21T07:30:27.706Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=77071",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:48.707Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:44.137Z",
       "officialPlayerId": "q:player:553",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=553",
       "squashLevelsPlayerId": "77071",
@@ -18401,7 +19693,9 @@ window.TOURNAMENT_DATA = {
       "squashLevelsMatchedAge": 80,
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 784,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:50.492Z",
+      "squashLevelsClubLocation": "USA"
     },
     {
       "iso3": "AUS",
@@ -18411,18 +19705,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:27.874Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=226187",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:50.524Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=349446",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:46.013Z",
       "officialPlayerId": "q:player:521",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=521",
-      "squashLevelsPlayerId": "226187",
+      "squashLevelsPlayerId": "349446",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:35:50.507Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:56.012Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 80,
-      "squashLevelsWorldRank": 36632,
-      "squashLevelsLevel": 863,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": 3409,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:51.455Z",
+      "squashLevelsClubLocation": "Duffield, Derbyshire, ENG"
     },
     {
       "iso3": "AUS",
@@ -18433,18 +19729,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:28.102Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=227837",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:52.344Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:47.815Z",
       "officialPlayerId": "q:player:446",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=446",
       "squashLevelsPlayerId": "227837",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:57.666Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:57.191Z",
       "squashLevelsWorldRank": 41018,
       "squashLevelsLevel": 686,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:07:58.943Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -18455,18 +19752,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:28.227Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232603",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:54.159Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:49.617Z",
       "officialPlayerId": "q:player:186",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=186",
       "squashLevelsPlayerId": "232603",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:07:59.831Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:58.733Z",
       "squashLevelsWorldRank": 43382,
       "squashLevelsLevel": 598,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:08:01.085Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Mandurah, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -18477,18 +19775,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:28.396Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=236623",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:55.992Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:51.449Z",
       "officialPlayerId": "q:player:530",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=530",
       "squashLevelsPlayerId": "236623",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:08:01.600Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:51:59.635Z",
       "squashLevelsWorldRank": 40748,
       "squashLevelsLevel": 697,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:08:02.854Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "RACV, Victoria, AUS"
     },
     {
       "iso3": "NZL",
@@ -18499,18 +19798,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:28.808Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=109805",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:57.906Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:53.317Z",
       "officialPlayerId": "q:player:771",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=771",
       "squashLevelsPlayerId": "109805",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:08:03.403Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:00.598Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1309,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:08:05.907Z",
-      "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:52:03.635Z",
+      "squashLevelsMatchedCountry": "NZL",
+      "squashLevelsMatchedAge": 75,
+      "squashLevelsClubLocation": "NZL"
     },
     {
       "iso3": "NZL",
@@ -18520,7 +19820,7 @@ window.TOURNAMENT_DATA = {
       "country": "New Zealand",
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:28.819Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:32.942Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:52.366Z",
       "officialPlayerId": "q:player:323",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=323",
       "squashLevelsWorldRank": null,
@@ -18537,18 +19837,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:29.011Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232228",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:57:59.727Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:55.114Z",
       "officialPlayerId": "q:player:731",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=731",
       "squashLevelsPlayerId": "232228",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:08:06.904Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:04.930Z",
       "squashLevelsWorldRank": 53193,
       "squashLevelsLevel": 295,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:08:08.154Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Devonport INC, Tasmania, AUS"
     },
     {
       "iso3": "AUS",
@@ -18558,7 +19859,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:29.345Z",
-      "squashLevelsSearchCheckedAt": "2026-08-25T02:55:21.160Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:05.950Z",
       "officialPlayerId": "q:player:864",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=864",
       "squashLevelsWorldRank": 49777,
@@ -18570,7 +19871,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsIdentityVerifiedAt": "2026-08-25T02:55:22.891Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 80,
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:01.551Z"
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:21:56.919Z",
+      "squashLevelsClubLocation": "Goodlife Fitzroy, Victoria, AUS"
     },
     {
       "iso3": "AUS",
@@ -18580,7 +19882,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:29.360Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:34.846Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:54.312Z",
       "officialPlayerId": "q:player:875",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=875",
       "squashLevelsWorldRank": null,
@@ -18596,19 +19898,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:29.543Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233614",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:03.375Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=292354",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:22:07.014Z",
       "officialPlayerId": "q:player:131",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=131",
-      "squashLevelsPlayerId": "233614",
+      "squashLevelsPlayerId": "292354",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:36:11.043Z",
-      "squashLevelsIdentityVerifiedAt": "2026-08-21T11:36:13.161Z",
-      "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": 80,
-      "squashLevelsWorldRank": 54484,
-      "squashLevelsLevel": 264,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:07.860Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:52:10.873Z",
+      "squashLevelsMatchedCountry": "AUS",
+      "squashLevelsMatchedAge": 75,
+      "squashLevelsWorldRank": "TBD",
+      "squashLevelsLevel": null,
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "Elanora Squash & Fitness Centre, New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -18618,19 +19921,20 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:29.915Z",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=130420",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:05.290Z",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=436268",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:22:08.922Z",
       "officialPlayerId": "q:player:719",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=719",
-      "squashLevelsPlayerId": "130420",
+      "squashLevelsPlayerId": "436268",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:08:09.673Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:11.692Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 2504,
+      "squashLevelsLevel": 351,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:08:15.938Z",
-      "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:52:19.208Z",
+      "squashLevelsMatchedCountry": "AUS",
+      "squashLevelsMatchedAge": 80,
+      "squashLevelsClubLocation": "Eastside Squash Club, Tasmania, AUS"
     },
     {
       "iso3": "AUS",
@@ -18640,7 +19944,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:29.893Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:36.249Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:56.087Z",
       "officialPlayerId": "q:player:888",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=888",
       "squashLevelsWorldRank": null,
@@ -18657,18 +19961,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:30.100Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38778",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:07.245Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:22:12.350Z",
       "officialPlayerId": "q:player:836",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=836",
       "squashLevelsPlayerId": "38778",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:08:17.241Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:22.579Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 891,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:08:19.738Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:43:54.294Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "AUS"
     },
     {
       "iso3": "AUS",
@@ -18679,18 +19984,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:30.516Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=510685",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:09.165Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:22:14.241Z",
       "officialPlayerId": "q:player:840",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=840",
       "squashLevelsPlayerId": "510685",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:08:20.241Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:26.595Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 329,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:08:21.491Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "TBD"
     },
     {
       "iso3": "ENG",
@@ -18701,18 +20007,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "squashLevelsCheckedAt": "2026-08-21T07:30:30.551Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=672",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:11.068Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:22:16.105Z",
       "officialPlayerId": "q:player:624",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=624",
       "squashLevelsPlayerId": "672",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:08:22.024Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:27.989Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 840,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:08:27.016Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:44:00.495Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Avon, ENG"
     },
     {
       "iso3": "AUS",
@@ -18723,18 +20030,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:30.626Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=487493",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:12.917Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:22:17.919Z",
       "officialPlayerId": "q:player:280",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=280",
       "squashLevelsPlayerId": "487493",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:08:27.712Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:34.466Z",
       "squashLevelsWorldRank": 5236,
       "squashLevelsLevel": 463,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsIdentityVerifiedAt": "2026-08-22T05:08:30.206Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:44:03.635Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -18745,18 +20053,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:31.130Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232906",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:14.754Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:22:19.772Z",
       "officialPlayerId": "q:player:253",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=253",
       "squashLevelsPlayerId": "232906",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-21T11:36:28.996Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:37.934Z",
       "squashLevelsIdentityVerifiedAt": "2026-08-21T11:36:31.064Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 80,
       "squashLevelsWorldRank": 7255,
       "squashLevelsLevel": 254,
-      "squashLevelsLevelProvisional": false
+      "squashLevelsLevelProvisional": false,
+      "squashLevelsClubLocation": "New South Wales, AUS"
     },
     {
       "iso3": "AUS",
@@ -18766,7 +20075,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:31.155Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:37.321Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:57.128Z",
       "officialPlayerId": "q:player:614",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=614",
       "squashLevelsWorldRank": null,
@@ -18783,18 +20092,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:31.165Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219100",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:16.568Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:22:21.614Z",
       "officialPlayerId": "q:player:229",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=229",
       "squashLevelsPlayerId": "219100",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:08:31.201Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:38.472Z",
       "squashLevelsWorldRank": 31780,
       "squashLevelsLevel": 1094,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:08:32.446Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Squashworld Mirrabooka, Western Australia, AUS"
     },
     {
       "iso3": "AUS",
@@ -18804,7 +20114,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:31.737Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:38.223Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:57.684Z",
       "officialPlayerId": "q:player:969",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=969",
       "squashLevelsWorldRank": null,
@@ -18821,18 +20131,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "il",
       "squashLevelsCheckedAt": "2026-08-21T07:30:31.780Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26371",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:18.498Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:22:23.496Z",
       "officialPlayerId": "q:player:338",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=338",
       "squashLevelsPlayerId": "26371",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:08:33.544Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:39.046Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 630,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:08:34.814Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "ISR"
     },
     {
       "iso3": "AUS",
@@ -18843,18 +20154,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:31.768Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221369",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:20.324Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:22:25.299Z",
       "officialPlayerId": "q:player:540",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=540",
       "squashLevelsPlayerId": "221369",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:08:35.311Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:39.566Z",
       "squashLevelsWorldRank": 45641,
       "squashLevelsLevel": 517,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:08:36.565Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "iso3": "AUS",
@@ -18864,7 +20176,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:32.343Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:39.880Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:53:58.994Z",
       "officialPlayerId": "q:player:270",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=270",
       "squashLevelsWorldRank": null,
@@ -18880,7 +20192,7 @@ window.TOURNAMENT_DATA = {
       "country": "Australia",
       "flagCode": "au",
       "squashLevelsCheckedAt": "2026-08-21T07:30:32.409Z",
-      "squashLevelsSearchCheckedAt": "2026-08-27T20:55:41.464Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:54:00.359Z",
       "officialPlayerId": "q:player:908",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=908",
       "squashLevelsWorldRank": null,
@@ -18897,18 +20209,19 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "squashLevelsCheckedAt": "2026-08-21T07:30:32.397Z",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38829",
-      "squashLevelsProfileCheckedAt": "2026-08-28T06:58:22.471Z",
+      "squashLevelsProfileCheckedAt": "2026-08-28T07:22:27.193Z",
       "officialPlayerId": "q:player:519",
       "officialProfileUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=519",
       "squashLevelsPlayerId": "38829",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsSearchCheckedAt": "2026-08-22T05:08:38.105Z",
+      "squashLevelsSearchCheckedAt": "2026-08-28T06:52:40.084Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 223,
       "squashLevelsLevelProvisional": false,
       "squashLevelsIdentityVerifiedAt": "2026-08-22T05:08:39.366Z",
       "squashLevelsMatchedCountry": null,
-      "squashLevelsMatchedAge": null
+      "squashLevelsMatchedAge": null,
+      "squashLevelsClubLocation": "NZL"
     }
   ],
   "matches": [
@@ -29245,5 +30558,5 @@ window.TOURNAMENT_DATA = {
       "sourceUrl": "https://wsf.tournamentsoftware.com/sport/player.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0&player=969"
     }
   ],
-  "squashLevelsRefreshedAt": "2026-08-25T08:42:10.642Z"
+  "squashLevelsRefreshedAt": "2026-08-28T07:22:27.482Z"
 };
