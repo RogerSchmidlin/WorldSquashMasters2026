@@ -114,7 +114,7 @@ function playerMatchRow(m){
       <div class="vic-event">
         <span class="vic-mobile-meta">
           <span class="vic-mobile-time">${esc(m.time||'TBD')}</span>
-          <span class="vic-mobile-location">${esc(place)}</span>
+          <span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(place)}</span></span>
           <span class="vic-mobile-age">${esc(m.event||'')}</span>
         </span>
         <span class="vic-desktop-event">
@@ -125,11 +125,23 @@ function playerMatchRow(m){
 
       <div class="vic-fixture-line">
         <a class="${p1Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">
-          ${flagImg(p1)}
-          <span class="vic-player-name-wrap">
-            <span class="vic-player-name-meta-line">
-              ${playerNameStack(p1,m.player1,p1Current)}
-              ${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}
+          <span class="fixture-player-desktop">
+            ${flagImg(p1)}
+            <span class="vic-player-name-wrap">
+              <span class="vic-player-name-meta-line">
+                ${playerNameStack(p1,m.player1,p1Current)}
+                ${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}
+              </span>
+            </span>
+          </span>
+          <span class="fixture-player-mobile">
+            <span class="fixture-mobile-name">${esc(m.player1)}</span>
+            <span class="fixture-mobile-info">
+              <span class="fixture-mobile-flag">${flagImg(p1)}</span>
+              <span class="fixture-mobile-details">
+                <span class="fixture-mobile-country">${esc(p1?.country||'')}</span>
+                <span class="fixture-mobile-metrics">${squashBadges(p1)}</span>
+              </span>
             </span>
           </span>
         </a>
@@ -137,11 +149,23 @@ function playerMatchRow(m){
         <span class="vic-vs">vs</span>
 
         <a class="${p2Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,m.player2Id)}">
-          ${flagImg(p2)}
-          <span class="vic-player-name-wrap">
-            <span class="vic-player-name-meta-line">
-              ${playerNameStack(p2,m.player2,p2Current)}
-              ${p2?.country?`<small class="vic-player-inline-meta">${esc(p2.country)}</small>`:''}
+          <span class="fixture-player-desktop">
+            ${flagImg(p2)}
+            <span class="vic-player-name-wrap">
+              <span class="vic-player-name-meta-line">
+                ${playerNameStack(p2,m.player2,p2Current)}
+                ${p2?.country?`<small class="vic-player-inline-meta">${esc(p2.country)}</small>`:''}
+              </span>
+            </span>
+          </span>
+          <span class="fixture-player-mobile">
+            <span class="fixture-mobile-name">${esc(m.player2)}</span>
+            <span class="fixture-mobile-info">
+              <span class="fixture-mobile-flag">${flagImg(p2)}</span>
+              <span class="fixture-mobile-details">
+                <span class="fixture-mobile-country">${esc(p2?.country||'')}</span>
+                <span class="fixture-mobile-metrics">${squashBadges(p2)}</span>
+              </span>
             </span>
           </span>
         </a>
@@ -206,7 +230,7 @@ if(!p){
   qs('#playerSchedule').innerHTML='';
 }else{
   const ms=dedupePlayerDetailMatches(data.matches.filter(m=>has(m,name))).sort((a,b)=>`${a.date||''} ${a.time||''}`.localeCompare(`${b.date||''} ${b.time||''}`));
-  qs('#playerHeader').innerHTML=`<div class="player-detail-card"><div class="player-detail-id">${flagImg(p,'tracked-flag')}<div><div class="eyebrow">${esc(p.country)} · ${esc(p.gender)} ${p.ageGroup}+</div><div class="player-name-line"><div class="player-name-stack player-detail-name-stack"><h1>${esc(p.name)}</h1>${squashBadges(p)}</div>${p.squashLevelsUrl?`<a class="squashlevels-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer">SquashLevels</a>`:''}</div></div></div><div class="player-detail-actions"><div class="status-chip">${ms.filter(m=>!past(m)).length} UPCOMING</div></div></div>`;
+  qs('#playerHeader').innerHTML=`<div class="player-detail-card"><div class="player-detail-id">${flagImg(p,'tracked-flag')}<div><div class="eyebrow">${esc(p.country)} · ${esc(p.gender)} ${p.ageGroup}+</div><div class="player-name-line"><div class="player-name-stack player-detail-name-stack"><h1>${esc(p.name)}</h1><div class="player-detail-metrics-row">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn player-detail-squashlevels-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer">SquashLevels</a>`:''}</div></div></div></div></div><div class="player-detail-actions"><div class="status-chip">${ms.filter(m=>!past(m)).length} UPCOMING</div></div></div>`;
   const up=ms.filter(m=>!past(m)),done=ms.filter(past);
   qs('#playerSchedule').innerHTML=`<div class="schedule-group">${groupedMatches(up)}</div>${done.length?`<div class="schedule-group past-games-group"><div class="past-games-label">Past games</div>${groupedMatches(done)}</div>`:''}`;
 }

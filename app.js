@@ -211,7 +211,22 @@ function renderPlayers(){
     });
   qs('#playerCount').textContent=rows.length;
   qsa('.country-chip').forEach(ch=>ch.classList.toggle('active',ch.dataset.country===country));
-  qs('#playerGrid').innerHTML=rows.map(p=>`<div class="player-card"><a class="player-card-flag-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><div class="flag-avatar">${flagImg(p,'flag-img')}</div></a><div class="player-card-copy"><div class="player-card-name-line"><div class="player-name-stack"><div class="player-name-meta-line"><a class="player-card-name-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><b>${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(p.name)}</b></a><small class="player-inline-meta">${esc(p.country)} · ${p.ageGroup}+</small></div><div class="player-level-line">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(p.name)} on SquashLevels">SquashLevels</a>`:''}</div></div></div></div></div>`).join('');
+  qs('#playerGrid').innerHTML=rows.map(p=>`<div class="player-card">
+    <div class="player-card-desktop-layout">
+      <a class="player-card-flag-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><div class="flag-avatar">${flagImg(p,'flag-img')}</div></a>
+      <div class="player-card-copy"><div class="player-card-name-line"><div class="player-name-stack"><div class="player-name-meta-line"><a class="player-card-name-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><b>${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(p.name)}</b></a><small class="player-inline-meta">${esc(p.country)} · ${p.ageGroup}+</small></div><div class="player-level-line">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(p.name)} on SquashLevels">SquashLevels</a>`:''}</div></div></div></div>
+    </div>
+    <div class="mobile-player-layout">
+      <a class="mobile-player-name" href="${playerPageUrl(p.name,p.officialPlayerId)}">${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(p.name)}</a>
+      <div class="mobile-player-info">
+        <a class="mobile-player-flag" href="${playerPageUrl(p.name,p.officialPlayerId)}">${flagImg(p,'flag-img')}</a>
+        <div class="mobile-player-details">
+          <div class="mobile-player-country">${esc(p.country||'')}</div>
+          <div class="mobile-player-metrics">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(p.name)} on SquashLevels">SquashLevels</a>`:''}</div>
+        </div>
+      </div>
+    </div>
+  </div>`).join('');
 }
 function summaryCountries(){
   if(Array.isArray(data.countries)&&data.countries.length)return data.countries;
@@ -307,9 +322,33 @@ function compactScheduleRow(m,trackedNames=[]){
     <div class="vic-match-main">
       <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${esc(m.time||'TBD')}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(m.event||'')}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(m.event||'')}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
       <div class="vic-fixture-line">
-        <a class="${p1Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p1,m.player1,p1Tracked)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span></span></a>
+        <a class="${p1Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">
+          <span class="fixture-player-desktop">${flagImg(p1)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p1,m.player1,p1Tracked)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span></span></span>
+          <span class="fixture-player-mobile">
+            <span class="fixture-mobile-name">${esc(m.player1)}</span>
+            <span class="fixture-mobile-info">
+              <span class="fixture-mobile-flag">${flagImg(p1)}</span>
+              <span class="fixture-mobile-details">
+                <span class="fixture-mobile-country">${esc(p1?.country||'')}</span>
+                <span class="fixture-mobile-metrics">${squashBadges(p1)}</span>
+              </span>
+            </span>
+          </span>
+        </a>
         <span class="vic-vs">vs</span>
-        <a class="${p2Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,m.player2Id)}">${flagImg(p2)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p2,m.player2,p2Tracked)}${p2?.country?`<small class="vic-player-inline-meta">${esc(p2.country)}</small>`:''}</span></span></a>
+        <a class="${p2Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,m.player2Id)}">
+          <span class="fixture-player-desktop">${flagImg(p2)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p2,m.player2,p2Tracked)}${p2?.country?`<small class="vic-player-inline-meta">${esc(p2.country)}</small>`:''}</span></span></span>
+          <span class="fixture-player-mobile">
+            <span class="fixture-mobile-name">${esc(m.player2)}</span>
+            <span class="fixture-mobile-info">
+              <span class="fixture-mobile-flag">${flagImg(p2)}</span>
+              <span class="fixture-mobile-details">
+                <span class="fixture-mobile-country">${esc(p2?.country||'')}</span>
+                <span class="fixture-mobile-metrics">${squashBadges(p2)}</span>
+              </span>
+            </span>
+          </span>
+        </a>
         ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
       </div>
     </div>
@@ -339,7 +378,7 @@ function renderFeatureCourt(date=selectedFeatureDate){
   selectedFeatureDate=date;
   qsa('.date-tab').forEach(x=>x.classList.toggle('active',x.dataset.date===date));
   const ms=featureMatchesForVenue().filter(m=>canonicalDate(m.date)===date).sort((a,b)=>to24(a.time||'').localeCompare(to24(b.time||'')));
-  const title=qs('#featureCourtTitle'); if(title)title.textContent=selectedFeatureVenue||'Feature Court';
+  const title=qs('#featureCourtTitle'); if(title)title.textContent=selectedFeatureVenue||'Courts';
   qs('#glassMatches').innerHTML=ms.length?ms.map(m=>compactScheduleRow(m)).join(''):`<div class="schedule-empty"><strong>No matches found for this venue on ${esc(fmtDate(date).long)}.</strong></div>`;
   qs('#glassDayCount').textContent=ms.length;
 }
