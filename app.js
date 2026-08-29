@@ -19,6 +19,20 @@ async function ensureLegacyData(){
   return window.TOURNAMENT_DATA||null;
 }
 let playersReady=false,matchesReady=false,vicParkDataReady=false;
+let favoriteMatchIndex=null;
+
+function rebuildFavoriteMatchIndex(){
+  const index=new Map();
+  for(const m of (data.matches||[])){
+    const keys=[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean);
+    for(const key of new Set(keys)){
+      if(!index.has(key))index.set(key,[]);
+      index.get(key).push(m);
+    }
+  }
+  favoriteMatchIndex=index;
+}
+
 let vicParkPlayers=[],vicParkMatches=[];
 async function ensurePlayersData(){
   if(playersReady)return;
@@ -43,7 +57,9 @@ async function ensureMatchesData(){
     const legacy=await ensureLegacyData();
     data.matches=legacy?.matches||[];
   }
-  data.matches=(data.matches||[]).map(normaliseMatch);matchesReady=true;
+  data.matches=(data.matches||[]).map(normaliseMatch);
+  rebuildFavoriteMatchIndex();
+  matchesReady=true;
 }
 
 async function ensureVicParkData(){
@@ -436,12 +452,19 @@ function renderFavoritePlayers(){
   if(!names.length){list.innerHTML='';matchesEl.innerHTML='<div class="schedule-empty"><strong>No favourite players yet.</strong><br><span>Open Players and tap ☆ Fav next to anyone you want to follow.</span></div>';return;}
   list.innerHTML=favourites.map(p=>`<div class="fav-player-card"><a class="fav-player-main" href="${playerPageUrl(p.name,p.officialPlayerId)}">${flagImg(p,'flag-img')}<span class="player-name-stack"><b>${esc(p.name)}</b>${squashBadges(p)}<small>${esc(p.country)} · ${p.ageGroup}+</small></span></a>${favoriteButton(p.name,'fav-remove-btn')}</div>`).join('');
   const map=new Map();
-  for(const m of (data.matches||[])){
-    const tracked=names.filter(n=>matchHas(m,n));if(!tracked.length)continue;
-    const players=[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean).sort().join('|');
-    const key=`${canonicalDate(m.date)}||${to24(m.time||'')}||${players}`;
-    if(!map.has(key))map.set(key,{m,tracked:[...tracked]});
-    else{const row=map.get(key);for(const n of tracked)if(!row.tracked.some(x=>sameName(x,n)))row.tracked.push(n);if(!row.m.result&&m.result)row.m=m;}
+  const index=favoriteMatchIndex||new Map();
+  for(const favName of names){
+    const matches=index.get(nameKey(favName))||[];
+    for(const m of matches){
+      const players=[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean).sort().join('|');
+      const key=`${canonicalDate(m.date)}||${to24(m.time||'')}||${players}`;
+      if(!map.has(key))map.set(key,{m,tracked:[favName]});
+      else{
+        const row=map.get(key);
+        if(!row.tracked.some(x=>sameName(x,favName)))row.tracked.push(favName);
+        if(!row.m.result&&m.result)row.m=m;
+      }
+    }
   }
   const rows=[...map.values()].sort((a,b)=>`${canonicalDate(a.m.date)} ${to24(a.m.time||'')}`.localeCompare(`${canonicalDate(b.m.date)} ${to24(b.m.time||'')}`));
   let day='',html='';
@@ -542,5 +565,13 @@ async function bootstrap(){
   renderHeaderRefresh();setupPlayersShell();stamp();
   const initial=location.hash.slice(1);
   if(['players','glass','vicpark','favorites'].includes(initial))await setPage(initial);
+
+  // Warm the full match dataset in the background so Fav Players opens quickly.
+  // Other lightweight pages can remain interactive while this loads.
+  if(!matchesReady){
+    const warmMatches=()=>ensureMatchesData().catch(()=>{});
+    if('requestIdleCallback' in window)requestIdleCallback(warmMatches,{timeout:2500});
+    else setTimeout(warmMatches,900);
+  }
 }
 bootstrap();
