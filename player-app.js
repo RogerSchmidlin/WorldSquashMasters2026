@@ -67,6 +67,15 @@ const has=(m,n)=>{if(officialPlayerId&&(String(m.player1Id||'')===String(officia
 const opp=m=>sameName(m.player1,name)?m.player2:(sameName(m.player2,name)?m.player1:(namesFromRecord(m).find(n=>!sameName(n,name))||''));
 const pb=n=>data.players.find(x=>sameName(x.name,n));
 const past=m=>String(m.status||'').toLowerCase()==='completed'||String(m.status||'').toLowerCase()==='played'||!!m.result;
+function displayTime24(t){const raw=String(t||'').trim();if(!raw)return 'TBD';let m=raw.match(/\b(\d{1,2})(?::(\d{2}))?\s*([AP]M)\b/i);if(m){let h=Number(m[1])%12;if(/^p/i.test(m[3]))h+=12;return `${String(h).padStart(2,'0')}:${m[2]||'00'}`;}m=raw.match(/\b([01]?\d|2[0-3]):([0-5]\d)\b/);if(m)return `${String(Number(m[1])).padStart(2,'0')}:${m[2]}`;return raw;}
+const FAVORITES_STORAGE_KEY='wsm2026FavouritePlayers';
+function getFavoriteNames(){try{const r=JSON.parse(localStorage.getItem(FAVORITES_STORAGE_KEY)||'[]');return Array.isArray(r)?r:[]}catch{return []}}
+function isFavoritePlayer(n){return getFavoriteNames().some(x=>sameName(x,n))}
+function toggleFavoritePlayer(n){const r=getFavoriteNames(),i=r.findIndex(x=>sameName(x,n));if(i>=0)r.splice(i,1);else r.push(n);try{localStorage.setItem(FAVORITES_STORAGE_KEY,JSON.stringify(r))}catch{}return i<0}
+function playerFavoriteButton(n){const on=isFavoritePlayer(n);return `<button type="button" id="playerFavoriteButton" class="favorite-player-btn player-detail-favorite-btn ${on?'is-favorite':''}" aria-pressed="${on?'true':'false'}"><span aria-hidden="true">${on?'★':'☆'}</span><span class="favorite-player-btn-text">${on?'Faved':'Fav'}</span></button>`}
+function scoreWinnerSide(m){const g=[...String(m?.result||'').matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)].map(x=>[+x[1],+x[2]]);if(g.length<2)return 0;let a=0,b=0;for(const [x,y] of g){if(x>y)a++;else if(y>x)b++;}return a===b?0:(a>b?1:2)}
+function matchOutcomeForCurrentPlayer(m){const w=scoreWinnerSide(m);if(!w)return '';const side=sameName(m.player1,name)?1:sameName(m.player2,name)?2:0;return side?(w===side?'win':'loss'):''}
+
 const venueCode=m=>{const place=[m.venue,m.court].filter(Boolean).join(' · ');if(/Karrinyup|\bAGC\b|Glass/i.test(place))return 'G';if(/Mirrabooka|Squashworld/i.test(place))return 'M';if(/Belmont|WA\s*State\s*Squash/i.test(place))return 'B';return '';};
 const venueBadge=m=>{const c=venueCode(m);return c?`<span class="venue-letter venue-${c.toLowerCase()}" aria-hidden="true">${c}</span>`:'';};
 const venuePlace=m=>[m.venue,m.court].filter(Boolean).join(' · ')||'Venue / court TBD';
@@ -74,16 +83,17 @@ const venuePlace=m=>[m.venue,m.court].filter(Boolean).join(' · ')||'Venue / cou
 function playerMatchRow(m){
   const p1=pb(m.player1),p2=pb(m.player2);
   const p1Current=officialPlayerId?String(m.player1Id||'')===String(officialPlayerId):sameName(m.player1,name),p2Current=officialPlayerId?String(m.player2Id||'')===String(officialPlayerId):sameName(m.player2,name);
-  return `<article class="vic-match-row player-schedule-row ${past(m)?'past':''}">
-    <div class="vic-time">${esc(m.time||'TBD')}</div>
+  const outcome=past(m)?matchOutcomeForCurrentPlayer(m):'';
+  return `<article class="vic-match-row player-schedule-row ${past(m)?'past':''} ${outcome?`match-${outcome}`:''}">
+    <div class="vic-time">${esc(displayTime24(m.time))}</div>
     <div class="vic-match-main">
       <div class="vic-event">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div>
       <div class="vic-fixture-line">
         <a href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}${playerNameStack(p1,m.player1,p1Current)}</a>
         <span class="vic-vs">vs</span>
         <a href="${playerPageUrl(m.player2,m.player2Id)}">${flagImg(p2)}${playerNameStack(p2,m.player2,p2Current)}</a>
-        ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
       </div>
+      ${past(m)?`<div class="match-history-score ${m.result?'has-score':'no-score'}"><span class="match-history-score-label">Score</span><strong>${m.result?esc(m.result):'Score not published'}</strong>${outcome?`<span class="match-outcome-badge match-outcome-${outcome}">${outcome==='win'?'WIN':'LOSS'}</span>`:''}</div>`:''}
     </div>
     <div class="vic-location">${venueBadge(m)}<span>${esc(venuePlace(m))}</span></div>
   </article>`;
@@ -100,9 +110,10 @@ if(!p){
   qs('#playerSchedule').innerHTML='';
 }else{
   const ms=data.matches.filter(m=>has(m,name)).sort((a,b)=>`${a.date||''} ${a.time||''}`.localeCompare(`${b.date||''} ${b.time||''}`));
-  qs('#playerHeader').innerHTML=`<div class="player-detail-card"><div class="player-detail-id">${flagImg(p,'tracked-flag')}<div><div class="eyebrow">${esc(p.country)} · ${esc(p.gender)} ${p.ageGroup}+</div><div class="player-name-line"><div class="player-name-stack player-detail-name-stack"><h1>${esc(p.name)}</h1>${squashBadges(p)}</div>${p.squashLevelsUrl?`<a class="squashlevels-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer">SquashLevels</a>`:''}</div></div></div><div class="player-detail-actions"><div class="status-chip">${ms.filter(m=>!past(m)).length} UPCOMING</div></div></div>`;
-  const up=ms.filter(m=>!past(m)),done=ms.filter(past);
-  qs('#playerSchedule').innerHTML=`<div class="schedule-group">${groupedMatches(up)}</div>${done.length?`<div class="schedule-group past-games-group"><div class="past-games-label">Past games</div>${groupedMatches(done)}</div>`:''}`;
+  qs('#playerHeader').innerHTML=`<div class="player-detail-card"><div class="player-detail-id">${flagImg(p,'tracked-flag')}<div><div class="eyebrow">${esc(p.country)} · ${esc(p.gender)} ${p.ageGroup}+</div><div class="player-name-line"><div class="player-name-stack player-detail-name-stack"><h1>${esc(p.name)}</h1>${squashBadges(p)}</div>${p.squashLevelsUrl?`<a class="squashlevels-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer">SquashLevels</a>`:''}${playerFavoriteButton(p.name)}</div></div></div><div class="player-detail-actions"><div class="status-chip">${ms.filter(m=>!past(m)).length} UPCOMING</div></div></div>`;
+  const up=ms.filter(m=>!past(m)).sort((a,b)=>`${a.date||''} ${a.time||''}`.localeCompare(`${b.date||''} ${b.time||''}`)),done=ms.filter(past).sort((a,b)=>`${b.date||''} ${b.time||''}`.localeCompare(`${a.date||''} ${a.time||''}`));
+  qs('#playerSchedule').innerHTML=`${up.length?`<div class="schedule-group upcoming-games-group"><div class="player-schedule-section-title"><span>Upcoming Matches</span><small>${up.length}</small></div>${groupedMatches(up)}</div>`:''}${done.length?`<div class="schedule-group past-games-group"><div class="player-schedule-section-title match-history-title"><span>Match History</span><small>${done.length} completed</small></div>${groupedMatches(done)}</div>`:''}${!up.length&&!done.length?'<div class="schedule-empty">No matches currently published.</div>':''}`;
+  const favBtn=qs('#playerFavoriteButton');if(favBtn)favBtn.addEventListener('click',()=>{const on=toggleFavoritePlayer(p.name);favBtn.classList.toggle('is-favorite',on);favBtn.setAttribute('aria-pressed',on?'true':'false');favBtn.querySelector('span[aria-hidden="true"]').textContent=on?'★':'☆';favBtn.querySelector('.favorite-player-btn-text').textContent=on?'Faved':'Fav';});
 }
 
 }

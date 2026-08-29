@@ -154,10 +154,17 @@ const isGlass=m=>/Karrinyup|\bAGC\b/i.test([m.venue,m.court].join(' '));
 const isPast=m=>m.status==='completed'||!!m.result;
 const matchHas=(m,name)=>{const p=playerByName(name);return !!(p?.officialPlayerId&&(String(m.player1Id||'')===String(p.officialPlayerId)||String(m.player2Id||'')===String(p.officialPlayerId)))||sameName(m.player1,name)||sameName(m.player2,name);};
 const opponentFor=(m,name)=>sameName(m.player1,name)?m.player2:m.player1;
+const FAVORITES_STORAGE_KEY='wsm2026FavouritePlayers';
+function getFavoriteNames(){try{const r=JSON.parse(localStorage.getItem(FAVORITES_STORAGE_KEY)||'[]');return Array.isArray(r)?r.filter(x=>typeof x==='string'&&x.trim()).map(x=>x.trim()):[]}catch{return []}}
+function saveFavoriteNames(names){const out=[];for(const n of names||[])if(n&&!out.some(x=>sameName(x,n)))out.push(n);try{localStorage.setItem(FAVORITES_STORAGE_KEY,JSON.stringify(out))}catch{}return out}
+function isFavoritePlayer(n){return getFavoriteNames().some(x=>sameName(x,n))}
+function favoriteButton(n,cls=''){const on=isFavoritePlayer(n);return `<button type="button" class="favorite-player-btn ${on?'is-favorite':''} ${cls}" data-favourite-player="${esc(n)}" aria-pressed="${on?'true':'false'}" title="${on?'Remove from':'Add to'} Fav Players"><span aria-hidden="true">${on?'★':'☆'}</span><span class="favorite-player-btn-text">${on?'Faved':'Fav'}</span></button>`}
+function toggleFavoritePlayer(n){const r=getFavoriteNames(),i=r.findIndex(x=>sameName(x,n));if(i>=0)r.splice(i,1);else r.push(n);saveFavoriteNames(r);return i<0}
+function refreshFavoriteButtons(){qsa('[data-favourite-player]').forEach(btn=>{const on=isFavoritePlayer(btn.dataset.favouritePlayer||'');btn.classList.toggle('is-favorite',on);btn.setAttribute('aria-pressed',on?'true':'false');btn.title=`${on?'Remove from':'Add to'} Fav Players`;const s=btn.querySelector('span[aria-hidden="true"]');if(s)s.textContent=on?'★':'☆';const t=btn.querySelector('.favorite-player-btn-text');if(t)t.textContent=on?'Faved':'Fav';})}
 
-let playersRendered=false,glassReady=false,vicParkReady=false;
+let playersRendered=false,glassReady=false,vicParkReady=false,favoritesReady=false;
 function showLoading(id){
-  const target=id==='players'?qs('#playerGrid'):id==='glass'?qs('#glassMatches'):id==='vicpark'?qs('#trackedPlayers'):null;
+  const target=id==='players'?qs('#playerGrid'):id==='glass'?qs('#glassMatches'):id==='vicpark'?qs('#trackedPlayers'):id==='favorites'?qs('#favoriteMatches'):null;
   if(target&&!target.innerHTML.trim())target.innerHTML='<div class="schedule-empty">Loading…</div>';
 }
 async function setPage(id){
@@ -169,10 +176,11 @@ async function setPage(id){
     if(id==='players'&&!playersRendered){showLoading(id);await ensurePlayersData();renderPlayers();playersRendered=true;}
     if(id==='glass'&&!glassReady){showLoading(id);await ensureMatchesData();setupGlass();glassReady=true;}
     if(id==='vicpark'&&!vicParkReady){showLoading(id);await ensureVicParkData();setupVicPark();vicParkReady=true;}
+    if(id==='favorites'){showLoading(id);await ensureMatchesData();renderFavoritePlayers();favoritesReady=true;}
   }catch(e){console.error(e);showDataError(id,e);}
 }
 function showDataError(id,e){
-  const target=id==='players'?qs('#playerGrid'):id==='glass'?qs('#glassMatches'):qs('#trackedPlayers');
+  const target=id==='players'?qs('#playerGrid'):id==='glass'?qs('#glassMatches'):id==='favorites'?qs('#favoriteMatches'):qs('#trackedPlayers');
   if(target)target.innerHTML=`<div class="schedule-empty"><strong>Could not load tournament data.</strong><br>${esc(e?.message||e)}</div>`;
 }
 qsa('[data-page]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();setPage(a.dataset.page)}));
@@ -214,7 +222,7 @@ function renderPlayers(){
   qs('#playerGrid').innerHTML=rows.map(p=>`<div class="player-card">
     <div class="player-card-desktop-layout">
       <a class="player-card-flag-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><div class="flag-avatar">${flagImg(p,'flag-img')}</div></a>
-      <div class="player-card-copy"><div class="player-card-name-line"><div class="player-name-stack"><div class="player-name-meta-line"><a class="player-card-name-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><b>${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(p.name)}</b></a><small class="player-inline-meta">${esc(p.country)} · ${p.ageGroup}+</small></div><div class="player-level-line">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(p.name)} on SquashLevels">SquashLevels</a>`:''}</div></div></div></div>
+      <div class="player-card-copy"><div class="player-card-name-line"><div class="player-name-stack"><div class="player-name-meta-line"><a class="player-card-name-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><b>${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(p.name)}</b></a><small class="player-inline-meta">${esc(p.country)} · ${p.ageGroup}+</small></div><div class="player-level-line">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(p.name)} on SquashLevels">SquashLevels</a>`:''}${favoriteButton(p.name,'favorite-list-btn')}</div></div></div></div>
     </div>
     <div class="mobile-player-layout">
       <a class="mobile-player-name" href="${playerPageUrl(p.name,p.officialPlayerId)}">${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(p.name)}</a>
@@ -222,7 +230,7 @@ function renderPlayers(){
         <a class="mobile-player-flag" href="${playerPageUrl(p.name,p.officialPlayerId)}">${flagImg(p,'flag-img')}</a>
         <div class="mobile-player-details">
           <div class="mobile-player-country">${esc(p.country||'')}</div>
-          <div class="mobile-player-metrics">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(p.name)} on SquashLevels">SquashLevels</a>`:''}</div>
+          <div class="mobile-player-metrics">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(p.name)} on SquashLevels">SquashLevels</a>`:''}${favoriteButton(p.name,'favorite-list-btn')}</div>
         </div>
       </div>
     </div>
@@ -310,7 +318,7 @@ function cleanVenuePlace(m){
 
 function matchCard(m){
   const p1=playerByName(m.player1), p2=playerByName(m.player2);
-  return `<article class="match-card"><div class="match-time">${esc(m.time||'TBD')}</div><div class="event-badge">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div><div class="fixture"><div class="player-side">${flagImg(p1)}<a class="match-player-link" href="${playerPageUrl(m.player1,m.player1Id)}"><span class="player-name-stack"><b>${esc(m.player1||'TBD')}</b>${squashBadges(p1)}</span></a></div><div class="vs">VS</div><div class="player-side right"><a class="match-player-link" href="${playerPageUrl(m.player2,m.player2Id)}"><span class="player-name-stack"><b>${esc(m.player2||'TBD')}</b>${squashBadges(p2)}</span></a>${flagImg(p2)}</div></div><div class="court-tag">${venueBadge(m)}<span>${esc(cleanVenuePlace(m))}</span></div></article>`;
+  return `<article class="match-card"><div class="match-time">${esc(displayTime24(m.time))}</div><div class="event-badge">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div><div class="fixture"><div class="player-side">${flagImg(p1)}<a class="match-player-link" href="${playerPageUrl(m.player1,m.player1Id)}"><span class="player-name-stack"><b>${esc(m.player1||'TBD')}</b>${squashBadges(p1)}</span></a></div><div class="vs">VS</div><div class="player-side right"><a class="match-player-link" href="${playerPageUrl(m.player2,m.player2Id)}"><span class="player-name-stack"><b>${esc(m.player2||'TBD')}</b>${squashBadges(p2)}</span></a>${flagImg(p2)}</div></div><div class="court-tag">${venueBadge(m)}<span>${esc(cleanVenuePlace(m))}</span></div></article>`;
 }
 function compactScheduleRow(m,trackedNames=[]){
   const p1=playerByName(m.player1), p2=playerByName(m.player2);
@@ -318,9 +326,9 @@ function compactScheduleRow(m,trackedNames=[]){
   const p2Tracked=trackedNames.some(n=>sameName(n,m.player2));
   const v=venueVisual(m);
   return `<article class="vic-match-row ${isPast(m)?'past':''}">
-    <div class="vic-time"><span class="vic-time-value">${esc(m.time||'TBD')}</span><span class="vic-time-age">${esc(m.event||'')}</span></div>
+    <div class="vic-time"><span class="vic-time-value">${esc(displayTime24(m.time))}</span><span class="vic-time-age">${esc(m.event||'')}</span></div>
     <div class="vic-match-main">
-      <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${esc(m.time||'TBD')}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(m.event||'')}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(m.event||'')}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
+      <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${esc(displayTime24(m.time))}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(m.event||'')}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(m.event||'')}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
       <div class="vic-fixture-line">
         <a class="${p1Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">
           <span class="fixture-player-desktop">${flagImg(p1)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p1,m.player1,p1Tracked)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span></span></span>
@@ -378,17 +386,26 @@ function renderFeatureCourt(date=selectedFeatureDate){
   selectedFeatureDate=date;
   qsa('.date-tab').forEach(x=>x.classList.toggle('active',x.dataset.date===date));
   const ms=featureMatchesForVenue().filter(m=>canonicalDate(m.date)===date).sort((a,b)=>to24(a.time||'').localeCompare(to24(b.time||'')));
-  const title=qs('#featureCourtTitle'); if(title)title.textContent=selectedFeatureVenue||'Courts';
+  const title=qs('#featureCourtTitle'); if(title)title.textContent='Courts';
   qs('#glassMatches').innerHTML=ms.length?ms.map(m=>compactScheduleRow(m)).join(''):`<div class="schedule-empty"><strong>No matches found for this venue on ${esc(fmtDate(date).long)}.</strong></div>`;
   qs('#glassDayCount').textContent=ms.length;
+}
+function perthTodayIso(){
+  try{const p=Object.fromEntries(new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Perth',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));return `${p.year}-${p.month}-${p.day}`;}catch{return new Date().toISOString().slice(0,10)}
+}
+function preferredExistingCourtDate(dates){
+  if(!dates.length)return '';
+  const today=perthTodayIso();
+  if(dates.includes(today))return today;
+  return dates.find(d=>d>today)||dates[dates.length-1];
 }
 function rebuildFeatureDates(){
   const venueMatches=featureMatchesForVenue();
   const dates=[...new Set(venueMatches.map(m=>canonicalDate(m.date)).filter(Boolean))].sort();
   const useDates=dates.length?dates:tournamentDates();
-  qs('#dateTabs').innerHTML=useDates.map((d,i)=>{const f=fmtDate(d);return `<button class="date-tab ${i===0?'active':''}" data-date="${d}"><strong>${f.day}</strong><small>${f.date}</small></button>`}).join('');
+  selectedFeatureDate=preferredExistingCourtDate(useDates);
+  qs('#dateTabs').innerHTML=useDates.map(d=>{const f=fmtDate(d);return `<button class="date-tab ${d===selectedFeatureDate?'active':''}" data-date="${d}"><strong>${f.day}</strong><small>${f.date}</small></button>`}).join('');
   qsa('.date-tab').forEach(b=>b.addEventListener('click',()=>renderFeatureCourt(b.dataset.date)));
-  selectedFeatureDate=useDates[0]||'';
   if(selectedFeatureDate)renderFeatureCourt(selectedFeatureDate);
 }
 function setupGlass(){
@@ -403,9 +420,31 @@ function setupGlass(){
   rebuildFeatureDates();
 }
 
+function renderFavoritePlayers(){
+  const favourites=getFavoriteNames().map(n=>playerByName(n)).filter(Boolean);
+  const names=saveFavoriteNames(favourites.map(p=>p.name));
+  const count=qs('#favoriteCount'),label=qs('#favoriteCountLabel');if(count)count.textContent=names.length;if(label)label.textContent=names.length===1?'player selected':'players selected';
+  const list=qs('#favoritePlayerList'),matchesEl=qs('#favoriteMatches');if(!list||!matchesEl)return;
+  if(!names.length){list.innerHTML='';matchesEl.innerHTML='<div class="schedule-empty"><strong>No favourite players yet.</strong><br><span>Open Players and tap ☆ Fav next to anyone you want to follow.</span></div>';return;}
+  list.innerHTML=favourites.map(p=>`<div class="fav-player-card"><a class="fav-player-main" href="${playerPageUrl(p.name,p.officialPlayerId)}">${flagImg(p,'flag-img')}<span class="player-name-stack"><b>${esc(p.name)}</b>${squashBadges(p)}<small>${esc(p.country)} · ${p.ageGroup}+</small></span></a>${favoriteButton(p.name,'fav-remove-btn')}</div>`).join('');
+  const map=new Map();
+  for(const m of (data.matches||[])){
+    const tracked=names.filter(n=>matchHas(m,n));if(!tracked.length)continue;
+    const players=[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean).sort().join('|');
+    const key=`${canonicalDate(m.date)}||${to24(m.time||'')}||${players}`;
+    if(!map.has(key))map.set(key,{m,tracked:[...tracked]});
+    else{const row=map.get(key);for(const n of tracked)if(!row.tracked.some(x=>sameName(x,n)))row.tracked.push(n);if(!row.m.result&&m.result)row.m=m;}
+  }
+  const rows=[...map.values()].sort((a,b)=>`${canonicalDate(a.m.date)} ${to24(a.m.time||'')}`.localeCompare(`${canonicalDate(b.m.date)} ${to24(b.m.time||'')}`));
+  let day='',html='';
+  for(const {m,tracked} of rows){const d=canonicalDate(m.date);if(d!==day){day=d;const f=fmtDate(d);html+=`<div class="vic-day-heading"><span>${esc(f.day)}</span><strong>${esc(f.date)}</strong></div>`;}html+=compactScheduleRow(m,tracked);}
+  matchesEl.innerHTML=html||'<div class="schedule-empty"><strong>No published matches found for your favourite players.</strong></div>';refreshFavoriteButtons();
+}
+document.addEventListener('click',e=>{const btn=e.target.closest?.('[data-favourite-player]');if(!btn)return;e.preventDefault();e.stopPropagation();const n=btn.dataset.favouritePlayer||'';if(!n)return;toggleFavoritePlayer(n);refreshFavoriteButtons();if(location.hash==='#favorites')renderFavoritePlayers();});
+
 function trackedMatchCard(m,name){
   const tracked=playerByName(name)||{name}, opp=opponentFor(m,name), op=playerByName(opp);
-  return `<article class="tracked-match"><div class="tracked-match-top"><div><b>${fmtDate(m.date).long}</b><span>${esc([m.event,m.round].filter(Boolean).join(' · '))}</span></div><strong>${esc(m.time||'TBD')}</strong></div><div class="tracked-fixture"><div class="tracked-side">${flagImg(tracked,'match-flag')}<div><small>TRACKED</small><a href="${playerPageUrl(name,tracked?.officialPlayerId)}"><span class="player-name-stack"><b>${esc(name)}</b>${squashBadges(tracked)}</span></a></div></div><div class="versus-badge">VS</div><div class="tracked-side right"><div><small>OPPONENT</small><a href="${playerPageUrl(opp,op?.officialPlayerId)}"><span class="player-name-stack"><b>${esc(opp||'TBD')}</b>${squashBadges(op)}</span></a></div>${flagImg(op,'match-flag')}</div></div><div class="roger-meta"><span>${esc(cleanVenuePlace(m))}</span>${m.result?`<span>${esc(m.result)}</span>`:''}</div></article>`;
+  return `<article class="tracked-match"><div class="tracked-match-top"><div><b>${fmtDate(m.date).long}</b><span>${esc([m.event,m.round].filter(Boolean).join(' · '))}</span></div><strong>${esc(displayTime24(m.time))}</strong></div><div class="tracked-fixture"><div class="tracked-side">${flagImg(tracked,'match-flag')}<div><small>TRACKED</small><a href="${playerPageUrl(name,tracked?.officialPlayerId)}"><span class="player-name-stack"><b>${esc(name)}</b>${squashBadges(tracked)}</span></a></div></div><div class="versus-badge">VS</div><div class="tracked-side right"><div><small>OPPONENT</small><a href="${playerPageUrl(opp,op?.officialPlayerId)}"><span class="player-name-stack"><b>${esc(opp||'TBD')}</b>${squashBadges(op)}</span></a></div>${flagImg(op,'match-flag')}</div></div><div class="roger-meta"><span>${esc(cleanVenuePlace(m))}</span>${m.result?`<span>${esc(m.result)}</span>`:''}</div></article>`;
 }
 function venueVisual(m){
   return {place:cleanVenuePlace(m),code:venueCode(m)};
@@ -449,6 +488,13 @@ function to24(t){
   const s=String(t||'').trim(); const m=s.match(/^(\d{1,2}):(\d{2})\s*(am|pm)?$/i); if(!m)return s.padStart(8,'9');
   let h=+m[1]; const ap=(m[3]||'').toLowerCase(); if(ap==='pm'&&h<12)h+=12; if(ap==='am'&&h===12)h=0; return `${String(h).padStart(2,'0')}:${m[2]}`;
 }
+function displayTime24(t){
+  const raw=String(t||'').trim();if(!raw)return 'TBD';
+  let m=raw.match(/\b(\d{1,2})(?::(\d{2}))?\s*([AP]M)\b/i);
+  if(m){let h=Number(m[1])%12;if(/^p/i.test(m[3]))h+=12;return `${String(h).padStart(2,'0')}:${m[2]||'00'}`;}
+  m=raw.match(/\b([01]?\d|2[0-3]):([0-5]\d)\b/);if(m)return `${String(Number(m[1])).padStart(2,'0')}:${m[2]}`;
+  return raw;
+}
 function stamp(){const el=qs('#refreshStamp'); if(!el)return; el.textContent=data.refreshedAt?`Tournament data refreshed ${new Date(data.refreshedAt).toLocaleString('en-AU')}`:'Bundled snapshot — run npm run refresh to pull the latest TournamentSoftware data.';}
 function makeHomeSummary(source){
   const players=Array.isArray(source?.players)?source.players:[];
@@ -487,6 +533,6 @@ async function bootstrap(){
   }
   renderHeaderRefresh();setupPlayersShell();stamp();
   const initial=location.hash.slice(1);
-  if(['players','glass','vicpark'].includes(initial))await setPage(initial);
+  if(['players','glass','vicpark','favorites'].includes(initial))await setPage(initial);
 }
 bootstrap();
