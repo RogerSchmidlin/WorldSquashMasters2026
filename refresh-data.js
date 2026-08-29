@@ -254,8 +254,23 @@ function parseDate(s){
   // Scan ALL numeric dates instead of returning the first date-like value.
   // Profile pages can contain unrelated dates (membership/history/etc.) before
   // the actual scheduled match date.
-  for(const m of s.matchAll(/\b(2026)[-\/.](\d{1,2})[-\/.](\d{1,2})\b/g))add(m[1],m[2],m[3]);
-  for(const m of s.matchAll(/\b(\d{1,2})[\/.-](\d{1,2})[\/.-](2026)\b/g))add(m[3],m[2],m[1]);
+  for(const m of s.matchAll(/\b(2026)[-\/.](\d{1,2})[-\/.](\d{1,2})\b/g)){
+    // ISO-ish yyyy/mm/dd.
+    add(m[1],m[2],m[3]);
+  }
+
+  for(const m of s.matchAll(/\b(\d{1,2})[\/.-](\d{1,2})[\/.-](2026)\b/g)){
+    // TournamentSoftware can emit numeric dates in US month/day/year form.
+    // Try BOTH interpretations and let isTournamentDate() keep only the one
+    // that falls inside 30 Aug–6 Sep 2026.
+    //
+    // Examples:
+    //   8/30/2026 -> MDY -> 2026-08-30
+    //   9/1/2026  -> MDY -> 2026-09-01
+    //   30/8/2026 -> DMY -> 2026-08-30
+    add(m[3],m[2],m[1]); // DD/MM/YYYY
+    add(m[3],m[1],m[2]); // MM/DD/YYYY
+  }
 
   const monthNo=v=>/^sep/i.test(v)?9:8;
   for(const m of s.matchAll(/\b(\d{1,2})\s+(Aug(?:ust)?|Sep(?:tember)?)\s*(?:2026)?\b/gi))add(2026,monthNo(m[2]),m[1]);
