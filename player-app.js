@@ -63,7 +63,13 @@ const levelBadge=x=>{
 const squashBadges=x=>`<span class="squash-metrics">${rankBadge(x)}${levelBadge(x)}</span>`;
 const playerNameStack=(x,n,current=false)=>`<span class="player-name-stack"><b class="${current?'vic-tracked-name':''}">${esc(n||'TBD')}</b>${squashBadges(x)}</span>`;
 const fmt=d=>{const x=new Date(d+'T12:00:00');return Number.isNaN(x.getTime())?{long:esc(d),day:''}:{long:x.toLocaleDateString('en-AU',{day:'numeric',month:'long'}),day:x.toLocaleDateString('en-AU',{weekday:'short'})}};
-const has=(m,n)=>{if(officialPlayerId&&(String(m.player1Id||'')===String(officialPlayerId)||String(m.player2Id||'')===String(officialPlayerId)))return true;return !m.player1Id&&!m.player2Id&&(sameName(m.player1,n)||sameName(m.player2,n));};
+const has=(m,n)=>{
+  // TournamentSoftware occasionally publishes a correct player name with a
+  // mismatched/missing player ID. A matching ID is strong evidence, but a
+  // correct displayed name must remain an allowed fallback.
+  if(officialPlayerId&&(String(m.player1Id||'')===String(officialPlayerId)||String(m.player2Id||'')===String(officialPlayerId)))return true;
+  return sameName(m.player1,n)||sameName(m.player2,n);
+};
 const opp=m=>sameName(m.player1,name)?m.player2:(sameName(m.player2,name)?m.player1:(namesFromRecord(m).find(n=>!sameName(n,name))||''));
 const pb=n=>data.players.find(x=>sameName(x.name,n));
 const past=m=>String(m.status||'').toLowerCase()==='completed'||String(m.status||'').toLowerCase()==='played'||!!m.result;
@@ -76,26 +82,115 @@ function playerFavoriteButton(n){const on=isFavoritePlayer(n);return `<button ty
 function scoreWinnerSide(m){const g=[...String(m?.result||'').matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)].map(x=>[+x[1],+x[2]]);if(g.length<2)return 0;let a=0,b=0;for(const [x,y] of g){if(x>y)a++;else if(y>x)b++;}return a===b?0:(a>b?1:2)}
 function matchOutcomeForCurrentPlayer(m){const w=scoreWinnerSide(m);if(!w)return '';const side=sameName(m.player1,name)?1:sameName(m.player2,name)?2:0;return side?(w===side?'win':'loss'):''}
 
+
+function playerDetailMatchKey(m){
+  const d=canonicalDate(m.date||'');
+  const t=String(m.time||'').trim().toLowerCase();
+  const names=[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean).sort().join('|');
+  return [d,t,names].join('||');
+}
+function dedupePlayerDetailMatches(rows){
+  const map=new Map();
+  for(const m of rows||[]){
+    const key=playerDetailMatchKey(m);
+    if(!map.has(key)){
+      map.set(key,{...m});
+      continue;
+    }
+    const existing=map.get(key);
+    // Keep the richer copy while preserving the player names/date/time that
+    // identify the same fixture. This also collapses player1/player2 reversals.
+    for(const field of ['result','event','round','court','venue','status','rawText','player1Id','player2Id']){
+      const a=String(existing[field]||'');
+      const b=String(m[field]||'');
+      if(b.length>a.length)existing[field]=m[field];
+    }
+  }
+  return [...map.values()];
+}
+
 const venueCode=m=>{const place=[m.venue,m.court].filter(Boolean).join(' · ');if(/Karrinyup|\bAGC\b|Glass/i.test(place))return 'G';if(/Mirrabooka|Squashworld/i.test(place))return 'M';if(/Belmont|WA\s*State\s*Squash/i.test(place))return 'B';return '';};
 const venueBadge=m=>{const c=venueCode(m);return c?`<span class="venue-letter venue-${c.toLowerCase()}" aria-hidden="true">${c}</span>`:'';};
 const venuePlace=m=>[m.venue,m.court].filter(Boolean).join(' · ')||'Venue / court TBD';
 
 function playerMatchRow(m){
   const p1=pb(m.player1),p2=pb(m.player2);
-  const p1Current=officialPlayerId?String(m.player1Id||'')===String(officialPlayerId):sameName(m.player1,name),p2Current=officialPlayerId?String(m.player2Id||'')===String(officialPlayerId):sameName(m.player2,name);
+  const p1Current=(officialPlayerId&&String(m.player1Id||'')===String(officialPlayerId))||sameName(m.player1,name);
+  const p2Current=(officialPlayerId&&String(m.player2Id||'')===String(officialPlayerId))||sameName(m.player2,name);
   const outcome=past(m)?matchOutcomeForCurrentPlayer(m):'';
+  const place=venuePlace(m);
+
   return `<article class="vic-match-row player-schedule-row ${past(m)?'past':''} ${outcome?`match-${outcome}`:''}">
-    <div class="vic-time">${esc(displayTime24(m.time))}</div>
-    <div class="vic-match-main">
-      <div class="vic-event">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div>
-      <div class="vic-fixture-line">
-        <a href="${playerPageUrl(m.player1,m.player1Id)}">${flagImg(p1)}${playerNameStack(p1,m.player1,p1Current)}</a>
-        <span class="vic-vs">vs</span>
-        <a href="${playerPageUrl(m.player2,m.player2Id)}">${flagImg(p2)}${playerNameStack(p2,m.player2,p2Current)}</a>
-      </div>
-      ${past(m)?`<div class="match-history-score ${m.result?'has-score':'no-score'}"><span class="match-history-score-label">Score</span><strong>${m.result?esc(m.result):'Score not published'}</strong>${outcome?`<span class="match-outcome-badge match-outcome-${outcome}">${outcome==='win'?'WIN':'LOSS'}</span>`:''}</div>`:''}
+    <div class="vic-time">
+      <span class="vic-time-value">${esc(displayTime24(m.time))}</span>
+      <span class="vic-time-age">${esc(m.event||'')}</span>
     </div>
-    <div class="vic-location">${venueBadge(m)}<span>${esc(venuePlace(m))}</span></div>
+
+    <div class="vic-match-main">
+      <div class="vic-event">
+        <span class="vic-mobile-meta">
+          <span class="vic-mobile-time">${esc(displayTime24(m.time))}</span>
+          <span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(place)}</span></span>
+          <span class="vic-mobile-age">${esc(m.event||'')}</span>
+        </span>
+        <span class="vic-desktop-event">
+          <span class="vic-event-category">${esc(m.event||'')}</span>
+          ${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}
+        </span>
+      </div>
+
+      <div class="vic-fixture-line">
+        <a class="${p1Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">
+          <span class="fixture-player-desktop">
+            ${flagImg(p1)}
+            <span class="vic-player-name-wrap">
+              <span class="vic-player-name-meta-line">${playerNameStack(p1,m.player1,p1Current)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span>
+            </span>
+          </span>
+          <span class="fixture-player-mobile">
+            <span class="fixture-mobile-name">${esc(m.player1)}</span>
+            <span class="fixture-mobile-info">
+              <span class="fixture-mobile-flag">${flagImg(p1)}</span>
+              <span class="fixture-mobile-details">
+                <span class="fixture-mobile-country">${esc(p1?.country||'')}</span>
+                <span class="fixture-mobile-metrics">${squashBadges(p1)}</span>
+              </span>
+            </span>
+          </span>
+        </a>
+
+        <span class="vic-vs">vs</span>
+
+        <a class="${p2Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,m.player2Id)}">
+          <span class="fixture-player-desktop">
+            ${flagImg(p2)}
+            <span class="vic-player-name-wrap">
+              <span class="vic-player-name-meta-line">${playerNameStack(p2,m.player2,p2Current)}${p2?.country?`<small class="vic-player-inline-meta">${esc(p2.country)}</small>`:''}</span>
+            </span>
+          </span>
+          <span class="fixture-player-mobile">
+            <span class="fixture-mobile-name">${esc(m.player2)}</span>
+            <span class="fixture-mobile-info">
+              <span class="fixture-mobile-flag">${flagImg(p2)}</span>
+              <span class="fixture-mobile-details">
+                <span class="fixture-mobile-country">${esc(p2?.country||'')}</span>
+                <span class="fixture-mobile-metrics">${squashBadges(p2)}</span>
+              </span>
+            </span>
+          </span>
+        </a>
+
+        ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
+      </div>
+
+      ${past(m)?`<div class="match-history-score ${m.result?'has-score':'no-score'}">
+        <span class="match-history-score-label">Score</span>
+        <strong>${m.result?esc(m.result):'Score not published'}</strong>
+        ${outcome?`<span class="match-outcome-badge match-outcome-${outcome}">${outcome==='win'?'WIN':'LOSS'}</span>`:''}
+      </div>`:''}
+    </div>
+
+    <div class="vic-location" title="${esc(place)}">${venueBadge(m)}<span>${esc(place)}</span></div>
   </article>`;
 }
 function groupedMatches(ms){
@@ -109,7 +204,7 @@ if(!p){
   qs('#playerHeader').innerHTML='<div class="schedule-empty">Player not found.</div>';
   qs('#playerSchedule').innerHTML='';
 }else{
-  const ms=data.matches.filter(m=>has(m,name)).sort((a,b)=>`${a.date||''} ${a.time||''}`.localeCompare(`${b.date||''} ${b.time||''}`));
+  const ms=dedupePlayerDetailMatches(data.matches.filter(m=>has(m,name))).sort((a,b)=>`${a.date||''} ${a.time||''}`.localeCompare(`${b.date||''} ${b.time||''}`));
   qs('#playerHeader').innerHTML=`<div class="player-detail-card"><div class="player-detail-id">${flagImg(p,'tracked-flag')}<div><div class="eyebrow">${esc(p.country)} · ${esc(p.gender)} ${p.ageGroup}+</div><div class="player-name-line"><div class="player-name-stack player-detail-name-stack"><h1>${esc(p.name)}</h1>${squashBadges(p)}</div>${p.squashLevelsUrl?`<a class="squashlevels-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer">SquashLevels</a>`:''}${playerFavoriteButton(p.name)}</div></div></div><div class="player-detail-actions"><div class="status-chip">${ms.filter(m=>!past(m)).length} UPCOMING</div></div></div>`;
   const up=ms.filter(m=>!past(m)).sort((a,b)=>`${a.date||''} ${a.time||''}`.localeCompare(`${b.date||''} ${b.time||''}`)),done=ms.filter(past).sort((a,b)=>`${b.date||''} ${b.time||''}`.localeCompare(`${a.date||''} ${a.time||''}`));
   qs('#playerSchedule').innerHTML=`${up.length?`<div class="schedule-group upcoming-games-group"><div class="player-schedule-section-title"><span>Upcoming Matches</span><small>${up.length}</small></div>${groupedMatches(up)}</div>`:''}${done.length?`<div class="schedule-group past-games-group"><div class="player-schedule-section-title match-history-title"><span>Match History</span><small>${done.length} completed</small></div>${groupedMatches(done)}</div>`:''}${!up.length&&!done.length?'<div class="schedule-empty">No matches currently published.</div>':''}`;
