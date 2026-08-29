@@ -261,6 +261,23 @@ function parseDate(s){
   for(const m of s.matchAll(/\b(\d{1,2})\s+(Aug(?:ust)?|Sep(?:tember)?)\s*(?:2026)?\b/gi))add(2026,monthNo(m[2]),m[1]);
   for(const m of s.matchAll(/\b(Aug(?:ust)?|Sep(?:tember)?)\s+(\d{1,2})(?:,?\s*2026)?\b/gi))add(2026,monthNo(m[1]),m[2]);
 
+  // TournamentSoftware also renders date headings as "Sun 30", "Mon 31",
+  // "Tue 1", etc. The championship window makes these unambiguous:
+  // 30/31 = August, 1..6 = September.
+  const weekdayIndex={sun:0,mon:1,tue:2,wed:3,thu:4,fri:5,sat:6};
+  for(const m of s.matchAll(/\b(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?)\s*,?\s*(\d{1,2})\b/gi)){
+    const day=Number(m[2]);
+    const month=day>=30?8:(day>=1&&day<=6?9:0);
+    if(!month)continue;
+
+    // Extra safety: make sure weekday + date is actually one of the
+    // championship dates before accepting it.
+    const iso=`2026-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+    const dt=new Date(`${iso}T12:00:00Z`);
+    const expected=weekdayIndex[String(m[1]).slice(0,3).toLowerCase()];
+    if(isTournamentDate(iso)&&dt.getUTCDay()===expected&&!found.includes(iso))found.push(iso);
+  }
+
   return found[0]||'';
 }
 function parseTime(s){const m=clean(s).match(/\b(\d{1,2}):([0-5]\d)\s*(am|pm)?\b/i);return m?clean(m[0]):''}
@@ -366,7 +383,7 @@ async function extractProfileCandidates(page){
     try{
       const rows=await frame.evaluate(()=>{
         const clean=s=>String(s||'').replace(/\s+/g,' ').trim();
-        const dateRe=/(?:\b2026[-\/.]\d{1,2}[-\/.]\d{1,2}\b|\b\d{1,2}[\/.-]\d{1,2}[\/.-]2026\b|\b\d{1,2}\s+(?:Aug(?:ust)?|Sep(?:tember)?)\b|\b(?:Aug(?:ust)?|Sep(?:tember)?)\s+\d{1,2}\b)/i;
+        const dateRe=/(?:\b2026[-\/.]\d{1,2}[-\/.]\d{1,2}\b|\b\d{1,2}[\/.-]\d{1,2}[\/.-]2026\b|\b\d{1,2}\s+(?:Aug(?:ust)?|Sep(?:tember)?)\b|\b(?:Aug(?:ust)?|Sep(?:tember)?)\s+\d{1,2}\b|\b(?:Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?)\s*,?\s*(?:30|31|[1-6])\b)/i;
         const timeRe=/\b\d{1,2}:[0-5]\d\s*(?:am|pm)?\b/i;
         const playerHref=/player|participant|person|profile/i;
         const out=[],seen=new Set();
@@ -495,12 +512,10 @@ async function scrapeOneProfile(page,current,lookup,networkBucket){
     for(let i=0;i<6;i++){try{await page.evaluate(()=>window.scrollTo(0,document.documentElement.scrollHeight));await sleep(120)}catch{break}}
     candidates=await extractProfileCandidates(page);
   }catch(e){return {matches:[],error:e.message,candidates:0}}
-  let pageDate='';
-  try{
-    const pageText=await page.evaluate(()=>document.body?.innerText||'');
-    pageDate=parseDate(pageText);
-  }catch{}
-  const matches=candidates.map(c=>{if(pageDate&&!parseDate(`${c.context||''} ${c.text||''}`))c.context=clean(`${pageDate} ${c.context||''}`);return candidateToMatch(c,current,lookup)}).filter(Boolean);
+  // Each row must get its date from the row itself or its nearest date/day
+  // heading collected by contextFor(). Never use one whole-page date for every
+  // row: a player profile normally contains matches on several tournament days.
+  const matches=candidates.map(c=>candidateToMatch(c,current,lookup)).filter(Boolean);
   // Parse JSON responses captured during this profile as a second source. We only accept
   // JSON records when both the current player and another canonical player are identifiable.
   for(const packet of networkBucket.splice(0)){
