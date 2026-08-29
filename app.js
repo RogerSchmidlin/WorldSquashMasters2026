@@ -386,8 +386,16 @@ function renderFeatureCourt(date=selectedFeatureDate){
   selectedFeatureDate=date;
   qsa('.date-tab').forEach(x=>x.classList.toggle('active',x.dataset.date===date));
   const ms=featureMatchesForVenue().filter(m=>canonicalDate(m.date)===date).sort((a,b)=>to24(a.time||'').localeCompare(to24(b.time||'')));
+
+  // Use the same highlighted player frame as the Vic Park page for both
+  // Vic Park & Friends and browser-saved Fav Players.
+  const highlightedPlayers=[];
+  for(const playerName of [...VIC_PARK_PLAYERS,...getFavoriteNames()]){
+    if(playerName&&!highlightedPlayers.some(n=>sameName(n,playerName)))highlightedPlayers.push(playerName);
+  }
+
   const title=qs('#featureCourtTitle'); if(title)title.textContent='Courts';
-  qs('#glassMatches').innerHTML=ms.length?ms.map(m=>compactScheduleRow(m)).join(''):`<div class="schedule-empty"><strong>No matches found for this venue on ${esc(fmtDate(date).long)}.</strong></div>`;
+  qs('#glassMatches').innerHTML=ms.length?ms.map(m=>compactScheduleRow(m,highlightedPlayers)).join(''):`<div class="schedule-empty"><strong>No matches found for this venue on ${esc(fmtDate(date).long)}.</strong></div>`;
   qs('#glassDayCount').textContent=ms.length;
 }
 function perthTodayIso(){
