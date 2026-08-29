@@ -2,8 +2,8 @@ name: Refresh World Squash Masters data
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '17 * * * *'
+  #schedule:
+  #  - cron: '17 * * * *'
 
 permissions:
   contents: write
