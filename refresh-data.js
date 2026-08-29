@@ -234,13 +234,34 @@ function loadCachedPlayerLinks(canonicalPlayers){
   }catch{return []}
 }
 
+const TOURNAMENT_START_DATE='2026-08-30';
+const TOURNAMENT_END_DATE='2026-09-06';
+function isTournamentDate(iso){
+  return /^\d{4}-\d{2}-\d{2}$/.test(String(iso||'')) &&
+    iso>=TOURNAMENT_START_DATE && iso<=TOURNAMENT_END_DATE;
+}
 function parseDate(s){
-  s=clean(s); let m;
-  m=s.match(/\b(2026)[-\/.](\d{1,2})[-\/.](\d{1,2})\b/); if(m)return `${m[1]}-${String(m[2]).padStart(2,'0')}-${String(m[3]).padStart(2,'0')}`;
-  m=s.match(/\b(\d{1,2})[\/.-](\d{1,2})[\/.-](2026)\b/); if(m)return `${m[3]}-${String(m[2]).padStart(2,'0')}-${String(m[1]).padStart(2,'0')}`;
-  m=s.match(/\b(\d{1,2})\s+(Aug(?:ust)?|Sep(?:tember)?)\s*(?:2026)?\b/i); if(m)return `2026-${/^sep/i.test(m[2])?'09':'08'}-${String(m[1]).padStart(2,'0')}`;
-  m=s.match(/\b(Aug(?:ust)?|Sep(?:tember)?)\s+(\d{1,2})(?:,?\s*2026)?\b/i); if(m)return `2026-${/^sep/i.test(m[1])?'09':'08'}-${String(m[2]).padStart(2,'0')}`;
-  return '';
+  s=clean(s);
+  const found=[];
+
+  const add=(year,month,day)=>{
+    const y=Number(year),m=Number(month),d=Number(day);
+    if(y!==2026||m<1||m>12||d<1||d>31)return;
+    const iso=`${y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    if(isTournamentDate(iso)&&!found.includes(iso))found.push(iso);
+  };
+
+  // Scan ALL numeric dates instead of returning the first date-like value.
+  // Profile pages can contain unrelated dates (membership/history/etc.) before
+  // the actual scheduled match date.
+  for(const m of s.matchAll(/\b(2026)[-\/.](\d{1,2})[-\/.](\d{1,2})\b/g))add(m[1],m[2],m[3]);
+  for(const m of s.matchAll(/\b(\d{1,2})[\/.-](\d{1,2})[\/.-](2026)\b/g))add(m[3],m[2],m[1]);
+
+  const monthNo=v=>/^sep/i.test(v)?9:8;
+  for(const m of s.matchAll(/\b(\d{1,2})\s+(Aug(?:ust)?|Sep(?:tember)?)\s*(?:2026)?\b/gi))add(2026,monthNo(m[2]),m[1]);
+  for(const m of s.matchAll(/\b(Aug(?:ust)?|Sep(?:tember)?)\s+(\d{1,2})(?:,?\s*2026)?\b/gi))add(2026,monthNo(m[1]),m[2]);
+
+  return found[0]||'';
 }
 function parseTime(s){const m=clean(s).match(/\b(\d{1,2}):([0-5]\d)\s*(am|pm)?\b/i);return m?clean(m[0]):''}
 function deriveFields(text, fallbackEvent=''){
@@ -474,7 +495,11 @@ async function scrapeOneProfile(page,current,lookup,networkBucket){
     for(let i=0;i<6;i++){try{await page.evaluate(()=>window.scrollTo(0,document.documentElement.scrollHeight));await sleep(120)}catch{break}}
     candidates=await extractProfileCandidates(page);
   }catch(e){return {matches:[],error:e.message,candidates:0}}
-  let pageDate=''; try{pageDate=await page.evaluate(()=>{const t=(document.body.innerText||'');const m=t.match(/(?:\b2026[-\/.]\d{1,2}[-\/.]\d{1,2}\b|\b\d{1,2}[\/.-]\d{1,2}[\/.-]2026\b|\b\d{1,2}\s+(?:Aug(?:ust)?|Sep(?:tember)?)\b|\b(?:Aug(?:ust)?|Sep(?:tember)?)\s+\d{1,2}\b)/i);return m?m[0]:''})}catch{}
+  let pageDate='';
+  try{
+    const pageText=await page.evaluate(()=>document.body?.innerText||'');
+    pageDate=parseDate(pageText);
+  }catch{}
   const matches=candidates.map(c=>{if(pageDate&&!parseDate(`${c.context||''} ${c.text||''}`))c.context=clean(`${pageDate} ${c.context||''}`);return candidateToMatch(c,current,lookup)}).filter(Boolean);
   // Parse JSON responses captured during this profile as a second source. We only accept
   // JSON records when both the current player and another canonical player are identifiable.
@@ -2426,6 +2451,16 @@ function hasPlayer(m,n){return sameName(m.player1,n)||sameName(m.player2,n)}
   }
   const next={...existing,refreshedAt:new Date().toISOString(),players:canonicalPlayers,matches};
   delete next.trackedNames;
+
+  // Hard safety gate: this tournament only runs 30 Aug–6 Sep 2026.
+  // Never replace the published dataset if the scraper has attached an
+  // unrelated profile/history date to a match.
+  const invalidMatchDates=(next.matches||[]).filter(m=>!isTournamentDate(String(m.date||'')));
+  if(invalidMatchDates.length){
+    const sample=invalidMatchDates.slice(0,10).map(m=>`${m.date||'(missing)'} ${m.player1||'?'} vs ${m.player2||'?'}`).join(' | ');
+    throw new Error(`Date validation failed: ${invalidMatchDates.length} match(es) are outside ${TOURNAMENT_START_DATE}..${TOURNAMENT_END_DATE}. Existing published data was left unchanged. Sample: ${sample}`);
+  }
+
   writeDataFiles(next);
   console.log('Data validation passed. Updated data.js plus summary-data.js, players-data.js, matches-data.js and vicpark-data.js. Design pages and vic-park-players.js were not changed.');
   stopTotalTiming();

@@ -20,6 +20,9 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -33,25 +36,88 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Refresh tournament data
+      - name: Refresh and publish safely
+        shell: bash
         env:
           SQUASHLEVELS_EMAIL: ${{ secrets.SQUASHLEVELS_EMAIL }}
           SQUASHLEVELS_PASSWORD: ${{ secrets.SQUASHLEVELS_PASSWORD }}
           HEADLESS: '0'
-          # Optional later: these take precedence over email/password if you add them.
           SQUASHLEVELS_STORAGE_STATE_B64: ${{ secrets.SQUASHLEVELS_STORAGE_STATE_B64 }}
           SQUASHLEVELS_SESSION_STORAGE_B64: ${{ secrets.SQUASHLEVELS_SESSION_STORAGE_B64 }}
-        run: xvfb-run --auto-servernum npm run refresh
-
-      - name: Commit refreshed data
-        shell: bash
         run: |
-          if git diff --quiet -- data.js summary-data.js players-data.js matches-data.js vicpark-data.js; then
-            echo "No data changes to commit."
-            exit 0
-          fi
+          set -euo pipefail
+
+          DATA_FILES="data.js summary-data.js players-data.js matches-data.js vicpark-data.js"
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data.js summary-data.js players-data.js matches-data.js vicpark-data.js
-          git commit -m "Refresh tournament data"
-          git push
+
+          for ATTEMPT in 1 2; do
+            echo ""
+            echo "============================================================"
+            echo "Refresh attempt $ATTEMPT of 2"
+            echo "============================================================"
+
+            git fetch origin main
+            git reset --hard origin/main
+            BASE_SHA="$(git rev-parse HEAD)"
+            echo "Refresh base: $BASE_SHA"
+
+            echo "Starting full tournament + SquashLevels refresh..."
+            xvfb-run --auto-servernum npm run refresh
+
+            echo "Validating generated data files..."
+
+            for FILE in $DATA_FILES; do
+              if [ ! -s "$FILE" ]; then
+                echo "::error::$FILE is missing or empty. Existing website data will NOT be replaced."
+                exit 1
+              fi
+            done
+
+            for FILE in $DATA_FILES; do
+              node --check "$FILE"
+            done
+
+            if git diff --quiet -- $DATA_FILES; then
+              echo "Refresh completed successfully; no data changes detected."
+              exit 0
+            fi
+
+            echo "Generated data diff:"
+            git diff --stat -- $DATA_FILES
+
+            git fetch origin main
+            REMOTE_SHA="$(git rev-parse origin/main)"
+
+            if [ "$REMOTE_SHA" != "$BASE_SHA" ]; then
+              echo "::warning::main changed while the refresh was running."
+              echo "Started from: $BASE_SHA"
+              echo "Current main: $REMOTE_SHA"
+
+              if [ "$ATTEMPT" -lt 2 ]; then
+                echo "Discarding this generated copy and rerunning the refresh from the newest main."
+                continue
+              fi
+
+              echo "::error::main changed again during the retry. Refusing to overwrite newer repository data."
+              echo "The existing website remains untouched. The next scheduled run can try again."
+              exit 1
+            fi
+
+            git add $DATA_FILES
+            git commit -m "Refresh tournament data"
+
+            if git push origin HEAD:main; then
+              echo "Refresh successfully published."
+              exit 0
+            fi
+
+            if [ "$ATTEMPT" -lt 2 ]; then
+              echo "::warning::Push raced with another update. Rerunning from the newest main."
+              continue
+            fi
+
+            echo "::error::Push failed again. Existing remote website data has been left untouched."
+            exit 1
+          done
