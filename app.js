@@ -21,6 +21,12 @@ async function ensureLegacyData(){
 let playersReady=false,matchesReady=false,vicParkDataReady=false;
 let favoriteMatchIndex=null;
 
+
+
+
+
+
+
 function rebuildFavoriteMatchIndex(){
   const index=new Map();
   for(const m of (data.matches||[])){
@@ -46,6 +52,18 @@ async function ensurePlayersData(){
   }
   rebuildPlayerNeedles();playersReady=true;
 }
+
+function normalizeSelfMatchAsBye(m){
+  if(!m||!sameName(m.player1,m.player2))return m;
+  const p1Id=String(m.player1Id||''),p2Id=String(m.player2Id||'');
+  if(p1Id&&p2Id&&p1Id!==p2Id)return m;
+  const sameNamePlayers=(data.players||[]).filter(p=>sameName(p.name,m.player1));
+  if((p1Id&&p2Id&&p1Id===p2Id)||sameNamePlayers.length<=1){
+    return {...m,player2:'Bye',player2Id:'',status:String(m.status||'').toLowerCase()==='completed'?m.status:'bye'};
+  }
+  return m;
+}
+
 async function ensureMatchesData(){
   if(matchesReady)return;
   await ensurePlayersData();
@@ -57,7 +75,7 @@ async function ensureMatchesData(){
     const legacy=await ensureLegacyData();
     data.matches=legacy?.matches||[];
   }
-  data.matches=(data.matches||[]).map(normaliseMatch);
+  data.matches=(data.matches||[]).map(normaliseMatch).map(normalizeSelfMatchAsBye);
   data.baseMatches=data.matches.map(m=>({...m}));
   rebuildFavoriteMatchIndex();
   matchesReady=true;
@@ -70,7 +88,7 @@ async function ensureVicParkData(){
     const pack=window.VIC_PARK_DATA;
     if(!pack||!Array.isArray(pack.players)||!Array.isArray(pack.matches))throw new Error('vicpark-data.js did not define VIC_PARK_DATA');
     vicParkPlayers=pack.players;
-    vicParkMatches=pack.matches.map(normaliseMatch);
+    vicParkMatches=pack.matches.map(normaliseMatch).map(normalizeSelfMatchAsBye);
     window.__vicParkBaseMatches=vicParkMatches.map(m=>({...m}));
   }catch(e){
     // Backwards-compatible fallback while deploying the new small Vic Park data file.
@@ -182,20 +200,22 @@ function parseSquashScoresApi(payload,players){
     return p?.name||String(raw||'').trim();
   };
 
-  const gamesScore=match=>{
+  const gamesScore=(match,p1Side=true)=>{
     const games=Array.isArray(match?.games)?match.games:[];
     const pairs=[];
     for(const g of games){
-      const a=Number(g?.player1Score),b=Number(g?.player2Score);
+      const a=Number(g?.player1Score);
+      const b=Number(g?.player2Score);
       if(!Number.isFinite(a)||!Number.isFinite(b))continue;
       if(a===0&&b===0)continue;
-      pairs.push(`${a}-${b}`);
+      pairs.push(p1Side?`${a}-${b}`:`${b}-${a}`);
     }
     return pairs.join(', ');
   };
 
   const gamesWon=match=>{
-    const p1=Number(match?.player1GamesWon),p2=Number(match?.player2GamesWon);
+    const p1=Number(match?.player1GamesWon);
+    const p2=Number(match?.player2GamesWon);
     if(Number.isFinite(p1)&&Number.isFinite(p2))return [p1,p2];
     let a=0,b=0;
     for(const g of Array.isArray(match?.games)?match.games:[]){
@@ -219,23 +239,31 @@ function parseSquashScoresApi(payload,players){
         if(dm)date=`${dm[1]}-${dm[2]}-${dm[3]}`;
       }
 
-      const description=String(m?.description||'').replace(/\s+/g,' ').trim();
       let time='';
-      let tm=description.match(/\b(\d{1,2}):([0-5]\d)\b/);
+      const description=String(m?.description||'').replace(/\s+/g,' ').trim();
+      const tm=description.match(/\b(\d{1,2}):([0-5]\d)\b/);
       if(tm)time=`${String(+tm[1]).padStart(2,'0')}:${tm[2]}`;
       if(!time){
-        tm=rawDate.match(/[T\s](\d{1,2}):([0-5]\d)/);
-        if(tm)time=`${String(+tm[1]).padStart(2,'0')}:${tm[2]}`;
+        const dt=rawDate.match(/[T\s](\d{1,2}):([0-5]\d)/);
+        if(dt)time=`${String(+dt[1]).padStart(2,'0')}:${dt[2]}`;
       }
 
       const [p1Won,p2Won]=gamesWon(m);
-      const result=gamesScore(m);
+      const score=gamesScore(m,true);
       const completed=p1Won>=3||p2Won>=3;
-      const started=result.length>0||p1Won>0||p2Won>0;
-      const status=completed?'completed':(started?'live':'scheduled');
+      const hasStarted=score.length>0||p1Won>0||p2Won>0;
+
+      let status='scheduled';
+      if(completed)status='completed';
+      else if(hasStarted)status='live';
 
       rows.push({
-        date,time,player1,player2,result,status,
+        date,
+        time,
+        player1,
+        player2,
+        result:score,
+        status,
         venue:String(location?.name||location?.locationName||'').trim(),
         court:String(m?.courtName||m?.court||'').trim(),
         event:String(m?.categoryName||m?.category||'').trim(),
@@ -246,51 +274,11 @@ function parseSquashScoresApi(payload,players){
     }
   }
 
-  // SquashScores can contain both the old empty slot and the moved match.
-  // For the same players/date, if two different times exist and one row is the
-  // empty scheduled placeholder, collapse them into one moved fixture.
-  const groups=new Map();
-  for(const row of rows){
-    const key=`${canonicalDate(row.date)}|${[ssNorm(row.player1),ssNorm(row.player2)].sort().join('|')}`;
-    if(!groups.has(key))groups.set(key,[]);
-    groups.get(key).push(row);
-  }
+  console.log(`SquashScores API: ${locations.length} location(s) · ${rows.length} match(es)`);
+  const rogerRows=rows.filter(m=>ssNorm(m.player1)==='roger schmidlin'||ssNorm(m.player2)==='roger schmidlin');
+  if(rogerRows.length)console.log('SquashScores Roger rows:',rogerRows);
 
-  const collapsed=[];
-  for(const group of groups.values()){
-    if(group.length===1){collapsed.push(group[0]);continue;}
-
-    const times=[...new Set(group.map(x=>displayTime24(x.time||'')).filter(x=>x&&x!=='TBD'))];
-    const active=group
-      .filter(x=>x.status==='live'||x.status==='completed'||x.result)
-      .sort((a,b)=>String(b.result||'').length-String(a.result||'').length);
-
-    if(times.length>1){
-      // Prefer the row that has activity/result data. If neither has activity,
-      // prefer the later clock time because the old slot is typically left empty.
-      let current=active[0];
-      if(!current){
-        current=group.slice().sort((a,b)=>displayTime24(b.time).localeCompare(displayTime24(a.time)))[0];
-      }
-      const otherTimes=times.filter(t=>t!==displayTime24(current.time));
-      if(otherTimes.length){
-        const original=otherTimes.slice().sort()[0];
-        current={...current,originalTime:original,timeMoved:true};
-      }
-      collapsed.push(current);
-      continue;
-    }
-
-    const richest=group.slice().sort((a,b)=>{
-      const ar=(a.status==='completed'?3000:a.status==='live'?2000:0)+String(a.result||'').length;
-      const br=(b.status==='completed'?3000:b.status==='live'?2000:0)+String(b.result||'').length;
-      return br-ar;
-    })[0];
-    collapsed.push(richest);
-  }
-
-  console.log(`SquashScores API: ${locations.length} location(s) · ${collapsed.length} match(es) after move/dedupe`);
-  return collapsed;
+  return rows;
 }
 
 function parseSquashScoresHtml(html,players){
@@ -423,6 +411,12 @@ function ssOverlay(base,live){
   const dateKey=m=>canonicalDate(m.date||'');
   const timeKey=m=>displayTime24(m.time||'');
 
+  const courtKey=m=>{
+    const raw=`${m?.court||''} ${m?.venue||''} ${m?.rawText||''}`;
+    const hit=raw.match(/\b(AGC|SC\s*\d+|COURT\s*\d+)\b/i);
+    return hit?hit[1].replace(/\s+/g,'').toUpperCase():'';
+  };
+
   const byExact=new Map();
   const byPair=new Map();
 
@@ -439,25 +433,45 @@ function ssOverlay(base,live){
     const pair=pairKey(liveMatch);
     const date=dateKey(liveMatch);
     const time=timeKey(liveMatch);
+    const court=courtKey(liveMatch);
 
-    // Best case: same date + same players.
     if(date){
       const exact=byExact.get(`${date}|${pair}`)||[];
+
       if(exact.length===1)return exact[0];
+
       const timed=exact.filter(m=>time&&timeKey(m)===time);
       if(timed.length===1)return timed[0];
+
+      if(court){
+        const courted=exact.filter(m=>courtKey(m)===court);
+        if(courted.length===1)return courted[0];
+
+        const timedCourted=timed.filter(m=>courtKey(m)===court);
+        if(timedCourted.length===1)return timedCourted[0];
+      }
+
+      // CRITICAL: a SquashScores row with an explicit date must never spill
+      // into another tournament day. The overview API can lag behind Perth
+      // and still return Sunday's fixtures after Monday has begun.
+      return null;
     }
 
-    // SquashScores sometimes omits/changes the date field in the live response.
-    // The scheduled time + player pair is then the safest identity.
+    // Only date-less live rows may use the weaker pair/time fallback.
     const pairRows=byPair.get(pair)||[];
+
     const timed=pairRows.filter(m=>time&&timeKey(m)===time);
     if(timed.length===1)return timed[0];
 
-    // If this player pairing only exists once in the tournament data, augment
-    // that fixture rather than creating a duplicate TBD row.
-    if(pairRows.length===1)return pairRows[0];
+    if(court){
+      const courted=pairRows.filter(m=>courtKey(m)===court);
+      if(courted.length===1)return courted[0];
 
+      const timedCourted=timed.filter(m=>courtKey(m)===court);
+      if(timedCourted.length===1)return timedCourted[0];
+    }
+
+    if(pairRows.length===1)return pairRows[0];
     return null;
   };
 
@@ -467,6 +481,7 @@ function ssOverlay(base,live){
     if(existing){
       if(l.result)existing.result=orientLiveResultToExisting(existing,l);
       if(l.status==='completed'||l.status==='live')existing.status=l.status;
+
       if(l.timeMoved&&l.originalTime){
         existing.originalTime=l.originalTime;
         existing.time=l.time;
@@ -474,17 +489,23 @@ function ssOverlay(base,live){
       }else if(l.time){
         existing.time=l.time;
       }
-      if(l.venue)existing.venue=l.venue;
-      if(l.court)existing.court=l.court;
+
+      // Keep TournamentSoftware location/court if it already exists.
+      // SquashScores often reports generic venue names such as WORLDMASTERS26.
+      if(!existing.venue&&l.venue)existing.venue=l.venue;
+      if(!existing.court&&l.court)existing.court=l.court;
+
       if(l.event&&!existing.event)existing.event=l.event;
       if(l.round&&!existing.round)existing.round=l.round;
       existing.liveSource='SquashScores';
       continue;
     }
 
-    // Only add a genuinely new SquashScores fixture when it has enough identity
-    // information. A date-less record is not allowed to become a duplicate TBD row.
-    if(dateKey(l)&&pairKey(l)&&timeKey(l)){
+    // Add a genuinely new SquashScores fixture only when there is enough identity
+    // AND that date exists in this page's TournamentSoftware subset.
+    const liveDate=dateKey(l);
+    const baseDates=new Set((base||[]).map(m=>dateKey(m)).filter(Boolean));
+    if(liveDate&&baseDates.has(liveDate)&&pairKey(l)&&timeKey(l)){
       out.push({...l,rawText:'SquashScores live'});
     }
   }
@@ -806,21 +827,13 @@ function matchScoreSummary(m){
   </div>`;
 }
 
-function movedTimeNote(m){
-  if(!m?.timeMoved||!m?.originalTime)return '';
-  const original=displayTime24(m.originalTime);
-  const current=displayTime24(m.time);
-  if(!original||original==='TBD'||original===current)return '';
-  return `<div class="match-moved-notice">MOVED · originally ${esc(original)}</div>`;
-}
-
 function compactScheduleRow(m,trackedNames=[]){
   const p1=playerByName(m.player1), p2=playerByName(m.player2);
   const p1Tracked=trackedNames.some(n=>sameName(n,m.player1));
   const p2Tracked=trackedNames.some(n=>sameName(n,m.player2));
   const v=venueVisual(m);
   const live=isMatchCurrent(m);
-  return `<article class="vic-match-row ${isPast(m)?'past':''} ${live?'match-live':''}">${movedTimeNote(m)}
+  return `<article class="vic-match-row ${isPast(m)?'past':''} ${live?'match-live':''}">
     <div class="vic-time"><span class="vic-time-value">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-time-age">${esc(m.event||'')}</span></div>
     <div class="vic-match-main">
       <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(m.event||'')}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(m.event||'')}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
@@ -877,10 +890,76 @@ let selectedFeatureDate='';
 function featureMatchesForVenue(){
   return (data.matches||[]).filter(m=>featureVenueKey(m)===selectedFeatureVenue);
 }
+
+function authoritativeDateMatches(baseMatches,liveMatches,date){
+  const targetDate=canonicalDate(date||'');
+  const liveForDate=(liveMatches||[]).filter(l=>canonicalDate(l.date||'')===targetDate);
+
+  // SquashScores is authoritative only for dates it is actually publishing.
+  if(!liveForDate.length){
+    return (baseMatches||[])
+      .filter(m=>canonicalDate(m.date||'')===targetDate)
+      .map(m=>({...m}));
+  }
+
+  const baseForDate=(baseMatches||[])
+    .filter(m=>canonicalDate(m.date||'')===targetDate);
+
+  const pairKey=m=>[ssNorm(m.player1),ssNorm(m.player2)].sort().join('|');
+  const timeKey=m=>displayTime24(m.time||'');
+
+  const findBase=l=>{
+    const pair=pairKey(l);
+    const exact=baseForDate.filter(m=>pairKey(m)===pair);
+
+    if(exact.length===1)return exact[0];
+
+    const timed=exact.filter(m=>timeKey(m)===timeKey(l));
+    if(timed.length===1)return timed[0];
+
+    return null;
+  };
+
+  return liveForDate.map(l=>{
+    const base=findBase(l);
+
+    if(!base){
+      return normaliseMatch({...l,rawText:'SquashScores authoritative fixture'});
+    }
+
+    // SquashScores owns the fixture identity/result/status/time for this date.
+    // TournamentSoftware supplies stable metadata where available.
+    return normaliseMatch({
+      ...base,
+      player1:l.player1||base.player1,
+      player2:l.player2||base.player2,
+      result:l.result||base.result||'',
+      status:l.status||base.status||'',
+      time:l.time||base.time,
+      originalTime:l.originalTime||base.originalTime,
+      timeMoved:!!(l.timeMoved||base.timeMoved),
+      venue:base.venue||l.venue,
+      court:base.court||l.court,
+      event:base.event||l.event,
+      round:base.round||l.round,
+      liveSource:'SquashScores'
+    });
+  }).map(normalizeSelfMatchAsBye);
+}
+
 function renderFeatureCourt(date=selectedFeatureDate){
   selectedFeatureDate=date;
   qsa('.date-tab').forEach(x=>x.classList.toggle('active',x.dataset.date===date));
-  const ms=featureMatchesForVenue().filter(m=>canonicalDate(m.date)===date).sort((a,b)=>to24(a.time||'').localeCompare(to24(b.time||'')));
+
+  const dayMatches=authoritativeDateMatches(
+    data.baseMatches||data.matches,
+    squashScoresLatestLive,
+    date
+  );
+
+  const ms=dayMatches
+    .filter(m=>featureVenueKey(m)===selectedFeatureVenue)
+    .sort((a,b)=>to24(a.time||'').localeCompare(to24(b.time||'')));
 
   // Use the same highlighted player frame as the Vic Park page for both
   // Vic Park & Friends and browser-saved Fav Players.
@@ -923,6 +1002,55 @@ function setupGlass(){
   rebuildFeatureDates();
 }
 
+
+function splitUpcomingAndHistoryRows(rows,getMatch){
+  const today=perthTodayIso();
+  const upcoming=[],history=[];
+
+  for(const row of rows||[]){
+    const m=getMatch(row);
+    const d=canonicalDate(m?.date||'');
+    if(d&&d<today)history.push(row);
+    else upcoming.push(row);
+  }
+
+  const asc=(a,b)=>{
+    const am=getMatch(a),bm=getMatch(b);
+    return `${canonicalDate(am.date)} ${to24(am.time||'')}`.localeCompare(`${canonicalDate(bm.date)} ${to24(bm.time||'')}`);
+  };
+  const desc=(a,b)=>-asc(a,b);
+
+  upcoming.sort(asc);
+  history.sort(desc);
+  return {upcoming,history};
+}
+
+function renderGroupedMatchRows(rows,getMatch,renderRow){
+  const {upcoming,history}=splitUpcomingAndHistoryRows(rows,getMatch);
+  let html='',day='';
+
+  const renderGroup=(group,isHistory=false)=>{
+    if(isHistory&&group.length){
+      html+=`<div class="vic-day-heading history-heading"><span>History</span><strong>Past matches</strong></div>`;
+    }
+    day='';
+    for(const row of group){
+      const m=getMatch(row);
+      const d=canonicalDate(m.date);
+      if(d!==day){
+        day=d;
+        const f=fmtDate(d);
+        html+=`<div class="vic-day-heading ${isHistory?'history-day-heading':''}"><span>${esc(f.day)}</span><strong>${esc(f.date)}</strong></div>`;
+      }
+      html+=renderRow(row);
+    }
+  };
+
+  renderGroup(upcoming,false);
+  renderGroup(history,true);
+  return html;
+}
+
 function renderFavoritePlayers(){
   const favourites=getFavoriteNames().map(n=>playerByName(n)).filter(Boolean);
   const names=saveFavoriteNames(favourites.map(p=>p.name));
@@ -930,24 +1058,40 @@ function renderFavoritePlayers(){
   const list=qs('#favoritePlayerList'),matchesEl=qs('#favoriteMatches');if(!list||!matchesEl)return;
   if(!names.length){list.innerHTML='';matchesEl.innerHTML='<div class="schedule-empty"><strong>No favourite players yet.</strong><br><span>Open Players and tap ☆ Fav next to anyone you want to follow.</span></div>';return;}
   list.innerHTML=favourites.map(p=>`<div class="fav-player-card"><a class="fav-player-main" href="${playerPageUrl(p.name,p.officialPlayerId)}">${flagImg(p,'flag-img')}<span class="player-name-stack"><b>${esc(p.name)}</b>${squashBadges(p)}<small>${esc(p.country)} · ${p.ageGroup}+</small></span></a>${favoriteButton(p.name,'fav-remove-btn')}</div>`).join('');
-  const map=new Map();
-  const index=favoriteMatchIndex||new Map();
-  for(const favName of names){
-    const matches=index.get(nameKey(favName))||[];
-    for(const m of matches){
-      const players=[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean).sort().join('|');
-      const key=`${canonicalDate(m.date)}||${to24(m.time||'')}||${players}`;
-      if(!map.has(key))map.set(key,{m,tracked:[favName]});
-      else{
-        const row=map.get(key);
-        if(!row.tracked.some(x=>sameName(x,favName)))row.tracked.push(favName);
-        if(!row.m.result&&m.result)row.m=m;
-      }
+  const stableBase=(data.baseMatches||data.matches||[]);
+  const allDates=[...new Set(stableBase.map(m=>canonicalDate(m.date)).filter(Boolean))];
+  const favMatches=[];
+
+  for(const d of allDates){
+    const dayRows=authoritativeDateMatches(stableBase,squashScoresLatestLive,d);
+    for(const m of dayRows){
+      if(names.some(n=>sameName(m.player1,n)||sameName(m.player2,n)))favMatches.push(m);
     }
   }
-  const rows=[...map.values()].sort((a,b)=>`${canonicalDate(a.m.date)} ${to24(a.m.time||'')}`.localeCompare(`${canonicalDate(b.m.date)} ${to24(b.m.time||'')}`));
-  let day='',html='';
-  for(const {m,tracked} of rows){const d=canonicalDate(m.date);if(d!==day){day=d;const f=fmtDate(d);html+=`<div class="vic-day-heading"><span>${esc(f.day)}</span><strong>${esc(f.date)}</strong></div>`;}html+=compactScheduleRow(m,tracked);}
+
+  const map=new Map();
+  for(const m of favMatches){
+    const tracked=names.filter(n=>sameName(m.player1,n)||sameName(m.player2,n));
+    if(!tracked.length)continue;
+
+    const players=[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean).sort().join('|');
+    const key=`${canonicalDate(m.date)}||${to24(m.time||'')}||${players}`;
+
+    if(!map.has(key))map.set(key,{m,tracked:[...tracked]});
+    else{
+      const row=map.get(key);
+      for(const favName of tracked){
+        if(!row.tracked.some(x=>sameName(x,favName)))row.tracked.push(favName);
+      }
+      if(!row.m.result&&m.result)row.m=m;
+    }
+  }
+  const rows=[...map.values()];
+  const html=renderGroupedMatchRows(
+    rows,
+    row=>row.m,
+    row=>compactScheduleRow(row.m,row.tracked)
+  );
   matchesEl.innerHTML=html||'<div class="schedule-empty"><strong>No published matches found for your favourite players.</strong></div>';refreshFavoriteButtons();
 }
 document.addEventListener('click',e=>{const btn=e.target.closest?.('[data-favourite-player]');if(!btn)return;e.preventDefault();e.stopPropagation();const n=btn.dataset.favouritePlayer||'';if(!n)return;toggleFavoritePlayer(n);refreshFavoriteButtons();if(location.hash==='#favorites')renderFavoritePlayers();});
@@ -969,29 +1113,17 @@ function setupVicPark(){
     const tracked=names.filter(name=>matchHas(m,name));
     if(tracked.length) rows.push({m,tracked});
   }
-  rows.sort((a,b)=>{
-    const ka=`${a.m.date||'9999-99-99'} ${to24(a.m.time||'')}`;
-    const kb=`${b.m.date||'9999-99-99'} ${to24(b.m.time||'')}`;
-    return ka.localeCompare(kb);
-  });
-
   const container=qs('#trackedPlayers');
   if(!rows.length){
     container.innerHTML=`<div class="schedule-empty"><strong>No Vic Park matches found in the refreshed match data.</strong><br><span>${names.length?`Tracking: ${names.map(esc).join(', ')}`:'Add players to vic-park-players.js.'}</span></div>`;
     return;
   }
 
-  let currentDate='';
-  let html='';
-  for(const {m,tracked} of rows){
-    if(m.date!==currentDate){
-      currentDate=m.date;
-      const f=fmtDate(m.date);
-      html+=`<div class="vic-day-heading"><span>${esc(f.day)}</span><strong>${esc(f.date)}</strong></div>`;
-    }
-    html+=compactScheduleRow(m,tracked);
-  }
-  container.innerHTML=html;
+  container.innerHTML=renderGroupedMatchRows(
+    rows,
+    row=>row.m,
+    row=>compactScheduleRow(row.m,row.tracked)
+  );
 }
 
 function to24(t){
@@ -1030,28 +1162,58 @@ function makeHomeSummary(source){
 
 
 let squashScoresPollTimer=null;
+let squashScoresLatestLive=[];
+let squashScoresLatestFingerprint='';
+let squashScoresLastVicParkFingerprint='';
+function squashScoresFingerprint(rows){
+  return JSON.stringify((rows||[]).map(m=>[
+    canonicalDate(m.date||''),displayTime24(m.time||''),
+    ssNorm(m.player1),ssNorm(m.player2),String(m.status||''),
+    String(m.result||''),String(m.venue||''),String(m.court||'')
+  ]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b))));
+}
+
 async function updateSquashScoresLive(){
   try{
     const payload=await fetchSquashScoresApi();
     const known=[...(data.players||[]),...(vicParkPlayers||[])];
     const uniq=[];const seen=new Set();
-    for(const p of known){const k=ssNorm(p?.name);if(k&&!seen.has(k)){seen.add(k);uniq.push(p)}}
+    for(const p of known){
+      const k=ssNorm(p?.name);
+      if(k&&!seen.has(k)){seen.add(k);uniq.push(p)}
+    }
+
     const live=parseSquashScoresApi(payload,uniq);
-    console.log(`SquashScores live overlay: ${live.length} match(es) parsed`);
     if(!live.length)return;
 
-    if(matchesReady){
-      data.matches=ssOverlay(data.baseMatches||data.matches,live).map(normaliseMatch);
-      rebuildFavoriteMatchIndex();
-    }
-    if(vicParkDataReady){
-      vicParkMatches=ssOverlay(window.__vicParkBaseMatches||vicParkMatches,live).map(normaliseMatch);
+    const fingerprint=squashScoresFingerprint(live);
+    const fullPagesChanged=fingerprint!==squashScoresLatestFingerprint;
+
+    // Courts/Fav use the latest SquashScores snapshot at render time.
+    // Do NOT mutate the full tournament dataset.
+    squashScoresLatestLive=live;
+    squashScoresLatestFingerprint=fingerprint;
+
+    let vicUpdated=false;
+
+    // Preserve the working Vic Park mechanism exactly:
+    // small relevant subset first, then overlay live scores.
+    if(vicParkDataReady&&fingerprint!==squashScoresLastVicParkFingerprint){
+      vicParkMatches=ssOverlay(window.__vicParkBaseMatches||vicParkMatches,live)
+        .map(normaliseMatch)
+        .map(normalizeSelfMatchAsBye);
+      squashScoresLastVicParkFingerprint=fingerprint;
+      vicUpdated=true;
     }
 
     const page=location.hash.slice(1)||'home';
-    if(page==='glass'&&glassReady)renderFeatureCourt(selectedFeatureDate);
-    else if(page==='favorites')renderFavoritePlayers();
-    else if(page==='vicpark'&&vicParkReady)setupVicPark();
+    if(page==='glass'&&glassReady&&fullPagesChanged){
+      renderFeatureCourt(selectedFeatureDate);
+    }else if(page==='favorites'&&fullPagesChanged){
+      renderFavoritePlayers();
+    }else if(page==='vicpark'&&vicParkReady&&vicUpdated){
+      setupVicPark();
+    }
   }catch(e){
     console.warn('SquashScores live unavailable:',e?.message||e);
   }

@@ -482,8 +482,17 @@ async function extractProfileCandidates(page){
                 .map(x=>Number(x.trim()))
                 .filter(v=>v>=0&&v<=30);
 
-              const nums=(rawNums.length>=3&&rawNums.length<=5)?rawNums:numeric;
-              if(nums.length>=3&&nums.length<=5){
+              // Modern TournamentSoftware result rows normally contain:
+              //   GamesWon | Game1 | Game2 | Game3 | Game4 | Game5
+              // e.g. Daniel Jones: 0 6 9 11 12 11
+              //      Philip Taylor: 3 11 11 7 10 5
+              // Keep up to six trailing numeric values here; the pairing helper
+              // below removes the GamesWon column and unused 0-0 game columns.
+              let nums=[];
+              if(rawNums.length>=3)nums=rawNums.slice(-Math.min(6,rawNums.length));
+              else if(numeric.length>=3)nums=numeric.slice(-Math.min(6,numeric.length));
+
+              if(nums.length>=3&&nums.length<=6){
                 scoreRows.push({
                   href:a.href,
                   text:clean(a.innerText||a.getAttribute('aria-label')||a.getAttribute('title')||''),
@@ -507,19 +516,80 @@ async function extractProfileCandidates(page){
 }
 
 function buildPlayerLookup(canonicalPlayers, officialLinks){
-  const byName=new Map(canonicalPlayers.map(p=>[nameKey(p.name),p]));
-  const byHref=new Map(), byHrefKey=new Map(), byId=new Map();
+  const byNameAll=new Map();
+  const byId=new Map();
+
+  for(const p of canonicalPlayers){
+    const key=nameKey(p.name);
+    if(!byNameAll.has(key))byNameAll.set(key,[]);
+    byNameAll.get(key).push(p);
+    if(p.officialPlayerId)byId.set(String(p.officialPlayerId),p);
+  }
+
+  // Only expose byName when the name is unique. Callers must not silently pick
+  // one of multiple official players with the same displayed name.
+  const byName=new Map();
+  for(const [key,rows] of byNameAll){
+    if(rows.length===1)byName.set(key,rows[0]);
+  }
+
+  const byHref=new Map(),byHrefKey=new Map();
   for(const x of officialLinks){
     const href=x.href.split('#')[0];
-    const id=x.officialPlayerId||hrefKey(href);
-    const info={name:x.name,href,officialPlayerId:id};
+    const id=String(x.officialPlayerId||hrefKey(href)||'');
+    const canonical=byId.get(id);
+
+    const info={
+      name:canonical?.name||x.name,
+      href,
+      officialPlayerId:id,
+      ageGroup:canonical?.ageGroup??x.ageGroup??'',
+      gender:canonical?.gender||x.gender||'',
+      country:canonical?.country||x.country||''
+    };
+
     byHref.set(href,info);
     byHrefKey.set(hrefKey(href),info);
-    byId.set(id,info);
-    const p=byName.get(nameKey(x.name));
-    if(p){p.officialPlayerId=id;p.officialProfileUrl=href;}
+
+    if(canonical){
+      canonical.officialPlayerId=id;
+      canonical.officialProfileUrl=href;
+    }
   }
-  return {byName,byHref,byHrefKey,byId};
+
+  return {byName,byNameAll,byHref,byHrefKey,byId};
+}
+
+function eventIdentity(event){
+  const e=clean(event);
+  const age=(e.match(/\b(35|40|45|50|55|60|65|70|75|80|85)\+?\b/)||[])[1]||'';
+  const gender=/women/i.test(e)?'Women':(/\bmen/i.test(e)?'Men':'');
+  return {ageGroup:age?Number(age):'',gender};
+}
+
+function resolvePlayerByNameContext(lookup,name,event='',preferredId=''){
+  if(preferredId){
+    const exact=lookup.byId.get(String(preferredId));
+    if(exact&&sameName(exact.name,name))return exact;
+  }
+
+  const rows=lookup.byNameAll.get(nameKey(name))||[];
+  if(rows.length===1)return rows[0];
+  if(!rows.length)return null;
+
+  const identity=eventIdentity(event);
+  let pool=rows;
+
+  if(identity.ageGroup!==''){
+    const ageRows=pool.filter(p=>String(p.ageGroup??'')===String(identity.ageGroup));
+    if(ageRows.length)pool=ageRows;
+  }
+  if(identity.gender){
+    const genderRows=pool.filter(p=>String(p.gender||'')===identity.gender);
+    if(genderRows.length)pool=genderRows;
+  }
+
+  return pool.length===1?pool[0]:null;
 }
 
 function explicitEventMismatch(event,current){
@@ -549,24 +619,39 @@ function structuredScoreForCandidate(c,current,opponent,lookup){
   };
 
   const resolved=rows.map(resolve);
-  const a=resolved.find(r=>(currentId&&r.id===currentId)||r.key===currentKey);
-  const b=resolved.find(r=>r!==a && (r.key===opponentKey || sameName(r.name,opponent)));
-  if(!a||!b)return '';
+  const currentRow=resolved.find(r=>(currentId&&r.id===currentId)||r.key===currentKey);
+  const opponentRow=resolved.find(r=>r!==currentRow&&(r.key===opponentKey||sameName(r.name,opponent)));
+  if(!currentRow||!opponentRow)return '';
 
-  const as=Array.isArray(a.scores)?a.scores:[];
-  const bs=Array.isArray(b.scores)?b.scores:[];
-  if(as.length<3||as.length>5||as.length!==bs.length)return '';
+  const normalizeScores=values=>{
+    let scores=(Array.isArray(values)?values:[]).map(Number).filter(Number.isFinite);
+
+    // Six values means GamesWon + five game score columns.
+    // Strip GamesWon before pairing individual games.
+    if(scores.length===6&&scores[0]>=0&&scores[0]<=3)scores=scores.slice(1);
+
+    return scores;
+  };
+
+  let a=normalizeScores(currentRow.scores);
+  let b=normalizeScores(opponentRow.scores);
+  if(a.length!==b.length||a.length<3||a.length>5)return '';
+
+  // TournamentSoftware renders unused later-game columns as 0 / 0.
+  // Remove those from the end before validating the actual played games.
+  while(a.length&&b.length&&a.at(-1)===0&&b.at(-1)===0){
+    a.pop();b.pop();
+  }
+  if(a.length<3||a.length>5||a.length!==b.length)return '';
 
   const validGame=(x,y)=>{
     if(!Number.isInteger(x)||!Number.isInteger(y)||x<0||y<0||x>30||y>30||x===y)return false;
     const hi=Math.max(x,y),lo=Math.min(x,y);
-    // Normal squash games reach at least 11; at 10-all they continue until
-    // someone leads by two. This rejects unrelated numeric columns.
-    return hi>=11 && (hi===11 ? lo<=9 : hi-lo===2);
+    return hi>=11&&(hi===11?lo<=9:hi-lo===2);
   };
-  if(!as.every((x,i)=>validGame(x,bs[i])))return '';
+  if(!a.every((x,i)=>validGame(x,b[i])))return '';
 
-  return as.map((x,i)=>`${x}-${bs[i]}`).join(', ');
+  return a.map((x,i)=>`${x}-${b[i]}`).join(', ');
 }
 
 function candidateToMatch(c,current,lookup){
@@ -600,20 +685,30 @@ function candidateToMatch(c,current,lookup){
   let opponent='', opponentId='';
   for(const l of linked){
     if(l.id===currentId||(l.info&&l.info.officialPlayerId===currentId))continue;
-    const rawName=l.info?.name||lookup.byName.get(nameKey(l.text))?.name||l.text;
+    const rawName=l.info?.name||l.text;
     if(!rawName||sameName(rawName,current.name))continue;
-    const canonical=lookup.byName.get(nameKey(rawName));
+    const canonical=l.info?.officialPlayerId
+      ? lookup.byId.get(String(l.info.officialPlayerId))
+      : resolvePlayerByNameContext(lookup,rawName,f.event,l.id);
     opponent=canonical?.name||clean(rawName).replace(/\s*\([^)]*\)\s*$/,'').trim();
-    opponentId=l.info?.officialPlayerId||canonical?.officialPlayerId||l.id||'';
+    opponentId=canonical?.officialPlayerId||l.info?.officialPlayerId||l.id||'';
     if(opponent)break;
   }
 
   if(!opponent){
     const hay=' '+norm(whole).replace(/[^a-z0-9]+/g,' ')+' ';
-    for(const p of lookup.byName.values()){
-      if(sameName(p.name,current.name))continue;
-      const k=norm(p.name).replace(/[^a-z0-9]+/g,' ').trim();
-      if(k.length>4&&hay.includes(' '+k+' ')){opponent=p.name;opponentId=p.officialPlayerId||'';break}
+    for(const rows of lookup.byNameAll.values()){
+      for(const p of rows){
+        if(String(p.officialPlayerId||'')===String(currentId||''))continue;
+        if(sameName(p.name,current.name)&&nameKey(p.name)===nameKey(current.name))continue;
+        const k=norm(p.name).replace(/[^a-z0-9]+/g,' ').trim();
+        if(k.length<=4||!hay.includes(' '+k+' '))continue;
+
+        const resolved=resolvePlayerByNameContext(lookup,p.name,f.event,p.officialPlayerId);
+        if(!resolved||String(resolved.officialPlayerId||'')!==String(p.officialPlayerId||''))continue;
+        opponent=p.name;opponentId=p.officialPlayerId||'';break;
+      }
+      if(opponent)break;
     }
   }
 
@@ -644,7 +739,7 @@ async function scrapeOneProfile(page,current,lookup,networkBucket){
   // JSON records when both the current player and another canonical player are identifiable.
   for(const packet of networkBucket.splice(0)){
     const stack=[packet.body];
-    while(stack.length){const o=stack.pop();if(!o||typeof o!=='object')continue;if(Array.isArray(o)){stack.push(...o);continue}const txt=clean(JSON.stringify(o));const f=deriveFields(txt,`${current.gender==='Women'?'Women\'s':'Men\'s'} ${current.ageGroup}+`);if(f.date){const currentToken=hrefKey(current.href); const currentHit=(' '+norm(txt).replace(/[^a-z0-9]+/g,' ')+' ').includes(' '+norm(current.name).replace(/[^a-z0-9]+/g,' ').trim()+' ') || (currentToken&&txt.toLowerCase().includes(String(currentToken).toLowerCase()));if(currentHit){let opp='';const hay=' '+norm(txt).replace(/[^a-z0-9]+/g,' ')+' ';for(const p of lookup.byName.values()){if(sameName(p.name,current.name))continue;const k=norm(p.name).replace(/[^a-z0-9]+/g,' ').trim();if(k.length>4&&hay.includes(' '+k+' ')){opp=p.name;break}}if(opp&&!explicitEventMismatch(f.event,current)){const op=lookup.byName.get(nameKey(opp));matches.push({...f,player1:current.name,player1Id:current.officialPlayerId||hrefKey(current.href),player2:opp,player2Id:op?.officialPlayerId||'',rawText:txt,sourcePlayer:current.name,sourcePlayerId:current.officialPlayerId||hrefKey(current.href),sourceUrl:current.href})}}}for(const v of Object.values(o))if(v&&typeof v==='object')stack.push(v)}
+    while(stack.length){const o=stack.pop();if(!o||typeof o!=='object')continue;if(Array.isArray(o)){stack.push(...o);continue}const txt=clean(JSON.stringify(o));const f=deriveFields(txt,`${current.gender==='Women'?'Women\'s':'Men\'s'} ${current.ageGroup}+`);if(f.date){const currentToken=hrefKey(current.href); const currentHit=(' '+norm(txt).replace(/[^a-z0-9]+/g,' ')+' ').includes(' '+norm(current.name).replace(/[^a-z0-9]+/g,' ').trim()+' ') || (currentToken&&txt.toLowerCase().includes(String(currentToken).toLowerCase()));if(currentHit){let opp='';const hay=' '+norm(txt).replace(/[^a-z0-9]+/g,' ')+' ';for(const rows of lookup.byNameAll.values()){for(const p of rows){if(String(p.officialPlayerId||'')===String(current.officialPlayerId||hrefKey(current.href)||''))continue;const k=norm(p.name).replace(/[^a-z0-9]+/g,' ').trim();if(k.length>4&&hay.includes(' '+k+' ')){const resolved=resolvePlayerByNameContext(lookup,p.name,f.event,p.officialPlayerId);if(resolved&&String(resolved.officialPlayerId||'')===String(p.officialPlayerId||'')){opp=p.name;break}}}if(opp)break}if(opp&&!explicitEventMismatch(f.event,current)){const op=resolvePlayerByNameContext(lookup,opp,f.event);matches.push({...f,player1:current.name,player1Id:current.officialPlayerId||hrefKey(current.href),player2:opp,player2Id:op?.officialPlayerId||'',rawText:txt,sourcePlayer:current.name,sourcePlayerId:current.officialPlayerId||hrefKey(current.href),sourceUrl:current.href})}}}for(const v of Object.values(o))if(v&&typeof v==='object')stack.push(v)}
   }
   return {matches,error:'',candidates:candidates.length};
 }
@@ -657,11 +752,22 @@ function mergeMatches(list){
   const out=[];
 
   const fixtureNames=m=>[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean).sort().join('~');
-  const sameFixture=(a,b)=>
-    a.date===b.date &&
-    clean(a.time).toLowerCase()===clean(b.time).toLowerCase() &&
-    fixtureNames(a) &&
-    fixtureNames(a)===fixtureNames(b);
+  const sameFixture=(a,b)=>{
+    if(a.date!==b.date||clean(a.time).toLowerCase()!==clean(b.time).toLowerCase())return false;
+
+    // If both observations carry official IDs, different IDs mean different
+    // people even when their displayed names are identical.
+    const aIds=[a.player1Id,a.player2Id].filter(Boolean).map(String).sort().join('~');
+    const bIds=[b.player1Id,b.player2Id].filter(Boolean).map(String).sort().join('~');
+    if(aIds&&bIds&&aIds!==bIds)return false;
+
+    const aEvent=eventIdentity(a.event||'');
+    const bEvent=eventIdentity(b.event||'');
+    if(aEvent.ageGroup&&bEvent.ageGroup&&String(aEvent.ageGroup)!==String(bEvent.ageGroup))return false;
+    if(aEvent.gender&&bEvent.gender&&aEvent.gender!==bEvent.gender)return false;
+
+    return !!fixtureNames(a)&&fixtureNames(a)===fixtureNames(b);
+  };
 
   const scoreRichness=v=>{
     const s=clean(v);
@@ -2657,6 +2763,7 @@ function mergeSquashScoresIntoMatches(baseMatches, liveMatches){
     const existing=chooseExisting(live);
 
     if(existing){
+      // Priority: SquashScores result first; if it has no score, preserve the TournamentSoftware result already on the fixture.
       if(live.result)existing.result=orientSquashScoresResult(existing,live);
       if(live.status==='completed'||live.status==='live')existing.status=live.status;
       if(live.timeMoved&&live.originalTime){
@@ -2688,6 +2795,31 @@ function canonicalTournamentDate(v){
   const s=clean(v);
   const m=s.match(/^(\d{4})-(\d{2})-(\d{2})/);
   return m?`${m[1]}-${m[2]}-${m[3]}`:s;
+}
+
+
+function normalizeSelfMatchAsBye(m,canonicalPlayers){
+  if(!m||!sameName(m.player1,m.player2))return m;
+
+  const p1Id=String(m.player1Id||'');
+  const p2Id=String(m.player2Id||'');
+
+  // Two different official IDs are two distinct people who happen to share a name.
+  if(p1Id&&p2Id&&p1Id!==p2Id)return m;
+
+  const sameNamePlayers=(canonicalPlayers||[]).filter(p=>sameName(p.name,m.player1));
+  const uniqueDisplayedIdentity=sameNamePlayers.length<=1;
+  const sameOfficialId=p1Id&&p2Id&&p1Id===p2Id;
+
+  if(sameOfficialId||uniqueDisplayedIdentity){
+    return {
+      ...m,
+      player2:'Bye',
+      player2Id:'',
+      status:String(m.status||'').toLowerCase()==='completed'?m.status:'bye'
+    };
+  }
+  return m;
 }
 
 function isGlass(m){return /\bAGC\b|Karrinyup/i.test([m.court,m.venue,m.rawText].join(' '))}
@@ -2752,8 +2884,17 @@ function hasPlayer(m,n){return sameName(m.player1,n)||sameName(m.player2,n)}
     fs.writeFileSync(path.join(DIR,'player-links.json'),JSON.stringify(links.map(x=>({...x,officialPlayerId:hrefKey(x.href)})),null,2));
   }catch(e){console.warn('Could not rewrite player-links.json identities:',e.message)}
   for(const x of links)x.officialPlayerId=hrefKey(x.href);
+  const canonicalByOfficialId=new Map(canonicalPlayers.filter(p=>p.officialPlayerId).map(p=>[String(p.officialPlayerId),p]));
+  links=links.map(x=>{
+    const id=String(x.officialPlayerId||hrefKey(x.href)||'');
+    const p=canonicalByOfficialId.get(id);
+    return p?{...x,name:p.name,officialPlayerId:id,ageGroup:p.ageGroup,gender:p.gender,country:p.country}:{...x,officialPlayerId:id};
+  });
+
   const lookup=buildPlayerLookup(canonicalPlayers,links);
+  const duplicateNameGroups=[...lookup.byNameAll.values()].filter(rows=>rows.length>1);
   console.log(`Official TournamentSoftware IDs attached: ${canonicalPlayers.filter(p=>p.officialPlayerId).length}/${canonicalPlayers.length}`);
+  console.log(`Duplicate displayed player names: ${duplicateNameGroups.length} group(s); these require official ID plus age/gender context.`);
   const all=[]; let done=0, failed=0, candidateTotal=0;
   const queue=[...links];
   console.log(`Crawling player schedules with ${CONCURRENCY} browser workers...`);
@@ -2782,7 +2923,7 @@ function hasPlayer(m,n){return sameName(m.player1,n)||sameName(m.player2,n)}
   // One lightweight request for the whole tournament. This is the same public
   // JSON endpoint used by squashscores.com/overview.html?categoryId=19.
   const squashScoresMatches=await fetchSquashScoresLiveMatches(canonicalPlayers);
-  const matches=mergeSquashScoresIntoMatches(tournamentMatches,squashScoresMatches);
+  const matches=mergeSquashScoresIntoMatches(tournamentMatches,squashScoresMatches).map(m=>normalizeSelfMatchAsBye(m,canonicalPlayers));
 
   const glass=matches.filter(isGlass);
   const freshCompleted=freshMatches.filter(m=>String(m.status||'').toLowerCase()==='completed'||m.result);
