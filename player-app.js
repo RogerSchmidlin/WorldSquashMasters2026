@@ -1,5 +1,78 @@
 const qs=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
 function loadPlayerScript(src){return new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=src;s.onload=resolve;s.onerror=()=>reject(new Error(`Could not load ${src}`));document.head.appendChild(s);});}
+
+const AUTO_REFRESH_CHECK_MS=60*1000;
+let autoRefreshLoadedToken='';
+
+function syncTokenFromSummary(summary){
+  const a=String(summary?.refreshedAt||'');
+  const b=String(summary?.squashLevelsRefreshedAt||'');
+  return `${a}|${b}`;
+}
+
+async function fetchLatestSyncToken(){
+  // Local file:// pages cannot fetch another local file because of browser CORS,
+  // but they can load JavaScript files normally. Use a temporary script tag
+  // locally and regular no-cache fetch on http/https.
+  if(location.protocol==='file:'){
+    return new Promise(resolve=>{
+      const previous=window.TOURNAMENT_SUMMARY;
+      const script=document.createElement('script');
+      script.src=`summary-data.js?synccheck=${Date.now()}`;
+      script.async=true;
+      script.onload=()=>{
+        const token=syncTokenFromSummary(window.TOURNAMENT_SUMMARY||{});
+        script.remove();
+        // Keep the newly loaded summary object; it is harmless and lets the
+        // next local check compare against the newest timestamps.
+        resolve(token);
+      };
+      script.onerror=()=>{
+        window.TOURNAMENT_SUMMARY=previous;
+        script.remove();
+        resolve('');
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  try{
+    const response=await fetch(`summary-data.js?synccheck=${Date.now()}`,{cache:'no-store'});
+    if(!response.ok)return '';
+    const source=await response.text();
+    const refreshed=(source.match(/["']?refreshedAt["']?\s*:\s*["']([^"']+)["']/i)||[])[1]||'';
+    const squash=(source.match(/["']?squashLevelsRefreshedAt["']?\s*:\s*["']([^"']+)["']/i)||[])[1]||'';
+    return `${refreshed}|${squash}`;
+  }catch{
+    return '';
+  }
+}
+
+function startAutomaticSyncRefresh(summary){
+  autoRefreshLoadedToken=syncTokenFromSummary(summary||window.TOURNAMENT_SUMMARY||{});
+
+  const check=async()=>{
+    if(document.visibilityState==='hidden')return;
+    const latest=await fetchLatestSyncToken();
+    if(!latest||latest==='|')return;
+
+    if(!autoRefreshLoadedToken||autoRefreshLoadedToken==='|'){
+      autoRefreshLoadedToken=latest;
+      return;
+    }
+
+    if(latest!==autoRefreshLoadedToken){
+      try{localStorage.setItem('wsm2026LastSeenSync',latest)}catch{}
+      location.reload();
+    }
+  };
+
+  setInterval(check,AUTO_REFRESH_CHECK_MS);
+  document.addEventListener('visibilitychange',()=>{
+    if(document.visibilityState==='visible')check();
+  });
+}
+
 async function loadPlayerDetailData(){
   try{
     await Promise.all([
@@ -17,6 +90,7 @@ async function loadPlayerDetailData(){
 }
 async function initPlayerPage(){
   const data=await loadPlayerDetailData();
+  startAutomaticSyncRefresh(data);
 
 
 function renderHeaderRefresh(){
@@ -37,9 +111,355 @@ const sameName=(a,b)=>!!a&&!!b&&(basicNorm(a)===basicNorm(b)||nameKey(a)===nameK
 const flatText=v=>{try{return typeof v==='string'?v:JSON.stringify(v)}catch{return String(v||'')}};
 const playerNeedles=(data.players||[]).map(p=>({p,key:basicNorm(p.name)})).sort((a,b)=>b.key.length-a.key.length);
 function canonicalDate(v){if(!v)return '';const s=String(v).trim();let m=s.match(/^(\d{4})-(\d{2})-(\d{2})/);if(m)return `${m[1]}-${m[2]}-${m[3]}`;m=s.match(/^(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{4})/);if(m)return `${m[3]}-${String(m[2]).padStart(2,'0')}-${String(m[1]).padStart(2,'0')}`;const d=new Date(s);if(!Number.isNaN(d.getTime()))return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;return s;}
+
+const SQUASH_SCORES_LIVE_URL='https://squashscores.com/overview.html?categoryId=19';
+const SQUASH_SCORES_API_URL='https://squashscores.com/api/overview/public/?categoryId=19';
+const SQUASH_SCORES_POLL_MS=5000;
+
+function ssNorm(s){
+  return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[’‘]/g,"'").toLowerCase().replace(/[^a-z0-9']+/g,' ').trim();
+}
+function ssDate(text){
+  const s=String(text||'');
+  let m=s.match(/\b(\d{1,2})\/(\d{1,2})\/(2026)\b/);
+  if(m)return `${m[3]}-${String(+m[2]).padStart(2,'0')}-${String(+m[1]).padStart(2,'0')}`;
+  m=s.match(/\b(2026)-(\d{1,2})-(\d{1,2})\b/);
+  return m?`${m[1]}-${String(+m[2]).padStart(2,'0')}-${String(+m[3]).padStart(2,'0')}`:'';
+}
+function ssTime(text){
+  const m=String(text||'').match(/\b(\d{1,2}):([0-5]\d)\b/);
+  return m?`${String(+m[1]).padStart(2,'0')}:${m[2]}`:'';
+}
+function ssScorePairs(text){
+  const s=String(text||'').replace(/[–—]/g,'-');
+  const run=s.match(/\b\d{1,2}\s*-\s*\d{1,2}(?:(?:\s*,\s*|\s+)\d{1,2}\s*-\s*\d{1,2}){2,4}\b/);
+  if(!run)return '';
+  return [...run[0].matchAll(/(\d{1,2})\s*-\s*(\d{1,2})/g)]
+    .map(x=>`${+x[1]}-${+x[2]}`).join(', ');
+}
+function ssValidGame(a,b){
+  if(!Number.isInteger(a)||!Number.isInteger(b)||a===b||a<0||b<0||a>30||b>30)return false;
+  const hi=Math.max(a,b),lo=Math.min(a,b);
+  return hi>=11&&(hi===11?lo<=9:hi-lo===2);
+}
+function ssKnownNames(text,players){
+  const hay=` ${ssNorm(text)} `;
+  const found=[];
+  for(const p of players||[]){
+    const k=ssNorm(p?.name);
+    if(k.length>=5&&hay.includes(` ${k} `)){
+      found.push(p.name);
+      if(found.length===3)break;
+    }
+  }
+  return found;
+}
+function ssSeparateScore(container,p1,p2){
+  const rows=[...container.querySelectorAll('tr,[role="row"],li,[class*="row"],[class*="player"]')];
+  const getRow=n=>rows.find(r=>` ${ssNorm(r.textContent)} `.includes(` ${ssNorm(n)} `));
+  const a=getRow(p1),b=getRow(p2);
+  if(!a||!b||a===b)return '';
+  const values=row=>{
+    const raw=String(row.textContent||'').replace(/\s+/g,' ').trim();
+    const vals=(raw.match(/(?:^|\s)\d{1,2}(?=\s|$)/g)||[]).map(x=>+x.trim()).filter(x=>x<=30);
+    for(let n=5;n>=3;n--)if(vals.length>=n)return vals.slice(-n);
+    return [];
+  };
+  const av=values(a),bv=values(b);
+  if(av.length<3||av.length!==bv.length||!av.every((x,i)=>ssValidGame(x,bv[i])))return '';
+  return av.map((x,i)=>`${x}-${bv[i]}`).join(', ');
+}
+function ssVenue(text){
+  const s=String(text||'').replace(/\s+/g,' ').trim();
+  for(const v of ['Squashworld Mirrabooka','Belmont Squash Centre','Karrinyup Shopping Centre','Marmion Squash Club']){
+    if(s.toLowerCase().includes(v.toLowerCase()))return v;
+  }
+  const m=s.match(/\b(?:Mirrabooka|Belmont|Karrinyup|Marmion)\b[^|]{0,80}/i);
+  return m?m[0].trim():'';
+}
+
+function parseSquashScoresApi(payload,players){
+  const rows=[];
+  const locations=Array.isArray(payload?.locations)?payload.locations:[];
+  const playerList=players||[];
+
+  const canonicalPlayerName=raw=>{
+    const wanted=ssNorm(raw);
+    if(!wanted)return String(raw||'').trim();
+    const p=playerList.find(x=>ssNorm(x?.name)===wanted);
+    return p?.name||String(raw||'').trim();
+  };
+
+  const gamesScore=(match,p1Side=true)=>{
+    const games=Array.isArray(match?.games)?match.games:[];
+    const pairs=[];
+    for(const g of games){
+      const a=Number(g?.player1Score);
+      const b=Number(g?.player2Score);
+      if(!Number.isFinite(a)||!Number.isFinite(b))continue;
+      if(a===0&&b===0)continue;
+      pairs.push(p1Side?`${a}-${b}`:`${b}-${a}`);
+    }
+    return pairs.join(', ');
+  };
+
+  const gamesWon=match=>{
+    const p1=Number(match?.player1GamesWon);
+    const p2=Number(match?.player2GamesWon);
+    if(Number.isFinite(p1)&&Number.isFinite(p2))return [p1,p2];
+    let a=0,b=0;
+    for(const g of Array.isArray(match?.games)?match.games:[]){
+      const x=Number(g?.player1Score),y=Number(g?.player2Score);
+      if(!Number.isFinite(x)||!Number.isFinite(y)||x===y)continue;
+      if(x>y)a++; else b++;
+    }
+    return [a,b];
+  };
+
+  for(const location of locations){
+    for(const m of Array.isArray(location?.matches)?location.matches:[]){
+      const player1=canonicalPlayerName(m?.player1Name);
+      const player2=canonicalPlayerName(m?.player2Name);
+      if(!player1||!player2)continue;
+
+      const rawDate=String(m?.matchDate||m?.date||'');
+      let date=canonicalDate(rawDate);
+      if(!date){
+        const dm=rawDate.match(/^(\d{4})-(\d{2})-(\d{2})/);
+        if(dm)date=`${dm[1]}-${dm[2]}-${dm[3]}`;
+      }
+
+      let time='';
+      const description=String(m?.description||'').replace(/\s+/g,' ').trim();
+      const tm=description.match(/\b(\d{1,2}):([0-5]\d)\b/);
+      if(tm)time=`${String(+tm[1]).padStart(2,'0')}:${tm[2]}`;
+      if(!time){
+        const dt=rawDate.match(/[T\s](\d{1,2}):([0-5]\d)/);
+        if(dt)time=`${String(+dt[1]).padStart(2,'0')}:${dt[2]}`;
+      }
+
+      const [p1Won,p2Won]=gamesWon(m);
+      const score=gamesScore(m,true);
+      const completed=p1Won>=3||p2Won>=3;
+      const hasStarted=score.length>0||p1Won>0||p2Won>0;
+
+      let status='scheduled';
+      if(completed)status='completed';
+      else if(hasStarted)status='live';
+
+      rows.push({
+        date,
+        time,
+        player1,
+        player2,
+        result:score,
+        status,
+        venue:String(location?.name||location?.locationName||'').trim(),
+        court:String(m?.courtName||m?.court||'').trim(),
+        event:String(m?.categoryName||m?.category||'').trim(),
+        round:description,
+        liveSource:'SquashScores',
+        squashScoresMatchId:m?.id||m?.matchId||null
+      });
+    }
+  }
+
+  console.log(`SquashScores API: ${locations.length} location(s) · ${rows.length} match(es)`);
+  const rogerRows=rows.filter(m=>ssNorm(m.player1)==='roger schmidlin'||ssNorm(m.player2)==='roger schmidlin');
+  if(rogerRows.length)console.log('SquashScores Roger rows:',rogerRows);
+
+  return rows;
+}
+
+function parseSquashScoresHtml(html,players){
+  const doc=new DOMParser().parseFromString(html,'text/html');
+  const found=new Map();
+  const allPlayers=(players||[]).filter(p=>p?.name&&ssNorm(p.name).length>=5);
+
+  function scoreFromTextAroundNames(text,p1,p2){
+    const clean=String(text||'').replace(/\s+/g,' ').trim();
+    const low=clean.toLowerCase();
+    const i1=low.indexOf(String(p1).toLowerCase());
+    const i2=low.indexOf(String(p2).toLowerCase());
+    if(i1<0||i2<0)return '';
+
+    const first=i1<i2?{name:p1,pos:i1}:{name:p2,pos:i2};
+    const second=i1<i2?{name:p2,pos:i2}:{name:p1,pos:i1};
+    const firstStart=first.pos+first.name.length;
+    const secondStart=second.pos+second.name.length;
+
+    const between=clean.slice(firstStart,second.pos);
+    const after=clean.slice(secondStart);
+
+    const getNums=s=>(String(s).match(/(?:^|\s)(\d{1,2})(?=\s|$)/g)||[])
+      .map(x=>+x.trim()).filter(x=>x>=0&&x<=30);
+
+    // Try the straightforward rendered-text order first.
+    let a=getNums(between).slice(0,5);
+    let b=getNums(after).slice(0,5);
+
+    // Ignore obvious non-score values like age-group 60/65 etc.
+    a=a.filter(x=>x<=30); b=b.filter(x=>x<=30);
+
+    const n=Math.min(a.length,b.length,5);
+    if(n>=3){
+      a=a.slice(0,n); b=b.slice(0,n);
+      if(a.every((x,i)=>ssValidGame(x,b[i]))){
+        const pair=a.map((x,i)=>`${x}-${b[i]}`).join(', ');
+        return first.name===p1?pair:b.map((x,i)=>`${x}-${a[i]}`).join(', ');
+      }
+    }
+    return '';
+  }
+
+  function addCandidate(el){
+    const text=String(el.textContent||'').replace(/\s+/g,' ').trim();
+    if(text.length<20||text.length>2600)return;
+
+    const date=ssDate(text),time=ssTime(text);
+    if(!date||!time)return;
+
+    const names=ssKnownNames(text,allPlayers);
+    if(names.length<2)return;
+
+    // Prefer the smallest DOM element containing this match. If a child already
+    // contains the same two players/date/time, the parent is too broad.
+    for(const child of el.children||[]){
+      const ct=String(child.textContent||'').replace(/\s+/g,' ').trim();
+      if(!ct||ct===text)continue;
+      if(ssDate(ct)===date&&ssTime(ct)===time){
+        const cn=ssKnownNames(ct,allPlayers);
+        if(cn.length>=2)return;
+      }
+    }
+
+    const p1=names[0],p2=names[1];
+    let result=ssScorePairs(text);
+    if(!result)result=ssSeparateScore(el,p1,p2);
+    if(!result)result=scoreFromTextAroundNames(text,p1,p2);
+
+    const lower=text.toLowerCase();
+    const completed=!!result||/\b(?:finished|completed|won|lost)\b/i.test(text);
+    const live=/\b(?:live|playing|in progress|on court)\b/i.test(text);
+
+    const key=`${date}|${[ssNorm(p1),ssNorm(p2)].sort().join('|')}`;
+    const row={
+      date,time,player1:p1,player2:p2,result,
+      status:completed?'completed':(live?'live':'scheduled'),
+      venue:ssVenue(text),liveSource:'SquashScores',
+      liveRawText:text
+    };
+
+    const prev=found.get(key);
+    const richness=x=>(x?.result?1000+String(x.result).length:0)+String(x?.liveRawText||'').length;
+    if(!prev||richness(row)>richness(prev))found.set(key,row);
+  }
+
+  // The SquashScores overview is small. Scan all structural elements rather than
+  // depending on site-specific CSS class names.
+  for(const el of doc.querySelectorAll('tr,tbody,table,article,li,section,div'))addCandidate(el);
+
+  // Final safety pass over BODY: useful if their page has a very flat structure.
+  addCandidate(doc.body);
+
+  const rows=[...found.values()];
+
+  // Visible diagnostics for local testing.
+  const rogerText=String(doc.body?.textContent||'').toLowerCase().includes('roger schmidlin');
+  console.log(`SquashScores parser: HTML ${html.length} chars · ${rows.length} match(es) parsed · Roger present: ${rogerText?'YES':'NO'}`);
+  if(rogerText){
+    const rogerRows=rows.filter(m=>ssNorm(m.player1).includes('roger schmidlin')||ssNorm(m.player2).includes('roger schmidlin'));
+    console.log('SquashScores Roger rows:',rogerRows);
+    if(!rogerRows.length){
+      const body=String(doc.body?.textContent||'').replace(/\s+/g,' ').trim();
+      const ix=body.toLowerCase().indexOf('roger schmidlin');
+      if(ix>=0)console.log('SquashScores Roger source snippet:',body.slice(Math.max(0,ix-350),ix+700));
+    }
+  }
+
+  return rows;
+}
+function ssOverlay(base,live){
+  const out=(base||[]).map(m=>({...m}));
+
+  const pairKey=m=>[ssNorm(m.player1),ssNorm(m.player2)].sort().join('|');
+  const dateKey=m=>canonicalDate(m.date||'');
+  const timeKey=m=>displayTime24(m.time||'');
+
+  const byExact=new Map();
+  const byPair=new Map();
+
+  for(const m of out){
+    const pair=pairKey(m);
+    const exact=`${dateKey(m)}|${pair}`;
+    if(!byExact.has(exact))byExact.set(exact,[]);
+    byExact.get(exact).push(m);
+    if(!byPair.has(pair))byPair.set(pair,[]);
+    byPair.get(pair).push(m);
+  }
+
+  const chooseExisting=liveMatch=>{
+    const pair=pairKey(liveMatch);
+    const date=dateKey(liveMatch);
+    const time=timeKey(liveMatch);
+
+    // Best case: same date + same players.
+    if(date){
+      const exact=byExact.get(`${date}|${pair}`)||[];
+      if(exact.length===1)return exact[0];
+      const timed=exact.filter(m=>time&&timeKey(m)===time);
+      if(timed.length===1)return timed[0];
+    }
+
+    // SquashScores sometimes omits/changes the date field in the live response.
+    // The scheduled time + player pair is then the safest identity.
+    const pairRows=byPair.get(pair)||[];
+    const timed=pairRows.filter(m=>time&&timeKey(m)===time);
+    if(timed.length===1)return timed[0];
+
+    // If this player pairing only exists once in the tournament data, augment
+    // that fixture rather than creating a duplicate TBD row.
+    if(pairRows.length===1)return pairRows[0];
+
+    return null;
+  };
+
+  for(const l of live||[]){
+    const existing=chooseExisting(l);
+
+    if(existing){
+      if(l.result)existing.result=l.result;
+      if(l.status==='completed'||l.status==='live')existing.status=l.status;
+      if(l.time)existing.time=l.time;
+      if(l.venue)existing.venue=l.venue;
+      if(l.court)existing.court=l.court;
+      if(l.event&&!existing.event)existing.event=l.event;
+      if(l.round&&!existing.round)existing.round=l.round;
+      existing.liveSource='SquashScores';
+      continue;
+    }
+
+    // Only add a genuinely new SquashScores fixture when it has enough identity
+    // information. A date-less record is not allowed to become a duplicate TBD row.
+    if(dateKey(l)&&pairKey(l)&&timeKey(l)){
+      out.push({...l,rawText:'SquashScores live'});
+    }
+  }
+
+  return out;
+}
+async function fetchSquashScoresApi(){
+  const sep=SQUASH_SCORES_API_URL.includes('?')?'&':'?';
+  const r=await fetch(`${SQUASH_SCORES_API_URL}${sep}_=${Date.now()}`,{cache:'no-store',mode:'cors'});
+  if(!r.ok)throw new Error(`SquashScores API HTTP ${r.status}`);
+  return r.json();
+}
+
 function namesFromRecord(m){const text=' '+basicNorm(flatText(m))+' ';const found=[];for(const x of playerNeedles){if(x.key.length>4&&text.includes(' '+x.key+' ')){found.push(x.p.name);if(found.length===2)break}}return found}
 function normMatch(m){const raw=flatText(m.rawText||m.text||m.description||m);let p1=m.player1||m.playerOne||m.homePlayer||m.home||m.participant1||m.team1||m.entry1||'',p2=m.player2||m.playerTwo||m.awayPlayer||m.away||m.participant2||m.team2||m.entry2||'';const gn=v=>typeof v==='object'&&v?(v.name||v.displayName||v.fullName||v.title||v.label||''):String(v||'');p1=gn(p1);p2=gn(p2);if(!p1||!p2){const f=namesFromRecord(m);if(!p1)p1=f[0]||'';if(!p2)p2=f.find(n=>!sameName(n,p1))||f[1]||''}let venue=m.venue||m.venueName||m.location||m.locationName||m.site||m.facility||'',court=m.court||m.courtName||m.resource||m.resourceName||m.field||m.fieldName||'';if(typeof venue==='object')venue=venue.name||venue.title||venue.label||'';if(typeof court==='object')court=court.name||court.title||court.label||'';if(!venue){if(/Karrinyup/i.test(raw))venue='Karrinyup Shopping Centre';else if(/Mirrabooka/i.test(raw))venue='Squashworld Mirrabooka'}if(!court){const cm=raw.match(/(?:court(?:Name)?["':\s]*|\b)(AGC|SC\s*\d+|Court\s*\d+|[A-Z]{2,5}\s*\d+)\b/i);if(cm)court=cm[1]}return {...m,date:canonicalDate(m.date||m.matchDate||m.startDate||m.start||m.datetime||m.dateTime||m.scheduledDate),time:m.time||m.matchTime||m.startTime||m.scheduledTime||'',event:m.event||m.eventName||m.draw||m.category||m.disciplineName||'',round:m.round||m.roundName||'',player1:p1,player2:p2,venue,court,rawText:raw}}
 data.matches=(data.matches||[]).map(normMatch);
+const tournamentBaseMatches=data.matches.map(m=>({...m}));
 const params=new URLSearchParams(location.search);
 const requestedId=params.get('id')||'';
 const requested=params.get('name')||'';
@@ -72,7 +492,47 @@ const has=(m,n)=>{
 };
 const opp=m=>sameName(m.player1,name)?m.player2:(sameName(m.player2,name)?m.player1:(namesFromRecord(m).find(n=>!sameName(n,name))||''));
 const pb=n=>data.players.find(x=>sameName(x.name,n));
-const past=m=>String(m.status||'').toLowerCase()==='completed'||String(m.status||'').toLowerCase()==='played'||!!m.result;
+const LIVE_MATCH_WINDOW_MINUTES=90;
+
+function perthNowParts(){
+  const parts=new Intl.DateTimeFormat('en-CA',{
+    timeZone:'Australia/Perth',year:'numeric',month:'2-digit',day:'2-digit',
+    hour:'2-digit',minute:'2-digit',hourCycle:'h23'
+  }).formatToParts(new Date());
+  const get=t=>Number(parts.find(p=>p.type===t)?.value||0);
+  return {year:get('year'),month:get('month'),day:get('day'),hour:get('hour'),minute:get('minute')};
+}
+
+function matchLocalMinuteValue(m){
+  const d=canonicalDate(m?.date||'');
+  const dm=d.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const tm=String(displayTime24(m?.time||'')).match(/^(\d{2}):(\d{2})$/);
+  if(!dm||!tm)return null;
+  return Math.floor(Date.UTC(+dm[1],+dm[2]-1,+dm[3],+tm[1],+tm[2])/60000);
+}
+
+function perthNowMinuteValue(){
+  const n=perthNowParts();
+  return Math.floor(Date.UTC(n.year,n.month-1,n.day,n.hour,n.minute)/60000);
+}
+
+function currentMatch(m){
+  const status=String(m?.status||'').toLowerCase();
+  if(status==='live')return true;
+  if(status==='completed'||status==='played'||m?.result)return false;
+  const start=matchLocalMinuteValue(m);
+  if(start===null)return false;
+  const now=perthNowMinuteValue();
+  return now>=start&&now<start+LIVE_MATCH_WINDOW_MINUTES;
+}
+
+const past=m=>{
+  const status=String(m?.status||'').toLowerCase();
+  if(status==='completed'||status==='played')return true;
+  if(status!=='live'&&!!m?.result)return true;
+  const start=matchLocalMinuteValue(m);
+  return start!==null&&perthNowMinuteValue()>=start+LIVE_MATCH_WINDOW_MINUTES;
+};
 function displayTime24(t){const raw=String(t||'').trim();if(!raw)return 'TBD';let m=raw.match(/\b(\d{1,2})(?::(\d{2}))?\s*([AP]M)\b/i);if(m){let h=Number(m[1])%12;if(/^p/i.test(m[3]))h+=12;return `${String(h).padStart(2,'0')}:${m[2]||'00'}`;}m=raw.match(/\b([01]?\d|2[0-3]):([0-5]\d)\b/);if(m)return `${String(Number(m[1])).padStart(2,'0')}:${m[2]}`;return raw;}
 const FAVORITES_STORAGE_KEY='wsm2026FavouritePlayers';
 function getFavoriteNames(){try{const r=JSON.parse(localStorage.getItem(FAVORITES_STORAGE_KEY)||'[]');return Array.isArray(r)?r:[]}catch{return []}}
@@ -80,6 +540,14 @@ function isFavoritePlayer(n){return getFavoriteNames().some(x=>sameName(x,n))}
 function toggleFavoritePlayer(n){const r=getFavoriteNames(),i=r.findIndex(x=>sameName(x,n));if(i>=0)r.splice(i,1);else r.push(n);try{localStorage.setItem(FAVORITES_STORAGE_KEY,JSON.stringify(r))}catch{}return i<0}
 function playerFavoriteButton(n){const on=isFavoritePlayer(n);return `<button type="button" id="playerFavoriteButton" class="favorite-player-btn player-detail-favorite-btn ${on?'is-favorite':''}" aria-pressed="${on?'true':'false'}"><span aria-hidden="true">${on?'★':'☆'}</span><span class="favorite-player-btn-text">${on?'Faved':'Fav'}</span></button>`}
 function scoreWinnerSide(m){const g=[...String(m?.result||'').matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)].map(x=>[+x[1],+x[2]]);if(g.length<2)return 0;let a=0,b=0;for(const [x,y] of g){if(x>y)a++;else if(y>x)b++;}return a===b?0:(a>b?1:2)}
+
+function scoreWinnerName(m){
+  const w=scoreWinnerSide(m);
+  if(w===1)return String(m?.player1||'');
+  if(w===2)return String(m?.player2||'');
+  return '';
+}
+
 function matchOutcomeForCurrentPlayer(m){const w=scoreWinnerSide(m);if(!w)return '';const side=sameName(m.player1,name)?1:sameName(m.player2,name)?2:0;return side?(w===side?'win':'loss'):''}
 
 
@@ -90,23 +558,47 @@ function playerDetailMatchKey(m){
   return [d,t,names].join('||');
 }
 function dedupePlayerDetailMatches(rows){
-  const map=new Map();
+  const out=[];
+
+  const pair=m=>[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean).sort().join('|');
+  const time=m=>displayTime24(m.time||'');
+  const date=m=>canonicalDate(m.date||'');
+
+  const richer=(target,source)=>{
+    // Completed/live state and score are authoritative, not string-length choices.
+    const sourceStatus=String(source.status||'').toLowerCase();
+    if(sourceStatus==='completed'||sourceStatus==='played')target.status='completed';
+    else if(sourceStatus==='live'&&String(target.status||'').toLowerCase()!=='completed')target.status='live';
+
+    if(source.result && (!target.result || String(source.result).length>=String(target.result).length))target.result=source.result;
+
+    for(const field of ['event','round','court','venue','rawText','player1Id','player2Id']){
+      const a=String(target[field]||''),b=String(source[field]||'');
+      if(b.length>a.length)target[field]=source[field];
+    }
+
+    // Prefer a real tournament date over a missing/TBD one.
+    if(!date(target)&&date(source))target.date=source.date;
+    if(!target.time&&source.time)target.time=source.time;
+  };
+
   for(const m of rows||[]){
-    const key=playerDetailMatchKey(m);
-    if(!map.has(key)){
-      map.set(key,{...m});
-      continue;
+    let existing=out.find(x=>date(x)&&date(m)&&date(x)===date(m)&&time(x)===time(m)&&pair(x)===pair(m));
+
+    // Live API rows may have no date; collapse against the scheduled fixture by
+    // exact player pair + time.
+    if(!existing)existing=out.find(x=>time(x)&&time(x)===time(m)&&pair(x)===pair(m));
+
+    if(!existing){
+      const samePair=out.filter(x=>pair(x)===pair(m));
+      if(samePair.length===1)existing=samePair[0];
     }
-    const existing=map.get(key);
-    // Keep the richer copy while preserving the player names/date/time that
-    // identify the same fixture. This also collapses player1/player2 reversals.
-    for(const field of ['result','event','round','court','venue','status','rawText','player1Id','player2Id']){
-      const a=String(existing[field]||'');
-      const b=String(m[field]||'');
-      if(b.length>a.length)existing[field]=m[field];
-    }
+
+    if(existing)richer(existing,m);
+    else out.push({...m});
   }
-  return [...map.values()];
+
+  return out;
 }
 
 const venueCode=m=>{const place=[m.venue,m.court].filter(Boolean).join(' · ');if(/Karrinyup|\bAGC\b|Glass/i.test(place))return 'G';if(/Mirrabooka|Squashworld/i.test(place))return 'M';if(/Belmont|WA\s*State\s*Squash/i.test(place))return 'B';return '';};
@@ -119,17 +611,18 @@ function playerMatchRow(m){
   const p2Current=(officialPlayerId&&String(m.player2Id||'')===String(officialPlayerId))||sameName(m.player2,name);
   const outcome=past(m)?matchOutcomeForCurrentPlayer(m):'';
   const place=venuePlace(m);
+  const live=currentMatch(m);
 
-  return `<article class="vic-match-row player-schedule-row ${past(m)?'past':''} ${outcome?`match-${outcome}`:''}">
+  return `<article class="vic-match-row player-schedule-row ${past(m)?'past':''} ${live?'match-live':''} ${outcome?`match-${outcome}`:''}">
     <div class="vic-time">
-      <span class="vic-time-value">${esc(displayTime24(m.time))}</span>
+      <span class="vic-time-value">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span>
       <span class="vic-time-age">${esc(m.event||'')}</span>
     </div>
 
     <div class="vic-match-main">
       <div class="vic-event">
         <span class="vic-mobile-meta">
-          <span class="vic-mobile-time">${esc(displayTime24(m.time))}</span>
+          <span class="vic-mobile-time">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span>
           <span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(place)}</span></span>
           <span class="vic-mobile-age">${esc(m.event||'')}</span>
         </span>
@@ -180,12 +673,13 @@ function playerMatchRow(m){
           </span>
         </a>
 
-        ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
+        ${m.result&&!past(m)?`<span class="vic-result">${esc(m.result)}</span>`:''}
       </div>
 
       ${past(m)?`<div class="match-history-score ${m.result?'has-score':'no-score'}">
         <span class="match-history-score-label">Score</span>
         <strong>${m.result?esc(m.result):'Score not published'}</strong>
+        ${m.result&&scoreWinnerName(m)?`<span class="match-winner-label">Winner: <strong>${esc(scoreWinnerName(m))}</strong></span>`:''}
         ${outcome?`<span class="match-outcome-badge match-outcome-${outcome}">${outcome==='win'?'WIN':'LOSS'}</span>`:''}
       </div>`:''}
     </div>
@@ -204,11 +698,33 @@ if(!p){
   qs('#playerHeader').innerHTML='<div class="schedule-empty">Player not found.</div>';
   qs('#playerSchedule').innerHTML='';
 }else{
+  function renderPlayerLiveView(){
   const ms=dedupePlayerDetailMatches(data.matches.filter(m=>has(m,name))).sort((a,b)=>`${a.date||''} ${a.time||''}`.localeCompare(`${b.date||''} ${b.time||''}`));
   qs('#playerHeader').innerHTML=`<div class="player-detail-card"><div class="player-detail-id">${flagImg(p,'tracked-flag')}<div><div class="eyebrow">${esc(p.country)} · ${esc(p.gender)} ${p.ageGroup}+</div><div class="player-name-line"><div class="player-name-stack player-detail-name-stack"><h1>${esc(p.name)}</h1>${squashBadges(p)}</div>${p.squashLevelsUrl?`<a class="squashlevels-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer">SquashLevels</a>`:''}${playerFavoriteButton(p.name)}</div></div></div><div class="player-detail-actions"><div class="status-chip">${ms.filter(m=>!past(m)).length} UPCOMING</div></div></div>`;
   const up=ms.filter(m=>!past(m)).sort((a,b)=>`${a.date||''} ${a.time||''}`.localeCompare(`${b.date||''} ${b.time||''}`)),done=ms.filter(past).sort((a,b)=>`${b.date||''} ${b.time||''}`.localeCompare(`${a.date||''} ${a.time||''}`));
   qs('#playerSchedule').innerHTML=`${up.length?`<div class="schedule-group upcoming-games-group"><div class="player-schedule-section-title"><span>Upcoming Matches</span><small>${up.length}</small></div>${groupedMatches(up)}</div>`:''}${done.length?`<div class="schedule-group past-games-group"><div class="player-schedule-section-title match-history-title"><span>Match History</span><small>${done.length} completed</small></div>${groupedMatches(done)}</div>`:''}${!up.length&&!done.length?'<div class="schedule-empty">No matches currently published.</div>':''}`;
   const favBtn=qs('#playerFavoriteButton');if(favBtn)favBtn.addEventListener('click',()=>{const on=toggleFavoritePlayer(p.name);favBtn.classList.toggle('is-favorite',on);favBtn.setAttribute('aria-pressed',on?'true':'false');favBtn.querySelector('span[aria-hidden="true"]').textContent=on?'★':'☆';favBtn.querySelector('.favorite-player-btn-text').textContent=on?'Faved':'Fav';});
+
+  }
+  renderPlayerLiveView();
+
+  let squashScoresPollTimer=null;
+  async function updatePlayerSquashScoresLive(){
+    try{
+      const payload=await fetchSquashScoresApi();
+      const live=parseSquashScoresApi(payload,data.players||[]);
+      console.log(`SquashScores live overlay: ${live.length} match(es) parsed`);
+      if(!live.length)return;
+      data.matches=ssOverlay(tournamentBaseMatches,live).map(normMatch);
+      renderPlayerLiveView();
+    }catch(e){
+      console.warn('SquashScores live unavailable:',e?.message||e);
+    }
+  }
+  const tick=()=>{if(document.visibilityState==='visible')updatePlayerSquashScoresLive()};
+  tick();
+  squashScoresPollTimer=setInterval(tick,SQUASH_SCORES_POLL_MS);
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')tick()});
 }
 
 }

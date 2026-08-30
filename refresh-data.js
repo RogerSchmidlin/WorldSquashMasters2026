@@ -27,6 +27,7 @@ const SQUASHLEVELS_LOGIN_URL=LOCAL_CONFIG?.squashLevels?.loginUrl||'https://app.
 const ID = '1d88743a-54e2-4073-bd30-a4f443a442f0';
 const ORIGIN = 'https://wsf.tournamentsoftware.com';
 const PLAYERS_URL = `${ORIGIN}/tournament/${ID}/Players`;
+const SQUASH_SCORES_API_URL = 'https://squashscores.com/api/overview/public/?categoryId=19';
 const MIN_MATCHES = 350; // confirmed player-v-player matches; later-round TBD slots are not on player profiles
 const MIN_RAW_OBSERVATIONS = 850;
 const CONCURRENCY = Math.max(1, Number(process.env.CRAWL_WORKERS || 6));
@@ -296,6 +297,23 @@ function parseDate(s){
   return found[0]||'';
 }
 function parseTime(s){const m=clean(s).match(/\b(\d{1,2}):([0-5]\d)\s*(am|pm)?\b/i);return m?clean(m[0]):''}
+
+function parseMatchScore(text){
+  const s=clean(text).replace(/[–—]/g,'-');
+  const pair=/\d{1,2}\s*-\s*\d{1,2}/g;
+
+  // TournamentSoftware commonly renders squash game scores with spaces:
+  // "11-8 9-11 11-6 11-7". Accept commas, semicolons or whitespace.
+  const run=s.match(/\b\d{1,2}\s*-\s*\d{1,2}(?:(?:\s*,\s*|\s*;\s*|\s+)\d{1,2}\s*-\s*\d{1,2}){2,4}\b/);
+  if(run){
+    return [...run[0].matchAll(pair)].map(x=>x[0].replace(/\s+/g,'')).join(', ');
+  }
+
+  // Fallback when only the overall match score is exposed.
+  const overall=s.match(/\b(?:3\s*-\s*[012]|[012]\s*-\s*3)\b/);
+  return overall?overall[0].replace(/\s+/g,''):'';
+}
+
 function deriveFields(text, fallbackEvent=''){
   text=clean(text);
   const event=(text.match(/(?:Men(?:'s)?|Women(?:'s)?)\s*(?:Over\s*)?(?:35|40|45|50|55|60|65|70|75|80|85)\+?/i)||[])[0]||fallbackEvent;
@@ -306,8 +324,9 @@ function deriveFields(text, fallbackEvent=''){
   else if(/Marmion/i.test(text)) venue='Marmion Squash Club';
   else if(/Belmont/i.test(text)) venue='Belmont Squash Centre';
   const court=(text.match(/\b(AGC|SC\s*\d+|Court\s*\d+|[A-Z]{2,5}\s*\d+)\b/i)||[])[1]||'';
-  const score=(text.match(/\b\d{1,2}[-–]\d{1,2}(?:\s*,\s*\d{1,2}[-–]\d{1,2}){1,4}\b/)||[])[0]||'';
-  return {date:parseDate(text),time:parseTime(text),event:clean(event),round:clean(round),venue,court:clean(court),result:score,status:score?'completed':'scheduled'};
+  const score=parseMatchScore(text);
+  const completed=Boolean(score)||/\b(?:walkover|w\/o|retired|ret\.?|withdrawn|defaulted)\b/i.test(text);
+  return {date:parseDate(text),time:parseTime(text),event:clean(event),round:clean(round),venue,court:clean(court),result:score,status:completed?'completed':'scheduled'};
 }
 
 async function launchBrowser(headlessOverride=null){
@@ -429,8 +448,54 @@ async function extractProfileCandidates(page){
           if(!(timeRe.test(text)||dateRe.test(text)))return;
           const links=[...el.querySelectorAll('a[href]')].map(a=>({text:clean(a.innerText||a.getAttribute('aria-label')||a.getAttribute('title')||''),href:a.href}));
           const players=links.filter(x=>playerHref.test(x.href));
+
+          // Completed matches on the modern TournamentSoftware player page render
+          // game scores as two separate numeric rows, e.g.
+          //   Francisco Cortes  9 15 11 11
+          //   Roger Schmidlin  11 13 6 5
+          // rather than text such as "11-9 13-15 ...".
+          // Capture each player link's nearest row-like ancestor and its standalone
+          // numeric score cells so candidateToMatch() can pair them game-by-game.
+          const scoreRows=[];
+          for(const a of el.querySelectorAll('a[href]')){
+            if(!playerHref.test(a.href))continue;
+            let row=a;
+            for(let depth=0;depth<6&&row;depth++,row=row.parentElement){
+              const rowLinks=[...row.querySelectorAll('a[href]')].filter(x=>playerHref.test(x.href));
+              if(rowLinks.length!==1)continue;
+
+              const numeric=[];
+              const nodes=[...row.querySelectorAll('td,th,[role="cell"],span,div')];
+              for(const n of nodes){
+                if(n.children.length>0 && !/^(TD|TH)$/i.test(n.tagName))continue;
+                const t=clean(n.innerText||n.textContent||'');
+                if(!/^\d{1,2}$/.test(t))continue;
+                const v=Number(t);
+                if(v<0||v>30)continue;
+                numeric.push(v);
+              }
+
+              // De-duplicate nested/duplicated leaf values conservatively. Score
+              // rows should expose 3-5 game values.
+              const rowText=clean(row.innerText||'');
+              const rawNums=(rowText.match(/(?:^|\s)(\d{1,2})(?=\s|$)/g)||[])
+                .map(x=>Number(x.trim()))
+                .filter(v=>v>=0&&v<=30);
+
+              const nums=(rawNums.length>=3&&rawNums.length<=5)?rawNums:numeric;
+              if(nums.length>=3&&nums.length<=5){
+                scoreRows.push({
+                  href:a.href,
+                  text:clean(a.innerText||a.getAttribute('aria-label')||a.getAttribute('title')||''),
+                  scores:nums
+                });
+                break;
+              }
+            }
+          }
+
           const ctx=contextFor(el); const key=(text+'|'+ctx+'|'+players.map(x=>x.href).join('|')).slice(0,3500); if(seen.has(key))return;seen.add(key);
-          out.push({source,text,context:ctx,links,playerLinks:players});
+          out.push({source,text,context:ctx,links,playerLinks:players,scoreRows});
         }
         for(const sel of sels)for(const el of document.querySelectorAll(sel))add(el,sel);
         return out;
@@ -465,6 +530,43 @@ function explicitEventMismatch(event,current){
   if(current.gender==='Women'&&men)return true;
   if(current.gender==='Men'&&women)return true;
   return false;
+}
+
+function structuredScoreForCandidate(c,current,opponent,lookup){
+  const rows=Array.isArray(c?.scoreRows)?c.scoreRows:[];
+  if(rows.length<2)return '';
+
+  const currentId=String(current.officialPlayerId||hrefKey(current.href)||'');
+  const currentKey=nameKey(current.name);
+  const opponentKey=nameKey(opponent||'');
+
+  const resolve=row=>{
+    const href=(row.href||'').split('#')[0];
+    const id=String(hrefKey(href)||'');
+    const info=lookup.byHref.get(href)||lookup.byHrefKey.get(hrefKey(href));
+    const nm=clean(info?.name||row.text||'');
+    return {...row,id,name:nm,key:nameKey(nm)};
+  };
+
+  const resolved=rows.map(resolve);
+  const a=resolved.find(r=>(currentId&&r.id===currentId)||r.key===currentKey);
+  const b=resolved.find(r=>r!==a && (r.key===opponentKey || sameName(r.name,opponent)));
+  if(!a||!b)return '';
+
+  const as=Array.isArray(a.scores)?a.scores:[];
+  const bs=Array.isArray(b.scores)?b.scores:[];
+  if(as.length<3||as.length>5||as.length!==bs.length)return '';
+
+  const validGame=(x,y)=>{
+    if(!Number.isInteger(x)||!Number.isInteger(y)||x<0||y<0||x>30||y>30||x===y)return false;
+    const hi=Math.max(x,y),lo=Math.min(x,y);
+    // Normal squash games reach at least 11; at 10-all they continue until
+    // someone leads by two. This rejects unrelated numeric columns.
+    return hi>=11 && (hi===11 ? lo<=9 : hi-lo===2);
+  };
+  if(!as.every((x,i)=>validGame(x,bs[i])))return '';
+
+  return as.map((x,i)=>`${x}-${bs[i]}`).join(', ');
 }
 
 function candidateToMatch(c,current,lookup){
@@ -517,6 +619,13 @@ function candidateToMatch(c,current,lookup){
 
   if(!opponent&&/\bTBD\b|to be determined|winner of|loser of|bye/i.test(whole))opponent=/bye/i.test(whole)?'Bye':'TBD';
   if(!opponent)return null;
+
+  const structuredScore=!f.result?structuredScoreForCandidate(c,current,opponent,lookup):'';
+  if(structuredScore){
+    f.result=structuredScore;
+    f.status='completed';
+  }
+
   return {...f,player1:current.name,player1Id:currentId,player2:opponent,player2Id:opponentId,rawText:whole,sourcePlayer:current.name,sourcePlayerId:currentId,sourceUrl:current.href};
 }
 async function scrapeOneProfile(page,current,lookup,networkBucket){
@@ -546,21 +655,52 @@ function matchKey(m){
 }
 function mergeMatches(list){
   const out=[];
+
+  const fixtureNames=m=>[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean).sort().join('~');
+  const sameFixture=(a,b)=>
+    a.date===b.date &&
+    clean(a.time).toLowerCase()===clean(b.time).toLowerCase() &&
+    fixtureNames(a) &&
+    fixtureNames(a)===fixtureNames(b);
+
+  const scoreRichness=v=>{
+    const s=clean(v);
+    if(!s)return 0;
+    const games=(s.match(/\b\d{1,2}\s*[-–]\s*\d{1,2}\b/g)||[]).length;
+    return games*100+s.length;
+  };
+
   const mergeInto=(x,m)=>{
-    for(const fld of ['event','round','venue','court','result','status','rawText','player1Id','player2Id','sourcePlayerId']){
+    // Never let an older scheduled observation overwrite a completed result.
+    if(String(m.status||'').toLowerCase()==='completed')x.status='completed';
+
+    // Prefer the observation with the richest published score.
+    if(scoreRichness(m.result)>scoreRichness(x.result))x.result=m.result;
+
+    for(const fld of ['event','round','venue','court','rawText','player1Id','player2Id','sourcePlayerId']){
       if((!x[fld]||String(x[fld]).length<String(m[fld]||'').length)&&m[fld])x[fld]=m[fld];
     }
+
     if((x.player2==='TBD'||x.player2==='Bye')&&m.player2&&m.player2!=='TBD'&&m.player2!=='Bye')x.player2=m.player2;
     if((x.player1==='TBD'||x.player1==='Bye')&&m.player1&&m.player1!=='TBD'&&m.player1!=='Bye')x.player1=m.player1;
   };
+
   for(const m of list){
     let x=out.find(o=>matchKey(o)===matchKey(m));
+
+    // The same match can be seen from each player's profile with different or
+    // missing IDs. Merge by names/date/time so the result updates the fixture
+    // already displayed on the website.
+    if(!x)x=out.find(o=>sameFixture(o,m));
+
     if(!x){
       const mNames=[m.player1,m.player2].filter(n=>n&&n!=='TBD'&&n!=='Bye');
       x=out.find(o=>o.date===m.date&&clean(o.time).toLowerCase()===clean(m.time).toLowerCase()&&mNames.some(n=>sameName(o.player1,n)||sameName(o.player2,n))&&[o.player1,o.player2,m.player1,m.player2].some(n=>n==='TBD'||n==='Bye'));
     }
+
     if(x)mergeInto(x,m); else out.push({...m});
   }
+
   return out.sort((a,b)=>`${a.date} ${a.time}`.localeCompare(`${b.date} ${b.time}`));
 }
 
@@ -2368,6 +2508,136 @@ async function enrichSquashLevels(players){
   }
 }
 
+
+async function fetchSquashScoresLiveMatches(canonicalPlayers){
+  try{
+    const url=`${SQUASH_SCORES_API_URL}&_=${Date.now()}`;
+    const response=await fetch(url,{headers:{'accept':'application/json'}});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const payload=await response.json();
+    const locations=Array.isArray(payload?.locations)?payload.locations:[];
+
+    const byName=new Map((canonicalPlayers||[]).map(p=>[nameKey(p.name),p]));
+    const canonicalName=raw=>byName.get(nameKey(raw))?.name||clean(raw);
+    const rows=[];
+
+    for(const location of locations){
+      for(const m of Array.isArray(location?.matches)?location.matches:[]){
+        const player1=canonicalName(m?.player1Name||'');
+        const player2=canonicalName(m?.player2Name||'');
+        if(!player1||!player2)continue;
+
+        const rawDate=clean(m?.matchDate||m?.date||'');
+        let date=parseDate(rawDate);
+        if(!date){
+          const dm=rawDate.match(/^(2026)-(\d{2})-(\d{2})/);
+          if(dm)date=`${dm[1]}-${dm[2]}-${dm[3]}`;
+        }
+        if(!date)continue;
+
+        let time='';
+        const description=clean(m?.description||'');
+        let tm=description.match(/\b(\d{1,2}):([0-5]\d)\b/);
+        if(!tm)tm=rawDate.match(/[T\s](\d{1,2}):([0-5]\d)/);
+        if(tm)time=`${String(Number(tm[1])).padStart(2,'0')}:${tm[2]}`;
+
+        const games=Array.isArray(m?.games)?m.games:[];
+        const scorePairs=[];
+        let p1Games=0,p2Games=0;
+        for(const g of games){
+          const a=Number(g?.player1Score),b=Number(g?.player2Score);
+          if(!Number.isFinite(a)||!Number.isFinite(b))continue;
+          if(a===0&&b===0)continue;
+          scorePairs.push(`${a}-${b}`);
+          if(a>b)p1Games++; else if(b>a)p2Games++;
+        }
+
+        const apiP1=Number(m?.player1GamesWon),apiP2=Number(m?.player2GamesWon);
+        if(Number.isFinite(apiP1))p1Games=apiP1;
+        if(Number.isFinite(apiP2))p2Games=apiP2;
+
+        const completed=p1Games>=3||p2Games>=3;
+        const live=!completed&&(scorePairs.length>0||p1Games>0||p2Games>0);
+
+        rows.push({
+          date,time,
+          player1,player2,
+          result:scorePairs.join(', '),
+          status:completed?'completed':(live?'live':'scheduled'),
+          venue:clean(location?.name||location?.locationName||''),
+          court:clean(m?.courtName||m?.court||''),
+          event:clean(m?.categoryName||m?.category||''),
+          round:description,
+          rawText:`SquashScores API ${clean(m?.id||m?.matchId||'')}`,
+          source:'SquashScores'
+        });
+      }
+    }
+
+    console.log(`SquashScores API: ${locations.length} location(s), ${rows.length} match(es), ${rows.filter(m=>m.result).length} with score data.`);
+    return rows;
+  }catch(e){
+    console.warn(`SquashScores API refresh skipped: ${e.message}`);
+    return [];
+  }
+}
+
+function mergeSquashScoresIntoMatches(baseMatches, liveMatches){
+  const out=(baseMatches||[]).map(m=>({...m}));
+  const pair=m=>[nameKey(m.player1),nameKey(m.player2)].sort().join('~');
+  const date=m=>canonicalTournamentDate(m.date);
+  const time=m=>clean(m.time).toLowerCase();
+
+  const chooseExisting=live=>{
+    const livePair=pair(live);
+    const liveDate=date(live);
+    const liveTime=time(live);
+
+    if(liveDate){
+      const sameDate=out.filter(m=>date(m)===liveDate&&pair(m)===livePair);
+      if(sameDate.length===1)return sameDate[0];
+      const timed=sameDate.filter(m=>liveTime&&time(m)===liveTime);
+      if(timed.length===1)return timed[0];
+    }
+
+    const samePair=out.filter(m=>pair(m)===livePair);
+    const timed=samePair.filter(m=>liveTime&&time(m)===liveTime);
+    if(timed.length===1)return timed[0];
+    if(samePair.length===1)return samePair[0];
+    return null;
+  };
+
+  for(const live of liveMatches||[]){
+    const existing=chooseExisting(live);
+
+    if(existing){
+      if(live.result)existing.result=live.result;
+      if(live.status==='completed'||live.status==='live')existing.status=live.status;
+      if(live.time)existing.time=live.time;
+      if(live.venue)existing.venue=live.venue;
+      if(live.court)existing.court=live.court;
+      existing.liveSource='SquashScores';
+      existing.liveUpdatedAt=new Date().toISOString();
+      continue;
+    }
+
+    // Do not persist a date-less API row as a separate TBD duplicate.
+    if(date(live)&&live.player1&&live.player2&&live.time){
+      const added={...live,liveSource:'SquashScores',liveUpdatedAt:new Date().toISOString()};
+      out.push(added);
+    }
+  }
+
+  return out;
+}
+
+// canonicalDate is a frontend helper; keep a tiny refresh-side equivalent.
+function canonicalTournamentDate(v){
+  const s=clean(v);
+  const m=s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return m?`${m[1]}-${m[2]}-${m[3]}`:s;
+}
+
 function isGlass(m){return /\bAGC\b|Karrinyup/i.test([m.court,m.venue,m.rawText].join(' '))}
 function hasPlayer(m,n){return sameName(m.player1,n)||sameName(m.player2,n)}
 
@@ -2446,20 +2716,87 @@ function hasPlayer(m,n){return sameName(m.player1,n)||sameName(m.player2,n)}
   stopTournamentCrawlTiming();
   await browser.close();
 
-  const matches=mergeMatches(all);
+  const structuredScoreObservations=all.filter(m=>m.result&&String(m.rawText||'')&&!/\d{1,2}\s*[-–—]\s*\d{1,2}/.test(String(m.rawText||''))).length;
+
+  // TournamentSoftware player pages can expose only a partial slice of the tournament
+  // once play is under way. Never replace the complete published schedule with that
+  // partial crawl. Instead, overlay fresh observations onto the last known dataset.
+  const freshMatches=mergeMatches(all);
+  const existingMatches=Array.isArray(existing.matches)?existing.matches:[];
+  const tournamentMatches=FULL_REBUILD
+    ? freshMatches
+    : mergeMatches([...existingMatches.map(m=>({...m})), ...freshMatches.map(m=>({...m}))]);
+
+  // One lightweight request for the whole tournament. This is the same public
+  // JSON endpoint used by squashscores.com/overview.html?categoryId=19.
+  const squashScoresMatches=await fetchSquashScoresLiveMatches(canonicalPlayers);
+  const matches=mergeSquashScoresIntoMatches(tournamentMatches,squashScoresMatches);
+
   const glass=matches.filter(isGlass);
-  console.log(`\nUnique matches: ${matches.length}`);
-  console.log(`Glass Court matches: ${glass.length}`);
+  const freshCompleted=freshMatches.filter(m=>String(m.status||'').toLowerCase()==='completed'||m.result);
+  const freshScored=freshMatches.filter(m=>m.result);
+  const completedMatches=matches.filter(m=>String(m.status||'').toLowerCase()==='completed'||m.result);
+  const scoredMatches=matches.filter(m=>m.result);
+
+  console.log(`\nFresh unique matches observed: ${freshMatches.length}`);
+  console.log(`Existing published matches before merge: ${existingMatches.length}`);
+  console.log(`Merged TournamentSoftware matches: ${tournamentMatches.length}`);
+  console.log(`SquashScores live matches observed: ${squashScoresMatches.length}`);
+  console.log(`Final published matches after live merge: ${matches.length}`);
+  console.log(`Glass Court matches after merge: ${glass.length}`);
+  console.log(`Fresh completed/result matches: ${freshCompleted.length} (${freshScored.length} with score data)`);
+  console.log(`Merged completed/result matches: ${completedMatches.length} (${scoredMatches.length} with score data)`);
+  console.log(`Structured player-page score observations: ${structuredScoreObservations}`);
+  if(freshCompleted.length&&freshScored.length===0){
+    console.warn('WARNING: completed matches were detected, but no game scores were extracted from the current TournamentSoftware player-page markup.');
+  }
   console.log(`Candidate match containers inspected: ${candidateTotal}`);
   console.log(`Vic Park watchlist (${trackedNames.length}): ${trackedNames.join(', ')}`);
   for(const n of trackedNames)console.log(`  ${n}: ${matches.filter(m=>hasPlayer(m,n)).length} match(es)`);
 
-  const audit={refreshedAt:new Date().toISOString(),officialPlayerLinks:links.length,officialPlayerIds:canonicalPlayers.filter(p=>p.officialPlayerId).length,rawMatchObservations:all.length,uniqueMatches:matches.length,glassCourtMatches:glass.length,profileFailures:failed,tracked:trackedNames.map(n=>({name:n,matches:matches.filter(m=>hasPlayer(m,n)).length}))};
+  const audit={
+    refreshedAt:new Date().toISOString(),
+    officialPlayerLinks:links.length,
+    officialPlayerIds:canonicalPlayers.filter(p=>p.officialPlayerId).length,
+    rawMatchObservations:all.length,
+    freshUniqueMatches:freshMatches.length,
+    existingMatches:existingMatches.length,
+    mergedTournamentMatches:tournamentMatches.length,
+    squashScoresMatches:squashScoresMatches.length,
+    squashScoresScoredMatches:squashScoresMatches.filter(m=>m.result).length,
+    mergedMatches:matches.length,
+    glassCourtMatches:glass.length,
+    freshCompletedMatches:freshCompleted.length,
+    freshScoredMatches:freshScored.length,
+    mergedCompletedMatches:completedMatches.length,
+    mergedScoredMatches:scoredMatches.length,
+    profileFailures:failed,
+    tracked:trackedNames.map(n=>({name:n,matches:matches.filter(m=>hasPlayer(m,n)).length}))
+  };
   fs.writeFileSync(path.join(DIR,'refresh-audit.json'),JSON.stringify(audit,null,2));
   fs.writeFileSync(path.join(DIR,'refresh-matches.json'),JSON.stringify(matches,null,2));
 
-  if(matches.length<MIN_MATCHES || all.length<MIN_RAW_OBSERVATIONS || failed>Math.max(10,Math.floor(links.length*0.03))){
-    throw new Error(`Refresh coverage looks incomplete: ${matches.length} unique confirmed matches, ${all.length} raw observations, ${failed} profile failures. Existing data.js was left unchanged. See refresh-audit.json and refresh-matches.json.`);
+  const tooManyFailures=failed>Math.max(10,Math.floor(links.length*0.03));
+  if(tooManyFailures){
+    throw new Error(`Refresh coverage looks incomplete: ${failed} profile failures. Existing published data was left unchanged. See refresh-audit.json.`);
+  }
+
+  if(FULL_REBUILD){
+    // A true rebuild has no previous schedule to protect, so keep the strict coverage gate.
+    if(freshMatches.length<MIN_MATCHES || all.length<MIN_RAW_OBSERVATIONS){
+      throw new Error(`Full rebuild coverage looks incomplete: ${freshMatches.length} unique confirmed matches, ${all.length} raw observations. Existing published data was left unchanged.`);
+    }
+  }else{
+    // Normal live refreshes are allowed to be partial, but must contain a meaningful
+    // amount of fresh tournament data. The final merged dataset must never shrink.
+    const minFreshMatches=Math.min(100,Math.max(20,Math.floor(existingMatches.length*0.10)));
+    const minFreshObservations=Math.min(150,Math.max(40,Math.floor(existingMatches.length*0.15)));
+    if(freshMatches.length<minFreshMatches || all.length<minFreshObservations){
+      throw new Error(`Live refresh returned too little fresh data to trust: ${freshMatches.length} unique matches, ${all.length} raw observations. Existing published data was left unchanged.`);
+    }
+    if(existingMatches.length && matches.length<existingMatches.length){
+      throw new Error(`Merged match dataset unexpectedly shrank from ${existingMatches.length} to ${matches.length}; existing published data was left unchanged.`);
+    }
   }
 
   if(FULL_REBUILD){

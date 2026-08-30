@@ -1,10 +1,16 @@
 {
-  "refreshedAt": "2026-08-21T17:19:32.904Z",
+  "refreshedAt": "2026-08-30T07:04:39.041Z",
   "officialPlayerLinks": 911,
   "officialPlayerIds": 910,
-  "rawMatchObservations": 1210,
-  "uniqueMatches": 596,
-  "glassCourtMatches": 37,
+  "rawMatchObservations": 1715,
+  "freshUniqueMatches": 706,
+  "existingMatches": 664,
+  "mergedMatches": 712,
+  "glassCourtMatches": 55,
+  "freshCompletedMatches": 55,
+  "freshScoredMatches": 0,
+  "mergedCompletedMatches": 55,
+  "mergedScoredMatches": 0,
   "profileFailures": 0,
   "tracked": [
     {
@@ -33,7 +39,7 @@
     },
     {
       "name": "Zoe Petrovansky",
-      "matches": 1
+      "matches": 2
     },
     {
       "name": "Joannah Yue",
@@ -57,7 +63,7 @@
     },
     {
       "name": "Michael Corren",
-      "matches": 1
+      "matches": 2
     },
     {
       "name": "Jason Patmore",
@@ -65,6 +71,30 @@
     },
     {
       "name": "Joan Naarstig",
+      "matches": 1
+    },
+    {
+      "name": "Jahangir Khan",
+      "matches": 2
+    },
+    {
+      "name": "Shirley Collins",
+      "matches": 1
+    },
+    {
+      "name": "Kerry Kern",
+      "matches": 1
+    },
+    {
+      "name": "Steve Mckenna",
+      "matches": 1
+    },
+    {
+      "name": "Cindy Parsley",
+      "matches": 1
+    },
+    {
+      "name": "Kyle Roach",
       "matches": 1
     }
   ]

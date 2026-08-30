@@ -58,6 +58,7 @@ async function ensureMatchesData(){
     data.matches=legacy?.matches||[];
   }
   data.matches=(data.matches||[]).map(normaliseMatch);
+  data.baseMatches=data.matches.map(m=>({...m}));
   rebuildFavoriteMatchIndex();
   matchesReady=true;
 }
@@ -70,6 +71,7 @@ async function ensureVicParkData(){
     if(!pack||!Array.isArray(pack.players)||!Array.isArray(pack.matches))throw new Error('vicpark-data.js did not define VIC_PARK_DATA');
     vicParkPlayers=pack.players;
     vicParkMatches=pack.matches.map(normaliseMatch);
+    window.__vicParkBaseMatches=vicParkMatches.map(m=>({...m}));
   }catch(e){
     // Backwards-compatible fallback while deploying the new small Vic Park data file.
     console.warn('vicpark-data.js not available; falling back to full match data.',e);
@@ -100,6 +102,351 @@ function canonicalDate(v){
   const d=new Date(s); if(!Number.isNaN(d.getTime())){const y=d.getFullYear(),mo=String(d.getMonth()+1).padStart(2,'0'),da=String(d.getDate()).padStart(2,'0');return `${y}-${mo}-${da}`;}
   return s;
 }
+
+const SQUASH_SCORES_LIVE_URL='https://squashscores.com/overview.html?categoryId=19';
+const SQUASH_SCORES_API_URL='https://squashscores.com/api/overview/public/?categoryId=19';
+const SQUASH_SCORES_POLL_MS=5000;
+
+function ssNorm(s){
+  return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[’‘]/g,"'").toLowerCase().replace(/[^a-z0-9']+/g,' ').trim();
+}
+function ssDate(text){
+  const s=String(text||'');
+  let m=s.match(/\b(\d{1,2})\/(\d{1,2})\/(2026)\b/);
+  if(m)return `${m[3]}-${String(+m[2]).padStart(2,'0')}-${String(+m[1]).padStart(2,'0')}`;
+  m=s.match(/\b(2026)-(\d{1,2})-(\d{1,2})\b/);
+  return m?`${m[1]}-${String(+m[2]).padStart(2,'0')}-${String(+m[3]).padStart(2,'0')}`:'';
+}
+function ssTime(text){
+  const m=String(text||'').match(/\b(\d{1,2}):([0-5]\d)\b/);
+  return m?`${String(+m[1]).padStart(2,'0')}:${m[2]}`:'';
+}
+function ssScorePairs(text){
+  const s=String(text||'').replace(/[–—]/g,'-');
+  const run=s.match(/\b\d{1,2}\s*-\s*\d{1,2}(?:(?:\s*,\s*|\s+)\d{1,2}\s*-\s*\d{1,2}){2,4}\b/);
+  if(!run)return '';
+  return [...run[0].matchAll(/(\d{1,2})\s*-\s*(\d{1,2})/g)]
+    .map(x=>`${+x[1]}-${+x[2]}`).join(', ');
+}
+function ssValidGame(a,b){
+  if(!Number.isInteger(a)||!Number.isInteger(b)||a===b||a<0||b<0||a>30||b>30)return false;
+  const hi=Math.max(a,b),lo=Math.min(a,b);
+  return hi>=11&&(hi===11?lo<=9:hi-lo===2);
+}
+function ssKnownNames(text,players){
+  const hay=` ${ssNorm(text)} `;
+  const found=[];
+  for(const p of players||[]){
+    const k=ssNorm(p?.name);
+    if(k.length>=5&&hay.includes(` ${k} `)){
+      found.push(p.name);
+      if(found.length===3)break;
+    }
+  }
+  return found;
+}
+function ssSeparateScore(container,p1,p2){
+  const rows=[...container.querySelectorAll('tr,[role="row"],li,[class*="row"],[class*="player"]')];
+  const getRow=n=>rows.find(r=>` ${ssNorm(r.textContent)} `.includes(` ${ssNorm(n)} `));
+  const a=getRow(p1),b=getRow(p2);
+  if(!a||!b||a===b)return '';
+  const values=row=>{
+    const raw=String(row.textContent||'').replace(/\s+/g,' ').trim();
+    const vals=(raw.match(/(?:^|\s)\d{1,2}(?=\s|$)/g)||[]).map(x=>+x.trim()).filter(x=>x<=30);
+    for(let n=5;n>=3;n--)if(vals.length>=n)return vals.slice(-n);
+    return [];
+  };
+  const av=values(a),bv=values(b);
+  if(av.length<3||av.length!==bv.length||!av.every((x,i)=>ssValidGame(x,bv[i])))return '';
+  return av.map((x,i)=>`${x}-${bv[i]}`).join(', ');
+}
+function ssVenue(text){
+  const s=String(text||'').replace(/\s+/g,' ').trim();
+  for(const v of ['Squashworld Mirrabooka','Belmont Squash Centre','Karrinyup Shopping Centre','Marmion Squash Club']){
+    if(s.toLowerCase().includes(v.toLowerCase()))return v;
+  }
+  const m=s.match(/\b(?:Mirrabooka|Belmont|Karrinyup|Marmion)\b[^|]{0,80}/i);
+  return m?m[0].trim():'';
+}
+
+function parseSquashScoresApi(payload,players){
+  const rows=[];
+  const locations=Array.isArray(payload?.locations)?payload.locations:[];
+  const playerList=players||[];
+
+  const canonicalPlayerName=raw=>{
+    const wanted=ssNorm(raw);
+    if(!wanted)return String(raw||'').trim();
+    const p=playerList.find(x=>ssNorm(x?.name)===wanted);
+    return p?.name||String(raw||'').trim();
+  };
+
+  const gamesScore=(match,p1Side=true)=>{
+    const games=Array.isArray(match?.games)?match.games:[];
+    const pairs=[];
+    for(const g of games){
+      const a=Number(g?.player1Score);
+      const b=Number(g?.player2Score);
+      if(!Number.isFinite(a)||!Number.isFinite(b))continue;
+      if(a===0&&b===0)continue;
+      pairs.push(p1Side?`${a}-${b}`:`${b}-${a}`);
+    }
+    return pairs.join(', ');
+  };
+
+  const gamesWon=match=>{
+    const p1=Number(match?.player1GamesWon);
+    const p2=Number(match?.player2GamesWon);
+    if(Number.isFinite(p1)&&Number.isFinite(p2))return [p1,p2];
+    let a=0,b=0;
+    for(const g of Array.isArray(match?.games)?match.games:[]){
+      const x=Number(g?.player1Score),y=Number(g?.player2Score);
+      if(!Number.isFinite(x)||!Number.isFinite(y)||x===y)continue;
+      if(x>y)a++; else b++;
+    }
+    return [a,b];
+  };
+
+  for(const location of locations){
+    for(const m of Array.isArray(location?.matches)?location.matches:[]){
+      const player1=canonicalPlayerName(m?.player1Name);
+      const player2=canonicalPlayerName(m?.player2Name);
+      if(!player1||!player2)continue;
+
+      const rawDate=String(m?.matchDate||m?.date||'');
+      let date=canonicalDate(rawDate);
+      if(!date){
+        const dm=rawDate.match(/^(\d{4})-(\d{2})-(\d{2})/);
+        if(dm)date=`${dm[1]}-${dm[2]}-${dm[3]}`;
+      }
+
+      let time='';
+      const description=String(m?.description||'').replace(/\s+/g,' ').trim();
+      const tm=description.match(/\b(\d{1,2}):([0-5]\d)\b/);
+      if(tm)time=`${String(+tm[1]).padStart(2,'0')}:${tm[2]}`;
+      if(!time){
+        const dt=rawDate.match(/[T\s](\d{1,2}):([0-5]\d)/);
+        if(dt)time=`${String(+dt[1]).padStart(2,'0')}:${dt[2]}`;
+      }
+
+      const [p1Won,p2Won]=gamesWon(m);
+      const score=gamesScore(m,true);
+      const completed=p1Won>=3||p2Won>=3;
+      const hasStarted=score.length>0||p1Won>0||p2Won>0;
+
+      let status='scheduled';
+      if(completed)status='completed';
+      else if(hasStarted)status='live';
+
+      rows.push({
+        date,
+        time,
+        player1,
+        player2,
+        result:score,
+        status,
+        venue:String(location?.name||location?.locationName||'').trim(),
+        court:String(m?.courtName||m?.court||'').trim(),
+        event:String(m?.categoryName||m?.category||'').trim(),
+        round:description,
+        liveSource:'SquashScores',
+        squashScoresMatchId:m?.id||m?.matchId||null
+      });
+    }
+  }
+
+  console.log(`SquashScores API: ${locations.length} location(s) · ${rows.length} match(es)`);
+  const rogerRows=rows.filter(m=>ssNorm(m.player1)==='roger schmidlin'||ssNorm(m.player2)==='roger schmidlin');
+  if(rogerRows.length)console.log('SquashScores Roger rows:',rogerRows);
+
+  return rows;
+}
+
+function parseSquashScoresHtml(html,players){
+  const doc=new DOMParser().parseFromString(html,'text/html');
+  const found=new Map();
+  const allPlayers=(players||[]).filter(p=>p?.name&&ssNorm(p.name).length>=5);
+
+  function scoreFromTextAroundNames(text,p1,p2){
+    const clean=String(text||'').replace(/\s+/g,' ').trim();
+    const low=clean.toLowerCase();
+    const i1=low.indexOf(String(p1).toLowerCase());
+    const i2=low.indexOf(String(p2).toLowerCase());
+    if(i1<0||i2<0)return '';
+
+    const first=i1<i2?{name:p1,pos:i1}:{name:p2,pos:i2};
+    const second=i1<i2?{name:p2,pos:i2}:{name:p1,pos:i1};
+    const firstStart=first.pos+first.name.length;
+    const secondStart=second.pos+second.name.length;
+
+    const between=clean.slice(firstStart,second.pos);
+    const after=clean.slice(secondStart);
+
+    const getNums=s=>(String(s).match(/(?:^|\s)(\d{1,2})(?=\s|$)/g)||[])
+      .map(x=>+x.trim()).filter(x=>x>=0&&x<=30);
+
+    // Try the straightforward rendered-text order first.
+    let a=getNums(between).slice(0,5);
+    let b=getNums(after).slice(0,5);
+
+    // Ignore obvious non-score values like age-group 60/65 etc.
+    a=a.filter(x=>x<=30); b=b.filter(x=>x<=30);
+
+    const n=Math.min(a.length,b.length,5);
+    if(n>=3){
+      a=a.slice(0,n); b=b.slice(0,n);
+      if(a.every((x,i)=>ssValidGame(x,b[i]))){
+        const pair=a.map((x,i)=>`${x}-${b[i]}`).join(', ');
+        return first.name===p1?pair:b.map((x,i)=>`${x}-${a[i]}`).join(', ');
+      }
+    }
+    return '';
+  }
+
+  function addCandidate(el){
+    const text=String(el.textContent||'').replace(/\s+/g,' ').trim();
+    if(text.length<20||text.length>2600)return;
+
+    const date=ssDate(text),time=ssTime(text);
+    if(!date||!time)return;
+
+    const names=ssKnownNames(text,allPlayers);
+    if(names.length<2)return;
+
+    // Prefer the smallest DOM element containing this match. If a child already
+    // contains the same two players/date/time, the parent is too broad.
+    for(const child of el.children||[]){
+      const ct=String(child.textContent||'').replace(/\s+/g,' ').trim();
+      if(!ct||ct===text)continue;
+      if(ssDate(ct)===date&&ssTime(ct)===time){
+        const cn=ssKnownNames(ct,allPlayers);
+        if(cn.length>=2)return;
+      }
+    }
+
+    const p1=names[0],p2=names[1];
+    let result=ssScorePairs(text);
+    if(!result)result=ssSeparateScore(el,p1,p2);
+    if(!result)result=scoreFromTextAroundNames(text,p1,p2);
+
+    const lower=text.toLowerCase();
+    const completed=!!result||/\b(?:finished|completed|won|lost)\b/i.test(text);
+    const live=/\b(?:live|playing|in progress|on court)\b/i.test(text);
+
+    const key=`${date}|${[ssNorm(p1),ssNorm(p2)].sort().join('|')}`;
+    const row={
+      date,time,player1:p1,player2:p2,result,
+      status:completed?'completed':(live?'live':'scheduled'),
+      venue:ssVenue(text),liveSource:'SquashScores',
+      liveRawText:text
+    };
+
+    const prev=found.get(key);
+    const richness=x=>(x?.result?1000+String(x.result).length:0)+String(x?.liveRawText||'').length;
+    if(!prev||richness(row)>richness(prev))found.set(key,row);
+  }
+
+  // The SquashScores overview is small. Scan all structural elements rather than
+  // depending on site-specific CSS class names.
+  for(const el of doc.querySelectorAll('tr,tbody,table,article,li,section,div'))addCandidate(el);
+
+  // Final safety pass over BODY: useful if their page has a very flat structure.
+  addCandidate(doc.body);
+
+  const rows=[...found.values()];
+
+  // Visible diagnostics for local testing.
+  const rogerText=String(doc.body?.textContent||'').toLowerCase().includes('roger schmidlin');
+  console.log(`SquashScores parser: HTML ${html.length} chars · ${rows.length} match(es) parsed · Roger present: ${rogerText?'YES':'NO'}`);
+  if(rogerText){
+    const rogerRows=rows.filter(m=>ssNorm(m.player1).includes('roger schmidlin')||ssNorm(m.player2).includes('roger schmidlin'));
+    console.log('SquashScores Roger rows:',rogerRows);
+    if(!rogerRows.length){
+      const body=String(doc.body?.textContent||'').replace(/\s+/g,' ').trim();
+      const ix=body.toLowerCase().indexOf('roger schmidlin');
+      if(ix>=0)console.log('SquashScores Roger source snippet:',body.slice(Math.max(0,ix-350),ix+700));
+    }
+  }
+
+  return rows;
+}
+function ssOverlay(base,live){
+  const out=(base||[]).map(m=>({...m}));
+
+  const pairKey=m=>[ssNorm(m.player1),ssNorm(m.player2)].sort().join('|');
+  const dateKey=m=>canonicalDate(m.date||'');
+  const timeKey=m=>displayTime24(m.time||'');
+
+  const byExact=new Map();
+  const byPair=new Map();
+
+  for(const m of out){
+    const pair=pairKey(m);
+    const exact=`${dateKey(m)}|${pair}`;
+    if(!byExact.has(exact))byExact.set(exact,[]);
+    byExact.get(exact).push(m);
+    if(!byPair.has(pair))byPair.set(pair,[]);
+    byPair.get(pair).push(m);
+  }
+
+  const chooseExisting=liveMatch=>{
+    const pair=pairKey(liveMatch);
+    const date=dateKey(liveMatch);
+    const time=timeKey(liveMatch);
+
+    // Best case: same date + same players.
+    if(date){
+      const exact=byExact.get(`${date}|${pair}`)||[];
+      if(exact.length===1)return exact[0];
+      const timed=exact.filter(m=>time&&timeKey(m)===time);
+      if(timed.length===1)return timed[0];
+    }
+
+    // SquashScores sometimes omits/changes the date field in the live response.
+    // The scheduled time + player pair is then the safest identity.
+    const pairRows=byPair.get(pair)||[];
+    const timed=pairRows.filter(m=>time&&timeKey(m)===time);
+    if(timed.length===1)return timed[0];
+
+    // If this player pairing only exists once in the tournament data, augment
+    // that fixture rather than creating a duplicate TBD row.
+    if(pairRows.length===1)return pairRows[0];
+
+    return null;
+  };
+
+  for(const l of live||[]){
+    const existing=chooseExisting(l);
+
+    if(existing){
+      if(l.result)existing.result=l.result;
+      if(l.status==='completed'||l.status==='live')existing.status=l.status;
+      if(l.time)existing.time=l.time;
+      if(l.venue)existing.venue=l.venue;
+      if(l.court)existing.court=l.court;
+      if(l.event&&!existing.event)existing.event=l.event;
+      if(l.round&&!existing.round)existing.round=l.round;
+      existing.liveSource='SquashScores';
+      continue;
+    }
+
+    // Only add a genuinely new SquashScores fixture when it has enough identity
+    // information. A date-less record is not allowed to become a duplicate TBD row.
+    if(dateKey(l)&&pairKey(l)&&timeKey(l)){
+      out.push({...l,rawText:'SquashScores live'});
+    }
+  }
+
+  return out;
+}
+async function fetchSquashScoresApi(){
+  const sep=SQUASH_SCORES_API_URL.includes('?')?'&':'?';
+  const r=await fetch(`${SQUASH_SCORES_API_URL}${sep}_=${Date.now()}`,{cache:'no-store',mode:'cors'});
+  if(!r.ok)throw new Error(`SquashScores API HTTP ${r.status}`);
+  return r.json();
+}
+
 const flatText=v=>{try{return typeof v==='string'?v:JSON.stringify(v)}catch{return String(v||'')}};
 const basicNorm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’‘]/g,"'").toLowerCase().replace(/[^a-z0-9']+/g,' ').trim();
 let playerNeedles=[];
@@ -167,7 +514,47 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const fmtDate=iso=>{const d=new Date(iso+'T12:00:00');return{day:d.toLocaleDateString('en-AU',{weekday:'short'}),date:d.toLocaleDateString('en-AU',{day:'numeric',month:'short'}),long:d.toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}};
 const tournamentDates=()=>{const a=[], d=new Date(data.tournament.startDate+'T12:00:00'), end=new Date(data.tournament.endDate+'T12:00:00');for(;d<=end;d.setDate(d.getDate()+1))a.push(d.toISOString().slice(0,10));return a;};
 const isGlass=m=>/Karrinyup|\bAGC\b/i.test([m.venue,m.court].join(' '));
-const isPast=m=>m.status==='completed'||!!m.result;
+const LIVE_MATCH_WINDOW_MINUTES=90;
+
+function perthNowParts(){
+  const parts=new Intl.DateTimeFormat('en-CA',{
+    timeZone:'Australia/Perth',year:'numeric',month:'2-digit',day:'2-digit',
+    hour:'2-digit',minute:'2-digit',hourCycle:'h23'
+  }).formatToParts(new Date());
+  const get=t=>Number(parts.find(p=>p.type===t)?.value||0);
+  return {year:get('year'),month:get('month'),day:get('day'),hour:get('hour'),minute:get('minute')};
+}
+
+function matchLocalMinuteValue(m){
+  const d=canonicalDate(m?.date||'');
+  const dm=d.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const tm=String(displayTime24(m?.time||'')).match(/^(\d{2}):(\d{2})$/);
+  if(!dm||!tm)return null;
+  return Math.floor(Date.UTC(+dm[1],+dm[2]-1,+dm[3],+tm[1],+tm[2])/60000);
+}
+
+function perthNowMinuteValue(){
+  const n=perthNowParts();
+  return Math.floor(Date.UTC(n.year,n.month-1,n.day,n.hour,n.minute)/60000);
+}
+
+function isMatchCurrent(m){
+  const status=String(m?.status||'').toLowerCase();
+  if(status==='live')return true;
+  if(status==='completed'||status==='played'||m?.result)return false;
+  const start=matchLocalMinuteValue(m);
+  if(start===null)return false;
+  const now=perthNowMinuteValue();
+  return now>=start&&now<start+LIVE_MATCH_WINDOW_MINUTES;
+}
+
+const isPast=m=>{
+  const status=String(m?.status||'').toLowerCase();
+  if(status==='completed'||status==='played')return true;
+  if(status!=='live'&&!!m?.result)return true;
+  const start=matchLocalMinuteValue(m);
+  return start!==null&&perthNowMinuteValue()>=start+LIVE_MATCH_WINDOW_MINUTES;
+};
 const matchHas=(m,name)=>{const p=playerByName(name);return !!(p?.officialPlayerId&&(String(m.player1Id||'')===String(p.officialPlayerId)||String(m.player2Id||'')===String(p.officialPlayerId)))||sameName(m.player1,name)||sameName(m.player2,name);};
 const opponentFor=(m,name)=>sameName(m.player1,name)?m.player2:m.player1;
 const FAVORITES_STORAGE_KEY='wsm2026FavouritePlayers';
@@ -189,6 +576,7 @@ async function setPage(id){
   history.replaceState(null,'','#'+id);
   scrollTo({top:0,behavior:'smooth'});
   try{
+    if(['glass','vicpark','favorites'].includes(id))startSquashScoresPolling();
     if(id==='players'&&!playersRendered){showLoading(id);await ensurePlayersData();renderPlayers();playersRendered=true;}
     if(id==='glass'&&!glassReady){showLoading(id);await ensureMatchesData();setupGlass();glassReady=true;}
     if(id==='vicpark'&&!vicParkReady){showLoading(id);await ensureVicParkData();setupVicPark();vicParkReady=true;}
@@ -336,15 +724,40 @@ function matchCard(m){
   const p1=playerByName(m.player1), p2=playerByName(m.player2);
   return `<article class="match-card"><div class="match-time">${esc(displayTime24(m.time))}</div><div class="event-badge">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div><div class="fixture"><div class="player-side">${flagImg(p1)}<a class="match-player-link" href="${playerPageUrl(m.player1,m.player1Id)}"><span class="player-name-stack"><b>${esc(m.player1||'TBD')}</b>${squashBadges(p1)}</span></a></div><div class="vs">VS</div><div class="player-side right"><a class="match-player-link" href="${playerPageUrl(m.player2,m.player2Id)}"><span class="player-name-stack"><b>${esc(m.player2||'TBD')}</b>${squashBadges(p2)}</span></a>${flagImg(p2)}</div></div><div class="court-tag">${venueBadge(m)}<span>${esc(cleanVenuePlace(m))}</span></div></article>`;
 }
+
+function scoreWinnerName(m){
+  const games=[...String(m?.result||'').matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)]
+    .map(x=>[Number(x[1]),Number(x[2])]);
+  if(!games.length)return '';
+  let p1=0,p2=0;
+  for(const [a,b] of games){
+    if(a>b)p1++;
+    else if(b>a)p2++;
+  }
+  if(p1===p2)return '';
+  return p1>p2?String(m?.player1||''):String(m?.player2||'');
+}
+
+function matchScoreSummary(m){
+  if(!m?.result)return '';
+  const winner=scoreWinnerName(m);
+  return `<div class="match-history-score has-score">
+    <span class="match-history-score-label">Score</span>
+    <strong>${esc(m.result)}</strong>
+    ${winner?`<span class="match-winner-label">Winner: <strong>${esc(winner)}</strong></span>`:''}
+  </div>`;
+}
+
 function compactScheduleRow(m,trackedNames=[]){
   const p1=playerByName(m.player1), p2=playerByName(m.player2);
   const p1Tracked=trackedNames.some(n=>sameName(n,m.player1));
   const p2Tracked=trackedNames.some(n=>sameName(n,m.player2));
   const v=venueVisual(m);
-  return `<article class="vic-match-row ${isPast(m)?'past':''}">
-    <div class="vic-time"><span class="vic-time-value">${esc(displayTime24(m.time))}</span><span class="vic-time-age">${esc(m.event||'')}</span></div>
+  const live=isMatchCurrent(m);
+  return `<article class="vic-match-row ${isPast(m)?'past':''} ${live?'match-live':''}">
+    <div class="vic-time"><span class="vic-time-value">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-time-age">${esc(m.event||'')}</span></div>
     <div class="vic-match-main">
-      <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${esc(displayTime24(m.time))}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(m.event||'')}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(m.event||'')}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
+      <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(m.event||'')}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(m.event||'')}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
       <div class="vic-fixture-line">
         <a class="${p1Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">
           <span class="fixture-player-desktop">${flagImg(p1)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p1,m.player1,p1Tracked)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span></span></span>
@@ -373,8 +786,8 @@ function compactScheduleRow(m,trackedNames=[]){
             </span>
           </span>
         </a>
-        ${m.result?`<span class="vic-result">${esc(m.result)}</span>`:''}
       </div>
+      ${matchScoreSummary(m)}
     </div>
     <div class="vic-location" title="${esc(v.place)}">${v.code?`<span class="venue-letter venue-${v.code.toLowerCase()}" aria-hidden="true">${v.code}</span>`:''}<span>${esc(v.place)}</span></div>
   </article>`;
@@ -548,6 +961,115 @@ function makeHomeSummary(source){
     ageGroups:[...new Set(players.map(p=>p.ageGroup).filter(x=>x!==null&&x!==undefined&&String(x)!==''))].sort((a,b)=>Number(a)-Number(b))
   };
 }
+
+
+let squashScoresPollTimer=null;
+async function updateSquashScoresLive(){
+  try{
+    const payload=await fetchSquashScoresApi();
+    const known=[...(data.players||[]),...(vicParkPlayers||[])];
+    const uniq=[];const seen=new Set();
+    for(const p of known){const k=ssNorm(p?.name);if(k&&!seen.has(k)){seen.add(k);uniq.push(p)}}
+    const live=parseSquashScoresApi(payload,uniq);
+    console.log(`SquashScores live overlay: ${live.length} match(es) parsed`);
+    if(!live.length)return;
+
+    if(matchesReady){
+      data.matches=ssOverlay(data.baseMatches||data.matches,live).map(normaliseMatch);
+      rebuildFavoriteMatchIndex();
+    }
+    if(vicParkDataReady){
+      vicParkMatches=ssOverlay(window.__vicParkBaseMatches||vicParkMatches,live).map(normaliseMatch);
+    }
+
+    const page=location.hash.slice(1)||'home';
+    if(page==='glass'&&glassReady)renderFeatureCourt(selectedFeatureDate);
+    else if(page==='favorites')renderFavoritePlayers();
+    else if(page==='vicpark'&&vicParkReady)setupVicPark();
+  }catch(e){
+    console.warn('SquashScores live unavailable:',e?.message||e);
+  }
+}
+function startSquashScoresPolling(){
+  if(squashScoresPollTimer)return;
+  const tick=()=>{if(document.visibilityState==='visible')updateSquashScoresLive()};
+  tick();
+  squashScoresPollTimer=setInterval(tick,SQUASH_SCORES_POLL_MS);
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')tick()});
+}
+
+const AUTO_REFRESH_CHECK_MS=60*1000;
+let autoRefreshLoadedToken='';
+
+function syncTokenFromSummary(summary){
+  const a=String(summary?.refreshedAt||'');
+  const b=String(summary?.squashLevelsRefreshedAt||'');
+  return `${a}|${b}`;
+}
+
+async function fetchLatestSyncToken(){
+  // Local file:// pages cannot fetch another local file because of browser CORS,
+  // but they can load JavaScript files normally. Use a temporary script tag
+  // locally and regular no-cache fetch on http/https.
+  if(location.protocol==='file:'){
+    return new Promise(resolve=>{
+      const previous=window.TOURNAMENT_SUMMARY;
+      const script=document.createElement('script');
+      script.src=`summary-data.js?synccheck=${Date.now()}`;
+      script.async=true;
+      script.onload=()=>{
+        const token=syncTokenFromSummary(window.TOURNAMENT_SUMMARY||{});
+        script.remove();
+        // Keep the newly loaded summary object; it is harmless and lets the
+        // next local check compare against the newest timestamps.
+        resolve(token);
+      };
+      script.onerror=()=>{
+        window.TOURNAMENT_SUMMARY=previous;
+        script.remove();
+        resolve('');
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  try{
+    const response=await fetch(`summary-data.js?synccheck=${Date.now()}`,{cache:'no-store'});
+    if(!response.ok)return '';
+    const source=await response.text();
+    const refreshed=(source.match(/["']?refreshedAt["']?\s*:\s*["']([^"']+)["']/i)||[])[1]||'';
+    const squash=(source.match(/["']?squashLevelsRefreshedAt["']?\s*:\s*["']([^"']+)["']/i)||[])[1]||'';
+    return `${refreshed}|${squash}`;
+  }catch{
+    return '';
+  }
+}
+
+function startAutomaticSyncRefresh(){
+  autoRefreshLoadedToken=syncTokenFromSummary(window.TOURNAMENT_SUMMARY||data||{});
+
+  const check=async()=>{
+    if(document.visibilityState==='hidden')return;
+    const latest=await fetchLatestSyncToken();
+    if(!latest||latest==='|')return;
+
+    if(!autoRefreshLoadedToken||autoRefreshLoadedToken==='|'){
+      autoRefreshLoadedToken=latest;
+      return;
+    }
+
+    if(latest!==autoRefreshLoadedToken){
+      try{localStorage.setItem('wsm2026LastSeenSync',latest)}catch{}
+      location.reload();
+    }
+  };
+
+  setInterval(check,AUTO_REFRESH_CHECK_MS);
+  document.addEventListener('visibilitychange',()=>{
+    if(document.visibilityState==='visible')check();
+  });
+}
+
 async function bootstrap(){
   // Home normally needs only summary-data.js. Load it dynamically so a missing file cannot
   // block page startup, then fall back safely to legacy data.js during migration/deployment.
@@ -565,6 +1087,7 @@ async function bootstrap(){
   renderHeaderRefresh();setupPlayersShell();stamp();
   const initial=location.hash.slice(1);
   if(['players','glass','vicpark','favorites'].includes(initial))await setPage(initial);
+  startAutomaticSyncRefresh();
 
   // Warm the full match dataset in the background so Fav Players opens quickly.
   // Other lightweight pages can remain interactive while this loads.
