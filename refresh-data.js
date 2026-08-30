@@ -2540,6 +2540,7 @@ async function fetchSquashScoresLiveMatches(canonicalPlayers){
         let tm=description.match(/\b(\d{1,2}):([0-5]\d)\b/);
         if(!tm)tm=rawDate.match(/[T\s](\d{1,2}):([0-5]\d)/);
         if(tm)time=`${String(Number(tm[1])).padStart(2,'0')}:${tm[2]}`;
+        const timeFromDescription=!!tm;
 
         const games=Array.isArray(m?.games)?m.games:[];
         const scorePairs=[];
@@ -2560,7 +2561,7 @@ async function fetchSquashScoresLiveMatches(canonicalPlayers){
         const live=!completed&&(scorePairs.length>0||p1Games>0||p2Games>0);
 
         rows.push({
-          date,time,
+          date,time,movedTime:timeFromDescription?time:'',timeFromDescription,
           player1,player2,
           result:scorePairs.join(', '),
           status:completed?'completed':(live?'live':'scheduled'),
@@ -2574,12 +2575,57 @@ async function fetchSquashScoresLiveMatches(canonicalPlayers){
       }
     }
 
-    console.log(`SquashScores API: ${locations.length} location(s), ${rows.length} match(es), ${rows.filter(m=>m.result).length} with score data.`);
-    return rows;
+    const groups=new Map();
+    for(const row of rows){
+      const key=`${canonicalTournamentDate(row.date)}|${[nameKey(row.player1),nameKey(row.player2)].sort().join('~')}`;
+      if(!groups.has(key))groups.set(key,[]);
+      groups.get(key).push(row);
+    }
+
+    const collapsed=[];
+    for(const group of groups.values()){
+      if(group.length===1){collapsed.push(group[0]);continue;}
+      const times=[...new Set(group.map(x=>clean(x.time)).filter(Boolean))];
+      const active=group
+        .filter(x=>x.status==='live'||x.status==='completed'||x.result)
+        .sort((a,b)=>String(b.result||'').length-String(a.result||'').length);
+
+      if(times.length>1){
+        let current=active[0];
+        if(!current)current=group.slice().sort((a,b)=>clean(b.time).localeCompare(clean(a.time)))[0];
+        const other=times.filter(t=>clean(t)!==clean(current.time));
+        if(other.length)current={...current,originalTime:other.slice().sort()[0],timeMoved:true};
+        collapsed.push(current);
+      }else{
+        collapsed.push(group.slice().sort((a,b)=>{
+          const ar=(a.status==='completed'?3000:a.status==='live'?2000:0)+String(a.result||'').length;
+          const br=(b.status==='completed'?3000:b.status==='live'?2000:0)+String(b.result||'').length;
+          return br-ar;
+        })[0]);
+      }
+    }
+
+    console.log(`SquashScores API: ${locations.length} location(s), ${collapsed.length} match(es) after move/dedupe, ${collapsed.filter(m=>m.result).length} with score data.`);
+    return collapsed;
   }catch(e){
     console.warn(`SquashScores API refresh skipped: ${e.message}`);
     return [];
   }
+}
+
+function orientSquashScoresResult(existing,live){
+  const result=clean(live?.result||'');
+  if(!result)return '';
+
+  const reversed=
+    sameName(existing?.player1,live?.player2) &&
+    sameName(existing?.player2,live?.player1);
+
+  if(!reversed)return result;
+
+  return [...result.matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)]
+    .map(x=>`${Number(x[2])}-${Number(x[1])}`)
+    .join(', ');
 }
 
 function mergeSquashScoresIntoMatches(baseMatches, liveMatches){
@@ -2611,9 +2657,15 @@ function mergeSquashScoresIntoMatches(baseMatches, liveMatches){
     const existing=chooseExisting(live);
 
     if(existing){
-      if(live.result)existing.result=live.result;
+      if(live.result)existing.result=orientSquashScoresResult(existing,live);
       if(live.status==='completed'||live.status==='live')existing.status=live.status;
-      if(live.time)existing.time=live.time;
+      if(live.timeMoved&&live.originalTime){
+        existing.originalTime=live.originalTime;
+        existing.time=live.time;
+        existing.timeMoved=true;
+      }else if(live.time){
+        existing.time=live.time;
+      }
       if(live.venue)existing.venue=live.venue;
       if(live.court)existing.court=live.court;
       existing.liveSource='SquashScores';

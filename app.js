@@ -182,22 +182,20 @@ function parseSquashScoresApi(payload,players){
     return p?.name||String(raw||'').trim();
   };
 
-  const gamesScore=(match,p1Side=true)=>{
+  const gamesScore=match=>{
     const games=Array.isArray(match?.games)?match.games:[];
     const pairs=[];
     for(const g of games){
-      const a=Number(g?.player1Score);
-      const b=Number(g?.player2Score);
+      const a=Number(g?.player1Score),b=Number(g?.player2Score);
       if(!Number.isFinite(a)||!Number.isFinite(b))continue;
       if(a===0&&b===0)continue;
-      pairs.push(p1Side?`${a}-${b}`:`${b}-${a}`);
+      pairs.push(`${a}-${b}`);
     }
     return pairs.join(', ');
   };
 
   const gamesWon=match=>{
-    const p1=Number(match?.player1GamesWon);
-    const p2=Number(match?.player2GamesWon);
+    const p1=Number(match?.player1GamesWon),p2=Number(match?.player2GamesWon);
     if(Number.isFinite(p1)&&Number.isFinite(p2))return [p1,p2];
     let a=0,b=0;
     for(const g of Array.isArray(match?.games)?match.games:[]){
@@ -221,31 +219,23 @@ function parseSquashScoresApi(payload,players){
         if(dm)date=`${dm[1]}-${dm[2]}-${dm[3]}`;
       }
 
-      let time='';
       const description=String(m?.description||'').replace(/\s+/g,' ').trim();
-      const tm=description.match(/\b(\d{1,2}):([0-5]\d)\b/);
+      let time='';
+      let tm=description.match(/\b(\d{1,2}):([0-5]\d)\b/);
       if(tm)time=`${String(+tm[1]).padStart(2,'0')}:${tm[2]}`;
       if(!time){
-        const dt=rawDate.match(/[T\s](\d{1,2}):([0-5]\d)/);
-        if(dt)time=`${String(+dt[1]).padStart(2,'0')}:${dt[2]}`;
+        tm=rawDate.match(/[T\s](\d{1,2}):([0-5]\d)/);
+        if(tm)time=`${String(+tm[1]).padStart(2,'0')}:${tm[2]}`;
       }
 
       const [p1Won,p2Won]=gamesWon(m);
-      const score=gamesScore(m,true);
+      const result=gamesScore(m);
       const completed=p1Won>=3||p2Won>=3;
-      const hasStarted=score.length>0||p1Won>0||p2Won>0;
-
-      let status='scheduled';
-      if(completed)status='completed';
-      else if(hasStarted)status='live';
+      const started=result.length>0||p1Won>0||p2Won>0;
+      const status=completed?'completed':(started?'live':'scheduled');
 
       rows.push({
-        date,
-        time,
-        player1,
-        player2,
-        result:score,
-        status,
+        date,time,player1,player2,result,status,
         venue:String(location?.name||location?.locationName||'').trim(),
         court:String(m?.courtName||m?.court||'').trim(),
         event:String(m?.categoryName||m?.category||'').trim(),
@@ -256,11 +246,51 @@ function parseSquashScoresApi(payload,players){
     }
   }
 
-  console.log(`SquashScores API: ${locations.length} location(s) · ${rows.length} match(es)`);
-  const rogerRows=rows.filter(m=>ssNorm(m.player1)==='roger schmidlin'||ssNorm(m.player2)==='roger schmidlin');
-  if(rogerRows.length)console.log('SquashScores Roger rows:',rogerRows);
+  // SquashScores can contain both the old empty slot and the moved match.
+  // For the same players/date, if two different times exist and one row is the
+  // empty scheduled placeholder, collapse them into one moved fixture.
+  const groups=new Map();
+  for(const row of rows){
+    const key=`${canonicalDate(row.date)}|${[ssNorm(row.player1),ssNorm(row.player2)].sort().join('|')}`;
+    if(!groups.has(key))groups.set(key,[]);
+    groups.get(key).push(row);
+  }
 
-  return rows;
+  const collapsed=[];
+  for(const group of groups.values()){
+    if(group.length===1){collapsed.push(group[0]);continue;}
+
+    const times=[...new Set(group.map(x=>displayTime24(x.time||'')).filter(x=>x&&x!=='TBD'))];
+    const active=group
+      .filter(x=>x.status==='live'||x.status==='completed'||x.result)
+      .sort((a,b)=>String(b.result||'').length-String(a.result||'').length);
+
+    if(times.length>1){
+      // Prefer the row that has activity/result data. If neither has activity,
+      // prefer the later clock time because the old slot is typically left empty.
+      let current=active[0];
+      if(!current){
+        current=group.slice().sort((a,b)=>displayTime24(b.time).localeCompare(displayTime24(a.time)))[0];
+      }
+      const otherTimes=times.filter(t=>t!==displayTime24(current.time));
+      if(otherTimes.length){
+        const original=otherTimes.slice().sort()[0];
+        current={...current,originalTime:original,timeMoved:true};
+      }
+      collapsed.push(current);
+      continue;
+    }
+
+    const richest=group.slice().sort((a,b)=>{
+      const ar=(a.status==='completed'?3000:a.status==='live'?2000:0)+String(a.result||'').length;
+      const br=(b.status==='completed'?3000:b.status==='live'?2000:0)+String(b.result||'').length;
+      return br-ar;
+    })[0];
+    collapsed.push(richest);
+  }
+
+  console.log(`SquashScores API: ${locations.length} location(s) · ${collapsed.length} match(es) after move/dedupe`);
+  return collapsed;
 }
 
 function parseSquashScoresHtml(html,players){
@@ -371,6 +401,21 @@ function parseSquashScoresHtml(html,players){
 
   return rows;
 }
+function orientLiveResultToExisting(existing,live){
+  const result=String(live?.result||'').trim();
+  if(!result)return '';
+
+  const reversed=
+    ssNorm(existing?.player1)===ssNorm(live?.player2) &&
+    ssNorm(existing?.player2)===ssNorm(live?.player1);
+
+  if(!reversed)return result;
+
+  return [...result.matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)]
+    .map(x=>`${Number(x[2])}-${Number(x[1])}`)
+    .join(', ');
+}
+
 function ssOverlay(base,live){
   const out=(base||[]).map(m=>({...m}));
 
@@ -420,9 +465,15 @@ function ssOverlay(base,live){
     const existing=chooseExisting(l);
 
     if(existing){
-      if(l.result)existing.result=l.result;
+      if(l.result)existing.result=orientLiveResultToExisting(existing,l);
       if(l.status==='completed'||l.status==='live')existing.status=l.status;
-      if(l.time)existing.time=l.time;
+      if(l.timeMoved&&l.originalTime){
+        existing.originalTime=l.originalTime;
+        existing.time=l.time;
+        existing.timeMoved=true;
+      }else if(l.time){
+        existing.time=l.time;
+      }
       if(l.venue)existing.venue=l.venue;
       if(l.court)existing.court=l.court;
       if(l.event&&!existing.event)existing.event=l.event;
@@ -725,27 +776,42 @@ function matchCard(m){
   return `<article class="match-card"><div class="match-time">${esc(displayTime24(m.time))}</div><div class="event-badge">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div><div class="fixture"><div class="player-side">${flagImg(p1)}<a class="match-player-link" href="${playerPageUrl(m.player1,m.player1Id)}"><span class="player-name-stack"><b>${esc(m.player1||'TBD')}</b>${squashBadges(p1)}</span></a></div><div class="vs">VS</div><div class="player-side right"><a class="match-player-link" href="${playerPageUrl(m.player2,m.player2Id)}"><span class="player-name-stack"><b>${esc(m.player2||'TBD')}</b>${squashBadges(p2)}</span></a>${flagImg(p2)}</div></div><div class="court-tag">${venueBadge(m)}<span>${esc(cleanVenuePlace(m))}</span></div></article>`;
 }
 
-function scoreWinnerName(m){
+function scoreWinnerInfo(m){
   const games=[...String(m?.result||'').matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)]
     .map(x=>[Number(x[1]),Number(x[2])]);
-  if(!games.length)return '';
+  if(!games.length)return {name:'',games:''};
   let p1=0,p2=0;
   for(const [a,b] of games){
     if(a>b)p1++;
     else if(b>a)p2++;
   }
-  if(p1===p2)return '';
-  return p1>p2?String(m?.player1||''):String(m?.player2||'');
+  if(p1===p2)return {name:'',games:''};
+  return {
+    name:p1>p2?String(m?.player1||''):String(m?.player2||''),
+    games:`${Math.max(p1,p2)}:${Math.min(p1,p2)}`
+  };
+}
+
+function scoreWinnerName(m){
+  return scoreWinnerInfo(m).name;
 }
 
 function matchScoreSummary(m){
   if(!m?.result)return '';
-  const winner=scoreWinnerName(m);
+  const winner=scoreWinnerInfo(m);
   return `<div class="match-history-score has-score">
     <span class="match-history-score-label">Score</span>
     <strong>${esc(m.result)}</strong>
-    ${winner?`<span class="match-winner-label">Winner: <strong>${esc(winner)}</strong></span>`:''}
+    ${winner.name?`<span class="match-winner-label">Winner: <strong>${esc(winner.name)} ${esc(winner.games)}</strong></span>`:''}
   </div>`;
+}
+
+function movedTimeNote(m){
+  if(!m?.timeMoved||!m?.originalTime)return '';
+  const original=displayTime24(m.originalTime);
+  const current=displayTime24(m.time);
+  if(!original||original==='TBD'||original===current)return '';
+  return `<div class="match-moved-notice">MOVED · originally ${esc(original)}</div>`;
 }
 
 function compactScheduleRow(m,trackedNames=[]){
@@ -754,7 +820,7 @@ function compactScheduleRow(m,trackedNames=[]){
   const p2Tracked=trackedNames.some(n=>sameName(n,m.player2));
   const v=venueVisual(m);
   const live=isMatchCurrent(m);
-  return `<article class="vic-match-row ${isPast(m)?'past':''} ${live?'match-live':''}">
+  return `<article class="vic-match-row ${isPast(m)?'past':''} ${live?'match-live':''}">${movedTimeNote(m)}
     <div class="vic-time"><span class="vic-time-value">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-time-age">${esc(m.event||'')}</span></div>
     <div class="vic-match-main">
       <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(m.event||'')}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(m.event||'')}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>

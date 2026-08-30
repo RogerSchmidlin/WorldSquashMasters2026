@@ -4961,32 +4961,40 @@ label:has(#featureVenue) + *{
 @media(max-width:520px){#home h1{font-size:clamp(1.35rem,6.8vw,2rem)!important}}
 
 
-/* Live match marker: based on current Perth time and scheduled start */
-.live-match-dot{
-  display:inline-block;
-  width:8px;
-  height:8px;
-  min-width:8px;
-  border-radius:50%;
-  background:#ff3b30;
-  box-shadow:0 0 0 3px rgba(255,59,48,.16);
-  margin-right:6px;
-  vertical-align:middle;
-  animation:live-match-pulse 1.4s ease-in-out infinite;
-}
-.match-live{
-  border-color:rgba(255,59,48,.42)!important;
-}
-@keyframes live-match-pulse{
-  0%,100%{opacity:1;transform:scale(1)}
-  50%{opacity:.55;transform:scale(.82)}
+
+
+/* Moved/rescheduled match notice */
+.match-moved-notice{
+  width:100%;
+  box-sizing:border-box;
+  margin:7px 0 4px;
+  padding:0 10px;
+  color:#ff655d;
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+  line-height:1.25;
 }
 @media(max-width:820px){
-  .vic-mobile-time .live-match-dot{
-    width:7px;
-    height:7px;
-    min-width:7px;
-    margin-right:4px;
-    box-shadow:0 0 0 2px rgba(255,59,48,.16);
+  .match-moved-notice{
+    margin:6px 0 3px;
+    padding:0 4px;
+    font-size:.64rem;
+  }
+}
+
+
+/* Moved notice sits inside the match card, above the player boxes */
+.vic-match-row > .match-moved-notice{
+  grid-column:1 / -1;
+  margin:0 0 5px 0;
+  padding:0 4px;
+}
+@media(max-width:820px){
+  .vic-match-row > .match-moved-notice{
+    grid-column:1;
+    margin:0 0 4px 0;
+    padding:0 2px;
   }
 }
