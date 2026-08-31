@@ -1,17 +1,18 @@
 {
-  "refreshedAt": "2026-08-30T07:04:39.041Z",
-  "officialPlayerLinks": 911,
-  "officialPlayerIds": 910,
-  "rawMatchObservations": 1715,
-  "freshUniqueMatches": 706,
-  "existingMatches": 664,
-  "mergedMatches": 712,
-  "glassCourtMatches": 55,
-  "freshCompletedMatches": 55,
-  "freshScoredMatches": 0,
-  "mergedCompletedMatches": 55,
-  "mergedScoredMatches": 0,
-  "profileFailures": 0,
+  "refreshedAt": "2026-08-31T02:09:41.119Z",
+  "officialPlayerIds": 908,
+  "existingMatches": 787,
+  "authoritativeDrawMatches": 505,
+  "rawDrawFixtureCandidates": 322,
+  "tournamentMatchesAfterDrawResults": 505,
+  "squashScoresMatches": 0,
+  "squashScoresScoredMatches": 0,
+  "mergedMatches": 505,
+  "glassCourtMatches": 23,
+  "drawCompletedMatches": 21,
+  "drawScoredMatches": 8,
+  "mergedCompletedMatches": 21,
+  "mergedScoredMatches": 8,
   "tracked": [
     {
       "name": "Roger Schmidlin",
@@ -19,19 +20,19 @@
     },
     {
       "name": "Ashton D'Vaz",
-      "matches": 1
+      "matches": 2
     },
     {
       "name": "Tanya Chapman",
-      "matches": 1
+      "matches": 0
     },
     {
       "name": "Louis Cotter",
-      "matches": 1
+      "matches": 0
     },
     {
       "name": "Lisa Christou",
-      "matches": 1
+      "matches": 0
     },
     {
       "name": "Julian Buczek",
@@ -39,15 +40,15 @@
     },
     {
       "name": "Zoe Petrovansky",
-      "matches": 2
+      "matches": 0
     },
     {
       "name": "Joannah Yue",
-      "matches": 1
+      "matches": 0
     },
     {
       "name": "Susan Hillier",
-      "matches": 1
+      "matches": 0
     },
     {
       "name": "Luke Missak",
@@ -55,7 +56,7 @@
     },
     {
       "name": "Onnie Biswas",
-      "matches": 1
+      "matches": 0
     },
     {
       "name": "Van Tran",
@@ -63,35 +64,35 @@
     },
     {
       "name": "Michael Corren",
-      "matches": 2
+      "matches": 0
     },
     {
       "name": "Jason Patmore",
-      "matches": 1
+      "matches": 0
     },
     {
       "name": "Joan Naarstig",
-      "matches": 1
+      "matches": 0
     },
     {
       "name": "Jahangir Khan",
-      "matches": 2
+      "matches": 0
     },
     {
       "name": "Shirley Collins",
-      "matches": 1
+      "matches": 0
     },
     {
       "name": "Kerry Kern",
-      "matches": 1
+      "matches": 0
     },
     {
       "name": "Steve Mckenna",
-      "matches": 1
+      "matches": 0
     },
     {
       "name": "Cindy Parsley",
-      "matches": 1
+      "matches": 0
     },
     {
       "name": "Kyle Roach",

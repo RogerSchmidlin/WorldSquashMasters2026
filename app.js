@@ -83,20 +83,36 @@ async function ensureMatchesData(){
 
 async function ensureVicParkData(){
   if(vicParkDataReady)return;
+
+  // Prefer the small Vic Park file for speed, but never allow a stale/empty
+  // compact file to hide fixtures that exist in the authoritative match data.
+  let pack=null;
   try{
     await loadScriptOnce('vicpark-data.js');
-    const pack=window.VIC_PARK_DATA;
-    if(!pack||!Array.isArray(pack.players)||!Array.isArray(pack.matches))throw new Error('vicpark-data.js did not define VIC_PARK_DATA');
+    pack=window.VIC_PARK_DATA;
+  }catch{}
+
+  if(pack&&Array.isArray(pack.players)&&Array.isArray(pack.matches)&&pack.matches.length){
     vicParkPlayers=pack.players;
     vicParkMatches=pack.matches.map(normaliseMatch).map(normalizeSelfMatchAsBye);
     window.__vicParkBaseMatches=vicParkMatches.map(m=>({...m}));
-  }catch(e){
-    // Backwards-compatible fallback while deploying the new small Vic Park data file.
-    console.warn('vicpark-data.js not available; falling back to full match data.',e);
+  }else{
     await ensureMatchesData();
     vicParkPlayers=data.players;
-    vicParkMatches=data.matches;
+
+    const trackedNames=VIC_PARK_PLAYERS;
+    const trackedPlayers=(data.players||[]).filter(p=>trackedNames.some(n=>sameName(p.name,n)));
+    const trackedIds=new Set(trackedPlayers.map(p=>String(p.officialPlayerId||'')).filter(Boolean));
+
+    vicParkMatches=(data.matches||[]).filter(m=>
+      trackedNames.some(n=>sameName(m.player1,n)||sameName(m.player2,n)) ||
+      (m.player1Id&&trackedIds.has(String(m.player1Id))) ||
+      (m.player2Id&&trackedIds.has(String(m.player2Id)))
+    );
+
+    window.__vicParkBaseMatches=vicParkMatches.map(m=>({...m}));
   }
+
   vicParkDataReady=true;
 }
 
@@ -181,7 +197,7 @@ function ssSeparateScore(container,p1,p2){
 }
 function ssVenue(text){
   const s=String(text||'').replace(/\s+/g,' ').trim();
-  for(const v of ['Squashworld Mirrabooka','Belmont Squash Centre','Karrinyup Shopping Centre','Marmion Squash Club']){
+  for(const v of ['Squashworld Mirrabooka','Belmont Saints Squash Centre','Karrinyup Shopping Centre','Marmion Squash Club']){
     if(s.toLowerCase().includes(v.toLowerCase()))return v;
   }
   const m=s.match(/\b(?:Mirrabooka|Belmont|Karrinyup|Marmion)\b[^|]{0,80}/i);
@@ -406,108 +422,27 @@ function orientLiveResultToExisting(existing,live){
 
 function ssOverlay(base,live){
   const out=(base||[]).map(m=>({...m}));
-
   const pairKey=m=>[ssNorm(m.player1),ssNorm(m.player2)].sort().join('|');
   const dateKey=m=>canonicalDate(m.date||'');
   const timeKey=m=>displayTime24(m.time||'');
-
-  const courtKey=m=>{
-    const raw=`${m?.court||''} ${m?.venue||''} ${m?.rawText||''}`;
-    const hit=raw.match(/\b(AGC|SC\s*\d+|COURT\s*\d+)\b/i);
-    return hit?hit[1].replace(/\s+/g,'').toUpperCase():'';
-  };
-
-  const byExact=new Map();
-  const byPair=new Map();
-
-  for(const m of out){
-    const pair=pairKey(m);
-    const exact=`${dateKey(m)}|${pair}`;
-    if(!byExact.has(exact))byExact.set(exact,[]);
-    byExact.get(exact).push(m);
-    if(!byPair.has(pair))byPair.set(pair,[]);
-    byPair.get(pair).push(m);
-  }
-
-  const chooseExisting=liveMatch=>{
-    const pair=pairKey(liveMatch);
-    const date=dateKey(liveMatch);
-    const time=timeKey(liveMatch);
-    const court=courtKey(liveMatch);
-
-    if(date){
-      const exact=byExact.get(`${date}|${pair}`)||[];
-
-      if(exact.length===1)return exact[0];
-
-      const timed=exact.filter(m=>time&&timeKey(m)===time);
-      if(timed.length===1)return timed[0];
-
-      if(court){
-        const courted=exact.filter(m=>courtKey(m)===court);
-        if(courted.length===1)return courted[0];
-
-        const timedCourted=timed.filter(m=>courtKey(m)===court);
-        if(timedCourted.length===1)return timedCourted[0];
-      }
-
-      // CRITICAL: a SquashScores row with an explicit date must never spill
-      // into another tournament day. The overview API can lag behind Perth
-      // and still return Sunday's fixtures after Monday has begun.
-      return null;
-    }
-
-    // Only date-less live rows may use the weaker pair/time fallback.
-    const pairRows=byPair.get(pair)||[];
-
-    const timed=pairRows.filter(m=>time&&timeKey(m)===time);
-    if(timed.length===1)return timed[0];
-
-    if(court){
-      const courted=pairRows.filter(m=>courtKey(m)===court);
-      if(courted.length===1)return courted[0];
-
-      const timedCourted=timed.filter(m=>courtKey(m)===court);
-      if(timedCourted.length===1)return timedCourted[0];
-    }
-
-    if(pairRows.length===1)return pairRows[0];
-    return null;
-  };
+  const today=perthTodayIso();
 
   for(const l of live||[]){
-    const existing=chooseExisting(l);
+    if(String(l.status||'').toLowerCase()!=='live')continue;
+    if(dateKey(l)!==today)continue;
 
-    if(existing){
-      if(l.result)existing.result=orientLiveResultToExisting(existing,l);
-      if(l.status==='completed'||l.status==='live')existing.status=l.status;
+    const candidates=out.filter(m=>
+      dateKey(m)===today &&
+      timeKey(m)===timeKey(l) &&
+      pairKey(m)===pairKey(l)
+    );
 
-      if(l.timeMoved&&l.originalTime){
-        existing.originalTime=l.originalTime;
-        existing.time=l.time;
-        existing.timeMoved=true;
-      }else if(l.time){
-        existing.time=l.time;
-      }
+    if(candidates.length!==1)continue;
 
-      // Keep TournamentSoftware location/court if it already exists.
-      // SquashScores often reports generic venue names such as WORLDMASTERS26.
-      if(!existing.venue&&l.venue)existing.venue=l.venue;
-      if(!existing.court&&l.court)existing.court=l.court;
-
-      if(l.event&&!existing.event)existing.event=l.event;
-      if(l.round&&!existing.round)existing.round=l.round;
-      existing.liveSource='SquashScores';
-      continue;
-    }
-
-    // Add a genuinely new SquashScores fixture only when there is enough identity
-    // AND that date exists in this page's TournamentSoftware subset.
-    const liveDate=dateKey(l);
-    const baseDates=new Set((base||[]).map(m=>dateKey(m)).filter(Boolean));
-    if(liveDate&&baseDates.has(liveDate)&&pairKey(l)&&timeKey(l)){
-      out.push({...l,rawText:'SquashScores live'});
-    }
+    const existing=candidates[0];
+    if(l.result)existing.result=orientLiveResultToExisting(existing,l);
+    existing.status='live';
+    existing.liveSource='SquashScores';
   }
 
   return out;
@@ -529,15 +464,39 @@ function namesFromRecord(m){
   for(const x of playerNeedles){if(x.key.length>4 && text.includes(' '+x.key+' ')){found.push(x.p.name);if(found.length===2)break;}}
   return found;
 }
+function canonicalVenue(v){
+  const s=String(v||'').replace(/\s+/g,' ').trim();
+  if(/\bKarrinyup\b/i.test(s))return 'Karrinyup Shopping Centre';
+  if(/\bMirrabooka\b/i.test(s))return 'Squashworld Mirrabooka';
+  if(/\bBelmont\b/i.test(s))return 'Belmont Saints Squash Centre';
+  return '';
+}
 function deriveVenueCourt(m,raw){
   let venue=m.venue||m.venueName||m.location||m.locationName||m.site||m.facility||'';
   let court=m.court||m.courtName||m.resource||m.resourceName||m.field||m.fieldName||'';
   if(typeof venue==='object')venue=venue.name||venue.title||venue.label||'';
   if(typeof court==='object')court=court.name||court.title||court.label||'';
-  const t=String(raw||'');
-  if(!venue){if(/Karrinyup/i.test(t))venue='Karrinyup Shopping Centre';else if(/Mirrabooka/i.test(t))venue='Squashworld Mirrabooka';else if(/Marmion/i.test(t))venue='Marmion Squash Club';else if(/Belmont/i.test(t))venue='Belmont Squash Centre';}
-  if(!court){const cm=t.match(/(?:court(?:Name)?["':\s]*|\b)(AGC|SC\s*\d+|Court\s*\d+|[A-Z]{2,5}\s*\d+)\b/i);if(cm)court=cm[1].replace(/\s+/g,' ').trim();}
+
+  venue=canonicalVenue(venue)||canonicalVenue(raw);
+
+  if(typeof court!=='string')court='';
+  court=String(court||'').replace(/\s+/g,' ').trim();
+  if(court.length>40)court='';
+
+  if(!court){
+    const cm=String(raw||'').match(/\b(AGC|SC\s*\d+|Court\s*\d+|[A-Z]{2,5}\s*\d+)\b/i);
+    if(cm)court=cm[1].replace(/\s+/g,' ').trim();
+  }
+
   return {venue,court};
+}
+function cleanMatchMeta(v){
+  const s=String(v||'').replace(/\s+/g,' ').trim();
+  if(!s)return '';
+  if(s.length>70)return '';
+  if((s.match(/\|/g)||[]).length>1)return '';
+  if((s.match(/\b[A-Z][A-Za-z'-]+\s+[A-Z][A-Za-z'-]+\b/g)||[]).length>2)return '';
+  return s;
 }
 function normaliseMatch(m){
   const raw=flatText(m.rawText||m.text||m.description||m);
@@ -550,7 +509,7 @@ function normaliseMatch(m){
   let date=canonicalDate(m.date||m.matchDate||m.startDate||m.start||m.datetime||m.dateTime||m.scheduledDate||'');
   let time=m.time||m.matchTime||m.startTime||m.scheduledTime||'';
   if(!time){const tm=raw.match(/\b(\d{1,2}:[0-5]\d\s*(?:am|pm)?)\b/i);if(tm)time=tm[1];}
-  return {...m,date,time,event:m.event||m.eventName||m.draw||m.category||m.disciplineName||'',round:m.round||m.roundName||'',player1:p1,player2:p2,venue:vc.venue,court:vc.court,rawText:raw};
+  return {...m,date,time,event:cleanMatchMeta(m.event||m.eventName||m.draw||m.category||m.disciplineName||''),round:cleanMatchMeta(m.round||m.roundName||''),player1:p1,player2:p2,venue:vc.venue,court:vc.court,rawText:''};
 }
 data.matches=(data.matches||[]).map(normaliseMatch);
 const qs=s=>document.querySelector(s), qsa=s=>[...document.querySelectorAll(s)];
@@ -613,7 +572,7 @@ function perthNowMinuteValue(){
 function isMatchCurrent(m){
   const status=String(m?.status||'').toLowerCase();
   if(status==='live')return true;
-  if(status==='completed'||status==='played'||m?.result)return false;
+  if(status==='completed'||status==='played'||m?.result||m?.winner)return false;
   const start=matchLocalMinuteValue(m);
   if(start===null)return false;
   const now=perthNowMinuteValue();
@@ -623,7 +582,7 @@ function isMatchCurrent(m){
 const isPast=m=>{
   const status=String(m?.status||'').toLowerCase();
   if(status==='completed'||status==='played')return true;
-  if(status!=='live'&&!!m?.result)return true;
+  if(status!=='live'&&(!!m?.result||!!m?.winner))return true;
   const start=matchLocalMinuteValue(m);
   return start!==null&&perthNowMinuteValue()>=start+LIVE_MATCH_WINDOW_MINUTES;
 };
@@ -660,6 +619,20 @@ function showDataError(id,e){
   if(target)target.innerHTML=`<div class="schedule-empty"><strong>Could not load tournament data.</strong><br>${esc(e?.message||e)}</div>`;
 }
 qsa('[data-page]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();setPage(a.dataset.page)}));
+
+
+function playerListDisplayName(name){
+  return String(name||'')
+    .replace(/\s*\[[^\]]+\]\s*$/,'')
+    .replace(/\s+/g,' ')
+    .trim();
+}
+
+function playerListAge(p){
+  const raw=String(p?.ageGroup??'').trim();
+  if(!raw)return '';
+  return /\+$/.test(raw)?raw:`${raw}+`;
+}
 
 function renderPlayers(){
   const term=norm(qs('#playerSearch').value), country=qs('#countryFilter').value, gender=qs('#genderFilter').value, age=qs('#ageFilter').value;
@@ -698,15 +671,15 @@ function renderPlayers(){
   qs('#playerGrid').innerHTML=rows.map(p=>`<div class="player-card">
     <div class="player-card-desktop-layout">
       <a class="player-card-flag-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><div class="flag-avatar">${flagImg(p,'flag-img')}</div></a>
-      <div class="player-card-copy"><div class="player-card-name-line"><div class="player-name-stack"><div class="player-name-meta-line"><a class="player-card-name-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><b>${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(p.name)}</b></a><small class="player-inline-meta">${esc(p.country)} · ${p.ageGroup}+</small></div><div class="player-level-line">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(p.name)} on SquashLevels">SquashLevels</a>`:''}${favoriteButton(p.name,'favorite-list-btn')}</div></div></div></div>
+      <div class="player-card-copy"><div class="player-card-name-line"><div class="player-name-stack"><div class="player-name-meta-line"><a class="player-card-name-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><b>${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(playerListDisplayName(p.name))}</b></a><small class="player-inline-meta">${esc(p.country)}${playerListAge(p)?` · ${esc(playerListAge(p))}`:''}</small></div><div class="player-level-line">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(playerListDisplayName(p.name))} on SquashLevels">SquashLevels</a>`:''}${favoriteButton(p.name,'favorite-list-btn')}</div></div></div></div>
     </div>
     <div class="mobile-player-layout">
-      <a class="mobile-player-name" href="${playerPageUrl(p.name,p.officialPlayerId)}">${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(p.name)}</a>
+      <a class="mobile-player-name" href="${playerPageUrl(p.name,p.officialPlayerId)}">${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(playerListDisplayName(p.name))}</a>
       <div class="mobile-player-info">
         <a class="mobile-player-flag" href="${playerPageUrl(p.name,p.officialPlayerId)}">${flagImg(p,'flag-img')}</a>
         <div class="mobile-player-details">
-          <div class="mobile-player-country">${esc(p.country||'')}</div>
-          <div class="mobile-player-metrics">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(p.name)} on SquashLevels">SquashLevels</a>`:''}${favoriteButton(p.name,'favorite-list-btn')}</div>
+          <div class="mobile-player-country">${esc(p.country||'')}${playerListAge(p)?` · ${esc(playerListAge(p))}`:''}</div>
+          <div class="mobile-player-metrics">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(playerListDisplayName(p.name))} on SquashLevels">SquashLevels</a>`:''}${favoriteButton(p.name,'favorite-list-btn')}</div>
         </div>
       </div>
     </div>
@@ -751,6 +724,8 @@ async function setupParticipationMap(counts){
   const grouped={}; summaryCountries().forEach(c=>{const iso=mapIso3(c.iso3);if(!iso)return;grouped[iso]={name:c.country,count:c.count};});
   const locations=Object.keys(grouped), z=locations.map(()=>1), text=locations.map(k=>`${grouped[k].name}: ${grouped[k].count} player${grouped[k].count===1?'':'s'}`);
   Plotly.newPlot('participationMap',[{type:'choropleth',locationmode:'ISO-3',locations,z,text,hovertemplate:'%{text}<extra></extra>',colorscale:[[0,'#f5c84c'],[1,'#f5c84c']],showscale:false,marker:{line:{color:'#071427',width:.7}}}],{margin:{l:0,r:0,t:0,b:0},paper_bgcolor:'rgba(0,0,0,0)',geo:{projection:{type:'natural earth'},showframe:false,showcoastlines:false,showcountries:true,countrycolor:'#294462',showland:true,landcolor:'#152b45',showocean:true,oceancolor:'rgba(5,19,35,.35)',bgcolor:'rgba(0,0,0,0)'}},{displayModeBar:false,responsive:true});
+  addOfficialTournamentTiles();
+  updateDataAttribution();
 }
 function venueCode(m){
   const place=[m.venue,m.court].filter(Boolean).join(' · ');
@@ -774,15 +749,31 @@ function stripLocationDate(value,{keepStandaloneNumber=false}={}){
 }
 function actualCourt(m){
   const raw=String(m?.rawText||'');
-  // Prefer an explicit court token from the TournamentSoftware row.
-  // Important: keep the generic coded-court regex case-sensitive so "Mon 31"
-  // can never be mistaken for a court.
-  const explicit=(raw.match(/\b(AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i)||[])[1]||'';
-  const coded=(raw.match(/\b([A-Z]{2,5}\s*\d+)\b/)||[])[1]||'';
-  if(explicit||coded)return String(explicit||coded).replace(/\s+/g,' ').trim();
 
-  const current=stripLocationDate(m?.court,{keepStandaloneNumber:true});
-  if(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?:day)?\s*\d{1,2}$/i.test(current))return '';
+  // Prefer only explicit court tokens. Never accept a plain number because
+  // TournamentSoftware round labels such as "Round of 64" otherwise leak into
+  // the location column.
+  const explicit=(raw.match(/\b(AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i)||[])[1]||'';
+  if(explicit){
+    const c=String(explicit).replace(/\s+/g,' ').trim();
+    if(/^SC\s*\d+$/i.test(c))return c.replace(/\s+/g,'').toUpperCase();
+    if(/^AGC(?:\s*\d+)?$/i.test(c))return c.replace(/\s+/g,'').toUpperCase();
+    return c;
+  }
+
+  let current=String(m?.court||'').replace(/\s+/g,' ').trim();
+
+  // Strip round/bracket text accidentally stored as court metadata.
+  current=current
+    .replace(/\b(?:Round\s+of|Round|Quarter\s*Final|Quarter[- ]?final|Semi[- ]?final|Final)\s*\d*\b/ig,' ')
+    .replace(/\s+/g,' ')
+    .trim();
+
+  // Only whitelist actual supported court formats.
+  if(!/^(?:AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)$/i.test(current))return '';
+
+  if(/^SC\s*\d+$/i.test(current))return current.replace(/\s+/g,'').toUpperCase();
+  if(/^AGC(?:\s*\d+)?$/i.test(current))return current.replace(/\s+/g,'').toUpperCase();
   return current;
 }
 function cleanVenuePlace(m){
@@ -800,7 +791,10 @@ function matchCard(m){
 function scoreWinnerInfo(m){
   const games=[...String(m?.result||'').matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)]
     .map(x=>[Number(x[1]),Number(x[2])]);
-  if(!games.length)return {name:'',games:''};
+
+  if(!games.length){
+    return {name:String(m?.winner||''),games:''};
+  }
   let p1=0,p2=0;
   for(const [a,b] of games){
     if(a>b)p1++;
@@ -818,30 +812,63 @@ function scoreWinnerName(m){
 }
 
 function matchScoreSummary(m){
-  if(!m?.result)return '';
+  if(!m?.result&&!m?.winner)return '';
   const winner=scoreWinnerInfo(m);
+
   return `<div class="match-history-score has-score">
-    <span class="match-history-score-label">Score</span>
-    <strong>${esc(m.result)}</strong>
-    ${winner.name?`<span class="match-winner-label">Winner: <strong>${esc(winner.name)} ${esc(winner.games)}</strong></span>`:''}
+    ${m.result?`<span class="match-history-score-label">Score</span><strong>${esc(m.result)}</strong>`:''}
+    ${winner.name?`<span class="match-winner-label">Winner: <strong>${esc(winner.name)}${winner.games?` ${esc(winner.games)}`:''}</strong></span>`:''}
   </div>`;
+}
+
+
+function matchAgeGroupLabel(m,p1=null,p2=null){
+  const raw=String(m?.event||'').replace(/\s+/g,' ').trim();
+
+  if(raw){
+    // Normalize TournamentSoftware forms such as "Women's +35" to "WOMEN'S 35+".
+    const x=raw.match(/(Men(?:'s)?|Women(?:'s)?)\s*(?:Over\s*)?\+?\s*(35|40|45|50|55|60|65|70|75|80|85)/i);
+    if(x){
+      const gender=/women/i.test(x[1])?"WOMEN'S":"MEN'S";
+      return `${gender} ${x[2]}+`;
+    }
+    return raw.toUpperCase();
+  }
+
+  const players=[p1,p2].filter(Boolean);
+  const ages=players
+    .map(p=>String(p?.ageGroup??'').match(/\d{2}/)?.[0]||'')
+    .filter(Boolean);
+  const age=ages.find(a=>ages.every(b=>b===a)) || ages[0] || '';
+
+  const genders=players
+    .map(p=>String(p?.gender||'').toLowerCase())
+    .filter(Boolean);
+
+  let gender='';
+  const g=genders[0]||'';
+  if(/female|women|woman|\bf\b/.test(g))gender="WOMEN'S";
+  else if(/male|men|man|\bm\b/.test(g))gender="MEN'S";
+
+  return [gender,age?`${age}+`:''].filter(Boolean).join(' ');
 }
 
 function compactScheduleRow(m,trackedNames=[]){
   const p1=playerByName(m.player1), p2=playerByName(m.player2);
+  const ageGroupLabel=matchAgeGroupLabel(m,p1,p2);
   const p1Tracked=trackedNames.some(n=>sameName(n,m.player1));
   const p2Tracked=trackedNames.some(n=>sameName(n,m.player2));
   const v=venueVisual(m);
   const live=isMatchCurrent(m);
   return `<article class="vic-match-row ${isPast(m)?'past':''} ${live?'match-live':''}">
-    <div class="vic-time"><span class="vic-time-value">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-time-age">${esc(m.event||'')}</span></div>
+    <div class="vic-time"><span class="vic-time-value">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-time-age">${esc(ageGroupLabel)}</span></div>
     <div class="vic-match-main">
-      <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(m.event||'')}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(m.event||'')}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
+      <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(ageGroupLabel)}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(ageGroupLabel)}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
       <div class="vic-fixture-line">
         <a class="${p1Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">
-          <span class="fixture-player-desktop">${flagImg(p1)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p1,m.player1,p1Tracked)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span></span></span>
+          <span class="fixture-player-desktop">${flagImg(p1)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p1,playerListDisplayName(m.player1),p1Tracked)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span></span></span>
           <span class="fixture-player-mobile">
-            <span class="fixture-mobile-name">${esc(m.player1)}</span>
+            <span class="fixture-mobile-name">${esc(playerListDisplayName(m.player1))}</span>
             <span class="fixture-mobile-info">
               <span class="fixture-mobile-flag">${flagImg(p1)}</span>
               <span class="fixture-mobile-details">
@@ -853,9 +880,9 @@ function compactScheduleRow(m,trackedNames=[]){
         </a>
         <span class="vic-vs">vs</span>
         <a class="${p2Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,m.player2Id)}">
-          <span class="fixture-player-desktop">${flagImg(p2)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p2,m.player2,p2Tracked)}${p2?.country?`<small class="vic-player-inline-meta">${esc(p2.country)}</small>`:''}</span></span></span>
+          <span class="fixture-player-desktop">${flagImg(p2)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p2,playerListDisplayName(m.player2),p2Tracked)}${p2?.country?`<small class="vic-player-inline-meta">${esc(p2.country)}</small>`:''}</span></span></span>
           <span class="fixture-player-mobile">
-            <span class="fixture-mobile-name">${esc(m.player2)}</span>
+            <span class="fixture-mobile-name">${esc(playerListDisplayName(m.player2))}</span>
             <span class="fixture-mobile-info">
               <span class="fixture-mobile-flag">${flagImg(p2)}</span>
               <span class="fixture-mobile-details">
@@ -872,18 +899,14 @@ function compactScheduleRow(m,trackedNames=[]){
   </article>`;
 }
 function featureVenueKey(m){
-  return cleanVenuePlace(m).split(' · ')[0]||'Venue TBD';
+  return canonicalVenue(m?.venue)||canonicalVenue(cleanVenuePlace(m))||'';
 }
 function featureVenueOptions(){
-  const map=new Map();
-  for(const m of (data.matches||[])){
-    const key=featureVenueKey(m); if(!key||key==='Venue / court TBD')continue;
-    if(!map.has(key))map.set(key,key);
-  }
-  return [...map.keys()].sort((a,b)=>{
-    const ag=/Karrinyup/i.test(a)?0:1,bg=/Karrinyup/i.test(b)?0:1;
-    return ag-bg||a.localeCompare(b);
-  });
+  return [
+    'Karrinyup Shopping Centre',
+    'Squashworld Mirrabooka',
+    'Belmont Saints Squash Centre'
+  ];
 }
 let selectedFeatureVenue='';
 let selectedFeatureDate='';
@@ -891,87 +914,69 @@ function featureMatchesForVenue(){
   return (data.matches||[]).filter(m=>featureVenueKey(m)===selectedFeatureVenue);
 }
 
-function authoritativeDateMatches(baseMatches,liveMatches,date){
-  const targetDate=canonicalDate(date||'');
-  const liveForDate=(liveMatches||[]).filter(l=>canonicalDate(l.date||'')===targetDate);
-
-  // SquashScores is authoritative only for dates it is actually publishing.
-  if(!liveForDate.length){
-    return (baseMatches||[])
-      .filter(m=>canonicalDate(m.date||'')===targetDate)
-      .map(m=>({...m}));
-  }
-
-  const baseForDate=(baseMatches||[])
-    .filter(m=>canonicalDate(m.date||'')===targetDate);
-
-  const pairKey=m=>[ssNorm(m.player1),ssNorm(m.player2)].sort().join('|');
-  const timeKey=m=>displayTime24(m.time||'');
-
-  const findBase=l=>{
-    const pair=pairKey(l);
-    const exact=baseForDate.filter(m=>pairKey(m)===pair);
-
-    if(exact.length===1)return exact[0];
-
-    const timed=exact.filter(m=>timeKey(m)===timeKey(l));
-    if(timed.length===1)return timed[0];
-
-    return null;
-  };
-
-  return liveForDate.map(l=>{
-    const base=findBase(l);
-
-    if(!base){
-      return normaliseMatch({...l,rawText:'SquashScores authoritative fixture'});
-    }
-
-    // SquashScores owns the fixture identity/result/status/time for this date.
-    // TournamentSoftware supplies stable metadata where available.
-    return normaliseMatch({
-      ...base,
-      player1:l.player1||base.player1,
-      player2:l.player2||base.player2,
-      result:l.result||base.result||'',
-      status:l.status||base.status||'',
-      time:l.time||base.time,
-      originalTime:l.originalTime||base.originalTime,
-      timeMoved:!!(l.timeMoved||base.timeMoved),
-      venue:base.venue||l.venue,
-      court:base.court||l.court,
-      event:base.event||l.event,
-      round:base.round||l.round,
-      liveSource:'SquashScores'
-    });
-  }).map(normalizeSelfMatchAsBye);
-}
 
 function renderFeatureCourt(date=selectedFeatureDate){
   selectedFeatureDate=date;
   qsa('.date-tab').forEach(x=>x.classList.toggle('active',x.dataset.date===date));
 
-  const dayMatches=authoritativeDateMatches(
-    data.baseMatches||data.matches,
-    squashScoresLatestLive,
-    date
-  );
+  const venueBase=(data.baseMatches||data.matches||[])
+    .filter(m=>featureVenueKey(m)===selectedFeatureVenue);
 
-  const ms=dayMatches
-    .filter(m=>featureVenueKey(m)===selectedFeatureVenue)
+  const selectedBase=venueBase.filter(m=>canonicalDate(m.date)===date);
+  const selectedMatches=ssOverlay(selectedBase,squashScoresLatestLive)
+    .map(normaliseMatch)
+    .map(normalizeSelfMatchAsBye)
     .sort((a,b)=>to24(a.time||'').localeCompare(to24(b.time||'')));
 
-  // Use the same highlighted player frame as the Vic Park page for both
-  // Vic Park & Friends and browser-saved Fav Players.
+  const today=perthTodayIso();
+  const history=venueBase
+    .filter(m=>{
+      const d=canonicalDate(m.date);
+      return d&&d<today;
+    })
+    .map(normaliseMatch)
+    .map(normalizeSelfMatchAsBye)
+    .sort((a,b)=>{
+      const ad=canonicalDate(a.date),bd=canonicalDate(b.date);
+      if(ad!==bd)return bd.localeCompare(ad);
+      return to24(a.time||'').localeCompare(to24(b.time||''));
+    });
+
   const highlightedPlayers=[];
   for(const playerName of [...VIC_PARK_PLAYERS,...getFavoriteNames()]){
     if(playerName&&!highlightedPlayers.some(n=>sameName(n,playerName)))highlightedPlayers.push(playerName);
   }
 
-  const title=qs('#featureCourtTitle'); if(title)title.textContent='Courts';
-  qs('#glassMatches').innerHTML=ms.length?ms.map(m=>compactScheduleRow(m,highlightedPlayers)).join(''):`<div class="schedule-empty"><strong>No matches found for this venue on ${esc(fmtDate(date).long)}.</strong></div>`;
-  qs('#glassDayCount').textContent=ms.length;
+  const title=qs('#featureCourtTitle');
+  if(title)title.textContent='Courts';
+
+  let html='';
+  if(selectedMatches.length){
+    html+=selectedMatches.map(m=>compactScheduleRow(m,highlightedPlayers)).join('');
+  }else{
+    html+=`<div class="schedule-empty"><strong>No matches found for this venue on ${esc(fmtDate(date).long)}.</strong></div>`;
+  }
+
+  // Keep the Courts view current: historical matches are shown below the
+  // current/upcoming selection, exactly like the Vic Park page.
+  if(history.length){
+    html+=`<div class="vic-day-heading history-heading"><span>History</span><strong>Past matches</strong></div>`;
+    let lastDate='';
+    for(const m of history){
+      const d=canonicalDate(m.date);
+      if(d!==lastDate){
+        lastDate=d;
+        const f=fmtDate(d);
+        html+=`<div class="vic-day-heading history-day-heading"><span>${esc(f.day)}</span><strong>${esc(f.date)}</strong></div>`;
+      }
+      html+=compactScheduleRow(m,highlightedPlayers);
+    }
+  }
+
+  qs('#glassMatches').innerHTML=html;
+  qs('#glassDayCount').textContent=selectedMatches.length;
 }
+
 function perthTodayIso(){
   try{const p=Object.fromEntries(new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Perth',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));return `${p.year}-${p.month}-${p.day}`;}catch{return new Date().toISOString().slice(0,10)}
 }
@@ -1018,10 +1023,19 @@ function splitUpcomingAndHistoryRows(rows,getMatch){
     const am=getMatch(a),bm=getMatch(b);
     return `${canonicalDate(am.date)} ${to24(am.time||'')}`.localeCompare(`${canonicalDate(bm.date)} ${to24(bm.time||'')}`);
   };
-  const desc=(a,b)=>-asc(a,b);
+  const historyOrder=(a,b)=>{
+    const am=getMatch(a),bm=getMatch(b);
+    const ad=canonicalDate(am.date),bd=canonicalDate(bm.date);
+
+    // Newest past day first...
+    if(ad!==bd)return bd.localeCompare(ad);
+
+    // ...but within each past day, first match first.
+    return to24(am.time||'').localeCompare(to24(bm.time||''));
+  };
 
   upcoming.sort(asc);
-  history.sort(desc);
+  history.sort(historyOrder);
   return {upcoming,history};
 }
 
@@ -1046,6 +1060,7 @@ function renderGroupedMatchRows(rows,getMatch,renderRow){
     }
   };
 
+  // Always keep History at the BOTTOM of the list.
   renderGroup(upcoming,false);
   renderGroup(history,true);
   return html;
@@ -1059,15 +1074,10 @@ function renderFavoritePlayers(){
   if(!names.length){list.innerHTML='';matchesEl.innerHTML='<div class="schedule-empty"><strong>No favourite players yet.</strong><br><span>Open Players and tap ☆ Fav next to anyone you want to follow.</span></div>';return;}
   list.innerHTML=favourites.map(p=>`<div class="fav-player-card"><a class="fav-player-main" href="${playerPageUrl(p.name,p.officialPlayerId)}">${flagImg(p,'flag-img')}<span class="player-name-stack"><b>${esc(p.name)}</b>${squashBadges(p)}<small>${esc(p.country)} · ${p.ageGroup}+</small></span></a>${favoriteButton(p.name,'fav-remove-btn')}</div>`).join('');
   const stableBase=(data.baseMatches||data.matches||[]);
-  const allDates=[...new Set(stableBase.map(m=>canonicalDate(m.date)).filter(Boolean))];
-  const favMatches=[];
-
-  for(const d of allDates){
-    const dayRows=authoritativeDateMatches(stableBase,squashScoresLatestLive,d);
-    for(const m of dayRows){
-      if(names.some(n=>sameName(m.player1,n)||sameName(m.player2,n)))favMatches.push(m);
-    }
-  }
+  const favBase=stableBase.filter(m=>names.some(n=>sameName(m.player1,n)||sameName(m.player2,n)));
+  const favMatches=ssOverlay(favBase,squashScoresLatestLive)
+    .map(normaliseMatch)
+    .map(normalizeSelfMatchAsBye);
 
   const map=new Map();
   for(const m of favMatches){
@@ -1108,11 +1118,39 @@ function setupVicPark(){
   qs('#trackedCount').textContent=names.length;
   qs('#trackedCountLabel').textContent=names.length===1?'player tracked':'players tracked';
 
+  const trackedPlayers=(vicParkPlayers||[])
+    .filter(p=>names.some(n=>sameName(p.name,n)));
+  const trackedIds=new Set(
+    trackedPlayers.map(p=>String(p.officialPlayerId||'')).filter(Boolean)
+  );
+
   const rows=[];
   for(const m of (vicParkMatches||[])){
-    const tracked=names.filter(name=>matchHas(m,name));
-    if(tracked.length) rows.push({m,tracked});
+    const idMatch=
+      (m.player1Id&&trackedIds.has(String(m.player1Id))) ||
+      (m.player2Id&&trackedIds.has(String(m.player2Id)));
+
+    const trackedByName=names.filter(name=>matchHas(m,name));
+    if(!idMatch&&!trackedByName.length)continue;
+
+    const tracked=[];
+    for(const p of trackedPlayers){
+      const pid=String(p.officialPlayerId||'');
+      if(
+        (pid&&(String(m.player1Id||'')===pid||String(m.player2Id||'')===pid)) ||
+        sameName(m.player1,p.name) ||
+        sameName(m.player2,p.name)
+      ){
+        if(!tracked.some(n=>sameName(n,p.name)))tracked.push(p.name);
+      }
+    }
+    for(const n of trackedByName){
+      if(!tracked.some(x=>sameName(x,n)))tracked.push(n);
+    }
+
+    rows.push({m,tracked});
   }
+
   const container=qs('#trackedPlayers');
   if(!rows.length){
     container.innerHTML=`<div class="schedule-empty"><strong>No Vic Park matches found in the refreshed match data.</strong><br><span>${names.length?`Tracking: ${names.map(esc).join(', ')}`:'Add players to vic-park-players.js.'}</span></div>`;
@@ -1183,37 +1221,29 @@ async function updateSquashScoresLive(){
       if(k&&!seen.has(k)){seen.add(k);uniq.push(p)}
     }
 
-    const live=parseSquashScoresApi(payload,uniq);
-    if(!live.length)return;
-
+    const parsed=parseSquashScoresApi(payload,uniq);
+    const live=parsed.filter(m=>String(m.status||'').toLowerCase()==='live');
     const fingerprint=squashScoresFingerprint(live);
-    const fullPagesChanged=fingerprint!==squashScoresLatestFingerprint;
+    if(fingerprint===squashScoresLastFingerprint)return;
+    squashScoresLastFingerprint=fingerprint;
 
-    // Courts/Fav use the latest SquashScores snapshot at render time.
-    // Do NOT mutate the full tournament dataset.
-    squashScoresLatestLive=live;
-    squashScoresLatestFingerprint=fingerprint;
+    if(matchesReady){
+      data.matches=ssOverlay(data.baseMatches||data.matches,live)
+        .map(normaliseMatch)
+        .map(normalizeSelfMatchAsBye);
+      rebuildFavoriteMatchIndex();
+    }
 
-    let vicUpdated=false;
-
-    // Preserve the working Vic Park mechanism exactly:
-    // small relevant subset first, then overlay live scores.
-    if(vicParkDataReady&&fingerprint!==squashScoresLastVicParkFingerprint){
+    if(vicParkDataReady){
       vicParkMatches=ssOverlay(window.__vicParkBaseMatches||vicParkMatches,live)
         .map(normaliseMatch)
         .map(normalizeSelfMatchAsBye);
-      squashScoresLastVicParkFingerprint=fingerprint;
-      vicUpdated=true;
     }
 
     const page=location.hash.slice(1)||'home';
-    if(page==='glass'&&glassReady&&fullPagesChanged){
-      renderFeatureCourt(selectedFeatureDate);
-    }else if(page==='favorites'&&fullPagesChanged){
-      renderFavoritePlayers();
-    }else if(page==='vicpark'&&vicParkReady&&vicUpdated){
-      setupVicPark();
-    }
+    if(page==='glass'&&glassReady)renderFeatureCourt(selectedFeatureDate);
+    else if(page==='favorites')renderFavoritePlayers();
+    else if(page==='vicpark'&&vicParkReady)setupVicPark();
   }catch(e){
     console.warn('SquashScores live unavailable:',e?.message||e);
   }
@@ -1298,6 +1328,163 @@ function startAutomaticSyncRefresh(){
   });
 }
 
+
+
+
+function addOfficialTournamentTiles(){
+  if(document.querySelector('#officialTournamentLinks'))return;
+
+  // #countryStrip is the actual country list used by this site.
+  const countryList=document.querySelector('#countryStrip');
+  const map=document.querySelector('#participationMap');
+  const home=document.querySelector('#home');
+  if(!home)return;
+
+  const wrap=document.createElement('div');
+  wrap.id='officialTournamentLinks';
+
+  Object.assign(wrap.style,{
+    display:'grid',
+    gridTemplateColumns:'repeat(3,minmax(0,1fr))',
+    gap:'12px',
+    margin:'18px 0 8px'
+  });
+
+  const makeTile=(href,icon,title,subtitle)=>{
+    const a=document.createElement('a');
+    a.href=href;
+    a.target='_blank';
+    a.rel='noopener noreferrer';
+    a.innerHTML=`
+      <span style="
+        width:42px;height:42px;display:grid;place-items:center;
+        border-radius:11px;background:rgba(245,200,76,.12);
+        font-size:1.35rem;flex:0 0 auto
+      " aria-hidden="true">${icon}</span>
+      <span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+        <strong style="font-size:.95rem;line-height:1.2">${title}</strong>
+        <small style="font-size:.76rem;opacity:.72;line-height:1.25">${subtitle} ↗</small>
+      </span>
+    `;
+
+    Object.assign(a.style,{
+      display:'flex',
+      alignItems:'center',
+      gap:'12px',
+      minHeight:'64px',
+      padding:'12px 14px',
+      border:'1px solid rgba(245,200,76,.30)',
+      borderRadius:'14px',
+      background:'rgba(245,200,76,.055)',
+      color:'inherit',
+      textDecoration:'none',
+      boxShadow:'0 6px 18px rgba(0,0,0,.10)',
+      transition:'transform .16s ease, background .16s ease, border-color .16s ease'
+    });
+
+    a.addEventListener('mouseenter',()=>{
+      a.style.background='rgba(245,200,76,.11)';
+      a.style.borderColor='rgba(245,200,76,.48)';
+      a.style.transform='translateY(-2px)';
+    });
+
+    a.addEventListener('mouseleave',()=>{
+      a.style.background='rgba(245,200,76,.055)';
+      a.style.borderColor='rgba(245,200,76,.30)';
+      a.style.transform='';
+    });
+
+    return a;
+  };
+
+  wrap.append(
+    makeTile(
+      'https://www.worldsquashmasters.com/information',
+      '🌐',
+      'Official Tournament Home',
+      'Event information, news and visitor details'
+    ),
+    makeTile(
+      'https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0',
+      '🏆',
+      'Official Live Tournament',
+      'Draws, matches, players and results'
+    ),
+    makeTile(
+      'https://worldsquash.tv/sportitemset/69cfa93e66fddb2162f01615',
+      '▶️',
+      'Live Stream',
+      'Watch the World Squash Masters live'
+    )
+  );
+
+  // Put the tiles AFTER the top-level Home section that contains the country
+  // list. This guarantees they sit outside the world-map/card frame even when
+  // #countryStrip itself is nested inside that frame.
+  const topLevelHomeChild=el=>{
+    let cur=el;
+    while(cur?.parentElement&&cur.parentElement!==home)cur=cur.parentElement;
+    return cur?.parentElement===home?cur:null;
+  };
+
+  const outsideAnchor=
+    topLevelHomeChild(countryList) ||
+    topLevelHomeChild(map);
+
+  if(outsideAnchor?.parentNode){
+    outsideAnchor.insertAdjacentElement('afterend',wrap);
+  }else{
+    home.appendChild(wrap);
+  }
+
+  const makeResponsive=()=>{
+    wrap.style.gridTemplateColumns=window.innerWidth<640
+      ? '1fr'
+      : window.innerWidth<980
+        ? 'repeat(2,minmax(0,1fr))'
+        : 'repeat(3,minmax(0,1fr))';
+  };
+  makeResponsive();
+  window.addEventListener('resize',makeResponsive,{passive:true});
+}
+
+function updateDataAttribution(){
+  const home=document.querySelector('#home');
+  if(!home)return;
+
+  const intro="Vic Park Squash Club's Tailored website to make it easier to follow our club members.";
+
+  // IMPORTANT: change only the subtitle paragraph. Never replace a containing
+  // div/hero element, otherwise the World Squash Masters 2026 heading disappears.
+  const paragraphs=[...home.querySelectorAll('p')];
+  let target=paragraphs.find(el=>
+    /Vic Park Squash Club's Tailored website/i.test(String(el.textContent||'')) ||
+    /The data is taken from the official site/i.test(String(el.textContent||'')) ||
+    /The data on this site is taken from/i.test(String(el.textContent||''))
+  );
+
+  if(!target){
+    const hero=home.querySelector('.hero')||home.querySelector('.home-hero')||home.firstElementChild;
+    target=document.createElement('p');
+    target.id='dataAttribution';
+
+    if(hero){
+      const heading=hero.querySelector?.('h1,h2');
+      if(heading)heading.insertAdjacentElement('afterend',target);
+      else hero.appendChild(target);
+    }else{
+      home.prepend(target);
+    }
+  }
+
+  target.innerHTML=
+    `${intro} ` +
+    `The data is taken from the ` +
+    `<a href="https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches" target="_blank" rel="noopener noreferrer"><strong>official site</strong></a>, ` +
+    `<a href="https://www.squashlevels.com/" target="_blank" rel="noopener noreferrer"><strong>SquashLevels</strong></a> and ` +
+    `<a href="https://squashscores.com/" target="_blank" rel="noopener noreferrer"><strong>SquashScores</strong></a>.`;
+}
+
 async function bootstrap(){
   // Home normally needs only summary-data.js. Load it dynamically so a missing file cannot
   // block page startup, then fall back safely to legacy data.js during migration/deployment.
@@ -1312,7 +1499,7 @@ async function bootstrap(){
       if(legacy)Object.assign(data,makeHomeSummary(legacy),{players:[],matches:[]});
     }catch(e){console.error('Could not load tournament summary:',e)}
   }
-  renderHeaderRefresh();setupPlayersShell();stamp();
+  renderHeaderRefresh();setupPlayersShell();stamp();addOfficialTournamentTiles();updateDataAttribution();
   const initial=location.hash.slice(1);
   if(['players','glass','vicpark','favorites'].includes(initial))await setPage(initial);
   startAutomaticSyncRefresh();
