@@ -2045,6 +2045,49 @@ function mergePreviousSquashLevelsFields(drawPlayers,previousPlayers){
   });
 }
 
+function mergeCurrentDrawPlayersIntoPublishedSnapshot(drawPlayers,previousPlayers){
+  const previous=(previousPlayers||[]).map(p=>({...p}));
+  const drawById=new Map(
+    (drawPlayers||[])
+      .filter(p=>p?.officialPlayerId)
+      .map(p=>[String(p.officialPlayerId),p])
+  );
+
+  const seen=new Set();
+  const officialFields=[
+    'name','seed','officialProfileUrl',
+    'country','iso3','flagCode','drawCountryCode',
+    'gender','ageGroup'
+  ];
+
+  const merged=previous.map(old=>{
+    const id=String(old.officialPlayerId||'');
+    if(id)seen.add(id);
+
+    const fresh=id?drawById.get(id):null;
+    if(!fresh)return old;
+
+    const next={...old};
+    for(const field of officialFields){
+      const value=fresh[field];
+      if(value!==undefined&&value!==null&&value!=='')next[field]=value;
+    }
+    return next;
+  });
+
+  // New official IDs discovered during the tournament must not be discarded,
+  // but already-published players that disappear from an in-progress bracket
+  // remain in the canonical directory.
+  for(const fresh of drawPlayers||[]){
+    const id=String(fresh?.officialPlayerId||'');
+    if(!id||seen.has(id))continue;
+    seen.add(id);
+    merged.push({...fresh});
+  }
+
+  return merged;
+}
+
 async function scrapeOfficialDrawSchedule(context,options={}){
   const seed=await context.newPage();
 
@@ -5973,7 +6016,11 @@ function provenLocationFromRow(row){
   };
 }
 
-function assertDeterministicDrawCompleteness(officialDraw,label='Official draw crawl'){
+function assertDeterministicDrawCompleteness(
+  officialDraw,
+  label='Official draw crawl',
+  {requireFullPlayerDirectory=true,canonicalPlayerCount=0}={}
+){
   if((officialDraw?.failed||0)>0){
     throw new Error(
       `${label} had ${officialDraw.failed} incomplete/failed age-group draw page(s). `+
@@ -5997,10 +6044,19 @@ function assertDeterministicDrawCompleteness(officialDraw,label='Official draw c
     );
   }
 
-  if((officialDraw?.players||[]).length<900){
+  const visibleDrawPlayers=(officialDraw?.players||[]).length;
+
+  if(requireFullPlayerDirectory&&visibleDrawPlayers<900){
     throw new Error(
-      `${label} exposed only ${(officialDraw?.players||[]).length} unique players. `+
+      `${label} exposed only ${visibleDrawPlayers} unique players while rebuilding the player directory. `+
       `Existing published data was left unchanged.`
+    );
+  }
+
+  if(!requireFullPlayerDirectory&&canonicalPlayerCount<900){
+    throw new Error(
+      `${label} cannot use the in-progress draw player subset because the canonical published player snapshot `+
+      `contains only ${canonicalPlayerCount} players. Existing published data was left unchanged.`
     );
   }
 
@@ -6014,7 +6070,8 @@ function assertDeterministicDrawCompleteness(officialDraw,label='Official draw c
   console.log(
     `DRAW TREE completeness: ${officialDraw.mainTreeDraws} main draw(s), `+
     `${officialDraw.treeObservations} deterministic observation(s), `+
-    `${(officialDraw.players||[]).length} unique draw player(s), 0 missing main trees.`
+    `${visibleDrawPlayers} currently visible draw player(s), `+
+    `${canonicalPlayerCount||visibleDrawPlayers} canonical player(s), 0 missing main trees.`
   );
 }
 
@@ -7944,7 +8001,14 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
       officialDrawFallback.matches||[]
     );
 
-    assertDeterministicDrawCompleteness(officialDrawFallback,'Official draw crawl');
+    assertDeterministicDrawCompleteness(
+      officialDrawFallback,
+      'Official draw crawl',
+      {
+        requireFullPlayerDirectory:false,
+        canonicalPlayerCount:existingPlayers.length
+      }
+    );
 
     // OFFICIAL DRAW = fixture existence authority for today + future.
     // Existing data is retained only for historical dates.
@@ -8097,14 +8161,32 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
   });
 
   const all=[]; let done=0, failed=0, candidateTotal=0;
-  console.log('No player-profile crawl: players and matches are rebuilt from TournamentSoftware draws only.');
+  console.log('No player-profile crawl: schedule is rebuilt from TournamentSoftware draws; normal refresh preserves the canonical published player directory.');
 
   console.log('Crawling TournamentSoftware draws for players + result enrichment...');
   const stopDrawTiming=phaseTimer('TournamentSoftware draw crawl');
-  const officialDraw=await scrapeOfficialDrawSchedule(context);
+  const officialDraw=await scrapeOfficialDrawSchedule(
+    context,
+    existingPlayers.length>=900?{canonicalPlayers:existingPlayers}:{}
+  );
   stopDrawTiming();
 
-  let canonicalPlayers=mergePreviousSquashLevelsFields(officialDraw.players||[],existingPlayers);
+  // During the tournament, eliminated/advanced players can disappear from the
+  // currently rendered draw hierarchy. A normal refresh therefore keeps the
+  // already-published official player directory as canonical and overlays
+  // fresh draw metadata by official player ID. Only :full is allowed to rebuild
+  // the player directory purely from the current draw hierarchy.
+  let canonicalPlayers=FULL_REBUILD
+    ? mergePreviousSquashLevelsFields(officialDraw.players||[],existingPlayers)
+    : mergeCurrentDrawPlayersIntoPublishedSnapshot(
+        officialDraw.players||[],
+        existingPlayers
+      );
+
+  console.log(
+    `Player directory authority: ${FULL_REBUILD?'current draw hierarchy (:full)':'existing published official snapshot + current draw metadata'}; `+
+    `${(officialDraw.players||[]).length} visible draw player(s), ${canonicalPlayers.length} canonical player(s).`
+  );
 
   const existingMatches=Array.isArray(existing.matches)?existing.matches:[];
 
@@ -8124,20 +8206,45 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
     gender:canonicalPlayers.filter(p=>p.gender).length
   };
 
-  // Strong all-in-one publication gates. Never silently fall back to stale
-  // player-directory/profile data if the draw crawl is incomplete.
+  // Player-directory safety.
+  //
+  // Normal refresh: preserve the known complete published player snapshot and
+  // update only identities currently exposed by the draws.
+  // :full: current draw hierarchy must itself still expose the full directory.
   if(canonicalPlayers.length<900){
-    throw new Error(`Official draw player coverage looks incomplete: ${canonicalPlayers.length} players (expected at least 900 from the draw hierarchy). Existing published data was left unchanged.`);
+    throw new Error(
+      `Canonical player directory looks incomplete: ${canonicalPlayers.length} players. `+
+      `Existing published data was left unchanged.`
+    );
   }
+
   if(metadataCounts.country<Math.floor(canonicalPlayers.length*0.95)){
-    throw new Error(`Official draw country coverage looks incomplete: ${metadataCounts.country}/${canonicalPlayers.length} players. Existing published data was left unchanged.`);
+    throw new Error(
+      `Canonical player country coverage looks incomplete: `+
+      `${metadataCounts.country}/${canonicalPlayers.length} players. `+
+      `Existing published data was left unchanged.`
+    );
   }
-  if(metadataCounts.age<Math.floor(canonicalPlayers.length*0.95) || metadataCounts.gender<Math.floor(canonicalPlayers.length*0.95)){
-    throw new Error(`Official draw age/gender coverage looks incomplete: age ${metadataCounts.age}/${canonicalPlayers.length}, gender ${metadataCounts.gender}/${canonicalPlayers.length}. Existing published data was left unchanged.`);
+
+  if(
+    metadataCounts.age<Math.floor(canonicalPlayers.length*0.95) ||
+    metadataCounts.gender<Math.floor(canonicalPlayers.length*0.95)
+  ){
+    throw new Error(
+      `Canonical player age/gender coverage looks incomplete: `+
+      `age ${metadataCounts.age}/${canonicalPlayers.length}, `+
+      `gender ${metadataCounts.gender}/${canonicalPlayers.length}. `+
+      `Existing published data was left unchanged.`
+    );
   }
+
   assertDeterministicDrawCompleteness(
     officialDraw,
-    FULL_REBUILD?'Full deterministic draw-tree rebuild':'Deterministic draw-tree refresh'
+    FULL_REBUILD?'Full deterministic draw-tree rebuild':'Deterministic draw-tree refresh',
+    {
+      requireFullPlayerDirectory:FULL_REBUILD,
+      canonicalPlayerCount:canonicalPlayers.length
+    }
   );
 
   const todayForAuthority=perthTodayIsoRefresh();
