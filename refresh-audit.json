@@ -1,22 +1,23 @@
 {
-  "refreshedAt": "2026-09-01T03:40:09.011Z",
+  "refreshedAt": "2026-09-01T04:24:48.243Z",
   "officialPlayerIds": 908,
   "existingMatches": 1023,
-  "matchesOverlayRows": 344,
-  "rawDrawFixtureCandidates": 353,
-  "tournamentMatchesAfterDrawResults": 1821,
+  "matchesOverlayRows": 263,
+  "rawDrawFixtureCandidates": 406,
+  "tournamentMatchesAfterDrawResults": 1866,
   "squashScoresMatches": 0,
   "squashScoresScoredMatches": 0,
-  "mergedMatches": 1821,
-  "glassCourtMatches": 85,
-  "drawCompletedMatches": 32,
-  "drawScoredMatches": 32,
-  "mergedCompletedMatches": 437,
-  "mergedScoredMatches": 399,
+  "mergedMatches": 1043,
+  "playerByeProgressions": 823,
+  "glassCourtMatches": 92,
+  "drawCompletedMatches": 39,
+  "drawScoredMatches": 39,
+  "mergedCompletedMatches": 451,
+  "mergedScoredMatches": 413,
   "tracked": [
     {
       "name": "Roger Schmidlin",
-      "matches": 2
+      "matches": 3
     },
     {
       "name": "Ashton D'Vaz",
@@ -28,7 +29,7 @@
     },
     {
       "name": "Louis Cotter",
-      "matches": 2
+      "matches": 3
     },
     {
       "name": "Lisa Christou",
@@ -60,7 +61,7 @@
     },
     {
       "name": "Van Tran",
-      "matches": 3
+      "matches": 4
     },
     {
       "name": "Michael Corren",
