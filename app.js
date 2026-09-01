@@ -1391,8 +1391,12 @@ function renderLivePage(){
     if(group.matches.length){
       // Use the exact same match-card renderer and state styling as the
       // Courts/Vic Park views so the Live page stays visually consistent.
+      // IMPORTANT: Live deliberately uses the SAME renderer as Vic Park.
+      // Do not maintain a separate Live match-card renderer: the mobile Vic Park
+      // CSS moves time/location/age into .vic-mobile-meta, and that markup must
+      // exist on Live as well.
       html+=group.matches
-        .map(m=>liveVicParkMatchRow(m,VIC_PARK_PLAYERS||[]))
+        .map(m=>compactScheduleRow(m,VIC_PARK_PLAYERS||[]))
         .join('');
     }else{
       html+=`
@@ -1825,6 +1829,39 @@ function ensureLivePageStyles(){
         gap:0!important;
         line-height:1.02!important;
         white-space:normal!important;
+      }
+    }
+
+    /* The exact Vic Park renderer is shared by Vic Park and Live. On compact
+       layouts the desktop .vic-time column is hidden, so surface Watch live in
+       the same mobile metadata strip that contains time, venue and age. */
+    .vic-mobile-watch{display:none}
+    @media(max-width:1180px){
+      #vicpark .vic-mobile-watch,
+      #live .vic-mobile-watch{
+        display:inline-flex!important;
+        align-items:center!important;
+        flex:0 0 auto!important;
+        margin-left:auto!important;
+      }
+      #vicpark .vic-mobile-watch .live-video-button,
+      #live .vic-mobile-watch .live-video-button{
+        display:inline-flex!important;
+        align-items:center!important;
+        justify-content:center!important;
+        min-height:20px!important;
+        margin:0!important;
+        padding:2px 6px!important;
+        border-radius:6px!important;
+        font-size:.56rem!important;
+        line-height:1!important;
+        white-space:nowrap!important;
+      }
+      #vicpark .vic-mobile-watch .live-video-button-dot,
+      #live .vic-mobile-watch .live-video-button-dot{
+        width:6px!important;
+        height:6px!important;
+        margin-right:4px!important;
       }
     }
 
@@ -2639,10 +2676,11 @@ function compactScheduleRow(m,trackedNames=[],options={}){
   const scoreState=scoreGameState(m);
   const p1Winner=scoreState.finished&&scoreState.winnerSide===1;
   const p2Winner=scoreState.finished&&scoreState.winnerSide===2;
+  const liveButton=liveVideoButton(m);
   return `<article class="vic-match-row ${isPast(m)?'past':''} ${live?'match-live':''} ${scoreState.finished?'match-finished':''} ${options.livePage?'live-page-match-row':''}">
-    <div class="vic-time"><span class="vic-time-value">${showLiveIndicator?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-time-age">${esc(ageGroupLabel)}</span>${liveVideoButton(m)}</div>
+    <div class="vic-time"><span class="vic-time-value">${showLiveIndicator?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-time-age">${esc(ageGroupLabel)}</span>${liveButton}</div>
     <div class="vic-match-main">
-      <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${showLiveIndicator?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(ageGroupLabel)}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(ageGroupLabel)}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
+      <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${showLiveIndicator?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(ageGroupLabel)}</span>${liveButton?`<span class="vic-mobile-watch">${liveButton}</span>`:''}</span><span class="vic-desktop-event"><span class="vic-event-category">${esc(ageGroupLabel)}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
       <div class="vic-fixture-line">
         <a class="${p1Tracked?'vic-tracked-player':''} ${p1Winner?'match-winner-player':(scoreState.finished&&scoreState.winnerSide?'match-loser-player':'')}" href="${playerPageUrl(m.player1,m.player1Id)}">
           <span class="fixture-player-desktop">${flagImg(p1)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p1,playerListDisplayName(m.player1),p1Tracked)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span></span></span>
