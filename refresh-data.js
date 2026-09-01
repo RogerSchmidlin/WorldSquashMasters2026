@@ -4411,14 +4411,44 @@ async function chooseSquashLevelsCandidate(page,candidates,player,requireExactAg
       // profile area before any "Possible duplicates" section. Prefer it over
       // broad DOM scanning so another person's O40/O50/O60 cannot contaminate
       // the candidate identity.
-      const countryCode=clean(evidence.countryCode||identity.countryCode).toUpperCase();
+      const apiIdentity=squashLevelsApiCandidateIdentity(c,player);
       const expectedCodes=squashLevelsExpectedCountryCodes(player);
-      const countryMatch=countryCode?expectedCodes.includes(countryCode):identity.countryMatch;
-      const age=evidence.age??identity.age??null;
       const expectedAge=squashLevelsExpectedAge(player);
-      const ageMatch=expectedAge!==null&&age!==null
-        ? Number(age)===Number(expectedAge)
-        : identity.ageMatch;
+
+      // Combine independent identity evidence from:
+      //   1. the main profile area,
+      //   2. the narrower profile identity parser,
+      //   3. the SquashLevels search API candidate itself.
+      // Any explicit contradiction rejects the candidate. Unknown evidence
+      // never overrides a positive/negative explicit value.
+      const countryEvidence=[
+        clean(evidence.countryCode).toUpperCase(),
+        clean(identity.countryCode).toUpperCase(),
+        clean(apiIdentity.countryCode).toUpperCase()
+      ].filter(Boolean);
+      const countryConflict=countryEvidence.some(code=>
+        expectedCodes.length&&!expectedCodes.includes(code)
+      );
+      const countryPositive=countryEvidence.some(code=>
+        expectedCodes.includes(code)
+      );
+      const countryCode=countryPositive
+        ? countryEvidence.find(code=>expectedCodes.includes(code))
+        : (countryEvidence[0]||'');
+      const countryMatch=countryConflict?false:(countryPositive?true:null);
+
+      const ageEvidence=[
+        evidence.age,
+        identity.age,
+        apiIdentity.age
+      ].filter(v=>v!==null&&v!==undefined&&Number.isFinite(Number(v)))
+       .map(Number);
+      const ageConflict=expectedAge!==null&&ageEvidence.some(v=>v!==Number(expectedAge));
+      const agePositive=expectedAge!==null&&ageEvidence.some(v=>v===Number(expectedAge));
+      const age=agePositive
+        ? Number(expectedAge)
+        : (ageEvidence.length?ageEvidence[0]:null);
+      const ageMatch=ageConflict?false:(agePositive?true:null);
       for(const row of evidence.duplicateRows||[]){const id=clean(row.id);if(!id)continue;const parsed=squashLevelsDuplicateRowEvidence(row);const prior=crossEvidence.get(id)||{};crossEvidence.set(id,{level:parsed.level??prior.level??null,lastMatch:Math.max(parsed.lastMatch||0,prior.lastMatch||0)||null});}
       const apiLastMatch=squashLevelsLastMatchFromApiCandidate(c); const profileLastMatch=await squashLevelsProfileLastMatch(page); const id=clean(c.playerId||squashLevelsPlayerIdFromUrl(c.url));
       checked.push({...c,identity:{...identity,countryCode,countryMatch,age,ageMatch},profileEvidence:evidence,playerId:id,lastMatch:Math.max(apiLastMatch||0,profileLastMatch||0)||null});
@@ -5391,7 +5421,18 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
           continue;
         }
 
+        const requiresExactAgeForSelection=requiresExactAge||fresh.length>1;
         if(fresh.length>1||requiresExactAge)duplicatesFound++;
+        if(fresh.length>1&&!requiresExactAge){
+          console.log(
+            `  SquashLevels same-name ambiguity for ${p.name}: ${fresh.length} exact-name profiles; ` +
+            `requiring explicit O${p.ageGroup} age evidence.`
+          );
+        }
+
+        // Multiple SquashLevels profiles with the same exact name are ambiguous
+        // even when TournamentSoftware itself contains only one such name.
+        // Require explicit Masters age evidence before retaining/selecting one.
 
         // Ensure the currently cached profile participates in the comparison even if a
         // SquashLevels search response happens to omit it.
@@ -5409,7 +5450,7 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
           });
         }
 
-        accepted=await chooseSquashLevelsCandidate(page,compare,p,requiresExactAge);
+        accepted=await chooseSquashLevelsCandidate(page,compare,p,requiresExactAgeForSelection);
 
         if(accepted){
           const chosenUrl=canonicalSquashLevelsProfileUrl(accepted.url);
@@ -5430,11 +5471,12 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
           p.squashLevelsMatchedCountry=accepted.identity.countryCode||p.squashLevelsMatchedCountry||null;
           p.squashLevelsMatchedAge=accepted.identity.age??p.squashLevelsMatchedAge??null;
           verified++;
-        }else if(requiresExactAge){
-          // For duplicate tournament names, unresolved age evidence is unsafe. Clear
-          // the cached mapping rather than displaying another same-name person's data.
+        }else if(requiresExactAgeForSelection){
+          // For either a duplicate TournamentSoftware name OR multiple exact-name
+          // SquashLevels profiles, unresolved age evidence is unsafe. Clear the
+          // cached mapping rather than displaying another same-name person's data.
           console.log(
-            `  Duplicate-name mapping rejected for ${p.name}: no candidate had an ` +
+            `  Ambiguous-name mapping rejected for ${p.name}: no candidate had an ` +
             `explicit ${p.ageGroup}+ age match. Clearing cached SquashLevels identity.`
           );
           p.squashLevelsUrl='';
@@ -5465,7 +5507,8 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
           p.squashLevelsSearchCheckedAt=new Date().toISOString();
         }
 
-        accepted=await chooseSquashLevelsCandidate(page,candidates,p,requiresExactAge);
+        let requiresExactAgeForSelection=requiresExactAge||candidates.length>1;
+        accepted=await chooseSquashLevelsCandidate(page,candidates,p,requiresExactAgeForSelection);
         if(!accepted&&candidates.length)rejected+=candidates.length;
 
         if(!accepted&&candidates.some(c=>c.existing)){
@@ -5477,7 +5520,8 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
 
           const fresh=await searchSquashLevels(p);
           p.squashLevelsSearchCheckedAt=new Date().toISOString();
-          accepted=await chooseSquashLevelsCandidate(page,fresh,p,requiresExactAge);
+          requiresExactAgeForSelection=requiresExactAge||fresh.length>1;
+          accepted=await chooseSquashLevelsCandidate(page,fresh,p,requiresExactAgeForSelection);
           if(!accepted&&fresh.length)rejected+=fresh.length;
         }
 
@@ -5486,12 +5530,12 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
           if(variants.length){
             const fallback=await searchSquashLevelsNicknameFallback(p);
             const nicknameAccepted=await chooseSquashLevelsNicknameCandidate(page,fallback,p);
-            if(nicknameAccepted&&(!requiresExactAge||nicknameAccepted.identity?.ageMatch===true)){
+            if(nicknameAccepted&&(!requiresExactAgeForSelection||nicknameAccepted.identity?.ageMatch===true)){
               accepted=nicknameAccepted;
               console.log(`  Nickname match: ${p.name} -> ${nicknameAccepted.name} (${nicknameAccepted.identity.countryCode}, O${nicknameAccepted.identity.age})`);
-            }else if(nicknameAccepted&&requiresExactAge){
+            }else if(nicknameAccepted&&requiresExactAgeForSelection){
               console.log(
-                `  Nickname candidate rejected for duplicate name ${p.name}: ` +
+                `  Nickname candidate rejected for ambiguous name ${p.name}: ` +
                 `no explicit ${p.ageGroup}+ age match.`
               );
             }else if(fallback.length){
