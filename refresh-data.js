@@ -29,7 +29,6 @@ const ORIGIN = 'https://wsf.tournamentsoftware.com';
 const PLAYERS_URL = `${ORIGIN}/tournament/${ID}/Players`;
 const DRAWS_URL = `${ORIGIN}/sport/draws.aspx?id=${ID}`;
 const MATCHES_URL = `${ORIGIN}/tournament/${ID}/Matches`;
-const MIN_OFFICIAL_DRAW_MATCHES = Math.max(100, Number(process.env.MIN_OFFICIAL_DRAW_MATCHES || 500));
 const SQUASH_SCORES_API_URL = 'https://squashscores.com/api/overview/public/?categoryId=19';
 const MIN_MATCHES = 350; // confirmed player-v-player matches; later-round TBD slots are not on player profiles
 const MIN_RAW_OBSERVATIONS = 850;
@@ -3132,6 +3131,19 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   observations.push(...treeObservations);
   const deterministicTbdObservations=treeObservations.filter(m=>m.deterministicTbd);
   console.log(`Official draw deterministic TBD fixtures: ${deterministicTbdObservations.length}`);
+  const trackedTbdAuditNames=loadTrackedNames();
+  const trackedDeterministicTbd=deterministicTbdObservations.filter(m=>
+    trackedTbdAuditNames.some(n=>sameName(m.player1,n)||sameName(m.player2,n))
+  );
+  console.log(`Tracked deterministic TBD fixtures: ${JSON.stringify(
+    trackedDeterministicTbd.map(m=>({
+      date:m.date,time:m.time,player1:m.player1,player2:m.player2,
+      venue:m.venue||'',court:m.court||'',round:m.round||'',
+      inputSlots:[m.treeInputSlot1||'',m.treeInputSlot2||''],
+      outputSlot:m.treeOutputSlot||''
+    }))
+  )}`);
+
 
   const treeMerged=officialScheduleMerge(treeObservations);
   const treeByPlayer=new Map();
@@ -5917,6 +5929,51 @@ function provenLocationFromRow(row){
   };
 }
 
+function assertDeterministicDrawCompleteness(officialDraw,label='Official draw crawl'){
+  if((officialDraw?.failed||0)>0){
+    throw new Error(
+      `${label} had ${officialDraw.failed} incomplete/failed age-group draw page(s). `+
+      `Existing published data was left unchanged.`
+    );
+  }
+
+  const missingTreeDraws=officialDraw?.missingTreeDraws||[];
+  if(missingTreeDraws.length){
+    throw new Error(
+      `${label} was incomplete for ${missingTreeDraws.length} main draw(s): `+
+      missingTreeDraws.map(x=>`${x.drawName} (${x.players} players)`).join(', ')+
+      `. Existing published data was left unchanged.`
+    );
+  }
+
+  if((officialDraw?.mainTreeDraws||0)<20){
+    throw new Error(
+      `${label} exposed only ${officialDraw?.mainTreeDraws||0} main age-group draw(s). `+
+      `Existing published data was left unchanged.`
+    );
+  }
+
+  if((officialDraw?.players||[]).length<900){
+    throw new Error(
+      `${label} exposed only ${(officialDraw?.players||[]).length} unique players. `+
+      `Existing published data was left unchanged.`
+    );
+  }
+
+  if((officialDraw?.treeObservations||0)<300){
+    throw new Error(
+      `${label} produced only ${officialDraw?.treeObservations||0} deterministic tree observations. `+
+      `Existing published data was left unchanged.`
+    );
+  }
+
+  console.log(
+    `DRAW TREE completeness: ${officialDraw.mainTreeDraws} main draw(s), `+
+    `${officialDraw.treeObservations} deterministic observation(s), `+
+    `${(officialDraw.players||[]).length} unique draw player(s), 0 missing main trees.`
+  );
+}
+
 function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesRows,{preserveHistory=true}={}){
   const today=perthTodayIsoRefresh();
 
@@ -7808,48 +7865,7 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
       officialDrawFallback.matches||[]
     );
 
-    if((officialDrawFallback.failed||0)>0){
-      throw new Error(
-        `Official draw crawl had ${officialDrawFallback.failed} incomplete/failed age-group draw page(s). ` +
-        `Existing published data was left unchanged.`
-      );
-    }
-
-    const missingTreeDraws=officialDrawFallback.missingTreeDraws||[];
-    if(missingTreeDraws.length){
-      throw new Error(
-        `Deterministic draw-tree crawl was incomplete for ${missingTreeDraws.length} main draw(s): ` +
-        missingTreeDraws.map(x=>`${x.drawName} (${x.players} players)`).join(', ') +
-        `. Existing published data was left unchanged.`
-      );
-    }
-
-    if((officialDrawFallback.mainTreeDraws||0)<20){
-      throw new Error(
-        `Deterministic draw-tree crawl exposed only ${officialDrawFallback.mainTreeDraws||0} main age-group draw(s). ` +
-        `Existing published data was left unchanged.`
-      );
-    }
-
-    if((officialDrawFallback.players||[]).length<900){
-      throw new Error(
-        `Official draw crawl exposed only ${(officialDrawFallback.players||[]).length} unique players. ` +
-        `Existing published data was left unchanged.`
-      );
-    }
-
-    if((officialDrawFallback.treeObservations||0)<300){
-      throw new Error(
-        `Deterministic draw-tree extraction produced only ${officialDrawFallback.treeObservations||0} observations. ` +
-        `Existing published data was left unchanged.`
-      );
-    }
-
-    console.log(
-      `DRAW TREE completeness: ${officialDrawFallback.mainTreeDraws} main draw(s), ` +
-      `${officialDrawFallback.treeObservations} deterministic observation(s), ` +
-      `${(officialDrawFallback.players||[]).length} unique draw player(s), 0 missing main trees.`
-    );
+    assertDeterministicDrawCompleteness(officialDrawFallback,'Official draw crawl');
 
     // OFFICIAL DRAW = fixture existence authority for today + future.
     // Existing data is retained only for historical dates.
@@ -8040,19 +8056,35 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
   if(metadataCounts.age<Math.floor(canonicalPlayers.length*0.95) || metadataCounts.gender<Math.floor(canonicalPlayers.length*0.95)){
     throw new Error(`Official draw age/gender coverage looks incomplete: age ${metadataCounts.age}/${canonicalPlayers.length}, gender ${metadataCounts.gender}/${canonicalPlayers.length}. Existing published data was left unchanged.`);
   }
-  if((officialDraw.matches||[]).length<450){
-    throw new Error(
-      `Official TournamentSoftware draw schedule coverage looks incomplete: only ` +
-      `${(officialDraw.matches||[]).length} validated draw fixtures. ` +
-      `Existing published data was left unchanged.`
-    );
-  }
+  assertDeterministicDrawCompleteness(
+    officialDraw,
+    FULL_REBUILD?'Full deterministic draw-tree rebuild':'Deterministic draw-tree refresh'
+  );
+
+  const todayForAuthority=perthTodayIsoRefresh();
+  const officialHistoricalRows=officialSchedule.filter(m=>
+    m?.date&&m?.time&&
+    canonicalTournamentDate(m.date)<todayForAuthority&&
+    !/^(?:TBD|Bye)$/i.test(clean(m.player1||''))&&
+    !/^(?:TBD|Bye)$/i.test(clean(m.player2||''))
+  );
+
+  // Normal scheduled refreshes preserve already-published history because the
+  // TournamentSoftware Matches page can render incompletely from one request to
+  // the next. :full deliberately reconstructs history from the fresh official
+  // Matches crawl instead.
+  const historicalBase=FULL_REBUILD?officialHistoricalRows:existingMatches;
+
+  console.log(
+    `Historical authority base: ${historicalBase.length} row(s) from `+
+    `${FULL_REBUILD?'fresh TournamentSoftware Matches crawl':'existing published history'}.`
+  );
 
   let tournamentMatches=buildDrawAuthoritativeTournamentSchedule(
-    [],
+    historicalBase,
     officialDraw.matches||[],
     officialSchedule,
-    {preserveHistory:false}
+    {preserveHistory:true}
   );
 
   tournamentMatches=overlayFreshTournamentResults(
@@ -8065,6 +8097,21 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
     officialDraw.matches||[],
     'TournamentSoftware Draw'
   );
+
+
+  tournamentMatches=cleanupDuplicateTournamentFixtures(
+    tournamentMatches,
+    officialSchedule
+  );
+
+  if(!FULL_REBUILD){
+    tournamentMatches=preserveHistoricalTournamentResults(
+      tournamentMatches,
+      existingMatches
+    );
+  }
+
+  tournamentMatches=sanitizeFutureResultMetadata(tournamentMatches);
 
   const drawCompleted=(officialDraw.matches||[]).filter(m=>m.result||String(m.status||'').toLowerCase()==='completed');
   const drawScored=(officialDraw.matches||[]).filter(m=>m.result);
@@ -8117,15 +8164,24 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
   fs.writeFileSync(path.join(DIR,'refresh-matches.json'),JSON.stringify(matches,null,2));
 
 
-  // Schedule/player safety is based on the official TournamentSoftware draw hierarchy.
-  if(tournamentMatches.length<450){
-    throw new Error(
-      `Official draw hierarchy produced only ${tournamentMatches.length} authoritative fixtures; ` +
-      `existing published data was left unchanged.`
-    );
-  }
-  if(officialDraw.failed>Math.max(3,Math.floor(officialDraw.drawLinks*0.20))){
-    throw new Error(`Too many official draw pages failed (${officialDraw.failed}/${officialDraw.drawLinks}); existing published data was left unchanged.`);
+  // Structural schedule safety is enforced by assertDeterministicDrawCompleteness()
+  // plus buildDrawAuthoritativeTournamentSchedule()'s location/collision checks.
+  // For a normal refresh, additionally make sure historical preservation did
+  // not unexpectedly collapse the published dataset.
+  if(!FULL_REBUILD){
+    const oldHistory=existingMatches.filter(m=>
+      canonicalTournamentDate(m.date)<perthTodayIsoRefresh()
+    ).length;
+    const newHistory=tournamentMatches.filter(m=>
+      canonicalTournamentDate(m.date)<perthTodayIsoRefresh()
+    ).length;
+
+    if(oldHistory>=100 && newHistory<Math.floor(oldHistory*0.90)){
+      throw new Error(
+        `Historical preservation unexpectedly dropped from ${oldHistory} to ${newHistory} fixture(s). `+
+        `Existing published data was left unchanged.`
+      );
+    }
   }
 
   if(FULL_REBUILD){
