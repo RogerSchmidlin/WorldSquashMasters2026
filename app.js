@@ -1389,14 +1389,12 @@ function renderLivePage(){
     `;
 
     if(group.matches.length){
-      // Use the exact same match-card renderer and state styling as the
-      // Courts/Vic Park views so the Live page stays visually consistent.
-      // IMPORTANT: Live deliberately uses the SAME renderer as Vic Park.
-      // Do not maintain a separate Live match-card renderer: the mobile Vic Park
-      // CSS moves time/location/age into .vic-mobile-meta, and that markup must
-      // exist on Live as well.
+      // Desktop uses the framed Vic Park-style layout that was previously
+      // approved for Live. Mobile/tablet keeps the exact shared Vic Park row
+      // renderer, because that renderer owns the responsive time/venue/age/
+      // Watch-live metadata strip used by Vic Park on small screens.
       html+=group.matches
-        .map(m=>compactScheduleRow(m,VIC_PARK_PLAYERS||[]))
+        .map(m=>`<div class="live-desktop-row-wrap">${liveVicParkMatchRow(m,VIC_PARK_PLAYERS||[])}</div><div class="live-compact-row-wrap">${compactScheduleRow(m,VIC_PARK_PLAYERS||[])}</div>`)
         .join('');
     }else{
       html+=`
@@ -1542,6 +1540,16 @@ function ensureLivePageStyles(){
 
     #live .live-venue-empty{
       margin-bottom:10px;
+    }
+
+    /* Live uses the approved framed Vic Park desktop card, while small screens
+       use the exact shared Vic Park responsive row. Keeping both renderers in
+       the DOM also makes resizing/orientation changes instant and reliable. */
+    #live .live-desktop-row-wrap{display:block}
+    #live .live-compact-row-wrap{display:none}
+    @media(max-width:1180px){
+      #live .live-desktop-row-wrap{display:none!important}
+      #live .live-compact-row-wrap{display:block!important}
     }
 
     /* Live match cards deliberately use the same visual language as the
@@ -2745,20 +2753,6 @@ function renderFeatureCourt(date=selectedFeatureDate){
     .map(normalizeSelfMatchAsBye)
     .sort((a,b)=>to24(a.time||'').localeCompare(to24(b.time||'')));
 
-  const today=perthTodayIso();
-  const history=venueBase
-    .filter(m=>{
-      const d=canonicalDate(m.date);
-      return d&&d<today;
-    })
-    .map(normaliseMatch)
-    .map(normalizeSelfMatchAsBye)
-    .sort((a,b)=>{
-      const ad=canonicalDate(a.date),bd=canonicalDate(b.date);
-      if(ad!==bd)return bd.localeCompare(ad);
-      return to24(a.time||'').localeCompare(to24(b.time||''));
-    });
-
   const highlightedPlayers=[];
   for(const playerName of [...VIC_PARK_PLAYERS,...getFavoriteNames()]){
     if(playerName&&!highlightedPlayers.some(n=>sameName(n,playerName)))highlightedPlayers.push(playerName);
@@ -2772,22 +2766,6 @@ function renderFeatureCourt(date=selectedFeatureDate){
     html+=selectedMatches.map(m=>compactScheduleRow(m,highlightedPlayers)).join('');
   }else{
     html+=`<div class="schedule-empty"><strong>No matches found for this venue on ${esc(fmtDate(date).long)}.</strong></div>`;
-  }
-
-  // Keep the Courts view current: historical matches are shown below the
-  // current/upcoming selection, exactly like the Vic Park page.
-  if(history.length){
-    html+=`<div class="vic-day-heading history-heading"><span>History</span><strong>Past matches</strong></div>`;
-    let lastDate='';
-    for(const m of history){
-      const d=canonicalDate(m.date);
-      if(d!==lastDate){
-        lastDate=d;
-        const f=fmtDate(d);
-        html+=`<div class="vic-day-heading history-day-heading"><span>${esc(f.day)}</span><strong>${esc(f.date)}</strong></div>`;
-      }
-      html+=compactScheduleRow(m,highlightedPlayers);
-    }
   }
 
   qs('#glassMatches').innerHTML=html;
