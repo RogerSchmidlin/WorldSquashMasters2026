@@ -1835,20 +1835,48 @@ function ensureLivePageStyles(){
         min-height:0;
         padding:13px 12px!important;
       }
+      /* Vic Park's mobile stylesheet hides/rearranges the desktop .vic-time
+         block. Live uses its own framed-player renderer, so explicitly keep
+         the same three essentials visible on phones: time, age group and
+         Watch live. !important is intentional here because the mirrored
+         #vicpark mobile rules can themselves be !important. */
       #live .live-page-match-row .live-vic-time{
-        display:grid;
-        grid-template-columns:auto 1fr auto;
-        align-items:center;
-        gap:8px;
-        justify-content:start;
-        justify-items:start;
-        text-align:left;
+        display:grid!important;
+        visibility:visible!important;
+        opacity:1!important;
+        width:100%!important;
+        grid-template-columns:auto auto minmax(0,1fr)!important;
+        align-items:center!important;
+        gap:7px!important;
+        justify-content:stretch!important;
+        justify-items:start!important;
+        text-align:left!important;
+        margin:0!important;
       }
-      #live .live-page-match-row .vic-time-age{
-        margin-top:0;
+      #live .live-page-match-row .live-vic-time .vic-time-value{
+        display:inline-flex!important;
+        visibility:visible!important;
+        opacity:1!important;
+        font-size:.96rem!important;
+        white-space:nowrap!important;
+      }
+      #live .live-page-match-row .live-vic-time .vic-time-age{
+        display:inline-flex!important;
+        visibility:visible!important;
+        opacity:1!important;
+        margin:0!important;
+        font-size:.67rem!important;
+        white-space:nowrap!important;
       }
       #live .live-page-match-row .live-vic-time .live-video-button{
-        margin:0 0 0 auto;
+        display:inline-flex!important;
+        visibility:visible!important;
+        opacity:1!important;
+        justify-self:end!important;
+        margin:0!important;
+        padding:6px 8px!important;
+        font-size:.66rem!important;
+        white-space:nowrap!important;
       }
       #live .live-vic-fixture-line{
         grid-template-columns:minmax(0,1fr) 14px minmax(0,1fr)!important;
