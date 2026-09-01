@@ -1102,10 +1102,343 @@ function favoriteButton(n,cls=''){const on=isFavoritePlayer(n);return `<button t
 function toggleFavoritePlayer(n){const r=getFavoriteNames(),i=r.findIndex(x=>sameName(x,n));if(i>=0)r.splice(i,1);else r.push(n);saveFavoriteNames(r);return i<0}
 function refreshFavoriteButtons(){qsa('[data-favourite-player]').forEach(btn=>{const on=isFavoritePlayer(btn.dataset.favouritePlayer||'');btn.classList.toggle('is-favorite',on);btn.setAttribute('aria-pressed',on?'true':'false');btn.title=`${on?'Remove from':'Add to'} Fav Players`;const s=btn.querySelector('span[aria-hidden="true"]');if(s)s.textContent=on?'★':'☆';const t=btn.querySelector('.favorite-player-btn-text');if(t)t.textContent=on?'Faved':'Fav';})}
 
-let playersRendered=false,glassReady=false,vicParkReady=false,favoritesReady=false;
+
+let livePageReady=false;
+
+function ensureLivePageShell(){
+  const nav=document.querySelector('.nav');
+  if(nav){
+    let link=nav.querySelector('[data-page="live"]');
+    if(!link){
+      link=document.createElement('a');
+      link.href='#live';
+      link.dataset.page='live';
+      link.className='nav-link';
+      link.textContent='Live';
+    }
+
+    // Keep Live immediately after Home, even when an older HTML file already
+    // contains the Live tab in a different position. insertAdjacentElement
+    // moves an existing node, so this also repairs the order without duplicates.
+    const home=nav.querySelector('[data-page="home"]');
+    if(home)home.insertAdjacentElement('afterend',link);
+    else if(!link.isConnected)nav.insertBefore(link,nav.firstChild);
+  }
+
+  if(!document.getElementById('live')){
+    const main=document.querySelector('main');
+    if(main){
+      const section=document.createElement('section');
+      section.id='live';
+      section.className='page';
+      section.innerHTML=`
+        <div class="compact-page-tools">
+          <div class="watch-count">
+            <span id="liveMatchCount">0</span>
+            <small id="liveMatchCountLabel">matches live</small>
+          </div>
+        </div>
+        <div id="liveMatches" class="tracked-players live-match-list"></div>
+      `;
+
+      const courts=document.getElementById('glass');
+      if(courts)main.insertBefore(section,courts);
+      else main.appendChild(section);
+    }
+  }
+}
+
+function bindPageNavigation(){
+  qsa('[data-page]').forEach(a=>{
+    if(a.dataset.pageBound==='1')return;
+    a.dataset.pageBound='1';
+    a.addEventListener('click',e=>{
+      e.preventDefault();
+      setPage(a.dataset.page);
+    });
+  });
+}
+
+function liveVenueGroup(m){
+  const code=venueCode(m);
+
+  if(code==='G')return {
+    key:'karrinyup',
+    name:'Karrinyup Shopping Centre',
+    order:0
+  };
+  if(code==='B')return {
+    key:'belmont',
+    name:'Belmont Saints Squash Centre',
+    order:1
+  };
+  if(code==='M')return {
+    key:'mirrabooka',
+    name:'Squashworld Mirrabooka',
+    order:2
+  };
+
+  const name=canonicalVenue(m?.venue) ||
+    String(m?.venue||'').trim() ||
+    'Other venue';
+
+  return {
+    key:`other:${name}`,
+    name,
+    order:99
+  };
+}
+
+function liveVenueStreamUrl(venueName){
+  const rules=Array.isArray(liveStreamConfig?.streams)
+    ? liveStreamConfig.streams
+    : [];
+
+  const wanted=canonicalVenue(venueName)||String(venueName||'').trim();
+
+  for(const rule of rules){
+    const configured=canonicalVenue(rule?.venue)||String(rule?.venue||'').trim();
+    if(!configured)continue;
+
+    const sameVenue=
+      configured===wanted ||
+      (
+        /karrinyup/i.test(configured)&&/karrinyup/i.test(wanted)
+      ) ||
+      (
+        /belmont/i.test(configured)&&/belmont/i.test(wanted)
+      ) ||
+      (
+        /mirrabooka/i.test(configured)&&/mirrabooka/i.test(wanted)
+      );
+
+    if(!sameVenue)continue;
+
+    const url=normalizeLiveStreamUrl(rule?.url);
+    if(url)return url;
+  }
+
+  return '';
+}
+
+function liveVenueTvButton(venueName){
+  const url=liveVenueStreamUrl(venueName);
+
+  if(!url){
+    return `<span class="live-venue-tv-button live-venue-tv-loading"
+      title="Loading live stream link">
+        <span aria-hidden="true">📺</span>
+        Live TV
+      </span>`;
+  }
+
+  // Same behaviour as each match's Watch live button: open the video-only
+  // stream window through the existing data-live-video-url click handler.
+  return `<button type="button"
+    class="live-venue-tv-button live-video-button"
+    data-live-video-url="${esc(url)}"
+    title="Open ${esc(venueName)} live stream">
+      <span aria-hidden="true">📺</span>
+      Live TV
+    </button>`;
+}
+
+function currentLiveMatches(){
+  const base=(data.baseMatches||data.matches||[])
+    .filter(m=>!m?.playerDetailOnly);
+
+  // Apply the latest SquashScores state first, exactly like Courts/Favourites.
+  const overlaid=ssOverlay(base,squashScoresLatestLive)
+    .map(normaliseMatch)
+    .map(normalizeSelfMatchAsBye);
+
+  return overlaid
+    .filter(m=>isMatchCurrent(m))
+    .sort((a,b)=>{
+      const av=liveVenueGroup(a),bv=liveVenueGroup(b);
+      if(av.order!==bv.order)return av.order-bv.order;
+      if(av.name!==bv.name)return av.name.localeCompare(bv.name);
+      return to24(a.time||'').localeCompare(to24(b.time||''));
+    });
+}
+
+function renderLivePage(){
+  const target=qs('#liveMatches');
+  if(!target)return;
+
+  const matches=currentLiveMatches();
+  const count=qs('#liveMatchCount');
+  const label=qs('#liveMatchCountLabel');
+
+  if(count)count.textContent=matches.length;
+  if(label)label.textContent=matches.length===1?'match live':'matches live';
+
+  // Always render every tournament venue, even if no match is currently live.
+  // Order is intentional: Karrinyup -> Belmont -> Mirrabooka.
+  const groups=[
+    {
+      key:'karrinyup',
+      name:'Karrinyup Shopping Centre',
+      order:0,
+      matches:[]
+    },
+    {
+      key:'belmont',
+      name:'Belmont Saints Squash Centre',
+      order:1,
+      matches:[]
+    },
+    {
+      key:'mirrabooka',
+      name:'Squashworld Mirrabooka',
+      order:2,
+      matches:[]
+    }
+  ];
+
+  const byKey=new Map(groups.map(group=>[group.key,group]));
+
+  for(const m of matches){
+    const venue=liveVenueGroup(m);
+    const known=byKey.get(venue.key);
+
+    if(known){
+      known.matches.push(m);
+      continue;
+    }
+
+    // Keep an unexpected venue visible rather than silently dropping it.
+    let other=groups.find(group=>group.key===venue.key);
+    if(!other){
+      other={...venue,matches:[]};
+      groups.push(other);
+    }
+    other.matches.push(m);
+  }
+
+  groups.sort((a,b)=>
+    a.order-b.order || a.name.localeCompare(b.name)
+  );
+
+  let html='';
+
+  for(const group of groups){
+    html+=`
+      <div class="vic-day-heading live-venue-heading">
+        <div class="live-venue-title-wrap">
+          <strong>${esc(group.name)}</strong>
+          ${liveVenueTvButton(group.name)}
+        </div>
+      </div>
+    `;
+
+    if(group.matches.length){
+      // Use the exact same match-card renderer and state styling as the
+      // Courts/Vic Park views so the Live page stays visually consistent.
+      html+=group.matches
+        .map(m=>compactScheduleRow(m,[]))
+        .join('');
+    }else{
+      html+=`
+        <div class="schedule-empty live-venue-empty">
+          No matches currently running.
+        </div>
+      `;
+    }
+  }
+
+  target.innerHTML=html;
+}
+
+function ensureLivePageStyles(){
+  if(document.getElementById('wsm-live-page-styles'))return;
+
+  const style=document.createElement('style');
+  style.id='wsm-live-page-styles';
+  style.textContent=`
+    #live .live-venue-heading{
+      margin-top:18px;
+    }
+
+    #live .live-venue-heading:first-child{
+      margin-top:0;
+    }
+
+    #live .live-venue-title-wrap{
+      display:inline-flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:8px;
+      width:auto;
+      max-width:100%;
+    }
+
+    #live .live-venue-title-wrap strong{
+      min-width:0;
+      flex:0 1 auto;
+    }
+
+    #live .live-venue-tv-button{
+      display:inline-flex!important;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      flex:0 0 auto;
+      min-height:27px;
+      padding:5px 9px;
+      border:1px solid rgba(32,177,90,.58);
+      border-radius:999px;
+      background:rgba(32,177,90,.16);
+      color:#31d56f;
+      font:inherit;
+      font-size:.72rem;
+      font-weight:850;
+      line-height:1;
+      cursor:pointer;
+      white-space:nowrap;
+      visibility:visible!important;
+      opacity:1!important;
+      text-decoration:none;
+      appearance:none;
+      -webkit-appearance:none;
+    }
+
+
+    #live .live-venue-tv-button:hover{
+      background:rgba(32,177,90,.17);
+      border-color:rgba(32,177,90,.62);
+    }
+
+    #live .live-venue-tv-loading{
+      opacity:.72!important;
+      cursor:default;
+    }
+
+    #live .live-venue-empty{
+      margin-bottom:10px;
+    }
+
+  `;
+  document.head.appendChild(style);
+}
+
+ensureLivePageShell();
+ensureLivePageStyles();
+bindPageNavigation();
+
+let playersRendered=false,glassReady=false,vicParkReady=false,favoritesReady=false,liveReady=false;
 function showLoading(id){
-  const target=id==='players'?qs('#playerGrid'):id==='glass'?qs('#glassMatches'):id==='vicpark'?qs('#trackedPlayers'):id==='favorites'?qs('#favoriteMatches'):null;
-  if(target&&!target.innerHTML.trim())target.innerHTML='<div class="schedule-empty">Loading…</div>';
+  const target=
+    id==='players'?qs('#playerGrid'):
+    id==='glass'?qs('#glassMatches'):
+    id==='vicpark'?qs('#trackedPlayers'):
+    id==='favorites'?qs('#favoriteMatches'):
+    id==='live'?qs('#liveMatches'):
+    null;
+
+  if(target&&!target.innerHTML.trim()){
+    target.innerHTML='<div class="schedule-empty">Loading…</div>';
+  }
 }
 async function setPage(id){
   qsa('.page').forEach(p=>p.classList.toggle('active-page',p.id===id));
@@ -1113,18 +1446,32 @@ async function setPage(id){
   history.replaceState(null,'','#'+id);
   scrollTo({top:0,behavior:'smooth'});
   try{
-    if(['glass','vicpark','favorites'].includes(id))startSquashScoresPolling();
+    if(['glass','vicpark','favorites','live'].includes(id))startSquashScoresPolling();
     if(id==='players'&&!playersRendered){showLoading(id);await ensurePlayersData();renderPlayers();playersRendered=true;}
     if(id==='glass'&&!glassReady){showLoading(id);await ensureMatchesData();setupGlass();glassReady=true;}
     if(id==='vicpark'&&!vicParkReady){showLoading(id);await ensureVicParkData();setupVicPark();vicParkReady=true;}
     if(id==='favorites'){showLoading(id);await ensureMatchesData();renderFavoritePlayers();favoritesReady=true;}
+    if(id==='live'){
+      showLoading(id);
+      await ensureMatchesData();
+      renderLivePage();
+      liveReady=true;
+    }
   }catch(e){console.error(e);showDataError(id,e);}
 }
 function showDataError(id,e){
-  const target=id==='players'?qs('#playerGrid'):id==='glass'?qs('#glassMatches'):id==='favorites'?qs('#favoriteMatches'):qs('#trackedPlayers');
-  if(target)target.innerHTML=`<div class="schedule-empty"><strong>Could not load tournament data.</strong><br>${esc(e?.message||e)}</div>`;
+  const target=
+    id==='players'?qs('#playerGrid'):
+    id==='glass'?qs('#glassMatches'):
+    id==='favorites'?qs('#favoriteMatches'):
+    id==='live'?qs('#liveMatches'):
+    qs('#trackedPlayers');
+
+  if(target){
+    target.innerHTML=`<div class="schedule-empty"><strong>Could not load tournament data.</strong><br>${esc(e?.message||e)}</div>`;
+  }
 }
-qsa('[data-page]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();setPage(a.dataset.page)}));
+bindPageNavigation();
 
 
 function playerListDisplayName(name){
@@ -1406,17 +1753,274 @@ function scoreWinnerName(m){
   return scoreWinnerInfo(m).name;
 }
 
+
+let liveStreamConfig={streams:[]};
+let liveStreamConfigLoaded=false;
+
+function normalizeLiveStreamCourt(v){
+  const s=String(v||'').replace(/\s+/g,' ').trim();
+  if(!s)return '';
+
+  let m=s.match(/\bSC\s*(\d+)\b/i);
+  if(m)return `SC${Number(m[1])}`;
+
+  m=s.match(/\bCourt\s*(\d+)\b/i);
+  if(m)return `SC${Number(m[1])}`;
+
+  m=s.match(/\bAGC\s*(\d+)?\b/i);
+  if(m)return m[1]?`AGC${Number(m[1])}`:'AGC';
+
+  return s.toUpperCase();
+}
+
+function normalizeLiveStreamUrl(v){
+  const s=String(v||'').trim();
+  const match=s.match(/https:\/\/\S+/i);
+  return match?match[0]:'';
+}
+
+function liveStreamVenueMatches(ruleVenue,m){
+  const rule=String(ruleVenue||'').toLowerCase();
+
+  // Use the SAME venue classification as the rest of the site. This is much
+  // safer than depending on whichever raw venue/court fields happened to be
+  // present on a particular TournamentSoftware/SquashScores row.
+  const code=venueCode(m);
+
+  if(rule.includes('karrinyup'))return code==='G';
+  if(rule.includes('mirrabooka'))return code==='M';
+  if(rule.includes('belmont'))return code==='B';
+
+  const venueText=`${m?.venue||''} ${m?.rawText||''}`.toLowerCase();
+  return !!rule&&venueText.includes(rule);
+}
+
+function liveStreamForMatch(m){
+  if(!isMatchCurrent(m))return '';
+
+  const rules=Array.isArray(liveStreamConfig?.streams)
+    ? liveStreamConfig.streams
+    : [];
+
+  const venue=venueCode(m);
+  const matchCourt=normalizeLiveStreamCourt(actualCourt(m)||m?.court||'');
+
+  for(const rule of rules){
+    const url=normalizeLiveStreamUrl(rule?.url);
+    if(!url)continue;
+    if(!liveStreamVenueMatches(rule.venue,m))continue;
+
+    // Karrinyup has one streamed court. Any live Karrinyup match uses the
+    // Karrinyup stream regardless of the court value in the JSON or match.
+    if(venue==='G')return url;
+
+    // Belmont and Mirrabooka must match BOTH venue and configured court.
+    const configuredCourt=normalizeLiveStreamCourt(rule?.court||'');
+    if(!configuredCourt||!matchCourt)continue;
+    if(configuredCourt!==matchCourt)continue;
+
+    return url;
+  }
+
+  return '';
+}
+
+function liveVideoButton(m){
+  const url=liveStreamForMatch(m);
+  if(!url){
+    if(
+      isMatchCurrent(m) &&
+      venueCode(m)==='G'
+    ){
+      console.debug('Live video: Karrinyup live match has no matching configured URL',{
+        venue:m?.venue||'',
+        court:m?.court||''
+      });
+    }
+    return '';
+  }
+
+  return `<button type="button"
+    class="live-video-button"
+    data-live-video-url="${esc(url)}"
+    title="Open live video">
+      <span class="live-video-button-dot" aria-hidden="true"></span>
+      Watch live
+    </button>`;
+}
+
+function openLiveVideoWindow(url,existingPopup=null){
+  if(!url)return;
+
+  const popup=existingPopup||window.open(
+    '',
+    'wsmLiveVideo',
+    'popup=yes,width=1180,height=760,resizable=yes,scrollbars=no'
+  );
+  if(!popup)return;
+
+  const html=`<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live Video</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    overflow:hidden;
+  }
+  video{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#000;
+  }
+</style>
+</head>
+<body>
+<video id="video" controls autoplay muted playsinline></video>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js"><\/script>
+<script>
+(function(){
+  const url=${JSON.stringify(url)};
+  const video=document.getElementById('video');
+
+  if(video.canPlayType('application/vnd.apple.mpegurl')){
+    video.src=url;
+  }else if(window.Hls&&Hls.isSupported()){
+    const hls=new Hls({enableWorker:true,lowLatencyMode:true});
+    hls.loadSource(url);
+    hls.attachMedia(video);
+  }
+})();
+<\/script>
+</body>
+</html>`;
+
+  popup.document.open();
+  popup.document.write(html);
+  popup.document.close();
+  popup.focus();
+}
+
+async function loadLiveStreamConfig(){
+  const applyConfig=json=>{
+    liveStreamConfig={
+      streams:Array.isArray(json?.streams)?json.streams:[]
+    };
+    liveStreamConfigLoaded=true;
+    return liveStreamConfig;
+  };
+
+  const rerender=()=>{
+    const page=location.hash.slice(1)||'home';
+    if(page==='vicpark'&&vicParkReady)setupVicPark();
+    else if(page==='glass'&&glassReady)renderFeatureCourt(selectedFeatureDate);
+    else if(page==='favorites')renderFavoritePlayers();
+    else if(page==='live')renderLivePage();
+  };
+
+  // Normal published website: JSON is the source of truth.
+  if(location.protocol!=='file:'){
+    try{
+      const response=await fetch(`live-streams.json?_=${Date.now()}`,{cache:'no-store'});
+      if(!response.ok)throw new Error(`HTTP ${response.status}`);
+      const config=applyConfig(await response.json());
+      rerender();
+      return config;
+    }catch(e){
+      console.warn('live-streams.json unavailable; trying local-browser fallback:',e?.message||e);
+    }
+  }
+
+  // Local file:// pages cannot reliably fetch JSON in Chrome/Edge.
+  // Load a generated JS mirror instead so direct stream links still work.
+  try{
+    if(!window.LIVE_STREAM_CONFIG){
+      await loadScriptOnce(`live-streams.js?_=${Date.now()}`);
+    }
+    if(window.LIVE_STREAM_CONFIG){
+      const config=applyConfig(window.LIVE_STREAM_CONFIG);
+      rerender();
+      return config;
+    }
+  }catch(e){
+    console.warn('live-streams.js fallback unavailable:',e?.message||e);
+  }
+
+  liveStreamConfig={streams:[]};
+  liveStreamConfigLoaded=true;
+  rerender();
+  return liveStreamConfig;
+}
+
+function ensureLiveVideoStyles(){
+  if(document.getElementById('wsm-live-video-styles'))return;
+
+  const style=document.createElement('style');
+  style.id='wsm-live-video-styles';
+  style.textContent=`
+    .vic-time .live-video-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      margin-top:7px;
+      padding:6px 9px;
+      border:1px solid rgba(32,177,90,.42);
+      border-radius:999px;
+      background:rgba(32,177,90,.10);
+      color:#20b15a;
+      font:inherit;
+      font-size:.70rem;
+      font-weight:800;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .vic-time .live-video-button:hover{
+      background:rgba(32,177,90,.17);
+      border-color:rgba(32,177,90,.62);
+    }
+    .live-video-button-dot{
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:#20b15a;
+      box-shadow:0 0 0 3px rgba(32,177,90,.14);
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+ensureLiveVideoStyles();
+
+document.addEventListener('click',event=>{
+  const button=event.target.closest?.('.live-video-button[data-live-video-url]');
+  if(!button)return;
+  openLiveVideoWindow(button.dataset.liveVideoUrl||'');
+});
+
+
+loadLiveStreamConfig();
+
 function matchScoreSummary(m){
   if(!canShowPublishedResult(m))return '';
   if(!m?.result&&!m?.winner)return '';
 
   const state=scoreGameState(m);
+  const showScoreLiveIndicator=state.live&&!m?.hideScoreLiveIndicator;
 
   return `<div class="match-history-score has-score ${state.live?'live-score-block':''}">
     ${m.result
-      ? `<span class="match-history-score-label ${state.live?'live-score-label':''}">
+      ? `<span class="match-history-score-label ${showScoreLiveIndicator?'live-score-label':''}">
           <span>Score</span>
-          ${state.live
+          ${showScoreLiveIndicator
             ? `<span class="live-score-indicator" aria-label="Live match">
                 <span class="live-score-dot" aria-hidden="true"></span>
                 LIVE
@@ -1528,20 +2132,21 @@ function matchAgeGroupLabel(m,p1=null,p2=null){
   return [gender,age?`${age}+`:''].filter(Boolean).join(' ');
 }
 
-function compactScheduleRow(m,trackedNames=[]){
+function compactScheduleRow(m,trackedNames=[],options={}){
   const p1=playerForMatchSide(m,1), p2=playerForMatchSide(m,2);
   const ageGroupLabel=matchAgeGroupLabel(m,p1,p2);
   const p1Tracked=trackedNames.some(n=>sameName(n,m.player1));
   const p2Tracked=trackedNames.some(n=>sameName(n,m.player2));
   const v=venueVisual(m);
   const live=isMatchCurrent(m);
+  const showLiveIndicator=live&&!options.hideLiveIndicator;
   const scoreState=scoreGameState(m);
   const p1Winner=scoreState.finished&&scoreState.winnerSide===1;
   const p2Winner=scoreState.finished&&scoreState.winnerSide===2;
-  return `<article class="vic-match-row ${isPast(m)?'past':''} ${live?'match-live':''} ${scoreState.finished?'match-finished':''}">
-    <div class="vic-time"><span class="vic-time-value">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-time-age">${esc(ageGroupLabel)}</span></div>
+  return `<article class="vic-match-row ${isPast(m)?'past':''} ${live?'match-live':''} ${scoreState.finished?'match-finished':''} ${options.livePage?'live-page-match-row':''}">
+    <div class="vic-time"><span class="vic-time-value">${showLiveIndicator?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-time-age">${esc(ageGroupLabel)}</span>${liveVideoButton(m)}</div>
     <div class="vic-match-main">
-      <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(ageGroupLabel)}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(ageGroupLabel)}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
+      <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${showLiveIndicator?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(ageGroupLabel)}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(ageGroupLabel)}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
       <div class="vic-fixture-line">
         <a class="${p1Tracked?'vic-tracked-player':''} ${p1Winner?'match-winner-player':(scoreState.finished&&scoreState.winnerSide?'match-loser-player':'')}" href="${playerPageUrl(m.player1,m.player1Id)}">
           <span class="fixture-player-desktop">${flagImg(p1)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p1,playerListDisplayName(m.player1),p1Tracked)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span></span></span>
@@ -1571,7 +2176,7 @@ function compactScheduleRow(m,trackedNames=[]){
           </span>
         </a>
       </div>
-      ${matchScoreSummary(m)}
+      ${matchScoreSummary(options.hideLiveIndicator?{...m,hideScoreLiveIndicator:true}:m)}
     </div>
     <div class="vic-location" title="${esc(v.place)}">${v.code?`<span class="venue-letter venue-${v.code.toLowerCase()}" aria-hidden="true">${v.code}</span>`:''}<span>${esc(v.place)}</span></div>
   </article>`;
@@ -1965,6 +2570,8 @@ async function updateSquashScoresLive(){
       renderFavoritePlayers();
     }else if(page==='vicpark'&&vicParkReady&&vicUpdated){
       setupVicPark();
+    }else if(page==='live'){
+      renderLivePage();
     }
   }catch(e){
     console.warn('SquashScores live unavailable:',e?.message||e);
@@ -2222,8 +2829,11 @@ async function bootstrap(){
     }catch(e){console.error('Could not load tournament summary:',e)}
   }
   renderHeaderRefresh();setupPlayersShell();stamp();addOfficialTournamentTiles();updateDataAttribution();
+  ensureLivePageShell();
+  bindPageNavigation();
+
   const initial=location.hash.slice(1);
-  if(['players','glass','vicpark','favorites'].includes(initial))await setPage(initial);
+  if(['players','glass','vicpark','favorites','live'].includes(initial))await setPage(initial);
   startAutomaticSyncRefresh();
 
   // Warm the full match dataset in the background so Fav Players opens quickly.

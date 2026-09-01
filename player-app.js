@@ -1011,6 +1011,245 @@ function matchGamesScore(m){
   return playerScoreState(m).gamesText;
 }
 
+
+let liveStreamConfig={streams:[]};
+let liveStreamConfigLoaded=false;
+
+function normalizeLiveStreamCourt(v){
+  const s=String(v||'').replace(/\s+/g,' ').trim();
+  if(!s)return '';
+
+  let m=s.match(/\bSC\s*(\d+)\b/i);
+  if(m)return `SC${Number(m[1])}`;
+
+  m=s.match(/\bCourt\s*(\d+)\b/i);
+  if(m)return `SC${Number(m[1])}`;
+
+  m=s.match(/\bAGC\s*(\d+)?\b/i);
+  if(m)return m[1]?`AGC${Number(m[1])}`:'AGC';
+
+  return s.toUpperCase();
+}
+
+function normalizeLiveStreamUrl(v){
+  const s=String(v||'').trim();
+  const match=s.match(/https:\/\/\S+/i);
+  return match?match[0]:'';
+}
+
+function liveStreamVenueMatches(ruleVenue,m){
+  const rule=String(ruleVenue||'').toLowerCase();
+  const code=venueCode(m);
+
+  if(rule.includes('karrinyup'))return code==='G';
+  if(rule.includes('mirrabooka'))return code==='M';
+  if(rule.includes('belmont'))return code==='B';
+
+  const venueText=`${m?.venue||''} ${m?.rawText||''}`.toLowerCase();
+  return !!rule&&venueText.includes(rule);
+}
+
+function liveStreamForMatch(m){
+  if(!currentMatch(m))return '';
+
+  const rules=Array.isArray(liveStreamConfig?.streams)
+    ? liveStreamConfig.streams
+    : [];
+
+  const venue=venueCode(m);
+  const matchCourt=normalizeLiveStreamCourt(playerActualCourt(m)||m?.court||'');
+
+  for(const rule of rules){
+    const url=normalizeLiveStreamUrl(rule?.url);
+    if(!url)continue;
+    if(!liveStreamVenueMatches(rule.venue,m))continue;
+
+    // Karrinyup: ignore court and always use the Karrinyup venue stream.
+    if(venue==='G')return url;
+
+    // Belmont/Mirrabooka: venue and court must both match the JSON rule.
+    const configuredCourt=normalizeLiveStreamCourt(rule?.court||'');
+    if(!configuredCourt||!matchCourt)continue;
+    if(configuredCourt!==matchCourt)continue;
+
+    return url;
+  }
+
+  return '';
+}
+
+function playerLiveVideoButton(m){
+  const url=liveStreamForMatch(m);
+  if(!url){
+    if(
+      currentMatch(m) &&
+      venueCode(m)==='G'
+    ){
+      console.debug('Live video: Karrinyup live match has no matching configured URL',{
+        venue:m?.venue||'',
+        court:m?.court||''
+      });
+    }
+    return '';
+  }
+
+  return `<button type="button"
+    class="live-video-button"
+    data-live-video-url="${esc(url)}"
+    title="Open live video">
+      <span class="live-video-button-dot" aria-hidden="true"></span>
+      Watch live
+    </button>`;
+}
+
+function openPlayerLiveVideoWindow(url){
+  if(!url)return;
+
+  const popup=window.open(
+    '',
+    'wsmLiveVideo',
+    'popup=yes,width=1180,height=760,resizable=yes,scrollbars=no'
+  );
+  if(!popup)return;
+
+  const html=`<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live Video</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    overflow:hidden;
+  }
+  video{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#000;
+  }
+</style>
+</head>
+<body>
+<video id="video" controls autoplay muted playsinline></video>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js"><\/script>
+<script>
+(function(){
+  const url=${JSON.stringify(url)};
+  const video=document.getElementById('video');
+
+  if(video.canPlayType('application/vnd.apple.mpegurl')){
+    video.src=url;
+  }else if(window.Hls&&Hls.isSupported()){
+    const hls=new Hls({enableWorker:true,lowLatencyMode:true});
+    hls.loadSource(url);
+    hls.attachMedia(video);
+  }
+})();
+<\/script>
+</body>
+</html>`;
+
+  popup.document.open();
+  popup.document.write(html);
+  popup.document.close();
+  popup.focus();
+}
+
+async function loadLiveStreamConfig(){
+  const applyConfig=json=>{
+    liveStreamConfig={
+      streams:Array.isArray(json?.streams)?json.streams:[]
+    };
+    liveStreamConfigLoaded=true;
+    return liveStreamConfig;
+  };
+
+  if(location.protocol!=='file:'){
+    try{
+      const response=await fetch(`live-streams.json?_=${Date.now()}`,{cache:'no-store'});
+      if(!response.ok)throw new Error(`HTTP ${response.status}`);
+      const config=applyConfig(await response.json());
+      try{renderPlayerLiveView();}catch{}
+      return config;
+    }catch(e){
+      console.warn('live-streams.json unavailable; trying local-browser fallback:',e?.message||e);
+    }
+  }
+
+  try{
+    if(!window.LIVE_STREAM_CONFIG){
+      await loadScriptOnce(`live-streams.js?_=${Date.now()}`);
+    }
+    if(window.LIVE_STREAM_CONFIG){
+      const config=applyConfig(window.LIVE_STREAM_CONFIG);
+      try{renderPlayerLiveView();}catch{}
+      return config;
+    }
+  }catch(e){
+    console.warn('live-streams.js fallback unavailable:',e?.message||e);
+  }
+
+  liveStreamConfig={streams:[]};
+  liveStreamConfigLoaded=true;
+  try{renderPlayerLiveView();}catch{}
+  return liveStreamConfig;
+}
+
+function ensurePlayerLiveVideoStyles(){
+  if(document.getElementById('wsm-live-video-styles'))return;
+
+  const style=document.createElement('style');
+  style.id='wsm-live-video-styles';
+  style.textContent=`
+    .vic-time .live-video-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      margin-top:7px;
+      padding:6px 9px;
+      border:1px solid rgba(32,177,90,.42);
+      border-radius:999px;
+      background:rgba(32,177,90,.10);
+      color:#20b15a;
+      font:inherit;
+      font-size:.70rem;
+      font-weight:800;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .vic-time .live-video-button:hover{
+      background:rgba(32,177,90,.17);
+      border-color:rgba(32,177,90,.62);
+    }
+    .live-video-button-dot{
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:#20b15a;
+      box-shadow:0 0 0 3px rgba(32,177,90,.14);
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+ensurePlayerLiveVideoStyles();
+
+document.addEventListener('click',event=>{
+  const button=event.target.closest?.('.live-video-button[data-live-video-url]');
+  if(!button)return;
+  openPlayerLiveVideoWindow(button.dataset.liveVideoUrl||'');
+});
+
+loadLiveStreamConfig();
+
 function playerMatchScoreSummary(m,outcome=''){
   const state=playerScoreState(m);
   const shouldShow=
@@ -1339,6 +1578,7 @@ function playerMatchRow(m){
     <div class="vic-time">
       <span class="vic-time-value">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span>
       <span class="vic-time-age">${esc(m.event||'')}</span>
+      ${playerLiveVideoButton(m)}
     </div>
 
     <div class="vic-match-main">
