@@ -40,11 +40,12 @@ const PROFILE_WAIT = Number(process.env.PROFILE_WAIT_MS || 350);
 const FULL_REBUILD = process.argv.includes(':full');
 const NORMAL_PROFILE_CRAWL = FULL_REBUILD || process.argv.includes(':profiles') || process.env.CRAWL_PROFILES==='1';
 const MATCHES_ONLY = process.argv.includes(':matches');
+const DRAW_DEBUG = process.argv.includes(':drawdebug');
 const SQUASHLEVELS_ONLY = process.argv.includes(':squashlevels');
 const SQUASHLEVELS_LOGIN_SETUP = process.argv.includes(':squashlevels-login');
 const SQUASHLEVELS_PLAYER_ONLY = (()=>{
   if(!SQUASHLEVELS_ONLY)return '';
-  const modeArgs=new Set([':full',':matches',':squashlevels',':squashlevels-login']);
+  const modeArgs=new Set([':full',':matches',':drawdebug',':squashlevels',':squashlevels-login']);
   const extra=process.argv.slice(2).filter(x=>!modeArgs.has(x));
   return String(extra.join(' ')||'').replace(/\s+/g,' ').trim();
 })();
@@ -52,8 +53,8 @@ const SQUASHLEVELS_STORAGE_FILE = path.join(DIR,'squashlevels-storage-state.json
 const SQUASHLEVELS_SESSION_FILE = path.join(DIR,'squashlevels-session-storage.json');
 const SQUASHLEVELS_STORAGE_B64_FILE = path.join(DIR,'squashlevels-storage-state.b64.txt');
 const SQUASHLEVELS_SESSION_B64_FILE = path.join(DIR,'squashlevels-session-storage.b64.txt');
-if([FULL_REBUILD,MATCHES_ONLY,SQUASHLEVELS_ONLY,SQUASHLEVELS_LOGIN_SETUP].filter(Boolean).length>1){
-  throw new Error('Use only one of :full, :matches, :squashlevels or :squashlevels-login.');
+if([FULL_REBUILD,MATCHES_ONLY,DRAW_DEBUG,SQUASHLEVELS_ONLY,SQUASHLEVELS_LOGIN_SETUP].filter(Boolean).length>1){
+  throw new Error('Use only one of :full, :matches, :drawdebug, :squashlevels or :squashlevels-login.');
 }
 
 const clean = s => String(s || '').replace(/\s+/g, ' ').trim();
@@ -129,6 +130,81 @@ function normalizePlayerIdentityRecord(p){
   if(!p)return p;
   const x=splitPlayerSeed(p.name);
   return {...p,name:x.name||clean(p.name||''),seed:clean(p.seed||x.seed||'')};
+}
+
+function repairDuplicateSquashLevelsIdentity(players){
+  const out=(players||[]).map(p=>({...p}));
+  const groups=new Map();
+
+  for(const p of out){
+    const k=nameKey(p.name);
+    if(!groups.has(k))groups.set(k,[]);
+    groups.get(k).push(p);
+  }
+
+  const slFields=[
+    'squashLevelsPlayerId','squashLevelsUrl','squashLevelsIdentityVerified',
+    'squashLevelsIdentityVerifiedAt','squashLevelsMatchedCountry',
+    'squashLevelsMatchedAge','squashLevelsSearchCheckedAt',
+    'squashLevelsProfileCheckedAt','squashLevelsWorldRank',
+    'squashLevelsLevel','squashLevelsLevelProvisional'
+  ];
+
+  const tournamentAge=p=>{
+    const m=String(p?.ageGroup??'').match(/\b(35|40|45|50|55|60|65|70|75|80|85)\b/);
+    return m?Number(m[1]):null;
+  };
+
+  const matchedAge=p=>{
+    const n=Number(p?.squashLevelsMatchedAge);
+    return Number.isFinite(n)&&n>0?n:null;
+  };
+
+  let cleared=0;
+
+  for(const p of out){
+    const ta=tournamentAge(p);
+    const sa=matchedAge(p);
+    const expectedCountries=squashLevelsExpectedCountryCodes(p);
+    const sc=clean(p?.squashLevelsMatchedCountry||'').toUpperCase();
+    const duplicate=(groups.get(nameKey(p.name))||[]).length>1;
+
+    const hadMapping=!!(
+      p.squashLevelsUrl||
+      p.squashLevelsPlayerId||
+      p.squashLevelsLevel||
+      p.squashLevelsWorldRank
+    );
+    if(!hadMapping)continue;
+
+    const explicitAgeMismatch=ta!==null&&sa!==null&&ta!==sa;
+    const explicitCountryMismatch=!!(
+      sc&&expectedCountries.length&&!expectedCountries.includes(sc)
+    );
+
+    // For duplicate TournamentSoftware names, retained identity requires positive
+    // age evidence. For every player, any explicit age/country contradiction is
+    // enough to invalidate the cached SquashLevels profile.
+    const duplicateMissingAge=duplicate&&ta!==null&&sa===null;
+
+    if(explicitAgeMismatch||explicitCountryMismatch||duplicateMissingAge){
+      console.warn(
+        `Removed invalid SquashLevels mapping: ${p.name} ` +
+        `TS age=${ta??'?'}+ country=${expectedCountries.join('/')||'?'}; ` +
+        `SL age=${sa??'unknown'} country=${sc||'unknown'}.`
+      );
+      for(const k of slFields)delete p[k];
+      p.squashLevelsIdentityVerified=false;
+      p.squashLevelsSearchCheckedAt=null;
+      cleared++;
+    }
+  }
+
+  if(cleared){
+    console.log(`SquashLevels identity guard cleared ${cleared} invalid mapping(s).`);
+  }
+
+  return out;
 }
 
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -1808,20 +1884,71 @@ function officialScheduleMerge(rows){
     const people=ids.length===2?ids:[nameKey(m.player1),nameKey(m.player2)].sort();
     return `${canonicalTournamentDate(m.date)}|${clean(m.time).toLowerCase()}|${people.join('~')}`;
   };
-  const richness=m=>[m.result,m.round,m.venue,m.court,m.event,m.rawText].reduce((n,v)=>n+clean(v).length,0);
-  for(const m of rows||[]){
-    if(!m?.date||!m?.time||!m?.player1||!m?.player2)continue;
+
+  const sourceRank=source=>{
+    const s=clean(source);
+    if(s==='TournamentSoftware Match')return 100;
+    if(s==='TournamentSoftware Draw Tree')return 95;
+    if(s==='TournamentSoftware Draw Structural')return 90;
+    if(s==='TournamentSoftware Draw Inline')return 80;
+    if(s==='TournamentSoftware Draw Visual')return 40;
+    return 10;
+  };
+
+  const richness=m=>
+    [m.result,m.round,m.venue,m.court,m.event,m.rawText]
+      .reduce((n,v)=>n+clean(v).length,0)+
+    sourceRank(m.source);
+
+  for(const m0 of rows||[]){
+    if(!m0?.date||!m0?.time||!m0?.player1||!m0?.player2)continue;
+
+    const m={...m0};
     const k=key(m);
     const old=out.get(k);
-    if(!old){out.set(k,{...m});continue;}
+
+    if(!old){
+      m.evidenceSources=[...new Set([...(m.evidenceSources||[]),clean(m.source)].filter(Boolean))];
+      out.set(k,m);
+      continue;
+    }
+
+    const sources=[...new Set([
+      ...(old.evidenceSources||[]),
+      ...(m.evidenceSources||[]),
+      clean(old.source),
+      clean(m.source)
+    ].filter(Boolean))];
+
     const keep=richness(m)>richness(old)?{...old,...m}:{...m,...old};
+
+    // Strongest source describes fixture existence; evidenceSources keeps all
+    // corroborating discovery methods.
+    const candidates=[old,m].sort((a,b)=>sourceRank(b.source)-sourceRank(a.source));
+    keep.source=candidates[0]?.source||keep.source;
+    keep.evidenceSources=sources;
+
     if(!keep.result&&(old.result||m.result))keep.result=old.result||m.result;
-    if(String(old.status||'').toLowerCase()==='completed'||String(m.status||'').toLowerCase()==='completed')keep.status='completed';
+    if(String(old.status||'').toLowerCase()==='completed'||String(m.status||'').toLowerCase()==='completed'){
+      keep.status='completed';
+    }
+
+    // Never lose valid location metadata when another observation of the same
+    // exact fixture contained it.
+    const strongest=candidates[0]||{};
+    if(strongest.venue)keep.venue=strongest.venue;
+    else if(!keep.venue)keep.venue=old.venue||m.venue||'';
+
+    if(strongest.court)keep.court=sanitizeCourtValue(strongest.court);
+    else if(!keep.court)keep.court=old.court||m.court||'';
+
     out.set(k,keep);
   }
-  return [...out.values()].sort((a,b)=>`${a.date} ${clean(a.time)}`.localeCompare(`${b.date} ${clean(b.time)}`));
-}
 
+  return [...out.values()].sort((a,b)=>
+    `${a.date} ${clean(a.time)}`.localeCompare(`${b.date} ${clean(b.time)}`)
+  );
+}
 
 const DRAW_COUNTRY_META={
   AUS:{country:'Australia',iso3:'AUS',flagCode:'au'},
@@ -2209,6 +2336,239 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         if(parentIds.length===2)addFixture(parent,'sibling-pair');
       }
 
+
+      // DETERMINISTIC TOURNAMENTSOFTWARE TREE PARSER.
+      //
+      // Legacy TournamentSoftware brackets encode the tree directly in span IDs:
+      //   6015 + 6016 -> 5008
+      //   5007 + 5008 -> 4004
+      //   ...
+      //
+      // The first digit is the tree level and the remaining digits are the slot.
+      // Opponents are the odd/even sibling slots at the SAME level.
+      // The winner/output slot is exactly (level-1, ceil(slot/2)).
+      //
+      // Example seen in the Men's +40 Plate DOM:
+      //   Philip Taylor = slot 6015
+      //   Julian Buczek = slot 6016
+      //   their connector/output = 5008
+      //
+      // No pixel positions, nearest-neighbour logic or scoring are used.
+      const treeMatches=[];
+
+      function legacyPlayerFromCell(td){
+        if(!td)return null;
+        const links=[...td.querySelectorAll('a[href]')]
+          .filter(a=>playerHref.test(a.href||''));
+
+        for(const a of links){
+          const p=playerInfo(a);
+          if(p.name&&p.href)return p;
+        }
+
+        return null;
+      }
+
+      function textOfCell(td){
+        return clean(td?.innerText||td?.textContent||'');
+      }
+
+      function tableHeaderForColumn(table,index){
+        const rows=[...table.querySelectorAll('thead tr')];
+        if(!rows.length)return '';
+        const cells=[...rows[rows.length-1].children];
+        return clean(cells[index]?.innerText||cells[index]?.textContent||'');
+      }
+
+      function extractLegacyTableTree(table){
+        const tbody=table.tBodies?.[0];
+        if(!tbody)return;
+
+        const rows=[...tbody.rows];
+        if(!rows.length)return;
+
+        const caption=clean(table.caption?.innerText||table.caption?.textContent||'');
+        const slotMap=new Map();
+
+        for(let ri=0;ri<rows.length;ri++){
+          const tr=rows[ri];
+
+          for(const td of [...tr.cells]){
+            for(const span of [...td.querySelectorAll('span[id]')]){
+              const rawId=String(span.id||'');
+              if(!/^\d{4}$/.test(rawId))continue;
+
+              const num=Number(rawId);
+              const level=Math.floor(num/1000);
+              const slot=num%1000;
+
+              if(level<1||slot<1)continue;
+
+              const player=legacyPlayerFromCell(td);
+              const isBye=!player&&/\bBye\b/i.test(textOfCell(td));
+
+              // A slot carrying only venue/court metadata is an output/connector,
+              // not a player occurrence.
+              const rec={
+                rawId,
+                num,
+                level,
+                slot,
+                rowIndex:ri,
+                cellIndex:td.cellIndex,
+                td,
+                tr,
+                span,
+                player,
+                isBye
+              };
+
+              // Within one table, TournamentSoftware's slot IDs are unique.
+              // Prefer a participant-bearing occurrence if malformed duplicate IDs
+              // ever appear.
+              const old=slotMap.get(num);
+              if(!old || ((!old.player&&!old.isBye)&&(player||isBye))){
+                slotMap.set(num,rec);
+              }
+            }
+          }
+        }
+
+        const participantSlots=[...slotMap.values()]
+          .filter(x=>x.player||x.isBye);
+
+        for(const a of participantSlots){
+          // Process one side only: odd slot is paired with the following even slot.
+          if(a.slot%2===0)continue;
+
+          const bNum=a.level*1000+(a.slot+1);
+          const b=slotMap.get(bNum);
+          if(!b||(b.level!==a.level)||(!b.player&&!b.isBye))continue;
+
+          // Both input slots must be in the same round/column.
+          if(a.cellIndex!==b.cellIndex)continue;
+
+          // Byes are progression slots, not real player-v-player fixtures.
+          if(!a.player||!b.player)continue;
+
+          const targetColumn=a.cellIndex+1;
+          const lo=Math.min(a.rowIndex,b.rowIndex);
+          const hi=Math.max(a.rowIndex,b.rowIndex);
+
+          // Verify the exact TournamentSoftware tree connector.
+          // For level N slots 2k-1 and 2k the output is level N-1 slot k.
+          let outputId='';
+          let outputRec=null;
+
+          if(a.level>1){
+            const outputNum=(a.level-1)*1000+Math.ceil(a.slot/2);
+            outputId=String(outputNum);
+            outputRec=slotMap.get(outputNum)||null;
+
+            if(!outputRec)continue;
+            if(outputRec.cellIndex!==targetColumn)continue;
+            if(outputRec.rowIndex<lo||outputRec.rowIndex>hi)continue;
+          }
+
+          // Date/time/venue/court for this exact tree edge live in the next-round
+          // column between the two input rows. Read ONLY that structural block.
+          const metaParts=[];
+
+          for(let ri=lo;ri<=hi;ri++){
+            const cell=rows[ri]?.cells?.[targetColumn];
+            if(!cell)continue;
+            const t=textOfCell(cell);
+            if(t)metaParts.push(t);
+          }
+
+          const round=tableHeaderForColumn(table,a.cellIndex);
+          const meta=clean(metaParts.join(' | '));
+          const context=clean(`${caption} | ${round} | ${meta}`);
+
+          treeMatches.push({
+            players:[a.player,b.player],
+            text:meta,
+            context,
+            pageHead,
+            source:'legacy-slot-tree',
+            tableCaption:caption,
+            round,
+            inputSlot1:a.rawId,
+            inputSlot2:b.rawId,
+            outputSlot:outputId
+          });
+        }
+      }
+
+      const legacyTables=[...new Set([
+        ...document.querySelectorAll('div.draw table'),
+        ...document.querySelectorAll('table')
+      ])];
+
+      for(const table of legacyTables){
+        const hasLegacySlots=table.querySelector('span[id].entry,span[id].match');
+        if(hasLegacySlots)extractLegacyTableTree(table);
+      }
+
+      // Modern TournamentSoftware renderer: the exact pair is explicitly grouped
+      // in a .match__row-wrapper. Keep this deterministic too.
+      for(const wrapper of document.querySelectorAll('.match__row-wrapper')){
+        const links=[...wrapper.querySelectorAll('a[href]')]
+          .filter(a=>playerHref.test(a.href||''));
+
+        const unique=[];
+        const seen=new Set();
+
+        for(const a of links){
+          const href=String(a.href||'').split('#')[0];
+          if(!href||seen.has(href))continue;
+          seen.add(href);
+          unique.push(a);
+        }
+
+        if(unique.length!==2)continue;
+
+        const p1=playerInfo(unique[0]);
+        const p2=playerInfo(unique[1]);
+        if(!p1.name||!p2.name)continue;
+
+        // `.match` is the renderer's explicit match container. If unavailable,
+        // use the wrapper's direct parent only; do not ascend heuristically.
+        const container=wrapper.closest('.match')||wrapper.parentElement;
+        if(!container)continue;
+
+        const context=clean(container.innerText||container.textContent||'');
+        treeMatches.push({
+          players:[p1,p2],
+          text:context,
+          context,
+          pageHead,
+          source:'modern-match-wrapper',
+          tableCaption:'',
+          round:''
+        });
+      }
+
+      // Lightweight DOM evidence for tracked-player diagnostics.
+      const structuralDiagnostics=new Map();
+      for(const a of playerAnchors){
+        const p=playerInfo(a);
+        const thisId=String(a.href||'').split('#')[0];
+        if(!p.name||!thisId)continue;
+
+        const parent=a.closest('td,.match__row');
+        const marker=parent?.querySelector?.('span[id].entry,span[id].match');
+
+        structuralDiagnostics.set(thisId,{
+          name:p.name,
+          href:thisId,
+          slotId:marker?.id||'',
+          parentTag:String(parent?.tagName||'').toLowerCase(),
+          parentClass:clean(parent?.className||''),
+          parentText:clean(parent?.innerText||parent?.textContent||'').slice(0,1000)
+        });
+      }
+
       const matchLinks=[];
       const matchSeen=new Set();
 
@@ -2270,7 +2630,16 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         if(el.querySelector?.('a[href]'))continue;
         const text=clean(el.innerText||el.textContent||'');
         if(!text||text.length>180)continue;
-        if(!(dateRe.test(text)||timeRe.test(text)||/court|venue|round|final|semi|quarter|plate|group|pool|^\d{1,2}$|^\d{1,2}\s*[-:]\s*\d{1,2}$/i.test(text)))continue;
+        const locationText=
+          /\b(?:Squashworld\s+Mirrabooka|Belmont\s+Saints\s+Squash\s+Centre|Karrinyup\s+Shopping\s+Centre)\b/i.test(text) ||
+          /\b(?:AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i.test(text);
+
+        if(!(
+          dateRe.test(text)||
+          timeRe.test(text)||
+          locationText||
+          /court|venue|round|final|semi|quarter|plate|group|pool|^\d{1,2}$|^\d{1,2}\s*[-:]\s*\d{1,2}$/i.test(text)
+        ))continue;
 
         const r=el.getBoundingClientRect();
         if(!r||r.width===0||r.height===0)continue;
@@ -2290,53 +2659,93 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         });
       }
 
+      const locationTextNodes=nearbyText.filter(x=>
+        /(?:Squashworld\s+Mirrabooka|Belmont\s+Saints\s+Squash\s+Centre|Karrinyup\s+Shopping\s+Centre)/i.test(x.text||'') ||
+        /(?:AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)/i.test(x.text||'')
+      ).length;
+
       return {
+        body:clean(document.body?.innerText||document.documentElement?.innerText||''),
         pageHead,
         players,
         fixtures:[...fixtureMap.values()],
+        treeMatches,
+        structuralDiagnostics:[...structuralDiagnostics.entries()],
         matchLinks,
         positionedPlayers,
-        nearbyText
+        nearbyText,
+        locationTextNodes
       };
     });
   }
 
+
+  function expectedPlayersForDraw(draw){
+    const canonical=Array.isArray(options.canonicalPlayers)?options.canonicalPlayers:[];
+    if(!canonical.length)return 0;
+
+    const text=clean(draw?.text||'');
+    const ageMatch=text.match(/\b(35|40|45|50|55|60|65|70|75|80|85)\+?\b/);
+    const age=ageMatch?Number(ageMatch[1]):0;
+
+    let gender='';
+    if(/women/i.test(text))gender='women';
+    else if(/\bmen/i.test(text))gender='men';
+
+    // Placement/3rd-place draws are intentionally tiny and should not inherit
+    // the full age-group expectation.
+    if(/3\/4\s*Place|3\/4-?Place|placement|playoff/i.test(text))return 0;
+    if(!age||!gender)return 0;
+
+    const normalGender=v=>{
+      const s=clean(v||'').toLowerCase();
+      if(/women|woman|female|\bf\b/.test(s))return 'women';
+      if(/men|man|male|\bm\b/.test(s))return 'men';
+      return '';
+    };
+
+    return canonical.filter(p=>
+      Number(p.ageGroup||0)===age &&
+      normalGender(p.gender)===gender
+    ).length;
+  }
+
   async function crawlDraw(draw,page){
     const isPlacement=/3\/4\s*Place|3\/4-?Place|placement|playoff/i.test(clean(draw.text||''));
+    const expectedPlayers=expectedPlayersForDraw(draw);
     const attempts=[];
 
-    const first=await crawlDrawOnce(draw,page);
-    first.attempt=1;
-    attempts.push(first);
+    const targetMin=expectedPlayers
+      ? Math.max(2,Math.floor(expectedPlayers*0.90))
+      : 0;
 
-    const firstPlayers=first.players?.length||0;
-    const firstBoxes=first.positionedPlayers?.length||0;
+    const completeEnough=x=>{
+      const players=x.players?.length||0;
+      const boxes=x.positionedPlayers?.length||0;
 
-    // Main draws with tiny/obviously incomplete renders are retried.
-    if(!isPlacement && (firstPlayers<6 || firstBoxes<firstPlayers)){
-      await page.reload({waitUntil:'domcontentloaded',timeout:60000});
-      await sleep(300);
+      if(isPlacement)return players>=2;
+      if(targetMin&&players<targetMin)return false;
 
-      const second=await crawlDrawOnce(draw,page);
-      second.attempt=2;
-      attempts.push(second);
-    }
+      // A healthy bracket normally contains at least one positioned rendering
+      // for every unique player, often many more due to later-round repeats.
+      if(players>=6&&boxes<players)return false;
 
-    // If two attempts disagree materially, take one final rendering and use
-    // whichever attempt contains the richest player/bracket content.
-    if(attempts.length===2){
-      const a=attempts[0].players?.length||0;
-      const b=attempts[1].players?.length||0;
-      const hi=Math.max(a,b),lo=Math.min(a,b);
+      return players>0;
+    };
 
-      if(!isPlacement && hi>=10 && lo<hi*0.90){
+    // Up to four full renders. TournamentSoftware sometimes paints a partial
+    // bracket even though the page itself has finished loading.
+    for(let attemptNo=1;attemptNo<=4;attemptNo++){
+      if(attemptNo>1){
         await page.reload({waitUntil:'domcontentloaded',timeout:60000});
-        await sleep(300);
-
-        const third=await crawlDrawOnce(draw,page);
-        third.attempt=3;
-        attempts.push(third);
+        await sleep(350);
       }
+
+      const extracted=await crawlDrawOnce(draw,page);
+      extracted.attempt=attemptNo;
+      attempts.push(extracted);
+
+      if(completeEnough(extracted))break;
     }
 
     const richness=x=>{
@@ -2344,17 +2753,31 @@ async function scrapeOfficialDrawSchedule(context,options={}){
       const boxes=x.positionedPlayers?.length||0;
       const inline=x.fixtures?.length||0;
       const links=x.matchLinks?.length||0;
-      return players*100000 + boxes*100 + inline*10 + links;
+      const loc=x.locationTextNodes||0;
+
+      // Unique player coverage dominates. This prevents a visually "busy"
+      // partial render from winning over a complete age-group draw.
+      return players*1000000 + boxes*1000 + inline*100 + loc*10 + links;
     };
 
     attempts.sort((a,b)=>richness(b)-richness(a));
     const best=attempts[0];
 
-    if(attempts.length>1){
+    if(attempts.length>1 || (targetMin && (best.players?.length||0)<targetMin)){
       console.log(
         `    ${draw.text||'Draw'} render attempts: `+
-        attempts.map(x=>`#${x.attempt}:${x.players?.length||0} players/${x.positionedPlayers?.length||0} boxes`).join(', ')+
-        ` -> using #${best.attempt}`
+        attempts.map(x=>
+          `#${x.attempt}:${x.players?.length||0} players/${x.positionedPlayers?.length||0} boxes`
+        ).join(', ')+
+        ` -> using #${best.attempt}`+
+        (expectedPlayers?` (known player minimum ${expectedPlayers}, retry floor ${targetMin})`:'')
+      );
+    }
+
+    if(!isPlacement && targetMin && (best.players?.length||0)<targetMin){
+      throw new Error(
+        `${draw.text||'Draw'} remained incomplete after ${attempts.length} render attempt(s): `+
+        `${best.players?.length||0} unique players found, known player minimum ${expectedPlayers}.`
       );
     }
 
@@ -2372,10 +2795,15 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         const extracted=await crawlDraw(draw,page);
         workerResults.push({draw,extracted});
 
+        const expected=expectedPlayersForDraw(draw);
         console.log(
           `  Draw ${draw.index+1}/${drawLinks.length} ${draw.text||''}: `+
-          `${extracted.players.length} players, ${extracted.positionedPlayers?.length||0} positioned player box(es), ${extracted.fixtures.length} inline candidate(s), `+
-          `${extracted.matchLinks?.length||0} official match link(s) `+
+          `${extracted.players.length}${expected?`/${expected} known-minimum`:''} players, `+
+          `${extracted.positionedPlayers?.length||0} positioned player box(es), `+
+          `${extracted.treeMatches?.length||0} deterministic tree match(es), `+
+          `${extracted.fixtures.length} inline candidate(s), `+
+          `${extracted.matchLinks?.length||0} official match link(s), `+
+          `${extracted.locationTextNodes||0} location text node(s) `+
           `(${((Date.now()-started)/1000).toFixed(1)}s)`
         );
       }catch(e){
@@ -2388,6 +2816,37 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   }
 
   await Promise.all(Array.from({length:DRAW_WORKERS},(_,i)=>worker(i+1)));
+
+  if(options.debugStructure){
+    const tracked=loadTrackedNames();
+    const debugRows=[];
+
+    for(const wr of workerResults){
+      for(const [href,diag] of wr.extracted.structuralDiagnostics||[]){
+        const name=clean(diag?.name||'');
+        if(!tracked.some(n=>sameName(n,name)))continue;
+
+        debugRows.push({
+          drawIndex:Number(wr.draw.index)+1,
+          drawName:wr.draw.text||'',
+          drawUrl:wr.draw.href||'',
+          officialPlayerId:hrefKey(href),
+          ...diag
+        });
+      }
+    }
+
+    const debugFile=path.join(DIR,'draw-structure-debug.json');
+    fs.writeFileSync(debugFile,JSON.stringify({
+      generatedAt:new Date().toISOString(),
+      tournamentId:ID,
+      note:'Exact DOM ancestry/sibling evidence from TournamentSoftware draw pages. No opponent inference is performed here.',
+      rows:debugRows
+    },null,2),'utf8');
+
+    console.log(`DRAW DEBUG wrote ${debugRows.length} tracked-player DOM occurrence(s) to ${debugFile}`);
+  }
+
 
 
   const matchLinkMap=new Map();
@@ -2460,7 +2919,18 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         }
       }
 
-      return {body,players,scoreRows,title:document.title||''};
+      let venue='',court='';
+      const vm=body.match(
+        /\b(Squashworld\s+Mirrabooka|Belmont\s+Saints\s+Squash\s+Centre|Karrinyup\s+Shopping\s+Centre)\b/i
+      );
+      const cm=body.match(/\b(AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i);
+      if(vm)venue=vm[1];
+      if(cm)court=cm[1];
+
+      return {
+        body,players,scoreRows,title:document.title||'',
+        venue,court
+      };
     });
   }
 
@@ -2492,6 +2962,10 @@ async function scrapeOfficialDrawSchedule(context,options={}){
 
     await Promise.all(Array.from({length:MATCH_WORKERS},(_,i)=>matchWorker(i+1)));
     console.log(`Official match pages crawled: ${exactMatchRows.length}/${officialMatchLinks.length} (${matchPageFailures} failures).`);
+    const matchDetailLocationCount=exactMatchRows.filter(x=>x.row?.venue&&x.row?.court).length;
+    console.log(
+      `Official match-detail location coverage: ${matchDetailLocationCount}/${exactMatchRows.length}.`
+    );
   }
 
   const playerMap=new Map();
@@ -2549,283 +3023,122 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   }
 
 
-  // Primary schedule extraction for knockout/bracket layouts:
-  // pair player boxes by visual column and vertical proximity. TournamentSoftware
-  // often renders each player in a separate bracket node, so DOM ancestry alone
-  // does not expose a two-player fixture.
-  const visualObservations=[];
-
-  function clusterByX(items,tolerance=28){
-    const sorted=[...(items||[])].sort((a,b)=>a.centerX-b.centerX||a.centerY-b.centerY);
-    const groups=[];
-
-    for(const item of sorted){
-      let best=null,bestDist=Infinity;
-      for(const g of groups){
-        const d=Math.abs(g.x-item.centerX);
-        if(d<=tolerance&&d<bestDist){best=g;bestDist=d}
-      }
-
-      if(!best){
-        best={x:item.centerX,items:[]};
-        groups.push(best);
-      }
-
-      best.items.push(item);
-      best.x=best.items.reduce((n,x)=>n+x.centerX,0)/best.items.length;
-    }
-
-    return groups.sort((a,b)=>a.x-b.x);
-  }
-
-  function nearestVisualText(pair,texts){
-    const minY=Math.min(pair[0].centerY,pair[1].centerY)-180;
-    const maxY=Math.max(pair[0].centerY,pair[1].centerY)+180;
-    const pairX=(pair[0].centerX+pair[1].centerX)/2;
-    const pairY=(pair[0].centerY+pair[1].centerY)/2;
-
-    return (texts||[])
-      .filter(t=>t.centerY>=minY&&t.centerY<=maxY&&Math.abs(t.centerX-pairX)<340)
-      .sort((a,b)=>{
-        const da=Math.abs(a.centerY-pairY)+Math.abs(a.centerX-pairX)*0.35;
-        const db=Math.abs(b.centerY-pairY)+Math.abs(b.centerX-pairX)*0.35;
-        return da-db;
-      })
-      .slice(0,18)
-      .map(x=>x.text)
-      .join(' | ');
-  }
+  // DETERMINISTIC DRAW TREE EXTRACTION.
+  //
+  // `treeMatches` already contains exact opponent relationships from either:
+  //   - legacy TournamentSoftware numeric bracket slot IDs; or
+  //   - modern `.match__row-wrapper` groups.
+  //
+  // This stage only parses metadata; it never chooses opponents.
+  const treeObservations=[];
 
   for(const row of workerResults){
     const drawContext=clean(`${row.draw.text||''} ${row.extracted.pageHead||''}`);
-    const boxes=(row.extracted.positionedPlayers||[])
-      .map(p=>({
-        ...p,
-        officialPlayerId:String(hrefKey((p.href||'').split('#')[0])||'')
-      }))
-      .filter(p=>p.officialPlayerId&&playerMap.has(p.officialPlayerId));
 
-    const columns=clusterByX(boxes);
+    for(const t of row.extracted.treeMatches||[]){
+      const unique=[];
 
-    for(const col of columns){
-      const items=[...col.items].sort((a,b)=>a.centerY-b.centerY);
-
-      // Remove exact duplicate renderings at nearly identical coordinates.
-      const dedup=[];
-      for(const p of items){
-        const last=dedup.at(-1);
-        if(last &&
-           last.officialPlayerId===p.officialPlayerId &&
-           Math.abs(last.centerY-p.centerY)<4 &&
-           Math.abs(last.centerX-p.centerX)<4)continue;
-        dedup.push(p);
+      for(const p of t.players||[]){
+        const id=String(hrefKey((p.href||'').split('#')[0])||'');
+        if(!id||!playerMap.has(id))continue;
+        if(unique.some(x=>x.id===id))continue;
+        unique.push({id,player:playerMap.get(id)});
       }
 
-      // Adjacent player boxes in a bracket column form a fixture. We only
-      // accept a pair if nearby visual text yields an official tournament date
-      // and time, which prevents pairing unrelated entries from the same column.
-      for(let i=0;i+1<dedup.length;i+=2){
-        const a=dedup[i],b=dedup[i+1];
-        if(a.officialPlayerId===b.officialPlayerId)continue;
+      if(unique.length!==2)continue;
 
-        // Very large vertical gaps are almost certainly separate bracket sections.
-        if(Math.abs(a.centerY-b.centerY)>220)continue;
-
-        const nearby=nearestVisualText([a,b],row.extracted.nearbyText||[]);
-        const whole=clean(`${drawContext} ${nearby}`);
-        const f=deriveFields(whole,drawContext);
-
-        if(!f.date||!f.time||!isTournamentDate(f.date))continue;
-
-        const pa=playerMap.get(a.officialPlayerId);
-        const pb=playerMap.get(b.officialPlayerId);
-        if(!pa||!pb)continue;
-
-        visualObservations.push({
-          ...f,
-          player1:pa.name,
-          player1Id:pa.officialPlayerId,
-          player2:pb.name,
-          player2Id:pb.officialPlayerId,
-          result:f.result||'',
-          status:f.result?'completed':(f.status||'scheduled'),
-          rawText:whole,
-          source:'TournamentSoftware Draw Visual',
-          sourceUrl:row.draw.href
-        });
-      }
-    }
-  }
-
-  console.log(`Official draw visual bracket observations: ${visualObservations.length}`);
-  observations.push(...visualObservations);
-
-  // Tracked-player future bracket fallback.
-  //
-  // TournamentSoftware draws can contain a player already advanced into the
-  // next round while their opponent is still unknown. In that case the Matches
-  // page may omit the fixture entirely, but the draw still shows the official
-  // date/time/venue next to the player's next-round bracket box.
-  //
-  // This fallback is intentionally limited to the Vic Park/tracked list.
-  const trackedNamesForDraw=loadTrackedNames();
-  const trackedTbdMatches=[];
-  const trackedTbdSeen=new Set();
-
-  const normalizedGender=value=>{
-    const s=clean(value||'').toLowerCase();
-    if(/women|woman|female|\bf\b/.test(s))return 'women';
-    if(/men|man|male|\bm\b/.test(s))return 'men';
-    return '';
-  };
-
-  // Use the full published/canonical player set for tracked-player identity.
-  // The draw's own extracted player-link list can be incomplete on a render.
-  const trackedIdentityPlayers=(
-    Array.isArray(options.canonicalPlayers)&&options.canonicalPlayers.length
-      ? options.canonicalPlayers
-      : [...playerMap.values()]
-  ).filter(p=>trackedNamesForDraw.some(n=>sameName(n,p.name)));
-
-  console.log(`Tracked identity names: ${trackedIdentityPlayers.map(p=>p.name).join(' | ')}`);
-  console.log(`Susan Hillier tracked identity present: ${trackedIdentityPlayers.some(p=>sameName(p.name,'Susan Hillier'))?'YES':'NO'}`);
-
-  function stripDisplayedSeed(name){
-    return clean(String(name||'').replace(/\s*\[[^\]]+\]\s*$/,''));
-  }
-
-  function trackedFutureFromRenderedText(player,body,drawContext){
-    const full=clean(body||'');
-    const displayName=stripDisplayedSeed(player.name);
-    if(!full||!displayName)return null;
-
-    const escaped=displayName.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-    const hits=[...full.matchAll(new RegExp(`\\b${escaped}\\b(?:\\s*\\[[^\\]]+\\])?`,'gi'))];
-
-    // A later-round slot should render the player at least twice: once in the
-    // original bracket position and again after they have advanced.
-    if(hits.length<2)return null;
-
-    let best=null;
-
-    // Work from the latest rendered occurrence backwards. The official draw
-    // places the next-round venue/court and date/time after that occurrence.
-    for(let hi=hits.length-1;hi>=1;hi--){
-      const hit=hits[hi];
-      const from=(hit.index||0)+hit[0].length;
-
-      // Stop before too much unrelated bracket content can be borrowed.
-      const window=clean(full.slice(from,from+900));
-      if(!window)continue;
-
-      const venueMatch=window.match(
-        /\b(Squashworld\s+Mirrabooka|Belmont\s+Saints\s+Squash\s+Centre|Karrinyup\s+Shopping\s+Centre)\s*[-–—·]\s*(SC\s*\d+|Court\s*\d+|AGC(?:\s*\d+)?)\b/i
-      );
-      if(!venueMatch)continue;
-
-      const venuePos=venueMatch.index||0;
-
-      // Require date/time after the venue/court, as shown in TournamentSoftware.
-      const afterVenue=window.slice(venuePos+venueMatch[0].length,venuePos+venueMatch[0].length+180);
-
-      const dateTimeMatch=afterVenue.match(
-        /\b(?:Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?)?\s*(\d{1,2}[\/.-]\d{1,2}[\/.-]2026|\d{1,2}\s+(?:Aug(?:ust)?|Sep(?:tember)?)\s+2026)\s+(\d{1,2}:[0-5]\d)\b/i
-      );
-      if(!dateTimeMatch)continue;
-
-      const whole=clean(`${drawContext} ${venueMatch[0]} ${dateTimeMatch[0]}`);
+      const whole=clean(`${drawContext} ${t.context||''} ${t.text||''}`);
       const f=deriveFields(whole,drawContext);
 
       if(!f.date||!f.time||!isTournamentDate(f.date))continue;
-      if(!f.venue||!f.court)continue;
-      if(f.date<perthTodayIsoRefresh())continue;
 
-      // Do not allow a prior-round scheduled slot to be reused as a future
-      // fallback. Prefer the latest date, then latest bracket occurrence.
-      const score=`${f.date}|${String(from).padStart(8,'0')}`;
-      if(!best||score>best.score)best={...f,rawText:whole,score};
-    }
+      // Caption/round are structural labels from the table itself.
+      if(!f.round&&t.round)f.round=clean(t.round);
 
-    if(!best)return null;
-    delete best.score;
-    return best;
-  }
-
-  for(const row of workerResults){
-    const drawContext=clean(`${row.draw.text||''} ${row.extracted.pageHead||''}`);
-    const eventInfo=eventIdentityFromText(drawContext);
-    const body=String(row.extracted.body||'');
-
-    const rawSusanMentions=(body.match(/Susan\s+Hillier(?:\s*\[[^\]]+\])?/gi)||[]);
-    if(rawSusanMentions.length){
-      const susanPos=body.search(/Susan\s+Hillier(?:\s*\[[^\]]+\])?/i);
-      const susanWindow=clean(body.slice(Math.max(0,susanPos-120),susanPos+1100));
-      console.log(`Susan raw draw text window: ${susanWindow.slice(0,900)}`);
-    }
-
-    const sueIdentity=trackedIdentityPlayers.find(p=>sameName(p.name,'Susan Hillier'));
-    if(sueIdentity){
-      const eventMatchesAge=!eventInfo.ageGroup||!sueIdentity.ageGroup||Number(eventInfo.ageGroup)===Number(sueIdentity.ageGroup);
-      const dg=normalizedGender(eventInfo.gender),pg=normalizedGender(sueIdentity.gender);
-      const eventMatchesGender=!dg||!pg||dg===pg;
-      const sueMentions=(body.match(/Susan\s+Hillier/gi)||[]).length;
-
-      if(sueMentions||eventMatchesAge&&eventMatchesGender){
-        console.log(`Susan draw probe: event="${drawContext.slice(0,120)}" age=${eventInfo.ageGroup||''} gender=${eventInfo.gender||''} mentions=${sueMentions} ageMatch=${eventMatchesAge} genderMatch=${eventMatchesGender}`);
-      }
-    }
-
-    for(const player of trackedIdentityPlayers){
-      // Only examine a draw whose event matches the tracked player's metadata
-      // when both are known.
-      if(eventInfo.ageGroup&&player.ageGroup&&Number(eventInfo.ageGroup)!==Number(player.ageGroup))continue;
-
-      const drawGender=normalizedGender(eventInfo.gender);
-      const playerGender=normalizedGender(player.gender);
-      if(drawGender&&playerGender&&drawGender!==playerGender)continue;
-
-      const f=trackedFutureFromRenderedText(player,body,drawContext);
-      if(!f)continue;
-
-      if(!f.event){
-        const gender=eventInfo.gender==="Women"?"Women's":eventInfo.gender==="Men"?"Men's":'';
-        if(gender&&eventInfo.ageGroup)f.event=`${gender} +${eventInfo.ageGroup}`;
-      }
-
-      const key=`${f.date}|${clean(f.time).toLowerCase()}|${String(player.officialPlayerId||nameKey(player.name))}`;
-      if(trackedTbdSeen.has(key))continue;
-      trackedTbdSeen.add(key);
-
-      trackedTbdMatches.push({
+      treeObservations.push({
         ...f,
-        player1:player.name,
-        player1Id:player.officialPlayerId||'',
-        player2:'TBD',
-        player2Id:'',
-        result:'',
-        status:'scheduled',
-        rawText:'',
-        source:'TournamentSoftware Draw Tracked Future Verified',
-        sourceUrl:row.draw.href
+        player1:unique[0].player.name,
+        player1Id:unique[0].id,
+        player2:unique[1].player.name,
+        player2Id:unique[1].id,
+        result:f.result||'',
+        status:f.result?'completed':(f.status||'scheduled'),
+        rawText:whole,
+        source:'TournamentSoftware Draw Tree',
+        sourceUrl:row.draw.href,
+        treeSource:t.source||'',
+        treeCaption:t.tableCaption||'',
+        treeInputSlot1:t.inputSlot1||'',
+        treeInputSlot2:t.inputSlot2||'',
+        treeOutputSlot:t.outputSlot||''
       });
     }
   }
 
-  console.log(`Official draw tracked identity players tested: ${trackedIdentityPlayers.length}`);
-  console.log(`Official draw tracked future/TBD fixtures (rendered-text verified): ${trackedTbdMatches.length}`);
-  console.log(`Tracked draw verified fixtures: ${JSON.stringify(trackedTbdMatches.map(m=>({
-    player:m.player1,date:m.date,time:m.time,venue:m.venue,court:m.court
-  })))}`);
-  const strictSue=trackedTbdMatches.filter(m=>sameName(m.player1,'Susan Hillier')||sameName(m.player2,'Susan Hillier'));
-  console.log(`Susan Hillier strict draw fixture(s): ${JSON.stringify(strictSue.map(m=>({
-    date:m.date,time:m.time,player1:m.player1,player2:m.player2,venue:m.venue,court:m.court
-  })))} `);
+  console.log(`Official draw deterministic tree observations: ${treeObservations.length}`);
+  observations.push(...treeObservations);
+
+  const treeMerged=officialScheduleMerge(treeObservations);
+  const treeByPlayer=new Map();
+
+  for(const m of treeMerged){
+    for(const side of [
+      {id:String(m.player1Id||''),name:m.player1},
+      {id:String(m.player2Id||''),name:m.player2}
+    ]){
+      const key=side.id||nameKey(side.name);
+      if(!key)continue;
+      if(!treeByPlayer.has(key))treeByPlayer.set(key,[]);
+      treeByPlayer.get(key).push(m);
+    }
+  }
+
+  const trackedAuditNames=loadTrackedNames();
+  for(const p of [...playerMap.values()].filter(p=>trackedAuditNames.some(n=>sameName(n,p.name)))){
+    const rows=treeByPlayer.get(String(p.officialPlayerId||''))||[];
+
+    const slotEvidence=[];
+    for(const wr of workerResults){
+      for(const [href,d] of wr.extracted.structuralDiagnostics||[]){
+        if(String(hrefKey(href)||'')!==String(p.officialPlayerId||''))continue;
+        if(d?.slotId){
+          slotEvidence.push({
+            draw:wr.draw.text||'',
+            slotId:d.slotId,
+            parentText:d.parentText||''
+          });
+        }
+      }
+    }
+
+    console.log(
+      `Draw tree path ${p.name}: ${rows.length} deterministic match(es) -> `+
+      JSON.stringify(rows.map(m=>({
+        date:m.date,time:m.time,
+        opponent:sameName(m.player1,p.name)?m.player2:m.player1,
+        venue:m.venue||'',court:m.court||'',round:m.round||'',
+        inputSlots:[m.treeInputSlot1||'',m.treeInputSlot2||''],
+        outputSlot:m.treeOutputSlot||'',
+        treeSource:m.treeSource||''
+      })))+
+      (rows.length?'':` | slotEvidence=${JSON.stringify(slotEvidence.slice(0,6))}`)
+    );
+  }
+
+
+  // The deterministic tree is now the only draw source allowed to
+  // create concrete current/future fixtures. Do not manufacture tracked-player
+  // TBD fixtures by scanning flattened draw text.
+  const trackedTbdMatches=[];
 
   // Exact TournamentSoftware match pages enrich the draw-derived schedule where available.
   for(const x of exactMatchRows){
     const drawContext=clean(`${x.item.draw?.text||''} ${x.row.title||''}`);
     const whole=clean(`${drawContext} ${x.row.body||''}`);
     const f=deriveFields(whole,drawContext);
+
+    if(x.row.venue)f.venue=clean(x.row.venue);
+    if(x.row.court)f.court=sanitizeCourtValue(x.row.court);
 
     if(!f.date||!f.time||!isTournamentDate(f.date))continue;
 
@@ -2941,10 +3254,25 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   );
   const rawMatchLinks=officialMatchLinks.length;
 
+  const treeDrawStats=workerResults.map(x=>{
+    const placement=/3\/4\s*Place|3\/4-?Place|placement|playoff/i.test(clean(x.draw.text||''));
+    return {
+      drawIndex:Number(x.draw.index)+1,
+      drawName:x.draw.text||'',
+      placement,
+      players:x.extracted.players?.length||0,
+      positionedPlayers:x.extracted.positionedPlayers?.length||0,
+      deterministicTreeMatches:x.extracted.treeMatches?.length||0
+    };
+  });
+
+  const mainTreeDraws=treeDrawStats.filter(x=>!x.placement&&x.players>2);
+  const missingTreeDraws=mainTreeDraws.filter(x=>x.deterministicTreeMatches===0);
+
   console.log(`Official draw players: ${players.length} unique players from draw entries.`);
   console.log(`Official draw player metadata: ${players.filter(p=>p.country).length} country, ${players.filter(p=>p.flagCode).length} flag, ${players.filter(p=>p.ageGroup).length} age-group, ${players.filter(p=>p.gender).length} gender.`);
   console.log(`Official draw inline fixture candidates: ${rawFixtureCandidates}`);
-  console.log(`Official draw visual bracket observations: ${visualObservations.length}`);
+  console.log(`Official draw deterministic tree observations: ${treeObservations.length}`);
   console.log(`Official draw match/detail links: ${rawMatchLinks}`);
   console.log(`Official draw schedule: ${matches.length} unique player-v-player fixtures from ${observations.length} validated fixture observations (${failed} draw page failures, ${matchPageFailures} match-page failures).`);
 
@@ -2956,7 +3284,10 @@ async function scrapeOfficialDrawSchedule(context,options={}){
     matchPageFailures,
     rawFixtureCandidates,
     rawMatchLinks,
-    visualObservations:visualObservations.length,
+    treeObservations:treeObservations.length,
+    treeDrawStats,
+    mainTreeDraws:mainTreeDraws.length,
+    missingTreeDraws,
     trackedTbdMatches
   };
 }
@@ -3606,12 +3937,14 @@ function squashLevelsExpectedCountryCodes(player){
     EGY:['EGY'], MEX:['MEX'], BRA:['BRA'], ARG:['ARG'], COL:['COL'], CHI:['CHI','CHL'], CHL:['CHI','CHL']
   };
   const byName={
+    'england':['ENG'],'scotland':['SCO'],'wales':['WAL'],
+    'northern ireland':['NIR'],'ireland':['IRL'],
     'south africa':['RSA','ZAF'],'singapore':['SIN','SGP'],'united arab emirates':['UAE','ARE'],
     'germany':['GER','DEU'],'netherlands':['NED','NLD'],'switzerland':['SUI','CHE'],
     'denmark':['DEN','DNK'],'greece':['GRE','GRC'],'croatia':['CRO','HRV'],'portugal':['POR','PRT'],
     'malaysia':['MAS','MYS'],'chile':['CHI','CHL']
   };
-  return [...new Set((aliases[iso]||byName[country]||[iso]).filter(Boolean))];
+  return [...new Set((byName[country]||aliases[iso]||[iso]).filter(Boolean))];
 }
 function squashLevelsExpectedAge(player){
   const n=Number(String(player?.ageGroup??'').match(/\d{2}/)?.[0]);
@@ -3980,7 +4313,7 @@ function squashLevelsDuplicateRowEvidence(row){
   const lastMatch=squashLevelsParseMonthYear(row?.lastMatch||'');
   return {level,lastMatch};
 }
-async function chooseSquashLevelsCandidate(page,candidates,player){
+async function chooseSquashLevelsCandidate(page,candidates,player,requireExactAge=false){
   const checked=[]; const crossEvidence=new Map();
   for(const c of candidates){
     try{
@@ -4006,11 +4339,18 @@ async function chooseSquashLevelsCandidate(page,candidates,player){
           }
         }
       }
-      const countryCode=clean(identity.countryCode||evidence.countryCode).toUpperCase();
+      // readSquashLevelsProfileEvidence() is deliberately limited to the MAIN
+      // profile area before any "Possible duplicates" section. Prefer it over
+      // broad DOM scanning so another person's O40/O50/O60 cannot contaminate
+      // the candidate identity.
+      const countryCode=clean(evidence.countryCode||identity.countryCode).toUpperCase();
       const expectedCodes=squashLevelsExpectedCountryCodes(player);
       const countryMatch=countryCode?expectedCodes.includes(countryCode):identity.countryMatch;
-      const age=identity.age??evidence.age??null; const expectedAge=Number(player.ageGroup)||null;
-      const ageMatch=expectedAge&&age?Number(age)===expectedAge:identity.ageMatch;
+      const age=evidence.age??identity.age??null;
+      const expectedAge=squashLevelsExpectedAge(player);
+      const ageMatch=expectedAge!==null&&age!==null
+        ? Number(age)===Number(expectedAge)
+        : identity.ageMatch;
       for(const row of evidence.duplicateRows||[]){const id=clean(row.id);if(!id)continue;const parsed=squashLevelsDuplicateRowEvidence(row);const prior=crossEvidence.get(id)||{};crossEvidence.set(id,{level:parsed.level??prior.level??null,lastMatch:Math.max(parsed.lastMatch||0,prior.lastMatch||0)||null});}
       const apiLastMatch=squashLevelsLastMatchFromApiCandidate(c); const profileLastMatch=await squashLevelsProfileLastMatch(page); const id=clean(c.playerId||squashLevelsPlayerIdFromUrl(c.url));
       checked.push({...c,identity:{...identity,countryCode,countryMatch,age,ageMatch},profileEvidence:evidence,playerId:id,lastMatch:Math.max(apiLastMatch||0,profileLastMatch||0)||null});
@@ -4018,8 +4358,45 @@ async function chooseSquashLevelsCandidate(page,candidates,player){
   }
   if(!checked.length)return null;
   for(const x of checked){const cross=crossEvidence.get(clean(x.playerId));if(cross){if(!x.lastMatch&&cross.lastMatch)x.lastMatch=cross.lastMatch;x.duplicateTableLevel=cross.level??null;}}
-  let pool=checked.some(x=>x.identity.countryMatch===true)?checked.filter(x=>x.identity.countryMatch===true):checked.filter(x=>x.identity.countryMatch!==false); if(!pool.length)return null;
-  if(pool.some(x=>x.identity.ageMatch===true))pool=pool.filter(x=>x.identity.ageMatch===true);else if(pool.some(x=>x.identity.ageMatch===false)){const unknownAge=pool.filter(x=>x.identity.ageMatch!==false);if(unknownAge.length)pool=unknownAge;}
+  // Explicit contradictions are NEVER acceptable, even when there is only one
+  // TournamentSoftware player with this name.
+  let pool=checked.filter(x=>
+    x.identity.countryMatch!==false &&
+    x.identity.ageMatch!==false
+  );
+  if(!pool.length){
+    console.log(
+      `    SquashLevels identity rejected for ${player.name}: every candidate ` +
+      `has an explicit country and/or age mismatch.`
+    );
+    return null;
+  }
+
+  // Positive country evidence wins over unknown country evidence.
+  if(pool.some(x=>x.identity.countryMatch===true)){
+    pool=pool.filter(x=>x.identity.countryMatch===true);
+  }
+
+  if(requireExactAge){
+    // Duplicate TournamentSoftware names MUST have explicit profile age evidence
+    // matching the same Masters age band. Wrong age and unknown age are both
+    // rejected; neither may win via activity/club/first-result fallback.
+    const exactAge=pool.filter(x=>x.identity.ageMatch===true);
+    if(!exactAge.length){
+      console.log(
+        `    Duplicate-name age guard: no SquashLevels candidate explicitly matches ` +
+        `${player.name} ${player.ageGroup}+. Mapping left unresolved.`
+      );
+      return null;
+    }
+    pool=exactAge;
+  }else if(pool.some(x=>x.identity.ageMatch===true)){
+    pool=pool.filter(x=>x.identity.ageMatch===true);
+  }else if(pool.some(x=>x.identity.ageMatch===false)){
+    const unknownAge=pool.filter(x=>x.identity.ageMatch!==false);
+    if(unknownAge.length)pool=unknownAge;
+  }
+
   pool.sort((a,b)=>(b.lastMatch||0)-(a.lastMatch||0));
   if(pool.length>1){console.log(`  SquashLevels duplicate profiles for ${player.name}:`);for(const x of pool.slice(0,8))console.log(`    ${x.url} | country=${x.identity.countryCode||'?'} age=${x.identity.age??'?'} club=${x.profileEvidence?.clubLocation||'?'} level=${x.profileEvidence?.level??'?'} last match=${squashLevelsFormatLastMatch(x.lastMatch)}`);}
   const hasCountryEvidence=pool.some(x=>x.identity.countryMatch===true),hasAgeEvidence=pool.some(x=>x.identity.ageMatch===true),hasActivityEvidence=pool.some(x=>!!x.lastMatch),hasClubEvidence=pool.some(x=>!!x.profileEvidence?.clubLocation);
@@ -4880,6 +5257,17 @@ async function readSquashLevelsLevel(page){
 async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=null){
   const now=Date.now();
 
+  const tournamentNameCounts=new Map();
+  for(const p of players||[]){
+    const k=nameKey(p?.name);
+    if(k)tournamentNameCounts.set(k,(tournamentNameCounts.get(k)||0)+1);
+  }
+  const duplicateTournamentNameKeys=new Set(
+    [...tournamentNameCounts.entries()]
+      .filter(([,count])=>count>1)
+      .map(([key])=>key)
+  );
+
   // During :squashlevels, re-run the lightweight search API for mappings that are already
   // verified. This is intentionally NOT a full re-verification of every profile page.
   // We only open candidate profile pages when the search reveals multiple plausible profiles.
@@ -4908,6 +5296,7 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
 
   while(queue.length){
     const p=queue.shift();
+    const requiresExactAge=duplicateTournamentNameKeys.has(nameKey(p.name));
     const isVerifiedDuplicateRecheck=!!(SQUASHLEVELS_ONLY&&p.squashLevelsUrl&&p.squashLevelsIdentityVerified);
 
     try{
@@ -4922,10 +5311,10 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
         const fresh=await searchSquashLevels(p);
         p.squashLevelsSearchCheckedAt=new Date().toISOString();
 
-        // searchSquashLevels has already applied the strict exact-name gate. If it returns
-        // zero or one profile, there is no duplicate set to resolve and the cached mapping
-        // is deliberately left untouched.
-        if(fresh.length<=1){
+        // For a UNIQUE TournamentSoftware name, 0/1 exact-name search result is enough
+        // to keep an already verified mapping. For a DUPLICATE tournament name this
+        // shortcut is forbidden: the cached profile must be reopened and its age checked.
+        if(fresh.length<=1&&!requiresExactAge){
           done++;
           if(done%40===0||queue.length===0){
             console.log(`  ${done} identity checks · ${verified} verified · ${duplicatesFound} duplicate set(s) · ${remapped} remapped · ${rejected} rejected · ${failed} failures`);
@@ -4934,7 +5323,7 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
           continue;
         }
 
-        duplicatesFound++;
+        if(fresh.length>1||requiresExactAge)duplicatesFound++;
 
         // Ensure the currently cached profile participates in the comparison even if a
         // SquashLevels search response happens to omit it.
@@ -4952,7 +5341,7 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
           });
         }
 
-        accepted=await chooseSquashLevelsCandidate(page,compare,p);
+        accepted=await chooseSquashLevelsCandidate(page,compare,p,requiresExactAge);
 
         if(accepted){
           const chosenUrl=canonicalSquashLevelsProfileUrl(accepted.url);
@@ -4973,8 +5362,27 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
           p.squashLevelsMatchedCountry=accepted.identity.countryCode||p.squashLevelsMatchedCountry||null;
           p.squashLevelsMatchedAge=accepted.identity.age??p.squashLevelsMatchedAge??null;
           verified++;
+        }else if(requiresExactAge){
+          // For duplicate tournament names, unresolved age evidence is unsafe. Clear
+          // the cached mapping rather than displaying another same-name person's data.
+          console.log(
+            `  Duplicate-name mapping rejected for ${p.name}: no candidate had an ` +
+            `explicit ${p.ageGroup}+ age match. Clearing cached SquashLevels identity.`
+          );
+          p.squashLevelsUrl='';
+          p.squashLevelsPlayerId='';
+          p.squashLevelsIdentityVerified=false;
+          p.squashLevelsIdentityVerifiedAt=null;
+          p.squashLevelsMatchedCountry=null;
+          p.squashLevelsMatchedAge=null;
+          p.squashLevelsProfileCheckedAt=null;
+          p.squashLevelsWorldRank=null;
+          p.squashLevelsLevel=null;
+          p.squashLevelsLevelProvisional=false;
+          rejected++;
         }else{
-          // A failed duplicate comparison must never destroy a previously verified mapping.
+          // Unique-name mappings keep their prior verified identity when a recheck
+          // cannot distinguish anything better.
           console.log(`  Duplicate check unresolved for ${p.name}; keeping existing verified profile ${currentUrl}`);
         }
       }else{
@@ -4989,7 +5397,7 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
           p.squashLevelsSearchCheckedAt=new Date().toISOString();
         }
 
-        accepted=await chooseSquashLevelsCandidate(page,candidates,p);
+        accepted=await chooseSquashLevelsCandidate(page,candidates,p,requiresExactAge);
         if(!accepted&&candidates.length)rejected+=candidates.length;
 
         if(!accepted&&candidates.some(c=>c.existing)){
@@ -5001,7 +5409,7 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
 
           const fresh=await searchSquashLevels(p);
           p.squashLevelsSearchCheckedAt=new Date().toISOString();
-          accepted=await chooseSquashLevelsCandidate(page,fresh,p);
+          accepted=await chooseSquashLevelsCandidate(page,fresh,p,requiresExactAge);
           if(!accepted&&fresh.length)rejected+=fresh.length;
         }
 
@@ -5010,9 +5418,14 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
           if(variants.length){
             const fallback=await searchSquashLevelsNicknameFallback(p);
             const nicknameAccepted=await chooseSquashLevelsNicknameCandidate(page,fallback,p);
-            if(nicknameAccepted){
+            if(nicknameAccepted&&(!requiresExactAge||nicknameAccepted.identity?.ageMatch===true)){
               accepted=nicknameAccepted;
               console.log(`  Nickname match: ${p.name} -> ${nicknameAccepted.name} (${nicknameAccepted.identity.countryCode}, O${nicknameAccepted.identity.age})`);
+            }else if(nicknameAccepted&&requiresExactAge){
+              console.log(
+                `  Nickname candidate rejected for duplicate name ${p.name}: ` +
+                `no explicit ${p.ageGroup}+ age match.`
+              );
             }else if(fallback.length){
               console.log(`  Nickname fallback unresolved for ${p.name}; ${fallback.length} candidate(s) found, no unique surname/country/age/nickname match.`);
             }
@@ -5352,6 +5765,661 @@ function enrichScheduleWithTournamentResults(schedule,resultRows){
 }
 
 
+
+
+
+
+function drawAuthorityEvidenceSummary(drawRows,matchesRows=[]){
+  const exactKey=m=>[
+    canonicalTournamentDate(m?.date),
+    clean(m?.time||'').toLowerCase(),
+    ...[
+      nameKey(splitPlayerSeed(m?.player1||'').name),
+      nameKey(splitPlayerSeed(m?.player2||'').name)
+    ].sort()
+  ].join('|');
+
+  const matchesExact=new Set((matchesRows||[]).map(exactKey));
+  const summary={
+    total:0,
+    officialMatch:0,
+    tree:0,
+    structural:0,
+    inline:0,
+    visualWithLocation:0,
+    visualCorroboratedByMatches:0,
+    rejectedVisual:0
+  };
+
+  for(const m of drawRows||[]){
+    if(!m?.date||!m?.time||!m?.player1||!m?.player2)continue;
+    summary.total++;
+
+    const sources=new Set([...(m.evidenceSources||[]),m.source].map(clean).filter(Boolean));
+    const validLocation=
+      /^(?:Karrinyup Shopping Centre|Squashworld Mirrabooka|Belmont Saints Squash Centre)$/i.test(clean(m.venue||'')) &&
+      !!sanitizeCourtValue(m.court);
+
+    if(sources.has('TournamentSoftware Match')){
+      summary.officialMatch++;
+    }else if(sources.has('TournamentSoftware Draw Tree')){
+      summary.tree++;
+    }else if(sources.has('TournamentSoftware Draw Structural')){
+      summary.structural++;
+    }else if(sources.has('TournamentSoftware Draw Inline')){
+      summary.inline++;
+    }else if(sources.has('TournamentSoftware Draw Visual')&&validLocation){
+      summary.visualWithLocation++;
+    }else if(sources.has('TournamentSoftware Draw Visual')&&matchesExact.has(exactKey(m))){
+      summary.visualCorroboratedByMatches++;
+    }else if(sources.has('TournamentSoftware Draw Visual')){
+      summary.rejectedVisual++;
+    }
+  }
+
+  return summary;
+}
+
+
+function extractTournamentLocationFromText(text){
+  const s=clean(text||'');
+  if(!s)return {venue:'',court:''};
+
+  const venueMatch=s.match(
+    /\b(Squashworld\s+Mirrabooka|Belmont\s+Saints\s+Squash\s+Centre|Karrinyup\s+Shopping\s+Centre)\b/i
+  );
+  const courtMatch=s.match(
+    /\b(AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i
+  );
+
+  return {
+    venue:venueMatch?clean(venueMatch[1]):'',
+    court:courtMatch?sanitizeCourtValue(courtMatch[1]):''
+  };
+}
+
+function provenLocationFromRow(row){
+  const direct={
+    venue:clean(row?.venue||''),
+    court:sanitizeCourtValue(row?.court)
+  };
+
+  if(
+    /^(?:Karrinyup Shopping Centre|Squashworld Mirrabooka|Belmont Saints Squash Centre)$/i.test(direct.venue) &&
+    direct.court
+  ){
+    return direct;
+  }
+
+  const fromText=extractTournamentLocationFromText(
+    `${row?.rawText||''} ${row?.context||''} ${row?.text||''}`
+  );
+
+  return {
+    venue:direct.venue||fromText.venue,
+    court:direct.court||fromText.court
+  };
+}
+
+function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesRows,{preserveHistory=true}={}){
+  const today=perthTodayIsoRefresh();
+
+  const realPlayer=name=>!!name&&!/^(?:TBD|Bye)$/i.test(clean(name));
+  const dateKey=m=>canonicalTournamentDate(m?.date);
+  const timeKey=m=>clean(m?.time||'').toLowerCase();
+  const pairKey=m=>[
+    nameKey(splitPlayerSeed(m?.player1||'').name),
+    nameKey(splitPlayerSeed(m?.player2||'').name)
+  ].sort().join('|');
+  const exactKey=m=>`${dateKey(m)}|${timeKey(m)}|${pairKey(m)}`;
+  const pairDay=m=>`${dateKey(m)}|${pairKey(m)}`;
+
+  const validVenue=v=>
+    /^(?:Karrinyup Shopping Centre|Squashworld Mirrabooka|Belmont Saints Squash Centre)$/i.test(clean(v||''));
+
+  const validLocation=m=>validVenue(m?.venue)&&!!sanitizeCourtValue(m?.court);
+
+  const fresh=(matchesRows||[])
+    .filter(m=>m?.date&&m?.time&&realPlayer(m.player1)&&realPlayer(m.player2))
+    .map(m=>({...m,court:sanitizeCourtValue(m.court),rawText:''}));
+
+  const matchesExact=new Set(fresh.map(exactKey));
+
+  // Collect every exact draw observation as metadata evidence, even if the
+  // observation itself is not trusted to create fixture existence.
+  const drawMetaByExact=new Map();
+  for(const m0 of drawRows||[]){
+    if(!m0?.date||!m0?.time||!realPlayer(m0.player1)||!realPlayer(m0.player2))continue;
+
+    const loc=provenLocationFromRow(m0);
+    const m={
+      ...m0,
+      player1:splitPlayerSeed(m0.player1).name,
+      player2:splitPlayerSeed(m0.player2).name,
+      venue:loc.venue,
+      court:loc.court
+    };
+
+    const k=exactKey(m);
+    if(!drawMetaByExact.has(k))drawMetaByExact.set(k,[]);
+    drawMetaByExact.get(k).push(m);
+  }
+
+  const drawMetaByPairDay=new Map();
+  for(const rows of drawMetaByExact.values()){
+    for(const m of rows){
+      const k=pairDay(m);
+      if(!drawMetaByPairDay.has(k))drawMetaByPairDay.set(k,[]);
+      drawMetaByPairDay.get(k).push(m);
+    }
+  }
+
+  const evidenceSummary=drawAuthorityEvidenceSummary(drawRows,matchesRows);
+
+  // Fixture existence authority:
+  //   1. deterministic TournamentSoftware bracket-tree relationship
+  //      (numeric slot tree or modern explicit match wrapper)
+  //   2. official TournamentSoftware match evidence
+  //   3. old inline/structural/visual extractors are corroboration/metadata only
+  //      and cannot independently create a fixture.
+  const authorityCandidates=[];
+
+  for(const m0 of drawRows||[]){
+    if(!m0?.date||!m0?.time||!realPlayer(m0.player1)||!realPlayer(m0.player2))continue;
+    if(!isTournamentDate(dateKey(m0)))continue;
+
+    const loc=provenLocationFromRow(m0);
+    const m={
+      ...m0,
+      player1:splitPlayerSeed(m0.player1).name,
+      player2:splitPlayerSeed(m0.player2).name,
+      venue:loc.venue,
+      court:loc.court
+    };
+
+    const sources=new Set([...(m.evidenceSources||[]),m.source].map(clean).filter(Boolean));
+
+    const strong=
+      sources.has('TournamentSoftware Match') ||
+      sources.has('TournamentSoftware Draw Tree');
+
+    const corroboratedLegacy=
+      (
+        sources.has('TournamentSoftware Draw Inline') ||
+        sources.has('TournamentSoftware Draw Structural') ||
+        sources.has('TournamentSoftware Draw Visual')
+      ) &&
+      matchesExact.has(exactKey(m));
+
+    if(!strong&&!corroboratedLegacy)continue;
+
+    m.status=String(m.status||'').toLowerCase()==='completed'?'completed':'scheduled';
+    m.source='TournamentSoftware Official Draw';
+    m.drawEvidenceSources=[...sources];
+
+    authorityCandidates.push(m);
+  }
+
+  const richness=m=>
+    (m.result?10000:0)+
+    (m.winner?5000:0)+
+    (validLocation(m)?1000:0)+
+    (m.event?50:0)+
+    (m.round?25:0)+
+    (m.player1Id?5:0)+
+    (m.player2Id?5:0);
+
+  const authorityMap=new Map();
+  for(const m of authorityCandidates){
+    const k=exactKey(m);
+    const old=authorityMap.get(k);
+    if(!old||richness(m)>richness(old))authorityMap.set(k,m);
+  }
+
+  let authoritative=[...authorityMap.values()];
+
+  // Deterministic contradiction handling.
+  //
+  // No weighted scoring is used. The explicit TournamentSoftware draw tree is
+  // the schedule authority, the Matches page is secondary, and legacy
+  // extractors are lowest priority.
+  //
+  // Equal-strength contradictory fixtures are never guessed.
+  const sideIdentity=(m,side)=>{
+    const id=clean(side===1?m.player1Id:m.player2Id);
+    if(id)return `id:${id.toLowerCase()}`;
+
+    const name=nameKey(side===1?m.player1:m.player2);
+    const age=clean(m.ageGroup||m.age||'');
+    const gender=clean(m.gender||'');
+    const event=clean(m.event||'');
+    return `ctx:${name}|${gender}|${age}|${event}`;
+  };
+
+  const playerSlot=(m,side)=>[
+    dateKey(m),
+    timeKey(m),
+    sideIdentity(m,side)
+  ].join('|');
+
+  const authorityTier=m=>{
+    const sources=new Set([
+      ...(m.drawEvidenceSources||[]),
+      ...(m.evidenceSources||[]),
+      m.source
+    ].map(clean).filter(Boolean));
+
+    if(sources.has('TournamentSoftware Draw Tree'))return 3;
+    if(sources.has('TournamentSoftware Match'))return 2;
+    if(
+      sources.has('TournamentSoftware Draw Inline') ||
+      sources.has('TournamentSoftware Draw Structural') ||
+      sources.has('TournamentSoftware Draw Visual')
+    )return 1;
+    return 0;
+  };
+
+  const slotCandidates=new Map();
+  for(const m of authoritative){
+    for(const side of [1,2]){
+      const slot=playerSlot(m,side);
+      if(!slotCandidates.has(slot))slotCandidates.set(slot,new Map());
+      slotCandidates.get(slot).set(exactKey(m),m);
+    }
+  }
+
+  const rejectedFixtureKeys=new Set();
+  const hardAmbiguities=[];
+
+  for(const [slot,candidateMap] of slotCandidates){
+    const candidates=[...candidateMap.values()];
+    if(candidates.length<=1)continue;
+
+    const bestTier=Math.max(...candidates.map(authorityTier));
+    const strongest=candidates.filter(m=>authorityTier(m)===bestTier);
+
+    if(strongest.length!==1){
+      hardAmbiguities.push({slot,candidates:strongest});
+      continue;
+    }
+
+    const keepKey=exactKey(strongest[0]);
+    for(const m of candidates){
+      if(exactKey(m)!==keepKey)rejectedFixtureKeys.add(exactKey(m));
+    }
+  }
+
+  if(hardAmbiguities.length){
+    const sample=hardAmbiguities.slice(0,8).map(x=>
+      x.candidates.map(m=>
+        `${m.date} ${m.time} ${m.player1} vs ${m.player2} [tier ${authorityTier(m)}]`
+      ).join(' / ')
+    ).join(' | ');
+
+    throw new Error(
+      `DRAW AUTHORITY found ${hardAmbiguities.length} equal-strength contradictory player/date/time slot(s). ` +
+      `No fixture was guessed. Existing published data was left unchanged. Sample: ${sample}`
+    );
+  }
+
+  if(rejectedFixtureKeys.size){
+    const before=authoritative.length;
+    authoritative=authoritative.filter(m=>!rejectedFixtureKeys.has(exactKey(m)));
+    console.log(
+      `DRAW AUTHORITY deterministic precedence removed ${before-authoritative.length} lower-tier conflicting fixture(s).`
+    );
+  }
+
+  // Index exact previous fixtures. Previous data may supply LOCATION ONLY, never
+  // fixture existence, and only for the exact same date/time/player pair.
+  const previousExact=new Map();
+  for(const m of existingRows||[]){
+    if(!m?.date||!m?.time||!realPlayer(m.player1)||!realPlayer(m.player2))continue;
+    const k=exactKey(m);
+    if(!previousExact.has(k))previousExact.set(k,[]);
+    previousExact.get(k).push(m);
+  }
+
+  const previousByPairDay=new Map();
+  for(const rows of previousExact.values()){
+    for(const m of rows){
+      const k=pairDay(m);
+      if(!previousByPairDay.has(k))previousByPairDay.set(k,[]);
+      previousByPairDay.get(k).push(m);
+    }
+  }
+
+  // Matches page by exact pair/day. It is an overlay only.
+  const freshByPairDay=new Map();
+  for(const m of fresh){
+    const k=pairDay(m);
+    if(!freshByPairDay.has(k))freshByPairDay.set(k,[]);
+    freshByPairDay.get(k).push(m);
+  }
+
+  const out=[];
+
+  // Preserve immutable history only.
+  if(preserveHistory){
+    for(const old0 of existingRows||[]){
+      const old={...old0,court:sanitizeCourtValue(old0.court),rawText:''};
+      const d=dateKey(old);
+      if(!d||d>=today)continue;
+      out.push(old);
+    }
+  }
+
+  let metadataUpdates=0;
+  let previousLocationRestores=0;
+  let drawLocationRestores=0;
+
+  for(const auth0 of authoritative){
+    const d=dateKey(auth0);
+    if(!d)continue;
+    if(preserveHistory&&d<today)continue;
+
+    const m={...auth0};
+
+    // 1) Merge location from ANY exact draw observation of this already-trusted
+    // fixture. Visual/raw draw text is allowed to enrich metadata once fixture
+    // existence itself is independently trusted.
+    for(const dm of drawMetaByExact.get(exactKey(m))||[]){
+      const loc=provenLocationFromRow(dm);
+      if(!m.venue&&validVenue(loc.venue)){
+        m.venue=loc.venue;
+        drawLocationRestores++;
+      }
+      if(!sanitizeCourtValue(m.court)&&loc.court){
+        m.court=loc.court;
+        drawLocationRestores++;
+      }
+    }
+
+    // 1b) If exact-time draw metadata lacks location, a UNIQUE same-pair/day
+    // draw observation may provide it. This is metadata recovery only; it does
+    // not alter who plays whom.
+    if(!validLocation(m)){
+      const sameDay=(drawMetaByPairDay.get(pairDay(m))||[])
+        .map(x=>({...x,...provenLocationFromRow(x)}))
+        .filter(x=>validVenue(x.venue)&&sanitizeCourtValue(x.court));
+
+      const signatures=[...new Set(
+        sameDay.map(x=>`${clean(x.venue)}|${sanitizeCourtValue(x.court)}`)
+      )];
+
+      if(signatures.length===1&&sameDay.length){
+        const loc=provenLocationFromRow(sameDay[0]);
+        if(!m.venue&&validVenue(loc.venue)){
+          m.venue=loc.venue;
+          drawLocationRestores++;
+        }
+        if(!sanitizeCourtValue(m.court)&&loc.court){
+          m.court=loc.court;
+          drawLocationRestores++;
+        }
+      }
+    }
+
+    // 2) Matches page may update time/location/result for the SAME pair/day.
+    const candidates=freshByPairDay.get(pairDay(m))||[];
+    if(candidates.length===1){
+      const f=candidates[0];
+
+      if(f.time&&clean(f.time)!==clean(m.time)){
+        m.time=f.time;
+        metadataUpdates++;
+      }
+      if(f.venue&&validVenue(f.venue)&&clean(f.venue)!==clean(m.venue)){
+        m.venue=clean(f.venue);
+        metadataUpdates++;
+      }
+      const fc=sanitizeCourtValue(f.court);
+      if(fc&&fc!==sanitizeCourtValue(m.court)){
+        m.court=fc;
+        metadataUpdates++;
+      }
+      if(f.event)m.event=f.event;
+      if(f.round)m.round=f.round;
+
+      if(f.result)m.result=f.result;
+      if(f.winner)m.winner=f.winner;
+      if(f.winnerId)m.winnerId=f.winnerId;
+      if(f.result||f.winner){
+        m.status='completed';
+        m.resultSource='TournamentSoftware';
+      }
+    }
+
+    // 3) Previous data may restore LOCATION only. Prefer exact fixture first;
+    // then allow a unique same-pair/day location signature if the official time
+    // moved slightly between views.
+    if(!validLocation(m)){
+      const prevExact=previousExact.get(exactKey(m))||[];
+      let candidates=prevExact;
+
+      if(!candidates.length){
+        candidates=previousByPairDay.get(pairDay(m))||[];
+      }
+
+      const locs=candidates
+        .map(x=>provenLocationFromRow(x))
+        .filter(x=>validVenue(x.venue)&&x.court);
+
+      const signatures=[...new Set(
+        locs.map(x=>`${clean(x.venue)}|${sanitizeCourtValue(x.court)}`)
+      )];
+
+      if(signatures.length===1&&locs.length){
+        const loc=locs[0];
+        if(!m.venue){
+          m.venue=loc.venue;
+          previousLocationRestores++;
+        }
+        if(!sanitizeCourtValue(m.court)){
+          m.court=loc.court;
+          previousLocationRestores++;
+        }
+      }
+    }
+
+    m.court=sanitizeCourtValue(m.court);
+    out.push(m);
+  }
+
+  const finalMap=new Map();
+  for(const m of out){
+    const k=exactKey(m);
+    const old=finalMap.get(k);
+    if(!old||richness(m)>richness(old))finalMap.set(k,m);
+  }
+
+  const final=[...finalMap.values()].sort((a,b)=>
+    `${dateKey(a)} ${clean(a.time)}`.localeCompare(`${dateKey(b)} ${clean(b.time)}`)
+  );
+
+  const currentFuture=final.filter(m=>dateKey(m)>=today);
+
+  // Hard integrity rule: a published current/future fixture must have a valid
+  // location. If extraction cannot prove it, fail safely instead of showing TBD.
+  const incomplete=currentFuture.filter(m=>!validLocation(m));
+  if(incomplete.length){
+    const sample=incomplete.slice(0,10).map(m=>{
+      const exactDraw=(drawMetaByExact.get(exactKey(m))||[]).length;
+      const dayDraw=(drawMetaByPairDay.get(pairDay(m))||[]).length;
+      const prevExact=(previousExact.get(exactKey(m))||[]).length;
+      const prevDay=(previousByPairDay.get(pairDay(m))||[]).length;
+      return `${m.date} ${m.time} ${m.player1} vs ${m.player2} ` +
+        `(${m.venue||'venue?'} / ${m.court||'court?'}; ` +
+        `drawExact=${exactDraw}, drawDay=${dayDraw}, prevExact=${prevExact}, prevDay=${prevDay})`;
+    }).join(' | ');
+    const sourceCounts={};
+    for(const m of incomplete){
+      const sig=(m.drawEvidenceSources||[m.source||'unknown']).join('+')||'unknown';
+      sourceCounts[sig]=(sourceCounts[sig]||0)+1;
+    }
+    throw new Error(
+      `Draw-authoritative schedule contains ${incomplete.length} trusted current/future fixture(s) ` +
+      `without a proven venue/court. Evidence sources: ${JSON.stringify(sourceCounts)}. ` +
+      `Existing published data was left unchanged. Sample: ${sample}`
+    );
+  }
+
+  const occupied=new Map();
+  const collisions=[];
+  for(const m of currentFuture){
+    for(const side of [1,2]){
+      const s=playerSlot(m,side);
+      if(!occupied.has(s))occupied.set(s,m);
+      else if(exactKey(occupied.get(s))!==exactKey(m)){
+        collisions.push({a:occupied.get(s),b:m});
+      }
+    }
+  }
+  if(collisions.length){
+    const sample=collisions.slice(0,6).map(x=>
+      `${x.a.date} ${x.a.time}: ${x.a.player1} vs ${x.a.player2} / ${x.b.player1} vs ${x.b.player2}`
+    ).join(' | ');
+    throw new Error(
+      `Draw-authoritative schedule has ${collisions.length} impossible player/date/time collision(s). ` +
+      `Existing published data was left unchanged. Sample: ${sample}`
+    );
+  }
+
+  if(currentFuture.length<40){
+    throw new Error(
+      `Draw-authoritative current/future coverage is implausibly small: ${currentFuture.length} fixtures. ` +
+      `Existing published data was left unchanged.`
+    );
+  }
+
+  const byDate={};
+  for(const m of currentFuture){
+    const d=dateKey(m);
+    byDate[d]=(byDate[d]||0)+1;
+  }
+
+  console.log(`DRAW AUTHORITY evidence: ${JSON.stringify(evidenceSummary)}`);
+  console.log(
+    `DRAW AUTHORITY accepted ${authoritative.length} trusted draw fixture(s); ` +
+    `${drawLocationRestores} draw-location field restore(s), ` +
+    `${metadataUpdates} Matches-page metadata update(s), ` +
+    `${previousLocationRestores} exact-prior location restore(s).`
+  );
+  console.log(`DRAW AUTHORITY current/future by date: ${JSON.stringify(byDate)}`);
+  const trackedForAudit=loadTrackedNames();
+  const trackedCurrentFuture=currentFuture.filter(m=>
+    trackedForAudit.some(n=>sameName(m.player1,n)||sameName(m.player2,n))
+  );
+  console.log(`DRAW AUTHORITY tracked current/future fixtures: ${JSON.stringify(
+    trackedCurrentFuture.map(m=>({
+      date:m.date,time:m.time,player1:m.player1,player2:m.player2,
+      venue:m.venue||'',court:m.court||'',
+      source:m.source||'',evidence:m.drawEvidenceSources||[]
+    }))
+  )}`);
+  console.log(
+    `DRAW AUTHORITY final schedule: ${final.length} fixture(s), ` +
+    `${currentFuture.length} current/future with proven location.`
+  );
+
+  return final;
+}
+
+function overlayAuthoritativeTournamentResults(baseRows,resultRows,label='TournamentSoftware'){
+  const out=(baseRows||[]).map(m=>({...m}));
+  const results=(resultRows||[]).filter(m=>m&&(m.result||m.winner));
+
+  const person=name=>nameKey(splitPlayerSeed(name).name);
+  const pair=m=>[person(m.player1),person(m.player2)].sort().join('|');
+  const date=m=>canonicalTournamentDate(m.date);
+  const time=m=>clean(m.time||'').toLowerCase();
+
+  const exactKey=m=>`${date(m)}|${time(m)}|${pair(m)}`;
+  const dayPairKey=m=>`${date(m)}|${pair(m)}`;
+
+  const exactMap=new Map();
+  const dayPairMap=new Map();
+
+  for(const r of results){
+    const ek=exactKey(r);
+    if(!exactMap.has(ek))exactMap.set(ek,[]);
+    exactMap.get(ek).push(r);
+
+    const dk=dayPairKey(r);
+    if(!dayPairMap.has(dk))dayPairMap.set(dk,[]);
+    dayPairMap.get(dk).push(r);
+  }
+
+  const apply=(target,r)=>{
+    let changed=false;
+
+    if(r.result&&clean(target.result)!==clean(r.result)){
+      target.result=r.result;
+      changed=true;
+    }
+
+    if(r.winner&&person(target.winner)!==person(r.winner)){
+      target.winner=splitPlayerSeed(r.winner).name;
+      changed=true;
+    }
+
+    if(r.winnerId&&!target.winnerId){
+      target.winnerId=r.winnerId;
+      changed=true;
+    }
+
+    if((r.result||r.winner)&&String(target.status||'').toLowerCase()!=='completed'){
+      target.status='completed';
+      changed=true;
+    }
+
+    if(changed)target.resultSource=label;
+    return changed;
+  };
+
+  let exactApplied=0;
+  let safeDayPairApplied=0;
+  let ambiguous=0;
+
+  for(const m of out){
+    // First choice: exact date + time + player pair.
+    const exactRows=exactMap.get(exactKey(m))||[];
+    if(exactRows.length===1){
+      if(apply(m,exactRows[0]))exactApplied++;
+      continue;
+    }
+    if(exactRows.length>1){
+      // Multiple rows are still safe if they all agree on result/winner.
+      const sig=new Set(exactRows.map(r=>`${clean(r.result)}|${person(r.winner||'')}`));
+      if(sig.size===1){
+        if(apply(m,exactRows[0]))exactApplied++;
+      }else{
+        ambiguous++;
+      }
+      continue;
+    }
+
+    // TournamentSoftware draw/result rows can omit or shift the list-view time.
+    // Use same-day + same-pair only when BOTH sides are unambiguous:
+    //   - exactly one result row for that pair/day
+    //   - exactly one published fixture for that pair/day
+    const dayRows=dayPairMap.get(dayPairKey(m))||[];
+    if(dayRows.length!==1)continue;
+
+    const publishedSameDayPair=out.filter(x=>dayPairKey(x)===dayPairKey(m));
+    if(publishedSameDayPair.length!==1)continue;
+
+    if(apply(m,dayRows[0]))safeDayPairApplied++;
+  }
+
+  console.log(
+    `${label} authoritative result overlay: ${exactApplied} exact result update(s), ` +
+    `${safeDayPairApplied} safe same-day/pair update(s), ${ambiguous} ambiguous skipped.`
+  );
+
+  return out;
+}
+
 function preserveHistoricalTournamentResults(currentRows,previousRows){
   const out=(currentRows||[]).map(m=>({...m}));
   const previous=(previousRows||[]).filter(m=>m&&m.result);
@@ -5425,6 +6493,41 @@ function preserveHistoricalTournamentResults(currentRows,previousRows){
 
   console.log(`Historical score preservation restored ${restored} past fixture result(s) by date/time/player pair.`);
   return out;
+}
+
+
+function sanitizeFutureResultMetadata(rows){
+  const today=perthTodayIsoRefresh();
+  let cleared=0;
+
+  return (rows||[]).map(m=>{
+    const x={...m};
+    const d=canonicalTournamentDate(x.date);
+    const status=String(x.status||'').toLowerCase();
+
+    if(!d||d<=today)return x;
+
+    // A future scheduled fixture cannot already have a winner/result.
+    // Old additive snapshots can leak winner metadata from a previous
+    // same-name/pair record into a later scheduled fixture.
+    if(status!=='live'){
+      if(x.result||x.winner||x.winnerId||status==='completed'||status==='played'){
+        x.result='';
+        x.winner='';
+        x.winnerId='';
+        x.resultSource='';
+        x.status='scheduled';
+        cleared++;
+      }
+    }
+
+    return x;
+  }).map((m,i,arr)=>{
+    if(i===arr.length-1&&cleared){
+      console.log(`Future result sanitiser cleared stale result/winner metadata on ${cleared} fixture(s).`);
+    }
+    return m;
+  });
 }
 
 function mergeSquashScoresIntoMatches(baseMatches, liveMatches){
@@ -5605,6 +6708,50 @@ function overlayVerifiedDrawLocation(schedule,drawMatches){
   return out;
 }
 
+
+function filterUncorroboratedFutureRecoveredFixtures(schedule,drawMatches){
+  const today=perthTodayIsoRefresh();
+  const draws=(drawMatches||[]).filter(m=>
+    m?.date&&m?.time&&m?.player1&&m?.player2 &&
+    !/^(?:TBD|Bye)$/i.test(clean(m.player1||'')) &&
+    !/^(?:TBD|Bye)$/i.test(clean(m.player2||''))
+  );
+
+  const key=m=>[
+    canonicalTournamentDate(m.date),
+    clean(m.time||'').toLowerCase(),
+    ...[nameKey(m.player1),nameKey(m.player2)].sort()
+  ].join('|');
+
+  const drawKeys=new Set(draws.map(key));
+  let removed=0;
+
+  const out=(schedule||[]).filter(m=>{
+    const d=canonicalTournamentDate(m.date);
+    const lowConfidence=
+      clean(m.recoveredFrom||'')==='adjacent-one-player-fragments';
+
+    if(!lowConfidence||!d||d<=today)return true;
+
+    // A future concrete pairing reconstructed only from adjacent single-player
+    // fragments is not authoritative by itself. Retain it only when the
+    // official draw independently confirms the exact date/time/player pair.
+    if(drawKeys.has(key(m)))return true;
+
+    removed++;
+    return false;
+  });
+
+  if(removed){
+    console.log(
+      `Future recovered-fragment guard removed ${removed} uncorroborated ` +
+      `adjacent-fragment fixture(s).`
+    );
+  }
+
+  return out;
+}
+
 function mergeTrackedDrawFallback(schedule,drawMatches,canonicalPlayers){
   let out=(schedule||[]).map(m=>({...m}));
   const fallback=(drawMatches||[]).map(m=>({...m}));
@@ -5620,7 +6767,7 @@ function mergeTrackedDrawFallback(schedule,drawMatches,canonicalPlayers){
 
   for(const m of fallback){
     if(m.source!=='TournamentSoftware Draw Tracked Concrete Verified')continue;
-    if(!m.date||!m.time||!m.venue||!m.court)continue;
+    if(!m.date||!m.time||!m.venue||!sanitizeCourtValue(m.court))continue;
     if(!isRealPlayer(m.player1)||!isRealPlayer(m.player2))continue;
 
     const d=dateKey(m),t=timeKey(m);
@@ -5680,28 +6827,9 @@ function mergeTrackedDrawFallback(schedule,drawMatches,canonicalPlayers){
     addedConcrete++;
   }
 
-  // TBD rows are only used when no verified concrete fixture exists for that
-  // tracked player's slot.
-  let addedTbd=0;
-
-  for(const m of fallback){
-    if(m.source!=='TournamentSoftware Draw Tracked Future Verified')continue;
-
-    const d=dateKey(m),t=timeKey(m);
-    const knownName=/^TBD$/i.test(clean(m.player1||''))?m.player2:m.player1;
-    const knownId=/^TBD$/i.test(clean(m.player1||''))?m.player2Id:m.player1Id;
-    if(!d||!t||!knownName||!m.venue||!m.court)continue;
-
-    const slot=`${d}|${t}|${playerToken(knownName,knownId)}`;
-    if(concreteByPlayerSlot.has(slot))continue;
-
-    const k=exactKey(m);
-    if(seen.has(k))continue;
-
-    seen.add(k);
-    out.push({...m,rawText:''});
-    addedTbd++;
-  }
+  // Guessed TBD rows are deliberately disabled. A fixture must have two
+  // concrete players from the deterministic TournamentSoftware draw tree.
+  const addedTbd=0;
 
   // Final tracked-slot dedupe: when a verified concrete draw fixture exists,
   // keep that one and remove every conflicting row for the same tracked player/date/time.
@@ -5731,67 +6859,6 @@ function mergeTrackedDrawFallback(schedule,drawMatches,canonicalPlayers){
 }
 
 
-
-
-function applyConfirmedOfficialFixtureCorrections(rows){
-  let out=(rows||[]).map(m=>({...m}));
-
-  // Confirmed from the official Women's +60 draw:
-  // Susan Hillier [1] vs Valerie Worrell
-  // Tue 01/09/2026 14:40
-  // Squashworld Mirrabooka - SC1
-  //
-  // TournamentSoftware's rendered Matches/Draw pages intermittently omit
-  // this bracket row entirely. Do not let an older Bye placeholder survive.
-  const corrections=[
-    {
-      date:'2026-09-01',
-      time:'14:40',
-      player1:'Susan Hillier',
-      player2:'Valerie Worrell',
-      venue:'Squashworld Mirrabooka',
-      court:'SC1',
-      event:"Women's +60",
-      status:'scheduled',
-      source:'TournamentSoftware Official Draw Confirmed'
-    }
-  ];
-
-  const sameSlot=(m,c)=>
-    canonicalTournamentDate(m.date)===c.date &&
-    clean(m.time||'').toLowerCase()===clean(c.time).toLowerCase() &&
-    (sameName(m.player1,c.player1)||sameName(m.player2,c.player1));
-
-  for(const c of corrections){
-    const slotRows=out.filter(m=>sameSlot(m,c));
-
-    // If the current scrape already has a real concrete opponent for Susan at
-    // this exact slot, prefer that current official data over this fallback.
-    const currentConcrete=slotRows.find(m=>{
-      const other=sameName(m.player1,c.player1)?m.player2:m.player1;
-      return other && !/^(?:Bye|TBD)$/i.test(clean(other));
-    });
-
-    if(currentConcrete){
-      // Still enforce the confirmed venue/court if current render omitted them.
-      if(!currentConcrete.venue)currentConcrete.venue=c.venue;
-      if(!currentConcrete.court)currentConcrete.court=c.court;
-      continue;
-    }
-
-    // Remove stale Bye/TBD/wrong placeholder rows for Susan at this slot.
-    out=out.filter(m=>!sameSlot(m,c));
-
-    out.push({...c,rawText:''});
-
-    console.log(
-      `Confirmed official fixture correction applied: ` +
-      `${c.date} ${c.time} ${c.player1} vs ${c.player2}, ${c.venue} ${c.court}.`
-    );
-  }
-
-  return out;
-}
 
 
 function applyFreshGlobalSlotAuthority(mergedMatches,freshSchedule){
@@ -5943,6 +7010,7 @@ function cleanupDuplicateTournamentFixtures(rows,freshRows=[]){
   return cleaned;
 }
 
+
 function applyFreshTrackedMatchAuthority(mergedMatches,freshSchedule){
   let out=(mergedMatches||[]).map(m=>({...m}));
   const fresh=(freshSchedule||[]).map(m=>({...m}));
@@ -6029,7 +7097,7 @@ function applyFinalTrackedDrawAuthority(matches,drawMatches){
   let out=(matches||[]).map(m=>({...m}));
   const verified=(drawMatches||[]).filter(m=>
     m.source==='TournamentSoftware Draw Tracked Concrete Verified' &&
-    m.date&&m.time&&m.venue&&m.court &&
+    m.date&&m.time&&m.venue&&sanitizeCourtValue(m.court) &&
     !/^(?:TBD|Bye)$/i.test(clean(m.player1||'')) &&
     !/^(?:TBD|Bye)$/i.test(clean(m.player2||''))
   );
@@ -6092,7 +7160,7 @@ function applyFinalTrackedDrawAuthority(matches,drawMatches){
   for(const auth0 of verified){
     const auth={
       ...auth0,
-      venue:clean(auth0.venue),
+      venue:clean(auth0.venue||''),
       court:sanitizeCourtValue(auth0.court),
       rawText:''
     };
@@ -6115,12 +7183,15 @@ function applyFinalTrackedDrawAuthority(matches,drawMatches){
     cur.player2=splitPlayerSeed(auth.player2).name;
     cur.player1Id=auth.player1Id||cur.player1Id||'';
     cur.player2Id=auth.player2Id||cur.player2Id||'';
-    cur.venue=auth.venue;
-    cur.court=auth.court;
+
+    // Draw proves the fixture; location is only overwritten when the draw
+    // actually supplied authoritative location metadata.
+    if(auth.venue)cur.venue=auth.venue;
+    if(auth.court)cur.court=auth.court;
     if(auth.event)cur.event=auth.event;
     if(auth.round)cur.round=auth.round;
 
-    if(beforeVenue!==cur.venue||beforeCourt!==cur.court)corrected++;
+    if(beforeVenue!==clean(cur.venue||'')||beforeCourt!==sanitizeCourtValue(cur.court))corrected++;
   }
 
   // Exact dedupe after authority application.
@@ -6272,6 +7343,7 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
   }
 
   const acceptedDates=new Set();
+  const replacementSafeDates=new Set();
 
   for(const [d,rows] of freshByDate){
     const freshCount=rows.length;
@@ -6283,12 +7355,21 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
     else if(target>0) plausible=freshCount>=1;
     else plausible=freshCount>=1;
 
+    // Deleting stale FUTURE scheduled fixtures needs stronger evidence than
+    // merely accepting fresh rows additively. Require at least ~80% of the
+    // known-good day size. For unknown days we never delete from prior data.
+    const replacementSafe=
+      target>0 &&
+      freshCount>=Math.ceil(target*0.80);
+
     console.log(
       `Matches-only date coverage ${d}: fresh ${freshCount}, known-good ${target||'n/a'}, ` +
-      `${plausible?'ACCEPT ADDITIVELY':'KEEP PRIOR ONLY'}.`
+      `${plausible?'ACCEPT ADDITIVELY':'KEEP PRIOR ONLY'}` +
+      `${replacementSafe?' · FUTURE REPLACEMENT SAFE':''}.`
     );
 
     if(plausible)acceptedDates.add(d);
+    if(replacementSafe)replacementSafeDates.add(d);
   }
 
   if(!acceptedDates.size){
@@ -6370,12 +7451,32 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
       return k&&!freshKeys.has(k);
     });
 
+    const futurePrunable=
+      replacementSafeDates.has(d) &&
+      d>perthTodayIsoRefresh()
+        ? preservedExisting.filter(m=>{
+            const status=String(m.status||'').toLowerCase();
+            return !m.result&&!m.winner&&status!=='completed'&&status!=='played';
+          }).length
+        : 0;
+
     console.log(
-      `Matches-only ${d}: preserved ${preservedExisting.length} previously published ` +
-      `fixture(s) not present in this fresh render.`
+      `Matches-only ${d}: ${preservedExisting.length} previously published fixture(s) ` +
+      `not present in this fresh render` +
+      '.'
     );
   }
 
+
+
+  // Future schedule preservation rule:
+  // Absence from an incomplete fresh render is NOT evidence that a previously
+  // published future fixture was cancelled. Future rows are removed only by
+  // positive slot-conflict authority below (fresh Matches / verified draw).
+  console.log(
+    'Future schedule preservation: unmatched future fixtures are retained unless ' +
+    'positive official slot-conflict evidence replaces them.'
+  );
 
   // If a future fixture was previously stored as Player vs TBD and the current
   // TournamentSoftware data now names the opponent, remove the stale TBD row.
@@ -6460,7 +7561,7 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
 (async()=>{
   const stopTotalTiming=phaseTimer('TOTAL refresh');
   const existing=loadExisting();
-  const existingPlayers=Array.isArray(existing.players)?existing.players.map(p=>normalizePlayerIdentityRecord({...p})):[];
+  const existingPlayers=repairDuplicateSquashLevelsIdentity(Array.isArray(existing.players)?existing.players.map(p=>normalizePlayerIdentityRecord({...p})):[]);
   const trackedNames=loadTrackedNames();
 
   if(FULL_REBUILD){
@@ -6501,10 +7602,44 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
     return;
   }
 
+  if(DRAW_DEBUG){
+    console.log('\n=== DRAW STRUCTURE DEBUG (:drawdebug) ===');
+    console.log('Scanning only the official TournamentSoftware age-group draw pages.');
+    console.log('No published data files will be changed.\n');
+
+    if(existingPlayers.length<850){
+      throw new Error(`Published player snapshot has only ${existingPlayers.length} players; draw debug needs the existing official player identities.`);
+    }
+
+    const browser=await launchBrowser();
+    const context=await browser.newContext();
+
+    try{
+      const stop=phaseTimer('TournamentSoftware draw-structure debug');
+      const result=await scrapeOfficialDrawSchedule(
+        context,
+        {skipMatchPages:true,canonicalPlayers:existingPlayers,debugStructure:true}
+      );
+      stop();
+
+      console.log(
+        `DRAW DEBUG complete: ${result.drawLinks||0} draw page(s), `+
+        `${result.treeObservations||0} deterministic draw-tree fixture(s).`
+      );
+      console.log('Upload draw-structure-debug.json so the TournamentSoftware bracket relationships can be implemented from the actual DOM.');
+    }finally{
+      await context.close().catch(()=>{});
+      await browser.close().catch(()=>{});
+    }
+
+    stopTotalTiming();
+    return;
+  }
+
   if(MATCHES_ONLY){
     console.log('\n=== MATCHES ONLY (:matches) ===');
     console.log('Using the currently published player identities, countries, age groups and SquashLevels values.');
-    console.log('Skipping draw crawl and SquashLevels. Scanning only the official TournamentSoftware Matches page.\n');
+    console.log('Skipping SquashLevels. Scanning the official TournamentSoftware Matches page and all authoritative age-group draw trees.\n');
 
     if(existingPlayers.length<850){
       throw new Error(`Published player snapshot has only ${existingPlayers.length} players; refusing matches-only refresh.`);
@@ -6541,8 +7676,8 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
       officialMatches=await scrapeOfficialMatchesSchedule(context,existingPlayers,Array.isArray(existing.matches)?existing.matches:[]);
       stopMatchesTiming();
 
-      console.log('\nScanning official draws for tracked-player future bracket fixtures...');
-      const stopTrackedDrawTiming=phaseTimer('TournamentSoftware tracked draw fallback');
+      console.log('\nScanning official draws for authoritative tournament fixtures...');
+      const stopTrackedDrawTiming=phaseTimer('TournamentSoftware authoritative draw crawl');
 
       try{
         officialDrawFallback=await scrapeOfficialDrawSchedule(
@@ -6553,7 +7688,7 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
         const trackedNames=loadTrackedNames();
 
         const trackedConcrete=(officialDrawFallback.matches||[]).filter(m=>{
-          if(!m.date||!m.time||!m.venue||!m.court)return false;
+          if(!m.date||!m.time||!m.venue||!sanitizeCourtValue(m.court))return false;
           if(canonicalTournamentDate(m.date)<perthTodayIsoRefresh())return false;
 
           const tracked=
@@ -6566,13 +7701,10 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
           return true;
         });
 
-        trackedDrawFallback=[
-          ...trackedConcrete.map(m=>({
-            ...m,
-            source:'TournamentSoftware Draw Tracked Concrete Verified'
-          })),
-          ...(officialDrawFallback.trackedTbdMatches||[])
-        ];
+        trackedDrawFallback=trackedConcrete.map(m=>({
+          ...m,
+          source:'TournamentSoftware Draw Tracked Concrete Verified'
+        }));
 
         const sueConcrete=trackedConcrete.filter(m=>
           sameName(m.player1,'Susan Hillier')||sameName(m.player2,'Susan Hillier')
@@ -6585,14 +7717,14 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
         )}`);
 
         console.log(
-          `Tracked draw fallback candidates: ${trackedDrawFallback.length} ` +
-          `(${trackedConcrete.length} concrete, ${(officialDrawFallback.trackedTbdMatches||[]).length} TBD).`
+          `Tracked draw deterministic candidates: ${trackedDrawFallback.length} concrete fixture(s), 0 guessed TBD.`
         );
       }catch(e){
         officialDrawFallback={matches:[],trackedTbdMatches:[]};
         trackedDrawFallback=[];
-        console.warn(`Tracked draw fallback unavailable: ${String(e?.message||e).split('\n')[0]}`);
-        console.warn('Continuing matches-only refresh with the successfully scraped official Matches-page data.');
+        throw new Error(
+          `Authoritative draw crawl failed: ${String(e?.message||e).split('\n')[0]}`
+        );
       }finally{
         stopTrackedDrawTiming();
       }
@@ -6600,93 +7732,78 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
       await browser.close();
     }
 
-    let schedule=mergeTrackedDrawFallback(
+    const highConfidenceOfficialMatches=filterUncorroboratedFutureRecoveredFixtures(
       officialMatches.matches||[],
-      trackedDrawFallback,
-      existingPlayers
-    );
-    schedule=overlayVerifiedDrawLocation(schedule,officialDrawFallback.matches||[]);
-    schedule=overlayTrackedDrawSlotLocation(schedule,officialDrawFallback.matches||[]);
-    const freshSue=schedule.filter(m=>
-      sameName(m.player1,'Susan Hillier')||sameName(m.player2,'Susan Hillier')
-    );
-    console.log(`Susan Hillier fresh schedule candidates: ${JSON.stringify(
-      freshSue.map(m=>({
-        date:canonicalTournamentDate(m.date),
-        time:m.time,
-        player1:m.player1,
-        player2:m.player2,
-        venue:m.venue||'',
-        court:m.court||'',
-        source:m.source||''
-      }))
-    )}`);
-
-    if(schedule.length<20){
-      const dist={};
-      for(const m of schedule){
-        const d=canonicalTournamentDate(m.date)||m.date||'unknown';
-        dist[d]=(dist[d]||0)+1;
-      }
-      throw new Error(`Matches-only coverage is too small to trust: ${schedule.length} fixtures. Dates: ${JSON.stringify(dist)}. Existing published data was left unchanged.`);
-    }
-
-    // TournamentSoftware may expose only one selected day in a session.
-    // Replace only dates with plausible fresh coverage and preserve every
-    // other previously published tournament date.
-    let tournamentMatches=mergeDateScopedTournamentMatches(
-      Array.isArray(existing.matches)?existing.matches:[],
-      schedule
-    );
-
-    // Even when a day's fresh schedule coverage is too incomplete to replace/
-    // extend that date, exact TournamentSoftware score/result updates are safe
-    // to apply to already-published fixtures.
-    tournamentMatches=overlayFreshTournamentResults(
-      tournamentMatches,
-      officialMatches.matches||[]
-    );
-
-    tournamentMatches=applyFreshGlobalSlotAuthority(
-      tournamentMatches,
-      officialMatches.matches||[]
-    );
-
-    tournamentMatches=applyFreshTrackedMatchAuthority(
-      tournamentMatches,
-      schedule
-    );
-
-    // IMPORTANT: apply verified tracked draw authority AFTER the additive merge,
-    // otherwise stale published rows can be reintroduced.
-    tournamentMatches=applyFinalTrackedDrawAuthority(
-      tournamentMatches,
-      trackedDrawFallback
-    );
-
-    tournamentMatches=overlayTrackedDrawSlotLocation(
-      tournamentMatches,
       officialDrawFallback.matches||[]
     );
 
-    tournamentMatches=applyConfirmedOfficialFixtureCorrections(
-      tournamentMatches
+    if((officialDrawFallback.failed||0)>0){
+      throw new Error(
+        `Official draw crawl had ${officialDrawFallback.failed} incomplete/failed age-group draw page(s). ` +
+        `Existing published data was left unchanged.`
+      );
+    }
+
+    const missingTreeDraws=officialDrawFallback.missingTreeDraws||[];
+    if(missingTreeDraws.length){
+      throw new Error(
+        `Deterministic draw-tree crawl was incomplete for ${missingTreeDraws.length} main draw(s): ` +
+        missingTreeDraws.map(x=>`${x.drawName} (${x.players} players)`).join(', ') +
+        `. Existing published data was left unchanged.`
+      );
+    }
+
+    if((officialDrawFallback.mainTreeDraws||0)<20){
+      throw new Error(
+        `Deterministic draw-tree crawl exposed only ${officialDrawFallback.mainTreeDraws||0} main age-group draw(s). ` +
+        `Existing published data was left unchanged.`
+      );
+    }
+
+    if((officialDrawFallback.players||[]).length<900){
+      throw new Error(
+        `Official draw crawl exposed only ${(officialDrawFallback.players||[]).length} unique players. ` +
+        `Existing published data was left unchanged.`
+      );
+    }
+
+    if((officialDrawFallback.treeObservations||0)<300){
+      throw new Error(
+        `Deterministic draw-tree extraction produced only ${officialDrawFallback.treeObservations||0} observations. ` +
+        `Existing published data was left unchanged.`
+      );
+    }
+
+    console.log(
+      `DRAW TREE completeness: ${officialDrawFallback.mainTreeDraws} main draw(s), ` +
+      `${officialDrawFallback.treeObservations} deterministic observation(s), ` +
+      `${(officialDrawFallback.players||[]).length} unique draw player(s), 0 missing main trees.`
+    );
+
+    // OFFICIAL DRAW = fixture existence authority for today + future.
+    // Existing data is retained only for historical dates.
+    let tournamentMatches=buildDrawAuthoritativeTournamentSchedule(
+      Array.isArray(existing.matches)?existing.matches:[],
+      officialDrawFallback.matches||[],
+      highConfidenceOfficialMatches,
+      {preserveHistory:true}
+    );
+
+    tournamentMatches=overlayFreshTournamentResults(
+      tournamentMatches,
+      highConfidenceOfficialMatches
+    );
+
+    tournamentMatches=overlayAuthoritativeTournamentResults(
+      tournamentMatches,
+      officialDrawFallback.matches||[],
+      'TournamentSoftware Draw'
     );
 
     tournamentMatches=cleanupDuplicateTournamentFixtures(
       tournamentMatches,
-      officialMatches.matches||[]
+      highConfidenceOfficialMatches
     );
-
-    const postAuthoritySue=tournamentMatches.filter(m=>
-      sameName(m.player1,'Susan Hillier')||sameName(m.player2,'Susan Hillier')
-    );
-    console.log(`POST-AUTHORITY Susan Hillier fixtures: ${JSON.stringify(
-      postAuthoritySue.map(m=>({
-        date:m.date,time:m.time,player1:m.player1,player2:m.player2,
-        venue:m.venue||'',court:m.court||'',source:m.source||''
-      }))
-    )}`);
 
     if(tournamentMatches.length<500){
       const dist={};
@@ -6701,6 +7818,13 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
       tournamentMatches,
       Array.isArray(existing.matches)?existing.matches:[]
     );
+
+    tournamentMatches=sanitizeFutureResultMetadata(tournamentMatches);
+
+    tournamentMatches=tournamentMatches.map(m=>({
+      ...m,
+      court:sanitizeCourtValue(m.court)
+    }));
 
     const squashScoresMatches=await fetchSquashScoresLiveMatches(existingPlayers);
     console.log(`Perth-today SquashScores live rows eligible for overlay: ${squashScoresMatches.filter(m=>String(m.status||'').toLowerCase()==='live'&&canonicalTournamentDate(m.date)===perthTodayIsoRefresh()).length} (${perthTodayIsoRefresh()})`);
@@ -6735,7 +7859,35 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
     console.log(`PUBLISHED Perth-today tracked fixtures: ${JSON.stringify(
       todayTrackedResults.map(m=>({
         time:m.time,player1:m.player1,player2:m.player2,
-        result:m.result||'',winner:m.winner||'',status:m.status||''
+        result:m.result||'',winner:m.winner||'',status:m.status||'',
+        resultSource:m.resultSource||''
+      }))
+    )}`);
+
+    const watchedTodayPairs=matches.filter(m=>
+      canonicalTournamentDate(m.date)===perthTodayIsoRefresh() &&
+      (
+        (sameName(m.player1,'Michael Corren')&&sameName(m.player2,'Alan Zaeh')) ||
+        (sameName(m.player2,'Michael Corren')&&sameName(m.player1,'Alan Zaeh')) ||
+        (sameName(m.player1,'Jahangir Khan')&&sameName(m.player2,'Steven May')) ||
+        (sameName(m.player2,'Jahangir Khan')&&sameName(m.player1,'Steven May'))
+      )
+    );
+    console.log(`PUBLISHED watched Aug-31 result rows: ${JSON.stringify(
+      watchedTodayPairs.map(m=>({
+        time:m.time,player1:m.player1,player2:m.player2,
+        result:m.result||'',winner:m.winner||'',status:m.status||'',
+        resultSource:m.resultSource||''
+      }))
+    )}`);
+
+    const finalPublishedOnnie=matches.filter(m=>
+      sameName(m.player1,'Onnie Biswas')||sameName(m.player2,'Onnie Biswas')
+    );
+    console.log(`PUBLISHED Onnie Biswas fixtures: ${JSON.stringify(
+      finalPublishedOnnie.map(m=>({
+        date:m.date,time:m.time,player1:m.player1,player2:m.player2,
+        venue:m.venue||'',court:m.court||'',status:m.status||''
       }))
     )}`);
 
@@ -6817,18 +7969,38 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
   if(metadataCounts.age<Math.floor(canonicalPlayers.length*0.95) || metadataCounts.gender<Math.floor(canonicalPlayers.length*0.95)){
     throw new Error(`Official draw age/gender coverage looks incomplete: age ${metadataCounts.age}/${canonicalPlayers.length}, gender ${metadataCounts.gender}/${canonicalPlayers.length}. Existing published data was left unchanged.`);
   }
-  if(officialSchedule.length<500){
-    throw new Error(`Official TournamentSoftware Matches schedule coverage looks incomplete: ${officialSchedule.length} fixtures. Existing published data was left unchanged.`);
+  if((officialDraw.matches||[]).length<450){
+    throw new Error(
+      `Official TournamentSoftware draw schedule coverage looks incomplete: only ` +
+      `${(officialDraw.matches||[]).length} validated draw fixtures. ` +
+      `Existing published data was left unchanged.`
+    );
   }
 
-  let tournamentMatches=enrichScheduleWithTournamentResults(officialSchedule,officialDraw.matches||[]);
+  let tournamentMatches=buildDrawAuthoritativeTournamentSchedule(
+    [],
+    officialDraw.matches||[],
+    officialSchedule,
+    {preserveHistory:false}
+  );
+
+  tournamentMatches=overlayFreshTournamentResults(
+    tournamentMatches,
+    officialSchedule
+  );
+
+  tournamentMatches=overlayAuthoritativeTournamentResults(
+    tournamentMatches,
+    officialDraw.matches||[],
+    'TournamentSoftware Draw'
+  );
 
   const drawCompleted=(officialDraw.matches||[]).filter(m=>m.result||String(m.status||'').toLowerCase()==='completed');
   const drawScored=(officialDraw.matches||[]).filter(m=>m.result);
 
   console.log(`Authoritative TournamentSoftware draw players: ${canonicalPlayers.length}`);
   console.log(`Player metadata from draws: country ${metadataCounts.country}, flag ${metadataCounts.flag}, age ${metadataCounts.age}, gender ${metadataCounts.gender}`);
-  console.log(`Authoritative TournamentSoftware Matches fixtures: ${officialSchedule.length}`);
+  console.log(`TournamentSoftware Matches overlay rows: ${officialSchedule.length}`);
   console.log(`TournamentSoftware draw/result rows available for score enrichment: ${drawCompleted.length} (${drawScored.length} with game scores).`);
   console.log(`Published schedule fixtures carrying TournamentSoftware scores: ${tournamentMatches.filter(m=>m.result).length}`);
 
@@ -6857,7 +8029,7 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
     refreshedAt:new Date().toISOString(),
     officialPlayerIds:canonicalPlayers.filter(p=>p.officialPlayerId).length,
     existingMatches:existingMatches.length,
-    authoritativeMatchesSchedule:officialSchedule.length,
+    matchesOverlayRows:officialSchedule.length,
     rawDrawFixtureCandidates:officialDraw.rawFixtureCandidates||0,
     tournamentMatchesAfterDrawResults:tournamentMatches.length,
     squashScoresMatches:squashScoresMatches.length,
@@ -6875,8 +8047,11 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
 
 
   // Schedule/player safety is based on the official TournamentSoftware draw hierarchy.
-  if(officialSchedule.length<500){
-    throw new Error(`Official draw hierarchy returned only ${officialSchedule.length} fixtures; existing published data was left unchanged.`);
+  if(tournamentMatches.length<450){
+    throw new Error(
+      `Official draw hierarchy produced only ${tournamentMatches.length} authoritative fixtures; ` +
+      `existing published data was left unchanged.`
+    );
   }
   if(officialDraw.failed>Math.max(3,Math.floor(officialDraw.drawLinks*0.20))){
     throw new Error(`Too many official draw pages failed (${officialDraw.failed}/${officialDraw.drawLinks}); existing published data was left unchanged.`);
@@ -6896,7 +8071,7 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
     console.warn(`SquashLevels enrichment skipped: ${e.message}`);
     console.warn('Continuing with TournamentSoftware/Vic Park publish and preserving previously stored SquashLevels values.');
   }
-  const normalizedCanonicalPlayers=canonicalPlayers.map(normalizePlayerIdentityRecord);
+  const normalizedCanonicalPlayers=repairDuplicateSquashLevelsIdentity(canonicalPlayers.map(normalizePlayerIdentityRecord));
   const next={...existing,refreshedAt:new Date().toISOString(),players:normalizedCanonicalPlayers,matches};
   delete next.trackedNames;
 

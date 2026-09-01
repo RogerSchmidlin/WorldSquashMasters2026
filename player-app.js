@@ -1,3 +1,21 @@
+
+function removeTournamentSoftwareFooter(){
+  document.querySelectorAll('footer').forEach(footer=>{
+    const text=String(footer.textContent||'');
+    const hasTsLink=[...footer.querySelectorAll('a[href]')].some(a=>
+      /tournamentsoftware\.com/i.test(String(a.href||''))
+    );
+    if(hasTsLink||/TournamentSoftware/i.test(text)){
+      footer.remove();
+    }
+  });
+}
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',removeTournamentSoftwareFooter,{once:true});
+}else{
+  removeTournamentSoftwareFooter();
+}
+
 const qs=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
 function loadPlayerScript(src){return new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=src;s.onload=resolve;s.onerror=()=>reject(new Error(`Could not load ${src}`));document.head.appendChild(s);});}
 
@@ -177,10 +195,10 @@ function ssSeparateScore(container,p1,p2){
 }
 function ssVenue(text){
   const s=String(text||'').replace(/\s+/g,' ').trim();
-  for(const v of ['Squashworld Mirrabooka','Belmont Saints Squash Centre','Karrinyup Shopping Centre','Marmion Squash Club']){
+  for(const v of ['Squashworld Mirrabooka','Belmont Squash Centre','Karrinyup Shopping Centre']){
     if(s.toLowerCase().includes(v.toLowerCase()))return v;
   }
-  const m=s.match(/\b(?:Mirrabooka|Belmont|Karrinyup|Marmion)\b[^|]{0,80}/i);
+  const m=s.match(/\b(?:Mirrabooka|Belmont|Karrinyup)\b[^|]{0,80}/i);
   return m?m[0].trim():'';
 }
 
@@ -487,25 +505,30 @@ function cleanMatchMeta(v){
   if((s.match(/\b[A-Z][A-Za-z'-]+\s+[A-Z][A-Za-z'-]+\b/g)||[]).length>2)return '';
   return s;
 }
-function canonicalVenue(v){
-  const s=String(v||'').replace(/\s+/g,' ').trim();
-  if(/\bKarrinyup\b/i.test(s))return 'Karrinyup Shopping Centre';
-  if(/\bMirrabooka\b/i.test(s))return 'Squashworld Mirrabooka';
-  if(/\bBelmont\b/i.test(s))return 'Belmont Saints Squash Centre';
-  return '';
-}
-function normMatch(m){const raw=flatText(m.rawText||m.text||m.description||m);let p1=m.player1||m.playerOne||m.homePlayer||m.home||m.participant1||m.team1||m.entry1||'',p2=m.player2||m.playerTwo||m.awayPlayer||m.away||m.participant2||m.team2||m.entry2||'';const gn=v=>typeof v==='object'&&v?(v.name||v.displayName||v.fullName||v.title||v.label||''):String(v||'');p1=gn(p1);p2=gn(p2);if(!p1||!p2){const f=namesFromRecord(m);if(!p1)p1=f[0]||'';if(!p2)p2=f.find(n=>!sameName(n,p1))||f[1]||''}let venue=m.venue||m.venueName||m.location||m.locationName||m.site||m.facility||'',court=m.court||m.courtName||m.resource||m.resourceName||m.field||m.fieldName||'';if(typeof venue==='object')venue=venue.name||venue.title||venue.label||'';if(typeof court==='object')court=court.name||court.title||court.label||'';venue=canonicalVenue(venue)||canonicalVenue(raw);if(!court){const cm=raw.match(/(?:court(?:Name)?["':\s]*|\b)(AGC|SC\s*\d+|Court\s*\d+|[A-Z]{2,5}\s*\d+)\b/i);if(cm)court=cm[1]}return {...m,date:canonicalDate(m.date||m.matchDate||m.startDate||m.start||m.datetime||m.dateTime||m.scheduledDate),time:m.time||m.matchTime||m.startTime||m.scheduledTime||'',event:cleanMatchMeta(m.event||m.eventName||m.draw||m.category||m.disciplineName||''),round:cleanMatchMeta(m.round||m.roundName||''),player1:p1,player2:p2,venue,court,rawText:''}}
+function normMatch(m){const raw=flatText(m.rawText||m.text||m.description||m);let p1=m.player1||m.playerOne||m.homePlayer||m.home||m.participant1||m.team1||m.entry1||'',p2=m.player2||m.playerTwo||m.awayPlayer||m.away||m.participant2||m.team2||m.entry2||'';const gn=v=>typeof v==='object'&&v?(v.name||v.displayName||v.fullName||v.title||v.label||''):String(v||'');p1=gn(p1);p2=gn(p2);if(!p1||!p2){const f=namesFromRecord(m);if(!p1)p1=f[0]||'';if(!p2)p2=f.find(n=>!sameName(n,p1))||f[1]||''}let venue=m.venue||m.venueName||m.location||m.locationName||m.site||m.facility||'',court=m.court||m.courtName||m.resource||m.resourceName||m.field||m.fieldName||'';if(typeof venue==='object')venue=venue.name||venue.title||venue.label||'';if(typeof court==='object')court=court.name||court.title||court.label||'';if(!venue){if(/Karrinyup/i.test(raw))venue='Karrinyup Shopping Centre';else if(/Mirrabooka/i.test(raw))venue='Squashworld Mirrabooka'}if(!court){const cm=raw.match(/(?:court(?:Name)?["':\s]*|\b)(AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i);if(cm)court=cm[1]}return {...m,date:canonicalDate(m.date||m.matchDate||m.startDate||m.start||m.datetime||m.dateTime||m.scheduledDate),time:m.time||m.matchTime||m.startTime||m.scheduledTime||'',event:cleanMatchMeta(m.event||m.eventName||m.draw||m.category||m.disciplineName||''),round:cleanMatchMeta(m.round||m.roundName||''),player1:p1,player2:p2,venue,court,rawText:''}}
 data.matches=(data.matches||[]).map(normMatch);
 const tournamentBaseMatches=data.matches.map(m=>({...m}));
 const params=new URLSearchParams(location.search);
 const requestedId=params.get('id')||'';
 const requested=params.get('name')||'';
-const p=(requestedId?data.players.find(x=>String(x.officialPlayerId||'')===String(requestedId)):null)||data.players.find(x=>sameName(x.name,requested));
+const requestedById=requestedId
+  ? data.players.find(x=>String(x.officialPlayerId||'')===String(requestedId))
+  : null;
+const requestedByName=data.players.filter(x=>sameName(x.name,requested));
+const p=requestedById||(requestedByName.length===1?requestedByName[0]:null);
 const name=p?.name||requested;
 const officialPlayerId=p?.officialPlayerId||requestedId;
 const sameDisplayedNamePlayers=data.players.filter(x=>sameName(x.name,name));
 const duplicateDisplayedName=sameDisplayedNamePlayers.length>1;
-const playerPageUrl=(n,id='')=>{const px=(id?data.players.find(x=>String(x.officialPlayerId||'')===String(id)):null)||data.players.find(x=>sameName(x.name,n));const q=new URLSearchParams();if(px?.officialPlayerId)q.set('id',px.officialPlayerId);q.set('name',px?.name||n||'');return `player.html?${q.toString()}`;};
+const playerPageUrl=(n,id='')=>{
+  const byId=id?data.players.find(x=>String(x.officialPlayerId||'')===String(id)):null;
+  const same=data.players.filter(x=>sameName(x.name,n));
+  const px=(byId&&sameName(byId.name,n))?byId:(same.length===1?same[0]:null);
+  const q=new URLSearchParams();
+  if(px?.officialPlayerId)q.set('id',px.officialPlayerId);
+  q.set('name',px?.name||n||'');
+  return `player.html?${q.toString()}`;
+};
 const flagImg=(x,cls='inline-flag')=>x?.flagCode?`<img class="${cls}" src="https://flagcdn.com/w160/${x.flagCode}.png" alt="${esc(x.country)} flag">`:'<span class="flag-fallback">🌐</span>';
 const squashMetric=v=>{const n=Number(String(v??'').replace(/,/g,''));return Number.isFinite(n)&&n>0?n.toLocaleString('en-AU'):esc(v)};
 const rankBadge=x=>{
@@ -547,7 +570,49 @@ const opp=m=>{
   }
   return namesFromRecord(m).find(n=>!sameName(n,name))||'';
 };
-const pb=n=>data.players.find(x=>sameName(x.name,n));
+function matchContextAgeGenderPlayer(m){
+  const raw=String(m?.event||m?.eventName||m?.draw||m?.category||'');
+  const age=(raw.match(/\b(35|40|45|50|55|60|65|70|75|80|85)\+?\b/)||[])[1]||'';
+  const gender=/women/i.test(raw)?'women':(/\bmen/i.test(raw)?'men':'');
+  return {age,gender};
+}
+function playerGenderKeyPlayer(v){
+  const s=String(v||'').toLowerCase();
+  if(/female|women|woman|\bf\b/.test(s))return 'women';
+  if(/male|men|man|\bm\b/.test(s))return 'men';
+  return '';
+}
+function playerForDetailMatchSide(m,side){
+  const n=side===2?m?.player2:m?.player1;
+  const id=side===2?m?.player2Id:m?.player1Id;
+
+  if(id){
+    const byId=data.players.find(x=>String(x.officialPlayerId||'')===String(id));
+    if(byId&&sameName(byId.name,n))return byId;
+  }
+
+  const candidates=data.players.filter(x=>sameName(x.name,n));
+  if(candidates.length===1)return candidates[0];
+  if(candidates.length<=1)return candidates[0]||null;
+
+  const ctx=matchContextAgeGenderPlayer(m);
+  let pool=candidates;
+
+  if(ctx.age){
+    const ageMatches=pool.filter(x=>{
+      const a=(String(x.ageGroup??'').match(/\b(35|40|45|50|55|60|65|70|75|80|85)\b/)||[])[1]||'';
+      return a===ctx.age;
+    });
+    if(ageMatches.length)pool=ageMatches;
+  }
+
+  if(ctx.gender){
+    const genderMatches=pool.filter(x=>playerGenderKeyPlayer(x.gender)===ctx.gender);
+    if(genderMatches.length)pool=genderMatches;
+  }
+
+  return pool.length===1?pool[0]:null;
+}
 const LIVE_MATCH_WINDOW_MINUTES=90;
 
 function perthNowParts(){
@@ -580,6 +645,19 @@ function currentMatch(m){
   if(start===null)return false;
   const now=perthNowMinuteValue();
   return now>=start&&now<start+LIVE_MATCH_WINDOW_MINUTES;
+}
+
+function canShowPublishedResult(m){
+  const d=canonicalDate(m?.date||'');
+  const parts=new Intl.DateTimeFormat('en-CA',{
+    timeZone:'Australia/Perth',year:'numeric',month:'2-digit',day:'2-digit'
+  }).formatToParts(new Date());
+  const get=t=>parts.find(x=>x.type===t)?.value||'';
+  const today=`${get('year')}-${get('month')}-${get('day')}`;
+  const status=String(m?.status||'').toLowerCase();
+  if(status==='live')return true;
+  if(d&&d>today)return false;
+  return status==='completed'||status==='played'||!!m?.result||!!m?.winner;
 }
 
 const past=m=>{
@@ -697,13 +775,24 @@ function stripPlayerLocationDate(v){
   return s;
 }
 function playerActualCourt(m){
+  const normalizeCourt=value=>{
+    let s=String(value||'').replace(/\s+/g,' ').trim();
+    if(!s)return '';
+
+    // Only official court formats are valid. Generic tokens such as
+    // "of 32" / "of 16" are round text, never a court.
+    if(/^SC\s*\d+$/i.test(s))return s.replace(/\s+/g,'').toUpperCase();
+    if(/^AGC(?:\s*\d+)?$/i.test(s))return s.replace(/\s+/g,'').toUpperCase();
+    if(/^Court\s*\d+$/i.test(s))return s.replace(/\s+/g,' ').trim();
+    return '';
+  };
+
+  const current=normalizeCourt(stripPlayerLocationDate(m?.court));
+  if(current)return current;
+
   const raw=String(m?.rawText||'');
   const explicit=(raw.match(/\b(AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i)||[])[1]||'';
-  const coded=(raw.match(/\b([A-Z]{2,5}\s*\d+)\b/)||[])[1]||'';
-  if(explicit||coded)return String(explicit||coded).replace(/\s+/g,' ').trim();
-  const current=stripPlayerLocationDate(m?.court);
-  if(/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?:day)?\s*\d{1,2}$/i.test(current))return '';
-  return current;
+  return normalizeCourt(explicit);
 }
 const venuePlace=m=>{
   const venue=stripPlayerLocationDate(m?.venue);
@@ -712,9 +801,15 @@ const venuePlace=m=>{
 };
 
 function playerMatchRow(m){
-  const p1=pb(m.player1),p2=pb(m.player2);
-  const p1Current=(officialPlayerId&&String(m.player1Id||'')===String(officialPlayerId))||(!duplicateDisplayedName&&sameName(m.player1,name));
-  const p2Current=(officialPlayerId&&String(m.player2Id||'')===String(officialPlayerId))||(!duplicateDisplayedName&&sameName(m.player2,name));
+  const p1=playerForDetailMatchSide(m,1),p2=playerForDetailMatchSide(m,2);
+  const p1Current=!!(
+    officialPlayerId&&p1?.officialPlayerId&&
+    String(p1.officialPlayerId)===String(officialPlayerId)
+  )||(!duplicateDisplayedName&&sameName(m.player1,name));
+  const p2Current=!!(
+    officialPlayerId&&p2?.officialPlayerId&&
+    String(p2.officialPlayerId)===String(officialPlayerId)
+  )||(!duplicateDisplayedName&&sameName(m.player2,name));
   const outcome=past(m)?matchOutcomeForCurrentPlayer(m):'';
   const place=venuePlace(m);
   const live=currentMatch(m);
@@ -739,7 +834,7 @@ function playerMatchRow(m){
       </div>
 
       <div class="vic-fixture-line">
-        <a class="${p1Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">
+        <a class="${p1Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,p1?.officialPlayerId||m.player1Id)}">
           <span class="fixture-player-desktop">
             ${flagImg(p1)}
             <span class="vic-player-name-wrap">
@@ -760,7 +855,7 @@ function playerMatchRow(m){
 
         <span class="vic-vs">vs</span>
 
-        <a class="${p2Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,m.player2Id)}">
+        <a class="${p2Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,p2?.officialPlayerId||m.player2Id)}">
           <span class="fixture-player-desktop">
             ${flagImg(p2)}
             <span class="vic-player-name-wrap">
@@ -793,11 +888,46 @@ function playerMatchRow(m){
     <div class="vic-location" title="${esc(place)}">${venueBadge(m)}<span>${esc(place)}</span></div>
   </article>`;
 }
-function groupedMatches(ms){
+
+function perthTodayPlayerIso(){
+  const parts=new Intl.DateTimeFormat('en-CA',{
+    timeZone:'Australia/Perth',
+    year:'numeric',month:'2-digit',day:'2-digit'
+  }).formatToParts(new Date());
+  const get=t=>parts.find(x=>x.type===t)?.value||'';
+  return `${get('year')}-${get('month')}-${get('day')}`;
+}
+
+function playerMatchDateKey(m){
+  return canonicalDate(m?.date||'');
+}
+
+function groupedMatches(ms,{history=false}={}){
   if(!ms.length)return '<div class="schedule-empty">No matches currently published.</div>';
+
   const groups={};
-  ms.forEach(m=>{const d=m.date||'TBD';(groups[d]??=[]).push(m)});
-  return Object.entries(groups).map(([d,rows])=>`<div class="vic-day-heading"><span>${fmt(d).day}</span><strong>${fmt(d).long}</strong></div>${rows.map(playerMatchRow).join('')}`).join('');
+  ms.forEach(m=>{
+    const d=m.date||'TBD';
+    (groups[d]??=[]).push(m);
+  });
+
+  // Same ordering as Vic Park / Fav:
+  // - current/upcoming dates earliest first
+  // - History dates newest first
+  // - within EVERY day, earliest match first
+  const dates=Object.keys(groups).sort((a,b)=>
+    history
+      ? String(b).localeCompare(String(a))
+      : String(a).localeCompare(String(b))
+  );
+
+  return dates.map(d=>{
+    const rows=groups[d].sort((a,b)=>
+      String(a.time||'').localeCompare(String(b.time||''))
+    );
+
+    return `<div class="vic-day-heading"><span>${fmt(d).day}</span><strong>${fmt(d).long}</strong></div>${rows.map(playerMatchRow).join('')}`;
+  }).join('');
 }
 
 if(!p){
@@ -806,9 +936,59 @@ if(!p){
 }else{
   function renderPlayerLiveView(){
   const ms=dedupePlayerDetailMatches(data.matches.filter(m=>has(m,name))).sort((a,b)=>`${a.date||''} ${a.time||''}`.localeCompare(`${b.date||''} ${b.time||''}`));
-  qs('#playerHeader').innerHTML=`<div class="player-detail-card"><div class="player-detail-id">${flagImg(p,'tracked-flag')}<div><div class="eyebrow">${esc(p.country)} · ${esc(p.gender)} ${p.ageGroup}+</div><div class="player-name-line"><div class="player-name-stack player-detail-name-stack"><h1>${esc(p.name)}</h1>${squashBadges(p)}</div>${p.squashLevelsUrl?`<a class="squashlevels-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer">SquashLevels</a>`:''}${playerFavoriteButton(p.name)}</div></div></div><div class="player-detail-actions"><div class="status-chip">${ms.filter(m=>!past(m)).length} UPCOMING</div></div></div>`;
-  const up=ms.filter(m=>!past(m)).sort((a,b)=>`${a.date||''} ${a.time||''}`.localeCompare(`${b.date||''} ${b.time||''}`)),done=ms.filter(past).sort((a,b)=>`${b.date||''} ${b.time||''}`.localeCompare(`${a.date||''} ${a.time||''}`));
-  qs('#playerSchedule').innerHTML=`${up.length?`<div class="schedule-group upcoming-games-group"><div class="player-schedule-section-title"><span>Upcoming Matches</span><small>${up.length}</small></div>${groupedMatches(up)}</div>`:''}${done.length?`<div class="schedule-group past-games-group"><div class="player-schedule-section-title match-history-title"><span>Match History</span><small>${done.length} completed</small></div>${groupedMatches(done)}</div>`:''}${!up.length&&!done.length?'<div class="schedule-empty">No matches currently published.</div>':''}`;
+  qs('#playerHeader').innerHTML=`<div class="player-detail-card"><div class="player-detail-id">${flagImg(p,'tracked-flag')}<div><div class="eyebrow">${esc(p.country)} · ${esc(p.gender)} ${p.ageGroup}+</div><div class="player-name-line"><div class="player-name-stack player-detail-name-stack"><h1>${esc(p.name)}</h1>${squashBadges(p)}</div>${p.squashLevelsUrl?`<a class="squashlevels-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer">SquashLevels</a>`:''}${playerFavoriteButton(p.name)}</div></div></div><div class="player-detail-actions"><div class="status-chip">${ms.filter(m=>{const d=playerMatchDateKey(m);return d&&d>=perthTodayPlayerIso()}).length} CURRENT</div></div></div>`;
+  const today=perthTodayPlayerIso();
+
+  // Player-detail grouping is intentionally DATE based:
+  // - Current Matches = today + every future date
+  // - History = yesterday and earlier
+  // Result/status does NOT move a future-dated match into History.
+  const up=ms
+    .filter(m=>{
+      const d=playerMatchDateKey(m);
+      return d&&d>=today;
+    })
+    .sort((a,b)=>{
+      const da=playerMatchDateKey(a),db=playerMatchDateKey(b);
+      const dateCmp=String(da).localeCompare(String(db));
+      if(dateCmp)return dateCmp;
+      return String(a.time||'').localeCompare(String(b.time||''));
+    });
+
+  const done=ms
+    .filter(m=>{
+      const d=playerMatchDateKey(m);
+      return d&&d<today;
+    })
+    .sort((a,b)=>{
+      const da=playerMatchDateKey(a),db=playerMatchDateKey(b);
+      const dateCmp=String(db).localeCompare(String(da));
+      if(dateCmp)return dateCmp;
+      return String(a.time||'').localeCompare(String(b.time||''));
+    });
+
+  qs('#playerSchedule').innerHTML=
+    `${up.length
+      ? `<div class="schedule-group upcoming-games-group">
+          <div class="player-schedule-section-title">
+            <span>Current Matches</span>
+            <small>${up.length}</small>
+          </div>
+          ${groupedMatches(up)}
+        </div>`
+      : ''}` +
+    `${done.length
+      ? `<div class="schedule-group past-games-group">
+          <div class="player-schedule-section-title match-history-title">
+            <span>History</span>
+            <small>${done.length}</small>
+          </div>
+          ${groupedMatches(done,{history:true})}
+        </div>`
+      : ''}` +
+    `${!up.length&&!done.length
+      ? '<div class="schedule-empty">No matches currently published.</div>'
+      : ''}`;
   const favBtn=qs('#playerFavoriteButton');if(favBtn)favBtn.addEventListener('click',()=>{const on=toggleFavoritePlayer(p.name);favBtn.classList.toggle('is-favorite',on);favBtn.setAttribute('aria-pressed',on?'true':'false');favBtn.querySelector('span[aria-hidden="true"]').textContent=on?'★':'☆';favBtn.querySelector('.favorite-player-btn-text').textContent=on?'Faved':'Fav';});
 
   }

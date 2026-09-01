@@ -1,3 +1,21 @@
+
+function removeTournamentSoftwareFooter(){
+  document.querySelectorAll('footer').forEach(footer=>{
+    const text=String(footer.textContent||'');
+    const hasTsLink=[...footer.querySelectorAll('a[href]')].some(a=>
+      /tournamentsoftware\.com/i.test(String(a.href||''))
+    );
+    if(hasTsLink||/TournamentSoftware/i.test(text)){
+      footer.remove();
+    }
+  });
+}
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',removeTournamentSoftwareFooter,{once:true});
+}else{
+  removeTournamentSoftwareFooter();
+}
+
 const data = {
   ...(window.TOURNAMENT_SUMMARY||{}),
   players:[],
@@ -50,7 +68,11 @@ async function ensurePlayersData(){
     const legacy=await ensureLegacyData();
     data.players=legacy?.players||[];
   }
-  rebuildPlayerNeedles();playersReady=true;
+  rebuildPlayerNeedles();
+  playerIdentityIndexSourceCount=-1;
+  cachedPlayerLevelRank=null;
+  cachedPlayerLevelRankCount=-1;
+  playersReady=true;
 }
 
 function normalizeSelfMatchAsBye(m){
@@ -94,6 +116,7 @@ async function ensureVicParkData(){
 
   if(pack&&Array.isArray(pack.players)&&Array.isArray(pack.matches)&&pack.matches.length){
     vicParkPlayers=pack.players;
+    playerIdentityIndexVicCount=-1;
     vicParkMatches=pack.matches.map(normaliseMatch).map(normalizeSelfMatchAsBye);
     window.__vicParkBaseMatches=vicParkMatches.map(m=>({...m}));
   }else{
@@ -197,10 +220,10 @@ function ssSeparateScore(container,p1,p2){
 }
 function ssVenue(text){
   const s=String(text||'').replace(/\s+/g,' ').trim();
-  for(const v of ['Squashworld Mirrabooka','Belmont Saints Squash Centre','Karrinyup Shopping Centre','Marmion Squash Club']){
+  for(const v of ['Squashworld Mirrabooka','Belmont Saints Squash Centre','Karrinyup Shopping Centre']){
     if(s.toLowerCase().includes(v.toLowerCase()))return v;
   }
-  const m=s.match(/\b(?:Mirrabooka|Belmont|Karrinyup|Marmion)\b[^|]{0,80}/i);
+  const m=s.match(/\b(?:Mirrabooka|Belmont|Karrinyup)\b[^|]{0,80}/i);
   return m?m[0].trim():'';
 }
 
@@ -484,7 +507,7 @@ function deriveVenueCourt(m,raw){
   if(court.length>40)court='';
 
   if(!court){
-    const cm=String(raw||'').match(/\b(AGC|SC\s*\d+|Court\s*\d+|[A-Z]{2,5}\s*\d+)\b/i);
+    const cm=String(raw||'').match(/\b(AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i);
     if(cm)court=cm[1].replace(/\s+/g,' ').trim();
   }
 
@@ -521,9 +544,125 @@ const nameKey=s=>{
   return v.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim().split(/\s+/).filter(Boolean).sort().join(' ');
 };
 const sameName=(a,b)=>!!a&&!!b&&(norm(a)===norm(b)||nameKey(a)===nameKey(b));
-const playerByName=name=>data.players.find(p=>sameName(p.name,name))||vicParkPlayers.find(p=>sameName(p.name,name));
-const playerById=id=>id?(data.players.find(p=>String(p.officialPlayerId||'')===String(id))||vicParkPlayers.find(p=>String(p.officialPlayerId||'')===String(id))):null;
-const playerPageUrl=(name,id='')=>{const byId=playerById(id);const p=(byId&&sameName(byId.name,name)?byId:null)||playerByName(name);const q=new URLSearchParams();if(p?.officialPlayerId)q.set('id',p.officialPlayerId);q.set('name',p?.name||name||'');return `player.html?${q.toString()}`;};
+let playerIdentityIndexSourceCount=-1;
+let playerIdentityIndexVicCount=-1;
+let playerIdentityById=new Map();
+let playerIdentityByNameKey=new Map();
+
+function ensurePlayerIdentityIndexes(){
+  const dataCount=(data.players||[]).length;
+  const vicCount=(vicParkPlayers||[]).length;
+
+  if(
+    playerIdentityIndexSourceCount===dataCount &&
+    playerIdentityIndexVicCount===vicCount
+  )return;
+
+  playerIdentityById=new Map();
+  playerIdentityByNameKey=new Map();
+
+  const all=[...(data.players||[]),...(vicParkPlayers||[])];
+  const seenObjects=new Set();
+
+  for(const p of all){
+    if(!p||seenObjects.has(p))continue;
+    seenObjects.add(p);
+
+    const id=String(p.officialPlayerId||'');
+    if(id&&!playerIdentityById.has(id))playerIdentityById.set(id,p);
+
+    const k=nameKey(p.name);
+    if(!k)continue;
+    if(!playerIdentityByNameKey.has(k))playerIdentityByNameKey.set(k,[]);
+
+    const bucket=playerIdentityByNameKey.get(k);
+    const identityKey=id||`${k}|${p.ageGroup||''}|${p.gender||''}`;
+    if(!bucket.some(x=>(String(x.officialPlayerId||'')||`${nameKey(x.name)}|${x.ageGroup||''}|${x.gender||''}`)===identityKey)){
+      bucket.push(p);
+    }
+  }
+
+  playerIdentityIndexSourceCount=dataCount;
+  playerIdentityIndexVicCount=vicCount;
+}
+
+function playersForName(name){
+  ensurePlayerIdentityIndexes();
+  return playerIdentityByNameKey.get(nameKey(name))||[];
+}
+
+const playerByName=name=>{
+  const matches=playersForName(name);
+  return matches.length===1?matches[0]:null;
+};
+
+const playerById=id=>{
+  if(!id)return null;
+  ensurePlayerIdentityIndexes();
+  return playerIdentityById.get(String(id))||null;
+};
+
+function matchContextAgeGender(m){
+  const raw=String(m?.event||m?.eventName||m?.draw||m?.category||'');
+  const age=(raw.match(/\b(35|40|45|50|55|60|65|70|75|80|85)\+?\b/)||[])[1]||'';
+  const gender=/women/i.test(raw)?'women':(/\bmen/i.test(raw)?'men':'');
+  return {age,gender};
+}
+
+function playerGenderKey(v){
+  const s=String(v||'').toLowerCase();
+  if(/female|women|woman|\bf\b/.test(s))return 'women';
+  if(/male|men|man|\bm\b/.test(s))return 'men';
+  return '';
+}
+
+function playerForMatchSide(m,side){
+  const name=side===2?m?.player2:m?.player1;
+  const id=side===2?m?.player2Id:m?.player1Id;
+
+  const byId=playerById(id);
+  if(byId&&sameName(byId.name,name))return byId;
+
+  const candidates=playersForName(name);
+  if(candidates.length===1)return candidates[0];
+
+  if(candidates.length>1){
+    const ctx=matchContextAgeGender(m);
+    let pool=candidates;
+
+    if(ctx.age){
+      const ageMatches=pool.filter(p=>String(p.ageGroup??'').match(/\d{2}/)?.[0]===ctx.age);
+      if(ageMatches.length)pool=ageMatches;
+    }
+
+    if(ctx.gender){
+      const genderMatches=pool.filter(p=>playerGenderKey(p.gender)===ctx.gender);
+      if(genderMatches.length)pool=genderMatches;
+    }
+
+    if(pool.length===1)return pool[0];
+  }
+
+  // Only use name-only fallback when the displayed name is unique.
+  return candidates.length===1?candidates[0]:null;
+}
+
+const playerPageUrl=(name,id='')=>{
+  const byId=playerById(id);
+  const sameNamePlayers=playersForName(name);
+
+  let p=null;
+  if(byId&&sameName(byId.name,name)){
+    p=byId;
+  }else if(sameNamePlayers.length===1){
+    p=sameNamePlayers[0];
+  }
+
+  const q=new URLSearchParams();
+  if(p?.officialPlayerId)q.set('id',p.officialPlayerId);
+  q.set('name',p?.name||name||'');
+  return `player.html?${q.toString()}`;
+};
 const flagUrl=p=>p?.flagCode?`https://flagcdn.com/w80/${p.flagCode}.png`:'';
 const flagImg=(p,cls='inline-flag')=>p?.flagCode?`<img class="${cls}" src="${flagUrl(p)}" alt="${p.country||''} flag">`:'<span class="flag-fallback">🌐</span>';
 const flagForName=name=>flagImg(playerByName(name));
@@ -579,6 +718,24 @@ function isMatchCurrent(m){
   return now>=start&&now<start+LIVE_MATCH_WINDOW_MINUTES;
 }
 
+
+function canShowPublishedResult(m){
+  const d=canonicalDate(m?.date||'');
+  const today=(()=>{
+    const p=new Intl.DateTimeFormat('en-CA',{
+      timeZone:'Australia/Perth',year:'numeric',month:'2-digit',day:'2-digit'
+    }).formatToParts(new Date());
+    const get=t=>p.find(x=>x.type===t)?.value||'';
+    return `${get('year')}-${get('month')}-${get('day')}`;
+  })();
+
+  const status=String(m?.status||'').toLowerCase();
+  if(status==='live')return true;
+  if(d&&d>today)return false;
+
+  return status==='completed'||status==='played'||!!m?.result||!!m?.winner;
+}
+
 const isPast=m=>{
   const status=String(m?.status||'').toLowerCase();
   if(status==='completed'||status==='played')return true;
@@ -589,9 +746,29 @@ const isPast=m=>{
 const matchHas=(m,name)=>{const p=playerByName(name);return !!(p?.officialPlayerId&&(String(m.player1Id||'')===String(p.officialPlayerId)||String(m.player2Id||'')===String(p.officialPlayerId)))||sameName(m.player1,name)||sameName(m.player2,name);};
 const opponentFor=(m,name)=>sameName(m.player1,name)?m.player2:m.player1;
 const FAVORITES_STORAGE_KEY='wsm2026FavouritePlayers';
-function getFavoriteNames(){try{const r=JSON.parse(localStorage.getItem(FAVORITES_STORAGE_KEY)||'[]');return Array.isArray(r)?r.filter(x=>typeof x==='string'&&x.trim()).map(x=>x.trim()):[]}catch{return []}}
-function saveFavoriteNames(names){const out=[];for(const n of names||[])if(n&&!out.some(x=>sameName(x,n)))out.push(n);try{localStorage.setItem(FAVORITES_STORAGE_KEY,JSON.stringify(out))}catch{}return out}
-function isFavoritePlayer(n){return getFavoriteNames().some(x=>sameName(x,n))}
+let favoriteNamesCache=null;
+function getFavoriteNames(){
+  if(favoriteNamesCache)return favoriteNamesCache.slice();
+  try{
+    const r=JSON.parse(localStorage.getItem(FAVORITES_STORAGE_KEY)||'[]');
+    favoriteNamesCache=Array.isArray(r)
+      ? r.filter(x=>typeof x==='string'&&x.trim()).map(x=>x.trim())
+      : [];
+  }catch{
+    favoriteNamesCache=[];
+  }
+  return favoriteNamesCache.slice();
+}
+function saveFavoriteNames(names){
+  const out=[];
+  for(const n of names||[])if(n&&!out.some(x=>sameName(x,n)))out.push(n);
+  favoriteNamesCache=out.slice();
+  try{localStorage.setItem(FAVORITES_STORAGE_KEY,JSON.stringify(out))}catch{}
+  return out;
+}
+function isFavoritePlayer(n){
+  return getFavoriteNames().some(x=>sameName(x,n));
+}
 function favoriteButton(n,cls=''){const on=isFavoritePlayer(n);return `<button type="button" class="favorite-player-btn ${on?'is-favorite':''} ${cls}" data-favourite-player="${esc(n)}" aria-pressed="${on?'true':'false'}" title="${on?'Remove from':'Add to'} Fav Players"><span aria-hidden="true">${on?'★':'☆'}</span><span class="favorite-player-btn-text">${on?'Faved':'Fav'}</span></button>`}
 function toggleFavoritePlayer(n){const r=getFavoriteNames(),i=r.findIndex(x=>sameName(x,n));if(i>=0)r.splice(i,1);else r.push(n);saveFavoriteNames(r);return i<0}
 function refreshFavoriteButtons(){qsa('[data-favourite-player]').forEach(btn=>{const on=isFavoritePlayer(btn.dataset.favouritePlayer||'');btn.classList.toggle('is-favorite',on);btn.setAttribute('aria-pressed',on?'true':'false');btn.title=`${on?'Remove from':'Add to'} Fav Players`;const s=btn.querySelector('span[aria-hidden="true"]');if(s)s.textContent=on?'★':'☆';const t=btn.querySelector('.favorite-player-btn-text');if(t)t.textContent=on?'Faved':'Fav';})}
@@ -634,21 +811,46 @@ function playerListAge(p){
   return /\+$/.test(raw)?raw:`${raw}+`;
 }
 
+let cachedPlayerLevelRank=null;
+let cachedPlayerLevelRankCount=-1;
+
+function playerLevelRankMap(){
+  const count=(data.players||[]).length;
+  if(cachedPlayerLevelRank&&cachedPlayerLevelRankCount===count)return cachedPlayerLevelRank;
+
+  const numeric=v=>{
+    const raw=String(v??'').trim();
+    if(!raw||!/[0-9]/.test(raw))return null;
+    const n=Number(raw.replace(/,/g,'').replace(/[^0-9.-]/g,''));
+    return Number.isFinite(n)?n:null;
+  };
+  const compareText=(a,b)=>String(a||'').localeCompare(
+    String(b||''),undefined,{sensitivity:'base',numeric:true}
+  );
+
+  const rank=new Map();
+  data.players.slice().sort((a,b)=>{
+    const ar=numeric(a.squashLevelsLevel),br=numeric(b.squashLevelsLevel);
+    if(ar==null&&br==null)return compareText(a.name,b.name);
+    if(ar==null)return 1;
+    if(br==null)return -1;
+    const c=br-ar;
+    return c===0?compareText(a.name,b.name):c;
+  }).forEach((p,index)=>rank.set(p,index+1));
+
+  cachedPlayerLevelRank=rank;
+  cachedPlayerLevelRankCount=count;
+  return rank;
+}
+
 function renderPlayers(){
   const term=norm(qs('#playerSearch').value), country=qs('#countryFilter').value, gender=qs('#genderFilter').value, age=qs('#ageFilter').value;
   const sortBy=qs('#playerSort')?.value||'name', sortOrder=qs('#playerSortOrder')?.value||'asc';
   const numeric=v=>{const raw=String(v??'').trim();if(!raw||!/[0-9]/.test(raw))return null;const n=Number(raw.replace(/,/g,'').replace(/[^0-9.-]/g,''));return Number.isFinite(n)?n:null};
   const compareText=(a,b)=>String(a||'').localeCompare(String(b||''),undefined,{sensitivity:'base',numeric:true});
 
-  // Level rank is calculated from the COMPLETE player list, not the filtered rows.
-  // This means a player's number stays fixed while searching/filtering.
-  const levelRank=new Map();
-  data.players.slice().sort((a,b)=>{
-    const ar=numeric(a.squashLevelsLevel), br=numeric(b.squashLevelsLevel);
-    if(ar==null&&br==null)return compareText(a.name,b.name);
-    if(ar==null)return 1;if(br==null)return -1;
-    const c=br-ar;return c===0?compareText(a.name,b.name):c;
-  }).forEach((p,index)=>levelRank.set(p,index+1));
+  // Level rank is fixed against the complete player list and cached.
+  const levelRank=playerLevelRankMap();
 
   const rows=data.players
     .filter(p=>(!term||norm(p.name).includes(term))&&(country==='all'||p.country===country)&&(gender==='all'||p.gender===gender)&&(age==='all'||String(p.ageGroup)===age))
@@ -668,22 +870,31 @@ function renderPlayers(){
     });
   qs('#playerCount').textContent=rows.length;
   qsa('.country-chip').forEach(ch=>ch.classList.toggle('active',ch.dataset.country===country));
-  qs('#playerGrid').innerHTML=rows.map(p=>`<div class="player-card">
+  qs('#playerGrid').innerHTML=rows.map(p=>{
+    const profileUrl=playerPageUrl(p.name,p.officialPlayerId);
+    const displayName=playerListDisplayName(p.name);
+    const displayAge=playerListAge(p);
+    const metrics=squashBadges(p);
+    const fav=favoriteButton(p.name,'favorite-list-btn');
+    const rankPrefix=sortBy==='level'?`${levelRank.get(p)} - `:'';
+
+    return `<div class="player-card">
     <div class="player-card-desktop-layout">
-      <a class="player-card-flag-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><div class="flag-avatar">${flagImg(p,'flag-img')}</div></a>
-      <div class="player-card-copy"><div class="player-card-name-line"><div class="player-name-stack"><div class="player-name-meta-line"><a class="player-card-name-link" href="${playerPageUrl(p.name,p.officialPlayerId)}"><b>${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(playerListDisplayName(p.name))}</b></a><small class="player-inline-meta">${esc(p.country)}${playerListAge(p)?` · ${esc(playerListAge(p))}`:''}</small></div><div class="player-level-line">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(playerListDisplayName(p.name))} on SquashLevels">SquashLevels</a>`:''}${favoriteButton(p.name,'favorite-list-btn')}</div></div></div></div>
+      <a class="player-card-flag-link" href="${profileUrl}"><div class="flag-avatar">${flagImg(p,'flag-img')}</div></a>
+      <div class="player-card-copy"><div class="player-card-name-line"><div class="player-name-stack"><div class="player-name-meta-line"><a class="player-card-name-link" href="${profileUrl}"><b>${rankPrefix}${esc(displayName)}</b></a><small class="player-inline-meta">${esc(p.country)}${displayAge?` · ${esc(displayAge)}`:''}</small></div><div class="player-level-line">${metrics}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(displayName)} on SquashLevels">SquashLevels</a>`:''}${fav}</div></div></div></div>
     </div>
     <div class="mobile-player-layout">
-      <a class="mobile-player-name" href="${playerPageUrl(p.name,p.officialPlayerId)}">${sortBy==='level'?`${levelRank.get(p)} - `:''}${esc(playerListDisplayName(p.name))}</a>
+      <a class="mobile-player-name" href="${profileUrl}">${rankPrefix}${esc(displayName)}</a>
       <div class="mobile-player-info">
-        <a class="mobile-player-flag" href="${playerPageUrl(p.name,p.officialPlayerId)}">${flagImg(p,'flag-img')}</a>
+        <a class="mobile-player-flag" href="${profileUrl}">${flagImg(p,'flag-img')}</a>
         <div class="mobile-player-details">
-          <div class="mobile-player-country">${esc(p.country||'')}${playerListAge(p)?` · ${esc(playerListAge(p))}`:''}</div>
-          <div class="mobile-player-metrics">${squashBadges(p)}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(playerListDisplayName(p.name))} on SquashLevels">SquashLevels</a>`:''}${favoriteButton(p.name,'favorite-list-btn')}</div>
+          <div class="mobile-player-country">${esc(p.country||'')}${displayAge?` · ${esc(displayAge)}`:''}</div>
+          <div class="mobile-player-metrics">${metrics}${p.squashLevelsUrl?`<a class="squashlevels-btn squashlevels-list-btn" href="${esc(p.squashLevelsUrl)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(displayName)} on SquashLevels">SquashLevels</a>`:''}${fav}</div>
         </div>
       </div>
     </div>
-  </div>`).join('');
+  </div>`;
+  }).join('');
 }
 function summaryCountries(){
   if(Array.isArray(data.countries)&&data.countries.length)return data.countries;
@@ -784,8 +995,8 @@ function cleanVenuePlace(m){
 }
 
 function matchCard(m){
-  const p1=playerByName(m.player1), p2=playerByName(m.player2);
-  return `<article class="match-card"><div class="match-time">${esc(displayTime24(m.time))}</div><div class="event-badge">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div><div class="fixture"><div class="player-side">${flagImg(p1)}<a class="match-player-link" href="${playerPageUrl(m.player1,m.player1Id)}"><span class="player-name-stack"><b>${esc(m.player1||'TBD')}</b>${squashBadges(p1)}</span></a></div><div class="vs">VS</div><div class="player-side right"><a class="match-player-link" href="${playerPageUrl(m.player2,m.player2Id)}"><span class="player-name-stack"><b>${esc(m.player2||'TBD')}</b>${squashBadges(p2)}</span></a>${flagImg(p2)}</div></div><div class="court-tag">${venueBadge(m)}<span>${esc(cleanVenuePlace(m))}</span></div></article>`;
+  const p1=playerForMatchSide(m,1), p2=playerForMatchSide(m,2);
+  return `<article class="match-card"><div class="match-time">${esc(displayTime24(m.time))}</div><div class="event-badge">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div><div class="fixture"><div class="player-side">${flagImg(p1)}<a class="match-player-link" href="${playerPageUrl(m.player1,p1?.officialPlayerId||m.player1Id)}"><span class="player-name-stack"><b>${esc(m.player1||'TBD')}</b>${squashBadges(p1)}</span></a></div><div class="vs">VS</div><div class="player-side right"><a class="match-player-link" href="${playerPageUrl(m.player2,p2?.officialPlayerId||m.player2Id)}"><span class="player-name-stack"><b>${esc(m.player2||'TBD')}</b>${squashBadges(p2)}</span></a>${flagImg(p2)}</div></div><div class="court-tag">${venueBadge(m)}<span>${esc(cleanVenuePlace(m))}</span></div></article>`;
 }
 
 function scoreWinnerInfo(m){
@@ -812,6 +1023,7 @@ function scoreWinnerName(m){
 }
 
 function matchScoreSummary(m){
+  if(!canShowPublishedResult(m))return '';
   if(!m?.result&&!m?.winner)return '';
   const winner=scoreWinnerInfo(m);
 
@@ -854,7 +1066,7 @@ function matchAgeGroupLabel(m,p1=null,p2=null){
 }
 
 function compactScheduleRow(m,trackedNames=[]){
-  const p1=playerByName(m.player1), p2=playerByName(m.player2);
+  const p1=playerForMatchSide(m,1), p2=playerForMatchSide(m,2);
   const ageGroupLabel=matchAgeGroupLabel(m,p1,p2);
   const p1Tracked=trackedNames.some(n=>sameName(n,m.player1));
   const p2Tracked=trackedNames.some(n=>sameName(n,m.player2));

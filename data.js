@@ -12,7 +12,7 @@ window.TOURNAMENT_DATA = {
   "countries": [
     {
       "country": "Australia",
-      "count": 473,
+      "count": 470,
       "flagCode": "au",
       "iso3": "AUS"
     },
@@ -30,7 +30,7 @@ window.TOURNAMENT_DATA = {
     },
     {
       "country": "England",
-      "count": 39,
+      "count": 38,
       "flagCode": "gb-eng",
       "iso3": "GBR"
     },
@@ -357,8 +357,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "513767",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=513767",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:49.849Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:46:55.171Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:34:55.366Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:35:20.035Z",
@@ -405,7 +405,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "25092",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=25092",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:28:09.021Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:46:59.532Z",
       "squashLevelsMatchedCountry": "IND",
       "squashLevelsMatchedAge": 35,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:28:05.992Z",
@@ -499,7 +499,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "",
       "drawCountryCode": "SLE",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:34:44.474Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:28.477Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -515,18 +515,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "NZL",
       "flagCode": "nz",
       "drawCountryCode": "NZL",
-      "squashLevelsPlayerId": "50847",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=50847",
+      "squashLevelsPlayerId": "379186",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=379186",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:25:58.009Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:47:04.463Z",
+      "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 45,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:31:38.333Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:35:22.389Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 9786,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": ""
+      "squashLevelsClubLocation": "Riverton, Southland, NZL"
     },
     {
       "name": "Adrian Richmond",
@@ -564,7 +564,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "eg",
       "drawCountryCode": "EGY",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:34:44.934Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:28.993Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -727,8 +727,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "218568",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218568",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:32:21.837Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:47:19.083Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:39:01.084Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:35:25.601Z",
@@ -943,7 +943,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "438602",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438602",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:32:40.339Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:47:29.233Z",
       "squashLevelsMatchedCountry": "USA",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:32:37.327Z",
@@ -1276,10 +1276,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "531318",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=531318",
+      "squashLevelsPlayerId": "228930",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228930",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:45:30.808Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:47:57.478Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:45:24.698Z",
@@ -1287,7 +1287,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsWorldRank": 63534,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "South Australia, AUS"
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "name": "Andre Stahl",
@@ -1300,18 +1300,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "DEU",
       "flagCode": "de",
       "drawCountryCode": "GER",
-      "squashLevelsPlayerId": "302728",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=302728",
+      "squashLevelsPlayerId": "542494",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=542494",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:29:14.781Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:48:01.349Z",
+      "squashLevelsMatchedCountry": "GER",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:35:27.389Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:35:35.892Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 3190,
+      "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": ""
+      "squashLevelsClubLocation": "1. Squash Club Dresden, Sachsen, GER"
     },
     {
       "name": "Andrea Williams",
@@ -1399,8 +1399,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "235840",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235840",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:33.488Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:48:10.323Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:34:34.727Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:35:37.815Z",
@@ -1447,8 +1447,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "148805",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=148805",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:24:40.046Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:48:26.956Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 40,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:30:11.762Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:35:39.182Z",
@@ -1471,7 +1471,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "238771",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238771",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:43:22.293Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:48:31.836Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:43:19.237Z",
@@ -1519,8 +1519,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "50585",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=50585",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:30:35.902Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:48:38.785Z",
+      "squashLevelsMatchedCountry": "CAN",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:37:00.454Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:35:40.477Z",
@@ -1543,8 +1543,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "227795",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=227795",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:33:19.480Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:48:48.524Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:40:06.345Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:35:41.951Z",
@@ -1591,7 +1591,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "231737",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=231737",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:45:41.066Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:49:01.323Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:45:31.873Z",
@@ -1615,7 +1615,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "234303",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234303",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:47:03.340Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:49:14.846Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:46:51.245Z",
@@ -1661,7 +1661,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:34:45.361Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:29.606Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -1797,10 +1797,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "547260",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=547260",
+      "squashLevelsPlayerId": "232897",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232897",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:47:25.168Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:49:32.250Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:47:22.161Z",
@@ -1808,7 +1808,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": ""
+      "squashLevelsClubLocation": "Dapto Squash Club, New South Wales, AUS"
     },
     {
       "name": "Anthony Gerald Naughton",
@@ -1822,7 +1822,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "drawCountryCode": "NZL",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:34:53.690Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:30.141Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -1911,7 +1911,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "drawCountryCode": "USA",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:34:54.618Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:31.174Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -2192,7 +2192,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "drawCountryCode": "JPN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:34:55.162Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:31.741Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -2211,8 +2211,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "218687",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218687",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:37:27.402Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:49:48.302Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T05:25:07.219Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:35:51.996Z",
@@ -2283,8 +2283,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "315896",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=315896",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:56.354Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:49:53.148Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:38:32.126Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:35:53.629Z",
@@ -2376,18 +2376,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "349446",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=349446",
+      "squashLevelsPlayerId": "226187",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=226187",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:56.012Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:49:59.613Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 80,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:51:51.455Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:35:55.501Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 3418,
+      "squashLevelsLevel": 870,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Duffield, Derbyshire, ENG"
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "name": "Barry Werth",
@@ -2643,8 +2643,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "222882",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222882",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:37:58.003Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:50:13.173Z",
+      "squashLevelsMatchedCountry": "CAN",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:45:19.298Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:02.071Z",
@@ -2689,7 +2689,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "mx",
       "drawCountryCode": "MEX",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:34:57.706Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:36.508Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -2754,7 +2754,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "drawCountryCode": "NZL",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:34:58.370Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:37.001Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -2773,8 +2773,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "233638",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233638",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:27.955Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:50:20.226Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:34:29.540Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:03.677Z",
@@ -2821,8 +2821,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "219176",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219176",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:57.561Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:50:25.706Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:35:03.893Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:04.522Z",
@@ -2869,8 +2869,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "218536",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218536",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:28:13.250Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:50:30.199Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 35,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:28:10.072Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:05.297Z",
@@ -3035,7 +3035,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:34:59.152Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:37.520Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -3051,10 +3051,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "GBR",
       "flagCode": "gb",
       "drawCountryCode": "GBR",
-      "squashLevelsPlayerId": "90717",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=90717",
+      "squashLevelsPlayerId": "429238",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=429238",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:40:22.242Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:50:40.084Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:48:06.768Z",
@@ -3075,10 +3075,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "364913",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=364913",
+      "squashLevelsPlayerId": "245436",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=245436",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:31:47.977Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:50:45.708Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 45,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:31:43.520Z",
@@ -3123,10 +3123,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "292354",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=292354",
+      "squashLevelsPlayerId": "233614",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233614",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:52:10.873Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:50:52.192Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 75,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:52:07.860Z",
@@ -3134,7 +3134,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Elanora Squash & Fitness Centre, New South Wales, AUS"
+      "squashLevelsClubLocation": "Elanora, New South Wales, AUS"
     },
     {
       "name": "Carlo Zabotto",
@@ -3318,7 +3318,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "438625",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438625",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:31:15.928Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:50:59.186Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:31:13.012Z",
@@ -3388,7 +3388,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "drawCountryCode": "SIN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:00.066Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:38.029Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -3429,7 +3429,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:00.889Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:38.547Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -3544,8 +3544,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "234957",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234957",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:00.845Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:51:19.074Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:37:17.816Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:16.018Z",
@@ -3565,10 +3565,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "GBR",
       "flagCode": "gb-wls",
       "drawCountryCode": "WAL",
-      "squashLevelsPlayerId": "66721",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=66721",
+      "squashLevelsPlayerId": "465796",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=465796",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:50:36.205Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:51:30.627Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:50:27.151Z",
@@ -3592,7 +3592,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "299885",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=299885",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:34:27.783Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:51:44.850Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:34:15.704Z",
@@ -3664,8 +3664,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "228027",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228027",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:29:08.685Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:51:50.969Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:35:16.834Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:18.219Z",
@@ -3733,10 +3733,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "SWE",
       "flagCode": "se",
       "drawCountryCode": "SWE",
-      "squashLevelsPlayerId": "522499",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=522499",
+      "squashLevelsPlayerId": "234882",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234882",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:37:09.154Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:51:56.697Z",
       "squashLevelsMatchedCountry": "SWE",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:37:06.143Z",
@@ -3744,7 +3744,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 3624,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Uppsala Squash Club, Uppsala län, SWE"
+      "squashLevelsClubLocation": "Uppsala Squash Club, Östsvenska Squashförbundet, SWE"
     },
     {
       "name": "Christian Bröcker",
@@ -3880,8 +3880,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "170799",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=170799",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:06.612Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:52:02.682Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:34:04.806Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:21.565Z",
@@ -4022,7 +4022,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "drawCountryCode": "SIN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:04.564Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:39.058Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -4230,10 +4230,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "GBR",
       "flagCode": "gb-eng",
       "drawCountryCode": "ENG",
-      "squashLevelsPlayerId": "136619",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=136619",
+      "squashLevelsPlayerId": "141415",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=141415",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:32:16.167Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:52:15.191Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:38:57.605Z",
@@ -4281,8 +4281,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "430967",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=430967",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:41:07.139Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:52:20.003Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:48:58.709Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:27.567Z",
@@ -4305,7 +4305,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "231393",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=231393",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:40:17.076Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:52:28.561Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:47:55.953Z",
@@ -4350,18 +4350,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "462468",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=462468",
+      "squashLevelsPlayerId": "435168",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=435168",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:44:45.243Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:52:43.244Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:44:33.253Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:28.663Z",
       "squashLevelsWorldRank": 40213,
       "squashLevelsLevel": 706,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Hook, Berks, ENG"
+      "squashLevelsClubLocation": "Queensland, AUS"
     },
     {
       "name": "Connie Kay Chevrette",
@@ -4446,18 +4446,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "NZL",
       "flagCode": "nz",
       "drawCountryCode": "NZL",
-      "squashLevelsPlayerId": "547133",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=547133",
+      "squashLevelsPlayerId": "109789",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=109789",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:27:19.980Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:52:48.502Z",
+      "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:33:05.058Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:30.119Z",
       "squashLevelsWorldRank": 2054,
       "squashLevelsLevel": 8204,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Queensland, AUS"
+      "squashLevelsClubLocation": "Wellington, NZL"
     },
     {
       "name": "Courtney Diggins",
@@ -4566,16 +4566,16 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "435568",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=435568",
+      "squashLevelsPlayerId": "193451",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=193451",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:44:20.542Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:53:00.429Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:44:17.481Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:31.859Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 2600,
+      "squashLevelsLevel": 2470,
       "squashLevelsLevelProvisional": false,
       "squashLevelsClubLocation": "Manor, Derbyshire, ENG"
     },
@@ -4735,7 +4735,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "drawCountryCode": "RSA",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:05.059Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:39.566Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -4778,8 +4778,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "356247",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=356247",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:22:23.491Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:53:11.212Z",
+      "squashLevelsMatchedCountry": "GUY",
       "squashLevelsMatchedAge": 35,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:27:47.094Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:34.947Z",
@@ -4802,7 +4802,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "229476",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=229476",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-31T10:35:21.752Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:53:24.770Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 35,
       "squashLevelsSearchCheckedAt": "2026-08-31T10:35:05.615Z",
@@ -4826,7 +4826,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "222345",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222345",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:29:44.414Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:53:36.775Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 40,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:29:32.519Z",
@@ -4874,7 +4874,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "439023",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=439023",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:01.501Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:53:42.767Z",
       "squashLevelsMatchedCountry": "USA",
       "squashLevelsMatchedAge": 75,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:50:57.010Z",
@@ -4994,8 +4994,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "218747",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218747",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:27:26.150Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:53:55.396Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:33:10.356Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:38.065Z",
@@ -5159,18 +5159,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "82069",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=82069",
+      "squashLevelsPlayerId": "472089",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=472089",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:26:18.317Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:54:04.929Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 45,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:31:56.495Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:40.929Z",
       "squashLevelsWorldRank": 12755,
       "squashLevelsLevel": 2659,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Hunts County, Cambs, ENG"
+      "squashLevelsClubLocation": "Dural, New South Wales, AUS"
     },
     {
       "name": "David Christy",
@@ -5208,7 +5208,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "",
       "drawCountryCode": "SLE",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:24.061Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:44.953Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -5251,8 +5251,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "442848",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=442848",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:27:35.425Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:54:17.965Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:33:16.939Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:42.199Z",
@@ -5272,18 +5272,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "315417",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=315417",
+      "squashLevelsPlayerId": "172535",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=172535",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:29:31.850Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:54:39.217Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:29:20.009Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:42.496Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 871,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Aberdeen Sports Village, Aberdeen City, SCO"
+      "squashLevelsClubLocation": "Dgen, New South Wales, AUS"
     },
     {
       "name": "David Jeffery",
@@ -5344,18 +5344,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "548050",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=548050",
+      "squashLevelsPlayerId": "472080",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=472080",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:35:14.980Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:54:48.571Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:35:09.109Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:51.417Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": null,
+      "squashLevelsLevel": 938,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": ""
+      "squashLevelsClubLocation": "Dural, New South Wales, AUS"
     },
     {
       "name": "David Murphy",
@@ -5441,7 +5441,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "fr",
       "drawCountryCode": "FRA",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:24.766Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:45.932Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -5532,8 +5532,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "222389",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222389",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:37:31.611Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:55:10.107Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T05:25:16.367Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:36:46.495Z",
@@ -5602,7 +5602,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "drawCountryCode": "RSA",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:25.169Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:46.432Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -5691,7 +5691,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:25.572Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:46.935Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -5852,7 +5852,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:26.044Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:47.437Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -6037,7 +6037,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "",
       "drawCountryCode": "SLE",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:27.067Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:48.460Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -6344,7 +6344,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "113055",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=113055",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:38:33.084Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:55:34.192Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:46:00.392Z",
@@ -6390,7 +6390,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:28.836Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:50.490Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -6481,8 +6481,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "221875",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=221875",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:41:28.214Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:55:40.676Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:49:21.496Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:02.180Z",
@@ -6599,7 +6599,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:29.301Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:51.222Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -6714,8 +6714,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "38524",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38524",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:39:01.313Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:55:49.376Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:46:33.239Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:05.776Z",
@@ -6810,7 +6810,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "510422",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=510422",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:48:31.894Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:55:57.049Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:48:27.346Z",
@@ -6938,7 +6938,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:30.552Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:52.417Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -7092,7 +7092,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "za",
       "drawCountryCode": "RSA",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:32.706Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:55.119Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -7181,7 +7181,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "be",
       "drawCountryCode": "BEL",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:33.186Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:55.708Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -7416,7 +7416,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "239893",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=239893",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:48:45.305Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:56:16.347Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:48:42.271Z",
@@ -7461,16 +7461,16 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "541300",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=541300",
+      "squashLevelsPlayerId": "319135",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=319135",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:50:03.418Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:56:20.847Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:50:00.469Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:23.649Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": null,
+      "squashLevelsLevel": 448,
       "squashLevelsLevelProvisional": false,
       "squashLevelsClubLocation": ""
     },
@@ -7584,7 +7584,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "374133",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=374133",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:05.210Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:56:30.613Z",
       "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 75,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:51:02.131Z",
@@ -7653,18 +7653,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "130951",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=130951",
+      "squashLevelsPlayerId": "218921",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218921",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:25:00.412Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:56:37.416Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:30:33.071Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:18.695Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 948,
+      "squashLevelsLevel": 783,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "OWs, Northants, ENG"
+      "squashLevelsClubLocation": "Tournament, Western Australia, AUS"
     },
     {
       "name": "Grahame Roberts",
@@ -7704,8 +7704,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "376561",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=376561",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:04.971Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:56:41.750Z",
+      "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:37:30.926Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:19.491Z",
@@ -7752,8 +7752,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "232342",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232342",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:46:28.786Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:56:47.659Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:46:24.398Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:20.392Z",
@@ -7798,7 +7798,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:33.593Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:56.311Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -7814,8 +7814,8 @@ window.TOURNAMENT_DATA = {
       "iso3": "NZL",
       "flagCode": "nz",
       "drawCountryCode": "NZL",
-      "squashLevelsPlayerId": "6118",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=6118",
+      "squashLevelsPlayerId": "376826",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=376826",
       "squashLevelsIdentityVerified": true,
       "squashLevelsIdentityVerifiedAt": "2026-08-28T03:27:40.385Z",
       "squashLevelsMatchedCountry": null,
@@ -7825,7 +7825,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 4042,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": ""
+      "squashLevelsClubLocation": "Rangiora, Canterbury, NZL"
     },
     {
       "name": "Greg Murphy",
@@ -7887,7 +7887,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:34.307Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:57.879Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -8002,8 +8002,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "5443",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=5443",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:53.013Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:57:04.921Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:34:58.853Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:25.317Z",
@@ -8050,8 +8050,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "235483",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235483",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:24:56.048Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:57:10.090Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 40,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:30:29.616Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:25.878Z",
@@ -8168,7 +8168,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "hk",
       "drawCountryCode": "HKG",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:35.098Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:58.913Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -8352,16 +8352,16 @@ window.TOURNAMENT_DATA = {
       "iso3": "JPN",
       "flagCode": "jp",
       "drawCountryCode": "JPN",
-      "squashLevelsPlayerId": "438686",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438686",
+      "squashLevelsPlayerId": "537837",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=537837",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:39:52.064Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:57:25.014Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:39:49.143Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:30.581Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 543,
+      "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false,
       "squashLevelsClubLocation": ""
     },
@@ -8377,7 +8377,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "drawCountryCode": "JPN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:35.504Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:14:59.482Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -8490,7 +8490,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "drawCountryCode": "NZL",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:35.913Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:00.006Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -8554,18 +8554,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "NZL",
       "flagCode": "nz",
       "drawCountryCode": "NZL",
-      "squashLevelsPlayerId": "351002",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=351002",
+      "squashLevelsPlayerId": "375762",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=375762",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:40:59.995Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:57:34.545Z",
+      "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:48:50.499Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:32.850Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1108,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "WSRC, Bucks, ENG"
+      "squashLevelsClubLocation": "Richmond, Canterbury, NZL"
     },
     {
       "name": "Ian Douglas",
@@ -8578,18 +8578,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "CAN",
       "flagCode": "ca",
       "drawCountryCode": "CAN",
-      "squashLevelsPlayerId": "331986",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=331986",
+      "squashLevelsPlayerId": "534956",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=534956",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:38:51.116Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:57:44.021Z",
+      "squashLevelsMatchedCountry": "CAN",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:46:15.738Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:33.283Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 946,
+      "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Edmonton, Alberta, CAN"
+      "squashLevelsClubLocation": "Prince George, British Columbia, CAN"
     },
     {
       "name": "Ian Graham",
@@ -8675,7 +8675,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "drawCountryCode": "GER",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:36.328Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:00.513Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -8692,7 +8692,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "drawCountryCode": "PAK",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:36.819Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:01.031Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -8807,8 +8807,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "260256",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=260256",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:24:52.944Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:58:07.822Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 40,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:30:26.098Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:36.667Z",
@@ -8877,7 +8877,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:37.424Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:01.526Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -8896,8 +8896,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "218689",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218689",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:42:19.730Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:58:27.708Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:42:07.918Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:37.436Z",
@@ -8917,10 +8917,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "GBR",
       "flagCode": "gb-eng",
       "drawCountryCode": "ENG",
-      "squashLevelsPlayerId": "426223",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=426223",
+      "squashLevelsPlayerId": "172861",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=172861",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:25:22.030Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:58:31.833Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 45,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:30:57.930Z",
@@ -8989,10 +8989,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "NZL",
       "flagCode": "nz",
       "drawCountryCode": "NZL",
-      "squashLevelsPlayerId": "26736",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26736",
+      "squashLevelsPlayerId": "378502",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=378502",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:12.872Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:58:37.067Z",
       "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:51:09.883Z",
@@ -9000,7 +9000,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1180,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": ""
+      "squashLevelsClubLocation": "North Shore, Auckland, NZL"
     },
     {
       "name": "James Patsiouras",
@@ -9014,7 +9014,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:38.459Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:02.802Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -9030,16 +9030,16 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "38355",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38355",
+      "squashLevelsPlayerId": "169699",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=169699",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:29:47.370Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:58:53.545Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:35:56.128Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:39.300Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 5261,
+      "squashLevelsLevel": 385,
       "squashLevelsLevelProvisional": false,
       "squashLevelsClubLocation": "Herts, USA"
     },
@@ -9057,8 +9057,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "218625",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218625",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:26:24.900Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:58:58.151Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 45,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:32:04.190Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:39.701Z",
@@ -9081,8 +9081,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "218900",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218900",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:43:01.002Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:59:03.378Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:42:58.067Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:40.073Z",
@@ -9129,8 +9129,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "25988",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=25988",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:29:53.926Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:59:09.914Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:36:13.105Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:41.060Z",
@@ -9295,7 +9295,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:39.655Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:04.086Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -9384,7 +9384,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "drawCountryCode": "USA",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:40.054Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:04.583Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -9499,8 +9499,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "283764",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=283764",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:33:12.466Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:59:35.475Z",
+      "squashLevelsMatchedCountry": "SGP",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:39:53.464Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:48.851Z",
@@ -9617,7 +9617,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "es",
       "drawCountryCode": "ESP",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:40.478Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:05.203Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -9634,7 +9634,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "hk",
       "drawCountryCode": "HKG",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:40.887Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:05.804Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -9653,8 +9653,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "210539",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=210539",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:27:14.067Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:59:43.119Z",
+      "squashLevelsMatchedCountry": "CAN",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:32:57.322Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:50.693Z",
@@ -9675,7 +9675,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "hk",
       "drawCountryCode": "HKG",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:41.303Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:06.341Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -9718,8 +9718,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "489476",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=489476",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:34:50.596Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:59:48.481Z",
+      "squashLevelsMatchedCountry": "FRA",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:41:45.748Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:51.444Z",
@@ -9742,8 +9742,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "488804",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=488804",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:45:54.129Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T15:59:52.480Z",
+      "squashLevelsMatchedCountry": "FRA",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:45:51.125Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:37:51.720Z",
@@ -10174,7 +10174,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "436268",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=436268",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:52:19.208Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:00:19.852Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 80,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:52:11.692Z",
@@ -10195,10 +10195,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "HKG",
       "flagCode": "hk",
       "drawCountryCode": "HKG",
-      "squashLevelsPlayerId": "19246",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=19246",
+      "squashLevelsPlayerId": "146791",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=146791",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:25:26.276Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:00:25.087Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:31:02.545Z",
@@ -10220,7 +10220,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "de",
       "drawCountryCode": "GER",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:41.778Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:06.837Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -10263,7 +10263,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "219726",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219726",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:45:58.214Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:00:30.050Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:45:55.174Z",
@@ -10503,8 +10503,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "520083",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=520083",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:44:31.568Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:00:46.988Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:44:21.069Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:03.530Z",
@@ -10644,18 +10644,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "37286",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=37286",
+      "squashLevelsPlayerId": "457702",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=457702",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:24:49.828Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:00:53.445Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 40,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:30:22.635Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:05.707Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 2013,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Stourport, Worcs, ENG"
+      "squashLevelsClubLocation": "Mirrabooka, Western Australia, AUS"
     },
     {
       "name": "Jonathan Simpson",
@@ -10671,8 +10671,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "242809",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=242809",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:34:54.929Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:00:58.783Z",
+      "squashLevelsMatchedCountry": "IRL",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:41:49.235Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:06.087Z",
@@ -10743,7 +10743,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "474998",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=474998",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:30.298Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:01:05.856Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:51:25.821Z",
@@ -10765,7 +10765,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "drawCountryCode": "NZL",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:42.226Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:07.351Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -10782,7 +10782,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "it",
       "drawCountryCode": "ITA",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:43.606Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:09.419Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -10799,7 +10799,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:44.965Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:11.098Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -10912,7 +10912,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "drawCountryCode": "NZL",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:46.303Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:13.046Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -10931,8 +10931,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "226729",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=226729",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:32.763Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:01:22.023Z",
+      "squashLevelsMatchedCountry": "ZAF",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:37:55.345Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:08.877Z",
@@ -11075,7 +11075,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "342622",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=342622",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:35:41.996Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:01:34.922Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:35:33.135Z",
@@ -11121,7 +11121,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "",
       "drawCountryCode": "MRI",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:46.768Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:13.560Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -11138,7 +11138,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "drawCountryCode": "PAK",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:47.307Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:14.118Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -11205,8 +11205,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "238186",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238186",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:41:57.086Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:01:40.048Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:49:53.613Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:12.332Z",
@@ -11397,8 +11397,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "459058",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=459058",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:30:11.080Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:01:55.127Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:36:33.604Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:15.363Z",
@@ -11707,7 +11707,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "drawCountryCode": "NZL",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:47.886Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:14.649Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -11772,7 +11772,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "drawCountryCode": "USA",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:48.419Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:15.132Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -11837,7 +11837,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:49.231Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:16.053Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -11854,7 +11854,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "drawCountryCode": "PAK",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:49.753Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:16.561Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -11943,7 +11943,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "drawCountryCode": "JPN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:50.184Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:17.062Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -11960,7 +11960,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "drawCountryCode": "JPN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:50.625Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:17.571Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -11977,7 +11977,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:51.053Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:18.079Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -12188,7 +12188,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "332873",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=332873",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:33:39.002Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:02:37.824Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:40:26.389Z",
@@ -12210,7 +12210,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "",
       "drawCountryCode": "NCL",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:51.533Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:18.590Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -12395,7 +12395,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:51.953Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:19.089Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -12436,7 +12436,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:52.834Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:20.002Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -12623,7 +12623,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "457191",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=457191",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:45:14.685Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:02:50.513Z",
       "squashLevelsMatchedCountry": "AND",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:45:11.645Z",
@@ -12860,16 +12860,16 @@ window.TOURNAMENT_DATA = {
       "iso3": "EGY",
       "flagCode": "eg",
       "drawCountryCode": "EGY",
-      "squashLevelsPlayerId": "497924",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=497924",
+      "squashLevelsPlayerId": "350882",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=350882",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:28:43.929Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:02:58.380Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 35,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:28:40.990Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:37.385Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 2969,
+      "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false,
       "squashLevelsClubLocation": "Île-de-France, FRA"
     },
@@ -12911,8 +12911,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "374680",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=374680",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:53.333Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:03:06.544Z",
+      "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:38:26.554Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:37.968Z",
@@ -13079,7 +13079,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "421559",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=421559",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:39:28.740Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:03:15.060Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:39:25.795Z",
@@ -13247,8 +13247,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "238318",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238318",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:31:11.876Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:03:23.432Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 45,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:31:08.922Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:43.532Z",
@@ -13319,8 +13319,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "313170",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=313170",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:43.548Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:03:32.775Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:34:45.381Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:44.843Z",
@@ -13415,8 +13415,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "250263",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=250263",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:46:50.122Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:03:38.165Z",
+      "squashLevelsMatchedCountry": "ZAF",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:46:47.139Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:46.873Z",
@@ -13436,18 +13436,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "151419",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=151419",
+      "squashLevelsPlayerId": "229824",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=229824",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:21.901Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:03:47.483Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:37:45.067Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:47.455Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 4163,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Southampton Uni, Hants, ENG"
+      "squashLevelsClubLocation": "Western & Racquetball, Victoria, AUS"
     },
     {
       "name": "Mark Sealy",
@@ -13463,7 +13463,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "26699",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26699",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:37:43.428Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:03:52.606Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:45:04.401Z",
@@ -13604,18 +13604,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "179330",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=179330",
+      "squashLevelsPlayerId": "246260",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=246260",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:41:35.555Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:04:04.368Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:49:25.812Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:51.486Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 2104,
+      "squashLevelsLevel": 703,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Bells Sports, Perth and Kinross, SCO"
+      "squashLevelsClubLocation": "Union Uni & Schools, New South Wales, AUS"
     },
     {
       "name": "Martina Sourada",
@@ -13748,18 +13748,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "438863",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438863",
+      "squashLevelsPlayerId": "496720",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=496720",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:24:30.277Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:04:26.916Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 40,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:29:55.050Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:54.632Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 2267,
+      "squashLevelsLevel": 520,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Coolhurst, Middx, ENG"
+      "squashLevelsClubLocation": "Tasmania, AUS"
     },
     {
       "name": "Matthew Gardner",
@@ -13823,8 +13823,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "242819",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=242819",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:36:05.263Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:04:32.340Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:43:14.616Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:38:56.010Z",
@@ -13893,7 +13893,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:53.315Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:20.550Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -14104,8 +14104,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "149093",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=149093",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:36:24.580Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:04:44.411Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:36:18.698Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:01.958Z",
@@ -14126,7 +14126,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "us",
       "drawCountryCode": "USA",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:53.757Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:21.045Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -14142,18 +14142,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "372855",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=372855",
+      "squashLevelsPlayerId": "38668",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38668",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:48:24.644Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:04:59.492Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:48:12.711Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:02.688Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 1735,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Nelson, Canterbury, NZL"
+      "squashLevelsClubLocation": "Eastside & Parsons TSA, Tasmania, AUS"
     },
     {
       "name": "Michael C S Tan",
@@ -14529,8 +14529,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "284162",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=284162",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:26:49.064Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:05:13.893Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 45,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:32:28.817Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:09.651Z",
@@ -14551,7 +14551,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "drawCountryCode": "JPN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:55.285Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:22.749Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -14688,7 +14688,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "eg",
       "drawCountryCode": "EGY",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:55.691Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:23.384Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -14705,7 +14705,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "eg",
       "drawCountryCode": "EGY",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:56.144Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:23.892Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -14770,7 +14770,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "drawCountryCode": "PAK",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:56.549Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:24.393Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -14787,7 +14787,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "drawCountryCode": "PAK",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:56.957Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:25.007Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -14804,7 +14804,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:57.361Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:25.632Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -14893,7 +14893,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ca",
       "drawCountryCode": "CAN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:57.825Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:26.265Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -14934,7 +14934,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "drawCountryCode": "JPN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:58.267Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:26.904Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -15167,7 +15167,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:58.767Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:27.555Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -15303,10 +15303,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "JPN",
       "flagCode": "jp",
       "drawCountryCode": "JPN",
-      "squashLevelsPlayerId": "26733",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26733",
+      "squashLevelsPlayerId": "537826",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=537826",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:50:44.162Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:05:32.487Z",
       "squashLevelsMatchedCountry": "JPN",
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:50:41.089Z",
@@ -15352,7 +15352,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "drawCountryCode": "PAK",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:59.177Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:28.434Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -15441,7 +15441,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ch",
       "drawCountryCode": "SUI",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:35:59.585Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:29.209Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -15460,8 +15460,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "72542",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=72542",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:23:32.501Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:05:42.614Z",
+      "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 40,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:29:01.255Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:23.642Z",
@@ -15580,8 +15580,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "315266",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=315266",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:40:11.515Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:05:51.503Z",
+      "squashLevelsMatchedCountry": "CAN",
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:47:52.315Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:25.760Z",
@@ -15604,7 +15604,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "438766",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=438766",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:28:49.425Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:05:57.600Z",
       "squashLevelsMatchedCountry": "USA",
       "squashLevelsMatchedAge": 35,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:28:44.940Z",
@@ -15628,8 +15628,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "37055",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=37055",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:28:12.172Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:06:04.870Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:34:10.582Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:26.484Z",
@@ -15748,8 +15748,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "219663",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219663",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:32:38.423Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:06:28.025Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:39:20.518Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:28.439Z",
@@ -15889,16 +15889,16 @@ window.TOURNAMENT_DATA = {
       "iso3": "NZL",
       "flagCode": "nz",
       "drawCountryCode": "NZL",
-      "squashLevelsPlayerId": "6967",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=6967",
+      "squashLevelsPlayerId": "206131",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=206131",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:29:34.188Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:07:07.000Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:35:42.672Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:31.147Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 9665,
+      "squashLevelsLevel": 2777,
       "squashLevelsLevelProvisional": false,
       "squashLevelsClubLocation": "Wigan Squash Club, Lancs, ENG"
     },
@@ -15962,7 +15962,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:36:03.557Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:29.994Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -15981,8 +15981,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "143023",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=143023",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:39:06.458Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:07:12.024Z",
+      "squashLevelsMatchedCountry": "CZE",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:46:39.280Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:32.187Z",
@@ -16077,8 +16077,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "219949",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219949",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:35:09.625Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:07:19.285Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:42:01.902Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:33.779Z",
@@ -16125,8 +16125,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "238180",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238180",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:35:27.036Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:07:25.452Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:42:22.008Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:34.301Z",
@@ -16171,7 +16171,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:36:04.012Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:30.729Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -16238,8 +16238,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "231745",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=231745",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:35:46.930Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:07:39.134Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:42:51.479Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:36.441Z",
@@ -16284,7 +16284,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:36:04.767Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:31.887Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -16543,8 +16543,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "65963",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=65963",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:25:54.978Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:07:49.189Z",
+      "squashLevelsMatchedCountry": "ZAF",
       "squashLevelsMatchedAge": 45,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:31:32.858Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:41.006Z",
@@ -16565,7 +16565,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "drawCountryCode": "ENG",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:36:09.319Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:39.573Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -16630,7 +16630,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "nz",
       "drawCountryCode": "NZL",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:36:11.985Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:15:41.708Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -16800,8 +16800,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:27.325Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
-      "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": ""
+      "squashLevelsLevelProvisional": false
     },
     {
       "name": "Players",
@@ -16824,8 +16823,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:27.325Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
-      "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": ""
+      "squashLevelsLevelProvisional": false
     },
     {
       "name": "Prue O'Neill",
@@ -16863,7 +16861,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:16.889Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:16:47.941Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -16954,8 +16952,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "241238",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=241238",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:29:11.725Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:08:17.860Z",
+      "squashLevelsMatchedCountry": "IND",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:35:22.960Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:50.022Z",
@@ -17026,8 +17024,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "26688",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26688",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:35:40.691Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:08:25.133Z",
+      "squashLevelsMatchedCountry": "ZAF",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:42:46.588Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:39:55.109Z",
@@ -17215,18 +17213,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "431144",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=431144",
+      "squashLevelsPlayerId": "234310",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=234310",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:50:54.588Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:08:37.286Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 75,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:50:44.707Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:02.519Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 293,
+      "squashLevelsLevel": 734,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Thornleigh, New South Wales, AUS"
+      "squashLevelsClubLocation": "WA Virtual, Western Australia, AUS"
     },
     {
       "name": "Richard Chin",
@@ -17384,7 +17382,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "gb-eng",
       "drawCountryCode": "ENG",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:19.673Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:16:56.304Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -17424,18 +17422,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "CAN",
       "flagCode": "ca",
       "drawCountryCode": "CAN",
-      "squashLevelsPlayerId": "219681",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219681",
+      "squashLevelsPlayerId": "341719",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=341719",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:32:54.734Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:09:03.564Z",
+      "squashLevelsMatchedCountry": "CAN",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:32:42.796Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:09.258Z",
       "squashLevelsWorldRank": 16299,
       "squashLevelsLevel": 2198,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Hibiscus Squash & Volleyball Centre, Queensland, AUS"
+      "squashLevelsClubLocation": "British Columbia, CAN"
     },
     {
       "name": "Robert Batten",
@@ -17595,8 +17593,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "38393",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38393",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:43:13.978Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:09:21.439Z",
+      "squashLevelsMatchedCountry": "HKG",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:43:03.699Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:15.999Z",
@@ -17664,10 +17662,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "GBR",
       "flagCode": "gb-eng",
       "drawCountryCode": "ENG",
-      "squashLevelsPlayerId": "26353",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=26353",
+      "squashLevelsPlayerId": "24239",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=24239",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:45.305Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:09:45.073Z",
       "squashLevelsMatchedCountry": "ENG",
       "squashLevelsMatchedAge": 80,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:51:33.276Z",
@@ -17689,7 +17687,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:20.150Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:16:56.868Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -17922,7 +17920,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "drawCountryCode": "JPN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:20.607Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:16:57.376Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -17963,7 +17961,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:21.018Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:16:57.902Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -18052,7 +18050,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "",
       "drawCountryCode": "SLE",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:21.492Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:16:58.407Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -18068,18 +18066,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "35413",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=35413",
+      "squashLevelsPlayerId": "222179",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222179",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:40:05.277Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:09:57.279Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:47:45.635Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:30.539Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 858,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "York Rackets, Yorks, ENG"
+      "squashLevelsClubLocation": "Eastern Goldfields INC, Western Australia, AUS"
     },
     {
       "name": "Sam Henderson",
@@ -18335,8 +18333,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "6119",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=6119",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:30:45.726Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:10:19.665Z",
+      "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:37:11.754Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:34.728Z",
@@ -18407,8 +18405,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "216262",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=216262",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:27:48.422Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:10:25.439Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:33:39.441Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:35.883Z",
@@ -18452,10 +18450,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "526186",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=526186",
+      "squashLevelsPlayerId": "216131",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=216131",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:33:58.818Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:10:37.811Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:33:49.946Z",
@@ -18463,7 +18461,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": ""
+      "squashLevelsClubLocation": "Dgen, New South Wales, AUS"
     },
     {
       "name": "Sean Ryan",
@@ -18479,8 +18477,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "218822",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218822",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:34:34.079Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:10:46.834Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": null,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:41:28.619Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:36.879Z",
@@ -18501,7 +18499,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "drawCountryCode": "SIN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:21.896Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:16:58.971Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -18518,7 +18516,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "",
       "drawCountryCode": "BRA",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:22.311Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:16:59.527Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -18537,8 +18535,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "233568",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=233568",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:23:39.830Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:10:54.951Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 40,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:29:08.924Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:37.193Z",
@@ -18559,7 +18557,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "drawCountryCode": "PAK",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:22.715Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:00.140Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -18696,7 +18694,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "",
       "drawCountryCode": "CHN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:23.118Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:00.785Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -18784,10 +18782,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "NZL",
       "flagCode": "nz",
       "drawCountryCode": "NZL",
-      "squashLevelsPlayerId": "238009",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=238009",
+      "squashLevelsPlayerId": "38432",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38432",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:42.359Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:11:03.651Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:38:14.937Z",
@@ -19075,8 +19073,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "236185",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=236185",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:35:03.351Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:11:19.216Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:41:57.374Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:46.907Z",
@@ -19096,18 +19094,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "377454",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=377454",
+      "squashLevelsPlayerId": "84443",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=84443",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:43:37.493Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:11:34.764Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 60,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:43:25.724Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:47.090Z",
       "squashLevelsWorldRank": 1349,
       "squashLevelsLevel": 10216,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Royal Oak Racquets, Auckland, NZL"
+      "squashLevelsClubLocation": "RACV, Victoria, AUS"
     },
     {
       "name": "Steve Mckenna",
@@ -19123,7 +19121,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "235542",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=235542",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:39:32.772Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:11:39.516Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:39:29.770Z",
@@ -19171,7 +19169,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "219952",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219952",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:29:00.707Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:11:43.814Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 40,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:28:57.677Z",
@@ -19216,18 +19214,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "496276",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=496276",
+      "squashLevelsPlayerId": "219651",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=219651",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:39:14.974Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:11:53.689Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:39:07.526Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:49.479Z",
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 4309,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Nouvelle-Aquitaine, FRA"
+      "squashLevelsClubLocation": "Blue Gum, Western Australia, AUS"
     },
     {
       "name": "Steven Martin",
@@ -19265,7 +19263,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:23.531Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:01.305Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -19282,7 +19280,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:24.671Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:02.615Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -19349,8 +19347,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "307772",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=307772",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:47.849Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:12:10.745Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:38:20.164Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:50.721Z",
@@ -19394,10 +19392,10 @@ window.TOURNAMENT_DATA = {
       "iso3": "AUS",
       "flagCode": "au",
       "drawCountryCode": "AUS",
-      "squashLevelsPlayerId": "232235",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=232235",
+      "squashLevelsPlayerId": "311575",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=311575",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:30:49.558Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:12:18.845Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 40,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:30:45.034Z",
@@ -19405,7 +19403,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsWorldRank": "TBD",
       "squashLevelsLevel": 796,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": "Devonport, Tasmania, AUS"
+      "squashLevelsClubLocation": "Mandurah, Western Australia, AUS"
     },
     {
       "name": "Sue Williams",
@@ -19514,16 +19512,16 @@ window.TOURNAMENT_DATA = {
       "iso3": "CAN",
       "flagCode": "ca",
       "drawCountryCode": "CAN",
-      "squashLevelsPlayerId": "38729",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38729",
+      "squashLevelsPlayerId": "470295",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=470295",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:36:43.546Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:12:25.331Z",
       "squashLevelsMatchedCountry": null,
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:36:40.572Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:54.296Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": 445,
+      "squashLevelsLevel": 843,
       "squashLevelsLevelProvisional": false,
       "squashLevelsClubLocation": ""
     },
@@ -19563,7 +19561,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "drawCountryCode": "PAK",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:25.726Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:03.990Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -19580,7 +19578,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "drawCountryCode": "PAK",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:26.186Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:04.583Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -19597,7 +19595,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "drawCountryCode": "SIN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:26.590Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:05.176Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -19760,8 +19758,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "279022",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=279022",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:41:08.981Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:12:47.199Z",
+      "squashLevelsMatchedCountry": "ZAF",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:40:56.061Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:40:57.574Z",
@@ -19854,7 +19852,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:27.129Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:05.678Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -19936,7 +19934,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "",
       "drawCountryCode": "TPE",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:29.383Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:08.859Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -20051,7 +20049,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "38528",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=38528",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:46:11.568Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:13:00.937Z",
       "squashLevelsMatchedCountry": "USA",
       "squashLevelsMatchedAge": 65,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:46:03.918Z",
@@ -20099,7 +20097,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "218385",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=218385",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:48:35.964Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:13:06.150Z",
       "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:48:32.923Z",
@@ -20171,8 +20169,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "380914",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=380914",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:51:09.373Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:13:11.087Z",
+      "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 75,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:51:06.309Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:41:03.506Z",
@@ -20193,7 +20191,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "drawCountryCode": "PAK",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:29.787Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:09.374Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -20474,7 +20472,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "drawCountryCode": "SIN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:30.193Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:09.886Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -20707,7 +20705,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "sg",
       "drawCountryCode": "SIN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:30.600Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:10.454Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -20916,7 +20914,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:31.107Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:10.946Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -20959,8 +20957,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "228931",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=228931",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:31:10.604Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:13:41.531Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:37:34.524Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:41:15.542Z",
@@ -20983,7 +20981,7 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "374049",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=374049",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:48:41.765Z",
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:13:46.376Z",
       "squashLevelsMatchedCountry": "NZL",
       "squashLevelsMatchedAge": 70,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:48:38.679Z",
@@ -21005,7 +21003,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "drawCountryCode": "PAK",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:31.506Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:11.506Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -21096,8 +21094,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "222704",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=222704",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:22:47.514Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:13:52.410Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 35,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:28:14.835Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:41:16.812Z",
@@ -21142,7 +21140,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "ie",
       "drawCountryCode": "IRL",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:32.013Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:12.152Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -21161,8 +21159,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "227863",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=227863",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T03:34:23.185Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:14:08.489Z",
+      "squashLevelsMatchedCountry": "AUS",
       "squashLevelsMatchedAge": 55,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:41:12.333Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:41:18.077Z",
@@ -21207,7 +21205,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "jp",
       "drawCountryCode": "JPN",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:34.256Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:14.498Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -21248,7 +21246,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "au",
       "drawCountryCode": "AUS",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:34.729Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:14.991Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -21288,18 +21286,18 @@ window.TOURNAMENT_DATA = {
       "iso3": "IND",
       "flagCode": "in",
       "drawCountryCode": "IND",
-      "squashLevelsPlayerId": "126315",
-      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=126315",
+      "squashLevelsPlayerId": "126487",
+      "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=126487",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:31:51.892Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:14:13.785Z",
+      "squashLevelsMatchedCountry": "IND",
       "squashLevelsMatchedAge": 45,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:31:48.939Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:41:28.351Z",
       "squashLevelsWorldRank": "TBD",
-      "squashLevelsLevel": null,
+      "squashLevelsLevel": 6989,
       "squashLevelsLevelProvisional": false,
-      "squashLevelsClubLocation": ""
+      "squashLevelsClubLocation": "Maharashtra, IND"
     },
     {
       "name": "Young Lee",
@@ -21337,7 +21335,7 @@ window.TOURNAMENT_DATA = {
       "flagCode": "pk",
       "drawCountryCode": "PAK",
       "squashLevelsIdentityVerified": false,
-      "squashLevelsSearchCheckedAt": "2026-08-31T10:37:35.159Z",
+      "squashLevelsSearchCheckedAt": "2026-08-31T16:17:15.493Z",
       "squashLevelsWorldRank": null,
       "squashLevelsLevel": null,
       "squashLevelsLevelProvisional": false
@@ -21404,8 +21402,8 @@ window.TOURNAMENT_DATA = {
       "squashLevelsPlayerId": "239695",
       "squashLevelsUrl": "https://app.squashlevels.com/player_detail.php?player=239695",
       "squashLevelsIdentityVerified": true,
-      "squashLevelsIdentityVerifiedAt": "2026-08-28T06:32:36.708Z",
-      "squashLevelsMatchedCountry": null,
+      "squashLevelsIdentityVerifiedAt": "2026-08-31T16:14:27.948Z",
+      "squashLevelsMatchedCountry": "ZAF",
       "squashLevelsMatchedAge": 50,
       "squashLevelsSearchCheckedAt": "2026-08-28T06:32:33.787Z",
       "squashLevelsProfileCheckedAt": "2026-09-01T00:41:21.849Z",
@@ -21433,7 +21431,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:308",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21452,7 +21451,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:612",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21471,7 +21471,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:105",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21490,7 +21491,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:109",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21509,7 +21511,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:414",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21528,7 +21531,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:203",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21547,7 +21551,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:144",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21566,7 +21571,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:722",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21585,7 +21591,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:680",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21604,7 +21611,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:113",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21623,7 +21631,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:937",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21642,7 +21651,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:274",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21661,7 +21671,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:885",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21680,7 +21691,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:424",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21699,7 +21711,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:111",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21718,7 +21731,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:534",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21737,7 +21751,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:262",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21756,7 +21771,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:279",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21775,7 +21791,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:372",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21794,7 +21811,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:445",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21813,7 +21831,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:15",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21832,7 +21851,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:743",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21851,7 +21871,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:907",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21870,7 +21891,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:133",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21889,7 +21911,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:568",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21908,7 +21931,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:107",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21927,7 +21951,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:956",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21946,7 +21971,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:815",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21965,7 +21991,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:712",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -21984,7 +22011,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:346",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22003,7 +22031,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:11",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22022,7 +22051,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:906",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22041,7 +22071,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:767",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22060,7 +22091,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:923",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22079,7 +22111,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:560",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22098,7 +22131,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:425",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22117,7 +22151,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:759",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22136,7 +22171,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:517",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22155,7 +22191,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:896",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22174,7 +22211,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:524",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22193,7 +22231,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:665",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22212,7 +22251,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:539",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22231,7 +22271,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:367",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22250,7 +22291,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:830",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22269,7 +22311,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:730",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22288,7 +22331,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:191",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22307,7 +22351,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:135",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22326,7 +22371,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:282",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22345,7 +22391,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:714",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22364,7 +22411,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:154",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22383,7 +22431,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:334",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22402,7 +22451,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:531",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22421,7 +22471,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:711",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22440,7 +22491,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:245",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22459,7 +22511,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:288",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22478,7 +22531,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:744",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22497,7 +22551,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22516,7 +22571,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:634",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22535,7 +22591,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:810",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22554,7 +22611,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:736",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22573,7 +22631,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:202",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22592,7 +22651,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:780",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22611,7 +22671,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:985",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22630,7 +22691,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:792",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22649,7 +22711,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:532",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22668,7 +22731,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:189",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22687,7 +22751,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:592",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22706,7 +22771,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:196",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22725,7 +22791,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:770",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22744,7 +22811,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:460",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22763,7 +22831,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:860",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22782,7 +22851,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:457",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22801,7 +22871,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:382",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22820,7 +22891,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:605",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22839,7 +22911,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22858,7 +22931,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:362",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22877,7 +22951,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:102",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22896,7 +22971,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:488",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22915,7 +22991,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:685",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22934,7 +23011,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:562",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22953,7 +23031,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:360",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22972,7 +23051,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:884",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -22991,7 +23071,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:151",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23010,7 +23091,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:266",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23029,7 +23111,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:707",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23048,7 +23131,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:221",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23067,7 +23151,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:291",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23086,7 +23171,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:681",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23105,7 +23191,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:147",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23124,7 +23211,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:51",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23143,7 +23231,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:258",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23162,7 +23251,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:499",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23181,7 +23271,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23200,7 +23291,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:900",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23219,7 +23311,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:170",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23238,7 +23331,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:746",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23257,7 +23351,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:142",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23276,7 +23371,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:1",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23295,7 +23391,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:421",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23314,7 +23411,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:94",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23333,7 +23431,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:798",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23352,7 +23451,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:337",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23371,7 +23471,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:190",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23390,7 +23491,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:773",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23409,7 +23511,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:814",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23428,7 +23531,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:168",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23447,7 +23551,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:941",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23466,7 +23571,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:370",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23485,7 +23591,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:42",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23504,7 +23611,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:276",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23523,7 +23631,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:84",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23542,7 +23651,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:496",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23561,7 +23671,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:148",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23580,7 +23691,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:239",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23599,7 +23711,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:511",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23618,7 +23731,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:226",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23637,7 +23751,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:564",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23656,7 +23771,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23675,7 +23791,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:557",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23694,7 +23811,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:574",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23713,7 +23831,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:309",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23732,7 +23851,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:581",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23751,7 +23871,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:903",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23770,7 +23891,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:390",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23789,7 +23911,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:879",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23808,7 +23931,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:779",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23827,7 +23951,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:552",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23846,7 +23971,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:489",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23865,7 +23991,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:195",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23884,7 +24011,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:541",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23903,7 +24031,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:459",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23922,7 +24051,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:64",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23941,7 +24071,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:577",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23960,7 +24091,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:406",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23979,7 +24111,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:368",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -23998,7 +24131,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24017,7 +24151,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:247",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24036,7 +24171,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:104",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24055,7 +24191,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:103",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24074,7 +24211,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:299",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24093,7 +24231,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:215",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24112,7 +24251,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:139",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24131,7 +24271,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:243",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24150,7 +24291,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:313",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24169,7 +24311,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:261",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24188,7 +24331,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:892",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24207,7 +24351,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:599",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24226,7 +24371,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:613",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24245,7 +24391,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:418",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24264,7 +24411,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:910",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24283,7 +24431,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:943",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24302,7 +24451,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:650",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24321,7 +24471,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:675",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24340,7 +24491,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:429",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24359,7 +24511,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:219",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24378,7 +24531,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:333",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24397,7 +24551,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:820",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24416,7 +24571,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:441",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24435,7 +24591,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:62",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24454,7 +24611,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:41",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24473,7 +24631,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:664",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24492,7 +24651,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:817",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24511,7 +24671,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:461",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24530,7 +24691,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:554",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24549,7 +24711,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24568,7 +24731,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:117",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24587,7 +24751,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:895",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24606,7 +24771,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:979",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24625,7 +24791,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:623",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24644,7 +24811,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:795",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24663,7 +24831,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:915",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24682,7 +24851,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:976",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24701,7 +24871,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:827",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24720,7 +24891,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:58",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24739,7 +24911,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:379",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24758,7 +24931,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:666",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24777,7 +24951,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:122",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24796,7 +24971,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:110",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24815,7 +24991,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:501",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24834,7 +25011,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:47",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-30",
@@ -24853,7 +25031,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:931",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -24872,7 +25051,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:977",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -24891,7 +25071,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:460",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -24910,7 +25091,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:343",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -24929,7 +25111,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:67",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -24948,7 +25131,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:706",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -24967,7 +25151,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:50",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -24986,7 +25171,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:286",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25005,7 +25191,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:605",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25024,7 +25211,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:965",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25043,7 +25231,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:81",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25062,7 +25251,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:909",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25081,7 +25271,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:920",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25100,7 +25291,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:432",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25119,7 +25311,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:685",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25138,7 +25331,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:475",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25157,7 +25351,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:279",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25176,7 +25371,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:445",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25195,7 +25391,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:308",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25214,7 +25411,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:743",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25233,7 +25431,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:592",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25252,7 +25451,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:517",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25271,7 +25471,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:524",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25290,7 +25491,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:867",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25309,7 +25511,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:726",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25328,7 +25531,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:51",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25347,7 +25551,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:635",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25366,7 +25571,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:499",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25385,7 +25591,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:513",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25404,7 +25611,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:821",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25423,7 +25631,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:404",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25442,7 +25651,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:746",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25461,7 +25671,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:335",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25480,7 +25691,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:586",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25499,7 +25711,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:981",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25518,7 +25731,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:673",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25537,7 +25751,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:23",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25556,7 +25771,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:389",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25575,7 +25791,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:705",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25594,7 +25811,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:95",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25613,7 +25831,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:196",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25632,7 +25851,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:202",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25651,7 +25871,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:276",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25670,7 +25891,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:792",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25689,7 +25911,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:884",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25708,7 +25931,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:266",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25727,7 +25951,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:313",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25746,7 +25971,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:602",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25765,7 +25991,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:569",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25784,7 +26011,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:84",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25803,7 +26031,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:444",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25822,7 +26051,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:678",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25841,7 +26071,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:74",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25860,7 +26091,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:800",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25879,7 +26111,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:464",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25898,7 +26131,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:816",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25917,7 +26151,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:255",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25936,7 +26171,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:750",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25955,7 +26191,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:411",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25974,7 +26211,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:833",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -25993,7 +26231,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:563",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26012,7 +26251,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:976",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26031,7 +26271,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:549",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26050,7 +26291,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:291",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26069,7 +26311,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:190",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26088,7 +26331,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:379",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26107,7 +26351,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:333",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26126,7 +26371,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:370",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26145,7 +26391,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:390",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26164,7 +26411,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:915",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26183,7 +26431,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:552",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26202,7 +26451,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:595",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26221,7 +26471,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:534",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26240,7 +26491,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:409",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26259,7 +26511,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:671",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26278,7 +26531,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:958",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26297,7 +26551,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:696",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26316,7 +26571,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:484",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26335,7 +26591,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:763",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26354,7 +26611,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:650",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26373,7 +26631,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:260",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26392,7 +26651,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:757",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26411,7 +26671,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:373",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26430,7 +26691,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:156",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26449,7 +26711,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:695",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26468,7 +26731,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:716",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26487,7 +26751,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:20",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26506,7 +26771,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:195",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26525,7 +26791,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:459",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26544,7 +26811,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:89",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26563,7 +26831,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:918",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26582,7 +26851,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:593",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26601,7 +26871,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:447",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26620,7 +26891,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:665",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26639,7 +26911,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:429",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26658,7 +26931,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:458",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26677,7 +26951,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:82",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26696,7 +26971,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:913",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26715,7 +26991,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:90",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26734,7 +27011,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:453",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26753,7 +27031,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:166",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26772,7 +27051,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:797",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26791,7 +27071,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:612",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26810,7 +27091,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:109",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26829,7 +27111,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:414",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26848,7 +27131,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:211",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26867,7 +27151,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:433",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26886,7 +27171,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:925",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26905,7 +27191,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:349",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26924,7 +27211,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:796",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26943,7 +27231,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:328",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26962,7 +27251,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:653",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -26981,7 +27271,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:536",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27000,7 +27291,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:231",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27019,7 +27311,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:856",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27038,7 +27331,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:172",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27057,7 +27351,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:585",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27076,7 +27371,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:68",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27095,7 +27391,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:824",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27114,7 +27411,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:885",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27133,7 +27431,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:111",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27152,7 +27451,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:698",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27171,7 +27471,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:365",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27190,7 +27491,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:956",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27209,7 +27511,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:712",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27228,7 +27531,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:11",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27247,7 +27551,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:975",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27266,7 +27571,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:827",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27285,7 +27591,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:923",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27304,7 +27611,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:317",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27323,7 +27631,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:704",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27342,7 +27651,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:106",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27361,7 +27671,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:931",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27380,7 +27691,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:257",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27399,7 +27711,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:324",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27418,7 +27731,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:236",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27437,7 +27751,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:910",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27456,7 +27771,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:395",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27475,7 +27791,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:12",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27494,7 +27811,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:363",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27513,7 +27831,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:759",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27532,7 +27851,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:191",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27551,7 +27871,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:216",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27570,7 +27891,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:352",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27589,7 +27911,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:136",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27608,7 +27931,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:334",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27627,7 +27951,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:160",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27646,7 +27971,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:820",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27665,7 +27991,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:426",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27684,7 +28011,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:96",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27703,7 +28031,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:971",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27722,7 +28051,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:41",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27741,7 +28071,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:809",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27760,7 +28091,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:664",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27779,7 +28111,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:126",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27798,7 +28131,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:315",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27817,7 +28151,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:546",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27836,7 +28171,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:566",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27855,7 +28191,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:232",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27874,7 +28211,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:44",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27893,7 +28231,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:567",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27912,7 +28251,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:701",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27931,7 +28271,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:948",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27950,7 +28291,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:710",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27969,7 +28311,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:917",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -27988,7 +28331,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:416",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28007,7 +28351,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:130",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28026,7 +28371,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:880",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28045,7 +28391,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:640",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28064,7 +28411,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:226",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28083,7 +28431,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:385",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28102,7 +28451,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:691",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28121,7 +28471,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:883",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28140,7 +28491,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:115",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28159,7 +28511,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:374",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28178,7 +28531,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:600",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28197,7 +28551,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:53",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28216,7 +28571,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:745",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28235,7 +28591,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:738",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28254,7 +28611,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:180",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28273,7 +28631,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:881",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28292,7 +28651,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:503",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28311,7 +28671,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:762",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28330,7 +28691,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:189",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28349,7 +28711,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:638",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28368,7 +28731,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:194",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28387,7 +28751,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:353",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28406,7 +28771,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:376",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28425,7 +28791,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:686",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28444,7 +28811,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:861",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28463,7 +28831,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:782",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28482,7 +28851,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:309",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28501,7 +28871,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:187",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28520,7 +28891,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:581",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28539,7 +28911,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:740",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28558,7 +28931,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:371",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28577,7 +28951,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:848",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28596,7 +28971,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:754",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28615,7 +28991,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:330",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28634,7 +29011,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:979",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28653,7 +29031,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:471",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28672,7 +29051,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:149",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28691,7 +29071,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:952",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28710,7 +29091,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:168",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28729,7 +29111,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:843",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28748,7 +29131,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:406",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28767,7 +29151,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:97",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28786,7 +29171,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:535",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28805,7 +29191,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:642",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28824,7 +29211,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:947",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28843,7 +29231,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:775",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28862,7 +29251,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:104",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28881,7 +29271,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:30",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28900,7 +29291,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:431",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28919,7 +29311,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:273",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28938,7 +29331,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:215",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28957,7 +29351,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:863",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28976,7 +29371,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:670",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -28995,7 +29391,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:986",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -29014,7 +29411,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:865",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -29033,7 +29431,8 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:153",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -29052,26 +29451,41 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:498",
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-01",
       "time": "10:00",
-      "event": "",
+      "event": "Women's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +35 | Kasey Bonato | Blanca Nelly Bonifacio Diaz | Stephanie Chambers | Samantha Foyle | Jodie Hodgkins | Tracey Kimble | Hei Ting Leung | Catherine Mcqueen | Joan Naarstig | Zoe Petrovansky | Heather Pilley | Gill Van Vlaanderen | Matches | Played | Tuesday, 01 September 2026 | Thursday, 03 September 2026",
       "round": "",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "court": "AGC",
       "result": "Walkover",
       "status": "completed",
-      "winner": "Blanca Nelly Bonifacio Diaz",
-      "winnerId": "q:player:5",
       "player1": "Blanca Nelly Bonifacio Diaz",
       "player1Id": "q:player:5",
       "player2": "Jodie Hodgkins",
       "player2Id": "q:player:522",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=2",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "winner": "Blanca Nelly Bonifacio Diaz",
+      "winnerId": "q:player:5",
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-01",
@@ -29086,11 +29500,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:414",
       "player2": "Marco Valpiani",
       "player2Id": "q:player:211",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6003",
+      "treeInputSlot2": "6004",
+      "treeOutputSlot": "5002",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29105,11 +29528,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:668",
       "player2": "Steve Abbott",
       "player2Id": "q:player:925",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29124,11 +29556,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:234",
       "player2": "Stephen Mcloughlin",
       "player2Id": "q:player:824",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29143,11 +29584,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:439",
       "player2": "Matthew Joy",
       "player2Id": "q:player:424",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6009",
+      "treeInputSlot2": "6010",
+      "treeOutputSlot": "5005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29162,11 +29612,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:469",
       "player2": "Dushyant Jamwal",
       "player2Id": "q:player:365",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6011",
+      "treeInputSlot2": "6012",
+      "treeOutputSlot": "5006",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29181,11 +29640,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:222",
       "player2": "Victor Koh",
       "player2Id": "q:player:712",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29200,11 +29668,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:346",
       "player2": "Craig Van Der Wath",
       "player2Id": "q:player:975",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29219,11 +29696,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:725",
       "player2": "Herbert Zeman",
       "player2Id": "q:player:923",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29238,11 +29724,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:317",
       "player2": "Michael Fullick",
       "player2Id": "q:player:704",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6019",
+      "treeInputSlot2": "6020",
+      "treeOutputSlot": "5010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29257,11 +29752,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:759",
       "player2": "Richard Van Rynbach",
       "player2Id": "q:player:191",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6021",
+      "treeInputSlot2": "6022",
+      "treeOutputSlot": "5011",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29276,11 +29780,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:616",
       "player2": "Giorgio Sorio",
       "player2Id": "q:player:352",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29295,11 +29808,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:565",
       "player2": "Jonathan Simpson",
       "player2Id": "q:player:334",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29314,16 +29836,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:500",
       "player2": "Uwe Peters",
       "player2Id": "q:player:917",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
-      "time": "10:00",
-      "event": "",
+      "time": "10:40",
+      "event": "Women's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +35 | Kasey Bonato | Blanca Nelly Bonifacio Diaz | Stephanie Chambers | Samantha Foyle | Jodie Hodgkins | Tracey Kimble | Hei Ting Leung | Catherine Mcqueen | Joan Naarstig | Zoe Petrovansky | Heather Pilley | Gill Van Vlaanderen | Matches | Played | Tuesday, 01 September 2026 | Thursday, 03 September 2026",
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -29348,15 +29879,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Scott O’Shea",
-      "player1Id": "q:player:320",
-      "player2": "Rhodri Roberts",
-      "player2Id": "q:player:106",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Alexander Clark",
+      "player1Id": "q:player:304",
+      "player2": "David Holmes",
+      "player2Id": "q:player:809",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29367,15 +29907,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Jay Anderson",
-      "player1Id": "q:player:483",
-      "player2": "Gregory Lawton",
-      "player2Id": "q:player:257",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Greg Johnston",
+      "player1Id": "q:player:472",
+      "player2": "Tristan Lewis",
+      "player2Id": "q:player:385",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50",
+      "treeInputSlot1": "6019",
+      "treeInputSlot2": "6020",
+      "treeOutputSlot": "5010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29386,15 +29935,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Dave Cooper",
-      "player1Id": "q:player:49",
-      "player2": "Javier Gonzalvez Fernandez",
-      "player2Id": "q:player:236",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Glenn Hitch",
+      "player1Id": "q:player:949",
+      "player2": "Brad Grinter",
+      "player2Id": "q:player:946",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50",
+      "treeInputSlot1": "6021",
+      "treeInputSlot2": "6022",
+      "treeOutputSlot": "5011",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29405,15 +29963,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Adam Dominey",
-      "player1Id": "q:player:802",
-      "player2": "Mitchell Stafford",
-      "player2Id": "q:player:395",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "David Kempster",
+      "player1Id": "q:player:473",
+      "player2": "Rob Wilson",
+      "player2Id": "q:player:374",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29424,15 +29991,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Damon Winter",
-      "player1Id": "q:player:214",
-      "player2": "Daniel Karwalski",
-      "player2Id": "q:player:160",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Doug Odewahn-Oxley",
+      "player1Id": "q:player:259",
+      "player2": "Tim Pescud",
+      "player2Id": "q:player:53",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29509,7 +30085,19 @@ window.TOURNAMENT_DATA = {
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "resultSource": "TournamentSoftware"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29520,15 +30108,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Christopher Moody",
-      "player1Id": "q:player:960",
-      "player2": "Trevor Loughran",
-      "player2Id": "q:player:130",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Conrado Ramos",
+      "player1Id": "q:player:351",
+      "player2": "Kimihiko Sano",
+      "player2Id": "q:player:504",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29539,15 +30136,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Raimo Yliranta",
-      "player1Id": "q:player:322",
-      "player2": "Jonas Ulvsback",
-      "player2Id": "q:player:640",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Grant Farrant",
+      "player1Id": "q:player:492",
+      "player2": "Zuko Kubukeli",
+      "player2Id": "q:player:952",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50",
+      "treeInputSlot1": "6031",
+      "treeInputSlot2": "6032",
+      "treeOutputSlot": "5016",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29562,11 +30168,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:24",
       "player2": "Andreas Fritschi",
       "player2Id": "q:player:343",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6001",
+      "treeInputSlot2": "6002",
+      "treeOutputSlot": "5001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29581,11 +30196,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:703",
       "player2": "Laurent Guepy Martinetti",
       "player2Id": "q:player:706",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6003",
+      "treeInputSlot2": "6004",
+      "treeOutputSlot": "5002",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29600,11 +30224,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:442",
       "player2": "Filipe Soares",
       "player2Id": "q:player:286",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29619,11 +30252,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:169",
       "player2": "Adrian Richmond",
       "player2Id": "q:player:965",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29638,11 +30280,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:677",
       "player2": "Terrence Gibbons",
       "player2Id": "q:player:909",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6009",
+      "treeInputSlot2": "6010",
+      "treeOutputSlot": "5005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29657,11 +30308,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:633",
       "player2": "Jason Oxenham",
       "player2Id": "q:player:432",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6011",
+      "treeInputSlot2": "6012",
+      "treeOutputSlot": "5006",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29676,11 +30336,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:528",
       "player2": "Troy Mountford",
       "player2Id": "q:player:475",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29695,11 +30364,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:114",
       "player2": "Gilles Roger",
       "player2Id": "q:player:635",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29714,11 +30392,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:386",
       "player2": "Grant Craig",
       "player2Id": "q:player:513",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29733,11 +30420,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:3",
       "player2": "Michael Cowhie",
       "player2Id": "q:player:404",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6019",
+      "treeInputSlot2": "6020",
+      "treeOutputSlot": "5010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29752,11 +30448,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:935",
       "player2": "Julian Smith",
       "player2Id": "q:player:335",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6021",
+      "treeInputSlot2": "6022",
+      "treeOutputSlot": "5011",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29771,11 +30476,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:586",
       "player2": "Jason Ong",
       "player2Id": "q:player:205",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29786,15 +30500,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Alexander Clark",
-      "player1Id": "q:player:304",
-      "player2": "David Holmes",
-      "player2Id": "q:player:809",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Christopher Moody",
+      "player1Id": "q:player:960",
+      "player2": "Trevor Loughran",
+      "player2Id": "q:player:130",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29805,34 +30528,54 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Greg Johnston",
-      "player1Id": "q:player:472",
-      "player2": "Tristan Lewis",
-      "player2Id": "q:player:385",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Raimo Yliranta",
+      "player1Id": "q:player:322",
+      "player2": "Jonas Ulvsback",
+      "player2Id": "q:player:640",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "6031",
+      "treeInputSlot2": "6032",
+      "treeOutputSlot": "5016",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
-      "time": "10:40",
-      "event": "",
+      "time": "11:20",
+      "event": "Women's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 | Tanya Chapman | Kelly Ferguson | Kim Graham | Laine Heitia | Naomi Ireland | Rennelle Karwalski | Kelsi Lawrence | Yawei Li | Ilse Marais | Samantha Mickleson | Larissa Stephenson | Muffin Stollmeyer | Angela Strelow | Tze Wan Tan | Kat Taylor | Matches",
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Glenn Hitch",
-      "player1Id": "q:player:949",
-      "player2": "Brad Grinter",
-      "player2Id": "q:player:946",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Ilse Marais",
+      "player1Id": "q:player:331",
+      "player2": "Naomi Ireland",
+      "player2Id": "q:player:348",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=3",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -29932,160 +30675,247 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +35 | Kasey Bonato | Blanca Nelly Bonifacio Diaz | Stephanie Chambers | Samantha Foyle | Jodie Hodgkins | Tracey Kimble | Hei Ting Leung | Catherine Mcqueen | Joan Naarstig | Zoe Petrovansky | Heather Pilley | Gill Van Vlaanderen | Matches | Played | Tuesday, 01 September 2026 | Thursday, 03 September 2026",
       "round": "",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "court": "AGC",
       "result": "Walkover",
       "status": "completed",
       "player1": "Hei Ting Leung",
       "player1Id": "q:player:35",
       "player2": "Catherine Mcqueen",
       "player2Id": "q:player:16",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "resultSource": "TournamentSoftware"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=2",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
       "round": "",
       "venue": "",
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Sanjay Rajpal",
-      "player1Id": "q:player:435",
-      "player2": "Chris Baker",
-      "player2Id": "q:player:23",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Kylie Anderson",
+      "player1Id": "q:player:928",
+      "player2": "Bea Burger",
+      "player2Id": "q:player:692",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
       "round": "",
       "venue": "",
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Irfan Asghar",
-      "player1Id": "q:player:251",
-      "player2": "Cuauhtémoc Gómez",
-      "player2Id": "q:player:705",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Leigh-Anne Kaye",
+      "player1Id": "q:player:870",
+      "player2": "Sarah Wilson",
+      "player2Id": "q:player:849",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
       "round": "",
       "venue": "",
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Thomas Grübel",
-      "player1Id": "q:player:583",
-      "player2": "Shane Hatwell",
-      "player2Id": "q:player:444",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Melinda Gyorgy",
+      "player1Id": "q:player:380",
+      "player2": "Erin Ellery",
+      "player2Id": "q:player:235",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
       "round": "",
       "venue": "",
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Paul Stephan",
-      "player1Id": "q:player:678",
-      "player2": "John Musto",
-      "player2Id": "q:player:74",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Barbara Vintcent",
+      "player1Id": "q:player:845",
+      "player2": "Javy Wong",
+      "player2Id": "q:player:173",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
       "round": "",
       "venue": "",
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Geoffrey Davenport",
-      "player1Id": "q:player:938",
-      "player2": "Bill Lam",
-      "player2Id": "q:player:498",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Lorraine Howell",
+      "player1Id": "q:player:523",
+      "player2": "Mickayla Kerr",
+      "player2Id": "q:player:162",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
       "round": "",
       "venue": "",
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Ali Piyarali",
-      "player1Id": "q:player:226",
-      "player2": "Lluis Suarez",
-      "player2Id": "q:player:638",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Joanne Dodd",
+      "player1Id": "q:player:516",
+      "player2": "Susan Schenk",
+      "player2Id": "q:player:415",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
       "round": "",
       "venue": "",
       "court": "",
       "result": "",
-      "status": "completed",
-      "winner": "Margaret Hunt-Kemp",
-      "winnerId": "q:player:555",
-      "player1": "Margaret Hunt-Kemp",
-      "player1Id": "q:player:555",
-      "player2": "Bye",
-      "player2Id": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "status": "scheduled",
+      "player1": "Lee-Ann Richters",
+      "player1Id": "q:player:772",
+      "player2": "Janet Byrnes",
+      "player2Id": "q:player:742",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches",
       "round": "",
       "venue": "",
       "court": "",
@@ -30095,16 +30925,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:451",
       "player2": "Dianne Cook",
       "player2Id": "q:player:420",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=10",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches",
       "round": "",
       "venue": "",
       "court": "",
@@ -30114,16 +30955,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:545",
       "player2": "Aileen Garner",
       "player2Id": "q:player:326",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=10",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches",
       "round": "",
       "venue": "",
       "court": "",
@@ -30133,16 +30985,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:921",
       "player2": "Nikki Mccullough",
       "player2Id": "q:player:454",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=10",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches",
       "round": "",
       "venue": "",
       "court": "",
@@ -30152,16 +31015,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:538",
       "player2": "Janette Daws",
       "player2Id": "q:player:179",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=10",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches",
       "round": "",
       "venue": "",
       "court": "",
@@ -30171,16 +31045,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:788",
       "player2": "Tweedy Seymour",
       "player2Id": "q:player:604",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=10",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches",
       "round": "",
       "venue": "",
       "court": "",
@@ -30190,16 +31075,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:854",
       "player2": "Helen Lococo",
       "player2Id": "q:player:663",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=10",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "11:20",
-      "event": "",
+      "event": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches",
       "round": "",
       "venue": "",
       "court": "",
@@ -30209,11 +31105,22 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:422",
       "player2": "Claire Bryars",
       "player2Id": "q:player:646",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=10",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30224,15 +31131,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Kylie Anderson",
-      "player1Id": "q:player:928",
-      "player2": "Bea Burger",
-      "player2Id": "q:player:692",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Sanjay Rajpal",
+      "player1Id": "q:player:435",
+      "player2": "Chris Baker",
+      "player2Id": "q:player:23",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30243,15 +31159,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Leigh-Anne Kaye",
-      "player1Id": "q:player:870",
-      "player2": "Sarah Wilson",
-      "player2Id": "q:player:849",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Irfan Asghar",
+      "player1Id": "q:player:251",
+      "player2": "Cuauhtémoc Gómez",
+      "player2Id": "q:player:705",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30262,15 +31187,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Melinda Gyorgy",
-      "player1Id": "q:player:380",
-      "player2": "Erin Ellery",
-      "player2Id": "q:player:235",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Thomas Grübel",
+      "player1Id": "q:player:583",
+      "player2": "Shane Hatwell",
+      "player2Id": "q:player:444",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30281,15 +31215,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Barbara Vintcent",
-      "player1Id": "q:player:845",
-      "player2": "Javy Wong",
-      "player2Id": "q:player:173",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Paul Stephan",
+      "player1Id": "q:player:678",
+      "player2": "John Musto",
+      "player2Id": "q:player:74",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "6031",
+      "treeInputSlot2": "6032",
+      "treeOutputSlot": "5016",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30300,15 +31243,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Lorraine Howell",
-      "player1Id": "q:player:523",
-      "player2": "Mickayla Kerr",
-      "player2Id": "q:player:162",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Geoffrey Davenport",
+      "player1Id": "q:player:938",
+      "player2": "Bill Lam",
+      "player2Id": "q:player:498",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6001",
+      "treeInputSlot2": "6002",
+      "treeOutputSlot": "5001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30319,34 +31271,54 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Joanne Dodd",
-      "player1Id": "q:player:516",
-      "player2": "Susan Schenk",
-      "player2Id": "q:player:415",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Ali Piyarali",
+      "player1Id": "q:player:226",
+      "player2": "Lluis Suarez",
+      "player2Id": "q:player:638",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6003",
+      "treeInputSlot2": "6004",
+      "treeOutputSlot": "5002",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
-      "time": "11:20",
-      "event": "",
+      "time": "12:00",
+      "event": "Women's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 | Tanya Chapman | Kelly Ferguson | Kim Graham | Laine Heitia | Naomi Ireland | Rennelle Karwalski | Kelsi Lawrence | Yawei Li | Ilse Marais | Samantha Mickleson | Larissa Stephenson | Muffin Stollmeyer | Angela Strelow | Tze Wan Tan | Kat Taylor | Matches",
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Lee-Ann Richters",
-      "player1Id": "q:player:772",
-      "player2": "Janet Byrnes",
-      "player2Id": "q:player:742",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Muffin Stollmeyer",
+      "player1Id": "q:player:972",
+      "player2": "Kelly Ferguson",
+      "player2Id": "q:player:9",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=3",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30370,27 +31342,37 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-09-01",
       "time": "12:00",
-      "event": "",
+      "event": "Women's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +35 | Kasey Bonato | Blanca Nelly Bonifacio Diaz | Stephanie Chambers | Samantha Foyle | Jodie Hodgkins | Tracey Kimble | Hei Ting Leung | Catherine Mcqueen | Joan Naarstig | Zoe Petrovansky | Heather Pilley | Gill Van Vlaanderen | Matches | Played | Tuesday, 01 September 2026 | Thursday, 03 September 2026",
       "round": "",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "court": "AGC",
       "result": "Walkover",
       "status": "completed",
       "player1": "Tracey Kimble",
       "player1Id": "q:player:559",
       "player2": "Joan Naarstig",
       "player2Id": "q:player:826",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "resultSource": "TournamentSoftware"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=2",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "12:00",
-      "event": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
       "round": "",
       "venue": "",
       "court": "",
@@ -30400,11 +31382,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:402",
       "player2": "Neil Stone-Wigg",
       "player2Id": "q:player:353",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30419,11 +31410,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:376",
       "player2": "Mark Woodliffe",
       "player2Id": "q:player:686",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30438,11 +31438,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:713",
       "player2": "Swee Chan Wong",
       "player2Id": "q:player:782",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6009",
+      "treeInputSlot2": "6010",
+      "treeOutputSlot": "5005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30457,11 +31466,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:309",
       "player2": "Friedrich Scheuch",
       "player2Id": "q:player:187",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6011",
+      "treeInputSlot2": "6012",
+      "treeOutputSlot": "5006",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30476,11 +31494,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:855",
       "player2": "Philip Bradshaw",
       "player2Id": "q:player:740",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30495,11 +31522,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:929",
       "player2": "Trevor Wilkinson",
       "player2Id": "q:player:848",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30514,11 +31550,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:752",
       "player2": "Ricky Thompson",
       "player2Id": "q:player:843",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30533,11 +31578,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:651",
       "player2": "Richard Stephenson",
       "player2Id": "q:player:368",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6019",
+      "treeInputSlot2": "6020",
+      "treeOutputSlot": "5010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30552,11 +31606,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:916",
       "player2": "Daniel Zande",
       "player2Id": "q:player:642",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6021",
+      "treeInputSlot2": "6022",
+      "treeOutputSlot": "5011",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30571,11 +31634,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:659",
       "player2": "Mark Sealy",
       "player2Id": "q:player:775",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30590,11 +31662,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:112",
       "player2": "Steven Graham",
       "player2Id": "q:player:30",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30609,11 +31690,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:388",
       "player2": "De Zeeuw Jean Luc",
       "player2Id": "q:player:273",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30628,11 +31718,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:718",
       "player2": "Jeffery Hamelink",
       "player2Id": "q:player:863",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30647,16 +31746,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:942",
       "player2": "Willie Hosey",
       "player2Id": "q:player:865",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "6031",
+      "treeInputSlot2": "6032",
+      "treeOutputSlot": "5016",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
-      "time": "12:00",
-      "event": "",
+      "time": "12:40",
+      "event": "Women's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +45 | Karen Blom | Lisa Christou | Lisa Cooper | Marama Hancy | Natalie Kapitza | Young Lee | Janine Mullay | Michelle Pym | Geraldine Ricketts | Kate Rowe | Debra Shahar | Michelle Stevenson | Katie Winterstein | Joannah Yue | Matches | Played",
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -30674,8 +31782,8 @@ window.TOURNAMENT_DATA = {
     },
     {
       "date": "2026-09-01",
-      "time": "12:00",
-      "event": "",
+      "time": "12:40",
+      "event": "Women's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +45 | Karen Blom | Lisa Christou | Lisa Cooper | Marama Hancy | Natalie Kapitza | Young Lee | Janine Mullay | Michelle Pym | Geraldine Ricketts | Kate Rowe | Debra Shahar | Michelle Stevenson | Katie Winterstein | Joannah Yue | Matches | Played",
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -30693,8 +31801,8 @@ window.TOURNAMENT_DATA = {
     },
     {
       "date": "2026-09-01",
-      "time": "12:00",
-      "event": "",
+      "time": "12:40",
+      "event": "Women's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +45 | Karen Blom | Lisa Christou | Lisa Cooper | Marama Hancy | Natalie Kapitza | Young Lee | Janine Mullay | Michelle Pym | Geraldine Ricketts | Kate Rowe | Debra Shahar | Michelle Stevenson | Katie Winterstein | Joannah Yue | Matches | Played",
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -30712,8 +31820,8 @@ window.TOURNAMENT_DATA = {
     },
     {
       "date": "2026-09-01",
-      "time": "12:00",
-      "event": "",
+      "time": "12:40",
+      "event": "Women's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +45 | Karen Blom | Lisa Christou | Lisa Cooper | Marama Hancy | Natalie Kapitza | Young Lee | Janine Mullay | Michelle Pym | Geraldine Ricketts | Kate Rowe | Debra Shahar | Michelle Stevenson | Katie Winterstein | Joannah Yue | Matches | Played",
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -30731,8 +31839,8 @@ window.TOURNAMENT_DATA = {
     },
     {
       "date": "2026-09-01",
-      "time": "12:00",
-      "event": "",
+      "time": "12:40",
+      "event": "Women's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +45 | Karen Blom | Lisa Christou | Lisa Cooper | Marama Hancy | Natalie Kapitza | Young Lee | Janine Mullay | Michelle Pym | Geraldine Ricketts | Kate Rowe | Debra Shahar | Michelle Stevenson | Katie Winterstein | Joannah Yue | Matches | Played",
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -30750,8 +31858,8 @@ window.TOURNAMENT_DATA = {
     },
     {
       "date": "2026-09-01",
-      "time": "12:00",
-      "event": "",
+      "time": "12:40",
+      "event": "Women's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +45 | Karen Blom | Lisa Christou | Lisa Cooper | Marama Hancy | Natalie Kapitza | Young Lee | Janine Mullay | Michelle Pym | Geraldine Ricketts | Kate Rowe | Debra Shahar | Michelle Stevenson | Katie Winterstein | Joannah Yue | Matches | Played",
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -30769,48 +31877,10 @@ window.TOURNAMENT_DATA = {
     },
     {
       "date": "2026-09-01",
-      "time": "12:00",
-      "event": "",
-      "round": "",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Michelle Higgins",
-      "player1Id": "q:player:306",
-      "player2": "Lacey Lloyd",
-      "player2Id": "q:player:621",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
-      "time": "12:00",
-      "event": "",
-      "round": "",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Muffin Stollmeyer",
-      "player1Id": "q:player:972",
-      "player2": "Kelly Ferguson",
-      "player2Id": "q:player:9",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
       "time": "12:40",
-      "event": "",
+      "event": "Women's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 | Tanya Chapman | Kelly Ferguson | Kim Graham | Laine Heitia | Naomi Ireland | Rennelle Karwalski | Kelsi Lawrence | Yawei Li | Ilse Marais | Samantha Mickleson | Larissa Stephenson | Muffin Stollmeyer | Angela Strelow | Tze Wan Tan | Kat Taylor | Matches",
       "round": "",
-      "venue": "Karrinyup Shopping Centre",
+      "venue": "Belmont Saints Squash Centre",
       "court": "",
       "result": "",
       "status": "scheduled",
@@ -30818,11 +31888,82 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:584",
       "player2": "Rennelle Karwalski",
       "player2Id": "q:player:161",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=3",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "12:40",
+      "event": "Women's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 | Tanya Chapman | Kelly Ferguson | Kim Graham | Laine Heitia | Naomi Ireland | Rennelle Karwalski | Kelsi Lawrence | Yawei Li | Ilse Marais | Samantha Mickleson | Larissa Stephenson | Muffin Stollmeyer | Angela Strelow | Tze Wan Tan | Kat Taylor | Matches",
+      "round": "",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Tze Wan Tan",
+      "player1Id": "q:player:396",
+      "player2": "Angela Strelow",
+      "player2Id": "q:player:973",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=3",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "12:40",
+      "event": "Women's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 | Tanya Chapman | Kelly Ferguson | Kim Graham | Laine Heitia | Naomi Ireland | Rennelle Karwalski | Kelsi Lawrence | Yawei Li | Ilse Marais | Samantha Mickleson | Larissa Stephenson | Muffin Stollmeyer | Angela Strelow | Tze Wan Tan | Kat Taylor | Matches",
+      "round": "",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC8",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Kelsi Lawrence",
+      "player1Id": "q:player:591",
+      "player2": "Kat Taylor",
+      "player2Id": "q:player:777",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=3",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30837,11 +31978,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:268",
       "player2": "Tony Johnston",
       "player2Id": "q:player:588",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6001",
+      "treeInputSlot2": "6002",
+      "treeOutputSlot": "5001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30856,11 +32006,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:733",
       "player2": "Anthony Webb",
       "player2Id": "q:player:899",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6003",
+      "treeInputSlot2": "6004",
+      "treeOutputSlot": "5002",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30875,11 +32034,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:392",
       "player2": "Chris Barker",
       "player2Id": "q:player:315",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30894,11 +32062,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:988",
       "player2": "Alan Cornish",
       "player2Id": "q:player:694",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30913,11 +32090,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:384",
       "player2": "Johan Schoeman",
       "player2Id": "q:player:566",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6009",
+      "treeInputSlot2": "6010",
+      "treeOutputSlot": "5005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30932,11 +32118,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:611",
       "player2": "Anthony Gerald Naughton",
       "player2Id": "q:player:962",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6011",
+      "treeInputSlot2": "6012",
+      "treeOutputSlot": "5006",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30951,11 +32146,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:922",
       "player2": "Chin Yeung",
       "player2Id": "q:player:784",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30970,11 +32174,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:556",
       "player2": "Barry Featherstone",
       "player2Id": "q:player:751",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -30989,11 +32202,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:466",
       "player2": "Joseph Sosenko",
       "player2Id": "q:player:970",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31008,11 +32230,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:701",
       "player2": "Geoff Chambers",
       "player2Id": "q:player:91",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6019",
+      "treeInputSlot2": "6020",
+      "treeOutputSlot": "5010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31027,11 +32258,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:842",
       "player2": "Robert Hecek",
       "player2Id": "q:player:806",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6021",
+      "treeInputSlot2": "6022",
+      "treeOutputSlot": "5011",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31046,11 +32286,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:753",
       "player2": "Ted Gornall",
       "player2Id": "q:player:237",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31065,11 +32314,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:873",
       "player2": "Ric Nicholas",
       "player2Id": "q:player:881",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31084,11 +32342,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:774",
       "player2": "Donald Weerheim",
       "player2Id": "q:player:683",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31099,15 +32366,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Tze Wan Tan",
-      "player1Id": "q:player:396",
-      "player2": "Angela Strelow",
-      "player2Id": "q:player:973",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Marvin Rankel",
+      "player1Id": "q:player:413",
+      "player2": "Steven Martin",
+      "player2Id": "q:player:474",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6003",
+      "treeInputSlot2": "6004",
+      "treeOutputSlot": "5002",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31146,7 +32422,19 @@ window.TOURNAMENT_DATA = {
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "resultSource": "TournamentSoftware"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31166,7 +32454,19 @@ window.TOURNAMENT_DATA = {
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "resultSource": "TournamentSoftware"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31186,7 +32486,19 @@ window.TOURNAMENT_DATA = {
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "resultSource": "TournamentSoftware"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6009",
+      "treeInputSlot2": "6010",
+      "treeOutputSlot": "5005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31206,7 +32518,19 @@ window.TOURNAMENT_DATA = {
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "resultSource": "TournamentSoftware"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31245,64 +32569,49 @@ window.TOURNAMENT_DATA = {
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "resultSource": "TournamentSoftware"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6021",
+      "treeInputSlot2": "6022",
+      "treeOutputSlot": "5011",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "13:20",
-      "event": "",
+      "event": "Women's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 | Tanya Chapman | Kelly Ferguson | Kim Graham | Laine Heitia | Naomi Ireland | Rennelle Karwalski | Kelsi Lawrence | Yawei Li | Ilse Marais | Samantha Mickleson | Larissa Stephenson | Muffin Stollmeyer | Angela Strelow | Tze Wan Tan | Kat Taylor | Matches",
       "round": "",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "court": "AGC",
       "result": "",
       "status": "scheduled",
       "player1": "Samantha Mickleson",
       "player1Id": "q:player:561",
       "player2": "Tanya Chapman",
       "player2Id": "q:player:609",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
-      "time": "13:20",
-      "event": "",
-      "round": "",
-      "venue": "",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Allan Aldous",
-      "player1Id": "q:player:727",
-      "player2": "Derek Berold",
-      "player2Id": "q:player:608",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
-      "time": "13:20",
-      "event": "",
-      "round": "",
-      "venue": "",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "James Leddy",
-      "player1Id": "q:player:762",
-      "player2": "Ian Graham",
-      "player2Id": "q:player:862",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=3",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31317,11 +32626,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:548",
       "player2": "Sheree Jennison",
       "player2Id": "q:player:349",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6001",
+      "treeInputSlot2": "6002",
+      "treeOutputSlot": "5001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31336,16 +32654,81 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:617",
       "player2": "Julie Banfield",
       "player2Id": "q:player:542",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6003",
+      "treeInputSlot2": "6004",
+      "treeOutputSlot": "5002",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "13:20",
       "event": "",
+      "round": "",
+      "venue": "",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Allan Aldous",
+      "player1Id": "q:player:727",
+      "player2": "Derek Berold",
+      "player2Id": "q:player:608",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "13:20",
+      "event": "",
+      "round": "",
+      "venue": "",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "James Leddy",
+      "player1Id": "q:player:762",
+      "player2": "Ian Graham",
+      "player2Id": "q:player:862",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "6031",
+      "treeInputSlot2": "6032",
+      "treeOutputSlot": "5016",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "13:20",
+      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
       "round": "",
       "venue": "",
       "court": "",
@@ -31355,16 +32738,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:731",
       "player2": "Graeme Richardson",
       "player2Id": "q:player:771",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "13:20",
-      "event": "",
+      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
       "round": "",
       "venue": "",
       "court": "",
@@ -31374,16 +32768,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:693",
       "player2": "Campbell Pardey",
       "player2Id": "q:player:131",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "13:20",
-      "event": "",
+      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
       "round": "",
       "venue": "",
       "court": "",
@@ -31393,16 +32798,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:719",
       "player2": "Vance Moore",
       "player2Id": "q:player:186",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "13:20",
-      "event": "",
+      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
       "round": "",
       "venue": "",
       "court": "",
@@ -31412,16 +32828,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:446",
       "player2": "Peter Sahb",
       "player2Id": "q:player:888",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "13:20",
-      "event": "",
+      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
       "round": "",
       "venue": "",
       "court": "",
@@ -31431,16 +32858,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:836",
       "player2": "Pierce Phelan",
       "player2Id": "q:player:530",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "13:20",
-      "event": "",
+      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
       "round": "",
       "venue": "",
       "court": "",
@@ -31450,16 +32888,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:289",
       "player2": "James ( Jim ) Langby",
       "player2Id": "q:player:875",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "13:20",
-      "event": "",
+      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
       "round": "",
       "venue": "",
       "court": "",
@@ -31488,16 +32937,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:864",
       "player2": "Lior Grinberg",
       "player2Id": "q:player:553",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "13:20",
-      "event": "",
+      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
       "round": "",
       "venue": "",
       "court": "",
@@ -31507,11 +32967,22 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:521",
       "player2": "Joseph Al Houliston",
       "player2Id": "q:player:323",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31522,15 +32993,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Marvin Rankel",
-      "player1Id": "q:player:413",
-      "player2": "Steven Martin",
-      "player2Id": "q:player:474",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Bruno Fernandini Caballero",
+      "player1Id": "q:player:28",
+      "player2": "Daniel Ince",
+      "player2Id": "q:player:950",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31541,15 +33021,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Dariusz Filipowski",
-      "player1Id": "q:player:858",
-      "player2": "Daniel Jones",
-      "player2Id": "q:player:159",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Matt Nation",
+      "player1Id": "q:player:223",
+      "player2": "Thierry Blandin De Chalain",
+      "player2Id": "q:player:789",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31560,15 +33049,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Wesley Billowes",
-      "player1Id": "q:player:734",
-      "player2": "Marcus Phua",
-      "player2Id": "q:player:434",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Pawel Michalczuk",
+      "player1Id": "q:player:878",
+      "player2": "Jason Patmore",
+      "player2Id": "q:player:478",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31579,20 +33077,29 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Christopher Votion",
-      "player1Id": "q:player:507",
-      "player2": "Christopher Perera",
-      "player2Id": "q:player:831",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Abhinav Sinha",
+      "player1Id": "q:player:984",
+      "player2": "Paul Willcock",
+      "player2Id": "q:player:22",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
-      "time": "13:20",
-      "event": "",
+      "time": "14:00",
+      "event": "Women's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 | Tanya Chapman | Kelly Ferguson | Kim Graham | Laine Heitia | Naomi Ireland | Rennelle Karwalski | Kelsi Lawrence | Yawei Li | Ilse Marais | Samantha Mickleson | Larissa Stephenson | Muffin Stollmeyer | Angela Strelow | Tze Wan Tan | Kat Taylor | Matches",
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -31617,15 +33124,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Sam Henderson",
-      "player1Id": "q:player:807",
-      "player2": "Pedro Barra Rodrigues",
-      "player2Id": "q:player:400",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Lauren Wagner",
+      "player1Id": "q:player:987",
+      "player2": "Anne Fordham",
+      "player2Id": "q:player:363",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6001",
+      "treeInputSlot2": "6002",
+      "treeOutputSlot": "5001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31655,34 +33171,52 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Michael Swann",
-      "player1Id": "q:player:839",
-      "player2": "Hayden Kuklinski",
-      "player2Id": "q:player:383",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Nina Janisch",
+      "player1Id": "q:player:329",
+      "player2": "Tracey-Lee Hall",
+      "player2Id": "q:player:408",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "14:00",
-      "event": "",
-      "round": "",
-      "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "event": "Women's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +55 | Lyndal Amer | Ann-Maree Birt | Nicola Blenkinship | Kathy Conquergood | Katrina Cross | Susan Davis | Carol Eberhard | Janine Eedy | Anne Fordham | Tracey-Lee Hall | Yan Han | Amanda Hart | Sarah Howie | Nina Janisch | Inga Joerger | Rachna Kairon",
+      "round": "Round 2",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC8",
       "result": "",
       "status": "scheduled",
-      "player1": "Yawei Li",
-      "player1Id": "q:player:662",
-      "player2": "Kim Graham",
-      "player2Id": "q:player:756",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Glynnis Parker",
+      "player1Id": "q:player:768",
+      "player2": "Clare Slyth",
+      "player2Id": "q:player:394",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31697,11 +33231,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:527",
       "player2": "Belinda Murphy",
       "player2Id": "q:player:164",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31716,11 +33259,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:305",
       "player2": "Lisa O'Grady",
       "player2Id": "q:player:828",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31735,11 +33287,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:7",
       "player2": "Vanessa Christensen",
       "player2Id": "q:player:796",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6009",
+      "treeInputSlot2": "6010",
+      "treeOutputSlot": "5005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31754,11 +33315,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:300",
       "player2": "Julie Agel",
       "player2Id": "q:player:509",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6011",
+      "treeInputSlot2": "6012",
+      "treeOutputSlot": "5006",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31773,11 +33343,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:467",
       "player2": "Cathy Wilson",
       "player2Id": "q:player:684",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31792,11 +33371,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:318",
       "player2": "Maureen Duke",
       "player2Id": "q:player:803",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31811,11 +33399,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:48",
       "player2": "Vicki Herdman",
       "player2Id": "q:player:328",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31830,11 +33427,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:341",
       "player2": "Amina Islam",
       "player2Id": "q:player:760",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6019",
+      "treeInputSlot2": "6020",
+      "treeOutputSlot": "5010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31849,11 +33455,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:717",
       "player2": "Jeanette Barton",
       "player2Id": "q:player:152",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6021",
+      "treeInputSlot2": "6022",
+      "treeOutputSlot": "5011",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31868,11 +33483,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:927",
       "player2": "Janet Christy",
       "player2Id": "q:player:369",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31887,11 +33511,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:198",
       "player2": "Tashia Mihail",
       "player2Id": "q:player:17",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31906,11 +33539,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:510",
       "player2": "Nola Williams",
       "player2Id": "q:player:781",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31925,11 +33567,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:844",
       "player2": "Karen Walton",
       "player2Id": "q:player:641",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31944,11 +33595,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:882",
       "player2": "Karen Hume",
       "player2Id": "q:player:866",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "6031",
+      "treeInputSlot2": "6032",
+      "treeOutputSlot": "5016",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -31956,158 +33616,6 @@ window.TOURNAMENT_DATA = {
       "event": "",
       "round": "",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Bruno Fernandini Caballero",
-      "player1Id": "q:player:28",
-      "player2": "Daniel Ince",
-      "player2Id": "q:player:950",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
-      "time": "14:00",
-      "event": "",
-      "round": "",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Matt Nation",
-      "player1Id": "q:player:223",
-      "player2": "Thierry Blandin De Chalain",
-      "player2Id": "q:player:789",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
-      "time": "14:00",
-      "event": "",
-      "round": "",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Pawel Michalczuk",
-      "player1Id": "q:player:878",
-      "player2": "Jason Patmore",
-      "player2Id": "q:player:478",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
-      "time": "14:00",
-      "event": "",
-      "round": "",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Abhinav Sinha",
-      "player1Id": "q:player:984",
-      "player2": "Paul Willcock",
-      "player2Id": "q:player:22",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
-      "time": "14:00",
-      "event": "",
-      "round": "",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Lauren Wagner",
-      "player1Id": "q:player:987",
-      "player2": "Anne Fordham",
-      "player2Id": "q:player:363",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
-      "time": "14:00",
-      "event": "",
-      "round": "",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Katrina Cross",
-      "player1Id": "q:player:936",
-      "player2": "Melanie Schultz",
-      "player2Id": "q:player:636",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
-      "time": "14:00",
-      "event": "",
-      "round": "",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Nina Janisch",
-      "player1Id": "q:player:329",
-      "player2": "Tracey-Lee Hall",
-      "player2Id": "q:player:408",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
-      "time": "14:00",
-      "event": "",
-      "round": "",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Glynnis Parker",
-      "player1Id": "q:player:768",
-      "player2": "Clare Slyth",
-      "player2Id": "q:player:394",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
-      "time": "14:40",
-      "event": "",
-      "round": "",
-      "venue": "Karrinyup Shopping Centre",
       "court": "",
       "result": "",
       "status": "scheduled",
@@ -32115,11 +33623,244 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:220",
       "player2": "Zahid Gul",
       "player2Id": "q:player:407",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6001",
+      "treeInputSlot2": "6002",
+      "treeOutputSlot": "5001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:00",
+      "event": "",
+      "round": "",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Susan Davis",
+      "player1Id": "q:player:697",
+      "player2": "Karen Spence",
+      "player2Id": "q:player:838",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6009",
+      "treeInputSlot2": "6010",
+      "treeOutputSlot": "5005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:00",
+      "event": "",
+      "round": "",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Alison Voller",
+      "player1Id": "q:player:212",
+      "player2": "Karen Young",
+      "player2Id": "q:player:688",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6011",
+      "treeInputSlot2": "6012",
+      "treeOutputSlot": "5006",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:00",
+      "event": "",
+      "round": "",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Kathy Conquergood",
+      "player1Id": "q:player:576",
+      "player2": "Carol Eberhard",
+      "player2Id": "q:player:578",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:00",
+      "event": "",
+      "round": "",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Sarah Howie",
+      "player1Id": "q:player:811",
+      "player2": "Sarah Nelson",
+      "player2Id": "q:player:630",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:00",
+      "event": "",
+      "round": "",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Cindy Meintjes",
+      "player1Id": "q:player:387",
+      "player2": "Inga Joerger",
+      "player2Id": "q:player:108",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:00",
+      "event": "",
+      "round": "",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Janine Eedy",
+      "player1Id": "q:player:579",
+      "player2": "Jeanne Yells",
+      "player2Id": "q:player:687",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6019",
+      "treeInputSlot2": "6020",
+      "treeOutputSlot": "5010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:00",
+      "event": "",
+      "round": "",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Lyndal Amer",
+      "player1Id": "q:player:2",
+      "player2": "Ann-Maree Birt",
+      "player2Id": "q:player:177",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6021",
+      "treeInputSlot2": "6022",
+      "treeOutputSlot": "5011",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:40",
+      "event": "Women's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +55 | Lyndal Amer | Ann-Maree Birt | Nicola Blenkinship | Kathy Conquergood | Katrina Cross | Susan Davis | Carol Eberhard | Janine Eedy | Anne Fordham | Tracey-Lee Hall | Yan Han | Amanda Hart | Sarah Howie | Nina Janisch | Inga Joerger | Rachna Kairon",
+      "round": "Round 2",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC8",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Nicola Blenkinship",
+      "player1Id": "q:player:735",
+      "player2": "Kelsey Souchereau",
+      "player2Id": "q:player:776",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32134,11 +33875,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:344",
       "player2": "Valerie Worrell",
       "player2Id": "q:player:89",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6001",
+      "treeInputSlot2": "6002",
+      "treeOutputSlot": "5001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32153,11 +33903,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:487",
       "player2": "Janine Maureen Talbot",
       "player2Id": "q:player:228",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6003",
+      "treeInputSlot2": "6004",
+      "treeOutputSlot": "5002",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32172,11 +33931,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:978",
       "player2": "Kay Giacomantonio",
       "player2Id": "q:player:181",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32191,11 +33959,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:339",
       "player2": "Rieko Oshima",
       "player2Id": "q:player:529",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32210,11 +33987,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:314",
       "player2": "Michie Sugioka",
       "player2Id": "q:player:606",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6009",
+      "treeInputSlot2": "6010",
+      "treeOutputSlot": "5005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32229,11 +34015,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:193",
       "player2": "Cindy Parsley",
       "player2Id": "q:player:455",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6011",
+      "treeInputSlot2": "6012",
+      "treeOutputSlot": "5006",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32248,11 +34043,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:29",
       "player2": "Janelle Djordjevic",
       "player2Id": "q:player:294",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32267,11 +34071,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:183",
       "player2": "Julie Multamaki",
       "player2Id": "q:player:825",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32286,11 +34099,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:248",
       "player2": "Tomoko Mclean",
       "player2Id": "q:player:593",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32305,11 +34127,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:769",
       "player2": "Jackie Gregory",
       "player2Id": "q:player:125",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6019",
+      "treeInputSlot2": "6020",
+      "treeOutputSlot": "5010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32324,11 +34155,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:83",
       "player2": "Michelle Rowles",
       "player2Id": "q:player:966",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6021",
+      "treeInputSlot2": "6022",
+      "treeOutputSlot": "5011",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32339,15 +34179,52 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
+      "player1": "Theresa Wilkes",
+      "player1Id": "q:player:39",
+      "player2": "Tracey Le Roux",
+      "player2Id": "q:player:146",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:40",
+      "event": "Women's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +60 | Alison Andrews | Dannielle Atkinson | Rosie Barry | Susan Blackbourn | Kim Bradney | Denise Christie | Janelle Djordjevic | Belinda Gaulke | Kay Giacomantonio | Christine Goodman | Jackie Gregory | Janelle Hanks | Susan Hillier | Catherine Jackson | Naomi Katsunuma | Julie Kirchner",
+      "round": "Round 2",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC13",
+      "result": "",
+      "status": "scheduled",
       "player1": "Rosie Barry",
       "player1Id": "q:player:853",
       "player2": "Christine Goodman",
       "player2Id": "q:player:327",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32362,11 +34239,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:182",
       "player2": "Catherine Jackson",
       "player2Id": "q:player:71",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32542,21 +34428,30 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
-      "round": "",
+      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
+      "round": "Round 2",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "court": "AGC",
       "result": "",
       "status": "scheduled",
       "player1": "Stretton Evans",
       "player1Id": "q:player:702",
       "player2": "David Allman",
       "player2Id": "q:player:787",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32609,11 +34504,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:672",
       "player2": "Natasha Payne-Paea",
       "player2Id": "q:player:598",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32628,11 +34532,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:37",
       "player2": "Amanda Mccormick",
       "player2Id": "q:player:332",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32647,11 +34560,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:297",
       "player2": "Terry Smith",
       "player2Id": "q:player:336",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32666,11 +34588,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:948",
       "player2": "Amanda Hart",
       "player2Id": "q:player:364",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +55",
+      "treeInputSlot1": "6031",
+      "treeInputSlot2": "6032",
+      "treeOutputSlot": "5016",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -32680,21 +34611,58 @@ window.TOURNAMENT_DATA = {
       "venue": "",
       "court": "",
       "result": "",
-      "status": "completed",
-      "winner": "Pauline Douglas",
-      "winnerId": "q:player:700",
-      "player1": "Pauline Douglas",
-      "player1Id": "q:player:700",
-      "player2": "Bye",
-      "player2Id": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "status": "scheduled",
+      "player1": "Dannielle Atkinson",
+      "player1Id": "q:player:175",
+      "player2": "Julie Kirchner",
+      "player2Id": "q:player:872",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Women's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +60 | Alison Andrews | Dannielle Atkinson | Rosie Barry | Susan Blackbourn | Kim Bradney | Denise Christie | Janelle Djordjevic | Belinda Gaulke | Kay Giacomantonio | Christine Goodman | Jackie Gregory | Janelle Hanks | Susan Hillier | Catherine Jackson | Naomi Katsunuma | Julie Kirchner",
+      "round": "Round 2",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC2",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Naomi Katsunuma",
+      "player1Id": "q:player:447",
+      "player2": "Phoebe Trubowitz",
+      "player2Id": "q:player:897",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "6031",
+      "treeInputSlot2": "6032",
+      "treeOutputSlot": "5016",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "15:20",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -32704,16 +34672,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:648",
       "player2": "Helen Coyle",
       "player2Id": "q:player:405",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -32723,16 +34702,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:954",
       "player2": "Judith Fox",
       "player2Id": "q:player:551",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -32742,16 +34732,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:140",
       "player2": "Catherine Woodhart",
       "player2Id": "q:player:850",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -32761,16 +34762,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:92",
       "player2": "Anna Bowen",
       "player2Id": "q:player:573",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -32780,16 +34792,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:628",
       "player2": "Napoti Teremaki",
       "player2Id": "q:player:506",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -32799,16 +34822,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:208",
       "player2": "Karen Griffiths",
       "player2Id": "q:player:295",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -32818,16 +34852,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:269",
       "player2": "Claudia Rosser",
       "player2Id": "q:player:720",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -32837,16 +34882,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:438",
       "player2": "Wendy Mcwilliams",
       "player2Id": "q:player:625",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -32856,16 +34912,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:610",
       "player2": "Michel Galloway",
       "player2Id": "q:player:615",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -32875,16 +34942,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:124",
       "player2": "Eileen Jellis",
       "player2Id": "q:player:654",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -32894,16 +34972,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:629",
       "player2": "Melanie Knibbs",
       "player2Id": "q:player:448",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
       "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -32913,16 +35002,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:892",
       "player2": "Marc Bush",
       "player2Id": "q:player:856",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50 - Plate",
+      "treeInputSlot1": "6001",
+      "treeInputSlot2": "6002",
+      "treeOutputSlot": "5001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
       "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -32932,16 +35030,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:599",
       "player2": "Tom Grieve",
       "player2Id": "q:player:423",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50 - Plate",
+      "treeInputSlot1": "6003",
+      "treeInputSlot2": "6004",
+      "treeOutputSlot": "5002",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
       "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -32951,16 +35058,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:340",
       "player2": "Paul Ditton",
       "player2Id": "q:player:377",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50 - Plate",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "15:20",
-      "event": "",
+      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
       "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -32970,11 +35086,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:12",
       "player2": "Kevin Gloss",
       "player2Id": "q:player:755",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50 - Plate",
+      "treeInputSlot1": "6011",
+      "treeInputSlot2": "6012",
+      "treeOutputSlot": "5006",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -33055,26 +35180,35 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-09-01",
       "time": "16:00",
-      "event": "",
-      "round": "",
+      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
+      "round": "Round 2",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "court": "AGC",
       "result": "",
       "status": "scheduled",
       "player1": "Christo Potgieter",
       "player1Id": "q:player:886",
       "player2": "Lyle Billowes",
       "player2Id": "q:player:356",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:00",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -33084,16 +35218,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:399",
       "player2": "Dianne Elliott",
       "player2Id": "q:player:468",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:00",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -33103,16 +35248,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:494",
       "player2": "Kerry Kern",
       "player2Id": "q:player:658",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:00",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -33122,16 +35278,27 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:724",
       "player2": "Janis Nevler",
       "player2Id": "q:player:165",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:00",
-      "event": "",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "",
       "court": "",
@@ -33141,11 +35308,22 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:88",
       "player2": "Gaye Mitchell",
       "player2Id": "q:player:627",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -33155,16 +35333,25 @@ window.TOURNAMENT_DATA = {
       "venue": "Belmont Saints Squash Centre",
       "court": "",
       "result": "",
-      "status": "completed",
-      "winner": "Karl Brearley",
-      "winnerId": "q:player:340",
-      "player1": "Bye",
-      "player1Id": "",
-      "player2": "Karl Brearley",
-      "player2Id": "q:player:340",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "status": "scheduled",
+      "player1": "Dale Hawkes",
+      "player1Id": "q:player:707",
+      "player2": "Darren Ireland",
+      "player2Id": "q:player:587",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +45 - Plate",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -33270,58 +35457,29 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Syed Atif Ali Shah",
-      "player1Id": "q:player:541",
-      "player2": "Jamie Dougal",
-      "player2Id": "q:player:254",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Kyle Roach",
+      "player1Id": "q:player:773",
+      "player2": "Derick Collins",
+      "player2Id": "q:player:419",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +45 - Plate",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:00",
-      "event": "",
-      "round": "round of 32",
-      "venue": "",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Clayton Whincop",
-      "player1Id": "q:player:779",
-      "player2": "Jason Carey",
-      "player2Id": "q:player:932",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
-      "time": "16:00",
-      "event": "",
-      "round": "round of 32",
-      "venue": "",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Robert Donaghue",
-      "player1Id": "q:player:42",
-      "player2": "David Chapman",
-      "player2Id": "q:player:357",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-01",
-      "time": "16:00",
-      "event": "",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
       "round": "round of 32",
       "venue": "",
       "court": "",
@@ -33331,30 +35489,104 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:941",
       "player2": "Isaac Kuruvilla",
       "player2Id": "q:player:660",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +45 - Plate",
+      "treeInputSlot1": "6019",
+      "treeInputSlot2": "6020",
+      "treeOutputSlot": "5010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:00",
-      "event": "",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
       "round": "round of 32",
       "venue": "",
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Kyle Roach",
-      "player1Id": "q:player:773",
-      "player2": "Derick Collins",
-      "player2Id": "q:player:419",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Robert Donaghue",
+      "player1Id": "q:player:42",
+      "player2": "David Chapman",
+      "player2Id": "q:player:357",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +45 - Plate",
+      "treeInputSlot1": "6021",
+      "treeInputSlot2": "6022",
+      "treeOutputSlot": "5011",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "16:00",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
+      "round": "round of 32",
+      "venue": "",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Clayton Whincop",
+      "player1Id": "q:player:779",
+      "player2": "Jason Carey",
+      "player2Id": "q:player:932",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +45 - Plate",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "16:00",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
+      "round": "round of 32",
+      "venue": "",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Syed Atif Ali Shah",
+      "player1Id": "q:player:541",
+      "player2": "Jamie Dougal",
+      "player2Id": "q:player:254",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +45 - Plate",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -33388,11 +35620,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:596",
       "player2": "Anthony Vlismas",
       "player2Id": "q:player:846",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "7005",
+      "treeInputSlot2": "7006",
+      "treeOutputSlot": "6003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -33403,15 +35644,26 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "completed",
-      "winner": "Hendrik Heystek",
-      "winnerId": "q:player:13",
-      "player1": "Bye",
-      "player1Id": "",
-      "player2": "Hendrik Heystek",
-      "player2Id": "q:player:13",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Thomas Slattery",
+      "player1Id": "q:player:969",
+      "player2": "Barry Gardiner",
+      "player2Id": "q:player:519",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=21",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -33511,26 +35763,35 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
-      "round": "",
+      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
+      "round": "Round 2",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "court": "AGC",
       "result": "",
       "status": "scheduled",
       "player1": "Intikhab Alam",
       "player1Id": "q:player:726",
       "player2": "Samuel Kang",
       "player2Id": "q:player:657",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "6031",
+      "treeInputSlot2": "6032",
+      "treeOutputSlot": "5016",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
       "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -33540,16 +35801,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:13",
       "player2": "Brad Clark",
       "player2Id": "q:player:441",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50 - Plate",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
       "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -33559,16 +35829,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:96",
       "player2": "Paul Thomas",
       "player2Id": "q:player:62",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50 - Plate",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
       "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -33578,16 +35857,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:449",
       "player2": "Colin Watego",
       "player2Id": "q:player:481",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50 - Plate",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
       "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -33597,16 +35885,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:115",
       "player2": "Tom Dimitrievski",
       "player2Id": "q:player:749",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50 - Plate",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
       "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -33616,16 +35913,53 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:117",
       "player2": "Aaron Hoffman",
       "player2Id": "q:player:808",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50 - Plate",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
+      "round": "round of 64",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC7",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Stephen Lukey",
+      "player1Id": "q:player:623",
+      "player2": "Leon Holmes",
+      "player2Id": "q:player:471",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50 - Plate",
+      "treeInputSlot1": "7059",
+      "treeInputSlot2": "7060",
+      "treeOutputSlot": "6030",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "time": "16:40",
+      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
       "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
       "court": "",
@@ -33635,16 +35969,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:149",
       "player2": "Andre Di Mattia",
       "player2Id": "q:player:801",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +50 - Plate",
+      "treeInputSlot1": "6031",
+      "treeInputSlot2": "6032",
+      "treeOutputSlot": "5016",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
       "round": "round of 32",
       "venue": "",
       "court": "",
@@ -33654,16 +35997,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:378",
       "player2": "Gordon Plant",
       "player2Id": "q:player:412",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - Plate",
+      "treeInputSlot1": "6001",
+      "treeInputSlot2": "6002",
+      "treeOutputSlot": "5001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
       "round": "round of 32",
       "venue": "",
       "court": "",
@@ -33673,16 +36025,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:457",
       "player2": "Ian Brunning",
       "player2Id": "q:player:512",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - Plate",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
       "round": "round of 32",
       "venue": "",
       "court": "",
@@ -33692,16 +36053,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:847",
       "player2": "Mike Short",
       "player2Id": "q:player:188",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - Plate",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
       "round": "round of 32",
       "venue": "",
       "court": "",
@@ -33711,16 +36081,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:81",
       "player2": "John Fiori",
       "player2Id": "q:player:362",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - Plate",
+      "treeInputSlot1": "6009",
+      "treeInputSlot2": "6010",
+      "treeOutputSlot": "5005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
       "round": "round of 32",
       "venue": "",
       "court": "",
@@ -33730,16 +36109,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:277",
       "player2": "Andrew Palmer",
       "player2Id": "q:player:562",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - Plate",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
       "round": "round of 32",
       "venue": "",
       "court": "",
@@ -33749,16 +36137,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:689",
       "player2": "Ivan Patchett",
       "player2Id": "q:player:43",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - Plate",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
       "round": "round of 32",
       "venue": "",
       "court": "",
@@ -33768,16 +36165,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:934",
       "player2": "Mohamed Naga",
       "player2Id": "q:player:715",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - Plate",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
       "round": "round of 32",
       "venue": "",
       "court": "",
@@ -33787,16 +36193,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:900",
       "player2": "Harry Seitzinger",
       "player2Id": "q:player:170",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - Plate",
+      "treeInputSlot1": "6019",
+      "treeInputSlot2": "6020",
+      "treeOutputSlot": "5010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
       "round": "round of 32",
       "venue": "",
       "court": "",
@@ -33806,16 +36221,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:110",
       "player2": "Blair Mercer",
       "player2Id": "q:player:594",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - Plate",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "16:40",
-      "event": "",
+      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
       "round": "round of 32",
       "venue": "",
       "court": "",
@@ -33825,11 +36249,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:798",
       "player2": "Marc Kaye",
       "player2Id": "q:player:619",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - Plate",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -33973,20 +36406,29 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Wai To Yu",
-      "player1Id": "q:player:301",
-      "player2": "Glenn Tremayne",
-      "player2Id": "q:player:778",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Wayne Evans",
+      "player1Id": "q:player:57",
+      "player2": "Naj Alavi",
+      "player2Id": "q:player:1",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - Plate",
+      "treeInputSlot1": "7045",
+      "treeInputSlot2": "7046",
+      "treeOutputSlot": "6023",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "17:20",
-      "event": "",
+      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
       "round": "round of 64",
       "venue": "",
       "court": "",
@@ -34015,16 +36457,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:137",
       "player2": "Hidefumi Naka",
       "player2Id": "q:player:148",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - Plate",
+      "treeInputSlot1": "7061",
+      "treeInputSlot2": "7062",
+      "treeOutputSlot": "6031",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "17:20",
-      "event": "",
+      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
       "round": "round of 64",
       "venue": "",
       "court": "",
@@ -34034,16 +36485,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:199",
       "player2": "Alec Webber",
       "player2Id": "q:player:192",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "7005",
+      "treeInputSlot2": "7006",
+      "treeOutputSlot": "6003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "17:20",
-      "event": "",
+      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
       "round": "round of 64",
       "venue": "",
       "court": "",
@@ -34053,16 +36513,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:113",
       "player2": "Gavin Cunningham",
       "player2Id": "q:player:937",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "7013",
+      "treeInputSlot2": "7014",
+      "treeOutputSlot": "6007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "17:20",
-      "event": "",
+      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
       "round": "round of 64",
       "venue": "",
       "court": "",
@@ -34072,16 +36541,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:436",
       "player2": "Peter Burrows",
       "player2Id": "q:player:741",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "7019",
+      "treeInputSlot2": "7020",
+      "treeOutputSlot": "6010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "17:20",
-      "event": "",
+      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
       "round": "round of 64",
       "venue": "",
       "court": "",
@@ -34091,16 +36569,25 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:815",
       "player2": "Bruce Bussey",
       "player2Id": "q:player:485",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "7027",
+      "treeInputSlot2": "7028",
+      "treeOutputSlot": "6014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
       "time": "17:20",
-      "event": "",
+      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
       "round": "round of 64",
       "venue": "",
       "court": "",
@@ -34110,11 +36597,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:572",
       "player2": "Craig Walsh",
       "player2Id": "q:player:213",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "7035",
+      "treeInputSlot2": "7036",
+      "treeOutputSlot": "6018",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -34129,11 +36625,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:911",
       "player2": "Chris Lugger",
       "player2Id": "q:player:560",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "7037",
+      "treeInputSlot2": "7038",
+      "treeOutputSlot": "6019",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -34148,11 +36653,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:176",
       "player2": "Bernd Louis",
       "player2Id": "q:player:450",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "7041",
+      "treeInputSlot2": "7042",
+      "treeOutputSlot": "6021",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -34167,11 +36681,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:531",
       "player2": "Andrew Koerbin",
       "player2Id": "q:player:711",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "7053",
+      "treeInputSlot2": "7054",
+      "treeOutputSlot": "6027",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
@@ -34314,24 +36837,33 @@ window.TOURNAMENT_DATA = {
       "venue": "",
       "court": "",
       "result": "",
-      "status": "completed",
-      "winner": "Freddy Ho",
-      "winnerId": "q:player:345",
-      "player1": "Bye",
-      "player1Id": "",
-      "player2": "Freddy Ho",
-      "player2Id": "q:player:345",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "status": "scheduled",
+      "player1": "Wai To Yu",
+      "player1Id": "q:player:301",
+      "player2": "Glenn Tremayne",
+      "player2Id": "q:player:778",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "7021",
+      "treeInputSlot2": "7022",
+      "treeOutputSlot": "6011",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-01",
-      "time": "17:30",
-      "event": "",
+      "time": "17:20",
+      "event": "Men's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +65 | Jean-Jacques Annonier | Vaman Apte | Nozomu Arimoto | John Barton | Robert Batten | John Bonello | Graeme Bradfield | Philip Bradshaw | Antony Brettkelly | Fernando Brito | Ravikrishna Burla | Tom Burns | Ken Carse | Gerard Cassidy | Peter Chang | Rod Chatfield",
       "round": "round of 64",
       "venue": "Squashworld Mirrabooka",
-      "court": "",
+      "court": "SC2",
       "result": "",
       "status": "scheduled",
       "player1": "Lorenzo Fernandez",
@@ -35145,78 +37677,122 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-09-02",
       "time": "10:00",
-      "event": "",
-      "round": "",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "round of 32",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "court": "AGC",
       "result": "",
       "status": "scheduled",
       "player1": "Matthew Karwalski",
       "player1Id": "q:player:275",
       "player2": "Murukesh Mani",
       "player2Id": "q:player:279",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "10:00",
-      "event": "",
-      "round": "",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC1",
       "result": "",
       "status": "scheduled",
       "player1": "Vipul Kashyap",
       "player1Id": "q:player:372",
       "player2": "Jimmy Van Niekerk",
       "player2Id": "q:player:138",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "10:00",
-      "event": "",
-      "round": "",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC2",
       "result": "",
       "status": "scheduled",
       "player1": "Ty Cameron",
       "player1Id": "q:player:743",
       "player2": "Jason Le Roux",
       "player2Id": "q:player:592",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "10:00",
-      "event": "",
-      "round": "",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC3",
       "result": "",
       "status": "scheduled",
       "player1": "Nathan Turnbull",
       "player1Id": "q:player:210",
       "player2": "Oliver Johnston",
       "player2Id": "q:player:524",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35231,11 +37807,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:764",
       "player2": "Robert Browne",
       "player2Id": "q:player:464",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6001",
+      "treeInputSlot2": "6002",
+      "treeOutputSlot": "5001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35250,11 +37835,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:206",
       "player2": "Sjors Gouweloos",
       "player2Id": "q:player:255",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6003",
+      "treeInputSlot2": "6004",
+      "treeOutputSlot": "5002",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35269,11 +37863,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:618",
       "player2": "Rod La Motte",
       "player2Id": "q:player:411",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35288,11 +37891,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:676",
       "player2": "Dolf Maeder",
       "player2Id": "q:player:452",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35307,11 +37919,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:118",
       "player2": "Tom Ferrauto",
       "player2Id": "q:player:549",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6009",
+      "treeInputSlot2": "6010",
+      "treeOutputSlot": "5005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35326,11 +37947,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:544",
       "player2": "Les Makarucha",
       "player2Id": "q:player:876",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6011",
+      "treeInputSlot2": "6012",
+      "treeOutputSlot": "5006",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35345,11 +37975,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:321",
       "player2": "Gavin Davis",
       "player2Id": "q:player:696",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35364,11 +38003,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:440",
       "player2": "Leon Lennox",
       "player2Id": "q:player:763",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35383,11 +38031,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:669",
       "player2": "Keith Petty",
       "player2Id": "q:player:260",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35402,11 +38059,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:31",
       "player2": "Doug Macdougall",
       "player2Id": "q:player:373",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6019",
+      "treeInputSlot2": "6020",
+      "treeOutputSlot": "5010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35421,11 +38087,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:401",
       "player2": "Edward Pieret",
       "player2Id": "q:player:963",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6021",
+      "treeInputSlot2": "6022",
+      "treeOutputSlot": "5011",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35440,11 +38115,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:264",
       "player2": "Colin Robertson",
       "player2Id": "q:player:20",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35459,11 +38143,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:537",
       "player2": "Glenn Sharp",
       "player2Id": "q:player:458",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35478,68 +38171,110 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:508",
       "player2": "Philip Neilson",
       "player2Id": "q:player:913",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "10:40",
-      "event": "",
-      "round": "",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "round of 32",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "court": "AGC",
       "result": "",
       "status": "scheduled",
       "player1": "Steven Finitsis",
       "player1Id": "q:player:550",
       "player2": "Corey Bedingfield",
       "player2Id": "q:player:141",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "10:40",
-      "event": "",
-      "round": "",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC1",
       "result": "",
       "status": "scheduled",
       "player1": "Chiraag Khemani",
       "player1Id": "q:player:410",
       "player2": "Valerii Fedoruk",
       "player2Id": "q:player:196",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "10:40",
-      "event": "",
-      "round": "",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "round of 32",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC2",
       "result": "",
       "status": "scheduled",
       "player1": "Karamatullah Khan",
       "player1Id": "q:player:525",
       "player2": "Shahroze Khan",
       "player2Id": "q:player:276",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35554,11 +38289,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:14",
       "player2": "Joe Mc Auley",
       "player2Id": "q:player:453",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35573,16 +38317,91 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:479",
       "player2": "Michael Conlon",
       "player2Id": "q:player:797",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70",
+      "treeInputSlot1": "6031",
+      "treeInputSlot2": "6032",
+      "treeOutputSlot": "5016",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "10:40",
-      "event": "",
+      "event": "Men's 85+",
+      "round": "Round 5",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC3",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Ray Villarroya",
+      "player1Id": "q:player:229",
+      "player2": "Barry Gardiner",
+      "player2Id": "q:player:519",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=21",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "winner": "",
+      "winnerId": "",
+      "resultSource": ""
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:40",
+      "event": "Men's 85+",
+      "round": "Round 5",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC4",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Thomas Slattery",
+      "player1Id": "q:player:969",
+      "player2": "David Bloch",
+      "player2Id": "q:player:338",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=21",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "winner": "",
+      "winnerId": "",
+      "resultSource": ""
+    },
+    {
+      "date": "2026-09-02",
+      "time": "10:40",
+      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "",
@@ -35592,17 +38411,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:307",
       "player2": "Francis Bugeja",
       "player2Id": "q:player:178",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
+      "evidenceSources": [
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "10:40",
-      "event": "",
+      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "",
@@ -35612,17 +38434,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:912",
       "player2": "Howard Armitage",
       "player2Id": "q:player:65",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
+      "evidenceSources": [
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "10:40",
-      "event": "",
+      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "",
@@ -35632,17 +38457,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:526",
       "player2": "Ken Kable",
       "player2Id": "q:player:869",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
+      "evidenceSources": [
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "10:40",
-      "event": "",
+      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "",
@@ -35652,12 +38480,15 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:837",
       "player2": "Jose Luis Alba",
       "player2Id": "q:player:643",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
+      "evidenceSources": [
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35692,30 +38523,48 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:217",
       "player2": "René Nuessli",
       "player2Id": "q:player:75",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "11:20",
-      "event": "",
-      "round": "",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "Round 3",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "court": "AGC",
       "result": "",
       "status": "scheduled",
       "player1": "George Shoulder",
       "player1Id": "q:player:890",
       "player2": "Devon Hendrikse",
       "player2Id": "q:player:585",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +40",
+      "treeInputSlot1": "5015",
+      "treeInputSlot2": "5016",
+      "treeOutputSlot": "4008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35726,15 +38575,24 @@ window.TOURNAMENT_DATA = {
       "court": "",
       "result": "",
       "status": "scheduled",
-      "player1": "Walter Lion",
-      "player1Id": "q:player:82",
-      "player2": "John Hawkes",
-      "player2Id": "q:player:708",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Jake Markwart",
+      "player1Id": "q:player:15",
+      "player2": "Harnesh Singh",
+      "player2Id": "q:player:891",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +40 - Plate",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35749,11 +38607,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:800",
       "player2": "Arthur Koeman",
       "player2Id": "q:player:72",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6001",
+      "treeInputSlot2": "6002",
+      "treeOutputSlot": "5001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35768,11 +38635,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:284",
       "player2": "Glenn Haigh",
       "player2Id": "q:player:99",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6009",
+      "treeInputSlot2": "6010",
+      "treeOutputSlot": "5005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35787,87 +38663,192 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:650",
       "player2": "Garry Irwin",
       "player2Id": "q:player:32",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "11:30",
-      "event": "",
-      "round": "round of 32",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "completed",
-      "winner": "Ashley Ingham",
-      "winnerId": "q:player:709",
-      "player1": "Bye",
-      "player1Id": "",
-      "player2": "Ashley Ingham",
-      "player2Id": "q:player:709",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-02",
-      "time": "11:30",
-      "event": "",
-      "round": "round of 32",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "event": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie",
+      "round": "Plate",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC10",
       "result": "",
       "status": "scheduled",
-      "player1": "Jake Markwart",
-      "player1Id": "q:player:15",
-      "player2": "Harnesh Singh",
-      "player2Id": "q:player:891",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Walter Lion",
+      "player1Id": "q:player:82",
+      "player2": "John Hawkes",
+      "player2Id": "q:player:708",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "12:00",
-      "event": "",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "Plate",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC4",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Dan Rolls",
+      "player1Id": "q:player:133",
+      "player2": "Yeshan Ekanayake",
+      "player2Id": "q:player:652",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +40 - Plate",
+      "treeInputSlot1": "6009",
+      "treeInputSlot2": "6010",
+      "treeOutputSlot": "5005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:00",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "Plate",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC5",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Jonathan Down",
+      "player1Id": "q:player:907",
+      "player2": "Jacob Schneider",
+      "player2Id": "q:player:21",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +40 - Plate",
+      "treeInputSlot1": "6011",
+      "treeInputSlot2": "6012",
+      "treeOutputSlot": "5006",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:00",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "Plate",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC7",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Philip Taylor",
+      "player1Id": "q:player:896",
+      "player2": "Julian Buczek",
+      "player2Id": "q:player:80",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +40 - Plate",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:00",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
       "round": "",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC1",
       "result": "",
       "status": "scheduled",
       "player1": "Mark Arici",
       "player1Id": "q:player:355",
       "player2": "Julian Wollny",
       "player2Id": "q:player:313",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "12:00",
-      "event": "",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
       "round": "",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC3",
       "result": "",
       "status": "scheduled",
       "player1": "Abishek Laxminarayan",
       "player1Id": "q:player:428",
       "player2": "Gavin Treacy",
       "player2Id": "q:player:190",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35901,11 +38882,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:816",
       "player2": "Robin Weaver",
       "player2Id": "q:player:898",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6003",
+      "treeInputSlot2": "6004",
+      "treeOutputSlot": "5002",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35920,11 +38910,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:409",
       "player2": "Ripley Oyler",
       "player2Id": "q:player:671",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6011",
+      "treeInputSlot2": "6012",
+      "treeOutputSlot": "5006",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -35939,107 +38938,104 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:757",
       "player2": "Charles Barton",
       "player2Id": "q:player:316",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-02",
-      "time": "12:00",
-      "event": "",
-      "round": "round of 32",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Dan Rolls",
-      "player1Id": "q:player:133",
-      "player2": "Yeshan Ekanayake",
-      "player2Id": "q:player:652",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-02",
-      "time": "12:00",
-      "event": "",
-      "round": "round of 32",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Jonathan Down",
-      "player1Id": "q:player:907",
-      "player2": "Jacob Schneider",
-      "player2Id": "q:player:21",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-02",
-      "time": "12:00",
-      "event": "",
-      "round": "round of 32",
-      "venue": "",
-      "court": "",
-      "result": "",
-      "status": "completed",
-      "winner": "Kuan-Chan Lin",
-      "winnerId": "q:player:818",
-      "player1": "Jane Kennedy",
-      "player1Id": "q:player:761",
-      "player2": "Kuan-Chan Lin",
-      "player2Id": "q:player:818",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6019",
+      "treeInputSlot2": "6020",
+      "treeOutputSlot": "5010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "12:00",
-      "event": "",
-      "round": "round of 32",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "event": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie",
+      "round": "Plate",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC10",
       "result": "",
       "status": "scheduled",
-      "player1": "Philip Taylor",
-      "player1Id": "q:player:896",
-      "player2": "Julian Buczek",
-      "player2Id": "q:player:80",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "player1": "Chad Addison",
+      "player1Id": "q:player:90",
+      "player2": "John Willems",
+      "player2Id": "q:player:63",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
-      "time": "12:00",
-      "event": "",
-      "round": "round of 32",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "time": "12:30",
+      "event": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie",
+      "round": "Plate",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC7",
       "result": "",
-      "status": "completed",
-      "winner": "Ashton D'Vaz",
-      "winnerId": "q:player:359",
-      "player1": "Bye",
-      "player1Id": "",
-      "player2": "Ashton D'Vaz",
-      "player2Id": "q:player:359",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "status": "scheduled",
+      "player1": "Phillip Eason",
+      "player1Id": "q:player:750",
+      "player2": "Peter Fielding",
+      "player2Id": "q:player:155",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "time": "12:30",
+      "event": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie",
+      "round": "Plate",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC8",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Stuart Mcilroy",
+      "player1Id": "q:player:958",
+      "player2": "Kevin Yeadon",
+      "player2Id": "q:player:783",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36054,11 +39050,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:166",
       "player2": "Andrew Van Dam",
       "player2Id": "q:player:47",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6031",
+      "treeInputSlot2": "6032",
+      "treeOutputSlot": "5016",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36101,59 +39106,86 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-09-02",
       "time": "12:40",
-      "event": "",
-      "round": "",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
+      "round": "Round 3",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC1",
       "result": "",
       "status": "scheduled",
       "player1": "Joe Wong",
       "player1Id": "q:player:723",
       "player2": "Luiz Andre Couto",
       "player2Id": "q:player:370",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +45",
+      "treeInputSlot1": "5009",
+      "treeInputSlot2": "5010",
+      "treeOutputSlot": "4005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "12:40",
-      "event": "",
-      "round": "",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
+      "round": "Round 3",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC2",
       "result": "",
       "status": "scheduled",
       "player1": "Hirantha Goonesena",
       "player1Id": "q:player:944",
       "player2": "Jeff Osborne",
       "player2Id": "q:player:915",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +45",
+      "treeInputSlot1": "5011",
+      "treeInputSlot2": "5012",
+      "treeOutputSlot": "4006",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "12:40",
-      "event": "",
-      "round": "",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
+      "round": "Round 3",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC3",
       "result": "",
       "status": "scheduled",
       "player1": "David Ramsden-Wood",
       "player1Id": "q:player:132",
       "player2": "Cavish Farrukh",
       "player2Id": "q:player:195",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +45",
+      "treeInputSlot1": "5013",
+      "treeInputSlot2": "5014",
+      "treeOutputSlot": "4007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36168,11 +39200,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:511",
       "player2": "Warren Oliver",
       "player2Id": "q:player:914",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "6001",
+      "treeInputSlot2": "6002",
+      "treeOutputSlot": "5001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36187,11 +39228,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:194",
       "player2": "Ernie Risi",
       "player2Id": "q:player:835",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36206,11 +39256,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:901",
       "player2": "Philip Maxton",
       "player2Id": "q:player:184",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36249,7 +39308,19 @@ window.TOURNAMENT_DATA = {
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "6009",
+      "treeInputSlot2": "6010",
+      "treeOutputSlot": "5005",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36321,11 +39392,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:371",
       "player2": "Michel Robitaille",
       "player2Id": "q:player:241",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36340,31 +39420,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:577",
       "player2": "Dick Jenkin",
       "player2Id": "q:player:52",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-02",
-      "time": "13:00",
-      "event": "",
-      "round": "round of 32",
-      "venue": "Squashworld Mirrabooka",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Duilio Costa",
-      "player1Id": "q:player:403",
-      "player2": "John Tetlow",
-      "player2Id": "q:player:247",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "6017",
+      "treeInputSlot2": "6018",
+      "treeOutputSlot": "5009",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36379,145 +39448,244 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:947",
       "player2": "Brian Hammett",
       "player2Id": "q:player:58",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
-      "time": "13:20",
+      "time": "13:00",
       "event": "",
       "round": "round of 32",
-      "venue": "",
+      "venue": "Squashworld Mirrabooka",
       "court": "",
       "result": "",
-      "status": "completed",
-      "winner": "Jason Pawelec",
-      "winnerId": "q:player:830",
-      "player1": "Melissa Martin",
-      "player1Id": "q:player:430",
-      "player2": "Jason Pawelec",
-      "player2Id": "q:player:830",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
+      "status": "scheduled",
+      "player1": "Bob Price",
+      "player1Id": "q:player:833",
+      "player2": "Pat Paproski",
+      "player2Id": "q:player:563",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6007",
+      "treeInputSlot2": "6008",
+      "treeOutputSlot": "5004",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "time": "13:00",
+      "event": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie",
+      "round": "Plate",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC8",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Michael Bastiani",
+      "player1Id": "q:player:484",
+      "player2": "Louis Cotter",
+      "player2Id": "q:player:747",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "time": "13:00",
+      "event": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie",
+      "round": "Plate",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC9",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Dave Phua",
+      "player1Id": "q:player:716",
+      "player2": "Frank Saunders",
+      "player2Id": "q:player:675",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "13:20",
-      "event": "",
-      "round": "round of 32",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "Plate",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC1",
       "result": "",
       "status": "scheduled",
       "player1": "Gareth Wu",
       "player1Id": "q:player:539",
       "player2": "Taras Lisitsin",
       "player2Id": "q:player:367",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +40 - Plate",
+      "treeInputSlot1": "6019",
+      "treeInputSlot2": "6020",
+      "treeOutputSlot": "5010",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "13:20",
-      "event": "",
-      "round": "round of 32",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "Plate",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC3",
       "result": "",
       "status": "scheduled",
       "player1": "David Bolger",
       "player1Id": "q:player:736",
       "player2": "Simon Cosier",
       "player2Id": "q:player:904",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +40 - Plate",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "13:20",
-      "event": "",
-      "round": "round of 32",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "Plate",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC4",
       "result": "",
       "status": "scheduled",
       "player1": "Luke Missak",
       "player1Id": "q:player:147",
       "player2": "Liebin (Roy) Deng",
       "player2Id": "q:player:699",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +40 - Plate",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "13:20",
-      "event": "",
-      "round": "round of 32",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "Plate",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC5",
       "result": "",
       "status": "scheduled",
       "player1": "Stuart Wilkinson",
       "player1Id": "q:player:780",
       "player2": "Boe Strachan",
       "player2Id": "q:player:893",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +40 - Plate",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "13:20",
-      "event": "",
-      "round": "round of 32",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "Plate",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC6",
       "result": "",
       "status": "scheduled",
       "player1": "Kyle Coenraad",
       "player1Id": "q:player:985",
       "player2": "Graham Stone",
       "player2Id": "q:player:310",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-02",
-      "time": "13:20",
-      "event": "",
-      "round": "round of 32",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "completed",
-      "winner": "Gerhard Potgieter",
-      "winnerId": "q:player:532",
-      "player1": "Gerhard Potgieter",
-      "player1Id": "q:player:532",
-      "player2": "Bye",
-      "player2Id": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +40 - Plate",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36532,11 +39700,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:739",
       "player2": "Jean-Jacques Annonier",
       "player2Id": "q:player:644",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "6013",
+      "treeInputSlot2": "6014",
+      "treeOutputSlot": "5007",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36551,11 +39728,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:252",
       "player2": "Chong Jin Leow",
       "player2Id": "q:player:953",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36570,11 +39756,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:103",
       "player2": "Ken Carse",
       "player2Id": "q:player:794",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "6027",
+      "treeInputSlot2": "6028",
+      "treeOutputSlot": "5014",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36589,11 +39784,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:819",
       "player2": "Gunnar Kågström",
       "player2Id": "q:player:812",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36655,21 +39859,32 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-09-02",
       "time": "14:00",
-      "event": "",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
       "round": "",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "court": "AGC",
       "result": "",
       "status": "scheduled",
       "player1": "James Bowden",
       "player1Id": "q:player:930",
       "player2": "Cameron Penna",
       "player2Id": "q:player:884",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36712,21 +39927,32 @@ window.TOURNAMENT_DATA = {
     {
       "date": "2026-09-02",
       "time": "14:40",
-      "event": "",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
       "round": "",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "court": "AGC",
       "result": "",
       "status": "scheduled",
       "player1": "Peter Wyatt",
       "player1Id": "q:player:851",
       "player2": "Guillermo Pedernera",
       "player2Id": "q:player:333",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36765,7 +39991,19 @@ window.TOURNAMENT_DATA = {
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "6001",
+      "treeInputSlot2": "6002",
+      "treeOutputSlot": "5001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36804,7 +40042,19 @@ window.TOURNAMENT_DATA = {
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "6005",
+      "treeInputSlot2": "6006",
+      "treeOutputSlot": "5003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36819,11 +40069,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:568",
       "player2": "Ravi Govender",
       "player2Id": "q:player:107",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "6011",
+      "treeInputSlot2": "6012",
+      "treeOutputSlot": "5006",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36862,26 +40121,75 @@ window.TOURNAMENT_DATA = {
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "6015",
+      "treeInputSlot2": "6016",
+      "treeOutputSlot": "5008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
       "time": "15:20",
-      "event": "",
-      "round": "",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
+      "round": "Round 3",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
+      "court": "AGC",
       "result": "",
       "status": "scheduled",
       "player1": "Scott Petts",
       "player1Id": "q:player:116",
       "player2": "Rene Mijs",
       "player2Id": "q:player:986",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +45",
+      "treeInputSlot1": "5015",
+      "treeInputSlot2": "5016",
+      "treeOutputSlot": "4008",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "time": "15:30",
+      "event": "",
+      "round": "round of 32",
+      "venue": "Squashworld Mirrabooka",
+      "court": "",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Roger Schmidlin",
+      "player1Id": "q:player:135",
+      "player2": "Bodo Deutschmann",
+      "player2Id": "q:player:293",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "6023",
+      "treeInputSlot2": "6024",
+      "treeOutputSlot": "5012",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36896,30 +40204,20 @@ window.TOURNAMENT_DATA = {
       "player1Id": "q:player:714",
       "player2": "Jorge Fries",
       "player2Id": "q:player:582",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-02",
-      "time": "15:30",
-      "event": "",
-      "round": "round of 32",
-      "venue": "Squashworld Mirrabooka",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Phil Reason",
-      "player1Id": "q:player:634",
-      "player2": "Peter Anich",
-      "player2Id": "q:player:437",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "6025",
+      "treeInputSlot2": "6026",
+      "treeOutputSlot": "5013",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36958,7 +40256,19 @@ window.TOURNAMENT_DATA = {
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "6029",
+      "treeInputSlot2": "6030",
+      "treeOutputSlot": "5015",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -36997,7 +40307,19 @@ window.TOURNAMENT_DATA = {
       "source": "TournamentSoftware Matches Text",
       "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "6031",
+      "treeInputSlot2": "6032",
+      "treeOutputSlot": "5016",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-02",
@@ -37078,377 +40400,218 @@ window.TOURNAMENT_DATA = {
     },
     {
       "date": "2026-09-03",
-      "time": "13:20",
-      "event": "",
-      "round": "",
-      "venue": "",
-      "court": "",
-      "result": "Walkover",
-      "status": "completed",
-      "player1": "Karen Blom",
-      "player1Id": "q:player:790",
-      "player2": "Lisa Christou",
-      "player2Id": "q:player:575",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments",
-      "resultSource": "TournamentSoftware"
-    },
-    {
-      "date": "2026-09-03",
-      "time": "14:00",
-      "event": "",
-      "round": "round of 16",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Steve Mckenna",
-      "player1Id": "q:player:666",
-      "player2": "Clive Johnston",
-      "player2Id": "q:player:102",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
-    },
-    {
-      "date": "2026-09-03",
-      "time": "14:30",
-      "event": "",
-      "round": "round of 16",
-      "venue": "",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Bye",
-      "player1Id": "",
-      "player2": "Matt Wren",
-      "player2Id": "q:player:287",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-03",
-      "time": "14:30",
-      "event": "",
-      "round": "round of 16",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Matt Wren",
-      "player1Id": "q:player:287",
-      "player2": "Mark Mckechnie",
-      "player2Id": "q:player:959",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
-    },
-    {
-      "date": "2026-09-03",
-      "time": "16:00",
-      "event": "",
-      "round": "round of 16",
-      "venue": "",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Bye",
-      "player1Id": "",
-      "player2": "Cristan Yang",
-      "player2Id": "q:player:265",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-03",
-      "time": "16:00",
-      "event": "",
-      "round": "round of 16",
-      "venue": "",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Vinay Bachani",
-      "player1Id": "q:player:151",
-      "player2": "Onnie Biswas",
-      "player2Id": "q:player:418",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
-    },
-    {
-      "date": "2026-09-03",
-      "time": "16:00",
-      "event": "",
-      "round": "round of 16",
+      "time": "10:00",
+      "event": "Men's 85+",
+      "round": "Round 4",
       "venue": "Squashworld Mirrabooka",
-      "court": "",
+      "court": "SC6",
       "result": "",
       "status": "scheduled",
-      "player1": "Scott Haberecht",
-      "player1Id": "q:player:910",
-      "player2": "Hemant Daya",
-      "player2Id": "q:player:490",
+      "player1": "Thomas Slattery",
+      "player1Id": "q:player:969",
+      "player2": "Peter Zillmer",
+      "player2Id": "q:player:540",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=21",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
       "winner": "",
       "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "resultSource": ""
     },
     {
       "date": "2026-09-03",
-      "time": "16:00",
-      "event": "",
-      "round": "round of 16",
+      "time": "10:00",
+      "event": "Men's 85+",
+      "round": "Round 4",
       "venue": "Squashworld Mirrabooka",
-      "court": "",
+      "court": "SC5",
       "result": "",
       "status": "scheduled",
-      "player1": "Bye",
-      "player1Id": "",
-      "player2": "Onnie Biswas",
-      "player2Id": "q:player:418",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-03",
-      "time": "16:00",
-      "event": "",
-      "round": "round of 16",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Cristan Yang",
-      "player1Id": "q:player:265",
-      "player2": "Vinay Bachani",
-      "player2Id": "q:player:151",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
+      "player1": "Ray Villarroya",
+      "player1Id": "q:player:229",
+      "player2": "David Bloch",
+      "player2Id": "q:player:338",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=21",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "winner": "",
+      "winnerId": "",
+      "resultSource": ""
     },
     {
       "date": "2026-09-03",
       "time": "16:30",
-      "event": "",
-      "round": "round of 16",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
+      "round": "Plate",
       "venue": "Belmont Saints Squash Centre",
-      "court": "",
+      "court": "SC8",
       "result": "",
       "status": "scheduled",
       "player1": "Jarrod Ennis",
       "player1Id": "q:player:491",
       "player2": "Choon Hong Teh",
       "player2Id": "q:player:681",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-03",
-      "time": "16:30",
-      "event": "",
-      "round": "round of 16",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Ari Mizis",
-      "player1Id": "q:player:765",
-      "player2": "Shane Graham",
-      "player2Id": "q:player:197",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
-    },
-    {
-      "date": "2026-09-03",
-      "time": "16:30",
-      "event": "",
-      "round": "round of 16",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Kamil Patel",
-      "player1Id": "q:player:391",
-      "player2": "Ryan Eaton",
-      "player2Id": "q:player:27",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
-    },
-    {
-      "date": "2026-09-03",
-      "time": "16:30",
-      "event": "",
-      "round": "round of 16",
-      "venue": "Squashworld Mirrabooka",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Bye",
-      "player1Id": "",
-      "player2": "David Christy",
-      "player2Id": "q:player:745",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-03",
-      "time": "17:20",
-      "event": "",
-      "round": "",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Brenton White",
-      "player1Id": "q:player:417",
-      "player2": "Kasey Bonato",
-      "player2Id": "q:player:791",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +45 - Plate",
+      "treeInputSlot1": "5005",
+      "treeInputSlot2": "5006",
+      "treeOutputSlot": "4003",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-03",
       "time": "17:30",
-      "event": "",
-      "round": "round of 16",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "Plate",
       "venue": "Squashworld Mirrabooka",
-      "court": "",
+      "court": "SC6",
       "result": "",
       "status": "scheduled",
       "player1": "Ashley Ingham",
       "player1Id": "q:player:709",
       "player2": "Matthew Brown",
       "player2Id": "q:player:303",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +40 - Plate",
+      "treeInputSlot1": "5001",
+      "treeInputSlot2": "5002",
+      "treeOutputSlot": "4001",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-03",
       "time": "18:00",
-      "event": "",
+      "event": "Women's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +35 | Kasey Bonato | Blanca Nelly Bonifacio Diaz | Stephanie Chambers | Samantha Foyle | Jodie Hodgkins | Tracey Kimble | Hei Ting Leung | Catherine Mcqueen | Joan Naarstig | Zoe Petrovansky | Heather Pilley | Gill Van Vlaanderen | Matches | Played | Tuesday, 01 September 2026 | Thursday, 03 September 2026",
       "round": "",
       "venue": "Karrinyup Shopping Centre",
-      "court": "",
-      "result": "Walkover",
-      "status": "completed",
+      "court": "AGC",
+      "result": "",
+      "status": "scheduled",
       "player1": "Zoe Petrovansky",
       "player1Id": "q:player:224",
       "player2": "Blanca Nelly Bonifacio Diaz",
       "player2Id": "q:player:5",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=2",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
       "winner": "",
       "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": "",
-      "resultSource": "TournamentSoftware"
+      "resultSource": ""
     },
     {
-      "date": "2026-09-03",
-      "time": "18:30",
-      "event": "",
-      "round": "round of 16",
+      "date": "2026-09-04",
+      "time": "14:00",
+      "event": "Men's 85+",
+      "round": "Round 3",
       "venue": "Squashworld Mirrabooka",
-      "court": "",
+      "court": "SC4",
       "result": "",
       "status": "scheduled",
-      "player1": "Bye",
-      "player1Id": "",
-      "player2": "Kuan-Chan Lin",
-      "player2Id": "q:player:818",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
-      "rawText": ""
-    },
-    {
-      "date": "2026-09-03",
-      "time": "18:40",
-      "event": "",
-      "round": "",
-      "venue": "",
-      "court": "",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Samantha Foyle",
-      "player1Id": "q:player:518",
-      "player2": "Jay Molloy",
-      "player2Id": "q:player:766",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
+      "player1": "Ray Villarroya",
+      "player1Id": "q:player:229",
+      "player2": "Peter Zillmer",
+      "player2Id": "q:player:540",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=21",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
-      "date": "2026-09-03",
-      "time": "19:00",
-      "event": "",
-      "round": "round of 16",
+      "date": "2026-09-04",
+      "time": "14:00",
+      "event": "Men's 85+",
+      "round": "Round 4",
       "venue": "Squashworld Mirrabooka",
-      "court": "",
+      "court": "SC6",
       "result": "",
       "status": "scheduled",
-      "player1": "Jason Pawelec",
-      "player1Id": "q:player:830",
-      "player2": "Gerhard Potgieter",
-      "player2Id": "q:player:532",
-      "winner": "",
-      "winnerId": "",
-      "source": "TournamentSoftware Matches Text",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
+      "player1": "Barry Gardiner",
+      "player1Id": "q:player:519",
+      "player2": "Geoffrey Coyne",
+      "player2Id": "q:player:270",
       "rawText": "",
-      "recoveredFrom": "adjacent-one-player-fragments"
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=21",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
     },
     {
       "date": "2026-09-04",
