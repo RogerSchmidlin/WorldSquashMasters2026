@@ -1262,9 +1262,65 @@ function currentLiveMatches(){
     });
 }
 
+function liveVicParkPlayerCard(p,name,id,tracked=false,scoreClass=''){
+  const displayName=playerListDisplayName(name)||'TBD';
+  const tbd=isTbdName(name);
+  const tag=tbd?'div':'a';
+  const href=tbd?'':` href="${playerPageUrl(name,id||p?.officialPlayerId||'')}"`;
+  const rankRaw=p?.squashLevelsWorldRank;
+  const world=(rankRaw===null||rankRaw===undefined||String(rankRaw).trim()==='')
+    ? ''
+    : (/^tbd$/i.test(String(rankRaw).trim())?'TBD':squashMetric(rankRaw));
+  const level=p?.squashLevelsLevel?squashMetric(p.squashLevelsLevel):'';
+  const metrics=[
+    world?`<span class="live-vic-world">World ${world}</span>`:'',
+    level?`<span class="live-vic-level">Level ${level}${p?.squashLevelsLevelProvisional?' (P)':''}</span>`:''
+  ].filter(Boolean).join('');
+
+  return `<${tag}${href} class="live-vic-player-card ${tracked?'vic-tracked-player':''} ${scoreClass}">
+    <span class="live-vic-player-name">${esc(displayName)}</span>
+    <span class="live-vic-player-meta">
+      <span class="live-vic-flag">${flagImg(p)}</span>
+      <span class="live-vic-country">${esc(p?.country||'')}</span>
+      ${metrics}
+    </span>
+  </${tag}>`;
+}
+
+function liveVicParkMatchRow(m,trackedNames=[]){
+  const p1=playerForMatchSide(m,1),p2=playerForMatchSide(m,2);
+  const p1Tracked=trackedNames.some(n=>sameName(n,m.player1));
+  const p2Tracked=trackedNames.some(n=>sameName(n,m.player2));
+  const state=scoreGameState(m);
+  const p1Class=state.finished&&state.winnerSide===1?'match-winner-player':(state.finished&&state.winnerSide?'match-loser-player':'');
+  const p2Class=state.finished&&state.winnerSide===2?'match-winner-player':(state.finished&&state.winnerSide?'match-loser-player':'');
+  const ageGroupLabel=matchAgeGroupLabel(m,p1,p2);
+  const v=venueVisual(m);
+  const live=isMatchCurrent(m);
+
+  return `<article class="vic-match-row live-page-match-row ${isPast(m)?'past':''} ${live?'match-live':''} ${state.finished?'match-finished':''}">
+    <div class="vic-time live-vic-time">
+      <span class="vic-time-value">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span>
+      <span class="vic-time-age">${esc(ageGroupLabel)}</span>
+      ${liveVideoButton(m)}
+    </div>
+    <div class="vic-match-main live-vic-main">
+      <div class="live-vic-fixture-line">
+        ${liveVicParkPlayerCard(p1,m.player1,m.player1Id,p1Tracked,p1Class)}
+        <span class="vic-vs">vs</span>
+        ${liveVicParkPlayerCard(p2,m.player2,m.player2Id,p2Tracked,p2Class)}
+      </div>
+      ${matchScoreSummary(m)}
+    </div>
+    <div class="vic-location" title="${esc(v.place)}">${v.code?`<span class="venue-letter venue-${v.code.toLowerCase()}" aria-hidden="true">${v.code}</span>`:''}<span>${esc(v.place)}</span></div>
+  </article>`;
+}
+
 function renderLivePage(){
   const target=qs('#liveMatches');
   if(!target)return;
+
+  mirrorVicParkStylesToLive();
 
   const matches=currentLiveMatches();
   const count=qs('#liveMatchCount');
@@ -1336,7 +1392,7 @@ function renderLivePage(){
       // Use the exact same match-card renderer and state styling as the
       // Courts/Vic Park views so the Live page stays visually consistent.
       html+=group.matches
-        .map(m=>compactScheduleRow(m,[]))
+        .map(m=>liveVicParkMatchRow(m,VIC_PARK_PLAYERS||[]))
         .join('');
     }else{
       html+=`
@@ -1350,8 +1406,74 @@ function renderLivePage(){
   target.innerHTML=html;
 }
 
+function mirrorVicParkStylesToLive(){
+  // The site's newest Vic Park layout contains selectors scoped to #vicpark
+  // and #trackedPlayers.  Live uses the same card markup, so mirror those
+  // scoped rules instead of maintaining a second, slightly different layout.
+  // This keeps Live pixel-for-pixel in step with future Vic Park CSS changes.
+  const old=document.getElementById('wsm-live-vicpark-mirror-styles');
+  if(old)old.remove();
+
+  const out=[];
+  const rewriteSelector=selector=>{
+    if(!/(#vicpark\b|#trackedPlayers\b)/.test(selector||''))return '';
+    return String(selector)
+      .replace(/#vicpark\b/g,'#live')
+      .replace(/#trackedPlayers\b/g,'#liveMatches');
+  };
+
+  const copyRules=rules=>{
+    let text='';
+    for(const rule of Array.from(rules||[])){
+      try{
+        if(rule.selectorText){
+          const selectors=String(rule.selectorText)
+            .split(',')
+            .map(x=>rewriteSelector(x.trim()))
+            .filter(Boolean);
+          if(selectors.length)text+=`${selectors.join(',')}{${rule.style.cssText}}`;
+          continue;
+        }
+
+        if(rule.cssRules){
+          const inner=copyRules(rule.cssRules);
+          if(!inner)continue;
+          const css=String(rule.cssText||'');
+          const open=css.indexOf('{');
+          const prefix=open>=0?css.slice(0,open).trim():'';
+          if(prefix)text+=`${prefix}{${inner}}`;
+        }
+      }catch{}
+    }
+    return text;
+  };
+
+  for(const sheet of Array.from(document.styleSheets||[])){
+    try{
+      // Do not mirror our own generated sheets back into themselves.
+      if(sheet.ownerNode?.id==='wsm-live-page-styles'||
+         sheet.ownerNode?.id==='wsm-live-vicpark-mirror-styles')continue;
+      const css=copyRules(sheet.cssRules);
+      if(css)out.push(css);
+    }catch{
+      // Cross-origin stylesheets are intentionally ignored. The tournament
+      // site's own styles.css is same-origin and remains readable here.
+    }
+  }
+
+  if(out.length){
+    const style=document.createElement('style');
+    style.id='wsm-live-vicpark-mirror-styles';
+    style.textContent=out.join('\n');
+    document.head.appendChild(style);
+  }
+}
+
 function ensureLivePageStyles(){
-  if(document.getElementById('wsm-live-page-styles'))return;
+  if(document.getElementById('wsm-live-page-styles')){
+    mirrorVicParkStylesToLive();
+    return;
+  }
 
   const style=document.createElement('style');
   style.id='wsm-live-page-styles';
@@ -1418,8 +1540,308 @@ function ensureLivePageStyles(){
       margin-bottom:10px;
     }
 
+    /* Live match cards deliberately use the same visual language as the
+       Vic Park cards: framed players, compact time/age block and score bar. */
+    #live .live-page-match-row{
+      display:grid!important;
+      grid-template-columns:92px minmax(0,1fr) minmax(210px,300px)!important;
+      gap:18px!important;
+      align-items:center!important;
+      min-height:134px;
+      padding:16px 20px 12px!important;
+      margin-bottom:9px!important;
+      border:1px solid var(--line)!important;
+      border-radius:16px!important;
+      background:linear-gradient(145deg,rgba(18,42,72,.96),rgba(9,26,46,.96))!important;
+      box-sizing:border-box;
+    }
+
+    #live .live-page-match-row .live-vic-time{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      align-self:center;
+      min-width:0;
+      color:var(--gold);
+      text-align:center;
+      font-family:Montserrat,Inter,sans-serif;
+    }
+
+    #live .live-page-match-row .vic-time-value{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:5px;
+      font-size:1.16rem;
+      font-weight:900;
+      line-height:1.05;
+      white-space:nowrap;
+    }
+
+    #live .live-page-match-row .vic-time-age{
+      display:block!important;
+      margin-top:4px;
+      color:#8797ae;
+      font-size:.69rem;
+      font-weight:900;
+      line-height:1.05;
+      text-transform:uppercase;
+      white-space:nowrap;
+      letter-spacing:.01em;
+    }
+
+    #live .live-page-match-row .live-vic-main{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-width:0;
+      align-self:stretch;
+    }
+
+    #live .live-vic-fixture-line{
+      display:grid!important;
+      grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr)!important;
+      gap:8px!important;
+      align-items:center!important;
+      min-width:0;
+    }
+
+    #live .live-vic-player-card{
+      display:flex!important;
+      flex-direction:column;
+      justify-content:center;
+      min-width:0;
+      min-height:72px;
+      padding:8px 11px!important;
+      border:1px solid rgba(132,151,179,.23)!important;
+      border-radius:10px!important;
+      background:rgba(255,255,255,.025)!important;
+      color:var(--text)!important;
+      text-decoration:none!important;
+      box-sizing:border-box;
+      overflow:hidden;
+    }
+
+    #live .live-vic-player-card.vic-tracked-player{
+      border-color:rgba(245,200,76,.58)!important;
+      background:rgba(245,200,76,.025)!important;
+    }
+
+    #live .live-vic-player-card:hover{
+      border-color:rgba(245,200,76,.42)!important;
+      transform:none!important;
+    }
+
+    #live .live-vic-player-name{
+      display:block;
+      min-width:0;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      color:#f3f6fb;
+      font-family:Montserrat,Inter,sans-serif;
+      font-size:1.04rem;
+      font-weight:900;
+      line-height:1.05;
+      letter-spacing:-.015em;
+    }
+
+    #live .live-vic-player-meta{
+      display:flex;
+      align-items:center;
+      min-width:0;
+      gap:5px;
+      margin-top:6px;
+      color:#d6deea;
+      font-size:.70rem;
+      line-height:1;
+      white-space:nowrap;
+    }
+
+    #live .live-vic-flag{
+      display:inline-flex;
+      align-items:center;
+      flex:0 0 auto;
+    }
+
+    #live .live-vic-flag .inline-flag{
+      width:28px!important;
+      height:19px!important;
+      object-fit:cover;
+      border-radius:2px;
+      box-shadow:0 0 0 1px rgba(255,255,255,.16);
+    }
+
+    #live .live-vic-country{
+      max-width:112px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      color:#d6deea;
+    }
+
+    #live .live-vic-world{
+      color:var(--gold);
+      font-weight:800;
+    }
+
+    #live .live-vic-level{
+      color:#e0e5ed;
+      font-weight:500;
+    }
+
+    #live .live-vic-fixture-line>.vic-vs{
+      justify-self:center;
+      color:#72839a;
+      font-size:.67rem;
+      font-weight:900;
+      text-transform:lowercase;
+    }
+
+    #live .live-vic-main .match-history-score{
+      display:flex!important;
+      align-items:center!important;
+      flex-wrap:wrap;
+      gap:6px!important;
+      min-height:27px;
+      margin-top:8px!important;
+      padding-top:8px!important;
+      border-top:1px solid rgba(255,255,255,.075)!important;
+      color:#cbd4e1;
+      font-size:.86rem;
+      line-height:1.05;
+    }
+
+    #live .live-vic-main .match-history-score-label{
+      color:#8291a6;
+      font-size:.69rem;
+      font-weight:900;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+
+    #live .live-vic-main .match-history-score>strong,
+    #live .live-vic-main .match-history-score .match-live-games strong,
+    #live .live-vic-main .match-history-score .match-winner-label strong{
+      color:var(--gold);
+      font-size:.96rem;
+      font-weight:900;
+    }
+
+    #live .live-vic-main .match-winner-label{
+      color:#cbd4e1;
+    }
+
+    #live .live-page-match-row .vic-location{
+      justify-self:end!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:flex-end!important;
+      gap:9px!important;
+      min-width:0;
+      color:#b9c8d7!important;
+      text-align:right!important;
+      font-size:.78rem!important;
+      line-height:1.3!important;
+    }
+
+    #live .live-page-match-row .vic-location>span:last-child{
+      min-width:0;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    #live .live-page-match-row .vic-location .venue-letter{
+      width:38px!important;
+      height:38px!important;
+      flex:0 0 auto;
+      border-radius:9px;
+    }
+
+    #live .live-page-match-row.match-finished .match-loser-player .live-vic-player-name{
+      font-weight:600;
+      opacity:.82;
+    }
+
+    #live .live-page-match-row.match-finished .match-winner-player .live-vic-player-name{
+      font-weight:900;
+      opacity:1;
+    }
+
+    @media(max-width:900px){
+      #live .live-page-match-row{
+        grid-template-columns:78px minmax(0,1fr)!important;
+      }
+      #live .live-page-match-row .vic-location{
+        grid-column:2;
+        justify-self:start!important;
+        justify-content:flex-start!important;
+        margin-top:5px;
+        text-align:left!important;
+      }
+    }
+
+    @media(max-width:650px){
+      #live .live-page-match-row{
+        grid-template-columns:1fr!important;
+        gap:9px!important;
+        min-height:0;
+        padding:13px 12px!important;
+      }
+      #live .live-page-match-row .live-vic-time{
+        display:grid;
+        grid-template-columns:auto 1fr auto;
+        align-items:center;
+        gap:8px;
+        justify-content:start;
+        justify-items:start;
+        text-align:left;
+      }
+      #live .live-page-match-row .vic-time-age{
+        margin-top:0;
+      }
+      #live .live-page-match-row .live-vic-time .live-video-button{
+        margin:0 0 0 auto;
+      }
+      #live .live-vic-fixture-line{
+        grid-template-columns:minmax(0,1fr) 14px minmax(0,1fr)!important;
+        gap:5px!important;
+      }
+      #live .live-vic-player-card{
+        min-height:78px;
+        padding:8px!important;
+      }
+      #live .live-vic-player-name{
+        font-size:.84rem;
+      }
+      #live .live-vic-player-meta{
+        display:grid;
+        grid-template-columns:auto minmax(0,1fr);
+        gap:3px 5px;
+        white-space:normal;
+        font-size:.62rem;
+      }
+      #live .live-vic-world,
+      #live .live-vic-level{
+        grid-column:2;
+      }
+      #live .live-vic-country{
+        max-width:100%;
+      }
+      #live .live-page-match-row .vic-location{
+        grid-column:1;
+        margin-top:0;
+      }
+      #live .live-page-match-row .vic-location .venue-letter{
+        width:30px!important;
+        height:30px!important;
+      }
+    }
+
   `;
   document.head.appendChild(style);
+  mirrorVicParkStylesToLive();
 }
 
 ensureLivePageShell();
