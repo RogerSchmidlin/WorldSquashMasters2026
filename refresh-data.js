@@ -2434,22 +2434,26 @@ async function scrapeOfficialDrawSchedule(context,options={}){
           }
         }
 
-        const participantSlots=[...slotMap.values()]
-          .filter(x=>x.player||x.isBye);
+        // Walk every odd/even input pair encoded by TournamentSoftware.
+        // A slot without a player is allowed here because it can represent a
+        // genuinely scheduled future match whose opponent has not been decided.
+        const allSlots=[...slotMap.values()];
 
-        for(const a of participantSlots){
+        for(const a of allSlots){
           // Process one side only: odd slot is paired with the following even slot.
           if(a.slot%2===0)continue;
 
           const bNum=a.level*1000+(a.slot+1);
           const b=slotMap.get(bNum);
-          if(!b||(b.level!==a.level)||(!b.player&&!b.isBye))continue;
+          if(!b||b.level!==a.level)continue;
 
           // Both input slots must be in the same round/column.
           if(a.cellIndex!==b.cellIndex)continue;
 
-          // Byes are progression slots, not real player-v-player fixtures.
-          if(!a.player||!b.player)continue;
+          // Bye means no match is played. Two unresolved slots also prove nothing.
+          if(a.isBye||b.isBye)continue;
+          const concreteCount=(a.player?1:0)+(b.player?1:0);
+          if(concreteCount===0)continue;
 
           const targetColumn=a.cellIndex+1;
           const lo=Math.min(a.rowIndex,b.rowIndex);
@@ -2485,17 +2489,46 @@ async function scrapeOfficialDrawSchedule(context,options={}){
           const meta=clean(metaParts.join(' | '));
           const context=clean(`${caption} | ${round} | ${meta}`);
 
+          // Concrete pair: normal deterministic fixture.
+          if(concreteCount===2){
+            treeMatches.push({
+              players:[a.player,b.player],
+              text:meta,
+              context,
+              pageHead,
+              source:'legacy-slot-tree',
+              tableCaption:caption,
+              round,
+              inputSlot1:a.rawId,
+              inputSlot2:b.rawId,
+              outputSlot:outputId,
+              tbd:false
+            });
+            continue;
+          }
+
+          // Exactly one concrete player + one unresolved sibling is a real
+          // scheduled TBD match only when TournamentSoftware itself prints the
+          // full schedule metadata for this exact tree edge. No nearby/fuzzy text.
+          const hasDate=dateRe.test(meta);
+          const hasTime=timeRe.test(meta);
+          const hasVenue=/\b(?:Squashworld\s+Mirrabooka|Belmont\s+Saints\s+Squash\s+Centre|Karrinyup\s+Shopping\s+Centre)\b/i.test(meta);
+          const hasCourt=/\b(?:AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i.test(meta);
+          if(!hasDate||!hasTime||!hasVenue||!hasCourt)continue;
+
           treeMatches.push({
-            players:[a.player,b.player],
+            players:[a.player||b.player],
             text:meta,
             context,
             pageHead,
-            source:'legacy-slot-tree',
+            source:'legacy-slot-tree-tbd',
             tableCaption:caption,
             round,
             inputSlot1:a.rawId,
             inputSlot2:b.rawId,
-            outputSlot:outputId
+            outputSlot:outputId,
+            unresolvedSlot:a.player?b.rawId:a.rawId,
+            tbd:true
           });
         }
       }
@@ -2526,11 +2559,11 @@ async function scrapeOfficialDrawSchedule(context,options={}){
           unique.push(a);
         }
 
-        if(unique.length!==2)continue;
+        if(unique.length<1||unique.length>2)continue;
 
         const p1=playerInfo(unique[0]);
-        const p2=playerInfo(unique[1]);
-        if(!p1.name||!p2.name)continue;
+        const p2=unique.length===2?playerInfo(unique[1]):null;
+        if(!p1.name||(p2&&!p2.name))continue;
 
         // `.match` is the renderer's explicit match container. If unavailable,
         // use the wrapper's direct parent only; do not ascend heuristically.
@@ -2538,14 +2571,24 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         if(!container)continue;
 
         const context=clean(container.innerText||container.textContent||'');
+
+        if(unique.length===1){
+          const hasDate=dateRe.test(context);
+          const hasTime=timeRe.test(context);
+          const hasVenue=/\b(?:Squashworld\s+Mirrabooka|Belmont\s+Saints\s+Squash\s+Centre|Karrinyup\s+Shopping\s+Centre)\b/i.test(context);
+          const hasCourt=/\b(?:AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i.test(context);
+          if(!hasDate||!hasTime||!hasVenue||!hasCourt)continue;
+        }
+
         treeMatches.push({
-          players:[p1,p2],
+          players:p2?[p1,p2]:[p1],
           text:context,
           context,
           pageHead,
-          source:'modern-match-wrapper',
+          source:p2?'modern-match-wrapper':'modern-match-wrapper-tbd',
           tableCaption:'',
-          round:''
+          round:'',
+          tbd:!p2
         });
       }
 
@@ -3045,7 +3088,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         unique.push({id,player:playerMap.get(id)});
       }
 
-      if(unique.length!==2)continue;
+      if(unique.length!==2 && !(t.tbd&&unique.length===1))continue;
 
       const whole=clean(`${drawContext} ${t.context||''} ${t.text||''}`);
       const f=deriveFields(whole,drawContext);
@@ -3055,14 +3098,22 @@ async function scrapeOfficialDrawSchedule(context,options={}){
       // Caption/round are structural labels from the table itself.
       if(!f.round&&t.round)f.round=clean(t.round);
 
+      const isTbd=!!t.tbd&&unique.length===1;
+      if(isTbd){
+        // TBD fixtures are useful only for current/future scheduling and must
+        // be fully explicit in the draw itself.
+        if(canonicalTournamentDate(f.date)<perthTodayIsoRefresh())continue;
+        if(!f.venue||!sanitizeCourtValue(f.court))continue;
+      }
+
       treeObservations.push({
         ...f,
         player1:unique[0].player.name,
         player1Id:unique[0].id,
-        player2:unique[1].player.name,
-        player2Id:unique[1].id,
-        result:f.result||'',
-        status:f.result?'completed':(f.status||'scheduled'),
+        player2:isTbd?'TBD':unique[1].player.name,
+        player2Id:isTbd?'':unique[1].id,
+        result:isTbd?'':(f.result||''),
+        status:isTbd?'scheduled':(f.result?'completed':(f.status||'scheduled')),
         rawText:whole,
         source:'TournamentSoftware Draw Tree',
         sourceUrl:row.draw.href,
@@ -3070,13 +3121,17 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         treeCaption:t.tableCaption||'',
         treeInputSlot1:t.inputSlot1||'',
         treeInputSlot2:t.inputSlot2||'',
-        treeOutputSlot:t.outputSlot||''
+        treeOutputSlot:t.outputSlot||'',
+        treeUnresolvedSlot:t.unresolvedSlot||'',
+        deterministicTbd:isTbd
       });
     }
   }
 
   console.log(`Official draw deterministic tree observations: ${treeObservations.length}`);
   observations.push(...treeObservations);
+  const deterministicTbdObservations=treeObservations.filter(m=>m.deterministicTbd);
+  console.log(`Official draw deterministic TBD fixtures: ${deterministicTbdObservations.length}`);
 
   const treeMerged=officialScheduleMerge(treeObservations);
   const treeByPlayer=new Map();
@@ -3119,7 +3174,8 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         venue:m.venue||'',court:m.court||'',round:m.round||'',
         inputSlots:[m.treeInputSlot1||'',m.treeInputSlot2||''],
         outputSlot:m.treeOutputSlot||'',
-        treeSource:m.treeSource||''
+        treeSource:m.treeSource||'',
+        deterministicTbd:!!m.deterministicTbd
       })))+
       (rows.length?'':` | slotEvidence=${JSON.stringify(slotEvidence.slice(0,6))}`)
     );
@@ -5865,6 +5921,7 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
   const today=perthTodayIsoRefresh();
 
   const realPlayer=name=>!!name&&!/^(?:TBD|Bye)$/i.test(clean(name));
+  const tbdPlayer=name=>/^TBD$/i.test(clean(name||''));
   const dateKey=m=>canonicalTournamentDate(m?.date);
   const timeKey=m=>clean(m?.time||'').toLowerCase();
   const pairKey=m=>[
@@ -5889,7 +5946,9 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
   // observation itself is not trusted to create fixture existence.
   const drawMetaByExact=new Map();
   for(const m0 of drawRows||[]){
-    if(!m0?.date||!m0?.time||!realPlayer(m0.player1)||!realPlayer(m0.player2))continue;
+    const treeTbd=!!m0?.deterministicTbd &&
+      ((realPlayer(m0.player1)&&tbdPlayer(m0.player2))||(tbdPlayer(m0.player1)&&realPlayer(m0.player2)));
+    if(!m0?.date||!m0?.time||(!(realPlayer(m0.player1)&&realPlayer(m0.player2))&&!treeTbd))continue;
 
     const loc=provenLocationFromRow(m0);
     const m={
@@ -5925,8 +5984,14 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
   const authorityCandidates=[];
 
   for(const m0 of drawRows||[]){
-    if(!m0?.date||!m0?.time||!realPlayer(m0.player1)||!realPlayer(m0.player2))continue;
+    const sourceSet0=new Set([...(m0?.evidenceSources||[]),m0?.source].map(clean).filter(Boolean));
+    const treeTbd=!!m0?.deterministicTbd && sourceSet0.has('TournamentSoftware Draw Tree') &&
+      ((realPlayer(m0.player1)&&tbdPlayer(m0.player2))||(tbdPlayer(m0.player1)&&realPlayer(m0.player2)));
+    const concrete=realPlayer(m0?.player1)&&realPlayer(m0?.player2);
+
+    if(!m0?.date||!m0?.time||(!concrete&&!treeTbd))continue;
     if(!isTournamentDate(dateKey(m0)))continue;
+    if(treeTbd&&dateKey(m0)<today)continue;
 
     const loc=provenLocationFromRow(m0);
     const m={
@@ -5952,6 +6017,7 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
       matchesExact.has(exactKey(m));
 
     if(!strong&&!corroboratedLegacy)continue;
+    if(treeTbd&&!validLocation(m))continue;
 
     m.status=String(m.status||'').toLowerCase()==='completed'?'completed':'scheduled';
     m.source='TournamentSoftware Official Draw';
@@ -6022,6 +6088,8 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
   const slotCandidates=new Map();
   for(const m of authoritative){
     for(const side of [1,2]){
+      const sideName=side===1?m.player1:m.player2;
+      if(tbdPlayer(sideName)||/^Bye$/i.test(clean(sideName||'')))continue;
       const slot=playerSlot(m,side);
       if(!slotCandidates.has(slot))slotCandidates.set(slot,new Map());
       slotCandidates.get(slot).set(exactKey(m),m);
@@ -6268,6 +6336,8 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
   const collisions=[];
   for(const m of currentFuture){
     for(const side of [1,2]){
+      const sideName=side===1?m.player1:m.player2;
+      if(tbdPlayer(sideName)||/^Bye$/i.test(clean(sideName||'')))continue;
       const s=playerSlot(m,side);
       if(!occupied.has(s))occupied.set(s,m);
       else if(exactKey(occupied.get(s))!==exactKey(m)){
@@ -6314,7 +6384,8 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
     trackedCurrentFuture.map(m=>({
       date:m.date,time:m.time,player1:m.player1,player2:m.player2,
       venue:m.venue||'',court:m.court||'',
-      source:m.source||'',evidence:m.drawEvidenceSources||[]
+      source:m.source||'',evidence:m.drawEvidenceSources||[],
+      deterministicTbd:!!m.deterministicTbd
     }))
   )}`);
   console.log(

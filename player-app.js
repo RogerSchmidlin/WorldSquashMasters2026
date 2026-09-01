@@ -544,6 +544,7 @@ const levelBadge=x=>{
 };
 const squashBadges=x=>`<span class="squash-metrics">${rankBadge(x)}${levelBadge(x)}</span>`;
 const playerNameStack=(x,n,current=false)=>`<span class="player-name-stack"><b class="${current?'vic-tracked-name':''}">${esc(n||'TBD')}</b>${squashBadges(x)}</span>`;
+const isTbdNamePlayer=n=>/^TBD$/i.test(String(n||'').trim());
 const fmt=d=>{const x=new Date(d+'T12:00:00');return Number.isNaN(x.getTime())?{long:esc(d),day:''}:{long:x.toLocaleDateString('en-AU',{day:'numeric',month:'long'}),day:x.toLocaleDateString('en-AU',{weekday:'short'})}};
 const has=(m,n)=>{
   const idMatch=officialPlayerId&&(
@@ -834,45 +835,49 @@ function playerMatchRow(m){
       </div>
 
       <div class="vic-fixture-line">
-        <a class="${p1Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,p1?.officialPlayerId||m.player1Id)}">
-          <span class="fixture-player-desktop">
-            ${flagImg(p1)}
-            <span class="vic-player-name-wrap">
-              <span class="vic-player-name-meta-line">${playerNameStack(p1,m.player1,p1Current)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span>
-            </span>
-          </span>
-          <span class="fixture-player-mobile">
-            <span class="fixture-mobile-name">${esc(m.player1)}</span>
-            <span class="fixture-mobile-info">
-              <span class="fixture-mobile-flag">${flagImg(p1)}</span>
-              <span class="fixture-mobile-details">
-                <span class="fixture-mobile-country">${esc(p1?.country||'')}</span>
-                <span class="fixture-mobile-metrics">${squashBadges(p1)}</span>
+        ${isTbdNamePlayer(m.player1)
+          ? `<span class="fixture-player-tbd"><span class="player-name-stack"><b>TBD</b></span></span>`
+          : `<a class="${p1Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,p1?.officialPlayerId||m.player1Id)}">
+              <span class="fixture-player-desktop">
+                ${flagImg(p1)}
+                <span class="vic-player-name-wrap">
+                  <span class="vic-player-name-meta-line">${playerNameStack(p1,m.player1,p1Current)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span>
+                </span>
               </span>
-            </span>
-          </span>
-        </a>
+              <span class="fixture-player-mobile">
+                <span class="fixture-mobile-name">${esc(m.player1)}</span>
+                <span class="fixture-mobile-info">
+                  <span class="fixture-mobile-flag">${flagImg(p1)}</span>
+                  <span class="fixture-mobile-details">
+                    <span class="fixture-mobile-country">${esc(p1?.country||'')}</span>
+                    <span class="fixture-mobile-metrics">${squashBadges(p1)}</span>
+                  </span>
+                </span>
+              </span>
+            </a>`}
 
         <span class="vic-vs">vs</span>
 
-        <a class="${p2Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,p2?.officialPlayerId||m.player2Id)}">
-          <span class="fixture-player-desktop">
-            ${flagImg(p2)}
-            <span class="vic-player-name-wrap">
-              <span class="vic-player-name-meta-line">${playerNameStack(p2,m.player2,p2Current)}${p2?.country?`<small class="vic-player-inline-meta">${esc(p2.country)}</small>`:''}</span>
-            </span>
-          </span>
-          <span class="fixture-player-mobile">
-            <span class="fixture-mobile-name">${esc(m.player2)}</span>
-            <span class="fixture-mobile-info">
-              <span class="fixture-mobile-flag">${flagImg(p2)}</span>
-              <span class="fixture-mobile-details">
-                <span class="fixture-mobile-country">${esc(p2?.country||'')}</span>
-                <span class="fixture-mobile-metrics">${squashBadges(p2)}</span>
+        ${isTbdNamePlayer(m.player2)
+          ? `<span class="fixture-player-tbd"><span class="player-name-stack"><b>TBD</b></span></span>`
+          : `<a class="${p2Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,p2?.officialPlayerId||m.player2Id)}">
+              <span class="fixture-player-desktop">
+                ${flagImg(p2)}
+                <span class="vic-player-name-wrap">
+                  <span class="vic-player-name-meta-line">${playerNameStack(p2,m.player2,p2Current)}${p2?.country?`<small class="vic-player-inline-meta">${esc(p2.country)}</small>`:''}</span>
+                </span>
               </span>
-            </span>
-          </span>
-        </a>
+              <span class="fixture-player-mobile">
+                <span class="fixture-mobile-name">${esc(m.player2)}</span>
+                <span class="fixture-mobile-info">
+                  <span class="fixture-mobile-flag">${flagImg(p2)}</span>
+                  <span class="fixture-mobile-details">
+                    <span class="fixture-mobile-country">${esc(p2?.country||'')}</span>
+                    <span class="fixture-mobile-metrics">${squashBadges(p2)}</span>
+                  </span>
+                </span>
+              </span>
+            </a>`}
 
         ${m.result&&!past(m)?`<span class="vic-result">${esc(m.result)}</span>`:''}
       </div>

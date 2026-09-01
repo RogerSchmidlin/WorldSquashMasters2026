@@ -680,6 +680,7 @@ const levelBadge=p=>{
 };
 const squashBadges=p=>`<span class="squash-metrics">${rankBadge(p)}${levelBadge(p)}</span>`;
 const playerNameStack=(p,name,tracked=false)=>`<span class="player-name-stack"><b class="${tracked?'vic-tracked-name':''}">${esc(name||'TBD')}</b>${squashBadges(p)}</span>`;
+const isTbdName=name=>/^TBD$/i.test(String(name||'').trim());
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
 const fmtDate=iso=>{const d=new Date(iso+'T12:00:00');return{day:d.toLocaleDateString('en-AU',{weekday:'short'}),date:d.toLocaleDateString('en-AU',{day:'numeric',month:'short'}),long:d.toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}};
 const tournamentDates=()=>{const a=[], d=new Date(data.tournament.startDate+'T12:00:00'), end=new Date(data.tournament.endDate+'T12:00:00');for(;d<=end;d.setDate(d.getDate()+1))a.push(d.toISOString().slice(0,10));return a;};
@@ -994,9 +995,18 @@ function cleanVenuePlace(m){
   return bits.join(' · ')||'Venue / court TBD';
 }
 
+function matchCardPlayer(name,p,id,right=false){
+  if(isTbdName(name)||!name){
+    return `<div class="player-side${right?' right':''}"><span class="player-name-stack"><b>TBD</b></span></div>`;
+  }
+  const link=`<a class="match-player-link" href="${playerPageUrl(name,p?.officialPlayerId||id)}"><span class="player-name-stack"><b>${esc(name)}</b>${squashBadges(p)}</span></a>`;
+  return right
+    ? `<div class="player-side right">${link}${flagImg(p)}</div>`
+    : `<div class="player-side">${flagImg(p)}${link}</div>`;
+}
 function matchCard(m){
   const p1=playerForMatchSide(m,1), p2=playerForMatchSide(m,2);
-  return `<article class="match-card"><div class="match-time">${esc(displayTime24(m.time))}</div><div class="event-badge">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div><div class="fixture"><div class="player-side">${flagImg(p1)}<a class="match-player-link" href="${playerPageUrl(m.player1,p1?.officialPlayerId||m.player1Id)}"><span class="player-name-stack"><b>${esc(m.player1||'TBD')}</b>${squashBadges(p1)}</span></a></div><div class="vs">VS</div><div class="player-side right"><a class="match-player-link" href="${playerPageUrl(m.player2,p2?.officialPlayerId||m.player2Id)}"><span class="player-name-stack"><b>${esc(m.player2||'TBD')}</b>${squashBadges(p2)}</span></a>${flagImg(p2)}</div></div><div class="court-tag">${venueBadge(m)}<span>${esc(cleanVenuePlace(m))}</span></div></article>`;
+  return `<article class="match-card"><div class="match-time">${esc(displayTime24(m.time))}</div><div class="event-badge">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div><div class="fixture">${matchCardPlayer(m.player1,p1,m.player1Id,false)}<div class="vs">VS</div>${matchCardPlayer(m.player2,p2,m.player2Id,true)}</div><div class="court-tag">${venueBadge(m)}<span>${esc(cleanVenuePlace(m))}</span></div></article>`;
 }
 
 function scoreWinnerInfo(m){
@@ -1320,7 +1330,7 @@ document.addEventListener('click',e=>{const btn=e.target.closest?.('[data-favour
 
 function trackedMatchCard(m,name){
   const tracked=playerByName(name)||{name}, opp=opponentFor(m,name), op=playerByName(opp);
-  return `<article class="tracked-match"><div class="tracked-match-top"><div><b>${fmtDate(m.date).long}</b><span>${esc([m.event,m.round].filter(Boolean).join(' · '))}</span></div><strong>${esc(displayTime24(m.time))}</strong></div><div class="tracked-fixture"><div class="tracked-side">${flagImg(tracked,'match-flag')}<div><small>TRACKED</small><a href="${playerPageUrl(name,tracked?.officialPlayerId)}"><span class="player-name-stack"><b>${esc(name)}</b>${squashBadges(tracked)}</span></a></div></div><div class="versus-badge">VS</div><div class="tracked-side right"><div><small>OPPONENT</small><a href="${playerPageUrl(opp,op?.officialPlayerId)}"><span class="player-name-stack"><b>${esc(opp||'TBD')}</b>${squashBadges(op)}</span></a></div>${flagImg(op,'match-flag')}</div></div><div class="roger-meta"><span>${esc(cleanVenuePlace(m))}</span>${m.result?`<span>${esc(m.result)}</span>`:''}</div></article>`;
+  return `<article class="tracked-match"><div class="tracked-match-top"><div><b>${fmtDate(m.date).long}</b><span>${esc([m.event,m.round].filter(Boolean).join(' · '))}</span></div><strong>${esc(displayTime24(m.time))}</strong></div><div class="tracked-fixture"><div class="tracked-side">${flagImg(tracked,'match-flag')}<div><small>TRACKED</small><a href="${playerPageUrl(name,tracked?.officialPlayerId)}"><span class="player-name-stack"><b>${esc(name)}</b>${squashBadges(tracked)}</span></a></div></div><div class="versus-badge">VS</div><div class="tracked-side right"><div><small>OPPONENT</small>${isTbdName(opp)||!opp?`<span class="player-name-stack"><b>TBD</b></span>`:`<a href="${playerPageUrl(opp,op?.officialPlayerId)}"><span class="player-name-stack"><b>${esc(opp)}</b>${squashBadges(op)}</span></a>`}</div>${isTbdName(opp)||!opp?'':flagImg(op,'match-flag')}</div></div><div class="roger-meta"><span>${esc(cleanVenuePlace(m))}</span>${m.result?`<span>${esc(m.result)}</span>`:''}</div></article>`;
 }
 function venueVisual(m){
   return {place:cleanVenuePlace(m),code:venueCode(m)};
