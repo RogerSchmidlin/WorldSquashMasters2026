@@ -145,6 +145,7 @@ function repairDuplicateSquashLevelsIdentity(players){
     'squashLevelsPlayerId','squashLevelsUrl','squashLevelsIdentityVerified',
     'squashLevelsIdentityVerifiedAt','squashLevelsMatchedCountry',
     'squashLevelsMatchedAge','squashLevelsSearchCheckedAt',
+    'squashLevelsExactNameCandidateCount',
     'squashLevelsProfileCheckedAt','squashLevelsWorldRank',
     'squashLevelsLevel','squashLevelsLevelProvisional'
   ];
@@ -184,17 +185,30 @@ function repairDuplicateSquashLevelsIdentity(players){
     // For duplicate TournamentSoftware names, retained identity requires positive
     // age evidence. For every player, any explicit age/country contradiction is
     // enough to invalidate the cached SquashLevels profile.
-    const duplicateMissingAge=duplicate&&ta!==null&&sa===null;
+    const exactNameCandidateCount=Number(p?.squashLevelsExactNameCandidateCount||0);
+    const knownSquashLevelsAmbiguity=exactNameCandidateCount>1;
 
-    if(explicitAgeMismatch||explicitCountryMismatch||duplicateMissingAge){
+    const duplicateMissingAge=duplicate&&ta!==null&&sa===null;
+    const ambiguousMissingAge=knownSquashLevelsAmbiguity&&ta!==null&&sa===null;
+
+    if(
+      explicitAgeMismatch||
+      explicitCountryMismatch||
+      duplicateMissingAge||
+      ambiguousMissingAge
+    ){
       console.warn(
         `Removed invalid SquashLevels mapping: ${p.name} ` +
         `TS age=${ta??'?'}+ country=${expectedCountries.join('/')||'?'}; ` +
         `SL age=${sa??'unknown'} country=${sc||'unknown'}.`
       );
+      const rememberedCandidateCount=exactNameCandidateCount;
       for(const k of slFields)delete p[k];
       p.squashLevelsIdentityVerified=false;
       p.squashLevelsSearchCheckedAt=null;
+      if(rememberedCandidateCount>1){
+        p.squashLevelsExactNameCandidateCount=rememberedCandidateCount;
+      }
       cleared++;
     }
   }
@@ -342,6 +356,7 @@ function buildVicParkData(data){
   const trackedPlayers=allPlayers.filter(p=>trackedNames.some(n=>sameName(p.name,n)));
   const trackedIds=new Set(trackedPlayers.map(p=>String(p.officialPlayerId||'')).filter(Boolean));
   const matches=(data.matches||[]).filter(m=>{
+    if(m?.playerDetailOnly)return false;
     if(trackedNames.some(n=>sameName(m.player1,n)||sameName(m.player2,n)))return true;
     return (m.player1Id&&trackedIds.has(String(m.player1Id)))||(m.player2Id&&trackedIds.has(String(m.player2Id)));
   });
@@ -2030,6 +2045,7 @@ function mergePreviousSquashLevelsFields(drawPlayers,previousPlayers){
     'squashLevelsPlayerId','squashLevelsUrl','squashLevelsIdentityVerified',
     'squashLevelsIdentityVerifiedAt','squashLevelsMatchedCountry',
     'squashLevelsMatchedAge','squashLevelsSearchCheckedAt',
+    'squashLevelsExactNameCandidateCount',
     'squashLevelsProfileCheckedAt','squashLevelsWorldRank',
     'squashLevelsLevel','squashLevelsLevelProvisional'
   ];
@@ -2492,10 +2508,18 @@ async function scrapeOfficialDrawSchedule(context,options={}){
           // Both input slots must be in the same round/column.
           if(a.cellIndex!==b.cellIndex)continue;
 
-          // Bye means no match is played. Two unresolved slots also prove nothing.
-          if(a.isBye||b.isBye)continue;
+          // An explicit Bye is a real bracket progression for the player, even
+          // though no court match is played. Keep it separately from scheduled
+          // fixtures so the player detail page can show the advancement.
+          const byePair=
+            (a.isBye&&!!b.player&&!b.isBye) ||
+            (b.isBye&&!!a.player&&!a.isBye);
+
+          // Two Byes, or Bye + unresolved slot, prove no player progression.
+          if((a.isBye||b.isBye)&&!byePair)continue;
+
           const concreteCount=(a.player?1:0)+(b.player?1:0);
-          if(concreteCount===0)continue;
+          if(concreteCount===0&&!byePair)continue;
 
           const targetColumn=a.cellIndex+1;
           const lo=Math.min(a.rowIndex,b.rowIndex);
@@ -2531,6 +2555,27 @@ async function scrapeOfficialDrawSchedule(context,options={}){
           const meta=clean(metaParts.join(' | '));
           const context=clean(`${caption} | ${round} | ${meta}`);
 
+          // Explicit Bye: the odd/even sibling slots and the verified output
+          // connector prove the progression. Do NOT assign the next match's
+          // date/time/venue to the Bye; no match is played.
+          if(byePair){
+            treeMatches.push({
+              players:[a.player||b.player],
+              text:'',
+              context:clean(`${caption} | ${round}`),
+              pageHead,
+              source:'legacy-slot-tree-bye',
+              tableCaption:caption,
+              round,
+              inputSlot1:a.rawId,
+              inputSlot2:b.rawId,
+              outputSlot:outputId,
+              bye:true,
+              tbd:false
+            });
+            continue;
+          }
+
           // Concrete pair: normal deterministic fixture.
           if(concreteCount===2){
             treeMatches.push({
@@ -2544,6 +2589,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
               inputSlot1:a.rawId,
               inputSlot2:b.rawId,
               outputSlot:outputId,
+              bye:false,
               tbd:false
             });
             continue;
@@ -2570,6 +2616,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
             inputSlot2:b.rawId,
             outputSlot:outputId,
             unresolvedSlot:a.player?b.rawId:a.rawId,
+            bye:false,
             tbd:true
           });
         }
@@ -2614,7 +2661,9 @@ async function scrapeOfficialDrawSchedule(context,options={}){
 
         const context=clean(container.innerText||container.textContent||'');
 
-        if(unique.length===1){
+        const explicitBye=unique.length===1&&/\bBye\b/i.test(context);
+
+        if(unique.length===1&&!explicitBye){
           const hasDate=dateRe.test(context);
           const hasTime=timeRe.test(context);
           const hasVenue=/\b(?:Squashworld\s+Mirrabooka|Belmont\s+Saints\s+Squash\s+Centre|Karrinyup\s+Shopping\s+Centre)\b/i.test(context);
@@ -2624,13 +2673,16 @@ async function scrapeOfficialDrawSchedule(context,options={}){
 
         treeMatches.push({
           players:p2?[p1,p2]:[p1],
-          text:context,
-          context,
+          text:explicitBye?'':context,
+          context:explicitBye?clean(`${pageHead} | Bye`):context,
           pageHead,
-          source:p2?'modern-match-wrapper':'modern-match-wrapper-tbd',
+          source:p2
+            ? 'modern-match-wrapper'
+            : (explicitBye?'modern-match-wrapper-bye':'modern-match-wrapper-tbd'),
           tableCaption:'',
           round:'',
-          tbd:!p2
+          bye:explicitBye,
+          tbd:!p2&&!explicitBye
         });
       }
 
@@ -3116,6 +3168,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   //
   // This stage only parses metadata; it never chooses opponents.
   const treeObservations=[];
+  const deterministicByeObservations=[];
 
   for(const row of workerResults){
     const drawContext=clean(`${row.draw.text||''} ${row.extracted.pageHead||''}`);
@@ -3130,17 +3183,47 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         unique.push({id,player:playerMap.get(id)});
       }
 
-      if(unique.length!==2 && !(t.tbd&&unique.length===1))continue;
+      const isBye=!!t.bye&&unique.length===1;
+      const isTbd=!!t.tbd&&unique.length===1;
+
+      if(unique.length!==2&&!isTbd&&!isBye)continue;
 
       const whole=clean(`${drawContext} ${t.context||''} ${t.text||''}`);
       const f=deriveFields(whole,drawContext);
 
-      if(!f.date||!f.time||!isTournamentDate(f.date))continue;
-
       // Caption/round are structural labels from the table itself.
       if(!f.round&&t.round)f.round=clean(t.round);
 
-      const isTbd=!!t.tbd&&unique.length===1;
+      if(isBye){
+        deterministicByeObservations.push({
+          date:'',
+          time:'',
+          event:f.event||drawContext,
+          round:f.round||clean(t.round||''),
+          player1:unique[0].player.name,
+          player1Id:unique[0].id,
+          player2:'Bye',
+          player2Id:'',
+          result:'',
+          status:'bye',
+          venue:'',
+          court:'',
+          rawText:'',
+          source:'TournamentSoftware Draw Tree',
+          sourceUrl:row.draw.href,
+          treeSource:t.source||'',
+          treeCaption:t.tableCaption||'',
+          treeInputSlot1:t.inputSlot1||'',
+          treeInputSlot2:t.inputSlot2||'',
+          treeOutputSlot:t.outputSlot||'',
+          deterministicBye:true,
+          playerDetailOnly:true
+        });
+        continue;
+      }
+
+      if(!f.date||!f.time||!isTournamentDate(f.date))continue;
+
       if(isTbd){
         // TBD fixtures are useful only for current/future scheduling and must
         // be fully explicit in the draw itself.
@@ -3165,7 +3248,8 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         treeInputSlot2:t.inputSlot2||'',
         treeOutputSlot:t.outputSlot||'',
         treeUnresolvedSlot:t.unresolvedSlot||'',
-        deterministicTbd:isTbd
+        deterministicTbd:isTbd,
+        deterministicBye:false
       });
     }
   }
@@ -3174,6 +3258,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   observations.push(...treeObservations);
   const deterministicTbdObservations=treeObservations.filter(m=>m.deterministicTbd);
   console.log(`Official draw deterministic TBD fixtures: ${deterministicTbdObservations.length}`);
+  console.log(`Official draw deterministic Bye progressions: ${deterministicByeObservations.length}`);
   const trackedTbdAuditNames=loadTrackedNames();
   const trackedDeterministicTbd=deterministicTbdObservations.filter(m=>
     trackedTbdAuditNames.some(n=>sameName(m.player1,n)||sameName(m.player2,n))
@@ -3396,6 +3481,8 @@ async function scrapeOfficialDrawSchedule(context,options={}){
     rawFixtureCandidates,
     rawMatchLinks,
     treeObservations:treeObservations.length,
+    byeMatches:deterministicByeObservations,
+    deterministicByeObservations:deterministicByeObservations.length,
     treeDrawStats,
     mainTreeDraws:mainTreeDraws.length,
     missingTreeDraws,
@@ -5409,12 +5496,16 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
       .map(([key])=>key)
   );
 
-  // During :squashlevels, re-run the lightweight search API for mappings that are already
-  // verified. This is intentionally NOT a full re-verification of every profile page.
-  // We only open candidate profile pages when the search reveals multiple plausible profiles.
-  const verifiedToDuplicateCheck=SQUASHLEVELS_ONLY
-    ? players.filter(p=>p.squashLevelsUrl&&p.squashLevelsIdentityVerified)
-    : [];
+  // Re-run the lightweight exact-name SquashLevels search for EVERY already
+  // verified mapping during any SquashLevels enrichment, including a normal
+  // `npm run refresh`. This is not a full profile-page recheck: candidate
+  // profile pages are opened only when the name is ambiguous (or TournamentSoftware
+  // itself has duplicate displayed names).
+  //
+  // This prevents a cached same-name profile from surviving indefinitely merely
+  // because it was once marked verified.
+  const verifiedToDuplicateCheck=
+    players.filter(p=>p.squashLevelsUrl&&p.squashLevelsIdentityVerified);
 
   const existingToValidate=players.filter(p=>p.squashLevelsUrl&&!p.squashLevelsIdentityVerified);
   const missing=players.filter(p=>!p.squashLevelsUrl&&(SQUASHLEVELS_ONLY||!p.squashLevelsSearchCheckedAt||now-new Date(p.squashLevelsSearchCheckedAt).getTime()>=SQUASHLEVELS_RECHECK_MS));
@@ -5423,7 +5514,7 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
   if(!queue.length)return {found:0,verified:0,rejected:0,failed:0,duplicateChecked:0,duplicatesFound:0,remapped:0};
 
   if(verifiedToDuplicateCheck.length){
-    console.log(`SquashLevels: duplicate-checking ${verifiedToDuplicateCheck.length} existing verified profile mapping(s) using the search API; only duplicate candidate sets will open profile pages...`);
+    console.log(`SquashLevels: rechecking ${verifiedToDuplicateCheck.length} existing verified mapping(s) with the exact-name search API; only ambiguous candidate sets will open profile pages...`);
   }
   console.log(`SquashLevels: identity-checking ${queue.length} profile mapping(s); nickname fallback uses exact surname -> exact country -> exact age group -> external nickname list...`);
 
@@ -5438,7 +5529,8 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
   while(queue.length){
     const p=queue.shift();
     const requiresExactAge=duplicateTournamentNameKeys.has(nameKey(p.name));
-    const isVerifiedDuplicateRecheck=!!(SQUASHLEVELS_ONLY&&p.squashLevelsUrl&&p.squashLevelsIdentityVerified);
+    const isVerifiedDuplicateRecheck=!!(p.squashLevelsUrl&&p.squashLevelsIdentityVerified);
+    let ambiguousAgeProofRequired=false;
 
     try{
       let candidates=[];
@@ -5452,10 +5544,28 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
         const fresh=await searchSquashLevels(p);
         p.squashLevelsSearchCheckedAt=new Date().toISOString();
 
-        // For a UNIQUE TournamentSoftware name, 0/1 exact-name search result is enough
-        // to keep an already verified mapping. For a DUPLICATE tournament name this
-        // shortcut is forbidden: the cached profile must be reopened and its age checked.
-        if(fresh.length<=1&&!requiresExactAge){
+        const previousExactNameCandidateCount=
+          Number(p.squashLevelsExactNameCandidateCount||0);
+        p.squashLevelsExactNameCandidateCount=Math.max(
+          previousExactNameCandidateCount,
+          fresh.length
+        );
+
+        const knownExactNameAmbiguity=
+          p.squashLevelsExactNameCandidateCount>1;
+
+        // Once multiple exact-name SquashLevels profiles have ever been observed,
+        // the cached mapping must continue to carry positive Masters-age evidence.
+        // A later transient 0/1-result API response must not silently downgrade
+        // that ambiguity back to "safe".
+        ambiguousAgeProofRequired=
+          requiresExactAge||
+          fresh.length>1||
+          knownExactNameAmbiguity;
+
+        // For a truly unique TournamentSoftware + SquashLevels name, 0/1 exact-name
+        // result is enough to retain an already verified mapping.
+        if(fresh.length<=1&&!ambiguousAgeProofRequired){
           done++;
           if(done%40===0||queue.length===0){
             console.log(`  ${done} identity checks · ${verified} verified · ${duplicatesFound} duplicate set(s) · ${remapped} remapped · ${rejected} rejected · ${failed} failures`);
@@ -5464,9 +5574,9 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
           continue;
         }
 
-        const requiresExactAgeForSelection=requiresExactAge||fresh.length>1;
-        if(fresh.length>1||requiresExactAge)duplicatesFound++;
-        if(fresh.length>1&&!requiresExactAge){
+        const requiresExactAgeForSelection=ambiguousAgeProofRequired;
+        if(requiresExactAgeForSelection)duplicatesFound++;
+        if((fresh.length>1||knownExactNameAmbiguity)&&!requiresExactAge){
           console.log(
             `  SquashLevels same-name ambiguity for ${p.name}: ${fresh.length} exact-name profiles; ` +
             `requiring explicit O${p.ageGroup} age evidence.`
@@ -5604,7 +5714,25 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
     }catch(e){
       failed++;
       console.log(`  SquashLevels identity lookup failed for ${p.name}: ${e.message}`);
-      // Existing verified mappings are deliberately retained on duplicate-check failures.
+
+      if(ambiguousAgeProofRequired){
+        console.warn(
+          `  Ambiguous SquashLevels mapping for ${p.name} could not be age-verified; `+
+          `clearing cached identity instead of retaining a possible same-name profile.`
+        );
+        p.squashLevelsUrl='';
+        p.squashLevelsPlayerId='';
+        p.squashLevelsIdentityVerified=false;
+        p.squashLevelsIdentityVerifiedAt=null;
+        p.squashLevelsMatchedCountry=null;
+        p.squashLevelsMatchedAge=null;
+        p.squashLevelsProfileCheckedAt=null;
+        p.squashLevelsWorldRank=null;
+        p.squashLevelsLevel=null;
+        p.squashLevelsLevelProvisional=false;
+        rejected++;
+      }
+      // Unique-name mappings may still be retained when the recheck itself fails.
     }
 
     done++;
@@ -5774,65 +5902,243 @@ async function fetchSquashScoresLiveMatches(canonicalPlayers){
     const url=`${SQUASH_SCORES_API_URL}&_=${Date.now()}`;
     const response=await fetch(url,{headers:{'accept':'application/json'}});
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
+
     const payload=await response.json();
     const locations=Array.isArray(payload?.locations)?payload.locations:[];
 
+    const locationIdValue=v=>{
+      if(v===null||v===undefined)return '';
+      if(typeof v==='object'){
+        return clean(v.id||v.locationId||v.locationID||'');
+      }
+      return clean(v);
+    };
+
+    const locationById=new Map();
+    for(const loc of locations){
+      const id=locationIdValue(loc);
+      if(id)locationById.set(id,loc);
+    }
+
     const byName=new Map((canonicalPlayers||[]).map(p=>[nameKey(p.name),p]));
     const canonicalName=raw=>byName.get(nameKey(raw))?.name||clean(raw);
-    const rows=[];
 
-    for(const location of locations){
-      for(const m of Array.isArray(location?.matches)?location.matches:[]){
-        const player1=canonicalName(m?.player1Name||'');
-        const player2=canonicalName(m?.player2Name||'');
-        if(!player1||!player2)continue;
-
-        const rawDate=clean(m?.matchDate||m?.date||'');
-        let date=parseDate(rawDate);
-        if(!date){
-          const dm=rawDate.match(/^(2026)-(\d{2})-(\d{2})/);
-          if(dm)date=`${dm[1]}-${dm[2]}-${dm[3]}`;
-        }
-        if(!date)continue;
-
-        let time='';
-        const description=clean(m?.description||'');
-        let tm=description.match(/\b(\d{1,2}):([0-5]\d)\b/);
-        if(!tm)tm=rawDate.match(/[T\s](\d{1,2}):([0-5]\d)/);
-        if(tm)time=`${String(Number(tm[1])).padStart(2,'0')}:${tm[2]}`;
-        const timeFromDescription=!!tm;
-
-        const games=Array.isArray(m?.games)?m.games:[];
-        const scorePairs=[];
-        let p1Games=0,p2Games=0;
-        for(const g of games){
-          const a=Number(g?.player1Score),b=Number(g?.player2Score);
-          if(!Number.isFinite(a)||!Number.isFinite(b))continue;
-          if(a===0&&b===0)continue;
-          scorePairs.push(`${a}-${b}`);
-          if(a>b)p1Games++; else if(b>a)p2Games++;
-        }
-
-        const apiP1=Number(m?.player1GamesWon),apiP2=Number(m?.player2GamesWon);
-        if(Number.isFinite(apiP1))p1Games=apiP1;
-        if(Number.isFinite(apiP2))p2Games=apiP2;
-
-        const completed=p1Games>=3||p2Games>=3;
-        const live=!completed&&(scorePairs.length>0||p1Games>0||p2Games>0);
-
-        rows.push({
-          date,time,movedTime:timeFromDescription?time:'',timeFromDescription,
-          player1,player2,
-          result:scorePairs.join(', '),
-          status:completed?'completed':(live?'live':'scheduled'),
-          venue:clean(location?.name||location?.locationName||''),
-          court:clean(m?.courtName||m?.court||''),
-          event:clean(m?.categoryName||m?.category||''),
-          round:description,
-          rawText:`SquashScores API ${clean(m?.id||m?.matchId||'')}`,
-          source:'SquashScores'
-        });
+    const objectName=v=>{
+      if(v===null||v===undefined)return '';
+      if(typeof v==='string')return clean(v);
+      if(typeof v==='object'){
+        return clean(v.name||v.displayName||v.fullName||v.title||v.label||'');
       }
+      return '';
+    };
+
+    const playerName=(m,side)=>{
+      const direct=m?.[`player${side}Name`];
+      if(direct)return objectName(direct);
+      return objectName(
+        m?.[`player${side}`] ??
+        m?.[`participant${side}`] ??
+        m?.[`team${side}`]
+      );
+    };
+
+    // The public API's hierarchy has changed over time. Find actual match
+    // objects recursively under each location instead of assuming
+    // location.matches.
+    const entries=[];
+    const seenObjects=new WeakSet();
+
+    const visit=(node,location,courtName='',depth=0)=>{
+      if(node===null||node===undefined||depth>14)return;
+
+      if(Array.isArray(node)){
+        for(const x of node)visit(x,location,courtName,depth+1);
+        return;
+      }
+
+      if(typeof node!=='object')return;
+      if(seenObjects.has(node))return;
+      seenObjects.add(node);
+
+      const p1=playerName(node,1);
+      const p2=playerName(node,2);
+      if(p1&&p2){
+        const matchLocationId=locationIdValue(
+          node?.locationId ??
+          node?.locationID ??
+          node?.venueId ??
+          node?.siteId ??
+          node?.location
+        );
+
+        const resolvedLocation=
+          location ||
+          (matchLocationId?locationById.get(matchLocationId):null) ||
+          null;
+
+        entries.push({
+          match:node,
+          location:resolvedLocation,
+          courtName
+        });
+        return;
+      }
+
+      for(const [key,value] of Object.entries(node)){
+        if(value===null||value===undefined)continue;
+
+        let nextCourt=courtName;
+        if(
+          value&&typeof value==='object'&&!Array.isArray(value) &&
+          /court|resource|field/i.test(key)
+        ){
+          nextCourt=objectName(value)||nextCourt;
+        }
+
+        visit(value,location,nextCourt,depth+1);
+      }
+    };
+
+    for(const location of locations)visit(location,location,'',0);
+
+    // Also scan the root payload even when locations exist. The current
+    // SquashScores API can return matches in a sibling top-level collection.
+    // seenObjects prevents the location subtrees from being parsed twice.
+    visit(payload,null,'',0);
+
+    const gamesFor=m=>
+      Array.isArray(m?.games)?m.games:
+      Array.isArray(m?.gameScores)?m.gameScores:
+      Array.isArray(m?.scores)?m.scores:
+      [];
+
+    const gameScore=(g,side)=>{
+      const raw=
+        g?.[`player${side}Score`] ??
+        g?.[`player${side}Points`] ??
+        g?.[`player${side}`] ??
+        g?.[`score${side}`];
+
+      if(raw===null||raw===undefined||raw==='')return null;
+      const n=Number(raw);
+      return Number.isFinite(n)?n:null;
+    };
+
+    const explicitGamesWon=(m,side)=>{
+      const raw=
+        m?.[`player${side}GamesWon`] ??
+        m?.[`gamesWon${side}`];
+
+      if(raw===null||raw===undefined||String(raw).trim()==='')return null;
+      const n=Number(raw);
+      return Number.isFinite(n)?n:null;
+    };
+
+    const rows=[];
+    const seenMatches=new Set();
+
+    for(const entry of entries){
+      const m=entry.match;
+      const player1=canonicalName(playerName(m,1));
+      const player2=canonicalName(playerName(m,2));
+      if(!player1||!player2)continue;
+
+      const rawDate=clean(
+        m?.matchDate||m?.date||m?.startDate||m?.start||m?.dateTime||''
+      );
+
+      let date=parseDate(rawDate);
+      if(!date){
+        const dm=rawDate.match(/^(2026)-(\d{2})-(\d{2})/);
+        if(dm)date=`${dm[1]}-${dm[2]}-${dm[3]}`;
+      }
+      if(!date)continue;
+
+      const description=clean(m?.description||m?.roundName||m?.round||'');
+
+      let time='';
+      let tm=description.match(/\b(\d{1,2}):([0-5]\d)\b/);
+      if(!tm)tm=rawDate.match(/[T\s](\d{1,2}):([0-5]\d)/);
+
+      if(!tm){
+        const rawTime=clean(m?.matchTime||m?.time||m?.startTime||'');
+        tm=rawTime.match(/\b(\d{1,2}):([0-5]\d)\b/);
+      }
+
+      if(tm)time=`${String(Number(tm[1])).padStart(2,'0')}:${tm[2]}`;
+
+      const scorePairs=[];
+      let p1Games=0,p2Games=0;
+
+      for(const g of gamesFor(m)){
+        const a=gameScore(g,1),b=gameScore(g,2);
+        if(a===null||b===null)continue;
+        if(a===0&&b===0)continue;
+
+        scorePairs.push(`${a}-${b}`);
+        if(a>b)p1Games++;
+        else if(b>a)p2Games++;
+      }
+
+      const apiP1=explicitGamesWon(m,1);
+      const apiP2=explicitGamesWon(m,2);
+      if(apiP1!==null)p1Games=apiP1;
+      if(apiP2!==null)p2Games=apiP2;
+
+      const rawStatus=clean(
+        m?.status||m?.matchStatus||m?.state||''
+      ).toLowerCase();
+
+      const completed=
+        p1Games>=3||p2Games>=3||
+        m?.completed===true||
+        m?.isCompleted===true||
+        /complete|finished|ended|final/.test(rawStatus);
+
+      const live=
+        !completed&&(
+          scorePairs.length>0||p1Games>0||p2Games>0||
+          m?.isLive===true||
+          /live|playing|in.?progress|on.?court/.test(rawStatus)
+        );
+
+      const id=clean(m?.id||m?.matchId||m?.matchID||'');
+      const dedupeKey=id
+        ? `id:${id}`
+        : [
+            date,
+            [nameKey(player1),nameKey(player2)].sort().join('~'),
+            clean(time),
+            scorePairs.join(',')
+          ].join('|');
+
+      if(seenMatches.has(dedupeKey))continue;
+      seenMatches.add(dedupeKey);
+
+      rows.push({
+        date,time,
+        player1,player2,
+        result:scorePairs.join(', '),
+        status:completed?'completed':(live?'live':'scheduled'),
+        venue:clean(
+          entry.location?.name||
+          entry.location?.locationName||
+          entry.location?.title||
+          ''
+        ),
+        court:clean(
+          m?.courtName||
+          m?.court||
+          m?.resourceName||
+          entry.courtName||
+          ''
+        ),
+        event:clean(m?.categoryName||m?.category||m?.eventName||''),
+        round:description,
+        rawText:`SquashScores API ${id}`,
+        source:'SquashScores',
+        squashScoresMatchId:id||null
+      });
     }
 
     const groups=new Map();
@@ -5844,35 +6150,58 @@ async function fetchSquashScoresLiveMatches(canonicalPlayers){
 
     const collapsed=[];
     for(const group of groups.values()){
-      if(group.length===1){collapsed.push(group[0]);continue;}
+      if(group.length===1){
+        collapsed.push(group[0]);
+        continue;
+      }
+
       const times=[...new Set(group.map(x=>clean(x.time)).filter(Boolean))];
       const active=group
         .filter(x=>x.status==='live'||x.status==='completed'||x.result)
-        .sort((a,b)=>String(b.result||'').length-String(a.result||'').length);
-
-      if(times.length>1){
-        let current=active[0];
-        if(!current)current=group.slice().sort((a,b)=>clean(b.time).localeCompare(clean(a.time)))[0];
-        const other=times.filter(t=>clean(t)!==clean(current.time));
-        if(other.length)current={...current,originalTime:other.slice().sort()[0],timeMoved:true};
-        collapsed.push(current);
-      }else{
-        collapsed.push(group.slice().sort((a,b)=>{
+        .sort((a,b)=>{
           const ar=(a.status==='completed'?3000:a.status==='live'?2000:0)+String(a.result||'').length;
           const br=(b.status==='completed'?3000:b.status==='live'?2000:0)+String(b.result||'').length;
           return br-ar;
-        })[0]);
+        });
+
+      let current=active[0]||group[0];
+
+      if(times.length>1){
+        const other=times.filter(t=>clean(t)!==clean(current.time));
+        if(other.length){
+          current={
+            ...current,
+            originalTime:other.slice().sort()[0],
+            timeMoved:true
+          };
+        }
       }
+
+      collapsed.push(current);
     }
 
-    console.log(`SquashScores API: ${locations.length} location(s), ${collapsed.length} match(es) after move/dedupe, ${collapsed.filter(m=>m.result).length} with score data.`);
-  if(!locations.length)console.warn('WARNING: SquashScores API returned no locations/matches in this refresh. TournamentSoftware data will be published without SquashScores augmentation.');
+    console.log(
+      `SquashScores API: ${locations.length} location(s), `+
+      `${entries.length} match object(s) found anywhere in payload, `+
+      `${collapsed.length} match(es) after move/dedupe, `+
+      `${collapsed.filter(m=>m.result).length} with score data.`
+    );
+
+    if(locations.length&&!entries.length){
+      const sample=locations.slice(0,3).map(x=>Object.keys(x||{}).slice(0,20));
+      console.warn(
+        `WARNING: SquashScores API returned locations but no recognizable match objects. `+
+        `Location key samples: ${JSON.stringify(sample)}`
+      );
+    }
+
     return collapsed;
   }catch(e){
     console.warn(`SquashScores API refresh skipped: ${e.message}`);
     return [];
   }
 }
+
 
 function orientSquashScoresResult(existing,live){
   const result=clean(live?.result||'');
@@ -6725,6 +7054,60 @@ function preserveHistoricalTournamentResults(currentRows,previousRows){
 }
 
 
+function mergeDeterministicPlayerByes(rows,byeRows,{preserveExisting=true}={}){
+  const base=(rows||[]).filter(m=>!m?.deterministicBye||preserveExisting);
+  const out=[...base.map(m=>({...m}))];
+
+  const key=m=>{
+    const player=String(m.player1Id||'')||nameKey(m.player1||'');
+    return [
+      player,
+      clean(m.event||'').toLowerCase(),
+      clean(m.round||'').toLowerCase(),
+      clean(m.treeInputSlot1||''),
+      clean(m.treeInputSlot2||''),
+      clean(m.treeOutputSlot||'')
+    ].join('|');
+  };
+
+  const seen=new Set(
+    out.filter(m=>m?.deterministicBye).map(key)
+  );
+
+  let added=0;
+  for(const b0 of byeRows||[]){
+    if(!b0?.deterministicBye)continue;
+    if(!b0.player1||!/^Bye$/i.test(clean(b0.player2||'')))continue;
+
+    const b={
+      ...b0,
+      date:'',
+      time:'',
+      venue:'',
+      court:'',
+      result:'',
+      winner:'',
+      winnerId:'',
+      resultSource:'',
+      status:'bye',
+      playerDetailOnly:true
+    };
+
+    const k=key(b);
+    if(seen.has(k))continue;
+    seen.add(k);
+    out.push(b);
+    added++;
+  }
+
+  if(added){
+    console.log(`Player detail Bye progressions added: ${added}.`);
+  }
+
+  return out;
+}
+
+
 function sanitizeFutureResultMetadata(rows){
   const today=perthTodayIsoRefresh();
   let futureCleared=0;
@@ -6794,35 +7177,91 @@ function mergeSquashScoresIntoMatches(baseMatches, liveMatches){
   const out=(baseMatches||[]).map(m=>({...m}));
   const pair=m=>{
     const ids=[String(m.player1Id||''),String(m.player2Id||'')].filter(Boolean).sort();
-    return ids.length===2?ids.join('~'):[nameKey(m.player1),nameKey(m.player2)].sort().join('~');
+    return ids.length===2
+      ? ids.join('~')
+      : [nameKey(m.player1),nameKey(m.player2)].sort().join('~');
   };
+
+  // SquashScores does not carry TournamentSoftware player IDs. Compare by
+  // canonical names for the SquashScores side.
+  const namePair=m=>[
+    nameKey(m.player1),
+    nameKey(m.player2)
+  ].sort().join('~');
+
   const date=m=>canonicalTournamentDate(m.date);
   const time=m=>clean(m.time).toLowerCase();
   const perthToday=perthTodayIsoRefresh();
+
+  let exactApplied=0;
+  let safePairDayApplied=0;
+  let unmatched=0;
 
   for(const live of liveMatches||[]){
     const liveStatus=String(live.status||'').toLowerCase();
     if(liveStatus!=='live'&&liveStatus!=='completed')continue;
     if(date(live)!==perthToday)continue;
 
-    const candidates=out.filter(m=>
+    let candidates=out.filter(m=>
       date(m)===date(live) &&
       time(m)===time(live) &&
-      pair(m)===pair(live)
+      namePair(m)===namePair(live)
     );
-    if(candidates.length!==1)continue;
+
+    let matchedBy='exact';
+
+    if(candidates.length!==1){
+      const basePairDay=out.filter(m=>
+        date(m)===date(live) &&
+        namePair(m)===namePair(live)
+      );
+
+      const livePairDay=(liveMatches||[]).filter(x=>
+        date(x)===date(live) &&
+        namePair(x)===namePair(live) &&
+        ['live','completed'].includes(String(x.status||'').toLowerCase())
+      );
+
+      if(basePairDay.length===1&&livePairDay.length===1){
+        candidates=basePairDay;
+        matchedBy='pair-day';
+      }
+    }
+
+    if(candidates.length!==1){
+      unmatched++;
+      continue;
+    }
 
     const existing=candidates[0];
+
     if(live.result){
       existing.result=orientSquashScoresResult(existing,live);
       existing.resultSource='SquashScores';
     }
+
     existing.status=liveStatus;
     existing.liveSource='SquashScores';
     existing.liveUpdatedAt=new Date().toISOString();
+
+    if(time(live)&&time(existing)!==time(live)){
+      existing.squashScoresObservedTime=time(live);
+    }
+
+    if(matchedBy==='exact')exactApplied++;
+    else safePairDayApplied++;
   }
+
+  if((liveMatches||[]).length){
+    console.log(
+      `SquashScores publish overlay: ${exactApplied} exact + `+
+      `${safePairDayApplied} safe pair/day update(s), ${unmatched} unmatched.`
+    );
+  }
+
   return out;
 }
+
 
 // canonicalDate is a frontend helper; keep a tiny refresh-side equivalent.
 function perthTodayIsoRefresh(){
@@ -8051,6 +8490,12 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
 
     tournamentMatches=sanitizeFutureResultMetadata(tournamentMatches);
 
+    tournamentMatches=mergeDeterministicPlayerByes(
+      tournamentMatches,
+      officialDrawFallback.byeMatches||[],
+      {preserveExisting:true}
+    );
+
     tournamentMatches=tournamentMatches.map(m=>({
       ...m,
       court:sanitizeCourtValue(m.court)
@@ -8298,6 +8743,12 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
   }
 
   tournamentMatches=sanitizeFutureResultMetadata(tournamentMatches);
+
+  tournamentMatches=mergeDeterministicPlayerByes(
+    tournamentMatches,
+    officialDraw.byeMatches||[],
+    {preserveExisting:!FULL_REBUILD}
+  );
 
   const drawCompleted=(officialDraw.matches||[]).filter(m=>m.result||String(m.status||'').toLowerCase()==='completed');
   const drawScored=(officialDraw.matches||[]).filter(m=>m.result);

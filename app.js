@@ -97,7 +97,10 @@ async function ensureMatchesData(){
     const legacy=await ensureLegacyData();
     data.matches=legacy?.matches||[];
   }
-  data.matches=(data.matches||[]).map(normaliseMatch).map(normalizeSelfMatchAsBye);
+  data.matches=(data.matches||[])
+    .filter(m=>!m?.playerDetailOnly)
+    .map(normaliseMatch)
+    .map(normalizeSelfMatchAsBye);
   data.baseMatches=data.matches.map(m=>({...m}));
   rebuildFavoriteMatchIndex();
   matchesReady=true;
@@ -253,9 +256,13 @@ function parseSquashScoresApi(payload,players){
   };
 
   const gamesWon=match=>{
-    const p1=Number(match?.player1GamesWon);
-    const p2=Number(match?.player2GamesWon);
+    const raw1=match?.player1GamesWon;
+    const raw2=match?.player2GamesWon;
+    const p1=raw1===null||raw1===undefined||raw1===''?null:Number(raw1);
+    const p2=raw2===null||raw2===undefined||raw2===''?null:Number(raw2);
+
     if(Number.isFinite(p1)&&Number.isFinite(p2))return [p1,p2];
+
     let a=0,b=0;
     for(const g of Array.isArray(match?.games)?match.games:[]){
       const x=Number(g?.player1Score),y=Number(g?.player2Score);
@@ -265,6 +272,7 @@ function parseSquashScoresApi(payload,players){
     return [a,b];
   };
 
+  // First keep the original known-working SquashScores structure.
   for(const location of locations){
     for(const m of Array.isArray(location?.matches)?location.matches:[]){
       const player1=canonicalPlayerName(m?.player1Name);
@@ -292,17 +300,13 @@ function parseSquashScoresApi(payload,players){
       const completed=p1Won>=3||p2Won>=3;
       const hasStarted=score.length>0||p1Won>0||p2Won>0;
 
-      let status='scheduled';
-      if(completed)status='completed';
-      else if(hasStarted)status='live';
-
       rows.push({
         date,
         time,
         player1,
         player2,
         result:score,
-        status,
+        status:completed?'completed':(hasStarted?'live':'scheduled'),
         venue:String(location?.name||location?.locationName||'').trim(),
         court:String(m?.courtName||m?.court||'').trim(),
         event:String(m?.categoryName||m?.category||'').trim(),
@@ -313,13 +317,297 @@ function parseSquashScoresApi(payload,players){
     }
   }
 
-  console.log(`SquashScores API: ${locations.length} location(s) · ${rows.length} match(es)`);
-  const rogerRows=rows.filter(m=>ssNorm(m.player1)==='roger schmidlin'||ssNorm(m.player2)==='roger schmidlin');
-  if(rogerRows.length)console.log('SquashScores Roger rows:',rogerRows);
+  // Generic fallback.
+  //
+  // SquashScores has changed its JSON shape before. Instead of guessing the
+  // collection/property names, find the SMALLEST JSON objects that contain
+  // exactly two known tournament players and a plausible game-score array.
+  // This is score extraction only; ssOverlay still requires an existing
+  // TournamentSoftware fixture before anything can be displayed.
+  const knownPlayers=playerList
+    .filter(p=>p?.name&&ssNorm(p.name).length>=5)
+    .map(p=>({name:p.name,key:ssNorm(p.name)}))
+    .sort((a,b)=>b.key.length-a.key.length);
 
-  return rows;
+  const namesInText=text=>{
+    const hay=` ${ssNorm(text)} `;
+    const found=[];
+    for(const p of knownPlayers){
+      if(hay.includes(` ${p.key} `)&&!found.some(x=>ssNorm(x)===p.key)){
+        found.push(p.name);
+        if(found.length===3)break;
+      }
+    }
+    return found;
+  };
+
+  const objectDisplayName=v=>{
+    if(v===null||v===undefined)return '';
+    if(typeof v==='string')return v.trim();
+    if(typeof v==='object'){
+      return String(
+        v.name||v.displayName||v.fullName||v.playerName||
+        v.participantName||v.title||v.label||''
+      ).trim();
+    }
+    return '';
+  };
+
+  const numericScore=v=>{
+    if(v===null||v===undefined||v==='')return null;
+    const n=Number(v);
+    return Number.isFinite(n)&&n>=0&&n<=40?n:null;
+  };
+
+  const scorePairFromGame=g=>{
+    if(!g||typeof g!=='object'||Array.isArray(g))return null;
+
+    const keyPairs=[
+      ['player1Score','player2Score'],
+      ['playerOneScore','playerTwoScore'],
+      ['homeScore','awayScore'],
+      ['score1','score2'],
+      ['points1','points2'],
+      ['homePoints','awayPoints'],
+      ['team1Score','team2Score']
+    ];
+
+    for(const [aKey,bKey] of keyPairs){
+      if(!(aKey in g)||!(bKey in g))continue;
+      const a=numericScore(g[aKey]),b=numericScore(g[bKey]);
+      if(a===null||b===null||(a===0&&b===0))continue;
+      return [a,b];
+    }
+
+    return null;
+  };
+
+  const bestGamePairs=node=>{
+    let best=[];
+
+    const walk=(v,depth=0)=>{
+      if(v===null||v===undefined||depth>7)return;
+
+      if(Array.isArray(v)){
+        const direct=[];
+        for(const item of v){
+          const pair=scorePairFromGame(item);
+          if(pair)direct.push(pair);
+        }
+
+        // A squash match has at most five games. Prefer the richest plausible
+        // game array.
+        if(direct.length&&direct.length<=5&&direct.length>best.length){
+          best=direct;
+        }
+
+        for(const item of v)walk(item,depth+1);
+        return;
+      }
+
+      if(typeof v!=='object')return;
+      for(const child of Object.values(v))walk(child,depth+1);
+    };
+
+    walk(node);
+    return best;
+  };
+
+  const ownDate=node=>{
+    if(!node||typeof node!=='object'||Array.isArray(node))return '';
+
+    for(const key of [
+      'matchDate','date','scheduledDate','startDate','dateTime',
+      'datetime','scheduledAt','start'
+    ]){
+      const raw=node[key];
+      if(raw===null||raw===undefined||typeof raw==='object')continue;
+      const d=canonicalDate(String(raw));
+      if(/^\d{4}-\d{2}-\d{2}$/.test(d))return d;
+    }
+
+    try{
+      const flat=JSON.stringify(node);
+      const m=flat.match(/\b(20\d{2})-(\d{2})-(\d{2})\b/);
+      if(m)return `${m[1]}-${m[2]}-${m[3]}`;
+    }catch{}
+
+    return '';
+  };
+
+  const ownTime=node=>{
+    if(!node||typeof node!=='object'||Array.isArray(node))return '';
+
+    for(const key of [
+      'matchTime','time','scheduledTime','startTime','description',
+      'roundName','round'
+    ]){
+      const raw=node[key];
+      if(raw===null||raw===undefined||typeof raw==='object')continue;
+      const m=String(raw).match(/\b(\d{1,2}):([0-5]\d)\b/);
+      if(m)return `${String(+m[1]).padStart(2,'0')}:${m[2]}`;
+    }
+
+    return '';
+  };
+
+  const directPlayers=node=>{
+    const pairs=[
+      ['player1Name','player2Name'],
+      ['playerOneName','playerTwoName'],
+      ['homePlayerName','awayPlayerName'],
+      ['homeName','awayName'],
+      ['player1','player2'],
+      ['participant1','participant2'],
+      ['homePlayer','awayPlayer']
+    ];
+
+    for(const [aKey,bKey] of pairs){
+      const a=objectDisplayName(node?.[aKey]);
+      const b=objectDisplayName(node?.[bKey]);
+      if(a&&b)return [canonicalPlayerName(a),canonicalPlayerName(b)];
+    }
+
+    for(const key of ['players','participants','competitors']){
+      const arr=node?.[key];
+      if(!Array.isArray(arr)||arr.length!==2)continue;
+      const a=objectDisplayName(arr[0]),b=objectDisplayName(arr[1]);
+      if(a&&b)return [canonicalPlayerName(a),canonicalPlayerName(b)];
+    }
+
+    return [];
+  };
+
+  const fallbackCandidates=[];
+  const seenObjects=new WeakSet();
+
+  const scan=(node,inheritedDate='',inheritedTime='',depth=0)=>{
+    if(node===null||node===undefined||depth>14)return;
+
+    if(Array.isArray(node)){
+      for(const item of node)scan(item,inheritedDate,inheritedTime,depth+1);
+      return;
+    }
+
+    if(typeof node!=='object')return;
+    if(seenObjects.has(node))return;
+    seenObjects.add(node);
+
+    const date=ownDate(node)||inheritedDate;
+    const time=ownTime(node)||inheritedTime;
+
+    let flat='';
+    try{flat=JSON.stringify(node)}catch{}
+
+    if(flat&&flat.length<=20000){
+      const names=namesInText(flat);
+      if(names.length===2){
+        const games=bestGamePairs(node);
+
+        if(games.length){
+          let ordered=directPlayers(node);
+
+          if(ordered.length!==2){
+            // Preserve the order in which the two names appear in the actual
+            // match JSON. This keeps the game scores oriented correctly.
+            const normFlat=ssNorm(flat);
+            ordered=names.slice().sort((a,b)=>
+              normFlat.indexOf(ssNorm(a))-normFlat.indexOf(ssNorm(b))
+            );
+          }
+
+          const p1=ordered[0],p2=ordered[1];
+          const result=games.map(([a,b])=>`${a}-${b}`).join(', ');
+
+          let p1Games=0,p2Games=0;
+          for(const [a,b] of games){
+            if(a>b)p1Games++;
+            else if(b>a)p2Games++;
+          }
+
+          fallbackCandidates.push({
+            date,
+            time,
+            player1:p1,
+            player2:p2,
+            result,
+            status:p1Games>=3||p2Games>=3?'completed':'live',
+            venue:'',
+            court:'',
+            event:'',
+            round:'',
+            liveSource:'SquashScores',
+            squashScoresGenericFallback:true,
+            _rawSize:flat.length
+          });
+        }
+      }
+    }
+
+    for(const child of Object.values(node)){
+      scan(child,date,time,depth+1);
+    }
+  };
+
+  scan(payload);
+
+  // Keep the smallest/richest fallback object for each pair/date/time. Parent
+  // containers can contain the same match data as their child match object.
+  fallbackCandidates.sort((a,b)=>
+    (a._rawSize||999999)-(b._rawSize||999999) ||
+    String(b.result||'').length-String(a.result||'').length
+  );
+
+  const fallbackMap=new Map();
+  for(const row of fallbackCandidates){
+    const key=[
+      canonicalDate(row.date||''),
+      [ssNorm(row.player1),ssNorm(row.player2)].sort().join('|'),
+      displayTime24(row.time||'')
+    ].join('|');
+
+    if(!fallbackMap.has(key))fallbackMap.set(key,row);
+  }
+
+  const genericRows=[...fallbackMap.values()].map(({_rawSize,...x})=>x);
+
+  // Merge generic fallback into the original parser, preferring whichever row
+  // actually has score data.
+  const merged=new Map();
+
+  const mergeKey=m=>[
+    canonicalDate(m.date||''),
+    [ssNorm(m.player1),ssNorm(m.player2)].sort().join('|'),
+    displayTime24(m.time||'')
+  ].join('|');
+
+  for(const row of [...rows,...genericRows]){
+    const key=mergeKey(row);
+    const prev=merged.get(key);
+
+    if(!prev){
+      merged.set(key,row);
+      continue;
+    }
+
+    const prevRank=(prev.result?1000+String(prev.result).length:0)+
+      (prev.status==='completed'?100:prev.status==='live'?50:0);
+    const rowRank=(row.result?1000+String(row.result).length:0)+
+      (row.status==='completed'?100:row.status==='live'?50:0);
+
+    if(rowRank>prevRank)merged.set(key,{...prev,...row});
+  }
+
+  const output=[...merged.values()];
+
+  console.log(
+    `SquashScores API parser: ${locations.length} location(s) · `+
+    `${rows.length} standard row(s) · ${genericRows.length} generic score row(s) · `+
+    `${output.filter(m=>m.result).length} scored row(s).`
+  );
+
+  return output;
 }
-
 function parseSquashScoresHtml(html,players){
   const doc=new DOMParser().parseFromString(html,'text/html');
   const found=new Map();
@@ -445,48 +733,37 @@ function orientLiveResultToExisting(existing,live){
 
 function ssOverlay(base,live){
   const out=(base||[]).map(m=>({...m}));
-  const pairKey=m=>[ssNorm(m.player1),ssNorm(m.player2)].sort().join('|');
-  const dateKey=m=>canonicalDate(m.date||'');
-  const timeKey=m=>displayTime24(m.time||'');
-  const today=perthTodayIso();
-  let applied=0;
+  const pair=m=>[ssNorm(m.player1),ssNorm(m.player2)].sort().join('|');
+  const date=m=>canonicalDate(m.date||'');
+  const time=m=>displayTime24(m.time||'');
 
   for(const l of live||[]){
-    const liveStatus=String(l.status||'').toLowerCase();
-    if(liveStatus!=='live'&&liveStatus!=='completed')continue;
-    if(dateKey(l)!==today)continue;
+    const ld=date(l);if(!ld)continue;
+    const same=out.filter(m=>date(m)===ld&&pair(m)===pair(l));
+    let existing=null;
+    const timed=same.filter(m=>time(m)===time(l));
+    if(timed.length===1)existing=timed[0];
+    else if(same.length===1)existing=same[0];
+    if(!existing)continue;
 
-    // Never let SquashScores create or move a tournament fixture.
-    // It may only update the unique existing TournamentSoftware fixture with
-    // the same Perth date, time and player pair.
-    const candidates=out.filter(m=>
-      dateKey(m)===today &&
-      timeKey(m)===timeKey(l) &&
-      pairKey(m)===pairKey(l)
-    );
-
-    if(candidates.length!==1)continue;
-
-    const existing=candidates[0];
-
-    if(l.result){
-      existing.result=orientLiveResultToExisting(existing,l);
-      existing.resultSource='SquashScores';
-    }
-
-    existing.status=liveStatus;
+    // TournamentSoftware is schedule authority. SquashScores may only add
+    // score and live/completed status to an existing official fixture.
+    if(l.result)existing.result=orientLiveResultToExisting(existing,l);
+    if(l.status==='completed'||l.status==='live')existing.status=l.status;
     existing.liveSource='SquashScores';
-    applied++;
   }
-
-  if((live||[]).length&&!applied){
-    console.warn(
-      `SquashScores overlay: 0/${(live||[]).length} row(s) matched the supplied TournamentSoftware fixture set.`
-    );
-  }
-
   return out;
 }
+async function fetchSquashScoresHtml(){
+  const sep=SQUASH_SCORES_LIVE_URL.includes('?')?'&':'?';
+  const r=await fetch(
+    `${SQUASH_SCORES_LIVE_URL}${sep}_=${Date.now()}`,
+    {cache:'no-store',mode:'cors'}
+  );
+  if(!r.ok)throw new Error(`SquashScores HTML HTTP ${r.status}`);
+  return r.text();
+}
+
 async function fetchSquashScoresApi(){
   const sep=SQUASH_SCORES_API_URL.includes('?')?'&':'?';
   const r=await fetch(`${SQUASH_SCORES_API_URL}${sep}_=${Date.now()}`,{cache:'no-store',mode:'cors'});
@@ -1473,11 +1750,9 @@ function makeHomeSummary(source){
 
 
 let squashScoresPollTimer=null;
-// Today's SquashScores rows that can temporarily overlay the published schedule.
-// Includes LIVE rows and just-COMPLETED rows so the score remains visible after
-// the final point until TournamentSoftware catches up.
 let squashScoresLatestLive=[];
 let squashScoresLatestFingerprint='';
+let squashScoresLastVicParkFingerprint='';
 function squashScoresFingerprint(rows){
   return JSON.stringify((rows||[]).map(m=>[
     canonicalDate(m.date||''),displayTime24(m.time||''),
@@ -1496,51 +1771,73 @@ async function updateSquashScoresLive(){
       if(k&&!seen.has(k)){seen.add(k);uniq.push(p)}
     }
 
-    const parsed=parseSquashScoresApi(payload,uniq);
-    const today=perthTodayIso();
+    let live=parseSquashScoresApi(payload,uniq);
 
-    const overlayRows=parsed.filter(m=>{
-      const status=String(m.status||'').toLowerCase();
-      return canonicalDate(m.date)===today &&
-        (status==='live'||status==='completed');
-    });
+    const apiUseful=live.some(m=>
+      !!m.result ||
+      String(m.status||'').toLowerCase()==='live' ||
+      String(m.status||'').toLowerCase()==='completed'
+    );
 
-    const fingerprint=squashScoresFingerprint(overlayRows);
+    // Restore the original rendered-overview parser as a second path. This was
+    // the mechanism used by the early 5-second live-score implementation.
+    if(!apiUseful){
+      try{
+        const html=await fetchSquashScoresHtml();
+        const htmlRows=parseSquashScoresHtml(html,uniq);
+        const htmlUseful=htmlRows.filter(m=>
+          !!m.result ||
+          String(m.status||'').toLowerCase()==='live' ||
+          String(m.status||'').toLowerCase()==='completed'
+        );
 
-    // Do NOT return just because the SquashScores payload is unchanged.
-    // Polling can start before the Vic Park/full match data has finished
-    // loading. The unchanged live state must still be applied once those
-    // datasets become ready.
+        if(htmlUseful.length){
+          live=htmlRows;
+          console.log(
+            `SquashScores: API contained no usable scores; HTML fallback parsed `+
+            `${htmlUseful.length} live/completed score row(s).`
+          );
+        }
+      }catch(e){
+        console.warn('SquashScores HTML fallback unavailable:',e?.message||e);
+      }
+    }
+
+    console.log(
+      `SquashScores Vic Park feed: ${live.length} match row(s), `+
+      `${live.filter(m=>m.result).length} with scores.`
+    );
+
+    if(!live.length)return;
+
+    const fingerprint=squashScoresFingerprint(live);
+    const fullPagesChanged=fingerprint!==squashScoresLatestFingerprint;
+
+    // Courts/Fav use the latest SquashScores snapshot at render time.
+    // Do NOT mutate the full tournament dataset.
+    squashScoresLatestLive=live;
     squashScoresLatestFingerprint=fingerprint;
-    squashScoresLatestLive=overlayRows.map(m=>({...m}));
 
-    if(matchesReady){
-      data.matches=ssOverlay(data.baseMatches||data.matches,squashScoresLatestLive)
-        .map(normaliseMatch)
-        .map(normalizeSelfMatchAsBye);
-      rebuildFavoriteMatchIndex();
-    }
+    let vicUpdated=false;
 
+    // Preserve the working Vic Park mechanism exactly:
+    // small relevant subset first, then overlay live scores.
     if(vicParkDataReady){
-      vicParkMatches=ssOverlay(
-        window.__vicParkBaseMatches||vicParkMatches,
-        squashScoresLatestLive
-      )
+      vicParkMatches=ssOverlay(window.__vicParkBaseMatches||vicParkMatches,live)
         .map(normaliseMatch)
         .map(normalizeSelfMatchAsBye);
-    }
-
-    if(squashScoresLatestLive.length){
-      console.log(
-        `SquashScores overlay tick: ${squashScoresLatestLive.length} today live/completed row(s), `+
-        `matchesReady=${matchesReady}, vicParkDataReady=${vicParkDataReady}.`
-      );
+      squashScoresLastVicParkFingerprint=fingerprint;
+      vicUpdated=true;
     }
 
     const page=location.hash.slice(1)||'home';
-    if(page==='glass'&&glassReady)renderFeatureCourt(selectedFeatureDate);
-    else if(page==='favorites')renderFavoritePlayers();
-    else if(page==='vicpark'&&vicParkReady)setupVicPark();
+    if(page==='glass'&&glassReady&&fullPagesChanged){
+      renderFeatureCourt(selectedFeatureDate);
+    }else if(page==='favorites'&&fullPagesChanged){
+      renderFavoritePlayers();
+    }else if(page==='vicpark'&&vicParkReady&&vicUpdated){
+      setupVicPark();
+    }
   }catch(e){
     console.warn('SquashScores live unavailable:',e?.message||e);
   }
