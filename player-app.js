@@ -943,7 +943,62 @@ function getFavoriteNames(){try{const r=JSON.parse(localStorage.getItem(FAVORITE
 function isFavoritePlayer(n){return getFavoriteNames().some(x=>sameName(x,n))}
 function toggleFavoritePlayer(n){const r=getFavoriteNames(),i=r.findIndex(x=>sameName(x,n));if(i>=0)r.splice(i,1);else r.push(n);try{localStorage.setItem(FAVORITES_STORAGE_KEY,JSON.stringify(r))}catch{}return i<0}
 function playerFavoriteButton(n){const on=isFavoritePlayer(n);return `<button type="button" id="playerFavoriteButton" class="favorite-player-btn player-detail-favorite-btn ${on?'is-favorite':''}" aria-pressed="${on?'true':'false'}"><span aria-hidden="true">${on?'★':'☆'}</span><span class="favorite-player-btn-text">${on?'Faved':'Fav'}</span></button>`}
-function scoreWinnerSide(m){const g=[...String(m?.result||'').matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)].map(x=>[+x[1],+x[2]]);if(g.length<2)return 0;let a=0,b=0;for(const [x,y] of g){if(x>y)a++;else if(y>x)b++;}return a===b?0:(a>b?1:2)}
+function playerScoreState(m){
+  const games=[...String(m?.result||'').matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)]
+    .map(x=>[Number(x[1]),Number(x[2])]);
+
+  const wonGame=(a,b)=>{
+    if(!Number.isFinite(a)||!Number.isFinite(b)||a===b)return 0;
+    const hi=Math.max(a,b),lo=Math.min(a,b);
+
+    // Count only FINISHED games, never the player who is merely leading
+    // the current game.
+    const complete=
+      hi>=11 &&
+      (hi===11 ? lo<=9 : hi-lo===2);
+
+    if(!complete)return 0;
+    return a>b?1:2;
+  };
+
+  let p1Games=0,p2Games=0;
+  for(const [a,b] of games){
+    const winner=wonGame(a,b);
+    if(winner===1)p1Games++;
+    else if(winner===2)p2Games++;
+  }
+
+  const status=String(m?.status||'').toLowerCase();
+  const live=status==='live';
+  const finished=
+    status==='completed' ||
+    status==='played' ||
+    (!live&&Math.max(p1Games,p2Games)>=3);
+
+  let winnerSide=0;
+
+  if(finished&&m?.winner){
+    if(sameName(m.winner,m.player1))winnerSide=1;
+    else if(sameName(m.winner,m.player2))winnerSide=2;
+  }
+
+  if(!winnerSide&&finished&&p1Games!==p2Games){
+    winnerSide=p1Games>p2Games?1:2;
+  }
+
+  return {
+    p1Games,
+    p2Games,
+    gamesText:games.length?`${p1Games}:${p2Games}`:'',
+    winnerSide,
+    finished,
+    live
+  };
+}
+
+function scoreWinnerSide(m){
+  return playerScoreState(m).winnerSide;
+}
 
 function scoreWinnerName(m){
   const w=scoreWinnerSide(m);
@@ -951,18 +1006,105 @@ function scoreWinnerName(m){
   if(w===2)return String(m?.player2||'');
   return '';
 }
+
 function matchGamesScore(m){
-  const games=[...String(m?.result||'').matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)]
-    .map(x=>[Number(x[1]),Number(x[2])]);
-  if(!games.length)return '';
-  let p1=0,p2=0;
-  for(const [a,b] of games){
-    if(a>b)p1++;
-    else if(b>a)p2++;
-  }
-  if(p1===p2)return '';
-  return `${Math.max(p1,p2)}:${Math.min(p1,p2)}`;
+  return playerScoreState(m).gamesText;
 }
+
+function playerMatchScoreSummary(m,outcome=''){
+  const state=playerScoreState(m);
+  const shouldShow=
+    state.live ||
+    state.finished ||
+    past(m);
+
+  if(!shouldShow)return '';
+
+  return `<div class="match-history-score ${m.result?'has-score':'no-score'} ${state.live?'live-score-block':''}">
+    <span class="match-history-score-label ${state.live?'live-score-label':''}">
+      <span>Score</span>
+      ${state.live
+        ? `<span class="live-score-indicator" aria-label="Live match">
+            <span class="live-score-dot" aria-hidden="true"></span>
+            LIVE
+          </span>`
+        : ''}
+    </span>
+    <strong>${m.result?esc(m.result):'Score not published'}</strong>
+    ${state.live&&state.gamesText
+      ? `<span class="match-live-games">Games <strong>${esc(state.gamesText)}</strong></span>`
+      : ''}
+    ${state.finished&&state.winnerSide
+      ? `<span class="match-winner-label">Winner: <strong>${esc(state.winnerSide===1?m.player1:m.player2)}${state.gamesText?` ${esc(state.gamesText)}`:''}</strong></span>`
+      : ''}
+    ${outcome&&state.finished
+      ? `<span class="match-outcome-badge match-outcome-${outcome}">${outcome==='win'?'WIN':'LOSS'}</span>`
+      : ''}
+  </div>`;
+}
+
+function ensurePlayerLiveScoreStyles(){
+  if(document.getElementById('wsm-live-score-styles'))return;
+
+  const style=document.createElement('style');
+  style.id='wsm-live-score-styles';
+  style.textContent=`
+    @keyframes wsmLivePulse{
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:.35;transform:scale(.78)}
+    }
+
+    .live-score-label{
+      display:inline-flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:2px;
+    }
+
+    .live-score-indicator{
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      color:#20b15a;
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      line-height:1;
+    }
+
+    .live-score-dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#20b15a;
+      box-shadow:0 0 0 3px rgba(32,177,90,.14);
+      animation:wsmLivePulse 1.15s ease-in-out infinite;
+    }
+
+    .match-live-games{
+      white-space:nowrap;
+    }
+
+    .match-finished .match-loser-player .player-name-stack > b,
+    .match-finished .match-loser-player .fixture-mobile-name{
+      font-weight:500 !important;
+      opacity:.78;
+    }
+
+    .match-finished .match-winner-player .player-name-stack > b,
+    .match-finished .match-winner-player .fixture-mobile-name{
+      font-weight:850 !important;
+      opacity:1;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .live-score-dot{animation:none}
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+ensurePlayerLiveScoreStyles();
 
 function matchOutcomeForCurrentPlayer(m){
   const w=scoreWinnerSide(m);if(!w)return '';
@@ -1186,11 +1328,14 @@ function playerMatchRow(m){
     officialPlayerId&&p2?.officialPlayerId&&
     String(p2.officialPlayerId)===String(officialPlayerId)
   )||(!duplicateDisplayedName&&sameName(m.player2,name));
-  const outcome=past(m)?matchOutcomeForCurrentPlayer(m):'';
+  const scoreState=playerScoreState(m);
+  const outcome=scoreState.finished?matchOutcomeForCurrentPlayer(m):'';
   const place=venuePlace(m);
   const live=currentMatch(m);
+  const p1Winner=scoreState.finished&&scoreState.winnerSide===1;
+  const p2Winner=scoreState.finished&&scoreState.winnerSide===2;
 
-  return `<article class="vic-match-row player-schedule-row ${past(m)?'past':''} ${live?'match-live':''} ${outcome?`match-${outcome}`:''}">${movedTimeNote(m)}
+  return `<article class="vic-match-row player-schedule-row ${past(m)?'past':''} ${live?'match-live':''} ${scoreState.finished?'match-finished':''} ${outcome?`match-${outcome}`:''}">${movedTimeNote(m)}
     <div class="vic-time">
       <span class="vic-time-value">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span>
       <span class="vic-time-age">${esc(m.event||'')}</span>
@@ -1212,7 +1357,7 @@ function playerMatchRow(m){
       <div class="vic-fixture-line">
         ${isTbdNamePlayer(m.player1)
           ? `<span class="fixture-player-tbd"><span class="player-name-stack"><b>TBD</b></span></span>`
-          : `<a class="${p1Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,p1?.officialPlayerId||m.player1Id)}">
+          : `<a class="${p1Current?'vic-tracked-player':''} ${p1Winner?'match-winner-player':(scoreState.finished&&scoreState.winnerSide?'match-loser-player':'')}" href="${playerPageUrl(m.player1,p1?.officialPlayerId||m.player1Id)}">
               <span class="fixture-player-desktop">
                 ${flagImg(p1)}
                 <span class="vic-player-name-wrap">
@@ -1235,7 +1380,7 @@ function playerMatchRow(m){
 
         ${isTbdNamePlayer(m.player2)
           ? `<span class="fixture-player-tbd"><span class="player-name-stack"><b>TBD</b></span></span>`
-          : `<a class="${p2Current?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,p2?.officialPlayerId||m.player2Id)}">
+          : `<a class="${p2Current?'vic-tracked-player':''} ${p2Winner?'match-winner-player':(scoreState.finished&&scoreState.winnerSide?'match-loser-player':'')}" href="${playerPageUrl(m.player2,p2?.officialPlayerId||m.player2Id)}">
               <span class="fixture-player-desktop">
                 ${flagImg(p2)}
                 <span class="vic-player-name-wrap">
@@ -1254,15 +1399,9 @@ function playerMatchRow(m){
               </span>
             </a>`}
 
-        ${m.result&&!past(m)?`<span class="vic-result">${esc(m.result)}</span>`:''}
       </div>
 
-      ${past(m)?`<div class="match-history-score ${m.result?'has-score':'no-score'}">
-        <span class="match-history-score-label">Score</span>
-        <strong>${m.result?esc(m.result):'Score not published'}</strong>
-        ${m.result&&scoreWinnerName(m)?`<span class="match-winner-label">Winner: <strong>${esc(scoreWinnerName(m))} ${esc(matchGamesScore(m))}</strong></span>`:''}
-        ${outcome?`<span class="match-outcome-badge match-outcome-${outcome}">${outcome==='win'?'WIN':'LOSS'}</span>`:''}
-      </div>`:''}
+      ${playerMatchScoreSummary(m,outcome)}
     </div>
 
     <div class="vic-location" title="${esc(place)}">${venueBadge(m)}<span>${esc(place)}</span></div>

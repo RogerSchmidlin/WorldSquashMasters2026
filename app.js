@@ -1337,22 +1337,68 @@ function matchCard(m){
   return `<article class="match-card"><div class="match-time">${esc(displayTime24(m.time))}</div><div class="event-badge">${esc([m.event,m.round].filter(Boolean).join(' · '))}</div><div class="fixture">${matchCardPlayer(m.player1,p1,m.player1Id,false)}<div class="vs">VS</div>${matchCardPlayer(m.player2,p2,m.player2Id,true)}</div><div class="court-tag">${venueBadge(m)}<span>${esc(cleanVenuePlace(m))}</span></div></article>`;
 }
 
-function scoreWinnerInfo(m){
+function scoreGameState(m){
   const games=[...String(m?.result||'').matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)]
     .map(x=>[Number(x[1]),Number(x[2])]);
 
-  if(!games.length){
-    return {name:String(m?.winner||''),games:''};
-  }
-  let p1=0,p2=0;
+  const wonGame=(a,b)=>{
+    if(!Number.isFinite(a)||!Number.isFinite(b)||a===b)return 0;
+    const hi=Math.max(a,b),lo=Math.min(a,b);
+
+    // Squash games are won at 11 by at least two points. At 10-all play
+    // continues until one player leads by two, e.g. 12-10, 15-13.
+    const complete=
+      hi>=11 &&
+      (hi===11 ? lo<=9 : hi-lo===2);
+
+    if(!complete)return 0;
+    return a>b?1:2;
+  };
+
+  let p1Games=0,p2Games=0;
   for(const [a,b] of games){
-    if(a>b)p1++;
-    else if(b>a)p2++;
+    const winner=wonGame(a,b);
+    if(winner===1)p1Games++;
+    else if(winner===2)p2Games++;
   }
-  if(p1===p2)return {name:'',games:''};
+
+  const status=String(m?.status||'').toLowerCase();
+  const live=status==='live';
+  const finished=
+    status==='completed' ||
+    status==='played' ||
+    (!live&&Math.max(p1Games,p2Games)>=3);
+
+  let winnerSide=0;
+
+  if(finished&&m?.winner){
+    if(sameName(m.winner,m.player1))winnerSide=1;
+    else if(sameName(m.winner,m.player2))winnerSide=2;
+  }
+
+  if(!winnerSide&&finished&&p1Games!==p2Games){
+    winnerSide=p1Games>p2Games?1:2;
+  }
+
   return {
-    name:p1>p2?String(m?.player1||''):String(m?.player2||''),
-    games:`${Math.max(p1,p2)}:${Math.min(p1,p2)}`
+    p1Games,
+    p2Games,
+    gamesText:games.length?`${p1Games}:${p2Games}`:'',
+    winnerSide,
+    finished,
+    live
+  };
+}
+
+function scoreWinnerInfo(m){
+  const state=scoreGameState(m);
+  if(!state.finished||!state.winnerSide){
+    return {name:'',games:state.gamesText};
+  }
+
+  return {
+    name:state.winnerSide===1?String(m?.player1||''):String(m?.player2||''),
+    games:state.gamesText
   };
 }
 
@@ -1363,14 +1409,93 @@ function scoreWinnerName(m){
 function matchScoreSummary(m){
   if(!canShowPublishedResult(m))return '';
   if(!m?.result&&!m?.winner)return '';
-  const winner=scoreWinnerInfo(m);
 
-  return `<div class="match-history-score has-score">
-    ${m.result?`<span class="match-history-score-label">Score</span><strong>${esc(m.result)}</strong>`:''}
-    ${winner.name?`<span class="match-winner-label">Winner: <strong>${esc(winner.name)}${winner.games?` ${esc(winner.games)}`:''}</strong></span>`:''}
+  const state=scoreGameState(m);
+
+  return `<div class="match-history-score has-score ${state.live?'live-score-block':''}">
+    ${m.result
+      ? `<span class="match-history-score-label ${state.live?'live-score-label':''}">
+          <span>Score</span>
+          ${state.live
+            ? `<span class="live-score-indicator" aria-label="Live match">
+                <span class="live-score-dot" aria-hidden="true"></span>
+                LIVE
+              </span>`
+            : ''}
+        </span>
+        <strong>${esc(m.result)}</strong>`
+      : ''}
+    ${state.live&&state.gamesText
+      ? `<span class="match-live-games">Games <strong>${esc(state.gamesText)}</strong></span>`
+      : ''}
+    ${state.finished&&state.winnerSide
+      ? `<span class="match-winner-label">Winner: <strong>${esc(state.winnerSide===1?m.player1:m.player2)}${state.gamesText?` ${esc(state.gamesText)}`:''}</strong></span>`
+      : ''}
   </div>`;
 }
 
+function ensureLiveScoreStyles(){
+  if(document.getElementById('wsm-live-score-styles'))return;
+
+  const style=document.createElement('style');
+  style.id='wsm-live-score-styles';
+  style.textContent=`
+    @keyframes wsmLivePulse{
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:.35;transform:scale(.78)}
+    }
+
+    .live-score-label{
+      display:inline-flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:2px;
+    }
+
+    .live-score-indicator{
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      color:#20b15a;
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      line-height:1;
+    }
+
+    .live-score-dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#20b15a;
+      box-shadow:0 0 0 3px rgba(32,177,90,.14);
+      animation:wsmLivePulse 1.15s ease-in-out infinite;
+    }
+
+    .match-live-games{
+      white-space:nowrap;
+    }
+
+    .match-finished .match-loser-player .player-name-stack > b,
+    .match-finished .match-loser-player .fixture-mobile-name{
+      font-weight:500 !important;
+      opacity:.78;
+    }
+
+    .match-finished .match-winner-player .player-name-stack > b,
+    .match-finished .match-winner-player .fixture-mobile-name{
+      font-weight:850 !important;
+      opacity:1;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .live-score-dot{animation:none}
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+ensureLiveScoreStyles();
 
 function matchAgeGroupLabel(m,p1=null,p2=null){
   const raw=String(m?.event||'').replace(/\s+/g,' ').trim();
@@ -1410,12 +1535,15 @@ function compactScheduleRow(m,trackedNames=[]){
   const p2Tracked=trackedNames.some(n=>sameName(n,m.player2));
   const v=venueVisual(m);
   const live=isMatchCurrent(m);
-  return `<article class="vic-match-row ${isPast(m)?'past':''} ${live?'match-live':''}">
+  const scoreState=scoreGameState(m);
+  const p1Winner=scoreState.finished&&scoreState.winnerSide===1;
+  const p2Winner=scoreState.finished&&scoreState.winnerSide===2;
+  return `<article class="vic-match-row ${isPast(m)?'past':''} ${live?'match-live':''} ${scoreState.finished?'match-finished':''}">
     <div class="vic-time"><span class="vic-time-value">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-time-age">${esc(ageGroupLabel)}</span></div>
     <div class="vic-match-main">
       <div class="vic-event"><span class="vic-mobile-meta"><span class="vic-mobile-time">${live?'<span class="live-match-dot" title="Match currently in progress" aria-label="Live"></span>':''}${esc(displayTime24(m.time))}</span><span class="vic-mobile-location">${venueBadge(m)}<span class="vic-mobile-location-text">${esc(cleanVenuePlace(m))}</span></span><span class="vic-mobile-age">${esc(ageGroupLabel)}</span></span><span class="vic-desktop-event"><span class="vic-event-category">${esc(ageGroupLabel)}</span>${m.round?`<span class="vic-event-round"> · ${esc(m.round)}</span>`:''}</span></div>
       <div class="vic-fixture-line">
-        <a class="${p1Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player1,m.player1Id)}">
+        <a class="${p1Tracked?'vic-tracked-player':''} ${p1Winner?'match-winner-player':(scoreState.finished&&scoreState.winnerSide?'match-loser-player':'')}" href="${playerPageUrl(m.player1,m.player1Id)}">
           <span class="fixture-player-desktop">${flagImg(p1)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p1,playerListDisplayName(m.player1),p1Tracked)}${p1?.country?`<small class="vic-player-inline-meta">${esc(p1.country)}</small>`:''}</span></span></span>
           <span class="fixture-player-mobile">
             <span class="fixture-mobile-name">${esc(playerListDisplayName(m.player1))}</span>
@@ -1429,7 +1557,7 @@ function compactScheduleRow(m,trackedNames=[]){
           </span>
         </a>
         <span class="vic-vs">vs</span>
-        <a class="${p2Tracked?'vic-tracked-player':''}" href="${playerPageUrl(m.player2,m.player2Id)}">
+        <a class="${p2Tracked?'vic-tracked-player':''} ${p2Winner?'match-winner-player':(scoreState.finished&&scoreState.winnerSide?'match-loser-player':'')}" href="${playerPageUrl(m.player2,m.player2Id)}">
           <span class="fixture-player-desktop">${flagImg(p2)}<span class="vic-player-name-wrap"><span class="vic-player-name-meta-line">${playerNameStack(p2,playerListDisplayName(m.player2),p2Tracked)}${p2?.country?`<small class="vic-player-inline-meta">${esc(p2.country)}</small>`:''}</span></span></span>
           <span class="fixture-player-mobile">
             <span class="fixture-mobile-name">${esc(playerListDisplayName(m.player2))}</span>
