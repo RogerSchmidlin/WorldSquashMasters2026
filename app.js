@@ -1782,6 +1782,52 @@ function ensureLivePageStyles(){
       }
     }
 
+    /* Keep the complete main menu inside narrow phone screens.  The old
+       flex row could become wider than the viewport after the Live tab was
+       added, which left the final Courts tab only partly visible. */
+    @media(max-width:570px){
+      .topbar{
+        width:100%;
+        max-width:100vw;
+        box-sizing:border-box;
+        overflow-x:hidden;
+      }
+      .topbar .nav{
+        display:grid!important;
+        grid-auto-flow:column;
+        grid-auto-columns:minmax(0,1fr);
+        width:100%!important;
+        max-width:100%!important;
+        min-width:0!important;
+        gap:2px!important;
+        padding:0!important;
+        margin:0!important;
+        overflow:visible!important;
+        box-sizing:border-box;
+      }
+      .topbar .nav .nav-link{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        min-width:0!important;
+        width:auto!important;
+        max-width:none!important;
+        padding:8px 3px!important;
+        font-size:.68rem!important;
+        line-height:1.05!important;
+        text-align:center;
+        white-space:normal!important;
+        box-sizing:border-box;
+      }
+      .topbar .nav .nav-vic-label{
+        display:flex!important;
+        flex-direction:column;
+        gap:0!important;
+        line-height:1.02!important;
+        white-space:normal!important;
+      }
+    }
+
     @media(max-width:650px){
       #live .live-page-match-row{
         grid-template-columns:1fr!important;
