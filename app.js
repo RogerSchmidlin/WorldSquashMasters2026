@@ -449,11 +449,16 @@ function ssOverlay(base,live){
   const dateKey=m=>canonicalDate(m.date||'');
   const timeKey=m=>displayTime24(m.time||'');
   const today=perthTodayIso();
+  let applied=0;
 
   for(const l of live||[]){
-    if(String(l.status||'').toLowerCase()!=='live')continue;
+    const liveStatus=String(l.status||'').toLowerCase();
+    if(liveStatus!=='live'&&liveStatus!=='completed')continue;
     if(dateKey(l)!==today)continue;
 
+    // Never let SquashScores create or move a tournament fixture.
+    // It may only update the unique existing TournamentSoftware fixture with
+    // the same Perth date, time and player pair.
     const candidates=out.filter(m=>
       dateKey(m)===today &&
       timeKey(m)===timeKey(l) &&
@@ -463,9 +468,21 @@ function ssOverlay(base,live){
     if(candidates.length!==1)continue;
 
     const existing=candidates[0];
-    if(l.result)existing.result=orientLiveResultToExisting(existing,l);
-    existing.status='live';
+
+    if(l.result){
+      existing.result=orientLiveResultToExisting(existing,l);
+      existing.resultSource='SquashScores';
+    }
+
+    existing.status=liveStatus;
     existing.liveSource='SquashScores';
+    applied++;
+  }
+
+  if((live||[]).length&&!applied){
+    console.warn(
+      `SquashScores overlay: 0/${(live||[]).length} row(s) matched the supplied TournamentSoftware fixture set.`
+    );
   }
 
   return out;
@@ -532,7 +549,41 @@ function normaliseMatch(m){
   let date=canonicalDate(m.date||m.matchDate||m.startDate||m.start||m.datetime||m.dateTime||m.scheduledDate||'');
   let time=m.time||m.matchTime||m.startTime||m.scheduledTime||'';
   if(!time){const tm=raw.match(/\b(\d{1,2}:[0-5]\d\s*(?:am|pm)?)\b/i);if(tm)time=tm[1];}
-  return {...m,date,time,event:cleanMatchMeta(m.event||m.eventName||m.draw||m.category||m.disciplineName||''),round:cleanMatchMeta(m.round||m.roundName||''),player1:p1,player2:p2,venue:vc.venue,court:vc.court,rawText:''};
+
+  const out={
+    ...m,
+    date,time,
+    event:cleanMatchMeta(m.event||m.eventName||m.draw||m.category||m.disciplineName||''),
+    round:cleanMatchMeta(m.round||m.roundName||''),
+    player1:p1,player2:p2,
+    venue:vc.venue,court:vc.court,
+    rawText:''
+  };
+
+  // A schedule row saying only "Walkover" is not enough evidence that the
+  // walkover actually happened. Result authority must come from a result
+  // source (TournamentSoftware/SquashScores) or an explicit winner.
+  //
+  // Apply this safeguard only to today/future so genuine historical records
+  // are not rewritten merely because an older snapshot lacks resultSource.
+  const today=perthTodayIso();
+  const resultText=String(out.result||'').trim();
+  const resultSource=String(out.resultSource||'').trim();
+  const untrustedWalkover=
+    /^walkover$/i.test(resultText) &&
+    !out.winner &&
+    !/^(?:TournamentSoftware|SquashScores)/i.test(resultSource) &&
+    date && date>=today;
+
+  if(untrustedWalkover){
+    out.result='';
+    out.winner='';
+    out.resultSource='';
+    if(String(out.status||'').toLowerCase()==='completed')out.status='scheduled';
+    out.untrustedResultSuppressed=true;
+  }
+
+  return out;
 }
 data.matches=(data.matches||[]).map(normaliseMatch);
 const qs=s=>document.querySelector(s), qsa=s=>[...document.querySelectorAll(s)];
@@ -1422,9 +1473,11 @@ function makeHomeSummary(source){
 
 
 let squashScoresPollTimer=null;
+// Today's SquashScores rows that can temporarily overlay the published schedule.
+// Includes LIVE rows and just-COMPLETED rows so the score remains visible after
+// the final point until TournamentSoftware catches up.
 let squashScoresLatestLive=[];
 let squashScoresLatestFingerprint='';
-let squashScoresLastVicParkFingerprint='';
 function squashScoresFingerprint(rows){
   return JSON.stringify((rows||[]).map(m=>[
     canonicalDate(m.date||''),displayTime24(m.time||''),
@@ -1444,22 +1497,44 @@ async function updateSquashScoresLive(){
     }
 
     const parsed=parseSquashScoresApi(payload,uniq);
-    const live=parsed.filter(m=>String(m.status||'').toLowerCase()==='live');
-    const fingerprint=squashScoresFingerprint(live);
-    if(fingerprint===squashScoresLastFingerprint)return;
-    squashScoresLastFingerprint=fingerprint;
+    const today=perthTodayIso();
+
+    const overlayRows=parsed.filter(m=>{
+      const status=String(m.status||'').toLowerCase();
+      return canonicalDate(m.date)===today &&
+        (status==='live'||status==='completed');
+    });
+
+    const fingerprint=squashScoresFingerprint(overlayRows);
+
+    // Do NOT return just because the SquashScores payload is unchanged.
+    // Polling can start before the Vic Park/full match data has finished
+    // loading. The unchanged live state must still be applied once those
+    // datasets become ready.
+    squashScoresLatestFingerprint=fingerprint;
+    squashScoresLatestLive=overlayRows.map(m=>({...m}));
 
     if(matchesReady){
-      data.matches=ssOverlay(data.baseMatches||data.matches,live)
+      data.matches=ssOverlay(data.baseMatches||data.matches,squashScoresLatestLive)
         .map(normaliseMatch)
         .map(normalizeSelfMatchAsBye);
       rebuildFavoriteMatchIndex();
     }
 
     if(vicParkDataReady){
-      vicParkMatches=ssOverlay(window.__vicParkBaseMatches||vicParkMatches,live)
+      vicParkMatches=ssOverlay(
+        window.__vicParkBaseMatches||vicParkMatches,
+        squashScoresLatestLive
+      )
         .map(normaliseMatch)
         .map(normalizeSelfMatchAsBye);
+    }
+
+    if(squashScoresLatestLive.length){
+      console.log(
+        `SquashScores overlay tick: ${squashScoresLatestLive.length} today live/completed row(s), `+
+        `matchesReady=${matchesReady}, vicParkDataReady=${vicParkDataReady}.`
+      );
     }
 
     const page=location.hash.slice(1)||'home';

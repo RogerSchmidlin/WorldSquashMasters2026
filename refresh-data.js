@@ -6670,33 +6670,64 @@ function preserveHistoricalTournamentResults(currentRows,previousRows){
 
 function sanitizeFutureResultMetadata(rows){
   const today=perthTodayIsoRefresh();
-  let cleared=0;
+  let futureCleared=0;
+  let untrustedCurrentCleared=0;
 
   return (rows||[]).map(m=>{
     const x={...m};
     const d=canonicalTournamentDate(x.date);
     const status=String(x.status||'').toLowerCase();
+    if(!d)return x;
 
-    if(!d||d<=today)return x;
+    // A bare current/today Walkover with no result authority and no winner is
+    // not sufficient evidence that the match actually ended as a walkover.
+    // The word can leak in from a broad TournamentSoftware list/draw context.
+    if(
+      d>=today &&
+      /^walkover$/i.test(clean(x.result||'')) &&
+      !x.winner &&
+      !/^(?:TournamentSoftware|SquashScores)/i.test(clean(x.resultSource||''))
+    ){
+      x.result='';
+      x.winner='';
+      x.winnerId='';
+      x.resultSource='';
+      if(status==='completed'||status==='played')x.status='scheduled';
+      x.untrustedResultSuppressed=true;
+      untrustedCurrentCleared++;
+    }
+
+    if(d<=today)return x;
 
     // A future scheduled fixture cannot already have a winner/result.
-    // Old additive snapshots can leak winner metadata from a previous
-    // same-name/pair record into a later scheduled fixture.
-    if(status!=='live'){
-      if(x.result||x.winner||x.winnerId||status==='completed'||status==='played'){
+    if(String(x.status||'').toLowerCase()!=='live'){
+      if(
+        x.result||x.winner||x.winnerId||
+        String(x.status||'').toLowerCase()==='completed'||
+        String(x.status||'').toLowerCase()==='played'
+      ){
         x.result='';
         x.winner='';
         x.winnerId='';
         x.resultSource='';
         x.status='scheduled';
-        cleared++;
+        futureCleared++;
       }
     }
 
     return x;
   }).map((m,i,arr)=>{
-    if(i===arr.length-1&&cleared){
-      console.log(`Future result sanitiser cleared stale result/winner metadata on ${cleared} fixture(s).`);
+    if(i===arr.length-1){
+      if(untrustedCurrentCleared){
+        console.log(
+          `Current result sanitiser cleared ${untrustedCurrentCleared} unverified Walkover row(s).`
+        );
+      }
+      if(futureCleared){
+        console.log(
+          `Future result sanitiser cleared stale result/winner metadata on ${futureCleared} fixture(s).`
+        );
+      }
     }
     return m;
   });
@@ -6713,7 +6744,8 @@ function mergeSquashScoresIntoMatches(baseMatches, liveMatches){
   const perthToday=perthTodayIsoRefresh();
 
   for(const live of liveMatches||[]){
-    if(String(live.status||'').toLowerCase()!=='live')continue;
+    const liveStatus=String(live.status||'').toLowerCase();
+    if(liveStatus!=='live'&&liveStatus!=='completed')continue;
     if(date(live)!==perthToday)continue;
 
     const candidates=out.filter(m=>
@@ -6724,8 +6756,11 @@ function mergeSquashScoresIntoMatches(baseMatches, liveMatches){
     if(candidates.length!==1)continue;
 
     const existing=candidates[0];
-    if(live.result)existing.result=orientSquashScoresResult(existing,live);
-    existing.status='live';
+    if(live.result){
+      existing.result=orientSquashScoresResult(existing,live);
+      existing.resultSource='SquashScores';
+    }
+    existing.status=liveStatus;
     existing.liveSource='SquashScores';
     existing.liveUpdatedAt=new Date().toISOString();
   }
@@ -7958,7 +7993,7 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
     }));
 
     const squashScoresMatches=await fetchSquashScoresLiveMatches(existingPlayers);
-    console.log(`Perth-today SquashScores live rows eligible for overlay: ${squashScoresMatches.filter(m=>String(m.status||'').toLowerCase()==='live'&&canonicalTournamentDate(m.date)===perthTodayIsoRefresh()).length} (${perthTodayIsoRefresh()})`);
+    console.log(`Perth-today SquashScores live/completed rows eligible for overlay: ${squashScoresMatches.filter(m=>['live','completed'].includes(String(m.status||'').toLowerCase())&&canonicalTournamentDate(m.date)===perthTodayIsoRefresh()).length} (${perthTodayIsoRefresh()})`);
 
     const matches=mergeSquashScoresIntoMatches(tournamentMatches,squashScoresMatches)
       .map(m=>normalizeSelfMatchAsBye(m,existingPlayers))
@@ -8169,7 +8204,7 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
   // SquashScores is Perth-today LIVE enrichment only. It can only update
   // score/status on an exact existing TournamentSoftware fixture.
   const squashScoresMatches=await fetchSquashScoresLiveMatches(canonicalPlayers);
-  console.log(`Perth-today SquashScores live rows eligible for overlay: ${squashScoresMatches.filter(m=>String(m.status||'').toLowerCase()==='live'&&canonicalTournamentDate(m.date)===perthTodayIsoRefresh()).length} (${perthTodayIsoRefresh()})`);
+  console.log(`Perth-today SquashScores live/completed rows eligible for overlay: ${squashScoresMatches.filter(m=>['live','completed'].includes(String(m.status||'').toLowerCase())&&canonicalTournamentDate(m.date)===perthTodayIsoRefresh()).length} (${perthTodayIsoRefresh()})`);
   const matches=mergeSquashScoresIntoMatches(tournamentMatches,squashScoresMatches).map(m=>normalizeSelfMatchAsBye(m,canonicalPlayers));
 
   const glass=matches.filter(isGlass);
