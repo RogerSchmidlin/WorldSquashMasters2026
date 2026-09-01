@@ -718,45 +718,151 @@ function playerDetailMatchKey(m){
 function dedupePlayerDetailMatches(rows){
   const out=[];
 
-  const pair=m=>[nameKey(m.player1||''),nameKey(m.player2||'')].filter(Boolean).sort().join('|');
+  const pair=m=>[
+    nameKey(m.player1||''),
+    nameKey(m.player2||'')
+  ].filter(Boolean).sort().join('|');
+
   const time=m=>displayTime24(m.time||'');
   const date=m=>canonicalDate(m.date||'');
 
-  const richer=(target,source)=>{
-    // Completed/live state and score are authoritative, not string-length choices.
-    const sourceStatus=String(source.status||'').toLowerCase();
-    if(sourceStatus==='completed'||sourceStatus==='played')target.status='completed';
-    else if(sourceStatus==='live'&&String(target.status||'').toLowerCase()!=='completed')target.status='live';
+  const evidenceSources=m=>new Set([
+    ...(m.drawEvidenceSources||[]),
+    ...(m.evidenceSources||[]),
+    m.source,
+    m.resultSource
+  ].map(x=>String(x||'').trim()).filter(Boolean));
 
-    if(source.result && (!target.result || String(source.result).length>=String(target.result).length))target.result=source.result;
+  const authorityTier=m=>{
+    const s=evidenceSources(m);
+    const status=String(m.status||'').toLowerCase();
 
-    for(const field of ['event','round','court','venue','rawText','player1Id','player2Id']){
-      const a=String(target[field]||''),b=String(source[field]||'');
-      if(b.length>a.length)target[field]=source[field];
-    }
+    // Historical result evidence proves an actually played fixture.
+    if(
+      (m.result||m.winner) &&
+      (status==='completed'||status==='played'||s.has('TournamentSoftware'))
+    )return 5;
 
-    // Prefer a real tournament date over a missing/TBD one.
-    if(!date(target)&&date(source))target.date=source.date;
-    if(!target.time&&source.time)target.time=source.time;
+    // Deterministic bracket-tree fixture is the strongest schedule evidence.
+    if(
+      s.has('TournamentSoftware Draw Tree') ||
+      s.has('TournamentSoftware Official Draw')
+    )return 4;
+
+    // Fresh TournamentSoftware match row.
+    if(
+      s.has('TournamentSoftware Match') ||
+      s.has('TournamentSoftware')
+    )return 3;
+
+    // Completed rows without result text still outrank unverified schedules.
+    if(status==='completed'||status==='played')return 2;
+
+    return 1;
   };
 
-  for(const m of rows||[]){
-    let existing=out.find(x=>date(x)&&date(m)&&date(x)===date(m)&&time(x)===time(m)&&pair(x)===pair(m));
-
-    // Live API rows may have no date; collapse against the scheduled fixture by
-    // exact player pair + time.
-    if(!existing)existing=out.find(x=>time(x)&&time(x)===time(m)&&pair(x)===pair(m));
-
-    if(!existing){
-      const samePair=out.filter(x=>pair(x)===pair(m));
-      if(samePair.length===1)existing=samePair[0];
+  const mergeSameFixture=(target,source)=>{
+    const sourceStatus=String(source.status||'').toLowerCase();
+    if(sourceStatus==='completed'||sourceStatus==='played')target.status='completed';
+    else if(sourceStatus==='live'&&String(target.status||'').toLowerCase()!=='completed'){
+      target.status='live';
     }
 
-    if(existing)richer(existing,m);
-    else out.push({...m});
+    if(source.result&&!target.result)target.result=source.result;
+    if(source.winner&&!target.winner)target.winner=source.winner;
+
+    const sourceWins=authorityTier(source)>authorityTier(target);
+
+    for(const field of [
+      'event','round','court','venue','rawText',
+      'player1Id','player2Id','source','resultSource'
+    ]){
+      if(sourceWins&&source[field])target[field]=source[field];
+      else if(!target[field]&&source[field])target[field]=source[field];
+    }
+
+    const drawEvidence=[
+      ...(target.drawEvidenceSources||[]),
+      ...(source.drawEvidenceSources||[])
+    ];
+    if(drawEvidence.length)target.drawEvidenceSources=[...new Set(drawEvidence)];
+
+    const evidence=[
+      ...(target.evidenceSources||[]),
+      ...(source.evidenceSources||[])
+    ];
+    if(evidence.length)target.evidenceSources=[...new Set(evidence)];
+  };
+
+  // 1. Collapse only literal duplicate fixtures.
+  // Never merge the same pair across different tournament dates.
+  for(const m0 of rows||[]){
+    const m={...m0};
+
+    const existing=out.find(x=>
+      date(x)&&date(m)&&
+      date(x)===date(m)&&
+      time(x)===time(m)&&
+      pair(x)===pair(m)
+    );
+
+    if(existing)mergeSameFixture(existing,m);
+    else out.push(m);
   }
 
-  return out;
+  // 2. Resolve impossible double-bookings for THIS player page.
+  // All rows passed into this function already belong to the selected player,
+  // so the selected player's slot is simply date+time. We deliberately do not
+  // depend on sometimes-missing/stale historical player IDs here.
+  const slots=new Map();
+
+  out.forEach((m,i)=>{
+    const d=date(m),t=time(m);
+    if(!d||!t)return;
+
+    const key=`${d}|${t}`;
+    if(!slots.has(key))slots.set(key,[]);
+    slots.get(key).push(i);
+  });
+
+  const remove=new Set();
+
+  for(const [slot,indexes0] of slots){
+    const indexes=[...new Set(indexes0)];
+    if(indexes.length<=1)continue;
+
+    const ranked=indexes
+      .map(i=>({i,tier:authorityTier(out[i])}))
+      .sort((a,b)=>b.tier-a.tier);
+
+    const top=ranked[0].tier;
+    const strongest=ranked.filter(x=>x.tier===top);
+
+    if(strongest.length===1){
+      const keep=strongest[0].i;
+
+      console.warn(
+        `Player detail ${name}: resolving impossible slot ${slot}; keeping `+
+        `${out[keep].player1} vs ${out[keep].player2} `+
+        `(authority ${top}), suppressing `+
+        indexes.filter(i=>i!==keep).map(i=>
+          `${out[i].player1} vs ${out[i].player2} (authority ${authorityTier(out[i])})`
+        ).join(' | ')
+      );
+
+      for(const i of indexes){
+        if(i!==keep)remove.add(i);
+      }
+    }else{
+      // Never guess between equal-strength contradictory rows.
+      console.warn(
+        `Player detail ${name}: unresolved equal-authority conflict at ${slot}: `+
+        strongest.map(x=>`${out[x.i].player1} vs ${out[x.i].player2}`).join(' | ')
+      );
+    }
+  }
+
+  return out.filter((_,i)=>!remove.has(i));
 }
 
 const venueCode=m=>{const place=[m.venue,m.court].filter(Boolean).join(' · ');if(/Karrinyup|\bAGC\b|Glass/i.test(place))return 'G';if(/Mirrabooka|Squashworld/i.test(place))return 'M';if(/Belmont|WA\s*State\s*Squash/i.test(place))return 'B';return '';};
