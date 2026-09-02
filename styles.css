@@ -495,3 +495,13 @@
   letter-spacing:.06em!important;
   text-transform:uppercase!important;
 }
+/* Header metadata links: visibly styled as links. */
+.brand-copy .header-meta-link{
+  color:var(--gold);
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:2px;
+}
+.brand-copy .header-meta-link:hover{
+  text-decoration-thickness:2px;
+}
