@@ -1198,9 +1198,9 @@ async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMa
     return false;
   }
 
-  async function parseCurrentState(forcedVenue=''){
+  async function parseCurrentState(forcedVenue='',bodyOverride=null){
     const pendingStart=pendingOnePlayerFragments.length;
-    const body=String(await bodyText())
+    const body=String(bodyOverride===null?await bodyText():bodyOverride)
       .replace(/\u00a0/g,' ')
       .replace(/\r/g,'');
 
@@ -1239,6 +1239,13 @@ async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMa
 
       const whole=clean(`${dateText} ${currentTime} ${matchText}`);
       const f=deriveFields(whole,'');
+      if(forcedVenue)f.venue=forcedVenue;
+      // Karrinyup's tournament venue is the single All Glass Court.  The
+      // filtered Match schedule does not always repeat "AGC" in each row,
+      // but the venue itself uniquely identifies that court.
+      if(clean(forcedVenue).toLowerCase()==='karrinyup shopping centre'&&!f.court){
+        f.court='AGC';
+      }
       if(!f.date||!f.time||!isTournamentDate(f.date))continue;
 
       let p1=null,p2=null;
@@ -1285,6 +1292,7 @@ async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMa
 
         if(real&&recoveredPrevious){
           recoveredPreviousBlocks++;
+          f.recoveredFrom='previous-opponent';
           p1=real;
           p2={
             name:recoveredPrevious.opponentName,
@@ -1301,6 +1309,7 @@ async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMa
         }else if(real&&visibleSecondPlayerFromText(matchText,real)){
           const visibleOpponent=visibleSecondPlayerFromText(matchText,real);
           recoveredRawSecondName++;
+          f.recoveredFrom='visible-second-player';
           p1=real;
           p2=visibleOpponent;
         }else if(real){
@@ -1387,6 +1396,133 @@ async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMa
       fragment.used=true;
     }
 
+
+    return added;
+  }
+
+  // TournamentSoftware's Match schedule can be lazy/virtualised: only the rows
+  // around the current viewport are guaranteed to exist in the DOM.  Parse the
+  // schedule while walking the actual scroll container so later time slots are
+  // not silently omitted.  This applies to All venues and every venue filter.
+  async function scheduleScrollTarget(mode='advance'){
+    let moved=false;
+
+    for(const frame of page.frames()){
+      try{
+        const state=await frame.evaluate((requestedMode)=>{
+          const visible=el=>{
+            if(!el)return false;
+            const r=el.getBoundingClientRect?.();
+            if(!r||r.width<80||r.height<80)return false;
+            const style=getComputedStyle(el);
+            return style.display!=='none'&&style.visibility!=='hidden';
+          };
+
+          const candidates=[];
+          const root=document.scrollingElement||document.documentElement;
+
+          const add=(el,isRoot=false)=>{
+            if(!el)return;
+            const client=Math.max(1,Number(el.clientHeight||window.innerHeight||1));
+            const height=Math.max(client,Number(el.scrollHeight||client));
+            const range=Math.max(0,height-client);
+            if(range<60)return;
+
+            let text='';
+            try{text=String(el.innerText||el.textContent||'')}catch{}
+            const scheduleText=/\bH2H\b/i.test(text)||/Match schedule/i.test(text);
+            if(!isRoot&&!scheduleText)return;
+            if(!isRoot&&!visible(el))return;
+
+            candidates.push({el,isRoot,client,range,scheduleText});
+          };
+
+          add(root,true);
+          for(const el of document.querySelectorAll('*')){
+            let style;
+            try{style=getComputedStyle(el)}catch{continue}
+            if(!/(?:auto|scroll)/i.test(String(style.overflowY||'')))continue;
+            add(el,false);
+          }
+
+          if(!candidates.length)return {moved:false};
+
+          // Prefer a dedicated schedule scroller when one exists. Otherwise
+          // fall back to the document scroller.
+          candidates.sort((a,b)=>
+            Number(b.scheduleText)-Number(a.scheduleText) ||
+            Number(!b.isRoot)-Number(!a.isRoot) ||
+            b.range-a.range
+          );
+          const target=candidates[0];
+
+          if(requestedMode==='reset'){
+            if(target.isRoot){
+              try{window.scrollTo(0,0)}catch{}
+              try{target.el.scrollTop=0}catch{}
+            }else{
+              target.el.scrollTop=0;
+            }
+            return {moved:true,top:0,max:target.range};
+          }
+
+          const before=Number(target.el.scrollTop||0);
+          const max=Math.max(0,Number(target.el.scrollHeight||0)-Number(target.el.clientHeight||0));
+          if(before>=max-2)return {moved:false,top:before,max};
+
+          const step=Math.max(320,Math.floor(Number(target.el.clientHeight||window.innerHeight||700)*0.82));
+          const next=Math.min(max,before+step);
+
+          if(target.isRoot){
+            try{window.scrollTo(0,next)}catch{}
+            try{target.el.scrollTop=next}catch{}
+          }else{
+            target.el.scrollTop=next;
+          }
+
+          const after=Number(target.el.scrollTop||next);
+          return {moved:after>before+1,top:after,max};
+        },mode);
+
+        if(state?.moved)moved=true;
+      }catch{}
+    }
+
+    return moved;
+  }
+
+  async function parseCurrentStateFully(forcedVenue=''){
+    await scheduleScrollTarget('reset');
+    await sleep(120);
+
+    let added=0;
+    let previousBody='';
+    let unchangedSnapshots=0;
+
+    for(let step=0;step<48;step++){
+      const body=String(await bodyText())
+        .replace(/\u00a0/g,' ')
+        .replace(/\r/g,'');
+
+      if(/\bH2H\b/i.test(body)){
+        added+=await parseCurrentState(forcedVenue,body);
+      }
+
+      if(body===previousBody)unchangedSnapshots++;
+      else unchangedSnapshots=0;
+      previousBody=body;
+
+      const visibleH2H=(body.match(/\bH2H\b/gi)||[]).length;
+      // Large schedules are normally fully materialised in the DOM, so two
+      // identical snapshots are enough.  For small venue lists keep walking to
+      // the real scroll end because those are the views most likely to be
+      // virtualised/lazy and otherwise lose later time slots.
+      if(visibleH2H>=20&&unchangedSnapshots>=1)break;
+
+      const moved=await scheduleScrollTarget('advance');
+      if(!moved)break;
+      await sleep(150);
+    }
 
     return added;
   }
@@ -1637,10 +1773,68 @@ async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMa
     };
 
     const currentVenueText=async()=>{
-      const txt=clean(await bodyText());
+      const known=[
+        'All venues',
+        'Squashworld Mirrabooka',
+        'Belmont Saints Squash Centre',
+        'Karrinyup Shopping Centre'
+      ];
+      const norm=x=>clean(x).toLowerCase();
+      const wanted=new Set(known.map(norm));
 
-      // Look for the selected venue close to the Venue control. TournamentSoftware
-      // currently renders "Venue <selection>" in the page text.
+      // Prefer the actual selected control value. TournamentSoftware can leave
+      // the static text "Venue All venues" in the rendered body even after a
+      // custom/native filter has changed, so body text alone is not reliable.
+      for(const frame of page.frames()){
+        try{
+          const selected=await frame.evaluate((knownValues)=>{
+            const cleanLocal=s=>String(s||'').replace(/\s+/g,' ').trim();
+            const wantedLocal=new Map(knownValues.map(x=>[cleanLocal(x).toLowerCase(),x]));
+            const exact=value=>wantedLocal.get(cleanLocal(value).toLowerCase())||'';
+            const isVisible=el=>{
+              const r=el?.getBoundingClientRect?.();
+              if(!r||r.width<1||r.height<1)return false;
+              const style=getComputedStyle(el);
+              return style.display!=='none'&&style.visibility!=='hidden';
+            };
+
+            for(const sel of document.querySelectorAll('select')){
+              const options=[...sel.options].map(o=>cleanLocal(o.textContent||o.label||''));
+              if(!options.some(x=>wantedLocal.has(x.toLowerCase())))continue;
+              const text=cleanLocal(sel.selectedOptions?.[0]?.textContent||sel.options?.[sel.selectedIndex]?.textContent||'');
+              const hit=exact(text);
+              if(hit)return hit;
+            }
+
+            for(const input of document.querySelectorAll('input')){
+              if(!isVisible(input))continue;
+              const hit=exact(input.value||input.getAttribute('aria-label')||'');
+              if(hit)return hit;
+            }
+
+            const selectors='[aria-selected="true"],[data-selected="true"],[role="combobox"],[role="option"].selected,.selected,.active';
+            for(const el of document.querySelectorAll(selectors)){
+              if(!isVisible(el))continue;
+              const candidates=[
+                el.getAttribute?.('value'),
+                el.getAttribute?.('aria-label'),
+                el.getAttribute?.('title'),
+                el.textContent,
+                el.innerText
+              ];
+              for(const value of candidates){
+                const hit=exact(value);
+                if(hit)return hit;
+              }
+            }
+
+            return '';
+          },known);
+          if(selected&&wanted.has(norm(selected)))return clean(selected);
+        }catch{}
+      }
+
+      const txt=clean(await bodyText());
       const m=txt.match(/\bVenue\s+(All venues|Squashworld Mirrabooka|Belmont Saints Squash Centre|Karrinyup Shopping Centre)\b/i);
       return m?clean(m[1]):'';
     };
@@ -1663,6 +1857,35 @@ async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMa
       return false;
     };
 
+    const waitForScheduleRows=async(timeoutMs=2400)=>{
+      const deadline=Date.now()+timeoutMs;
+      let previous=-1,stable=0,last=0;
+      while(Date.now()<deadline){
+        const count=await currentH2HCount();
+        last=count;
+        if(count>0){
+          if(count===previous)stable++;
+          else stable=0;
+          if(stable>=1)return count;
+        }
+        previous=count;
+        await sleep(150);
+      }
+      return last;
+    };
+
+    const currentScheduleSignature=async()=>{
+      const text=clean(await bodyText());
+      // The option labels themselves are always present in a native <select>.
+      // Strip those static labels so a changed signature reflects schedule
+      // content rather than merely the filter control text.
+      return text
+        .replace(/\bVenue\s+(?:All venues|Squashworld Mirrabooka|Belmont Saints Squash Centre|Karrinyup Shopping Centre)\b/ig,'Venue')
+        .replace(/\b(?:All venues|Squashworld Mirrabooka|Belmont Saints Squash Centre|Karrinyup Shopping Centre)\b/ig,'')
+        .replace(/\s+/g,' ')
+        .trim();
+    };
+
     const parseVerifiedDateState=async(dateLabel,venue='')=>{
       const expectedIso=expectedIsoForLabel(dateLabel);
       const actualIso=await currentScheduleDate();
@@ -1680,7 +1903,8 @@ async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMa
         }
       }
 
-      return parseCurrentState(venue);
+      await waitForScheduleRows();
+      return parseCurrentStateFully(venue);
     };
 
     // Discover once for diagnostics, but crawl every date from a fresh page load
@@ -1739,17 +1963,18 @@ async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMa
           }
         }
 
-        const beforeVenueCount=await currentH2HCount();
+        const beforeVenueCount=await waitForScheduleRows();
+        const beforeVenueSignature=await currentScheduleSignature();
         const selected=await selectVenue(venue);
-        await sleep(700);
+        await sleep(450);
 
-        const afterVenueCount=await currentH2HCount();
+        const afterVenueCount=await waitForScheduleRows();
+        const afterVenueSignature=await currentScheduleSignature();
         const active=await currentVenueText();
 
-        // TournamentSoftware's rendered body keeps the text "Venue All venues"
-        // even when its custom venue control is filtered, so that label alone
-        // cannot verify the selection. A real venue filter must materially
-        // change the displayed H2H match set (or explicitly report the venue).
+        // TournamentSoftware can keep the stale text "Venue All venues" even
+        // after the filter has changed. Verify using either the real selected
+        // control value, a reduced H2H count, or a changed schedule body.
         const textVerified=
           clean(active).toLowerCase()===clean(venue).toLowerCase();
 
@@ -1759,7 +1984,14 @@ async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMa
           beforeVenueCount>0 &&
           afterVenueCount<beforeVenueCount;
 
-        if(!textVerified&&!countVerified){
+        const contentVerified=
+          selected &&
+          afterVenueCount>0 &&
+          !!beforeVenueSignature &&
+          !!afterVenueSignature &&
+          beforeVenueSignature!==afterVenueSignature;
+
+        if(!textVerified&&!countVerified&&!contentVerified){
           console.warn(`    Venue filter not verified for ${venue}; H2H ${beforeVenueCount} -> ${afterVenueCount}, active="${active||'(unknown)'}". No venue metadata applied.`);
           continue;
         }
@@ -1773,7 +2005,7 @@ async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMa
         // We have independently verified the venue filter, so force the venue
         // while parsing this filtered match set. Do not re-use the unreliable
         // body-text "Venue All venues" check in parseVerifiedDateState().
-        const added=await parseCurrentState(venue);
+        const added=await parseCurrentStateFully(venue);
         console.log(`    ${venue}: ${added} new/enriched fixture(s) (verified H2H ${beforeVenueCount} -> ${afterVenueCount})`);
       }
     }
@@ -1959,6 +2191,108 @@ async function collectOfficialDrawLinks(page){
   }
 
   return links;
+}
+
+function resolveOfficialTbdOpponents(rows){
+  const out=(rows||[]).map(m=>({...m}));
+  const isTbd=n=>/^TBD$/i.test(clean(n));
+  const isBye=n=>/^Bye$/i.test(clean(n));
+  const isReal=n=>!!clean(n)&&!isTbd(n)&&!isBye(n);
+  const eventKey=m=>{
+    const text=clean(`${m?.event||''} ${m?.round||''}`).toLowerCase();
+    const age=(text.match(/\b(35|40|45|50|55|60|65|70|75|80|85)\+?\b/)||[])[1]||'';
+    const gender=/women/.test(text)?'women':(/\bmen\b/.test(text)?'men':'');
+    return `${gender}|${age}`;
+  };
+  const slotKey=m=>{
+    const d=canonicalTournamentDate(m?.date);
+    const t=clean(m?.time).toLowerCase();
+    const venue=clean(m?.venue).toLowerCase();
+    const court=clean(sanitizeCourtValue(m?.court)).replace(/\s+/g,'').toLowerCase();
+    if(!d||!t||!venue||!court)return '';
+    return `${d}|${t}|${venue}|${court}|${eventKey(m)}`;
+  };
+  const groups=new Map();
+  out.forEach((m,i)=>{
+    const k=slotKey(m);
+    if(!k)return;
+    if(!groups.has(k))groups.set(k,[]);
+    groups.get(k).push(i);
+  });
+  const pairKey=(a,b)=>[nameKey(a),nameKey(b)].sort().join('~');
+  const today=perthTodayIsoRefresh();
+
+  for(const indexes of groups.values()){
+    if(indexes.length<2)continue;
+    const d=canonicalTournamentDate(out[indexes[0]]?.date);
+    if(d&&d<today)continue;
+
+    const tbdRows=indexes.filter(i=>{
+      const m=out[i];
+      return (isReal(m.player1)&&isTbd(m.player2))||(isTbd(m.player1)&&isReal(m.player2));
+    });
+    if(!tbdRows.length)continue;
+
+    const concretePairs=new Map();
+    for(const i of indexes){
+      const m=out[i];
+      if(!isReal(m.player1)||!isReal(m.player2))continue;
+      const k=pairKey(m.player1,m.player2);
+      if(!concretePairs.has(k))concretePairs.set(k,[m.player1,m.player2]);
+    }
+
+    let pair=null;
+    if(concretePairs.size===1){
+      pair=[...concretePairs.values()][0];
+    }else if(concretePairs.size===0){
+      const realByKey=new Map();
+      for(const i of tbdRows){
+        const m=out[i];
+        const n=isReal(m.player1)?m.player1:m.player2;
+        const k=nameKey(n);
+        if(k&&!realByKey.has(k))realByKey.set(k,n);
+      }
+      if(realByKey.size===2)pair=[...realByKey.values()];
+    }
+    if(!pair)continue;
+
+    const pairKeys=new Set(pair.map(nameKey));
+    for(const i of tbdRows){
+      const m=out[i];
+      const real=isReal(m.player1)?m.player1:m.player2;
+      const realKey=nameKey(real);
+      if(!pairKeys.has(realKey))continue;
+      const opponent=pair.find(n=>nameKey(n)!==realKey);
+      if(!opponent)continue;
+      if(isTbd(m.player2))m.player2=opponent;
+      else if(isTbd(m.player1))m.player1=opponent;
+      m.opponentResolvedFromOfficialSlot=true;
+    }
+  }
+
+  // Collapse only duplicates created by the exact-slot repair above.
+  const dedup=[];
+  for(const m of out){
+    const k=slotKey(m);
+    const exact=(k&&isReal(m.player1)&&isReal(m.player2))?`${k}|${pairKey(m.player1,m.player2)}`:'';
+    const j=exact?dedup.findIndex(x=>{
+      const xk=slotKey(x);
+      return xk&&`${xk}|${pairKey(x.player1,x.player2)}`===exact;
+    }): -1;
+    if(j<0){dedup.push(m);continue;}
+    const x=dedup[j];
+    if(!m.opponentResolvedFromOfficialSlot&&!x.opponentResolvedFromOfficialSlot){dedup.push(m);continue;}
+    const preferred=(m.result&&!x.result)?m:x;
+    const other=preferred===m?x:m;
+    for(const f of ['event','round','venue','court','source','sourceUrl','resultSource','winner','winnerId']){
+      if(!preferred[f]&&other[f])preferred[f]=other[f];
+    }
+    if(!preferred.result&&other.result)preferred.result=other.result;
+    if(String(other.status||'').toLowerCase()==='completed')preferred.status='completed';
+    preferred.opponentResolvedFromOfficialSlot=true;
+    dedup[j]=preferred;
+  }
+  return dedup;
 }
 
 function officialScheduleMerge(rows){
@@ -2477,8 +2811,8 @@ async function scrapeOfficialDrawSchedule(context,options={}){
       // The winner/output slot is exactly (level-1, ceil(slot/2)).
       //
       // Example seen in the Men's +40 Plate DOM:
-      //   Philip Taylor = slot 6015
-      //   Julian Buczek = slot 6016
+      //   Player A = slot 6015
+      //   Player B = slot 6016
       //   their connector/output = 5008
       //
       // No pixel positions, nearest-neighbour logic or scoring are used.
@@ -2566,6 +2900,44 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         // A slot without a player is allowed here because it can represent a
         // genuinely scheduled future match whose opponent has not been decided.
         const allSlots=[...slotMap.values()];
+
+        // A Bye is not a played match, but it deterministically advances the
+        // concrete player into the bracket output slot. TournamentSoftware often
+        // leaves that output connector without repeating the player's name. If we
+        // do not carry the player forward, the NEXT scheduled round is incorrectly
+        // emitted as missing/TBD or can disappear entirely. Propagate only through
+        // structurally verified odd/even Bye pairs and never overwrite a real player.
+        for(let pass=0;pass<8;pass++){
+          let changed=false;
+          for(const a of allSlots){
+            if(a.slot%2===0)continue;
+            const b=slotMap.get(a.level*1000+(a.slot+1));
+            if(!b||b.level!==a.level||a.cellIndex!==b.cellIndex)continue;
+
+            const advancing=
+              (a.isBye&&!!b.player&&!b.isBye)?b.player:
+              (b.isBye&&!!a.player&&!a.isBye)?a.player:
+              null;
+            if(!advancing||a.level<=1)continue;
+
+            const outputNum=(a.level-1)*1000+Math.ceil(a.slot/2);
+            const outputRec=slotMap.get(outputNum);
+            if(!outputRec)continue;
+
+            const targetColumn=a.cellIndex+1;
+            const lo=Math.min(a.rowIndex,b.rowIndex);
+            const hi=Math.max(a.rowIndex,b.rowIndex);
+            if(outputRec.cellIndex!==targetColumn)continue;
+            if(outputRec.rowIndex<lo||outputRec.rowIndex>hi)continue;
+
+            if(!outputRec.player&&!outputRec.isBye){
+              outputRec.player=advancing;
+              outputRec.advancedByBye=true;
+              changed=true;
+            }
+          }
+          if(!changed)break;
+        }
 
         for(const a of allSlots){
           // Process one side only: odd slot is paired with the following even slot.
@@ -6382,6 +6754,50 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
     authorityCandidates.push(m);
   }
 
+  // The TournamentSoftware Match schedule is itself official fixture evidence.
+  // The precedence model below already assigns it tier 2 (below the explicit
+  // bracket tree at tier 3), but previous code never inserted these rows into
+  // authorityCandidates. That meant a perfectly valid schedule row could be
+  // absent from the site whenever the draw-tree extractor missed that edge.
+  //
+  // Only use concrete current/future Match rows with a proven location (or an
+  // exact draw observation that can prove the location). Do not let a pairing
+  // recovered solely from an old published opponent independently create a new
+  // fixture. Thus the bracket tree still wins every contradiction, while the
+  // Match schedule safely fills genuine gaps for every player/court.
+  for(const m0 of fresh){
+    const d=dateKey(m0);
+    if(!d||d<today)continue;
+    if(!realPlayer(m0.player1)||!realPlayer(m0.player2))continue;
+
+    const recovery=clean(m0.recoveredFrom||'');
+    if(recovery==='previous-opponent')continue;
+
+    const exactDrawRows=drawMetaByExact.get(exactKey(m0))||[];
+    const exactDrawHasLocation=exactDrawRows.some(x=>{
+      const loc=provenLocationFromRow(x);
+      return validVenue(loc.venue)&&!!sanitizeCourtValue(loc.court);
+    });
+
+    const directEnough=
+      !recovery ||
+      recovery==='visible-second-player' ||
+      exactDrawRows.length>0;
+
+    if(!directEnough)continue;
+    if(!validLocation(m0)&&!exactDrawHasLocation)continue;
+
+    const m={
+      ...m0,
+      player1:splitPlayerSeed(m0.player1).name,
+      player2:splitPlayerSeed(m0.player2).name,
+      source:'TournamentSoftware Match',
+      drawEvidenceSources:['TournamentSoftware Match']
+    };
+
+    authorityCandidates.push(m);
+  }
+
   const richness=m=>
     (m.result?10000:0)+
     (m.winner?5000:0)+
@@ -8309,6 +8725,8 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
       {preserveExisting:true}
     );
 
+    tournamentMatches=resolveOfficialTbdOpponents(tournamentMatches);
+
     tournamentMatches=tournamentMatches.map(m=>({
       ...m,
       court:sanitizeCourtValue(m.court)
@@ -8564,6 +8982,8 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
     officialDraw.byeMatches||[],
     {preserveExisting:!FULL_REBUILD}
   );
+
+  tournamentMatches=resolveOfficialTbdOpponents(tournamentMatches);
 
   const drawCompleted=(officialDraw.matches||[]).filter(m=>m.result||String(m.status||'').toLowerCase()==='completed');
   const drawScored=(officialDraw.matches||[]).filter(m=>m.result);

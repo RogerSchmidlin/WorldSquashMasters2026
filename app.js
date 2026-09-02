@@ -88,88 +88,6 @@ function normalizeSelfMatchAsBye(m){
 
 
 
-function applyVerifiedBracketFixtures(matches){
-  const rows=(matches||[]).map(m=>({...m}));
-  const verified=[
-    {
-      date:'2026-09-03',time:'11:20',player:'Leigh-Anne Kaye',opponent:'Jane Kennedy',
-      venue:'Karrinyup Shopping Centre',court:'AGC',event:"Women's +50",
-      source:'TournamentSoftware Draw Verified'
-    },
-    {
-      date:'2026-09-04',time:'12:30',player:'Julian Buczek',opponent:'TBD',
-      venue:'Belmont Saints Squash Centre',court:'SC8',event:"Men's +40",
-      source:'TournamentSoftware Draw Verified TBD'
-    }
-  ];
-  const isTbd=n=>/^TBD$/i.test(String(n||'').trim());
-  const isReal=n=>!!String(n||'').trim()&&!isTbd(n)&&!/^Bye$/i.test(String(n||'').trim());
-  const t24=v=>{
-    const s=String(v||'').trim();
-    const m=s.match(/^(\d{1,2}):([0-5]\d)\s*(am|pm)?$/i);
-    if(!m)return s.toLowerCase();
-    let h=Number(m[1]);
-    const ap=String(m[3]||'').toLowerCase();
-    if(ap==='pm'&&h<12)h+=12;
-    if(ap==='am'&&h===12)h=0;
-    return `${String(h).padStart(2,'0')}:${m[2]}`;
-  };
-  const sameSlot=(m,v)=>canonicalDate(m?.date||'')===v.date&&t24(m?.time)===t24(v.time);
-  const samePlace=(m,v)=>{
-    const venue=String(m?.venue||'').toLowerCase();
-    const court=String(m?.court||'').replace(/\s+/g,'').toLowerCase();
-    return venue===String(v.venue||'').toLowerCase()&&court===String(v.court||'').replace(/\s+/g,'').toLowerCase();
-  };
-  const today=typeof perthTodayIso==='function'?perthTodayIso():'';
-  const playerId=n=>{
-    const p=(data.players||[]).find(x=>sameName(x?.name,n));
-    return p?.officialPlayerId||'';
-  };
-
-  for(const v of verified){
-    if(today&&v.date<today)continue;
-    // Keep compact datasets compact: only add a verified continuation when
-    // this player is already represented in the dataset being repaired.
-    const playerAlreadyInScope=rows.some(m=>sameName(m?.player1,v.player)||sameName(m?.player2,v.player));
-    if(!playerAlreadyInScope)continue;
-    let row=rows.find(m=>sameSlot(m,v)&&(sameName(m?.player1,v.player)||sameName(m?.player2,v.player)));
-
-    if(row){
-      // Never overwrite a newer concrete opponent. Only repair a missing/TBD side.
-      if(v.opponent&&isReal(v.opponent)){
-        if(sameName(row.player1,v.player)&&isTbd(row.player2)){
-          row.player2=v.opponent;
-          if(!row.player2Id)row.player2Id=playerId(v.opponent);
-        }else if(sameName(row.player2,v.player)&&isTbd(row.player1)){
-          row.player1=v.opponent;
-          if(!row.player1Id)row.player1Id=playerId(v.opponent);
-        }
-      }
-      if(!row.venue)row.venue=v.venue;
-      if(!row.court)row.court=v.court;
-      if(!row.event)row.event=v.event;
-      if(!row.source)row.source=v.source;
-      row.verifiedBracketFixture=true;
-      continue;
-    }
-
-    // Do not create a second match if this exact court slot is already occupied
-    // by a concrete published fixture that does not involve the verified player.
-    const occupied=rows.some(m=>sameSlot(m,v)&&samePlace(m,v)&&isReal(m?.player1)&&isReal(m?.player2));
-    if(occupied)continue;
-
-    rows.push({
-      date:v.date,time:v.time,
-      player1:v.player,player2:v.opponent||'TBD',
-      player1Id:playerId(v.player),player2Id:isReal(v.opponent)?playerId(v.opponent):'',
-      venue:v.venue,court:v.court,event:v.event,round:'',
-      result:'',winner:'',status:'scheduled',source:v.source,
-      verifiedBracketFixture:true
-    });
-  }
-  return rows;
-}
-
 function resolveKnownOpponentsFromTbdSlots(matches){
   const rows=(matches||[]).map(m=>({...m}));
   const isTbd=n=>/^TBD$/i.test(String(n||'').trim());
@@ -307,7 +225,7 @@ async function ensureMatchesData(){
     .filter(m=>!m?.playerDetailOnly)
     .map(normaliseMatch)
     .map(normalizeSelfMatchAsBye);
-  data.matches=resolveKnownOpponentsFromTbdSlots(applyVerifiedBracketFixtures(data.matches));
+  data.matches=resolveKnownOpponentsFromTbdSlots(data.matches);
   data.baseMatches=data.matches.map(m=>({...m}));
   rebuildFavoriteMatchIndex();
   matchesReady=true;
@@ -327,7 +245,7 @@ async function ensureVicParkData(){
   if(pack&&Array.isArray(pack.players)&&Array.isArray(pack.matches)&&pack.matches.length){
     vicParkPlayers=pack.players;
     playerIdentityIndexVicCount=-1;
-    vicParkMatches=resolveKnownOpponentsFromTbdSlots(applyVerifiedBracketFixtures(pack.matches.map(normaliseMatch).map(normalizeSelfMatchAsBye)));
+    vicParkMatches=resolveKnownOpponentsFromTbdSlots(pack.matches.map(normaliseMatch).map(normalizeSelfMatchAsBye));
     window.__vicParkBaseMatches=vicParkMatches.map(m=>({...m}));
   }else{
     await ensureMatchesData();
@@ -1808,6 +1726,14 @@ function bindPageNavigation(){
     });
   });
 }
+
+// Browsers can restore a page from the back/forward cache with a partially
+// restored dynamic DOM. The Live tab/page are static in index.html now, but
+// keep this idempotent repair for older cached HTML during deployment.
+window.addEventListener('pageshow',()=>{
+  ensureLivePageShell();
+  bindPageNavigation();
+});
 
 function liveVenueGroup(m){
   const code=venueCode(m);
