@@ -120,12 +120,7 @@ function renderHeaderRefresh(){
   const el=document.querySelector('#headerRefresh');
   if(!el)return;
   const official='https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches';
-  let when='Not yet refreshed';
-  if(data?.refreshedAt){
-    const d=new Date(data.refreshedAt);
-    if(!Number.isNaN(d.getTime())) when=d.toLocaleString('en-AU',{day:'numeric',month:'short',year:'numeric',hour:'numeric',minute:'2-digit',hour12:true,timeZone:'Australia/Perth'});
-  }
-  el.innerHTML=`<a class="header-meta-link" href="${official}" target="_blank" rel="noopener noreferrer">Official Tournament Website</a>`;
+  el.innerHTML=`<a class="header-meta-link" href="${official}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Official Tournament Website</a>`;
 }
 renderHeaderRefresh();
 const basicNorm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’‘]/g,"'").toLowerCase().replace(/[^a-z0-9']+/g,' ').trim();
@@ -213,6 +208,107 @@ function ssVenue(text){
   return m?m[0].trim():'';
 }
 
+
+
+// SquashScores can finish a match before either player reaches three games
+// (for example a retirement).  The public JSON has used several different
+// fields/labels for that state, so detect terminal signals recursively rather
+// than relying on one status property.
+function squashScoresTerminalReason(node){
+  if(!node||typeof node!=='object')return '';
+
+  const longTerminal=/\b(?:retired|retirement|withdrawn|withdrawal|walkover|walk-over|defaulted|abandoned|cancelled|canceled)\b/i;
+  const statusTerminal=/\b(?:finished|completed|complete|ended|closed|retired|retirement|withdrawn|withdrawal|walkover|walk-over|defaulted|abandoned|cancelled|canceled)\b/i;
+  const shortTerminal=/^(?:ret|rtd|ret\.|rtd\.|w\/?o|wo|wd|w\/?d|def)$/i;
+  const statusKey=/(?:status|state|result|outcome|reason|decision|note|comment|retir|withdraw|walkover|default|finish|complete|ended|closed|abandon|cancel|winner)/i;
+  const terminalFlagKey=/(?:retir|withdraw|walkover|default|finish|complete|ended|closed|abandon|cancel)/i;
+  const terminalTimeKey=/(?:finishedAt|completedAt|endedAt|closedAt|retiredAt|withdrawnAt)$/i;
+  // SquashScores also uses winner fields to mark terminal states (including
+  // retirements).  Match any winner/winning/victor field rather than only a
+  // small fixed list of property names.
+  const winnerKey=/(?:winner|winning|wonBy|victor)/i;
+
+  const seen=new WeakSet();
+  let inspected=0;
+  let found='';
+
+  const walk=(value,key='',depth=0)=>{
+    if(found||value===null||value===undefined||depth>7||inspected++>800)return;
+
+    if(typeof value==='boolean'){
+      if(value&&terminalFlagKey.test(key))found=key;
+      return;
+    }
+
+    if(typeof value==='number'){
+      if(value!==0&&terminalFlagKey.test(key))found=`${key}:${value}`;
+      if(Number.isFinite(value)&&winnerKey.test(key)&&value>0)found=`${key}:${value}`;
+      return;
+    }
+
+    if(typeof value==='string'){
+      const text=value.replace(/\s+/g,' ').trim();
+      if(!text)return;
+      if(longTerminal.test(text)){found=text;return;}
+      if(statusKey.test(key)&&statusTerminal.test(text)){found=text;return;}
+      if(statusKey.test(key)&&shortTerminal.test(text.replace(/\s+/g,''))){found=text;return;}
+      if(terminalTimeKey.test(key)&&!/^0+$/.test(text)){found=`${key}:${text}`;return;}
+      if(winnerKey.test(key)&&!/^(?:0|none|null|undefined|tbd)$/i.test(text)){found=`${key}:${text}`;return;}
+      return;
+    }
+
+    if(typeof value!=='object')return;
+    if(seen.has(value))return;
+    seen.add(value);
+
+    if(Array.isArray(value)){
+      for(const item of value)walk(item,key,depth+1);
+      return;
+    }
+
+    for(const [childKey,child] of Object.entries(value))walk(child,childKey,depth+1);
+  };
+
+  walk(node);
+  return found;
+}
+
+function squashScoresExplicitlyNotLive(node){
+  if(!node||typeof node!=='object')return false;
+
+  const falseLike=v=>v===false||v===0||/^(?:false|0|no|off)$/i.test(String(v??'').trim());
+  const trueLike=v=>v===true||v===1||/^(?:true|1|yes|on)$/i.test(String(v??'').trim());
+
+  const liveFlags=[node.isLive,node.live,node.inProgress,node.isInProgress,node.playing,node.isPlaying];
+  if(liveFlags.some(v=>v!==undefined&&v!==null&&falseLike(v)))return true;
+
+  const hiddenFlags=[
+    node.hidden,node.isHidden,node.hide,node.isHiddenFromOverview,
+    node.archived,node.isArchived,node.deleted,node.isDeleted,
+    node.inactive,node.isInactive
+  ];
+  if(hiddenFlags.some(v=>v!==undefined&&v!==null&&trueLike(v)))return true;
+
+  const visibleFlags=[
+    node.visible,node.isVisible,node.show,node.isShown,node.display,
+    node.enabled,node.isEnabled,node.active,node.isActive
+  ];
+  if(visibleFlags.some(v=>v!==undefined&&v!==null&&falseLike(v)))return true;
+
+  return false;
+}
+
+function squashScoresExplicitlyLive(node){
+  if(!node||typeof node!=='object')return false;
+  const trueLike=v=>v===true||v===1||/^(?:true|1|yes|on)$/i.test(String(v??'').trim());
+  const flags=[node.isLive,node.live,node.inProgress,node.isInProgress,node.playing,node.isPlaying];
+  if(flags.some(v=>v!==undefined&&v!==null&&trueLike(v)))return true;
+
+  const text=[node.status,node.matchStatus,node.state,node.matchState,node.statusName,node.stateName]
+    .filter(v=>typeof v==='string').join(' ');
+  return /\b(?:live|playing|in progress|in-progress|on court|started|running)\b/i.test(text);
+}
+
 function parseSquashScoresApi(payload,players){
   const rows=[];
   const locations=Array.isArray(payload?.locations)?payload.locations:[];
@@ -280,8 +376,10 @@ function parseSquashScoresApi(payload,players){
 
       const [p1Won,p2Won]=gamesWon(m);
       const score=gamesScore(m,true);
-      const completed=p1Won>=3||p2Won>=3;
       const hasStarted=score.length>0||p1Won>0||p2Won>0;
+      const terminalReason=squashScoresTerminalReason(m);
+      const completed=!!terminalReason||p1Won>=3||p2Won>=3||
+        (hasStarted&&squashScoresExplicitlyNotLive(m));
 
       rows.push({
         date,
@@ -290,6 +388,8 @@ function parseSquashScoresApi(payload,players){
         player2,
         result:score,
         status:completed?'completed':(hasStarted?'live':'scheduled'),
+        squashScoresTerminalReason:terminalReason,
+        squashScoresExplicitLive:squashScoresExplicitlyLive(m),
         venue:String(location?.name||location?.locationName||'').trim(),
         court:String(m?.courtName||m?.court||'').trim(),
         event:String(m?.categoryName||m?.category||'').trim(),
@@ -525,13 +625,15 @@ function parseSquashScoresApi(payload,players){
     return '';
   };
 
-  const statusFromNode=(node,games)=>{
+  const statusFromNode=(node,games,inheritedTerminal='',inheritedNotLive=false)=>{
+    if(inheritedTerminal||squashScoresTerminalReason(node))return 'completed';
+
     const text=[
       node?.status,node?.matchStatus,node?.state,node?.matchState,
       node?.statusName,node?.stateName
     ].filter(v=>typeof v==='string').join(' ').toLowerCase();
 
-    if(/\b(finished|completed|complete|final|ended|closed)\b/.test(text))return 'completed';
+    if(/\b(finished|completed|complete|ended|closed|retired|retirement|withdrawn|withdrawal|walkover|walk-over|defaulted|abandoned|cancelled|canceled)\b/.test(text))return 'completed';
     if(/\b(live|playing|in progress|in-progress|on court|started|running)\b/.test(text))return 'live';
     if(/\b(scheduled|pending|upcoming|not started|not-started|waiting)\b/.test(text))return 'scheduled';
 
@@ -543,6 +645,7 @@ function parseSquashScoresApi(payload,players){
       if(a>b)p1Games++; else if(b>a)p2Games++;
     }
     if(p1Games>=3||p2Games>=3)return 'completed';
+    if((games||[]).length&&(inheritedNotLive||squashScoresExplicitlyNotLive(node)))return 'completed';
     if((games||[]).length)return 'live';
     return 'scheduled';
   };
@@ -573,6 +676,21 @@ function parseSquashScoresApi(payload,players){
     let names=direct;
     const games=bestGamePairs(node);
 
+    // Important for retirements: in some SquashScores payload shapes the
+    // terminal/winner flag sits on a match wrapper while the players/games sit
+    // in a child object.  The old generic fallback dropped that wrapper state,
+    // then saw the child's partial score and recreated the retired match as
+    // LIVE.  Carry match-specific terminal state down to its child objects.
+    const ownTerminal=squashScoresTerminalReason(node);
+    const ownNotLive=squashScoresExplicitlyNotLive(node);
+    const ownExplicitLive=squashScoresExplicitlyLive(node);
+    const inheritedTerminal=String(inherited?.terminalReason||'');
+    const inheritedNotLive=!!inherited?.explicitlyNotLive;
+    const inheritedExplicitLive=!!inherited?.explicitlyLive;
+    const terminalReason=ownTerminal||inheritedTerminal;
+    const explicitlyNotLive=ownNotLive||inheritedNotLive;
+    const explicitlyLive=!explicitlyNotLive&&(ownExplicitLive||inheritedExplicitLive);
+
     // Older/newer API shapes may place the two player objects one level below
     // the score array. Fall back to the tournament-name scan only when the
     // object itself does not expose a direct player pair.
@@ -597,7 +715,7 @@ function parseSquashScoresApi(payload,players){
 
       const p1=ordered[0],p2=ordered[1];
       const result=games.map(([a,b])=>`${a}-${b}`).join(', ');
-      const status=statusFromNode(node,games);
+      const status=statusFromNode(node,games,terminalReason,explicitlyNotLive);
 
       fallbackCandidates.push({
         date:date||perthTodayIso(),
@@ -606,6 +724,8 @@ function parseSquashScoresApi(payload,players){
         player2:p2,
         result,
         status,
+        squashScoresTerminalReason:terminalReason,
+        squashScoresExplicitLive:explicitlyLive,
         venue,
         court,
         event,
@@ -617,7 +737,19 @@ function parseSquashScoresApi(payload,players){
       });
     }
 
-    const childMeta={date,time,venue,court,event,round};
+    // Only propagate this node's terminal state when this node looks like a
+    // match wrapper.  This avoids a location/category-level flag accidentally
+    // being applied to every match below it.
+    const matchSpecific=!!(
+      direct.length===2||games.length||node?.matchId||node?.fixtureId||
+      node?.player1Name||node?.player2Name||node?.playerOneName||node?.playerTwoName
+    );
+    const childMeta={
+      date,time,venue,court,event,round,
+      terminalReason:matchSpecific?terminalReason:inheritedTerminal,
+      explicitlyNotLive:matchSpecific?explicitlyNotLive:inheritedNotLive,
+      explicitlyLive:matchSpecific?explicitlyLive:inheritedExplicitLive
+    };
     for(const child of Object.values(node))scan(child,childMeta,depth+1);
   };
 
@@ -667,7 +799,24 @@ function parseSquashScoresApi(payload,players){
     const rowRank=(row.result?1000+String(row.result).length:0)+
       (row.status==='completed'?100:row.status==='live'?50:0);
 
-    if(rowRank>prevRank)merged.set(key,{...prev,...row});
+    // Merge the two views instead of discarding terminal metadata from the
+    // lower-ranked row. A completed/retired signal must always win over a
+    // partial-score LIVE inference.
+    const preferred=rowRank>prevRank?{...prev,...row}:{...row,...prev};
+    const terminalReason=String(
+      row?.squashScoresTerminalReason||prev?.squashScoresTerminalReason||''
+    ).trim();
+    if(terminalReason){
+      preferred.status='completed';
+      preferred.squashScoresTerminalReason=terminalReason;
+      preferred.squashScoresExplicitLive=false;
+    }else if(row?.status==='completed'||prev?.status==='completed'){
+      preferred.status='completed';
+      preferred.squashScoresExplicitLive=false;
+    }else{
+      preferred.squashScoresExplicitLive=!!(row?.squashScoresExplicitLive||prev?.squashScoresExplicitLive);
+    }
+    merged.set(key,preferred);
   }
 
   const output=[...merged.values()];
@@ -776,7 +925,7 @@ function parseSquashScoresHtml(html,players){
     if(!result)result=ssSeparateScore(el,p1,p2);
     if(!result)result=scoreFromTextAroundNames(text,p1,p2);
 
-    const explicitCompleted=/\b(?:finished|completed|won|lost)\b/i.test(text);
+    const explicitCompleted=/\b(?:finished|completed|won|lost|retired|retirement|withdrawn|withdrawal)\b/i.test(text);
     const boldCompleted=squashScoresNameIsBold(el,p1)||squashScoresNameIsBold(el,p2);
     const explicitLive=/\b(?:live|playing|in progress|on court)\b/i.test(text);
 
@@ -1011,6 +1160,213 @@ function cleanMatchMeta(v){
 }
 function normMatch(m){const raw=flatText(m.rawText||m.text||m.description||m);let p1=m.player1||m.playerOne||m.homePlayer||m.home||m.participant1||m.team1||m.entry1||'',p2=m.player2||m.playerTwo||m.awayPlayer||m.away||m.participant2||m.team2||m.entry2||'';const gn=v=>typeof v==='object'&&v?(v.name||v.displayName||v.fullName||v.title||v.label||''):String(v||'');p1=gn(p1);p2=gn(p2);if(!p1||!p2){const f=namesFromRecord(m);if(!p1)p1=f[0]||'';if(!p2)p2=f.find(n=>!sameName(n,p1))||f[1]||''}let venue=m.venue||m.venueName||m.location||m.locationName||m.site||m.facility||'',court=m.court||m.courtName||m.resource||m.resourceName||m.field||m.fieldName||'';if(typeof venue==='object')venue=venue.name||venue.title||venue.label||'';if(typeof court==='object')court=court.name||court.title||court.label||'';if(!venue){if(/Karrinyup/i.test(raw))venue='Karrinyup Shopping Centre';else if(/Mirrabooka/i.test(raw))venue='Squashworld Mirrabooka'}if(!court){const cm=raw.match(/(?:court(?:Name)?["':\s]*|\b)(AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)\b/i);if(cm)court=cm[1]}return {...m,date:canonicalDate(m.date||m.matchDate||m.startDate||m.start||m.datetime||m.dateTime||m.scheduledDate),time:m.time||m.matchTime||m.startTime||m.scheduledTime||'',event:cleanMatchMeta(m.event||m.eventName||m.draw||m.category||m.disciplineName||''),round:cleanMatchMeta(m.round||m.roundName||''),player1:p1,player2:p2,venue,court,rawText:''}}
 data.matches=(data.matches||[]).map(normMatch);
+
+
+function applyVerifiedBracketFixtures(matches){
+  const rows=(matches||[]).map(m=>({...m}));
+  const verified=[
+    {
+      date:'2026-09-03',time:'11:20',player:'Leigh-Anne Kaye',opponent:'Jane Kennedy',
+      venue:'Karrinyup Shopping Centre',court:'AGC',event:"Women's +50",
+      source:'TournamentSoftware Draw Verified'
+    },
+    {
+      date:'2026-09-04',time:'12:30',player:'Julian Buczek',opponent:'TBD',
+      venue:'Belmont Saints Squash Centre',court:'SC8',event:"Men's +40",
+      source:'TournamentSoftware Draw Verified TBD'
+    }
+  ];
+  const isTbd=n=>/^TBD$/i.test(String(n||'').trim());
+  const isReal=n=>!!String(n||'').trim()&&!isTbd(n)&&!/^Bye$/i.test(String(n||'').trim());
+  const t24=v=>{
+    const s=String(v||'').trim();
+    const m=s.match(/^(\d{1,2}):([0-5]\d)\s*(am|pm)?$/i);
+    if(!m)return s.toLowerCase();
+    let h=Number(m[1]);
+    const ap=String(m[3]||'').toLowerCase();
+    if(ap==='pm'&&h<12)h+=12;
+    if(ap==='am'&&h===12)h=0;
+    return `${String(h).padStart(2,'0')}:${m[2]}`;
+  };
+  const sameSlot=(m,v)=>canonicalDate(m?.date||'')===v.date&&t24(m?.time)===t24(v.time);
+  const samePlace=(m,v)=>{
+    const venue=String(m?.venue||'').toLowerCase();
+    const court=String(m?.court||'').replace(/\s+/g,'').toLowerCase();
+    return venue===String(v.venue||'').toLowerCase()&&court===String(v.court||'').replace(/\s+/g,'').toLowerCase();
+  };
+  const today=typeof perthTodayIso==='function'?perthTodayIso():'';
+  const playerId=n=>{
+    const p=(data.players||[]).find(x=>sameName(x?.name,n));
+    return p?.officialPlayerId||'';
+  };
+
+  for(const v of verified){
+    if(today&&v.date<today)continue;
+    // Keep compact datasets compact: only add a verified continuation when
+    // this player is already represented in the dataset being repaired.
+    const playerAlreadyInScope=rows.some(m=>sameName(m?.player1,v.player)||sameName(m?.player2,v.player));
+    if(!playerAlreadyInScope)continue;
+    let row=rows.find(m=>sameSlot(m,v)&&(sameName(m?.player1,v.player)||sameName(m?.player2,v.player)));
+
+    if(row){
+      // Never overwrite a newer concrete opponent. Only repair a missing/TBD side.
+      if(v.opponent&&isReal(v.opponent)){
+        if(sameName(row.player1,v.player)&&isTbd(row.player2)){
+          row.player2=v.opponent;
+          if(!row.player2Id)row.player2Id=playerId(v.opponent);
+        }else if(sameName(row.player2,v.player)&&isTbd(row.player1)){
+          row.player1=v.opponent;
+          if(!row.player1Id)row.player1Id=playerId(v.opponent);
+        }
+      }
+      if(!row.venue)row.venue=v.venue;
+      if(!row.court)row.court=v.court;
+      if(!row.event)row.event=v.event;
+      if(!row.source)row.source=v.source;
+      row.verifiedBracketFixture=true;
+      continue;
+    }
+
+    // Do not create a second match if this exact court slot is already occupied
+    // by a concrete published fixture that does not involve the verified player.
+    const occupied=rows.some(m=>sameSlot(m,v)&&samePlace(m,v)&&isReal(m?.player1)&&isReal(m?.player2));
+    if(occupied)continue;
+
+    rows.push({
+      date:v.date,time:v.time,
+      player1:v.player,player2:v.opponent||'TBD',
+      player1Id:playerId(v.player),player2Id:isReal(v.opponent)?playerId(v.opponent):'',
+      venue:v.venue,court:v.court,event:v.event,round:'',
+      result:'',winner:'',status:'scheduled',source:v.source,
+      verifiedBracketFixture:true
+    });
+  }
+  return rows;
+}
+
+function resolveKnownOpponentsFromTbdSlots(matches){
+  const rows=(matches||[]).map(m=>({...m}));
+  const isTbd=n=>/^TBD$/i.test(String(n||'').trim());
+  const isReal=n=>!!String(n||'').trim()&&!isTbd(n)&&!/^Bye$/i.test(String(n||'').trim());
+  const eventIdentityKey=m=>{
+    const s=String(m?.event||'').toLowerCase();
+    const age=(s.match(/\b(35|40|45|50|55|60|65|70|75|80|85)\+?\b/)||[])[1]||'';
+    const gender=/women/.test(s)?'women':(/\bmen/.test(s)?'men':'');
+    return `${gender}|${age}`;
+  };
+  const compactVenue=v=>String(v||'').replace(/\s+/g,' ').trim().toLowerCase();
+  const compactCourt=v=>String(v||'').replace(/\s+/g,'').trim().toLowerCase();
+  const slotKey=m=>{
+    const d=canonicalDate(m?.date||'');
+    const t=String(m?.time||'').replace(/\s+/g,' ').trim().toLowerCase();
+    const venue=compactVenue(m?.venue);
+    const court=compactCourt(m?.court);
+    // Never infer across an unknown venue/court. A real court can host only one
+    // match at a given time, which makes this pairing deterministic.
+    if(!d||!t||!venue||!court)return '';
+    return `${d}|${t}|${venue}|${court}|${eventIdentityKey(m)}`;
+  };
+  const groups=new Map();
+  rows.forEach((m,i)=>{
+    const key=slotKey(m);
+    if(!key)return;
+    if(!groups.has(key))groups.set(key,[]);
+    groups.get(key).push(i);
+  });
+  const playerIdForName=n=>{
+    const p=(data.players||[]).find(x=>sameName(x?.name,n));
+    return p?.officialPlayerId||'';
+  };
+  const pairKey=(a,b)=>[nameKey(a),nameKey(b)].sort().join('~');
+  const today=typeof perthTodayIso==='function'?perthTodayIso():'';
+
+  for(const indexes of groups.values()){
+    if(indexes.length<2)continue;
+    const sample=rows[indexes[0]];
+    const d=canonicalDate(sample?.date||'');
+    if(today&&d&&d<today)continue;
+
+    const tbdRows=indexes.filter(i=>{
+      const m=rows[i];
+      return (isReal(m.player1)&&isTbd(m.player2))||(isTbd(m.player1)&&isReal(m.player2));
+    });
+    if(!tbdRows.length)continue;
+
+    const concretePairs=new Map();
+    for(const i of indexes){
+      const m=rows[i];
+      if(!isReal(m.player1)||!isReal(m.player2))continue;
+      const k=pairKey(m.player1,m.player2);
+      if(!concretePairs.has(k))concretePairs.set(k,[m.player1,m.player2]);
+    }
+
+    let pair=null;
+    if(concretePairs.size===1){
+      pair=[...concretePairs.values()][0];
+    }else if(concretePairs.size===0){
+      const realByKey=new Map();
+      for(const i of tbdRows){
+        const m=rows[i];
+        const n=isReal(m.player1)?m.player1:m.player2;
+        const k=nameKey(n);
+        if(k&&!realByKey.has(k))realByKey.set(k,n);
+      }
+      if(realByKey.size===2)pair=[...realByKey.values()];
+    }
+    if(!pair)continue;
+
+    const pairKeys=new Set(pair.map(nameKey));
+    for(const i of tbdRows){
+      const m=rows[i];
+      const real=isReal(m.player1)?m.player1:m.player2;
+      const realKey=nameKey(real);
+      if(!pairKeys.has(realKey))continue;
+      const opponent=pair.find(n=>nameKey(n)!==realKey);
+      if(!opponent)continue;
+
+      if(isTbd(m.player2)){
+        m.player2=opponent;
+        if(!m.player2Id)m.player2Id=playerIdForName(opponent);
+      }else if(isTbd(m.player1)){
+        m.player1=opponent;
+        if(!m.player1Id)m.player1Id=playerIdForName(opponent);
+      }
+      m.opponentResolvedFromOfficialSlot=true;
+    }
+  }
+
+  // Pairing two reciprocal "Player vs TBD" observations can create two
+  // identical rows. Collapse only duplicates involving a row repaired above.
+  const out=[];
+  const exactKey=m=>{
+    const key=slotKey(m);
+    if(!key||!isReal(m.player1)||!isReal(m.player2))return '';
+    return `${key}|${pairKey(m.player1,m.player2)}`;
+  };
+  for(const m of rows){
+    const k=exactKey(m);
+    const existingIndex=k?out.findIndex(x=>exactKey(x)===k):-1;
+    if(existingIndex<0){out.push(m);continue;}
+    const x=out[existingIndex];
+    if(!m.opponentResolvedFromOfficialSlot&&!x.opponentResolvedFromOfficialSlot){
+      out.push(m);continue;
+    }
+
+    const preferred=(m.result&&!x.result)?m:x;
+    const other=preferred===m?x:m;
+    for(const field of ['event','round','venue','court','source','sourceUrl','resultSource','winner','winnerId']){
+      if(!preferred[field]&&other[field])preferred[field]=other[field];
+    }
+    if(!preferred.result&&other.result)preferred.result=other.result;
+    if(String(other.status||'').toLowerCase()==='completed')preferred.status='completed';
+    preferred.opponentResolvedFromOfficialSlot=true;
+    out[existingIndex]=preferred;
+  }
+
+  return out;
+}
+
+data.matches=resolveKnownOpponentsFromTbdSlots(applyVerifiedBracketFixtures(data.matches));
 const tournamentBaseMatches=data.matches.map(m=>({...m}));
 const params=new URLSearchParams(location.search);
 const requestedId=params.get('id')||'';
