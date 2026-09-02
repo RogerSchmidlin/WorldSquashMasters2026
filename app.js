@@ -163,7 +163,7 @@ function canonicalDate(v){
   return s;
 }
 
-const SQUASH_SCORES_LIVE_URL='https://squashscores.com/overview.html?categoryId=19';
+const SQUASH_SCORES_LIVE_URL='https://www.squashscores.com/inprogress.php?categoryId=19&hideControls=1&tourname=World+Squash+Masters+2026';
 const SQUASH_SCORES_API_URL='https://squashscores.com/api/overview/public/?categoryId=19';
 const SQUASH_SCORES_POLL_MS=5000;
 
@@ -184,10 +184,18 @@ function ssTime(text){
 }
 function ssScorePairs(text){
   const s=String(text||'').replace(/[–—]/g,'-');
-  const run=s.match(/\b\d{1,2}\s*-\s*\d{1,2}(?:(?:\s*,\s*|\s+)\d{1,2}\s*-\s*\d{1,2}){2,4}\b/);
-  if(!run)return '';
-  return [...run[0].matchAll(/(\d{1,2})\s*-\s*(\d{1,2})/g)]
-    .map(x=>`${+x[1]}-${+x[2]}`).join(', ');
+  // Live SquashScores rows may contain only one or two game columns. The old
+  // parser required at least three games, which meant early live scores were
+  // silently discarded. Accept 1-5 score pairs and keep only plausible point
+  // values. Completion is decided separately from the player-name bold state.
+  const runs=[...s.matchAll(/\b\d{1,2}\s*-\s*\d{1,2}(?:(?:\s*,\s*|\s+)\d{1,2}\s*-\s*\d{1,2}){0,4}\b/g)];
+  for(const run of runs){
+    const pairs=[...run[0].matchAll(/(\d{1,2})\s*-\s*(\d{1,2})/g)]
+      .map(x=>[+x[1],+x[2]])
+      .filter(([a,b])=>a>=0&&b>=0&&a<=30&&b<=30&&!(a===0&&b===0));
+    if(pairs.length)return pairs.map(([a,b])=>`${a}-${b}`).join(', ');
+  }
+  return '';
 }
 function ssValidGame(a,b){
   if(!Number.isInteger(a)||!Number.isInteger(b)||a===b||a<0||b<0||a>30||b>30)return false;
@@ -213,12 +221,14 @@ function ssSeparateScore(container,p1,p2){
   if(!a||!b||a===b)return '';
   const values=row=>{
     const raw=String(row.textContent||'').replace(/\s+/g,' ').trim();
-    const vals=(raw.match(/(?:^|\s)\d{1,2}(?=\s|$)/g)||[]).map(x=>+x.trim()).filter(x=>x<=30);
-    for(let n=5;n>=3;n--)if(vals.length>=n)return vals.slice(-n);
-    return [];
+    const vals=(raw.match(/(?:^|\s)\d{1,2}(?=\s|$)/g)||[])
+      .map(x=>+x.trim()).filter(x=>x>=0&&x<=30);
+    // Score rows can legitimately contain 1-5 games while the match is live.
+    return vals.slice(-Math.min(5,vals.length));
   };
   const av=values(a),bv=values(b);
-  if(av.length<3||av.length!==bv.length||!av.every((x,i)=>ssValidGame(x,bv[i])))return '';
+  if(!av.length||av.length!==bv.length)return '';
+  if(av.every((x,i)=>x===0&&bv[i]===0))return '';
   return av.map((x,i)=>`${x}-${bv[i]}`).join(', ');
 }
 function ssVenue(text){
@@ -228,6 +238,35 @@ function ssVenue(text){
   }
   const m=s.match(/\b(?:Mirrabooka|Belmont|Karrinyup)\b[^|]{0,80}/i);
   return m?m[0].trim():'';
+}
+
+// SquashScores sometimes labels a court as just "4" / "7" rather than
+// "SC4" / "SC7".  Only treat a bare number as a court when it comes
+// from an explicit SquashScores court/location field; never infer a court
+// number from arbitrary match text (where numbers can be round/seed values).
+function squashScoresCourtToken(value,{allowBareNumber=false}={}){
+  let raw=value;
+  if(raw&&typeof raw==='object'){
+    raw=raw.courtName||raw.resourceName||raw.fieldName||raw.name||raw.title||raw.label||'';
+  }
+  const s=String(raw??'').replace(/\s+/g,' ').trim();
+  if(!s)return '';
+
+  let m=s.match(/\bSC\s*(\d{1,2})\b/i);
+  if(m)return `SC${Number(m[1])}`;
+
+  m=s.match(/\bAGC\s*(\d{1,2})?\b/i);
+  if(m)return m[1]?`AGC${Number(m[1])}`:'AGC';
+
+  m=s.match(/\bCourt\s*(\d{1,2})\b/i);
+  if(m)return `SC${Number(m[1])}`;
+
+  if(allowBareNumber&&/^\d{1,2}$/.test(s)){
+    const n=Number(s);
+    if(n>=1&&n<=30)return `SC${n}`;
+  }
+
+  return '';
 }
 
 function parseSquashScoresApi(payload,players){
@@ -307,8 +346,18 @@ function parseSquashScoresApi(payload,players){
         player2,
         result:score,
         status:completed?'completed':(hasStarted?'live':'scheduled'),
-        venue:String(location?.name||location?.locationName||'').trim(),
-        court:String(m?.courtName||m?.court||'').trim(),
+        // A location can be a venue OR a court in SquashScores.  Keep only
+        // recognised venue text here; a label such as "4" belongs in court.
+        venue:canonicalVenue(
+          location?.venueName||location?.locationName||location?.facilityName||
+          location?.siteName||location?.name||''
+        ),
+        court:squashScoresCourtToken(
+          m?.courtName||m?.court||m?.resourceName||m?.resource||
+          location?.courtName||location?.court||location?.resourceName||
+          location?.resource||location?.name||'',
+          {allowBareNumber:true}
+        ),
         event:String(m?.categoryName||m?.category||'').trim(),
         round:description,
         liveSource:'SquashScores',
@@ -360,16 +409,31 @@ function parseSquashScoresApi(payload,players){
   };
 
   const scorePairFromGame=g=>{
-    if(!g||typeof g!=='object'||Array.isArray(g))return null;
+    if(!g||typeof g!=='object')return null;
+
+    // SquashScores has used both object and compact-array game formats.
+    if(Array.isArray(g)){
+      if(g.length>=2){
+        const a=numericScore(g[0]),b=numericScore(g[1]);
+        if(a!==null&&b!==null&&!(a===0&&b===0))return [a,b];
+      }
+      return null;
+    }
 
     const keyPairs=[
       ['player1Score','player2Score'],
       ['playerOneScore','playerTwoScore'],
+      ['player1Points','player2Points'],
+      ['playerOnePoints','playerTwoPoints'],
       ['homeScore','awayScore'],
+      ['homePoints','awayPoints'],
       ['score1','score2'],
       ['points1','points2'],
-      ['homePoints','awayPoints'],
-      ['team1Score','team2Score']
+      ['team1Score','team2Score'],
+      ['p1Score','p2Score'],
+      ['p1','p2'],
+      ['home','away'],
+      ['player1','player2']
     ];
 
     for(const [aKey,bKey] of keyPairs){
@@ -377,6 +441,13 @@ function parseSquashScoresApi(payload,players){
       const a=numericScore(g[aKey]),b=numericScore(g[bKey]);
       if(a===null||b===null||(a===0&&b===0))continue;
       return [a,b];
+    }
+
+    for(const key of ['score','scores','points']){
+      const value=g[key];
+      if(!Array.isArray(value)||value.length<2)continue;
+      const a=numericScore(value[0]),b=numericScore(value[1]);
+      if(a!==null&&b!==null&&!(a===0&&b===0))return [a,b];
     }
 
     return null;
@@ -440,11 +511,12 @@ function parseSquashScoresApi(payload,players){
 
     for(const key of [
       'matchTime','time','scheduledTime','startTime','description',
-      'roundName','round'
+      'roundName','round','matchDate','date','scheduledDate','startDate',
+      'dateTime','datetime','scheduledAt','start'
     ]){
       const raw=node[key];
       if(raw===null||raw===undefined||typeof raw==='object')continue;
-      const m=String(raw).match(/\b(\d{1,2}):([0-5]\d)\b/);
+      const m=String(raw).match(/(?:^|[T\s])(\d{1,2}):([0-5]\d)\b/);
       if(m)return `${String(+m[1]).padStart(2,'0')}:${m[2]}`;
     }
 
@@ -481,11 +553,72 @@ function parseSquashScoresApi(payload,players){
   const fallbackCandidates=[];
   const seenObjects=new WeakSet();
 
-  const scan=(node,inheritedDate='',inheritedTime='',depth=0)=>{
+  const normalVenue=value=>{
+    const s=objectDisplayName(value)||String(value??'').trim();
+    if(/Karrinyup/i.test(s))return 'Karrinyup Shopping Centre';
+    if(/Mirrabooka/i.test(s))return 'Squashworld Mirrabooka';
+    if(/Belmont/i.test(s))return 'Belmont Saints Squash Centre';
+    return '';
+  };
+
+  const ownVenue=node=>{
+    if(!node||typeof node!=='object'||Array.isArray(node))return '';
+    for(const key of ['venueName','locationName','siteName','facilityName','venue','location','site','facility']){
+      const value=node[key];
+      const v=normalVenue(value);
+      if(v)return v;
+    }
+    // Location wrappers commonly expose only a generic "name" field.
+    return normalVenue(node.name||node.title||'');
+  };
+
+  const ownCourt=node=>{
+    if(!node||typeof node!=='object'||Array.isArray(node))return '';
+
+    // Explicit court/resource fields are allowed to be a bare number because
+    // SquashScores uses labels such as 4, 5, 7 for SC4, SC5, SC7.
+    for(const key of ['courtName','court','resourceName','resource','fieldName','field']){
+      const value=node[key];
+      if(value===null||value===undefined)continue;
+      const court=squashScoresCourtToken(
+        objectDisplayName(value)||String(value),
+        {allowBareNumber:true}
+      );
+      if(court)return court;
+    }
+
+    // A SquashScores location wrapper can itself be the court and expose only
+    // name: "4".  Parse that label, but still never scan arbitrary match text.
+    return squashScoresCourtToken(node.name||node.title||'',{allowBareNumber:true});
+  };
+
+  const statusFromNode=(node,games)=>{
+    const text=[
+      node?.status,node?.matchStatus,node?.state,node?.matchState,
+      node?.statusName,node?.stateName
+    ].filter(v=>typeof v==='string').join(' ').toLowerCase();
+
+    if(/\b(finished|completed|complete|final|ended|closed)\b/.test(text))return 'completed';
+    if(/\b(live|playing|in progress|in-progress|on court|started|running)\b/.test(text))return 'live';
+    if(/\b(scheduled|pending|upcoming|not started|not-started|waiting)\b/.test(text))return 'scheduled';
+
+    if(node?.isFinished===true||node?.finished===true||node?.completed===true||node?.isCompleted===true)return 'completed';
+    if(node?.isLive===true||node?.inProgress===true||node?.isInProgress===true||node?.started===true)return 'live';
+
+    let p1Games=0,p2Games=0;
+    for(const [a,b] of games||[]){
+      if(a>b)p1Games++; else if(b>a)p2Games++;
+    }
+    if(p1Games>=3||p2Games>=3)return 'completed';
+    if((games||[]).length)return 'live';
+    return 'scheduled';
+  };
+
+  const scan=(node,inherited={},depth=0)=>{
     if(node===null||node===undefined||depth>14)return;
 
     if(Array.isArray(node)){
-      for(const item of node)scan(item,inheritedDate,inheritedTime,depth+1);
+      for(const item of node)scan(item,inherited,depth+1);
       return;
     }
 
@@ -493,60 +626,66 @@ function parseSquashScoresApi(payload,players){
     if(seenObjects.has(node))return;
     seenObjects.add(node);
 
-    const date=ownDate(node)||inheritedDate;
-    const time=ownTime(node)||inheritedTime;
+    const date=ownDate(node)||inherited.date||'';
+    const time=ownTime(node)||inherited.time||'';
+    const venue=ownVenue(node)||inherited.venue||'';
+    const court=ownCourt(node)||inherited.court||'';
+    const event=String(node?.categoryName||node?.eventName||node?.category||inherited.event||'').trim();
+    const round=String(node?.description||node?.roundName||node?.round||inherited.round||'').replace(/\s+/g,' ').trim();
 
     let flat='';
     try{flat=JSON.stringify(node)}catch{}
 
-    if(flat&&flat.length<=20000){
-      const names=namesInText(flat);
-      if(names.length===2){
-        const games=bestGamePairs(node);
+    const direct=directPlayers(node);
+    let names=direct;
+    const games=bestGamePairs(node);
 
-        if(games.length){
-          let ordered=directPlayers(node);
+    // Older/newer API shapes may place the two player objects one level below
+    // the score array. Fall back to the tournament-name scan only when the
+    // object itself does not expose a direct player pair.
+    if(names.length!==2&&flat&&flat.length<=20000){
+      names=namesInText(flat);
+    }
 
-          if(ordered.length!==2){
-            // Preserve the order in which the two names appear in the actual
-            // match JSON. This keeps the game scores oriented correctly.
-            const normFlat=ssNorm(flat);
-            ordered=names.slice().sort((a,b)=>
-              normFlat.indexOf(ssNorm(a))-normFlat.indexOf(ssNorm(b))
-            );
-          }
+    const hasMatchIdentity=!!(
+      node?.id||node?.matchId||node?.fixtureId||node?.matchDate||node?.date||
+      node?.time||node?.matchTime||node?.description||games.length
+    );
 
-          const p1=ordered[0],p2=ordered[1];
-          const result=games.map(([a,b])=>`${a}-${b}`).join(', ');
+    if(names.length===2&&(direct.length===2||games.length)&&hasMatchIdentity){
+      let ordered=direct.length===2?direct:names.slice();
 
-          let p1Games=0,p2Games=0;
-          for(const [a,b] of games){
-            if(a>b)p1Games++;
-            else if(b>a)p2Games++;
-          }
-
-          fallbackCandidates.push({
-            date,
-            time,
-            player1:p1,
-            player2:p2,
-            result,
-            status:p1Games>=3||p2Games>=3?'completed':'live',
-            venue:'',
-            court:'',
-            event:'',
-            round:'',
-            liveSource:'SquashScores',
-            squashScoresGenericFallback:true,
-            _rawSize:flat.length
-          });
-        }
+      if(direct.length!==2&&flat){
+        const normFlat=ssNorm(flat);
+        ordered=names.slice().sort((a,b)=>
+          normFlat.indexOf(ssNorm(a))-normFlat.indexOf(ssNorm(b))
+        );
       }
+
+      const p1=ordered[0],p2=ordered[1];
+      const result=games.map(([a,b])=>`${a}-${b}`).join(', ');
+      const status=statusFromNode(node,games);
+
+      fallbackCandidates.push({
+        date:date||perthTodayIso(),
+        time,
+        player1:p1,
+        player2:p2,
+        result,
+        status,
+        venue,
+        court,
+        event,
+        round,
+        liveSource:'SquashScores',
+        squashScoresMatchId:node?.id||node?.matchId||node?.fixtureId||null,
+        squashScoresGenericFallback:true,
+        _rawSize:flat.length||999999
+      });
     }
 
-    for(const child of Object.values(node)){
-      scan(child,date,time,depth+1);
-    }
+    const childMeta={date,time,venue,court,event,round};
+    for(const child of Object.values(node))scan(child,childMeta,depth+1);
   };
 
   scan(payload);
@@ -639,9 +778,9 @@ function parseSquashScoresHtml(html,players){
     a=a.filter(x=>x<=30); b=b.filter(x=>x<=30);
 
     const n=Math.min(a.length,b.length,5);
-    if(n>=3){
+    if(n>=1){
       a=a.slice(0,n); b=b.slice(0,n);
-      if(a.every((x,i)=>ssValidGame(x,b[i]))){
+      if(!a.every((x,i)=>x===0&&b[i]===0)){
         const pair=a.map((x,i)=>`${x}-${b[i]}`).join(', ');
         return first.name===p1?pair:b.map((x,i)=>`${x}-${a[i]}`).join(', ');
       }
@@ -649,12 +788,41 @@ function parseSquashScoresHtml(html,players){
     return '';
   }
 
+  function squashScoresNameIsBold(container,name){
+    const wanted=ssNorm(name);
+    if(!wanted)return false;
+
+    // SquashScores marks a finished match by bolding a player name. Inspect
+    // semantic bold tags plus the common class/style variants used by the site.
+    const candidates=container.querySelectorAll(
+      'b,strong,[class*="bold" i],[class*="winner" i],[style*="font-weight" i]'
+    );
+    for(const node of candidates){
+      const text=ssNorm(node.textContent||'');
+      if(!text||!(` ${text} `).includes(` ${wanted} `))continue;
+      const tag=String(node.tagName||'').toLowerCase();
+      const cls=String(node.getAttribute?.('class')||'');
+      const style=String(node.getAttribute?.('style')||'');
+      if(tag==='b'||tag==='strong'||/bold|winner/i.test(cls))return true;
+      const weight=(style.match(/font-weight\s*:\s*([^;]+)/i)||[])[1]||'';
+      if(/bold/i.test(weight))return true;
+      const n=Number(weight);
+      if(Number.isFinite(n)&&n>=600)return true;
+    }
+    return false;
+  }
+
   function addCandidate(el){
     const text=String(el.textContent||'').replace(/\s+/g,' ').trim();
     if(text.length<20||text.length>2600)return;
 
-    const date=ssDate(text),time=ssTime(text);
-    if(!date||!time)return;
+    // The dedicated SquashScores in-progress page represents the current Perth day
+    // and does not always repeat the date/time inside every match container.
+    // Use today when the date is omitted; time is optional because the API can
+    // enrich it and ssOverlay can still match a unique player pair/day.
+    const date=ssDate(text)||perthTodayIso();
+    const time=ssTime(text);
+    if(!date)return;
 
     const names=ssKnownNames(text,allPlayers);
     if(names.length<2)return;
@@ -675,9 +843,16 @@ function parseSquashScoresHtml(html,players){
     if(!result)result=ssSeparateScore(el,p1,p2);
     if(!result)result=scoreFromTextAroundNames(text,p1,p2);
 
-    const lower=text.toLowerCase();
-    const completed=!!result||/\b(?:finished|completed|won|lost)\b/i.test(text);
-    const live=/\b(?:live|playing|in progress|on court)\b/i.test(text);
+    const explicitCompleted=/\b(?:finished|completed|won|lost)\b/i.test(text);
+    const boldCompleted=squashScoresNameIsBold(el,p1)||squashScoresNameIsBold(el,p2);
+    const explicitLive=/\b(?:live|playing|in progress|on court)\b/i.test(text);
+
+    // SquashScores behaviour: while a match is in progress the player names
+    // are not bold and scoring is available. Once a player name becomes bold,
+    // the match is complete. Do not treat the mere presence of a score as
+    // completion; that was the regression that hid live scoring.
+    const completed=explicitCompleted||boldCompleted;
+    const live=!completed&&(!!result||explicitLive);
 
     const key=`${date}|${[ssNorm(p1),ssNorm(p2)].sort().join('|')}`;
     const row={
@@ -736,40 +911,147 @@ function ssOverlay(base,live){
   const pair=m=>[ssNorm(m.player1),ssNorm(m.player2)].sort().join('|');
   const date=m=>canonicalDate(m.date||'');
   const time=m=>displayTime24(m.time||'');
+  const timeMinutes=v=>{
+    const x=String(v||'').match(/^(\d{1,2}):(\d{2})$/);
+    return x?Number(x[1])*60+Number(x[2]):null;
+  };
 
   for(const l of live||[]){
     const ld=date(l);if(!ld)continue;
     const same=out.filter(m=>date(m)===ld&&pair(m)===pair(l));
-    let existing=null;
-    const timed=same.filter(m=>time(m)===time(l));
-    if(timed.length===1)existing=timed[0];
-    else if(same.length===1)existing=same[0];
-    if(!existing)continue;
+    if(!same.length)continue;
 
-    // TournamentSoftware is schedule authority. SquashScores may only add
-    // score and live/completed status to an existing official fixture.
-    if(l.result)existing.result=orientLiveResultToExisting(existing,l);
-    if(l.status==='completed'||l.status==='live')existing.status=l.status;
-    existing.liveSource='SquashScores';
+    const lt=timeMinutes(time(l));
+    const timed=same.filter(m=>time(m)===time(l));
+    let targets=[];
+
+    if(same.length===1){
+      targets=[same[0]];
+    }else if(lt!==null){
+      // TournamentSoftware can leave both the old slot and the moved slot for
+      // the same pair/day. Put the SquashScores result on every nearby copy so
+      // whichever row the UI de-duplicates/keeps still carries the score.
+      // This fixes moved matches such as 12:00 -> 10:10 without allowing a
+      // completely unrelated same-pair row many hours away to inherit it.
+      targets=same.filter(m=>{
+        const mt=timeMinutes(time(m));
+        return mt!==null&&Math.abs(mt-lt)<=180;
+      });
+      if(!targets.length&&timed.length===1)targets=[timed[0]];
+    }else if(timed.length===1){
+      targets=[timed[0]];
+    }
+
+    if(!targets.length)continue;
+
+    for(const existing of targets){
+      // TournamentSoftware remains schedule authority. SquashScores only adds
+      // live/completed state and scoring to matching official fixtures.
+      if(l.result){
+        const oriented=orientLiveResultToExisting(existing,l);
+        const oldPairs=(String(existing.result||'').match(/\d{1,2}\s*[-–—]\s*\d{1,2}/g)||[]).length;
+        const newPairs=(String(oriented||'').match(/\d{1,2}\s*[-–—]\s*\d{1,2}/g)||[]).length;
+        if(!existing.result||String(l.status||'').toLowerCase()==='live'||newPairs>=oldPairs){
+          existing.result=oriented;
+        }
+      }
+      if(l.status==='completed'||l.status==='live')existing.status=l.status;
+      existing.liveSource='SquashScores';
+      existing.resultSource='SquashScores';
+    }
   }
   return out;
 }
+
+async function fetchSquashScoresRequest(url,label){
+  const controller=new AbortController();
+  const timeout=setTimeout(()=>controller.abort(),8000);
+  try{
+    const sep=url.includes('?')?'&':'?';
+    const r=await fetch(`${url}${sep}_=${Date.now()}`,{
+      cache:'no-store',
+      mode:'cors',
+      signal:controller.signal
+    });
+    if(!r.ok)throw new Error(`${label} HTTP ${r.status}`);
+    return r;
+  }catch(e){
+    if(e?.name==='AbortError')throw new Error(`${label} timed out`);
+    throw e;
+  }finally{
+    clearTimeout(timeout);
+  }
+}
+
 async function fetchSquashScoresHtml(){
-  const sep=SQUASH_SCORES_LIVE_URL.includes('?')?'&':'?';
-  const r=await fetch(
-    `${SQUASH_SCORES_LIVE_URL}${sep}_=${Date.now()}`,
-    {cache:'no-store',mode:'cors'}
-  );
-  if(!r.ok)throw new Error(`SquashScores HTML HTTP ${r.status}`);
+  const r=await fetchSquashScoresRequest(SQUASH_SCORES_LIVE_URL,'SquashScores live page');
   return r.text();
 }
 
 async function fetchSquashScoresApi(){
-  const sep=SQUASH_SCORES_API_URL.includes('?')?'&':'?';
-  const r=await fetch(`${SQUASH_SCORES_API_URL}${sep}_=${Date.now()}`,{cache:'no-store',mode:'cors'});
-  if(!r.ok)throw new Error(`SquashScores API HTTP ${r.status}`);
+  const r=await fetchSquashScoresRequest(SQUASH_SCORES_API_URL,'SquashScores API');
   return r.json();
 }
+
+function squashScoresPairDayKey(m){
+  return `${canonicalDate(m?.date||'')}|${[ssNorm(m?.player1),ssNorm(m?.player2)].sort().join('|')}`;
+}
+
+function enrichSquashScoresHtmlRows(htmlRows,apiRows){
+  const apiByPair=new Map();
+  for(const row of apiRows||[]){
+    const key=squashScoresPairDayKey(row);
+    if(!key||key.startsWith('|'))continue;
+    if(!apiByPair.has(key))apiByPair.set(key,[]);
+    apiByPair.get(key).push(row);
+  }
+
+  return (htmlRows||[]).map(htmlRow=>{
+    const key=squashScoresPairDayKey(htmlRow);
+    const candidates=apiByPair.get(key)||[];
+    let apiRow=null;
+
+    if(candidates.length===1){
+      apiRow=candidates[0];
+    }else if(candidates.length>1&&htmlRow.time){
+      const wanted=displayTime24(htmlRow.time||'');
+      apiRow=candidates.find(x=>displayTime24(x.time||'')===wanted)||null;
+    }
+
+    const result=String(htmlRow.result||apiRow?.result||'').trim();
+    const htmlStatus=String(htmlRow.status||'').toLowerCase();
+
+    // The rendered in-progress page is the authority for live/completed state:
+    // non-bold player names + scoring = live; bold player name = completed.
+    // The API is used only to fill missing score/time/location fields.
+    const status=htmlStatus==='completed'?'completed':(result?'live':htmlStatus||'scheduled');
+
+    return {
+      ...(apiRow||{}),
+      ...htmlRow,
+      date:htmlRow.date||apiRow?.date||perthTodayIso(),
+      time:htmlRow.time||apiRow?.time||'',
+      result,
+      status,
+      venue:htmlRow.venue||apiRow?.venue||'',
+      court:htmlRow.court||apiRow?.court||'',
+      event:htmlRow.event||apiRow?.event||'',
+      round:htmlRow.round||apiRow?.round||'',
+      liveSource:'SquashScores'
+    };
+  });
+}
+
+async function readSquashScoresCurrentFeed(players){
+  // Use SquashScores' public overview API as the browser data source.
+  // It is the structured data behind the SquashScores overview and contains
+  // player names, current game scores and match state. Do not scrape the
+  // rendered inprogress.php page from GitHub Pages: cross-origin HTML fetching
+  // is fragile and was the reason the previous change could return no rows.
+  const payload=await fetchSquashScoresApi();
+  return parseSquashScoresApi(payload,players||[]);
+}
+
 
 const flatText=v=>{try{return typeof v==='string'?v:JSON.stringify(v)}catch{return String(v||'')}};
 const basicNorm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’‘]/g,"'").toLowerCase().replace(/[^a-z0-9']+/g,' ').trim();
@@ -1038,13 +1320,12 @@ function perthNowMinuteValue(){
 }
 
 function isMatchCurrent(m){
+  // Live state comes from SquashScores, not from the scheduled clock time.
+  // A match becomes live when SquashScores supplies scoring while the match
+  // is still in progress. Once SquashScores marks it completed, it is no
+  // longer live. This is the same state used by every match view.
   const status=String(m?.status||'').toLowerCase();
-  if(status==='live')return true;
-  if(status==='completed'||status==='played'||m?.result||m?.winner)return false;
-  const start=matchLocalMinuteValue(m);
-  if(start===null)return false;
-  const now=perthNowMinuteValue();
-  return now>=start&&now<start+LIVE_MATCH_WINDOW_MINUTES;
+  return status==='live';
 }
 
 
@@ -1066,11 +1347,18 @@ function canShowPublishedResult(m){
 }
 
 const isPast=m=>{
+  const start=matchLocalMinuteValue(m);
+  const now=perthNowMinuteValue();
+
+  // A fixture whose scheduled start is still in the future can never be a
+  // past match, even if stale result/status metadata survived from an older
+  // schedule slot.
+  if(start!==null&&now<start)return false;
+
   const status=String(m?.status||'').toLowerCase();
   if(status==='completed'||status==='played')return true;
   if(status!=='live'&&(!!m?.result||!!m?.winner))return true;
-  const start=matchLocalMinuteValue(m);
-  return start!==null&&perthNowMinuteValue()>=start+LIVE_MATCH_WINDOW_MINUTES;
+  return start!==null&&now>=start+LIVE_MATCH_WINDOW_MINUTES;
 };
 const matchHas=(m,name)=>{const p=playerByName(name);return !!(p?.officialPlayerId&&(String(m.player1Id||'')===String(p.officialPlayerId)||String(m.player2Id||'')===String(p.officialPlayerId)))||sameName(m.player1,name)||sameName(m.player2,name);};
 const opponentFor=(m,name)=>sameName(m.player1,name)?m.player2:m.player1;
@@ -1244,16 +1532,124 @@ function liveVenueTvButton(venueName){
 }
 
 function currentLiveMatches(){
+  const today=perthTodayIso();
   const base=(data.baseMatches||data.matches||[])
     .filter(m=>!m?.playerDetailOnly);
 
-  // Apply the latest SquashScores state first, exactly like Courts/Favourites.
-  const overlaid=ssOverlay(base,squashScoresLatestLive)
-    .map(normaliseMatch)
-    .map(normalizeSelfMatchAsBye);
+  const pairKey=m=>[ssNorm(m?.player1),ssNorm(m?.player2)].sort().join('|');
+  const samePair=(a,b)=>!!a&&!!b&&(
+    (sameName(a?.player1,b?.player1)&&sameName(a?.player2,b?.player2))||
+    (sameName(a?.player1,b?.player2)&&sameName(a?.player2,b?.player1))
+  );
+  const minute=v=>{
+    const m=displayTime24(v||'').match(/^(\d{1,2}):(\d{2})$/);
+    return m?Number(m[1])*60+Number(m[2]):null;
+  };
 
-  return overlaid
-    .filter(m=>isMatchCurrent(m))
+  const enrich=row=>{
+    const rowDate=canonicalDate(row?.date||'')||today;
+    const same=base.filter(m=>
+      canonicalDate(m?.date||'')===rowDate&&
+      samePair(m,row)
+    );
+
+    let official=null;
+    const wantedTime=displayTime24(row?.time||'');
+    if(wantedTime){
+      official=same.find(m=>displayTime24(m?.time||'')===wantedTime)||null;
+    }
+    if(!official&&same.length===1)official=same[0];
+    if(!official&&same.length>1&&wantedTime){
+      const wanted=minute(wantedTime);
+      if(wanted!==null){
+        const ranked=same
+          .map(m=>({m,diff:Math.abs((minute(m?.time||'')??99999)-wanted)}))
+          .sort((a,b)=>a.diff-b.diff);
+        if(ranked[0]&&ranked[0].diff<=180)official=ranked[0].m;
+      }
+    }
+
+    // If SquashScores formatted one player name differently, use the parsed
+    // court plus one matching player and the nearest time as a conservative
+    // venue-enrichment fallback.  This never creates/removes a live match; it
+    // only attaches the official venue/court to an already-live SquashScores row.
+    if(!official){
+      const liveCourt=squashScoresCourtToken(row?.court||'',{allowBareNumber:true});
+      const wanted=minute(wantedTime);
+      if(liveCourt&&wanted!==null){
+        const onePlayer=base.filter(m=>{
+          if(canonicalDate(m?.date||'')!==rowDate)return false;
+          const baseCourt=normalizeLiveStreamCourt(actualCourt(m)||m?.court||'');
+          if(baseCourt!==normalizeLiveStreamCourt(liveCourt))return false;
+          return (
+            sameName(m?.player1,row?.player1)||sameName(m?.player2,row?.player1)||
+            sameName(m?.player1,row?.player2)||sameName(m?.player2,row?.player2)
+          );
+        });
+        const ranked=onePlayer
+          .map(m=>({m,diff:Math.abs((minute(m?.time||'')??99999)-wanted)}))
+          .sort((a,b)=>a.diff-b.diff);
+        if(ranked[0]&&ranked[0].diff<=180&&(!ranked[1]||ranked[0].diff<ranked[1].diff)){
+          official=ranked[0].m;
+        }
+      }
+    }
+
+    // SquashScores is the source of truth for the Live page.  TournamentSoftware
+    // is used only to enrich the row with official event/player IDs/location when
+    // a corresponding fixture exists.  A SquashScores live match is NEVER hidden
+    // merely because the official schedule copy is missing/moved/stale.
+    if(!official){
+      return normalizeSelfMatchAsBye(normaliseMatch({
+        ...row,
+        date:rowDate,
+        status:'live',
+        liveSource:'SquashScores',
+        resultSource:'SquashScores'
+      }));
+    }
+
+    return normalizeSelfMatchAsBye(normaliseMatch({
+      ...official,
+      date:rowDate||official.date,
+      time:row.time||official.time,
+      // A numeric SquashScores location such as "4" is a court label, not
+      // a venue. Prefer the official venue unless SquashScores names one of the
+      // three tournament venues explicitly.
+      venue:canonicalVenue(row.venue)||official.venue,
+      court:squashScoresCourtToken(row.court||'',{allowBareNumber:true})||official.court,
+      event:official.event||row.event,
+      round:official.round||row.round,
+      result:row.result?orientLiveResultToExisting(official,row):(official.result||''),
+      status:'live',
+      liveSource:'SquashScores',
+      resultSource:'SquashScores',
+      squashScoresMatchId:row.squashScoresMatchId||official.squashScoresMatchId||null
+    }));
+  };
+
+  const liveRows=(squashScoresLatestFeed||[])
+    .filter(m=>{
+      const d=canonicalDate(m?.date||'')||today;
+      return d===today&&
+        String(m?.status||'').toLowerCase()==='live'&&
+        !!String(m?.result||'').trim();
+    });
+
+  const deduped=new Map();
+  for(const row of liveRows){
+    const key=String(row?.squashScoresMatchId||'').trim()||[
+      canonicalDate(row?.date||'')||today,
+      pairKey(row)
+    ].join('|');
+    const prev=deduped.get(key);
+    if(!prev||String(row?.result||'').length>=String(prev?.result||'').length){
+      deduped.set(key,row);
+    }
+  }
+
+  return [...deduped.values()]
+    .map(enrich)
     .sort((a,b)=>{
       const av=liveVenueGroup(a),bv=liveVenueGroup(b);
       if(av.order!==bv.order)return av.order-bv.order;
@@ -1389,12 +1785,14 @@ function renderLivePage(){
     `;
 
     if(group.matches.length){
-      // Desktop uses the framed Vic Park-style layout that was previously
-      // approved for Live. Mobile/tablet keeps the exact shared Vic Park row
-      // renderer, because that renderer owns the responsive time/venue/age/
-      // Watch-live metadata strip used by Vic Park on small screens.
+      // Use the exact same match-card renderer and state styling as the
+      // Courts/Vic Park views so the Live page stays visually consistent.
+      // IMPORTANT: Live deliberately uses the SAME renderer as Vic Park.
+      // Do not maintain a separate Live match-card renderer: the mobile Vic Park
+      // CSS moves time/location/age into .vic-mobile-meta, and that markup must
+      // exist on Live as well.
       html+=group.matches
-        .map(m=>`<div class="live-desktop-row-wrap">${liveVicParkMatchRow(m,VIC_PARK_PLAYERS||[])}</div><div class="live-compact-row-wrap">${compactScheduleRow(m,VIC_PARK_PLAYERS||[])}</div>`)
+        .map(m=>compactScheduleRow(m,VIC_PARK_PLAYERS||[]))
         .join('');
     }else{
       html+=`
@@ -1540,16 +1938,6 @@ function ensureLivePageStyles(){
 
     #live .live-venue-empty{
       margin-bottom:10px;
-    }
-
-    /* Live uses the approved framed Vic Park desktop card, while small screens
-       use the exact shared Vic Park responsive row. Keeping both renderers in
-       the DOM also makes resizing/orientation changes instant and reliable. */
-    #live .live-desktop-row-wrap{display:block}
-    #live .live-compact-row-wrap{display:none}
-    @media(max-width:1180px){
-      #live .live-desktop-row-wrap{display:none!important}
-      #live .live-compact-row-wrap{display:block!important}
     }
 
     /* Live match cards deliberately use the same visual language as the
@@ -1987,7 +2375,12 @@ async function setPage(id){
   history.replaceState(null,'','#'+id);
   scrollTo({top:0,behavior:'smooth'});
   try{
-    if(['glass','vicpark','favorites','live'].includes(id))startSquashScoresPolling();
+    if(['glass','vicpark','favorites','live'].includes(id)){
+      startSquashScoresPolling();
+      // Hash navigation does not reload index.html. Re-read live-streams.json
+      // whenever a match page is opened so changed video URLs take effect now.
+      await loadLiveStreamConfig({rerenderPage:false});
+    }
     if(id==='players'&&!playersRendered){showLoading(id);await ensurePlayersData();renderPlayers();playersRendered=true;}
     if(id==='glass'&&!glassReady){showLoading(id);await ensureMatchesData();setupGlass();glassReady=true;}
     if(id==='vicpark'&&!vicParkReady){showLoading(id);await ensureVicParkData();setupVicPark();vicParkReady=true;}
@@ -2297,6 +2690,7 @@ function scoreWinnerName(m){
 
 let liveStreamConfig={streams:[]};
 let liveStreamConfigLoaded=false;
+let liveStreamConfigRequestId=0;
 
 function normalizeLiveStreamCourt(v){
   const s=String(v||'').replace(/\s+/g,' ').trim();
@@ -2450,16 +2844,23 @@ function openLiveVideoWindow(url,existingPopup=null){
   popup.focus();
 }
 
-async function loadLiveStreamConfig(){
-  const applyConfig=json=>{
-    liveStreamConfig={
-      streams:Array.isArray(json?.streams)?json.streams:[]
-    };
+async function loadLiveStreamConfig({rerenderPage=true}={}){
+  // The stream URLs expire/change during the tournament.  On the published
+  // site read the JSON directly from the repository first instead of trusting
+  // the GitHub Pages copy, which can lag behind a commit at the CDN layer.
+  // The same-origin file remains a fallback, and file:// keeps the JS mirror.
+  const requestId=++liveStreamConfigRequestId;
+
+  const applyConfig=(json,source)=>{
+    if(requestId!==liveStreamConfigRequestId)return liveStreamConfig;
+    liveStreamConfig={streams:Array.isArray(json?.streams)?json.streams:[]};
     liveStreamConfigLoaded=true;
+    console.info(`Live stream config refreshed from ${source}: ${liveStreamConfig.streams.length} stream(s)`);
     return liveStreamConfig;
   };
 
   const rerender=()=>{
+    if(!rerenderPage||requestId!==liveStreamConfigRequestId)return;
     const page=location.hash.slice(1)||'home';
     if(page==='vicpark'&&vicParkReady)setupVicPark();
     else if(page==='glass'&&glassReady)renderFeatureCourt(selectedFeatureDate);
@@ -2467,27 +2868,41 @@ async function loadLiveStreamConfig(){
     else if(page==='live')renderLivePage();
   };
 
-  // Normal published website: JSON is the source of truth.
+  const fetchJson=async(url,label)=>{
+    const sep=url.includes('?')?'&':'?';
+    const response=await fetch(`${url}${sep}streamRefresh=${Date.now()}`,{
+      cache:'no-store',
+      mode:'cors',
+      headers:{'Cache-Control':'no-cache','Pragma':'no-cache'}
+    });
+    if(!response.ok)throw new Error(`${label} HTTP ${response.status}`);
+    return response.json();
+  };
+
   if(location.protocol!=='file:'){
-    try{
-      const response=await fetch(`live-streams.json?_=${Date.now()}`,{cache:'no-store'});
-      if(!response.ok)throw new Error(`HTTP ${response.status}`);
-      const config=applyConfig(await response.json());
-      rerender();
-      return config;
-    }catch(e){
-      console.warn('live-streams.json unavailable; trying local-browser fallback:',e?.message||e);
+    const sources=[
+      ['https://raw.githubusercontent.com/RogerSchmidlin/WorldSquashMasters2026/main/live-streams.json','GitHub live-streams.json'],
+      ['live-streams.json','site live-streams.json']
+    ];
+
+    for(const [url,label] of sources){
+      try{
+        const config=applyConfig(await fetchJson(url,label),label);
+        rerender();
+        return config;
+      }catch(e){
+        console.warn(`${label} unavailable:`,e?.message||e);
+      }
     }
   }
 
-  // Local file:// pages cannot reliably fetch JSON in Chrome/Edge.
-  // Load a generated JS mirror instead so direct stream links still work.
   try{
-    if(!window.LIVE_STREAM_CONFIG){
-      await loadScriptOnce(`live-streams.js?_=${Date.now()}`);
+    if(location.protocol==='file:'){
+      window.LIVE_STREAM_CONFIG=undefined;
+      await loadScriptOnce(`live-streams.js?streamRefresh=${Date.now()}`);
     }
     if(window.LIVE_STREAM_CONFIG){
-      const config=applyConfig(window.LIVE_STREAM_CONFIG);
+      const config=applyConfig(window.LIVE_STREAM_CONFIG,'live-streams.js fallback');
       rerender();
       return config;
     }
@@ -2495,8 +2910,10 @@ async function loadLiveStreamConfig(){
     console.warn('live-streams.js fallback unavailable:',e?.message||e);
   }
 
-  liveStreamConfig={streams:[]};
-  liveStreamConfigLoaded=true;
+  if(requestId===liveStreamConfigRequestId){
+    liveStreamConfig={streams:[]};
+    liveStreamConfigLoaded=true;
+  }
   rerender();
   return liveStreamConfig;
 }
@@ -2810,8 +3227,26 @@ function splitUpcomingAndHistoryRows(rows,getMatch){
   for(const row of rows||[]){
     const m=getMatch(row);
     const d=canonicalDate(m?.date||'');
-    if(d&&d<today)history.push(row);
-    else upcoming.push(row);
+
+    // History is a record of matches that are actually known to have been
+    // played. A stale scheduled row from an old draw/schedule snapshot must
+    // never appear as a past match merely because its stored date is old.
+    // This is especially important when TournamentSoftware later moves a
+    // fixture: the obsolete old slot can otherwise sit in History while the
+    // real fixture is still upcoming.
+    if(d&&d<today){
+      const status=String(m?.status||'').toLowerCase();
+      const verifiedPast=
+        status==='completed' ||
+        status==='played' ||
+        !!String(m?.result||'').trim() ||
+        !!String(m?.winner||'').trim();
+
+      if(verifiedPast)history.push(row);
+      continue;
+    }
+
+    upcoming.push(row);
   }
 
   const asc=(a,b)=>{
@@ -2994,9 +3429,60 @@ function makeHomeSummary(source){
 }
 
 
+const SQUASH_SCORES_RESULT_CACHE_KEY='wsm2026SquashScoresCompletedScoresV1';
+
+function squashScoresCacheKey(m){
+  return `${canonicalDate(m?.date||'')}|${[ssNorm(m?.player1),ssNorm(m?.player2)].sort().join('|')}`;
+}
+function loadSquashScoresCompletedCache(){
+  try{
+    const rows=JSON.parse(localStorage.getItem(SQUASH_SCORES_RESULT_CACHE_KEY)||'[]');
+    const today=perthTodayIso();
+    return Array.isArray(rows)?rows.filter(m=>
+      canonicalDate(m?.date||'')===today &&
+      String(m?.status||'').toLowerCase()==='completed' &&
+      !!String(m?.result||'').trim()
+    ):[];
+  }catch{return []}
+}
+function saveSquashScoresCompletedCache(rows){
+  try{
+    const today=perthTodayIso();
+    const completed=(rows||[]).filter(m=>
+      canonicalDate(m?.date||'')===today &&
+      String(m?.status||'').toLowerCase()==='completed' &&
+      !!String(m?.result||'').trim()
+    );
+    localStorage.setItem(SQUASH_SCORES_RESULT_CACHE_KEY,JSON.stringify(completed));
+  }catch{}
+}
+function mergeSquashScoresSnapshot(rows){
+  const today=perthTodayIso();
+  const map=new Map();
+
+  // Completed scores are retained for the rest of the Perth day, even if
+  // SquashScores removes that finished match from the live overview. Live rows
+  // are NEVER retained when absent from the newest successful poll.
+  for(const old of loadSquashScoresCompletedCache())map.set(squashScoresCacheKey(old),old);
+
+  for(const row of rows||[]){
+    if(canonicalDate(row?.date||'')!==today)continue;
+    const status=String(row?.status||'').toLowerCase();
+    const key=squashScoresCacheKey(row);
+    if(!key||key.startsWith('|'))continue;
+    if(status==='live')map.set(key,row);
+    else if(status==='completed'&&String(row?.result||'').trim())map.set(key,row);
+  }
+
+  const merged=[...map.values()];
+  saveSquashScoresCompletedCache(merged);
+  return merged;
+}
+
 let squashScoresPollTimer=null;
-let squashScoresLatestLive=[];
-let squashScoresLatestFingerprint='';
+let squashScoresLatestFeed=[];
+let squashScoresLatestLive=loadSquashScoresCompletedCache();
+let squashScoresLatestFingerprint=squashScoresFingerprint(squashScoresLatestLive);
 let squashScoresLastVicParkFingerprint='';
 function squashScoresFingerprint(rows){
   return JSON.stringify((rows||[]).map(m=>[
@@ -3008,7 +3494,6 @@ function squashScoresFingerprint(rows){
 
 async function updateSquashScoresLive(){
   try{
-    const payload=await fetchSquashScoresApi();
     const known=[...(data.players||[]),...(vicParkPlayers||[])];
     const uniq=[];const seen=new Set();
     for(const p of known){
@@ -3016,59 +3501,36 @@ async function updateSquashScoresLive(){
       if(k&&!seen.has(k)){seen.add(k);uniq.push(p)}
     }
 
-    let live=parseSquashScoresApi(payload,uniq);
-
-    const apiUseful=live.some(m=>
-      !!m.result ||
-      String(m.status||'').toLowerCase()==='live' ||
-      String(m.status||'').toLowerCase()==='completed'
-    );
-
-    // Restore the original rendered-overview parser as a second path. This was
-    // the mechanism used by the early 5-second live-score implementation.
-    if(!apiUseful){
-      try{
-        const html=await fetchSquashScoresHtml();
-        const htmlRows=parseSquashScoresHtml(html,uniq);
-        const htmlUseful=htmlRows.filter(m=>
-          !!m.result ||
-          String(m.status||'').toLowerCase()==='live' ||
-          String(m.status||'').toLowerCase()==='completed'
-        );
-
-        if(htmlUseful.length){
-          live=htmlRows;
-          console.log(
-            `SquashScores: API contained no usable scores; HTML fallback parsed `+
-            `${htmlUseful.length} live/completed score row(s).`
-          );
-        }
-      }catch(e){
-        console.warn('SquashScores HTML fallback unavailable:',e?.message||e);
-      }
-    }
+    // Poll the SquashScores public overview API every cycle. It is the
+    // structured source used for live scores/state; the polling loop itself is
+    // self-scheduled so slow requests cannot pile up and freeze updates.
+    const live=await readSquashScoresCurrentFeed(uniq);
+    // Keep the complete newest SquashScores response separately. The Live page
+    // renders directly from this feed so no current match can be lost because
+    // TournamentSoftware has a stale/moved/missing copy of the fixture.
+    squashScoresLatestFeed=(live||[]).map(m=>({...m,date:canonicalDate(m?.date||'')||perthTodayIso()}));
 
     console.log(
-      `SquashScores Vic Park feed: ${live.length} match row(s), `+
-      `${live.filter(m=>m.result).length} with scores.`
+      `SquashScores API feed: ${live.length} row(s), `+
+      `${live.filter(m=>m.result).length} with scores, `+
+      `${live.filter(m=>String(m.status||'').toLowerCase()==='live'&&m.result).length} live scored match(es), `+
+      `${live.filter(m=>String(m.status||'').toLowerCase()==='completed').length} completed match(es).`
     );
 
-    if(!live.length)return;
-
-    const fingerprint=squashScoresFingerprint(live);
+    const snapshot=mergeSquashScoresSnapshot(live);
+    const fingerprint=squashScoresFingerprint(snapshot);
     const fullPagesChanged=fingerprint!==squashScoresLatestFingerprint;
 
-    // Courts/Fav use the latest SquashScores snapshot at render time.
-    // Do NOT mutate the full tournament dataset.
-    squashScoresLatestLive=live;
+    // Courts/Fav/Vic Park all consume the same current SquashScores snapshot.
+    // A successful empty poll clears old LIVE rows but retains today's explicitly
+    // completed scored rows so recent results do not disappear.
+    squashScoresLatestLive=snapshot;
     squashScoresLatestFingerprint=fingerprint;
 
     let vicUpdated=false;
 
-    // Preserve the working Vic Park mechanism exactly:
-    // small relevant subset first, then overlay live scores.
     if(vicParkDataReady){
-      vicParkMatches=ssOverlay(window.__vicParkBaseMatches||vicParkMatches,live)
+      vicParkMatches=ssOverlay(window.__vicParkBaseMatches||vicParkMatches,snapshot)
         .map(normaliseMatch)
         .map(normalizeSelfMatchAsBye);
       squashScoresLastVicParkFingerprint=fingerprint;
@@ -3083,18 +3545,52 @@ async function updateSquashScoresLive(){
     }else if(page==='vicpark'&&vicParkReady&&vicUpdated){
       setupVicPark();
     }else if(page==='live'){
+      // Live is intentionally re-rendered after every successful poll, even
+      // when the count stays the same, because an individual game score may
+      // have changed while the same players remain on court.
       renderLivePage();
     }
   }catch(e){
     console.warn('SquashScores live unavailable:',e?.message||e);
   }
 }
+
+let squashScoresPollingStarted=false;
+let squashScoresPollInFlight=false;
+
+async function squashScoresPollTick(){
+  if(squashScoresPollTimer){
+    clearTimeout(squashScoresPollTimer);
+    squashScoresPollTimer=null;
+  }
+
+  if(document.visibilityState==='visible'&&!squashScoresPollInFlight){
+    squashScoresPollInFlight=true;
+    try{
+      await updateSquashScoresLive();
+    }finally{
+      squashScoresPollInFlight=false;
+    }
+  }
+
+  // Self-schedule after each completed attempt. Unlike setInterval, a slow or
+  // hung network request cannot create overlapping polls and eventually stall
+  // the browser. fetchSquashScoresRequest also aborts any request after 8 s.
+  squashScoresPollTimer=setTimeout(squashScoresPollTick,SQUASH_SCORES_POLL_MS);
+}
+
 function startSquashScoresPolling(){
-  if(squashScoresPollTimer)return;
-  const tick=()=>{if(document.visibilityState==='visible')updateSquashScoresLive()};
-  tick();
-  squashScoresPollTimer=setInterval(tick,SQUASH_SCORES_POLL_MS);
-  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')tick()});
+  if(squashScoresPollingStarted)return;
+  squashScoresPollingStarted=true;
+  squashScoresPollTick();
+  document.addEventListener('visibilitychange',()=>{
+    if(document.visibilityState!=='visible')return;
+    if(squashScoresPollTimer){
+      clearTimeout(squashScoresPollTimer);
+      squashScoresPollTimer=null;
+    }
+    if(!squashScoresPollInFlight)squashScoresPollTick();
+  });
 }
 
 const AUTO_REFRESH_CHECK_MS=60*1000;
