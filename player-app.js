@@ -2014,10 +2014,17 @@ function dedupePlayerDetailMatches(rows){
   // so the selected player's slot is simply date+time. We deliberately do not
   // depend on sometimes-missing/stale historical player IDs here.
   const slots=new Map();
+  const todayForConflictResolution=perthTodayPlayerIso();
 
   out.forEach((m,i)=>{
     const d=date(m),t=time(m);
     if(!d||!t)return;
+
+    // History must be lossless. Never suppress a past fixture merely because
+    // another historical candidate occupies the same nominal date/time slot.
+    // Exact duplicates were already collapsed above. Conflict arbitration is
+    // retained only for today/future, where it protects the live schedule.
+    if(d<todayForConflictResolution)return;
 
     const key=`${d}|${t}`;
     if(!slots.has(key))slots.set(key,[]);
@@ -2342,15 +2349,11 @@ if(!p){
   const done=ms
     .filter(m=>{
       const d=playerMatchDateKey(m);
-      if(!d||d>=today)return false;
 
-      // Do not turn a stale scheduled slot into History just because its
-      // stored date is in the past. History contains only fixtures that have
-      // actual completion/result evidence. Moved upcoming fixtures can leave
-      // obsolete schedule rows behind, and those rows must stay hidden.
-      const status=String(m?.status||'').toLowerCase();
-      return status==='completed' || status==='played' ||
-        !!String(m?.result||'').trim() || !!String(m?.winner||'').trim();
+      // Player History follows the same rollover rule as Vic Park/Fav:
+      // every published fixture dated before today remains visible, whether
+      // or not a result/status has been published yet.
+      return d&&d<today;
     })
     .sort((a,b)=>{
       const da=playerMatchDateKey(a),db=playerMatchDateKey(b);

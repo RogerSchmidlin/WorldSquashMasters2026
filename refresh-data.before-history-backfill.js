@@ -6646,7 +6646,6 @@ function assertDeterministicDrawCompleteness(
 }
 
 function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesRows,{preserveHistory=true}={}){
-  // WSM_HISTORY_BACKFILL_V1: authoritative past fixtures may be added after day rollover.
   const today=perthTodayIsoRefresh();
 
   const realPlayer=name=>!!name&&!/^(?:TBD|Bye)$/i.test(clean(name));
@@ -6761,14 +6760,14 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
   // authorityCandidates. That meant a perfectly valid schedule row could be
   // absent from the site whenever the draw-tree extractor missed that edge.
   //
-  // Use concrete TournamentSoftware Match rows as fixture evidence. Current/future
-  // rows still require a proven location; historical rows do not. Do not let a pairing
+  // Only use concrete current/future Match rows with a proven location (or an
+  // exact draw observation that can prove the location). Do not let a pairing
   // recovered solely from an old published opponent independently create a new
   // fixture. Thus the bracket tree still wins every contradiction, while the
   // Match schedule safely fills genuine gaps for every player/court.
   for(const m0 of fresh){
     const d=dateKey(m0);
-    if(!d)continue;
+    if(!d||d<today)continue;
     if(!realPlayer(m0.player1)||!realPlayer(m0.player2))continue;
 
     const recovery=clean(m0.recoveredFrom||'');
@@ -6786,7 +6785,7 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
       exactDrawRows.length>0;
 
     if(!directEnough)continue;
-    if(d>=today&&!validLocation(m0)&&!exactDrawHasLocation)continue;
+    if(!validLocation(m0)&&!exactDrawHasLocation)continue;
 
     const m={
       ...m0,
@@ -6940,7 +6939,7 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
 
   const out=[];
 
-  // Preserve existing immutable history first; authoritative history is merged below.
+  // Preserve immutable history only.
   if(preserveHistory){
     for(const old0 of existingRows||[]){
       const old={...old0,court:sanitizeCourtValue(old0.court),rawText:''};
@@ -6957,8 +6956,7 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
   for(const auth0 of authoritative){
     const d=dateKey(auth0);
     if(!d)continue;
-    // Existing history was copied above, but authoritative rows from older dates
-    // must still be allowed through so missing history can be backfilled.
+    if(preserveHistory&&d<today)continue;
 
     const m={...auth0};
 

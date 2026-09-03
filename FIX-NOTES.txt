@@ -1,0 +1,66 @@
+WORLD SQUASH MASTERS 2026 - REAL HISTORY BACKFILL FIX
+=====================================================
+
+Root cause
+----------
+The website display was not the main remaining problem. refresh-data.js preserved
+history that already existed, but deliberately skipped newly discovered official
+TournamentSoftware fixtures as soon as their date was before "today".
+
+That means a match could be visible on 2 September, then be absent from the static
+history on 3 September if it had not already been persisted in matches-data.js.
+Changing the History display filter cannot recover a row that is missing from the
+dataset.
+
+Concrete test case
+------------------
+Roger Schmidlin vs Bodo Deutschmann, 2 September 2026, 15:30, Squashworld
+Mirrabooka SC12 is present in the authoritative draw evidence. The fixed refresh
+is allowed to backfill this past fixture instead of rejecting it because the date
+has rolled over.
+
+What this package changes
+-------------------------
+1. app.js / index.html
+   - Retains the previous date-only History rule for Vic Park & Friends and Fav
+     Players.
+   - Uses the full static match dataset rather than relying on the compact Vic Park
+     file to decide what history exists.
+
+2. player-app.js / player.html
+   - Retains date-only player History.
+   - Historical rows are never removed by the player page's same-time conflict
+     resolver. Only literal exact duplicates are collapsed in History.
+   - Current/future conflict protection remains unchanged.
+
+3. apply-history-refresh-fix.js
+   - Safely patches the CURRENT refresh-data.js in your repository in place.
+   - Keeps existing history.
+   - Allows authoritative TournamentSoftware Draw/Matches rows from past dates to
+     be added after midnight.
+   - Past rows do NOT need venue/court merely to survive History; current/future
+     rows keep the strict venue/court safety requirement.
+   - Makes a backup: refresh-data.before-history-backfill.js
+   - Refuses to patch if the expected current code cannot be located uniquely.
+   - Syntax-checks the patched file before replacing refresh-data.js.
+
+IMPORTANT - one-time data reconstruction is required
+-----------------------------------------------------
+This corrects the earlier advice that no refresh was needed. The missing rows are
+already absent from the persisted data, so they must be reconstructed once.
+
+From the repository root:
+
+  1. Replace app.js, index.html, player-app.js and player.html with this package.
+  2. Copy apply-history-refresh-fix.js into the same folder as refresh-data.js.
+  3. Run:
+       node apply-history-refresh-fix.js
+  4. Run the matches-only refresh:
+       npm run refresh -- :matches
+  5. Commit/push the changed website/data files as usual.
+
+The :matches run is the intended one-time reconstruction. It does not require a
+SquashLevels refresh.
+
+After this, normal future refreshes use the patched historical-backfill behavior,
+so a day rollover no longer makes valid matches impossible to add to History.

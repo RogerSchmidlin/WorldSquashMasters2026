@@ -234,36 +234,53 @@ async function ensureMatchesData(){
 async function ensureVicParkData(){
   if(vicParkDataReady)return;
 
-  // Prefer the small Vic Park file for speed, but never allow a stale/empty
-  // compact file to hide fixtures that exist in the authoritative match data.
+  // Correctness first: derive Vic Park & Friends from the SAME full match
+  // dataset used by the rest of the site. The compact vicpark-data.js is an
+  // optimisation only; it must never be allowed to hide older fixtures after
+  // the date rolls over.
   let pack=null;
   try{
     await loadScriptOnce('vicpark-data.js');
     pack=window.VIC_PARK_DATA;
   }catch{}
 
-  if(pack&&Array.isArray(pack.players)&&Array.isArray(pack.matches)&&pack.matches.length){
-    vicParkPlayers=pack.players;
-    playerIdentityIndexVicCount=-1;
-    vicParkMatches=resolveKnownOpponentsFromTbdSlots(pack.matches.map(normaliseMatch).map(normalizeSelfMatchAsBye));
-    window.__vicParkBaseMatches=vicParkMatches.map(m=>({...m}));
-  }else{
+  try{
     await ensureMatchesData();
-    vicParkPlayers=data.players;
-
-    const trackedNames=VIC_PARK_PLAYERS;
-    const trackedPlayers=(data.players||[]).filter(p=>trackedNames.some(n=>sameName(p.name,n)));
-    const trackedIds=new Set(trackedPlayers.map(p=>String(p.officialPlayerId||'')).filter(Boolean));
-
-    vicParkMatches=(data.matches||[]).filter(m=>
-      trackedNames.some(n=>sameName(m.player1,n)||sameName(m.player2,n)) ||
-      (m.player1Id&&trackedIds.has(String(m.player1Id))) ||
-      (m.player2Id&&trackedIds.has(String(m.player2Id)))
-    );
-
-    window.__vicParkBaseMatches=vicParkMatches.map(m=>({...m}));
+  }catch(e){
+    console.warn('Full match data was not available for Vic Park; using compact data.',e);
   }
 
+  const trackedNames=VIC_PARK_PLAYERS;
+  const allPlayers=Array.isArray(data.players)&&data.players.length
+    ? data.players
+    : (pack&&Array.isArray(pack.players)?pack.players:[]);
+  const trackedPlayers=allPlayers.filter(p=>trackedNames.some(n=>sameName(p.name,n)));
+  const trackedIds=new Set(trackedPlayers.map(p=>String(p.officialPlayerId||'')).filter(Boolean));
+
+  const fullTracked=(Array.isArray(data.matches)?data.matches:[]).filter(m=>
+    trackedNames.some(n=>sameName(m.player1,n)||sameName(m.player2,n)) ||
+    (m.player1Id&&trackedIds.has(String(m.player1Id))) ||
+    (m.player2Id&&trackedIds.has(String(m.player2Id)))
+  );
+
+  if(fullTracked.length){
+    vicParkPlayers=allPlayers;
+    playerIdentityIndexVicCount=-1;
+    vicParkMatches=fullTracked;
+  }else if(pack&&Array.isArray(pack.matches)){
+    vicParkPlayers=Array.isArray(pack.players)?pack.players:allPlayers;
+    playerIdentityIndexVicCount=-1;
+    vicParkMatches=resolveKnownOpponentsFromTbdSlots(
+      pack.matches.map(normaliseMatch).map(normalizeSelfMatchAsBye)
+    );
+  }else{
+    vicParkPlayers=allPlayers;
+    vicParkMatches=[];
+  }
+
+  // Immutable static base. Live SquashScores overlays can enrich this in the
+  // browser, but they cannot remove a published TournamentSoftware fixture.
+  window.__vicParkBaseMatches=vicParkMatches.map(m=>({...m}));
   vicParkDataReady=true;
 }
 
@@ -3544,21 +3561,13 @@ function splitUpcomingAndHistoryRows(rows,getMatch){
     const m=getMatch(row);
     const d=canonicalDate(m?.date||'');
 
-    // History is a record of matches that are actually known to have been
-    // played. A stale scheduled row from an old draw/schedule snapshot must
-    // never appear as a past match merely because its stored date is old.
-    // This is especially important when TournamentSoftware later moves a
-    // fixture: the obsolete old slot can otherwise sit in History while the
-    // real fixture is still upcoming.
+    // Day rollover is DATE ONLY. If a fixture was published for a previous
+    // day, keep it in History even when TournamentSoftware has not published
+    // a score/result/status. This shared splitter is used by BOTH Vic Park &
+    // Friends and Fav Players, so neither page can silently lose yesterday's
+    // scheduled fixtures at midnight.
     if(d&&d<today){
-      const status=String(m?.status||'').toLowerCase();
-      const verifiedPast=
-        status==='completed' ||
-        status==='played' ||
-        !!String(m?.result||'').trim() ||
-        !!String(m?.winner||'').trim();
-
-      if(verifiedPast)history.push(row);
+      history.push(row);
       continue;
     }
 

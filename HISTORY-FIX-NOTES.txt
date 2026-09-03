@@ -1,0 +1,16 @@
+World Squash Masters 2026 - Vic Park + Fav History ledger fix
+Date: 2026-09-03
+
+Replace these files in the website root:
+- app.js
+- index.html
+
+What changed:
+1. SquashScores rows are archived across tournament days instead of being discarded at Perth midnight.
+2. Vic Park and Fav Players use the same persistent past-match history ledger.
+3. Past SquashScores matches missing from TournamentSoftware's published subset are added to History.
+4. The existing deployed refresh-matches.json is read as a History-only recovery source. This is NOT a TournamentSoftware refresh.
+5. Today's Live/current-match filtering remains separate and unchanged.
+6. index.html uses a new app.js revision URL to force browsers/GitHub Pages to load this app.js instead of a cached previous fix.
+
+No data files are included or overwritten by this ZIP.
