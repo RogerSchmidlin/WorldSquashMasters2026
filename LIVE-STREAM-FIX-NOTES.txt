@@ -1,0 +1,14 @@
+World Squash Masters - mixed live stream playback fix
+
+Changed files:
+- app.js
+- index.html (cache revision only)
+
+Playback rules:
+- youtube.com / youtu.be / youtube-nocookie.com -> opens with YouTube's own web player
+- .m3u8 -> existing HLS player (native HLS or hls.js)
+- .mp4/.webm/.ogg -> native HTML5 video player
+- other https URL -> opens as a normal web page
+
+The live-streams.json data format is unchanged.
+This patch is based on the history-backfill package and does not change history/profile/refresh logic.

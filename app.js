@@ -3294,7 +3294,18 @@ ensureLiveVideoStyles();
 document.addEventListener('click',event=>{
   const button=event.target.closest?.('.live-video-button[data-live-video-url]');
   if(!button)return;
-  openLiveVideoWindow(button.dataset.liveVideoUrl||'');
+
+  const url=button.dataset.liveVideoUrl||'';
+  const lower=url.toLowerCase();
+
+  // YouTube is a normal external link. Do not send it through the HLS player.
+  if(lower.includes('youtube.com')||lower.includes('youtu.be')){
+    window.open(url,'_blank');
+    return;
+  }
+
+  // Keep the original, already-working stream player for every non-YouTube URL.
+  openLiveVideoWindow(url);
 });
 
 

@@ -1,0 +1,8 @@
+Stream source + playback repair
+
+- live-streams.json beside the website is now the ONLY published stream configuration source.
+- Removed raw.githubusercontent.com override that could supply stale/expired stream URLs.
+- Included a cleaned live-streams.json based on the user's current file.
+- Mirrabooka .m3u8 uses the original HLS popup player path.
+- YouTube entries are real https://youtu.be universal links and never enter the HLS player.
+- No history, player-profile, match-data, or refresh logic changed.
