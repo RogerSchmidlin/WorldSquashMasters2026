@@ -370,6 +370,8 @@ function ssSeparateScore(container,p1,p2){
 }
 function ssVenue(text){
   const s=String(text||'').replace(/\s+/g,' ').trim();
+  const canonical=canonicalVenue(s);
+  if(canonical)return canonical;
   for(const v of ['Squashworld Mirrabooka','Belmont Saints Squash Centre','Karrinyup Shopping Centre']){
     if(s.toLowerCase().includes(v.toLowerCase()))return v;
   }
@@ -389,7 +391,15 @@ function squashScoresCourtToken(value,{allowBareNumber=false}={}){
   const s=String(raw??'').replace(/\s+/g,' ').trim();
   if(!s)return '';
 
-  let m=s.match(/\bSC\s*(\d{1,2})\b/i);
+  // SquashScores' World Masters feed identifies the physical location in the
+  // location name itself: BSSC-SC8, SM-SC11 and KSC-GLASS. Parse these before
+  // the generic court patterns so the Live page never loses the venue/court.
+  if(/(?:^|[^A-Z0-9])KSC[-_ ]*GLASS(?:$|[^A-Z0-9])/i.test(s))return 'AGC';
+
+  let m=s.match(/(?:^|[^A-Z0-9])(?:BSSC|SM)[-_ ]*SC\s*(\d{1,2})(?:$|[^0-9])/i);
+  if(m)return `SC${Number(m[1])}`;
+
+  m=s.match(/\bSC\s*(\d{1,2})\b/i);
   if(m)return `SC${Number(m[1])}`;
 
   m=s.match(/\bAGC\s*(\d{1,2})?\b/i);
@@ -803,10 +813,7 @@ function parseSquashScoresApi(payload,players){
 
   const normalVenue=value=>{
     const s=objectDisplayName(value)||String(value??'').trim();
-    if(/Karrinyup/i.test(s))return 'Karrinyup Shopping Centre';
-    if(/Mirrabooka/i.test(s))return 'Squashworld Mirrabooka';
-    if(/Belmont/i.test(s))return 'Belmont Saints Squash Centre';
-    return '';
+    return canonicalVenue(s);
   };
 
   const ownVenue=node=>{
@@ -1362,9 +1369,15 @@ function namesFromRecord(m){
 }
 function canonicalVenue(v){
   const s=String(v||'').replace(/\s+/g,' ').trim();
-  if(/\bKarrinyup\b/i.test(s))return 'Karrinyup Shopping Centre';
-  if(/\bMirrabooka\b/i.test(s))return 'Squashworld Mirrabooka';
-  if(/\bBelmont\b/i.test(s))return 'Belmont Saints Squash Centre';
+  if(!s)return '';
+
+  // SquashScores location codes used by World Squash Masters 2026.
+  // BSSC = Belmont Saints Squash Centre
+  // SM = Squashworld Mirrabooka
+  // KSC-GLASS = Karrinyup Shopping Centre / AGC
+  if(/(?:^|[^A-Z0-9])KSC[-_ ]*GLASS(?:$|[^A-Z0-9])/i.test(s)||/\bKarrinyup\b/i.test(s))return 'Karrinyup Shopping Centre';
+  if(/(?:^|[^A-Z0-9])BSSC(?:[-_ ]*SC\d{1,2})?(?:$|[^A-Z0-9])/i.test(s)||/\bBelmont\b/i.test(s))return 'Belmont Saints Squash Centre';
+  if(/(?:^|[^A-Z0-9])SM[-_ ]*SC\d{1,2}(?:$|[^A-Z0-9])/i.test(s)||/\bMirrabooka\b/i.test(s)||/\bSquashworld\b/i.test(s))return 'Squashworld Mirrabooka';
   return '';
 }
 function deriveVenueCourt(m,raw){
@@ -1771,15 +1784,24 @@ function liveVenueGroup(m){
     order:2
   };
 
-  const name=canonicalVenue(m?.venue) ||
-    String(m?.venue||'').trim() ||
-    'Other venue';
+  // Defensive rescue for live SquashScores rows. Location codes such as
+  // BSSC-SC4 / SM-SC11 / KSC-GLASS may survive in a raw/meta field even when
+  // an intermediate merge did not populate m.venue.
+  const raw=[
+    m?.venue,m?.court,m?.location,m?.locationName,m?.venueName,
+    m?.resource,m?.resourceName,m?.rawText,m?.liveRawText,m?.round
+  ].filter(Boolean).join(' | ');
+  const venue=canonicalVenue(raw);
+  if(venue==='Karrinyup Shopping Centre')return {key:'karrinyup',name:venue,order:0};
+  if(venue==='Belmont Saints Squash Centre')return {key:'belmont',name:venue,order:1};
+  if(venue==='Squashworld Mirrabooka')return {key:'mirrabooka',name:venue,order:2};
 
-  return {
-    key:`other:${name}`,
-    name,
-    order:99
-  };
+  // AGC is unique to Karrinyup. Other numbered courts are deliberately not
+  // guessed because SC1-SC8 exist at both Belmont and Mirrabooka.
+  const court=normalizeLiveStreamCourt(actualCourt(m)||m?.court||'');
+  if(court==='AGC')return {key:'karrinyup',name:'Karrinyup Shopping Centre',order:0};
+
+  return null;
 }
 
 function liveVenueStreamUrl(venueName){
@@ -1984,7 +2006,7 @@ function currentLiveMatches(){
   return [...deduped.values()]
     .map(enrich)
     .sort((a,b)=>{
-      const av=liveVenueGroup(a),bv=liveVenueGroup(b);
+      const av=liveVenueGroup(a)||{order:99,name:''},bv=liveVenueGroup(b)||{order:99,name:''};
       if(av.order!==bv.order)return av.order-bv.order;
       if(av.name!==bv.name)return av.name.localeCompare(bv.name);
       return to24(a.time||'').localeCompare(to24(b.time||''));
@@ -2085,20 +2107,12 @@ function renderLivePage(){
 
   for(const m of matches){
     const venue=liveVenueGroup(m);
-    const known=byKey.get(venue.key);
-
-    if(known){
-      known.matches.push(m);
+    if(!venue){
+      console.warn('Live row has unresolved World Masters venue; not creating an Other venue group:',m);
       continue;
     }
-
-    // Keep an unexpected venue visible rather than silently dropping it.
-    let other=groups.find(group=>group.key===venue.key);
-    if(!other){
-      other={...venue,matches:[]};
-      groups.push(other);
-    }
-    other.matches.push(m);
+    const known=byKey.get(venue.key);
+    if(known)known.matches.push(m);
   }
 
   groups.sort((a,b)=>
