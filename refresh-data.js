@@ -2817,6 +2817,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
       //
       // No pixel positions, nearest-neighbour logic or scoring are used.
       const treeMatches=[];
+      let siblingScheduledFallbacks=0;
 
       function legacyPlayerFromCell(td){
         if(!td)return null;
@@ -2967,19 +2968,26 @@ async function scrapeOfficialDrawSchedule(context,options={}){
           const lo=Math.min(a.rowIndex,b.rowIndex);
           const hi=Math.max(a.rowIndex,b.rowIndex);
 
-          // Verify the exact TournamentSoftware tree connector.
-          // For level N slots 2k-1 and 2k the output is level N-1 slot k.
+          // TournamentSoftware's odd/even numeric input slots themselves are the
+          // deterministic opponent relationship. The next-round output connector
+          // is useful corroboration, but progressed/played matches do not always
+          // retain that connector in exactly the same rendered cell. Do not throw
+          // away an otherwise explicit scheduled sibling pair just because that
+          // extra connector is absent.
           let outputId='';
           let outputRec=null;
+          let connectorVerified=a.level<=1;
 
           if(a.level>1){
             const outputNum=(a.level-1)*1000+Math.ceil(a.slot/2);
             outputId=String(outputNum);
             outputRec=slotMap.get(outputNum)||null;
-
-            if(!outputRec)continue;
-            if(outputRec.cellIndex!==targetColumn)continue;
-            if(outputRec.rowIndex<lo||outputRec.rowIndex>hi)continue;
+            connectorVerified=!!(
+              outputRec &&
+              outputRec.cellIndex===targetColumn &&
+              outputRec.rowIndex>=lo &&
+              outputRec.rowIndex<=hi
+            );
           }
 
           // Date/time/venue/court for this exact tree edge live in the next-round
@@ -2997,10 +3005,10 @@ async function scrapeOfficialDrawSchedule(context,options={}){
           const meta=clean(metaParts.join(' | '));
           const context=clean(`${caption} | ${round} | ${meta}`);
 
-          // Explicit Bye: the odd/even sibling slots and the verified output
-          // connector prove the progression. Do NOT assign the next match's
-          // date/time/venue to the Bye; no match is played.
+          // Explicit Bye: keep the stricter connector requirement because this
+          // represents progression rather than a played fixture.
           if(byePair){
+            if(!connectorVerified)continue;
             treeMatches.push({
               players:[a.player||b.player],
               text:'',
@@ -3018,14 +3026,22 @@ async function scrapeOfficialDrawSchedule(context,options={}){
             continue;
           }
 
-          // Concrete pair: normal deterministic fixture.
+          // Concrete pair: the sibling slot IDs are already deterministic.
+          // If the output connector is missing/moved, require TournamentSoftware
+          // to print an explicit date AND time in this pair's structural block
+          // before accepting it. This recovers progressed matches without any
+          // nearest-neighbour or profile-page guessing.
           if(concreteCount===2){
+            const hasExplicitSchedule=dateRe.test(meta)&&timeRe.test(meta);
+            if(!connectorVerified&&!hasExplicitSchedule)continue;
+            if(!connectorVerified)siblingScheduledFallbacks++;
+
             treeMatches.push({
               players:[a.player,b.player],
               text:meta,
               context,
               pageHead,
-              source:'legacy-slot-tree',
+              source:connectorVerified?'legacy-slot-tree':'legacy-slot-sibling-scheduled',
               tableCaption:caption,
               round,
               inputSlot1:a.rawId,
@@ -3039,7 +3055,9 @@ async function scrapeOfficialDrawSchedule(context,options={}){
 
           // Exactly one concrete player + one unresolved sibling is a real
           // scheduled TBD match only when TournamentSoftware itself prints the
-          // full schedule metadata for this exact tree edge. No nearby/fuzzy text.
+          // full schedule metadata for this exact tree edge. Keep the connector
+          // requirement for TBD because there is not yet a second named player.
+          if(!connectorVerified)continue;
           const hasDate=dateRe.test(meta);
           const hasTime=timeRe.test(meta);
           const hasVenue=/\b(?:Squashworld\s+Mirrabooka|Belmont\s+Saints\s+Squash\s+Centre|Karrinyup\s+Shopping\s+Centre)\b/i.test(meta);
@@ -3249,6 +3267,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         players,
         fixtures:[...fixtureMap.values()],
         treeMatches,
+        siblingScheduledFallbacks,
         structuralDiagnostics:[...structuralDiagnostics.entries()],
         matchLinks,
         positionedPlayers,
@@ -3388,7 +3407,8 @@ async function scrapeOfficialDrawSchedule(context,options={}){
           `  Draw ${draw.index+1}/${drawLinks.length} ${draw.text||''}: `+
           `${extracted.players.length}${expected?`/${expected} known-minimum`:''} players, `+
           `${extracted.positionedPlayers?.length||0} positioned player box(es), `+
-          `${extracted.treeMatches?.length||0} deterministic tree match(es), `+
+          `${extracted.treeMatches?.length||0} deterministic tree match(es)`+
+          `${extracted.siblingScheduledFallbacks?` (${extracted.siblingScheduledFallbacks} scheduled sibling fallback(s))`:''}, `+
           `${extracted.fixtures.length} inline candidate(s), `+
           `${extracted.matchLinks?.length||0} official match link(s), `+
           `${extracted.locationTextNodes||0} location text node(s) `+
@@ -3706,6 +3726,10 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   }
 
   console.log(`Official draw deterministic tree observations: ${treeObservations.length}`);
+  const scheduledSiblingFallbackCount=workerResults.reduce(
+    (n,x)=>n+(x.extracted.siblingScheduledFallbacks||0),0
+  );
+  console.log(`Official draw scheduled sibling fallbacks without retained connector: ${scheduledSiblingFallbackCount}`);
   observations.push(...treeObservations);
   const deterministicTbdObservations=treeObservations.filter(m=>m.deterministicTbd);
   console.log(`Official draw deterministic TBD fixtures: ${deterministicTbdObservations.length}`);
@@ -4378,6 +4402,31 @@ function mergeMatches(list){
 
 
 const SQUASHLEVELS_SEARCH_URL='https://api-leveltech.squashlevels.com/api/search';
+
+const SQUASHLEVELS_OVERRIDES_FILE=path.join(DIR,'squashlevels-overrides.json');
+function loadSquashLevelsOverrides(){
+  if(!fs.existsSync(SQUASHLEVELS_OVERRIDES_FILE))return new Map();
+  try{
+    const raw=JSON.parse(fs.readFileSync(SQUASHLEVELS_OVERRIDES_FILE,'utf8'));
+    const out=new Map();
+    for(const [name,value] of Object.entries(raw&&typeof raw==='object'&&!Array.isArray(raw)?raw:{})){
+      const playerName=clean(name);
+      const url=clean(value);
+      if(!playerName||!url)continue;
+      if(!/^https?:\/\//i.test(url)||!/squashlevels\.com/i.test(url)){
+        console.warn(`Ignoring invalid SquashLevels override for ${playerName}: ${url}`);
+        continue;
+      }
+      out.set(norm(playerName),url);
+    }
+    if(out.size)console.log(`SquashLevels hard overrides loaded: ${out.size}`);
+    return out;
+  }catch(e){
+    throw new Error(`Could not read squashlevels-overrides.json: ${e.message}`);
+  }
+}
+const SQUASHLEVELS_OVERRIDES=loadSquashLevelsOverrides();
+function squashLevelsOverrideUrl(name){return SQUASHLEVELS_OVERRIDES.get(norm(name))||'';}
 
 // SquashLevels search is more reliable when hyphenated first/middle names are
 // sent with spaces (e.g. "Jean-Marie" -> "Jean Marie"). Keep the original
@@ -5936,6 +5985,34 @@ async function readSquashLevelsLevel(page){
 async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=null){
   const now=Date.now();
 
+  // Manual SquashLevels profile overrides are authoritative. They are applied before
+  // every automatic name/country/age heuristic and are excluded from duplicate
+  // rematching, so a known-good profile cannot be replaced by an ambiguous search hit.
+  // Metrics are still refreshed normally from the forced authenticated profile page.
+  let overridesApplied=0;
+  for(const p of players||[]){
+    const forcedRaw=squashLevelsOverrideUrl(p.name);
+    if(!forcedRaw)continue;
+    const forced=canonicalSquashLevelsProfileUrl(forcedRaw);
+    const forcedId=squashLevelsPlayerIdFromUrl(forced);
+    const current=canonicalSquashLevelsProfileUrl(p.squashLevelsUrl||'');
+    if(current&&current!==forced){
+      console.log(`  SquashLevels override replaced stored profile for ${p.name}: ${current} -> ${forced}`);
+      p.squashLevelsWorldRank=null;
+      p.squashLevelsLevel=null;
+      p.squashLevelsLevelProvisional=false;
+      p.squashLevelsProfileCheckedAt=null;
+    }
+    p.squashLevelsUrl=forced;
+    p.squashLevelsPlayerId=forcedId;
+    p.squashLevelsIdentityVerified=true;
+    p.squashLevelsIdentityVerifiedAt=new Date().toISOString();
+    p.squashLevelsSearchCheckedAt=new Date().toISOString();
+    overridesApplied++;
+    console.log(`  SquashLevels OVERRIDE: ${p.name} -> ${forced}`);
+  }
+  if(overridesApplied)console.log(`SquashLevels hard overrides applied: ${overridesApplied}`);
+
   const tournamentNameCounts=new Map();
   for(const p of players||[]){
     const k=nameKey(p?.name);
@@ -5956,9 +6033,9 @@ async function resolveSquashLevelsLinks(players,sharedContext=null,sharedPage=nu
   // This prevents a cached same-name profile from surviving indefinitely merely
   // because it was once marked verified.
   const verifiedToDuplicateCheck=
-    players.filter(p=>p.squashLevelsUrl&&p.squashLevelsIdentityVerified);
+    players.filter(p=>p.squashLevelsUrl&&p.squashLevelsIdentityVerified&&!squashLevelsOverrideUrl(p.name));
 
-  const existingToValidate=players.filter(p=>p.squashLevelsUrl&&!p.squashLevelsIdentityVerified);
+  const existingToValidate=players.filter(p=>p.squashLevelsUrl&&!p.squashLevelsIdentityVerified&&!squashLevelsOverrideUrl(p.name));
   const missing=players.filter(p=>!p.squashLevelsUrl&&(SQUASHLEVELS_ONLY||!p.squashLevelsSearchCheckedAt||now-new Date(p.squashLevelsSearchCheckedAt).getTime()>=SQUASHLEVELS_RECHECK_MS));
   const queue=[...verifiedToDuplicateCheck,...existingToValidate,...missing];
 
@@ -6949,19 +7026,82 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
 
   const out=[];
 
-  // Preserve existing immutable history first; authoritative history is merged below.
+  // Preserve immutable history, PLUS already-elapsed fixtures from the current
+  // Perth day. TournamentSoftware progressively rewrites the active draw during
+  // the day; an earlier completed/current-day fixture can therefore disappear
+  // from a later render even though it was already published correctly.
+  //
+  // Current-day carry-forward is deliberately conservative:
+  //   - two concrete players
+  //   - valid previously-published venue + court
+  //   - scheduled time has already passed in Perth
+  //   - fresh official authority does NOT contradict either player's exact slot
+  // Future/current-time rows are never carried forward by this rule.
+  const nowMinutes=perthNowMinutesRefresh();
+  const authoritativeExact=new Set(authoritative.map(exactKey));
+  const simplePlayerSlot=(m,name)=>[
+    dateKey(m),
+    timeKey(m),
+    nameKey(splitPlayerSeed(name||'').name)
+  ].join('|');
+  const authoritativeBySimpleSlot=new Map();
+
+  for(const a of authoritative){
+    for(const name of [a.player1,a.player2]){
+      if(!realPlayer(name))continue;
+      const slot=simplePlayerSlot(a,name);
+      if(!authoritativeBySimpleSlot.has(slot)){
+        authoritativeBySimpleSlot.set(slot,a);
+      }else if(exactKey(authoritativeBySimpleSlot.get(slot))!==exactKey(a)){
+        authoritativeBySimpleSlot.set(slot,null);
+      }
+    }
+  }
+
+  let carriedElapsedToday=0;
+  let skippedElapsedTodayConflict=0;
+
   if(preserveHistory){
     for(const old0 of existingRows||[]){
       const old={...old0,court:sanitizeCourtValue(old0.court),rawText:''};
       const d=dateKey(old);
-      if(!d||d>=today)continue;
+      if(!d)continue;
+
+      if(d<today){
+        out.push(old);
+        continue;
+      }
+
+      if(d!==today||nowMinutes===null)continue;
+      if(!realPlayer(old.player1)||!realPlayer(old.player2))continue;
+      if(!validLocation(old))continue;
+
+      const oldMinutes=tournamentTimeMinutesRefresh(old.time);
+      if(oldMinutes===null||oldMinutes>nowMinutes)continue;
+
+      // If the exact fresh fixture still exists, it will be added below. Its
+      // previous result/status is restored from previousExact, so no duplicate
+      // carry-forward row is needed here.
+      if(authoritativeExact.has(exactKey(old)))continue;
+
+      const conflicts=[old.player1,old.player2].some(name=>{
+        const auth=authoritativeBySimpleSlot.get(simplePlayerSlot(old,name));
+        return auth&&exactKey(auth)!==exactKey(old);
+      });
+      if(conflicts){
+        skippedElapsedTodayConflict++;
+        continue;
+      }
+
       out.push(old);
+      carriedElapsedToday++;
     }
   }
 
   let metadataUpdates=0;
   let previousLocationRestores=0;
   let drawLocationRestores=0;
+  let todayResultRestores=0;
 
   for(const auth0 of authoritative){
     const d=dateKey(auth0);
@@ -7073,6 +7213,28 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
       }
     }
 
+    // 4) If today's exact fixture is still authoritative but its result/status
+    // has already disappeared from the latest progressive render, keep the
+    // previously published exact result. Exact date/time/player-pair identity
+    // is required, so this cannot attach a score to a different round/opponent.
+    if(d===today){
+      const prevRows=previousExact.get(exactKey(m))||[];
+      const resultRows=prevRows.filter(x=>clean(x.result||''));
+      const uniqueResults=[...new Set(resultRows.map(x=>clean(x.result||'')))];
+
+      if(!m.result&&uniqueResults.length===1){
+        const old=resultRows.find(x=>clean(x.result||'')===uniqueResults[0]);
+        m.result=old.result;
+        m.status=old.status||'completed';
+        m.resultSource=old.resultSource||'TournamentSoftware';
+        if(!m.winner&&old.winner)m.winner=old.winner;
+        if(!m.winnerId&&old.winnerId)m.winnerId=old.winnerId;
+        todayResultRestores++;
+      }else if(!m.result&&prevRows.some(x=>String(x.status||'').toLowerCase()==='completed')){
+        m.status='completed';
+      }
+    }
+
     m.court=sanitizeCourtValue(m.court);
     out.push(m);
   }
@@ -7156,7 +7318,10 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
     `DRAW AUTHORITY accepted ${authoritative.length} trusted draw fixture(s); ` +
     `${drawLocationRestores} draw-location field restore(s), ` +
     `${metadataUpdates} Matches-page metadata update(s), ` +
-    `${previousLocationRestores} exact-prior location restore(s).`
+    `${previousLocationRestores} exact-prior location restore(s), ` +
+    `${carriedElapsedToday} elapsed current-day fixture(s) carried forward, ` +
+    `${todayResultRestores} current-day exact result(s) restored` +
+    `${skippedElapsedTodayConflict?`, ${skippedElapsedTodayConflict} conflicting elapsed row(s) rejected`:''}.`
   );
   console.log(`DRAW AUTHORITY current/future by date: ${JSON.stringify(byDate)}`);
   const trackedForAudit=loadTrackedNames();
@@ -7511,6 +7676,34 @@ function perthTodayIsoRefresh(){
   }).formatToParts(new Date());
   const get=t=>parts.find(x=>x.type===t)?.value||'';
   return `${get('year')}-${get('month')}-${get('day')}`;
+}
+
+function perthNowMinutesRefresh(){
+  const parts=new Intl.DateTimeFormat('en-AU',{
+    timeZone:'Australia/Perth',
+    hour:'2-digit',minute:'2-digit',hourCycle:'h23'
+  }).formatToParts(new Date());
+  const get=t=>parts.find(x=>x.type===t)?.value||'';
+  const h=Number(get('hour')),m=Number(get('minute'));
+  return Number.isFinite(h)&&Number.isFinite(m)?h*60+m:null;
+}
+
+function tournamentTimeMinutesRefresh(v){
+  const s=clean(v||'').trim();
+  if(!s)return null;
+
+  let m=s.match(/^(\d{1,2}):(\d{2})\s*(am|pm)?$/i);
+  if(m){
+    let h=Number(m[1]);
+    const mins=Number(m[2]);
+    const ap=String(m[3]||'').toLowerCase();
+    if(ap==='pm'&&h<12)h+=12;
+    if(ap==='am'&&h===12)h=0;
+    if(h>=0&&h<=23&&mins>=0&&mins<=59)return h*60+mins;
+  }
+
+  m=s.match(/\b([01]?\d|2[0-3]):([0-5]\d)\b/);
+  return m?Number(m[1])*60+Number(m[2]):null;
 }
 
 function canonicalTournamentDate(v){

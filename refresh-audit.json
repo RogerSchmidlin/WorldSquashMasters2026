@@ -1,19 +1,19 @@
 {
-  "refreshedAt": "2026-09-05T02:04:17.830Z",
+  "refreshedAt": "2026-09-05T07:59:09.247Z",
   "officialPlayerIds": 908,
-  "existingMatches": 2911,
-  "matchesOverlayRows": 1626,
-  "rawDrawFixtureCandidates": 998,
-  "tournamentMatchesAfterDrawResults": 3080,
+  "existingMatches": 3080,
+  "matchesOverlayRows": 722,
+  "rawDrawFixtureCandidates": 1036,
+  "tournamentMatchesAfterDrawResults": 3103,
   "squashScoresMatches": 0,
   "squashScoresScoredMatches": 0,
-  "mergedMatches": 1746,
-  "playerByeProgressions": 1334,
-  "glassCourtMatches": 1309,
-  "drawCompletedMatches": 176,
-  "drawScoredMatches": 176,
-  "mergedCompletedMatches": 1431,
-  "mergedScoredMatches": 1392,
+  "mergedMatches": 1816,
+  "playerByeProgressions": 1287,
+  "glassCourtMatches": 1313,
+  "drawCompletedMatches": 205,
+  "drawScoredMatches": 205,
+  "mergedCompletedMatches": 1458,
+  "mergedScoredMatches": 1419,
   "tracked": [
     {
       "name": "Roger Schmidlin",
@@ -25,7 +25,7 @@
     },
     {
       "name": "Tanya Chapman",
-      "matches": 3
+      "matches": 4
     },
     {
       "name": "Louis Cotter",
@@ -49,7 +49,7 @@
     },
     {
       "name": "Susan Hillier",
-      "matches": 6
+      "matches": 7
     },
     {
       "name": "Luke Missak",
@@ -65,11 +65,11 @@
     },
     {
       "name": "Michael Corren",
-      "matches": 8
+      "matches": 9
     },
     {
       "name": "Jason Patmore",
-      "matches": 8
+      "matches": 9
     },
     {
       "name": "Joan Naarstig",
@@ -97,7 +97,7 @@
     },
     {
       "name": "Kyle Roach",
-      "matches": 6
+      "matches": 7
     }
   ]
 }
