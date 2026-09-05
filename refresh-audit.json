@@ -1,79 +1,79 @@
 {
-  "refreshedAt": "2026-09-01T04:24:48.243Z",
+  "refreshedAt": "2026-09-05T02:04:17.830Z",
   "officialPlayerIds": 908,
-  "existingMatches": 1023,
-  "matchesOverlayRows": 263,
-  "rawDrawFixtureCandidates": 406,
-  "tournamentMatchesAfterDrawResults": 1866,
+  "existingMatches": 2911,
+  "matchesOverlayRows": 1626,
+  "rawDrawFixtureCandidates": 998,
+  "tournamentMatchesAfterDrawResults": 3080,
   "squashScoresMatches": 0,
   "squashScoresScoredMatches": 0,
-  "mergedMatches": 1043,
-  "playerByeProgressions": 823,
-  "glassCourtMatches": 92,
-  "drawCompletedMatches": 39,
-  "drawScoredMatches": 39,
-  "mergedCompletedMatches": 451,
-  "mergedScoredMatches": 413,
+  "mergedMatches": 1746,
+  "playerByeProgressions": 1334,
+  "glassCourtMatches": 1309,
+  "drawCompletedMatches": 176,
+  "drawScoredMatches": 176,
+  "mergedCompletedMatches": 1431,
+  "mergedScoredMatches": 1392,
   "tracked": [
     {
       "name": "Roger Schmidlin",
-      "matches": 3
-    },
-    {
-      "name": "Ashton D'Vaz",
-      "matches": 4
-    },
-    {
-      "name": "Tanya Chapman",
-      "matches": 1
-    },
-    {
-      "name": "Louis Cotter",
-      "matches": 3
-    },
-    {
-      "name": "Lisa Christou",
-      "matches": 2
-    },
-    {
-      "name": "Julian Buczek",
-      "matches": 3
-    },
-    {
-      "name": "Zoe Petrovansky",
-      "matches": 2
-    },
-    {
-      "name": "Joannah Yue",
-      "matches": 2
-    },
-    {
-      "name": "Susan Hillier",
-      "matches": 2
-    },
-    {
-      "name": "Luke Missak",
-      "matches": 3
-    },
-    {
-      "name": "Onnie Biswas",
-      "matches": 4
-    },
-    {
-      "name": "Van Tran",
-      "matches": 4
-    },
-    {
-      "name": "Michael Corren",
       "matches": 5
     },
     {
+      "name": "Ashton D'Vaz",
+      "matches": 6
+    },
+    {
+      "name": "Tanya Chapman",
+      "matches": 3
+    },
+    {
+      "name": "Louis Cotter",
+      "matches": 7
+    },
+    {
+      "name": "Lisa Christou",
+      "matches": 4
+    },
+    {
+      "name": "Julian Buczek",
+      "matches": 4
+    },
+    {
+      "name": "Zoe Petrovansky",
+      "matches": 4
+    },
+    {
+      "name": "Joannah Yue",
+      "matches": 4
+    },
+    {
+      "name": "Susan Hillier",
+      "matches": 6
+    },
+    {
+      "name": "Luke Missak",
+      "matches": 5
+    },
+    {
+      "name": "Onnie Biswas",
+      "matches": 5
+    },
+    {
+      "name": "Van Tran",
+      "matches": 5
+    },
+    {
+      "name": "Michael Corren",
+      "matches": 8
+    },
+    {
       "name": "Jason Patmore",
-      "matches": 2
+      "matches": 8
     },
     {
       "name": "Joan Naarstig",
-      "matches": 1
+      "matches": 3
     },
     {
       "name": "Jahangir Khan",
@@ -81,23 +81,23 @@
     },
     {
       "name": "Shirley Collins",
-      "matches": 1
-    },
-    {
-      "name": "Kerry Kern",
-      "matches": 1
-    },
-    {
-      "name": "Steve Mckenna",
       "matches": 4
     },
     {
+      "name": "Kerry Kern",
+      "matches": 4
+    },
+    {
+      "name": "Steve Mckenna",
+      "matches": 5
+    },
+    {
       "name": "Cindy Parsley",
-      "matches": 2
+      "matches": 8
     },
     {
       "name": "Kyle Roach",
-      "matches": 3
+      "matches": 6
     }
   ]
 }

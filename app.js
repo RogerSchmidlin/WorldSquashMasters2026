@@ -520,7 +520,7 @@ function squashScoresExplicitlyLive(node){
 
   const text=[node.status,node.matchStatus,node.state,node.matchState,node.statusName,node.stateName]
     .filter(v=>typeof v==='string').join(' ');
-  return /\b(?:live|playing|in progress|in-progress|on court|started|running)\b/i.test(text);
+  return /\b(?:live|playing|in play|in-play|in progress|in-progress|on court|started|running)\b/i.test(text);
 }
 
 function parseSquashScoresApi(payload,players){
@@ -592,6 +592,7 @@ function parseSquashScoresApi(payload,players){
       const score=gamesScore(m,true);
       const hasStarted=score.length>0||p1Won>0||p2Won>0;
       const terminalReason=squashScoresTerminalReason(m);
+      const explicitlyLive=squashScoresExplicitlyLive(m);
       const completed=!!terminalReason||p1Won>=3||p2Won>=3||
         (hasStarted&&squashScoresExplicitlyNotLive(m));
 
@@ -601,9 +602,11 @@ function parseSquashScoresApi(payload,players){
         player1,
         player2,
         result:score,
-        status:completed?'completed':(hasStarted?'live':'scheduled'),
+        // SquashScores can mark a court IN PLAY before the first point is
+        // entered. Explicit live state must therefore win over a 0-0 score.
+        status:completed?'completed':(explicitlyLive||hasStarted?'live':'scheduled'),
         squashScoresTerminalReason:terminalReason,
-        squashScoresExplicitLive:squashScoresExplicitlyLive(m),
+        squashScoresExplicitLive:explicitlyLive,
         // A location can be a venue OR a court in SquashScores.  Keep only
         // recognised venue text here; a label such as "4" belongs in court.
         venue:canonicalVenue(
@@ -856,7 +859,7 @@ function parseSquashScoresApi(payload,players){
     ].filter(v=>typeof v==='string').join(' ').toLowerCase();
 
     if(/\b(finished|completed|complete|ended|closed|retired|retirement|withdrawn|withdrawal|walkover|walk-over|defaulted|abandoned|cancelled|canceled)\b/.test(text))return 'completed';
-    if(/\b(live|playing|in progress|in-progress|on court|started|running)\b/.test(text))return 'live';
+    if(/\b(live|playing|in play|in-play|in progress|in-progress|on court|started|running)\b/.test(text))return 'live';
     if(/\b(scheduled|pending|upcoming|not started|not-started|waiting)\b/.test(text))return 'scheduled';
 
     if(node?.isFinished===true||node?.finished===true||node?.completed===true||node?.isCompleted===true)return 'completed';
@@ -937,7 +940,7 @@ function parseSquashScoresApi(payload,players){
 
       const p1=ordered[0],p2=ordered[1];
       const result=games.map(([a,b])=>`${a}-${b}`).join(', ');
-      const status=statusFromNode(node,games,terminalReason,explicitlyNotLive);
+      const status=terminalReason?'completed':(explicitlyLive?'live':statusFromNode(node,games,terminalReason,explicitlyNotLive));
 
       fallbackCandidates.push({
         date:date||perthTodayIso(),
@@ -1025,6 +1028,19 @@ function parseSquashScoresApi(payload,players){
     // lower-ranked row. A completed/retired signal must always win over a
     // partial-score LIVE inference.
     const preferred=rowRank>prevRank?{...prev,...row}:{...row,...prev};
+
+    // The generic SquashScores fallback often contains the richer score/status,
+    // while the standard location-wrapper row contains the authoritative court
+    // code (BSSC-SC8 / SM-SC11 / KSC-GLASS).  Do not let an empty generic
+    // venue/court overwrite that location information when the two views merge.
+    const mergedVenue=canonicalVenue(row?.venue)||canonicalVenue(prev?.venue)||
+      canonicalVenue(preferred?.venue)||'';
+    const mergedCourt=squashScoresCourtToken(row?.court||'',{allowBareNumber:true})||
+      squashScoresCourtToken(prev?.court||'',{allowBareNumber:true})||
+      squashScoresCourtToken(preferred?.court||'',{allowBareNumber:true})||'';
+    if(mergedVenue)preferred.venue=mergedVenue;
+    if(mergedCourt)preferred.court=mergedCourt;
+
     const terminalReason=String(
       row?.squashScoresTerminalReason||prev?.squashScoresTerminalReason||''
     ).trim();
@@ -1867,11 +1883,17 @@ const SQUASH_SCORES_INFERRED_LIVE_MAX_MINUTES=120;
 function squashScoresFeedRowIsStillLive(m,today=perthTodayIso()){
   const d=canonicalDate(m?.date||'')||today;
   if(d!==today)return false;
-  if(String(m?.status||'').toLowerCase()!=='live')return false;
-  if(!String(m?.result||'').trim())return false;
   if(String(m?.squashScoresTerminalReason||'').trim())return false;
 
+  // Explicit SquashScores IN PLAY/live state is authoritative, including the
+  // period before the first point is entered. Previously these 0-0 matches
+  // were discarded here because result was empty.
   if(m?.squashScoresExplicitLive===true)return true;
+
+  // Without an explicit live flag, retain the conservative old behaviour:
+  // only a scored row can be inferred live, and only for a short time window.
+  if(String(m?.status||'').toLowerCase()!=='live')return false;
+  if(!String(m?.result||'').trim())return false;
 
   const start=matchLocalMinuteValue({...m,date:d});
   const now=perthNowMinuteValue();
@@ -3863,7 +3885,7 @@ async function updateSquashScoresLive(){
     console.log(
       `SquashScores API feed: ${live.length} row(s), `+
       `${live.filter(m=>m.result).length} with scores, `+
-      `${live.filter(m=>String(m.status||'').toLowerCase()==='live'&&m.result).length} live scored match(es), `+
+      `${live.filter(m=>String(m.status||'').toLowerCase()==='live').length} live match(es), `+
       `${live.filter(m=>String(m.status||'').toLowerCase()==='completed').length} completed match(es).`
     );
 

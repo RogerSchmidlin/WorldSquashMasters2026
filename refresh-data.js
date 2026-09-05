@@ -3259,6 +3259,15 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   }
 
 
+  function isPlacementDrawText(text){
+    const s=clean(text||'');
+    return (
+      /\b3(?:rd)?\s*[\/-]\s*4(?:th)?(?:\s*[-–—]?\s*place)?\b/i.test(s) ||
+      /\bthird\s*[\/-]\s*fourth(?:\s*[-–—]?\s*place)?\b/i.test(s) ||
+      /\b(?:placement|playoff)\b/i.test(s)
+    );
+  }
+
   function expectedPlayersForDraw(draw){
     const canonical=Array.isArray(options.canonicalPlayers)?options.canonicalPlayers:[];
     if(!canonical.length)return 0;
@@ -3273,7 +3282,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
 
     // Placement/3rd-place draws are intentionally tiny and should not inherit
     // the full age-group expectation.
-    if(/3\/4\s*Place|3\/4-?Place|placement|playoff/i.test(text))return 0;
+    if(isPlacementDrawText(text))return 0;
     if(!age||!gender)return 0;
 
     const normalGender=v=>{
@@ -3290,7 +3299,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   }
 
   async function crawlDraw(draw,page){
-    const isPlacement=/3\/4\s*Place|3\/4-?Place|placement|playoff/i.test(clean(draw.text||''));
+    const isPlacement=isPlacementDrawText(draw.text);
     const expectedPlayers=expectedPlayersForDraw(draw);
     const attempts=[];
 
@@ -3893,7 +3902,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   const rawMatchLinks=officialMatchLinks.length;
 
   const treeDrawStats=workerResults.map(x=>{
-    const placement=/3\/4\s*Place|3\/4-?Place|placement|playoff/i.test(clean(x.draw.text||''));
+    const placement=isPlacementDrawText(x.draw.text);
     return {
       drawIndex:Number(x.draw.index)+1,
       drawName:x.draw.text||'',
