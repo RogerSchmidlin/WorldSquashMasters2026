@@ -29751,7 +29751,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "AGC",
-      "result": "Retired",
+      "result": "5-11, 6-11, 11-5, 11-2, 11-8",
       "status": "completed",
       "winner": "Corey Bedingfield",
       "winnerId": "q:player:141",
@@ -29768,7 +29768,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -29829,7 +29829,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC6",
-      "result": "Retired",
+      "result": "11-1, 11-7, 11-9",
       "status": "completed",
       "winner": "Nathan Turnbull",
       "winnerId": "q:player:210",
@@ -29846,7 +29846,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -30245,7 +30245,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC3",
-      "result": "Retired",
+      "result": "6-11, 11-9, 11-9, 11-8",
       "status": "completed",
       "winner": "Jimmy Van Niekerk",
       "winnerId": "q:player:138",
@@ -30262,7 +30262,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -30559,7 +30559,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "AGC",
-      "result": "Retired",
+      "result": "11-4, 11-6, 11-1",
       "status": "completed",
       "winner": "George Shoulder",
       "winnerId": "q:player:890",
@@ -30576,7 +30576,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -30733,7 +30733,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "AGC",
-      "result": "Retired",
+      "result": "11-5, 11-4, 11-7",
       "status": "completed",
       "winner": "Karamatullah Khan",
       "winnerId": "q:player:525",
@@ -30750,7 +30750,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -30785,7 +30785,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "AGC",
-      "result": "Retired",
+      "result": "11-4, 11-2, 11-6",
       "status": "completed",
       "winner": "Chiraag Khemani",
       "winnerId": "q:player:410",
@@ -30802,7 +30802,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -31991,7 +31991,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "AGC",
-      "result": "Retired",
+      "result": "11-3, 11-5, 11-1",
       "status": "completed",
       "winner": "Matthew Karwalski",
       "winnerId": "q:player:275",
@@ -32008,7 +32008,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -32407,7 +32407,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "AGC",
-      "result": "Retired",
+      "result": "11-3, 11-3, 11-6",
       "status": "completed",
       "winner": "Steven Finitsis",
       "winnerId": "q:player:550",
@@ -32424,7 +32424,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-08-31",
@@ -37281,7 +37281,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC1",
-      "result": "Walkover",
+      "result": "5-11, 8-11, 5-11",
       "status": "completed",
       "player1": "Kylie Anderson",
       "player1Id": "q:player:928",
@@ -37308,7 +37308,7 @@ window.TOURNAMENT_DATA = {
       ],
       "winner": "Bea Burger",
       "winnerId": "q:player:692",
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-01",
@@ -37317,7 +37317,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC2",
-      "result": "Walkover",
+      "result": "11-3, 11-4, 11-2",
       "status": "completed",
       "player1": "Leigh-Anne Kaye",
       "player1Id": "q:player:870",
@@ -37344,7 +37344,7 @@ window.TOURNAMENT_DATA = {
       ],
       "winner": "Leigh-Anne Kaye",
       "winnerId": "q:player:870",
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-01",
@@ -37353,7 +37353,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC3",
-      "result": "Walkover",
+      "result": "3-11, 2-11, 4-11",
       "status": "completed",
       "player1": "Melinda Gyorgy",
       "player1Id": "q:player:380",
@@ -37380,7 +37380,7 @@ window.TOURNAMENT_DATA = {
       ],
       "winner": "Erin Ellery",
       "winnerId": "q:player:235",
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-01",
@@ -37389,7 +37389,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC4",
-      "result": "Walkover",
+      "result": "11-4, 11-5, 11-6",
       "status": "completed",
       "player1": "Barbara Vintcent",
       "player1Id": "q:player:845",
@@ -37416,7 +37416,7 @@ window.TOURNAMENT_DATA = {
       ],
       "winner": "Barbara Vintcent",
       "winnerId": "q:player:845",
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-01",
@@ -37425,7 +37425,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC5",
-      "result": "Walkover",
+      "result": "6-11, 2-11, 5-11",
       "status": "completed",
       "player1": "Lorraine Howell",
       "player1Id": "q:player:523",
@@ -37452,7 +37452,7 @@ window.TOURNAMENT_DATA = {
       ],
       "winner": "Mickayla Kerr",
       "winnerId": "q:player:162",
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-01",
@@ -37461,7 +37461,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC6",
-      "result": "Walkover",
+      "result": "11-3, 11-7, 11-3",
       "status": "completed",
       "player1": "Joanne Dodd",
       "player1Id": "q:player:516",
@@ -37488,7 +37488,7 @@ window.TOURNAMENT_DATA = {
       ],
       "winner": "Joanne Dodd",
       "winnerId": "q:player:516",
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-01",
@@ -37497,7 +37497,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC7",
-      "result": "Walkover",
+      "result": "3-11, 4-11, 2-11",
       "status": "completed",
       "player1": "Lee-Ann Richters",
       "player1Id": "q:player:772",
@@ -37524,7 +37524,7 @@ window.TOURNAMENT_DATA = {
       ],
       "winner": "Janet Byrnes",
       "winnerId": "q:player:742",
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-01",
@@ -38013,7 +38013,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC1",
-      "result": "Walkover",
+      "result": "11-7, 11-2, 11-0",
       "status": "completed",
       "player1": "Michelle May",
       "player1Id": "q:player:877",
@@ -38040,7 +38040,7 @@ window.TOURNAMENT_DATA = {
       ],
       "winner": "Michelle May",
       "winnerId": "q:player:877",
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-01",
@@ -38049,7 +38049,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC2",
-      "result": "Walkover",
+      "result": "3-11, 12-10, 4-11, 5-11",
       "status": "completed",
       "player1": "Evette Griffin",
       "player1Id": "q:player:520",
@@ -38076,7 +38076,7 @@ window.TOURNAMENT_DATA = {
       ],
       "winner": "Connie Kay Chevrette",
       "winnerId": "q:player:342",
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-01",
@@ -38085,7 +38085,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC3",
-      "result": "Walkover",
+      "result": "9-11, 11-9, 13-11, 4-11, 12-10",
       "status": "completed",
       "player1": "Wendy Beard",
       "player1Id": "q:player:732",
@@ -38112,7 +38112,7 @@ window.TOURNAMENT_DATA = {
       ],
       "winner": "Wendy Beard",
       "winnerId": "q:player:732",
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-01",
@@ -43675,7 +43675,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "SC3",
-      "result": "Walkover",
+      "result": "Retired",
       "status": "completed",
       "winner": "Leigh-Anne Kaye",
       "winnerId": "q:player:870",
@@ -43692,7 +43692,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-02",
@@ -44269,7 +44269,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "SC1",
-      "result": "Walkover",
+      "result": "Retired",
       "status": "completed",
       "winner": "Mickayla Kerr",
       "winnerId": "q:player:162",
@@ -44295,7 +44295,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "SC2",
-      "result": "Walkover",
+      "result": "Retired",
       "status": "completed",
       "winner": "Janet Byrnes",
       "winnerId": "q:player:742",
@@ -44321,7 +44321,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "SC3",
-      "result": "Walkover",
+      "result": "Retired",
       "status": "completed",
       "winner": "Michelle May",
       "winnerId": "q:player:877",
@@ -44338,7 +44338,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-02",
@@ -44706,7 +44706,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "AGC",
-      "result": "Walkover",
+      "result": "Retired",
       "status": "completed",
       "winner": "Jane Kennedy",
       "winnerId": "q:player:761",
@@ -44732,7 +44732,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "SC2",
-      "result": "Walkover",
+      "result": "Retired",
       "status": "completed",
       "winner": "Zoe Shardlow",
       "winnerId": "q:player:967",
@@ -45179,7 +45179,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "AGC",
-      "result": "Walkover",
+      "result": "Retired",
       "status": "completed",
       "winner": "Wendy Beard",
       "winnerId": "q:player:732",
@@ -45725,7 +45725,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "AGC",
-      "result": "Walkover",
+      "result": "Retired",
       "status": "completed",
       "winner": "Melissa Martin",
       "winnerId": "q:player:430",
@@ -49929,7 +49929,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Karrinyup Shopping Centre",
       "court": "AGC",
-      "result": "Walkover",
+      "result": "11-4, 11-3, 11-8",
       "status": "completed",
       "winner": "Jane Kennedy",
       "winnerId": "q:player:761",
@@ -49946,7 +49946,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-03",
@@ -49955,7 +49955,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC2",
-      "result": "Walkover",
+      "result": "9-11, 8-11, 9-11",
       "status": "completed",
       "winner": "Janet Byrnes",
       "winnerId": "q:player:742",
@@ -49972,7 +49972,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-03",
@@ -50527,7 +50527,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC2",
-      "result": "Walkover",
+      "result": "11-2, 11-5, 11-2",
       "status": "completed",
       "winner": "Michelle May",
       "winnerId": "q:player:877",
@@ -50544,7 +50544,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-03",
@@ -50553,7 +50553,7 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Karrinyup Shopping Centre",
       "court": "AGC",
-      "result": "Walkover",
+      "result": "2-11, 1-11, 8-11",
       "status": "completed",
       "winner": "Melissa Martin",
       "winnerId": "q:player:430",
@@ -50570,7 +50570,7 @@ window.TOURNAMENT_DATA = {
       "drawEvidenceSources": [
         "TournamentSoftware Match"
       ],
-      "resultSource": "TournamentSoftware Draw"
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-03",
@@ -63061,9 +63061,7 @@ window.TOURNAMENT_DATA = {
       "evidenceSources": [
         "TournamentSoftware Draw Tree"
       ],
-      "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -63134,8 +63132,10 @@ window.TOURNAMENT_DATA = {
       "round": "semi final",
       "venue": "Squashworld Mirrabooka",
       "court": "SC6",
-      "result": "",
-      "status": "scheduled",
+      "result": "11-7, 11-5, 11-5",
+      "status": "completed",
+      "winner": "Robert Smith",
+      "winnerId": "q:player:837",
       "player1": "Robert Smith",
       "player1Id": "q:player:837",
       "player2": "Alastair James",
@@ -63152,23 +63152,24 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
       "time": "10:00",
-      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
+      "event": "",
       "round": "semi final",
       "venue": "Squashworld Mirrabooka",
       "court": "SC7",
-      "result": "",
-      "status": "scheduled",
+      "result": "11-4, 3-11, 8-11, 11-4, 11-4",
+      "status": "completed",
+      "winner": "Michael Millington",
+      "winnerId": "q:player:912",
       "player1": "Michael Millington",
       "player1Id": "q:player:912",
       "player2": "Joseph Al Houliston",
@@ -63185,13 +63186,12 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -63317,13 +63317,12 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -63350,8 +63349,7 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
         "TournamentSoftware Draw Tree",
@@ -63387,8 +63385,7 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
         "TournamentSoftware Draw Tree",
@@ -63427,15 +63424,12 @@ window.TOURNAMENT_DATA = {
         "TournamentSoftware Draw Tree",
         "TournamentSoftware Draw Inline"
       ],
-      "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
       "time": "10:30",
-      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
+      "event": "",
       "round": "semi final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC4",
@@ -63600,8 +63594,10 @@ window.TOURNAMENT_DATA = {
       "round": "semi final",
       "venue": "Squashworld Mirrabooka",
       "court": "SC3",
-      "result": "",
-      "status": "scheduled",
+      "result": "11-6, 11-8, 6-11, 12-10",
+      "status": "completed",
+      "winner": "Campbell Pardey",
+      "winnerId": "q:player:131",
       "player1": "Campbell Pardey",
       "player1Id": "q:player:131",
       "player2": "Peter Sahb",
@@ -63618,8 +63614,7 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
         "TournamentSoftware Draw Tree",
@@ -63654,10 +63649,7 @@ window.TOURNAMENT_DATA = {
         "TournamentSoftware Draw Tree",
         "TournamentSoftware Draw Inline"
       ],
-      "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -63783,21 +63775,24 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
       "time": "10:40",
-      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
-      "round": "Semi Finals",
+      "event": "",
+      "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "AGC",
-      "result": "",
-      "status": "scheduled",
+      "result": "8-11, 6-11, 11-7, 11-5, 11-5",
+      "status": "completed",
+      "winner": "Alexander Clark",
+      "winnerId": "q:player:304",
       "player1": "Alexander Clark",
       "player1Id": "q:player:304",
       "player2": "Zuko Kubukeli",
@@ -63814,7 +63809,7 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
         "TournamentSoftware Draw Tree"
@@ -63848,10 +63843,7 @@ window.TOURNAMENT_DATA = {
         "TournamentSoftware Draw Tree",
         "TournamentSoftware Draw Inline"
       ],
-      "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -63940,18 +63932,17 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
       "time": "11:00",
-      "event": "Women's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 | Tanya Chapman | Kelly Ferguson | Kim Graham | Laine Heitia | Naomi Ireland | Rennelle Karwalski | Kelsi Lawrence | Yawei Li | Ilse Marais | Samantha Mickleson | Larissa Stephenson | Muffin Stollmeyer | Angela Strelow | Tze Wan Tan | Kat Taylor | Matches",
+      "event": "",
       "round": "semi final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC4",
@@ -63973,18 +63964,17 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
       "time": "11:00",
-      "event": "Women's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 | Tanya Chapman | Kelly Ferguson | Kim Graham | Laine Heitia | Naomi Ireland | Rennelle Karwalski | Kelsi Lawrence | Yawei Li | Ilse Marais | Samantha Mickleson | Larissa Stephenson | Muffin Stollmeyer | Angela Strelow | Tze Wan Tan | Kat Taylor | Matches",
+      "event": "",
       "round": "semi final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC5",
@@ -64006,18 +63996,17 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
       "time": "11:00",
-      "event": "Women's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 | Tanya Chapman | Kelly Ferguson | Kim Graham | Laine Heitia | Naomi Ireland | Rennelle Karwalski | Kelsi Lawrence | Yawei Li | Ilse Marais | Samantha Mickleson | Larissa Stephenson | Muffin Stollmeyer | Angela Strelow | Tze Wan Tan | Kat Taylor | Matches",
+      "event": "",
       "round": "semi final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC6",
@@ -64039,18 +64028,17 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
       "time": "11:00",
-      "event": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches",
+      "event": "",
       "round": "semi final",
       "venue": "Squashworld Mirrabooka",
       "court": "SC3",
@@ -64072,18 +64060,17 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
       "time": "11:00",
-      "event": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches",
+      "event": "",
       "round": "semi final",
       "venue": "Squashworld Mirrabooka",
       "court": "SC4",
@@ -64105,8 +64092,7 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
         "TournamentSoftware Draw Tree",
@@ -64140,19 +64126,19 @@ window.TOURNAMENT_DATA = {
       "evidenceSources": [
         "TournamentSoftware Draw Tree"
       ],
-      "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
       "time": "11:20",
-      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "event": "",
       "round": "",
       "venue": "Karrinyup Shopping Centre",
       "court": "AGC",
-      "result": "",
-      "status": "scheduled",
+      "result": "11-5, 8-11, 8-11, 11-8, 11-7",
+      "status": "completed",
+      "winner": "Jane Kennedy",
+      "winnerId": "q:player:761",
       "player1": "Jane Kennedy",
       "player1Id": "q:player:761",
       "player2": "Janet Byrnes",
@@ -64169,17 +64155,12 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Match"
       ],
-      "winner": "",
-      "winnerId": "",
-      "resultSource": "",
-      "untrustedResultSuppressed": true
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -64188,8 +64169,10 @@ window.TOURNAMENT_DATA = {
       "round": "",
       "venue": "Squashworld Mirrabooka",
       "court": "SC5",
-      "result": "",
-      "status": "scheduled",
+      "result": "6-11, 5-11, 6-11",
+      "status": "completed",
+      "winner": "Jose Luis Alba",
+      "winnerId": "q:player:643",
       "player1": "Norbert Kornyei",
       "player1Id": "q:player:526",
       "player2": "Jose Luis Alba",
@@ -64206,18 +64189,17 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
-      "time": "11:30",
-      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
+      "time": "12:00",
+      "event": "",
       "round": "semi final",
       "venue": "Squashworld Mirrabooka",
       "court": "SC6",
@@ -64239,18 +64221,17 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
-      "time": "11:30",
-      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
+      "time": "12:00",
+      "event": "",
       "round": "semi final",
       "venue": "Squashworld Mirrabooka",
       "court": "SC7",
@@ -64272,18 +64253,17 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
-      "time": "11:30",
-      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "time": "12:00",
+      "event": "",
       "round": "semi final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC3",
@@ -64305,19 +64285,18 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
-      "time": "11:30",
-      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
-      "round": "semi final",
+      "time": "12:00",
+      "event": "",
+      "round": "",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC4",
       "result": "",
@@ -64338,18 +64317,17 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
-      "time": "11:30",
-      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "time": "12:00",
+      "event": "",
       "round": "semi final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC5",
@@ -64371,18 +64349,17 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
-      "time": "11:30",
-      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "time": "12:00",
+      "event": "",
       "round": "semi final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC6",
@@ -64404,13 +64381,12 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -64437,11 +64413,12 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -64468,11 +64445,12 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -64499,11 +64477,12 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -64530,11 +64509,12 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -64716,13 +64696,12 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -64749,13 +64728,12 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -64782,18 +64760,17 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
-      "time": "12:00",
-      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "time": "14:40",
+      "event": "",
       "round": "",
       "venue": "Karrinyup Shopping Centre",
       "court": "AGC",
@@ -64815,22 +64792,17 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Match"
       ],
-      "winner": "",
-      "winnerId": "",
-      "resultSource": "",
-      "untrustedResultSuppressed": true
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
-      "time": "12:00",
-      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
+      "time": "15:00",
+      "event": "",
       "round": "semi final",
       "venue": "Squashworld Mirrabooka",
       "court": "SC3",
@@ -64852,13 +64824,12 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Matches Text"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ]
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
     },
     {
       "date": "2026-09-05",
@@ -64875,22 +64846,20 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:165",
       "rawText": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern Consolation semi final Wendy Mcwilliams [17/32] W Janis Nevler [17/32] 11 6 9 11 10 12 11 7 11 8 H2H Sat 05/09/2026 12:00 Squashworld Mirrabooka - SC4 | Consolation semi final Wendy Mcwilliams [17/32] W Janis Nevler [17/32] 11 6 9 11 10 12 11 7 11 8 H2H Sat 05/09/2026 12:00 Squashworld Mirrabooka - SC4 | Consolation semi final Dianne Watts [17/32] Diane Moss [17/32] W 3 11 8 11 2 11 H2H Sat 05/09/2026 12:00 Squashworld Mirrabooka - SC3 Consolation semi final Wendy Mcwilliams [17/32] W Janis Nevler [17/32] 11 6 9 11 10 12 11 7 11 8 H2H Sat 05/09/2026 12:00 Squashworld Mirrabooka - SC4 Pauline Douglas [1] W Napoti Teremaki [9/16] 11 6 11 9 11 8 H2H Sat 05/09/2026 14:40 Squashworld Mirrabooka - SC5 Melanie Knibbs [5/8] Gaye Mitchell [2] W 2 11 7 11 5 11 H2H Sat 05/09/2026 15:20 Squashworld Mirrabooka - SC5 | Consolation semi final Dianne Watts [17/32] Diane Moss [17/32] W 3 11 8 11 2 11 H2H Sat 05/09/2026 12:00 Squashworld Mirrabooka - SC3 | Played Consolation semi final Wendy Mcwilliams [17/32] W Janis Nevler [17/32] 11 6 9 11 10 12 11 7 11 8 H2H Sat 05/09/2026 12:00 Squashworld Mirrabooka - SC4",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
-      "treeSource": "modern-match-wrapper",
-      "treeCaption": "",
-      "treeInputSlot1": "",
-      "treeInputSlot2": "",
-      "treeOutputSlot": "",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "3001",
+      "treeInputSlot2": "3002",
+      "treeOutputSlot": "2001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Draw Tree"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Draw Tree"
       ]
     },
     {
@@ -64900,6 +64869,32 @@ window.TOURNAMENT_DATA = {
       "round": "semi final",
       "venue": "Squashworld Mirrabooka",
       "court": "SC5",
+      "result": "2-11, 7-11, 5-11",
+      "status": "completed",
+      "winner": "Gaye Mitchell",
+      "winnerId": "q:player:627",
+      "player1": "Melanie Knibbs",
+      "player1Id": "q:player:448",
+      "player2": "Gaye Mitchell",
+      "player2Id": "q:player:627",
+      "source": "TournamentSoftware Match",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442f0/Matches",
+      "rawText": "",
+      "evidenceSources": [
+        "TournamentSoftware Matches Text"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Match"
+      ],
+      "resultSource": "TournamentSoftware"
+    },
+    {
+      "date": "2026-09-05",
+      "time": "16:00",
+      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
+      "round": "Semi Finals",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "AGC",
       "result": "",
       "status": "scheduled",
       "player1": "Margaret Hunt-Kemp",
@@ -64908,7 +64903,164 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:454",
       "rawText": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches Margaret Hunt-Kemp [1] W Nikki Mccullough [3/4] 12 14 8 11 11 7 11 7 12 10 H2H Sat 05/09/2026 12:00 Squashworld Mirrabooka - SC5 | Consolation semi final Dianne Cook [5/8] Quita Cass [5/8] W 9 11 12 14 7 11 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC6 Consolation semi final Wendy Ashley [9/16] W Beryl Boge [5/8] 11 8 7 11 14 16 11 4 11 9 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC7 Consolation semi final Janette Daws [9/16] W Helen Lococo [9/16] 11 2 11 1 11 4 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC9 Consolation semi final Jane Mackie [9/16] W Aileen Garner [9/16] 11 6 8 11 11 8 11 9 H2H Sat 05/09/2026 11:00 Squashworld Mirrabooka - SC3 Consolation semi final Tweedy Seymour [5/8] W Sharon Gilgallon [9/16] 11 7 11 3 11 4 H2H Sat 05/09/2026 11:00 Squashworld Mirrabooka - SC4 Margaret Hunt-Kemp [1] W Nikki Mccullough [3/4] 12 14 8 11 11 7 11 7 12 10 H2H Sat 05/09/2026 12:00 Squashworld Mirrabooka - SC5 Lynette Woodyard [3/4] Claire Bryars [2] W 8 11 4 11 4 11 H2H Sat 05/09/2026 12:40 Squashworld Mirrabooka - SC5 Consolation semi final Andrea Williams [9/16] H2H | Consolation semi final Dianne Cook [5/8] Quita Cass [5/8] W 9 11 12 14 7 11 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC6 | Played | Consolation semi final Tweedy Seymour [5/8] W Sharon Gilgallon [9/16] 11 7 11 3 11 4 H2H Sat 05/09/2026 11:00 Squashworld Mirrabooka - SC4 | Consolation semi final Jane Mackie [9/16] W Aileen Garner [9/16] 11 6 8 11 11 8 11 9 H2H Sat 05/09/2026 11:00 Squashworld Mirrabooka - SC3 | Consolation semi final Janette Daws [9/16] W Helen Lococo [9/16] 11 2 11 1 11 4 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC9 | Consolation semi final Wendy Ashley [9/16] W Beryl Boge [5/8] 11 8 7 11 14 16 11 4 11 9 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC7 | Consolation semi final Dianne Cook [5/8] Quita Cass [5/8] W 9 11 12 14 7 11 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC6 Margaret Hunt-Kemp [1] W Nikki Mccullough [3/4] 12 14 8 11 11 7 11 7 12 10 H2H Sat 05/09/2026 12:00 Squashworld Mirrabooka - SC5",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=10",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35",
+      "treeInputSlot1": "3003",
+      "treeInputSlot2": "3004",
+      "treeOutputSlot": "2002",
+      "treeUnresolvedSlot": "",
+      "deterministicTbd": false,
+      "deterministicBye": false,
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "time": "12:30",
+      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
+      "round": "semi final",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC2",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Marvin Rankel",
+      "player1Id": "q:player:413",
+      "player2": "Stretton Evans",
+      "player2Id": "q:player:702",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55",
+      "treeInputSlot1": "3003",
+      "treeInputSlot2": "3004",
+      "treeOutputSlot": "2002",
+      "treeUnresolvedSlot": "",
+      "deterministicTbd": false,
+      "deterministicBye": false,
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "time": "10:00",
+      "event": "Women's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +60 | Alison Andrews | Dannielle Atkinson | Rosie Barry | Susan Blackbourn | Kim Bradney | Denise Christie | Janelle Djordjevic | Belinda Gaulke | Kay Giacomantonio | Christine Goodman | Jackie Gregory | Janelle Hanks | Susan Hillier | Catherine Jackson | Naomi Katsunuma | Julie Kirchner",
+      "round": "final",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC12",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Hayden Kuklinski",
+      "player1Id": "q:player:383",
+      "player2": "Pawel Michalczuk",
+      "player2Id": "q:player:878",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +60 - Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
+      "treeUnresolvedSlot": "",
+      "deterministicTbd": false,
+      "deterministicBye": false,
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "time": "10:00",
+      "event": "Women's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +65 | Julie Agel | Judith Althorpe | Keiko Arimoto | Julie Banfield | Jeanette Barton | Elaine Boxhall | Janelle Briggs | Annie Burns | Margie Carsburg | Vanessa Christensen | Janet Christy | Kathryn Cowper | Gillian Diggle | Maureen Duke | Melissa Eliott | Liz Frohloff",
+      "round": "Finals",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC2",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Abhinav Sinha",
+      "player1Id": "q:player:984",
+      "player2": "Jason Patmore",
+      "player2Id": "q:player:478",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
+      "treeUnresolvedSlot": "",
+      "deterministicTbd": false,
+      "deterministicBye": false,
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "time": "10:00",
+      "event": "Women's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +65 | Julie Agel | Judith Althorpe | Keiko Arimoto | Julie Banfield | Jeanette Barton | Elaine Boxhall | Janelle Briggs | Annie Burns | Margie Carsburg | Vanessa Christensen | Janet Christy | Kathryn Cowper | Gillian Diggle | Maureen Duke | Melissa Eliott | Liz Frohloff",
+      "round": "Final",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC4",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Sam Henderson",
+      "player1Id": "q:player:807",
+      "player2": "Dariusz Filipowski",
+      "player2Id": "q:player:858",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Women's +65 - Play-off 3/4",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
+      "treeUnresolvedSlot": "",
+      "deterministicTbd": false,
+      "deterministicBye": false,
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "time": "10:00",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "round": "",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "AGC",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Wesley Billowes",
+      "player1Id": "q:player:734",
+      "player2": "Pedro Barra Rodrigues",
+      "player2Id": "q:player:400",
+      "rawText": "",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
       "treeSource": "modern-match-wrapper",
       "treeCaption": "",
       "treeInputSlot1": "",
@@ -64927,167 +65079,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "12:30",
-      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
-      "round": "semi final",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC3",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Marvin Rankel",
-      "player1Id": "q:player:413",
-      "player2": "Stretton Evans",
-      "player2Id": "q:player:702",
-      "rawText": "",
-      "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +35 - Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
-      "treeUnresolvedSlot": "",
-      "deterministicTbd": false,
-      "deterministicBye": false,
-      "evidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ],
-      "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
-    },
-    {
-      "date": "2026-09-05",
-      "time": "12:30",
-      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
-      "round": "semi final",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC4",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Hayden Kuklinski",
-      "player1Id": "q:player:383",
-      "player2": "Pawel Michalczuk",
-      "player2Id": "q:player:878",
-      "rawText": "",
-      "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +35 - Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
-      "treeUnresolvedSlot": "",
-      "deterministicTbd": false,
-      "deterministicBye": false,
-      "evidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ],
-      "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
-    },
-    {
-      "date": "2026-09-05",
-      "time": "12:30",
-      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
-      "round": "quarter final",
+      "date": "2026-09-06",
+      "time": "10:00",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "round": "final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC5",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Abhinav Sinha",
-      "player1Id": "q:player:984",
-      "player2": "Jason Patmore",
-      "player2Id": "q:player:478",
-      "rawText": "",
-      "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +35 - Special Plate",
-      "treeInputSlot1": "4001",
-      "treeInputSlot2": "4002",
-      "treeOutputSlot": "3001",
-      "treeUnresolvedSlot": "",
-      "deterministicTbd": false,
-      "deterministicBye": false,
-      "evidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ],
-      "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
-    },
-    {
-      "date": "2026-09-05",
-      "time": "12:30",
-      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
-      "round": "semi final",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC6",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Sam Henderson",
-      "player1Id": "q:player:807",
-      "player2": "Dariusz Filipowski",
-      "player2Id": "q:player:858",
-      "rawText": "",
-      "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +35 - Special Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
-      "treeUnresolvedSlot": "",
-      "deterministicTbd": false,
-      "deterministicBye": false,
-      "evidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ],
-      "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
-    },
-    {
-      "date": "2026-09-05",
-      "time": "12:30",
-      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
-      "round": "semi final",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC7",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Wesley Billowes",
-      "player1Id": "q:player:734",
-      "player2": "Pedro Barra Rodrigues",
-      "player2Id": "q:player:400",
-      "rawText": "",
-      "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +35 - ConsolationPlate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
-      "treeUnresolvedSlot": "",
-      "deterministicTbd": false,
-      "deterministicBye": false,
-      "evidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ],
-      "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
-    },
-    {
-      "date": "2026-09-05",
-      "time": "12:30",
-      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
-      "round": "semi final",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC8",
       "result": "",
       "status": "scheduled",
       "player1": "Bruno Fernandini Caballero",
@@ -65096,28 +65093,30 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:789",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +35 - ConsolationPlate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "12:30",
-      "event": "Women's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +65 | Julie Agel | Judith Althorpe | Keiko Arimoto | Julie Banfield | Jeanette Barton | Elaine Boxhall | Janelle Briggs | Annie Burns | Margie Carsburg | Vanessa Christensen | Janet Christy | Kathryn Cowper | Gillian Diggle | Maureen Duke | Melissa Eliott | Liz Frohloff",
-      "round": "semi final",
-      "venue": "Squashworld Mirrabooka",
+      "date": "2026-09-06",
+      "time": "10:00",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "final",
+      "venue": "Belmont Saints Squash Centre",
       "court": "SC6",
       "result": "",
       "status": "scheduled",
@@ -65127,12 +65126,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:717",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +65 - Special Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Men's +40 - Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65144,11 +65143,11 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "12:30",
-      "event": "Women's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +65 | Julie Agel | Judith Althorpe | Keiko Arimoto | Julie Banfield | Jeanette Barton | Elaine Boxhall | Janelle Briggs | Annie Burns | Margie Carsburg | Vanessa Christensen | Janet Christy | Kathryn Cowper | Gillian Diggle | Maureen Duke | Melissa Eliott | Liz Frohloff",
-      "round": "semi final",
-      "venue": "Squashworld Mirrabooka",
+      "date": "2026-09-06",
+      "time": "10:00",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "final",
+      "venue": "Belmont Saints Squash Centre",
       "court": "SC7",
       "result": "",
       "status": "scheduled",
@@ -65158,12 +65157,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:882",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +65 - Special Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +40 - Special Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65175,11 +65174,11 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "12:30",
-      "event": "Women's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +65 | Julie Agel | Judith Althorpe | Keiko Arimoto | Julie Banfield | Jeanette Barton | Elaine Boxhall | Janelle Briggs | Annie Burns | Margie Carsburg | Vanessa Christensen | Janet Christy | Kathryn Cowper | Gillian Diggle | Maureen Duke | Melissa Eliott | Liz Frohloff",
-      "round": "semi final",
-      "venue": "Squashworld Mirrabooka",
+      "date": "2026-09-06",
+      "time": "10:00",
+      "event": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake",
+      "round": "final",
+      "venue": "Belmont Saints Squash Centre",
       "court": "SC8",
       "result": "",
       "status": "scheduled",
@@ -65189,12 +65188,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:684",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +65 - ConsolationPlate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Men's +40 - ConsolationPlate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65206,12 +65205,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "12:30",
-      "event": "Women's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +65 | Julie Agel | Judith Althorpe | Keiko Arimoto | Julie Banfield | Jeanette Barton | Elaine Boxhall | Janelle Briggs | Annie Burns | Margie Carsburg | Vanessa Christensen | Janet Christy | Kathryn Cowper | Gillian Diggle | Maureen Duke | Melissa Eliott | Liz Frohloff",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "10:00",
+      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
+      "round": "final",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC9",
+      "court": "SC2",
       "result": "",
       "status": "scheduled",
       "player1": "Sally Kelly",
@@ -65220,12 +65219,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:536",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +65 - ConsolationPlate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +60 - Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65237,12 +65236,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "12:30",
-      "event": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "10:00",
+      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
+      "round": "final",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC3",
+      "court": "SC10",
       "result": "",
       "status": "scheduled",
       "player1": "Peter Fielding",
@@ -65251,12 +65250,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:671",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +70 - Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Men's +60 - Special Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65268,12 +65267,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "12:30",
-      "event": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "10:00",
+      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
+      "round": "final",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC4",
+      "court": "SC11",
       "result": "",
       "status": "scheduled",
       "player1": "Garry Irwin",
@@ -65282,12 +65281,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:708",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +70 - Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +60 - ConsolationPlate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65299,12 +65298,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "12:40",
-      "event": "Women's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +60 | Alison Andrews | Dannielle Atkinson | Rosie Barry | Susan Blackbourn | Kim Bradney | Denise Christie | Janelle Djordjevic | Belinda Gaulke | Kay Giacomantonio | Christine Goodman | Jackie Gregory | Janelle Hanks | Susan Hillier | Catherine Jackson | Naomi Katsunuma | Julie Kirchner",
-      "round": "Semi Finals",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC2",
+      "date": "2026-09-06",
+      "time": "10:00",
+      "event": "Men's +80 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +80 | Joseph Al Houliston | Jose Luis Alba | Howard Armitage | Leon Barnett | Derek Becker | Francis Bugeja | Danial Philip Chidrawi | Lior Grinberg | Barry Hall | William Healy | Alastair James | Ken Kable | Norbert Kornyei | James ( Jim ) Langby | Michael Millington | Vance Moore",
+      "round": "Final",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC5",
       "result": "",
       "status": "scheduled",
       "player1": "Susan Hillier",
@@ -65313,20 +65312,22 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:825",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +60",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
@@ -65344,7 +65345,7 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:646",
       "rawText": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches Lynette Woodyard [3/4] Claire Bryars [2] W 8 11 4 11 4 11 H2H Sat 05/09/2026 12:40 Squashworld Mirrabooka - SC5 | Consolation semi final Dianne Cook [5/8] Quita Cass [5/8] W 9 11 12 14 7 11 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC6 Consolation semi final Wendy Ashley [9/16] W Beryl Boge [5/8] 11 8 7 11 14 16 11 4 11 9 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC7 Consolation semi final Janette Daws [9/16] W Helen Lococo [9/16] 11 2 11 1 11 4 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC9 Consolation semi final Jane Mackie [9/16] W Aileen Garner [9/16] 11 6 8 11 11 8 11 9 H2H Sat 05/09/2026 11:00 Squashworld Mirrabooka - SC3 Consolation semi final Tweedy Seymour [5/8] W Sharon Gilgallon [9/16] 11 7 11 3 11 4 H2H Sat 05/09/2026 11:00 Squashworld Mirrabooka - SC4 Margaret Hunt-Kemp [1] W Nikki Mccullough [3/4] 12 14 8 11 11 7 11 7 12 10 H2H Sat 05/09/2026 12:00 Squashworld Mirrabooka - SC5 Lynette Woodyard [3/4] Claire Bryars [2] W 8 11 4 11 4 11 H2H Sat 05/09/2026 12:40 Squashworld Mirrabooka - SC5 Consolation semi final Andrea Williams [9/16] H2H | Consolation semi final Dianne Cook [5/8] Quita Cass [5/8] W 9 11 12 14 7 11 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC6 | Played | Margaret Hunt-Kemp [1] W Nikki Mccullough [3/4] 12 14 8 11 11 7 11 7 12 10 H2H Sat 05/09/2026 12:00 Squashworld Mirrabooka - SC5 | Consolation semi final Tweedy Seymour [5/8] W Sharon Gilgallon [9/16] 11 7 11 3 11 4 H2H Sat 05/09/2026 11:00 Squashworld Mirrabooka - SC4 | Consolation semi final Jane Mackie [9/16] W Aileen Garner [9/16] 11 6 8 11 11 8 11 9 H2H Sat 05/09/2026 11:00 Squashworld Mirrabooka - SC3 | Consolation semi final Janette Daws [9/16] W Helen Lococo [9/16] 11 2 11 1 11 4 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC9 | Consolation semi final Wendy Ashley [9/16] W Beryl Boge [5/8] 11 8 7 11 14 16 11 4 11 9 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC7 | Consolation semi final Dianne Cook [5/8] Quita Cass [5/8] W 9 11 12 14 7 11 H2H Sat 05/09/2026 10:30 Squashworld Mirrabooka - SC6 Lynette Woodyard [3/4] Claire Bryars [2] W 8 11 4 11 4 11 H2H Sat 05/09/2026 12:40 Squashworld Mirrabooka - SC5",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=10",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
       "treeSource": "modern-match-wrapper",
       "treeCaption": "",
       "treeInputSlot1": "",
@@ -65377,7 +65378,7 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:333",
       "rawText": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue James Bowden [1] W Guillermo Pedernera [3/4] 11 8 11 3 11 4 H2H Sat 05/09/2026 12:40 Karrinyup Shopping Centre - AGC | James Bowden [1] W Guillermo Pedernera [3/4] 11 8 11 3 11 4 H2H Sat 05/09/2026 12:40 Karrinyup Shopping Centre - AGC | James Bowden [1] W Guillermo Pedernera [3/4] 11 8 11 3 11 4 H2H Sat 05/09/2026 12:40 Karrinyup Shopping Centre - AGC Jeff Osborne [5/8] W Rene Mijs [2] 11 8 12 10 7 11 2 11 13 11 H2H Sat 05/09/2026 13:20 Karrinyup Shopping Centre - AGC | James Bowden [1] W Guillermo Pedernera [3/4] 11 8 11 3 11 4 H2H Sat 05/09/2026 12:40 Karrinyup Shopping Centre - AGC | Played James Bowden [1] W Guillermo Pedernera [3/4] 11 8 11 3 11 4 H2H Sat 05/09/2026 12:40 Karrinyup Shopping Centre - AGC",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=19",
       "treeSource": "modern-match-wrapper",
       "treeCaption": "",
       "treeInputSlot1": "",
@@ -65396,12 +65397,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:00",
-      "event": "Women's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +65 | Julie Agel | Judith Althorpe | Keiko Arimoto | Julie Banfield | Jeanette Barton | Elaine Boxhall | Janelle Briggs | Annie Burns | Margie Carsburg | Vanessa Christensen | Janet Christy | Kathryn Cowper | Gillian Diggle | Maureen Duke | Melissa Eliott | Liz Frohloff",
-      "round": "semi final",
-      "venue": "Squashworld Mirrabooka",
-      "court": "SC3",
+      "date": "2026-09-06",
+      "time": "10:00",
+      "event": "Women's +45 - Women's +45-3rd/4th World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +45 - Women's +45-3rd/4th | Janine Mullay | Kate Rowe | Matches | Sunday, 06 September 2026",
+      "round": "Final",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC1",
       "result": "",
       "status": "scheduled",
       "player1": "Belinda Murphy",
@@ -65410,29 +65411,31 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:318",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +65 - Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=31",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:00",
-      "event": "Women's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +65 | Julie Agel | Judith Althorpe | Keiko Arimoto | Julie Banfield | Jeanette Barton | Elaine Boxhall | Janelle Briggs | Annie Burns | Margie Carsburg | Vanessa Christensen | Janet Christy | Kathryn Cowper | Gillian Diggle | Maureen Duke | Melissa Eliott | Liz Frohloff",
-      "round": "semi final",
-      "venue": "Squashworld Mirrabooka",
-      "court": "SC4",
+      "date": "2026-09-06",
+      "time": "10:30",
+      "event": "Women's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 | Tanya Chapman | Kelly Ferguson | Kim Graham | Laine Heitia | Naomi Ireland | Rennelle Karwalski | Kelsi Lawrence | Yawei Li | Ilse Marais | Samantha Mickleson | Larissa Stephenson | Muffin Stollmeyer | Angela Strelow | Tze Wan Tan | Kat Taylor | Matches",
+      "round": "final",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC6",
       "result": "",
       "status": "scheduled",
       "player1": "Margie Carsburg",
@@ -65441,29 +65444,31 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:844",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +65 - Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=3",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:00",
-      "event": "Women's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +60 | Alison Andrews | Dannielle Atkinson | Rosie Barry | Susan Blackbourn | Kim Bradney | Denise Christie | Janelle Djordjevic | Belinda Gaulke | Kay Giacomantonio | Christine Goodman | Jackie Gregory | Janelle Hanks | Susan Hillier | Catherine Jackson | Naomi Katsunuma | Julie Kirchner",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "10:30",
+      "event": "Women's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 | Tanya Chapman | Kelly Ferguson | Kim Graham | Laine Heitia | Naomi Ireland | Rennelle Karwalski | Kelsi Lawrence | Yawei Li | Ilse Marais | Samantha Mickleson | Larissa Stephenson | Muffin Stollmeyer | Angela Strelow | Tze Wan Tan | Kat Taylor | Matches",
+      "round": "final",
       "venue": "Belmont Saints Squash Centre",
-      "court": "SC3",
+      "court": "SC7",
       "result": "",
       "status": "scheduled",
       "player1": "Kim Bradney",
@@ -65472,29 +65477,31 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:193",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +60 - Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=3",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:00",
+      "date": "2026-09-06",
+      "time": "10:30",
       "event": "Women's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +60 | Alison Andrews | Dannielle Atkinson | Rosie Barry | Susan Blackbourn | Kim Bradney | Denise Christie | Janelle Djordjevic | Belinda Gaulke | Kay Giacomantonio | Christine Goodman | Jackie Gregory | Janelle Hanks | Susan Hillier | Catherine Jackson | Naomi Katsunuma | Julie Kirchner",
-      "round": "semi final",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC4",
+      "round": "final",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC12",
       "result": "",
       "status": "scheduled",
       "player1": "Tomoko Mclean",
@@ -65505,10 +65512,10 @@ window.TOURNAMENT_DATA = {
       "source": "TournamentSoftware Official Draw",
       "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +60 - Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Women's +60 - Special Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65520,12 +65527,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:00",
-      "event": "Women's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +60 | Alison Andrews | Dannielle Atkinson | Rosie Barry | Susan Blackbourn | Kim Bradney | Denise Christie | Janelle Djordjevic | Belinda Gaulke | Kay Giacomantonio | Christine Goodman | Jackie Gregory | Janelle Hanks | Susan Hillier | Catherine Jackson | Naomi Katsunuma | Julie Kirchner",
-      "round": "semi final",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC5",
+      "date": "2026-09-06",
+      "time": "10:30",
+      "event": "Women's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +65 | Julie Agel | Judith Althorpe | Keiko Arimoto | Julie Banfield | Jeanette Barton | Elaine Boxhall | Janelle Briggs | Annie Burns | Margie Carsburg | Vanessa Christensen | Janet Christy | Kathryn Cowper | Gillian Diggle | Maureen Duke | Melissa Eliott | Liz Frohloff",
+      "round": "final",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC2",
       "result": "",
       "status": "scheduled",
       "player1": "Catherine Jackson",
@@ -65534,12 +65541,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:146",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +60 - Special Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Women's +65 - Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65551,12 +65558,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:00",
-      "event": "Women's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +60 | Alison Andrews | Dannielle Atkinson | Rosie Barry | Susan Blackbourn | Kim Bradney | Denise Christie | Janelle Djordjevic | Belinda Gaulke | Kay Giacomantonio | Christine Goodman | Jackie Gregory | Janelle Hanks | Susan Hillier | Catherine Jackson | Naomi Katsunuma | Julie Kirchner",
-      "round": "semi final",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC6",
+      "date": "2026-09-06",
+      "time": "10:30",
+      "event": "Women's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +65 | Julie Agel | Judith Althorpe | Keiko Arimoto | Julie Banfield | Jeanette Barton | Elaine Boxhall | Janelle Briggs | Annie Burns | Margie Carsburg | Vanessa Christensen | Janet Christy | Kathryn Cowper | Gillian Diggle | Maureen Duke | Melissa Eliott | Liz Frohloff",
+      "round": "final",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC10",
       "result": "",
       "status": "scheduled",
       "player1": "Cindy Parsley",
@@ -65565,12 +65572,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:978",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +60 - Special Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Women's +65 - Special Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65582,12 +65589,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:00",
-      "event": "Women's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +60 | Alison Andrews | Dannielle Atkinson | Rosie Barry | Susan Blackbourn | Kim Bradney | Denise Christie | Janelle Djordjevic | Belinda Gaulke | Kay Giacomantonio | Christine Goodman | Jackie Gregory | Janelle Hanks | Susan Hillier | Catherine Jackson | Naomi Katsunuma | Julie Kirchner",
-      "round": "semi final",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC7",
+      "date": "2026-09-06",
+      "time": "10:30",
+      "event": "Women's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +65 | Julie Agel | Judith Althorpe | Keiko Arimoto | Julie Banfield | Jeanette Barton | Elaine Boxhall | Janelle Briggs | Annie Burns | Margie Carsburg | Vanessa Christensen | Janet Christy | Kathryn Cowper | Gillian Diggle | Maureen Duke | Melissa Eliott | Liz Frohloff",
+      "round": "final",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC11",
       "result": "",
       "status": "scheduled",
       "player1": "Kay Giacomantonio",
@@ -65596,12 +65603,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:918",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=8",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +60 - ConsolationPlate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Women's +65 - ConsolationPlate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65613,12 +65620,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:00",
-      "event": "Women's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +60 | Alison Andrews | Dannielle Atkinson | Rosie Barry | Susan Blackbourn | Kim Bradney | Denise Christie | Janelle Djordjevic | Belinda Gaulke | Kay Giacomantonio | Christine Goodman | Jackie Gregory | Janelle Hanks | Susan Hillier | Catherine Jackson | Naomi Katsunuma | Julie Kirchner",
-      "round": "semi final",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC8",
+      "date": "2026-09-06",
+      "time": "10:30",
+      "event": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches",
+      "round": "final",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC6",
       "result": "",
       "status": "scheduled",
       "player1": "Linda Pattison",
@@ -65627,29 +65634,31 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:182",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +60 - ConsolationPlate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=10",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:00",
-      "event": "Men's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +65 | Jean-Jacques Annonier | Vaman Apte | Nozomu Arimoto | John Barton | Robert Batten | John Bonello | Graeme Bradfield | Philip Bradshaw | Antony Brettkelly | Fernando Brito | Ravikrishna Burla | Tom Burns | Ken Carse | Gerard Cassidy | Peter Chang | Rod Chatfield",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "10:30",
+      "event": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches",
+      "round": "final",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC6",
+      "court": "SC7",
       "result": "",
       "status": "scheduled",
       "player1": "Denis Jeffery",
@@ -65658,29 +65667,31 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:659",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +65 - Special Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=10",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:00",
-      "event": "Men's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +65 | Jean-Jacques Annonier | Vaman Apte | Nozomu Arimoto | John Barton | Robert Batten | John Bonello | Graeme Bradfield | Philip Bradshaw | Antony Brettkelly | Fernando Brito | Ravikrishna Burla | Tom Burns | Ken Carse | Gerard Cassidy | Peter Chang | Rod Chatfield",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "10:30",
+      "event": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches",
+      "round": "final",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC7",
+      "court": "SC1",
       "result": "",
       "status": "scheduled",
       "player1": "Kenneth Ottenbreit",
@@ -65689,14 +65700,14 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:498",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +65 - Special Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=10",
+      "treeSource": "modern-match-wrapper-tbd",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
-      "deterministicTbd": false,
+      "deterministicTbd": true,
       "deterministicBye": false,
       "evidenceSources": [
         "TournamentSoftware Draw Tree"
@@ -65706,12 +65717,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:00",
-      "event": "Men's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +65 | Jean-Jacques Annonier | Vaman Apte | Nozomu Arimoto | John Barton | Robert Batten | John Bonello | Graeme Bradfield | Philip Bradshaw | Antony Brettkelly | Fernando Brito | Ravikrishna Burla | Tom Burns | Ken Carse | Gerard Cassidy | Peter Chang | Rod Chatfield",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "10:40",
+      "event": "Women's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +75 | Wendy Ashley | Beryl Boge | Claire Bryars | Quita Cass | Dianne Cook | Janette Daws | Aileen Garner | Sharon Gilgallon | Margaret Hunt-Kemp | Helen Lococo | Jane Mackie | Nikki Mccullough | Tweedy Seymour | Andrea Williams | Lynette Woodyard | Matches",
+      "round": "",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC8",
+      "court": "SC5",
       "result": "",
       "status": "scheduled",
       "player1": "Andre Luca",
@@ -65720,29 +65731,31 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:241",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +65 - ConsolationPlate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=10",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:00",
-      "event": "Men's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +65 | Jean-Jacques Annonier | Vaman Apte | Nozomu Arimoto | John Barton | Robert Batten | John Bonello | Graeme Bradfield | Philip Bradshaw | Antony Brettkelly | Fernando Brito | Ravikrishna Burla | Tom Burns | Ken Carse | Gerard Cassidy | Peter Chang | Rod Chatfield",
-      "round": "semi final",
-      "venue": "Squashworld Mirrabooka",
-      "court": "SC9",
+      "date": "2026-09-06",
+      "time": "10:40",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
+      "round": "",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC1",
       "result": "",
       "status": "scheduled",
       "player1": "Brian Hammett",
@@ -65751,29 +65764,31 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:953",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +65 - ConsolationPlate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +45 - Play-off 3/4",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:20",
-      "event": "Women's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +60 | Alison Andrews | Dannielle Atkinson | Rosie Barry | Susan Blackbourn | Kim Bradney | Denise Christie | Janelle Djordjevic | Belinda Gaulke | Kay Giacomantonio | Christine Goodman | Jackie Gregory | Janelle Hanks | Susan Hillier | Catherine Jackson | Naomi Katsunuma | Julie Kirchner",
-      "round": "Semi Finals",
+      "date": "2026-09-06",
+      "time": "10:40",
+      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
+      "round": "Finals",
       "venue": "Belmont Saints Squash Centre",
-      "court": "SC2",
+      "court": "AGC",
       "result": "",
       "status": "scheduled",
       "player1": "Sue Williams",
@@ -65782,12 +65797,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:897",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +60",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +50",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65813,12 +65828,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:751",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +75",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Men's +65",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65877,27 +65892,29 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:578",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +55 - Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Men's +65 - Play-off 3/4",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:30",
-      "event": "Women's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +55 | Lyndal Amer | Ann-Maree Birt | Nicola Blenkinship | Kathy Conquergood | Katrina Cross | Susan Davis | Carol Eberhard | Janine Eedy | Anne Fordham | Tracey-Lee Hall | Yan Han | Amanda Hart | Sarah Howie | Nina Janisch | Inga Joerger | Rachna Kairon",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:00",
+      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
+      "round": "final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC4",
       "result": "",
@@ -65908,12 +65925,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:297",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +55 - Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +35 - Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65925,12 +65942,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:30",
-      "event": "Women's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +55 | Lyndal Amer | Ann-Maree Birt | Nicola Blenkinship | Kathy Conquergood | Katrina Cross | Susan Davis | Carol Eberhard | Janine Eedy | Anne Fordham | Tracey-Lee Hall | Yan Han | Amanda Hart | Sarah Howie | Nina Janisch | Inga Joerger | Rachna Kairon",
-      "round": "semi final",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC5",
+      "date": "2026-09-06",
+      "time": "11:00",
+      "event": "Women's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +60 | Alison Andrews | Dannielle Atkinson | Rosie Barry | Susan Blackbourn | Kim Bradney | Denise Christie | Janelle Djordjevic | Belinda Gaulke | Kay Giacomantonio | Christine Goodman | Jackie Gregory | Janelle Hanks | Susan Hillier | Catherine Jackson | Naomi Katsunuma | Julie Kirchner",
+      "round": "final",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC12",
       "result": "",
       "status": "scheduled",
       "player1": "Amanda Mccormick",
@@ -65939,12 +65956,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:687",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +55 - Special Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Women's +60 - ConsolationPlate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65956,10 +65973,10 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:30",
-      "event": "Women's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +55 | Lyndal Amer | Ann-Maree Birt | Nicola Blenkinship | Kathy Conquergood | Katrina Cross | Susan Davis | Carol Eberhard | Janine Eedy | Anne Fordham | Tracey-Lee Hall | Yan Han | Amanda Hart | Sarah Howie | Nina Janisch | Inga Joerger | Rachna Kairon",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:00",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
+      "round": "final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC6",
       "result": "",
@@ -65970,12 +65987,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:936",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +55 - Special Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +45 - Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -65987,10 +66004,10 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:30",
-      "event": "Women's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +55 | Lyndal Amer | Ann-Maree Birt | Nicola Blenkinship | Kathy Conquergood | Katrina Cross | Susan Davis | Carol Eberhard | Janine Eedy | Anne Fordham | Tracey-Lee Hall | Yan Han | Amanda Hart | Sarah Howie | Nina Janisch | Inga Joerger | Rachna Kairon",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:00",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
+      "round": "final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC7",
       "result": "",
@@ -66001,12 +66018,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:811",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +55 - ConsolationPlate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Men's +45 - Special Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -66018,10 +66035,10 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:30",
-      "event": "Women's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +55 | Lyndal Amer | Ann-Maree Birt | Nicola Blenkinship | Kathy Conquergood | Katrina Cross | Susan Davis | Carol Eberhard | Janine Eedy | Anne Fordham | Tracey-Lee Hall | Yan Han | Amanda Hart | Sarah Howie | Nina Janisch | Inga Joerger | Rachna Kairon",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:00",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
+      "round": "final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC8",
       "result": "",
@@ -66032,12 +66049,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:37",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +55 - ConsolationPlate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +45 - ConsolationPlate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -66049,12 +66066,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:30",
-      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:00",
+      "event": "Men's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +65 | Jean-Jacques Annonier | Vaman Apte | Nozomu Arimoto | John Barton | Robert Batten | John Bonello | Graeme Bradfield | Philip Bradshaw | Antony Brettkelly | Fernando Brito | Ravikrishna Burla | Tom Burns | Ken Carse | Gerard Cassidy | Peter Chang | Rod Chatfield",
+      "round": "final",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC6",
+      "court": "SC1",
       "result": "",
       "status": "scheduled",
       "player1": "Trevor Loughran",
@@ -66063,12 +66080,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:616",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +60 - Special Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Men's +65 - Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -66080,12 +66097,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:30",
-      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:00",
+      "event": "Men's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +65 | Jean-Jacques Annonier | Vaman Apte | Nozomu Arimoto | John Barton | Robert Batten | John Bonello | Graeme Bradfield | Philip Bradshaw | Antony Brettkelly | Fernando Brito | Ravikrishna Burla | Tom Burns | Ken Carse | Gerard Cassidy | Peter Chang | Rod Chatfield",
+      "round": "final",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC7",
+      "court": "SC10",
       "result": "",
       "status": "scheduled",
       "player1": "Peter Amaglio",
@@ -66094,12 +66111,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:710",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +60 - Special Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +65 - Special Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -66111,12 +66128,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:30",
-      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:00",
+      "event": "Men's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +65 | Jean-Jacques Annonier | Vaman Apte | Nozomu Arimoto | John Barton | Robert Batten | John Bonello | Graeme Bradfield | Philip Bradshaw | Antony Brettkelly | Fernando Brito | Ravikrishna Burla | Tom Burns | Ken Carse | Gerard Cassidy | Peter Chang | Rod Chatfield",
+      "round": "final",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC8",
+      "court": "SC11",
       "result": "",
       "status": "scheduled",
       "player1": "Alec Webber",
@@ -66125,12 +66142,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:436",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +60 - ConsolationPlate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Men's +65 - ConsolationPlate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -66142,12 +66159,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:30",
-      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:00",
+      "event": "Men's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +75 | Allan Aldous | Chris Barker | Alan Bennet | Derek Berold | Tienie Botha | Thure Cerling | Geoff Chambers | Kai Ki Chan | Tien-Jen Chen | Brian Cook | Alan Cornish | Ian Curlewis | Peter Eley | Barry Featherstone | Graham Finlay | Leslie Gillings",
+      "round": "final",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC9",
+      "court": "SC6",
       "result": "",
       "status": "scheduled",
       "player1": "Bodo Deutschmann",
@@ -66156,12 +66173,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:634",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +60 - ConsolationPlate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +75 - Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -66173,12 +66190,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:30",
-      "event": "Men's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +65 | Jean-Jacques Annonier | Vaman Apte | Nozomu Arimoto | John Barton | Robert Batten | John Bonello | Graeme Bradfield | Philip Bradshaw | Antony Brettkelly | Fernando Brito | Ravikrishna Burla | Tom Burns | Ken Carse | Gerard Cassidy | Peter Chang | Rod Chatfield",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:00",
+      "event": "Men's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +75 | Allan Aldous | Chris Barker | Alan Bennet | Derek Berold | Tienie Botha | Thure Cerling | Geoff Chambers | Kai Ki Chan | Tien-Jen Chen | Brian Cook | Alan Cornish | Ian Curlewis | Peter Eley | Barry Featherstone | Graham Finlay | Leslie Gillings",
+      "round": "final",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC3",
+      "court": "SC7",
       "result": "",
       "status": "scheduled",
       "player1": "Philip Maxton",
@@ -66187,12 +66204,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:301",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +65 - Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Men's +75 - Special Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -66204,12 +66221,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "13:30",
-      "event": "Men's +65 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +65 | Jean-Jacques Annonier | Vaman Apte | Nozomu Arimoto | John Barton | Robert Batten | John Bonello | Graeme Bradfield | Philip Bradshaw | Antony Brettkelly | Fernando Brito | Ravikrishna Burla | Tom Burns | Ken Carse | Gerard Cassidy | Peter Chang | Rod Chatfield",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:00",
+      "event": "Men's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +75 | Allan Aldous | Chris Barker | Alan Bennet | Derek Berold | Tienie Botha | Thure Cerling | Geoff Chambers | Kai Ki Chan | Tien-Jen Chen | Brian Cook | Alan Cornish | Ian Curlewis | Peter Eley | Barry Featherstone | Graham Finlay | Leslie Gillings",
+      "round": "final",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC4",
+      "court": "SC2",
       "result": "",
       "status": "scheduled",
       "player1": "Graham Pattrick",
@@ -66218,12 +66235,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:252",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=16",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +65 - Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +75 - ConsolationPlate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -66249,12 +66266,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:473",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +50 - Special Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Women's +60",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -66266,12 +66283,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "14:00",
-      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
-      "round": "semi final",
-      "venue": "Squashworld Mirrabooka",
-      "court": "SC7",
+      "date": "2026-09-06",
+      "time": "11:20",
+      "event": "Women's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +60 | Alison Andrews | Dannielle Atkinson | Rosie Barry | Susan Blackbourn | Kim Bradney | Denise Christie | Janelle Djordjevic | Belinda Gaulke | Kay Giacomantonio | Christine Goodman | Jackie Gregory | Janelle Hanks | Susan Hillier | Catherine Jackson | Naomi Katsunuma | Julie Kirchner",
+      "round": "",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "SC3",
       "result": "",
       "status": "scheduled",
       "player1": "Damon Winter",
@@ -66280,29 +66297,31 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:483",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=7",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +50 - Special Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Women's +60 - Play-off 3/4",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "14:00",
-      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:20",
+      "event": "Men's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +75 | Allan Aldous | Chris Barker | Alan Bennet | Derek Berold | Tienie Botha | Thure Cerling | Geoff Chambers | Kai Ki Chan | Tien-Jen Chen | Brian Cook | Alan Cornish | Ian Curlewis | Peter Eley | Barry Featherstone | Graham Finlay | Leslie Gillings",
+      "round": "Finals",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC8",
+      "court": "SC5",
       "result": "",
       "status": "scheduled",
       "player1": "Ranvir Singh",
@@ -66311,12 +66330,12 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:755",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +50 - ConsolationPlate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeCaption": "Men's +75",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -66328,12 +66347,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "14:00",
-      "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:20",
+      "event": "Men's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +75 | Allan Aldous | Chris Barker | Alan Bennet | Derek Berold | Tienie Botha | Thure Cerling | Geoff Chambers | Kai Ki Chan | Tien-Jen Chen | Brian Cook | Alan Cornish | Ian Curlewis | Peter Eley | Barry Featherstone | Graham Finlay | Leslie Gillings",
+      "round": "",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC9",
+      "court": "SC4",
       "result": "",
       "status": "scheduled",
       "player1": "Tom Dimitrievski",
@@ -66342,29 +66361,31 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:311",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=18",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +50 - ConsolationPlate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +75 - Play-off 3/4",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "14:00",
-      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:20",
+      "event": "Women's +40 - Women's +40-3rd/4th World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 - Women's +40-3rd/4th | Kim Graham | Rennelle Karwalski | Matches | Sunday, 06 September 2026",
+      "round": "Final",
       "venue": "Belmont Saints Squash Centre",
-      "court": "SC3",
+      "court": "SC1",
       "result": "",
       "status": "scheduled",
       "player1": "Robert Eberhard",
@@ -66373,27 +66394,29 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:102",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +55 - Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=30",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "14:00",
-      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:30",
+      "event": "Women's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +35 | Kasey Bonato | Blanca Nelly Bonifacio Diaz | Stephanie Chambers | Samantha Foyle | Jodie Hodgkins | Tracey Kimble | Hei Ting Leung | Catherine Mcqueen | Joan Naarstig | Zoe Petrovansky | Heather Pilley | Gill Van Vlaanderen | Matches | Played | Tuesday, 01 September 2026 | Thursday, 03 September 2026",
+      "round": "final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC4",
       "result": "",
@@ -66435,27 +66458,29 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:335",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +55 - Special Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=2",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "14:00",
-      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:30",
+      "event": "Women's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +45 | Karen Blom | Lisa Christou | Lisa Cooper | Marama Hancy | Natalie Kapitza | Young Lee | Janine Mullay | Michelle Pym | Geraldine Ricketts | Kate Rowe | Debra Shahar | Michelle Stevenson | Katie Winterstein | Joannah Yue | Matches | Played",
+      "round": "final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC6",
       "result": "",
@@ -66466,27 +66491,29 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:706",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +55 - Special Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=4",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "14:00",
-      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:30",
+      "event": "Women's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +45 | Karen Blom | Lisa Christou | Lisa Cooper | Marama Hancy | Natalie Kapitza | Young Lee | Janine Mullay | Michelle Pym | Geraldine Ricketts | Kate Rowe | Debra Shahar | Michelle Stevenson | Katie Winterstein | Joannah Yue | Matches | Played",
+      "round": "final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC7",
       "result": "",
@@ -66497,27 +66524,29 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:689",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +55 - ConsolationPlate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=4",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "14:00",
-      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
-      "round": "semi final",
+      "date": "2026-09-06",
+      "time": "11:30",
+      "event": "Women's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +45 | Karen Blom | Lisa Christou | Lisa Cooper | Marama Hancy | Natalie Kapitza | Young Lee | Janine Mullay | Michelle Pym | Geraldine Ricketts | Kate Rowe | Debra Shahar | Michelle Stevenson | Katie Winterstein | Joannah Yue | Matches | Played",
+      "round": "final",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC8",
       "result": "",
@@ -66528,27 +66557,29 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:619",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +55 - ConsolationPlate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=4",
+      "treeSource": "modern-match-wrapper",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "14:00",
-      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
-      "round": "Semi Finals",
+      "date": "2026-09-06",
+      "time": "11:30",
+      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
+      "round": "Plate",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC2",
       "result": "",
@@ -66621,14 +66652,14 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:437",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +60 - Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
-      "treeUnresolvedSlot": "",
-      "deterministicTbd": false,
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree-tbd",
+      "treeCaption": "Men's +35 - Special Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
+      "treeUnresolvedSlot": "2001",
+      "deterministicTbd": true,
       "deterministicBye": false,
       "evidenceSources": [
         "TournamentSoftware Draw Tree"
@@ -66638,12 +66669,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "14:00",
-      "event": "Men's +75 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +75 | Allan Aldous | Chris Barker | Alan Bennet | Derek Berold | Tienie Botha | Thure Cerling | Geoff Chambers | Kai Ki Chan | Tien-Jen Chen | Brian Cook | Alan Cornish | Ian Curlewis | Peter Eley | Barry Featherstone | Graham Finlay | Leslie Gillings",
-      "round": "Semi Finals",
+      "date": "2026-09-06",
+      "time": "11:30",
+      "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
+      "round": "final",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC5",
+      "court": "SC6",
       "result": "",
       "status": "scheduled",
       "player1": "Geoff Chambers",
@@ -66749,7 +66780,7 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:845",
       "rawText": "",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
       "treeSource": "modern-match-wrapper",
       "treeCaption": "",
       "treeInputSlot1": "",
@@ -66815,7 +66846,7 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:443",
       "rawText": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye Consolation semi final Megumi Fujimoto [17/32] W Kate Gordon [17/32] 11 7 11 8 11 8 H2H Sat 05/09/2026 14:30 Belmont Saints Squash Centre - SC4 | Jane Kennedy [1] W Janet Byrnes [3/4] 11 5 8 11 8 11 11 8 11 7 H2H Sat 05/09/2026 11:20 Karrinyup Shopping Centre - AGC Michelle May [3/4] Melissa Martin [2] W 3 11 11 8 3 11 2 11 H2H Sat 05/09/2026 12:00 Karrinyup Shopping Centre - AGC Consolation semi final Megumi Fujimoto [17/32] W Kate Gordon [17/32] 11 7 11 8 11 8 H2H Sat 05/09/2026 14:30 Belmont Saints Squash Centre - SC4 | Jane Kennedy [1] W Janet Byrnes [3/4] 11 5 8 11 8 11 11 8 11 7 H2H Sat 05/09/2026 11:20 Karrinyup Shopping Centre - AGC | Played | Michelle May [3/4] Melissa Martin [2] W 3 11 11 8 3 11 2 11 H2H Sat 05/09/2026 12:00 Karrinyup Shopping Centre - AGC | Jane Kennedy [1] W Janet Byrnes [3/4] 11 5 8 11 8 11 11 8 11 7 H2H Sat 05/09/2026 11:20 Karrinyup Shopping Centre - AGC Consolation semi final Megumi Fujimoto [17/32] W Kate Gordon [17/32] 11 7 11 8 11 8 H2H Sat 05/09/2026 14:30 Belmont Saints Squash Centre - SC4",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=9",
       "treeSource": "modern-match-wrapper",
       "treeCaption": "",
       "treeInputSlot1": "",
@@ -66834,26 +66865,26 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "14:30",
+      "date": "2026-09-06",
+      "time": "11:30",
       "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
       "round": "Plate",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC3",
+      "court": "SC2",
       "result": "",
       "status": "scheduled",
       "player1": "Marc Bush",
       "player1Id": "q:player:856",
-      "player2": "Mark Goode",
-      "player2Id": "q:player:12",
-      "rawText": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross Men's +50 - Plate | Semi Finals | Squashworld Mirrabooka - SC3 | Sat 05/09/2026 14:30 Squashworld Mirrabooka - SC3 | Sat 05/09/2026 14:30",
+      "player2": "Leon Holmes",
+      "player2Id": "q:player:471",
+      "rawText": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross Men's +50 - Plate | Finals | Squashworld Mirrabooka - SC2 | Sun 06/09/2026 11:30 Squashworld Mirrabooka - SC2 | Sun 06/09/2026 11:30",
       "source": "TournamentSoftware Official Draw",
       "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
       "treeSource": "legacy-slot-tree",
       "treeCaption": "Men's +50 - Plate",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -66865,26 +66896,26 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "14:30",
+      "date": "2026-09-06",
+      "time": "11:30",
       "event": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross",
       "round": "Plate",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC4",
+      "court": "SC10",
       "result": "",
       "status": "scheduled",
-      "player1": "Colin Watego",
-      "player1Id": "q:player:481",
-      "player2": "Leon Holmes",
-      "player2Id": "q:player:471",
-      "rawText": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross Men's +50 - Plate | Semi Finals | Squashworld Mirrabooka - SC4 | Sat 05/09/2026 14:30 Squashworld Mirrabooka - SC4 | Sat 05/09/2026 14:30",
+      "player1": "David Kempster",
+      "player1Id": "q:player:473",
+      "player2": "Damon Winter",
+      "player2Id": "q:player:214",
+      "rawText": "Men's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +50 | Syed Arif Ali | Jay Anderson | Arnaldo Andrade | Christopher Bartlett | Onnie Biswas | Greg Blycha | Karl Brearley | Marc Bush | Paul Campbell | Chris Chan | David Christy | Alexander Clark | Brad Clark | Dave Cooper | Michael Corren | Elton Cross Men's +50 - Special Plate | Finals | Squashworld Mirrabooka - SC10 | Sun 06/09/2026 11:30 Squashworld Mirrabooka - SC10 | Sun 06/09/2026 11:30",
       "source": "TournamentSoftware Official Draw",
       "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=13",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +50 - Plate",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +50 - Special Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -67005,22 +67036,20 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:585",
       "rawText": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake Steven Finitsis [3/4] Devon Hendrikse [2] H2H Sat 05/09/2026 14:40 Karrinyup Shopping Centre - AGC | Matthew Karwalski [1] W Jason Le Roux [9/16] 11 7 11 3 11 7 H2H Sat 05/09/2026 14:00 Karrinyup Shopping Centre - AGC Steven Finitsis [3/4] Devon Hendrikse [2] H2H Sat 05/09/2026 14:40 Karrinyup Shopping Centre - AGC | Matthew Karwalski [1] W Jason Le Roux [9/16] 11 7 11 3 11 7 H2H Sat 05/09/2026 14:00 Karrinyup Shopping Centre - AGC | Played | Matthew Karwalski [1] W Jason Le Roux [9/16] 11 7 11 3 11 7 H2H Sat 05/09/2026 14:00 Karrinyup Shopping Centre - AGC Steven Finitsis [3/4] Devon Hendrikse [2] H2H Sat 05/09/2026 14:40 Karrinyup Shopping Centre - AGC",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
-      "treeSource": "modern-match-wrapper",
-      "treeCaption": "",
-      "treeInputSlot1": "",
-      "treeInputSlot2": "",
-      "treeOutputSlot": "",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +35 - ConsolationPlate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Draw Tree"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Draw Tree"
       ]
     },
     {
@@ -67119,8 +67148,8 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "15:20",
+      "date": "2026-09-06",
+      "time": "12:00",
       "event": "Women's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +70 | Pat Barker | Anna Bowen | Shirley Collins | Mary Coolidge | Helen Coyle | Moya Credaro | Lynn De Cambra-Mcleod | Pauline Douglas | Dianne Elliott | Judith Fox | Nicole Gadet | Michel Galloway | Allison Gilbert | Karen Griffiths | Eileen Jellis | Kerry Kern",
       "round": "",
       "venue": "Squashworld Mirrabooka",
@@ -67160,18 +67189,51 @@ window.TOURNAMENT_DATA = {
       "court": "AGC",
       "result": "",
       "status": "scheduled",
-      "player1": "Daniel Ince",
-      "player1Id": "q:player:950",
-      "player2": "Samuel Kang",
-      "player2Id": "q:player:657",
-      "rawText": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang Men's +35 | Semi Finals | Karrinyup Shopping Centre - AGC | Sat 05/09/2026 16:00 Karrinyup Shopping Centre - AGC | Sat 05/09/2026 16:00",
+      "player1": "Jason Le Roux",
+      "player1Id": "q:player:592",
+      "player2": "Devon Hendrikse",
+      "player2Id": "q:player:585",
+      "rawText": "Men's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +40 | Khawar Abbas | Mohamed Abouzeid | Arjun Agnihotri | Corey Bedingfield | David Bolger | Matthew Brown | Julian Buczek | Oliver Buhler | Ty Cameron | Kyle Coenraad | Simon Cosier | Liebin (Roy) Deng | Eric Dingle | Jonathan Down | Ashton D'Vaz | Yeshan Ekanayake 1 [RSA] Jason Le Roux [9/16] Belmont Saints Squash Centre - SC1 2 [RSA] Devon Hendrikse [2] Sun 06/09/2026 12:00 | Men's +40 - Play-off 3/4 Finals Winner 1 [RSA] Jason Le Roux [9/16] Belmont Saints Squash Centre - SC1 2 [RSA] Devon Hendrikse [2] Sun 06/09/2026 12:00 | Men's +40 - Play-off 3/4 Finals Winner 1 [RSA] Jason Le Roux [9/16] Belmont Saints Squash Centre - SC1 2 [RSA] Devon Hendrikse [2] Sun 06/09/2026 12:00 | Finals Winner 1 [RSA] Jason Le Roux [9/16] Belmont Saints Squash Centre - SC1 2 [RSA] Devon Hendrikse [2] Sun 06/09/2026 12:00",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=1",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=11",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +35",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +40 - Play-off 3/4",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
+      "treeUnresolvedSlot": "",
+      "deterministicTbd": false,
+      "deterministicBye": false,
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "time": "12:00",
+      "event": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue",
+      "round": "Finals",
+      "venue": "Belmont Saints Squash Centre",
+      "court": "AGC",
+      "result": "",
+      "status": "scheduled",
+      "player1": "James Bowden",
+      "player1Id": "q:player:930",
+      "player2": "Jeff Osborne",
+      "player2Id": "q:player:915",
+      "rawText": "Men's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +45 | Marcelo Abelheira | Syed Atif Ali Shah | Mark Arici | Vinay Bachani | Brian Botes | Andre Botha | James Bowden | Jason Carey | David Chapman | Chris Cheong | Andrew Clements | Derick Collins | Luiz Andre Couto | Adebayoh Davies | Wayne Dewar | Robert Donaghue Men's +45 | Finals | Karrinyup Shopping Centre - AGC | Sun 06/09/2026 12:00 Karrinyup Shopping Centre - AGC | Sun 06/09/2026 12:00",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=12",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +45",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -67183,26 +67245,26 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "16:00",
-      "event": "Women's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +55 | Lyndal Amer | Ann-Maree Birt | Nicola Blenkinship | Kathy Conquergood | Katrina Cross | Susan Davis | Carol Eberhard | Janine Eedy | Anne Fordham | Tracey-Lee Hall | Yan Han | Amanda Hart | Sarah Howie | Nina Janisch | Inga Joerger | Rachna Kairon",
-      "round": "Semi Finals",
+      "date": "2026-09-06",
+      "time": "12:00",
+      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
+      "round": "Finals",
       "venue": "Belmont Saints Squash Centre",
       "court": "SC2",
       "result": "",
       "status": "scheduled",
-      "player1": "Kelsey Souchereau",
-      "player1Id": "q:player:776",
-      "player2": "Amanda Hart",
-      "player2Id": "q:player:364",
-      "rawText": "Women's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +55 | Lyndal Amer | Ann-Maree Birt | Nicola Blenkinship | Kathy Conquergood | Katrina Cross | Susan Davis | Carol Eberhard | Janine Eedy | Anne Fordham | Tracey-Lee Hall | Yan Han | Amanda Hart | Sarah Howie | Nina Janisch | Inga Joerger | Rachna Kairon Women's +55 | Semi Finals | Belmont Saints Squash Centre - SC2 | Sat 05/09/2026 16:00 Belmont Saints Squash Centre - SC2 | Sat 05/09/2026 16:00",
+      "player1": "Jean-Jacques Pineau",
+      "player1Id": "q:player:982",
+      "player2": "Michael Fullick",
+      "player2Id": "q:player:704",
+      "rawText": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus Men's +60 | Finals | Belmont Saints Squash Centre - SC2 | Sun 06/09/2026 12:00 Belmont Saints Squash Centre - SC2 | Sun 06/09/2026 12:00",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=15",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Women's +55",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +60",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -67214,43 +67276,12 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "16:00",
-      "event": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie",
-      "round": "Semi Finals",
-      "venue": "Squashworld Mirrabooka",
-      "court": "SC5",
-      "result": "",
-      "status": "scheduled",
-      "player1": "John Macrury",
-      "player1Id": "q:player:764",
-      "player2": "Mark Brycki",
-      "player2Id": "q:player:544",
-      "rawText": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie Men's +70 | Semi Finals | Squashworld Mirrabooka - SC5 | Sat 05/09/2026 16:00 Squashworld Mirrabooka - SC5 | Sat 05/09/2026 16:00",
-      "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +70",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
-      "treeUnresolvedSlot": "",
-      "deterministicTbd": false,
-      "deterministicBye": false,
-      "evidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ],
-      "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
-    },
-    {
-      "date": "2026-09-05",
-      "time": "16:30",
-      "event": "Men's +35 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +35 | Intikhab Alam | David Allman | Sidney Arendse | Pedro Barra Rodrigues | Lyle Billowes | Wesley Billowes | Thierry Blandin De Chalain | Stretton Evans | Bruno Fernandini Caballero | Dariusz Filipowski | Andrew Fraser | Zahid Gul | Sam Henderson | Daniel Ince | Daniel Jones | Samuel Kang",
-      "round": "Plate",
+      "date": "2026-09-06",
+      "time": "12:00",
+      "event": "Men's +60 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +60 | Yawar Abbas | Steve Abbott | Gavin Allaway | Peter Amaglio | Peter Anich | Ashun Bahl | Petri Barnard | James Barr | Alex Betts | Robert Biasillo | Jay Bidal | Shaun Billowes | Mauricio Bocanegra | Frank Bomhardt | Peter Burrows | Fritz Bus",
+      "round": "",
       "venue": "Belmont Saints Squash Centre",
-      "court": "SC1",
+      "court": "SC3",
       "result": "",
       "status": "scheduled",
       "player1": "Jason Patmore",
@@ -67269,64 +67300,35 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
+        "TournamentSoftware Draw Tree",
+        "TournamentSoftware Draw Inline"
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "16:40",
-      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
-      "round": "Semi Finals",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC2",
-      "result": "",
-      "status": "scheduled",
-      "player1": "Richard Chin",
-      "player1Id": "q:player:24",
-      "player2": "Jason Oxenham",
-      "player2Id": "q:player:432",
-      "rawText": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig Men's +55 | Semi Finals | Belmont Saints Squash Centre - SC2 | Sat 05/09/2026 16:40 Belmont Saints Squash Centre - SC2 | Sat 05/09/2026 16:40",
-      "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
-      "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +55",
-      "treeInputSlot1": "3001",
-      "treeInputSlot2": "3002",
-      "treeOutputSlot": "2001",
-      "treeUnresolvedSlot": "",
-      "deterministicTbd": false,
-      "deterministicBye": false,
-      "evidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ],
-      "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree"
-      ]
-    },
-    {
-      "date": "2026-09-05",
-      "time": "16:40",
+      "date": "2026-09-06",
+      "time": "12:00",
       "event": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie",
-      "round": "Semi Finals",
+      "round": "Final",
       "venue": "Squashworld Mirrabooka",
-      "court": "SC5",
+      "court": "SC6",
       "result": "",
       "status": "scheduled",
-      "player1": "Jim Mobbs",
-      "player1Id": "q:player:669",
-      "player2": "Stan Voges",
-      "player2Id": "q:player:537",
-      "rawText": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie Men's +70 | Semi Finals | Squashworld Mirrabooka - SC5 | Sat 05/09/2026 16:40 Squashworld Mirrabooka - SC5 | Sat 05/09/2026 16:40",
+      "player1": "Ripley Oyler",
+      "player1Id": "q:player:671",
+      "player2": "John Hawkes",
+      "player2Id": "q:player:708",
+      "rawText": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie Men's +70 - Plate | Finals | Squashworld Mirrabooka - SC6 | Sun 06/09/2026 12:00 Squashworld Mirrabooka - SC6 | Sun 06/09/2026 12:00",
       "source": "TournamentSoftware Official Draw",
       "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +70",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +70 - Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -67338,26 +67340,57 @@ window.TOURNAMENT_DATA = {
       ]
     },
     {
-      "date": "2026-09-05",
-      "time": "17:20",
-      "event": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig",
-      "round": "Semi Finals",
-      "venue": "Belmont Saints Squash Centre",
-      "court": "SC2",
+      "date": "2026-09-06",
+      "time": "12:00",
+      "event": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie",
+      "round": "final",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC7",
       "result": "",
       "status": "scheduled",
-      "player1": "Peter Bastow",
-      "player1Id": "q:player:3",
-      "player2": "Thomas Grübel",
-      "player2Id": "q:player:583",
-      "rawText": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig Men's +55 | Semi Finals | Belmont Saints Squash Centre - SC2 | Sat 05/09/2026 17:20 Belmont Saints Squash Centre - SC2 | Sat 05/09/2026 17:20",
+      "player1": "Keith Petty",
+      "player1Id": "q:player:260",
+      "player2": "Rod La Motte",
+      "player2Id": "q:player:411",
+      "rawText": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie Men's +70 - Special Plate | Finals | Squashworld Mirrabooka - SC7 | Sun 06/09/2026 12:00 Squashworld Mirrabooka - SC7 | Sun 06/09/2026 12:00",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
       "treeSource": "legacy-slot-tree",
-      "treeCaption": "Men's +55",
-      "treeInputSlot1": "3003",
-      "treeInputSlot2": "3004",
-      "treeOutputSlot": "2002",
+      "treeCaption": "Men's +70 - Special Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
+      "treeUnresolvedSlot": "",
+      "deterministicTbd": false,
+      "deterministicBye": false,
+      "evidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ],
+      "drawEvidenceSources": [
+        "TournamentSoftware Draw Tree"
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "time": "12:00",
+      "event": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie",
+      "round": "final",
+      "venue": "Squashworld Mirrabooka",
+      "court": "SC1",
+      "result": "",
+      "status": "scheduled",
+      "player1": "Bob Price",
+      "player1Id": "q:player:833",
+      "player2": "Richard Dowie",
+      "player2Id": "q:player:650",
+      "rawText": "Men's +70 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +70 | Chad Addison | Rashid Aziz | Charles Barton | Michael Bastiani | Christian Bröcker | Michael Brown | Robert Browne | Mark Brycki | Michael Conlon | Louis Cotter | Paul Covolato | Gavin Davis | John De Leijer | Gerard De Ville De Goyet | Ian Donovan | Richard Dowie Men's +70 - ConsolationPlate | Finals | Squashworld Mirrabooka - SC1 | Sun 06/09/2026 12:00 Squashworld Mirrabooka - SC1 | Sun 06/09/2026 12:00",
+      "source": "TournamentSoftware Official Draw",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=17",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +70 - ConsolationPlate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
@@ -67771,22 +67804,20 @@ window.TOURNAMENT_DATA = {
       "player2Id": "q:player:961",
       "rawText": "Women's +45 - Women's +45-3rd/4th World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +45 - Women's +45-3rd/4th | Janine Mullay | Kate Rowe | Matches | Sunday, 06 September 2026 Final Kate Rowe Janine Mullay H2H Sun 06/09/2026 10:00 Belmont Saints Squash Centre - SC1 | Final Kate Rowe Janine Mullay H2H Sun 06/09/2026 10:00 Belmont Saints Squash Centre - SC1 | Sunday, 06 September 2026 Final Kate Rowe Janine Mullay H2H Sun 06/09/2026 10:00 Belmont Saints Squash Centre - SC1 | Sunday, 06 September 2026 | Sunday, 06 September 2026 Final Kate Rowe Janine Mullay H2H Sun 06/09/2026 10:00 Belmont Saints Squash Centre - SC1 | Matches Sunday, 06 September 2026 Final Kate Rowe Janine Mullay H2H Sun 06/09/2026 10:00 Belmont Saints Squash Centre - SC1 | Women's +45 - Women's +45-3rd/4th Women's +45 Women's +45-3rd/4th Elimination Size 2 MATCHES Final Kate Rowe Janine Mullay Sun 06/09/2026 10:00 Belmont Saints Squash Centre - SC1 Matches Sunday, 06 September 2026 Final Kate Rowe Janine Mullay H2H Sun 06/09/2026 10:00 Belmont Saints Squash Centre - SC1 | Women's +45 - Women's +45-3rd/4th Women's +45 Women's +45-3rd/4th Elimination Size 2 MATCHES Final Kate Rowe Janine Mullay Sun 06/09/2026 10:00 Belmont Saints Squash Centre - SC1 Matches Sunday, 06 September 2026 Final Kate Rowe Janine Mullay H2H Sun 06/09/2026 10:00 Belmont Saints Squash Centre - SC1 | Log In World Squash Masters Championships 2026 Draw Log In World Squash Masters Championships 2026 Australia | Mirrabooka, Australia 30 Aug to 6 Sep FAVOURITE Overview Matches Players Draws Events Seeded entries Women's +45 - Women's +45-3rd/4th Women's +45 Women's +45-3rd/4th Elimination Size 2 MATCHES Final Kate Rowe Janine Mullay Sun 06/09/2026 10:00 Belmont Saints Squash Centre - SC1 Matches Sunday, 06 September 2026 Final Kate Rowe Janine Mullay H2H Sun 06/09/2026 10:00 Belmont Saints Squash Centre - SC1 Account Sign Up Log In Contact World Squash Federation 25 Russell Street Hastings East Sussex TN34 1QU VAT: GB 469 6236 49 admin@worldsquash.org Contact us HELP CENTRE Social Media Home See what's new Privacy Cookies | Sunday, 06 September 2026 Final Kate Rowe Janine Mullay H2H Sun 06/09/2026 10:00 Belmont Saints Squash Centre - SC1",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=31",
-      "treeSource": "modern-match-wrapper",
-      "treeCaption": "",
-      "treeInputSlot1": "",
-      "treeInputSlot2": "",
-      "treeOutputSlot": "",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - Plate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Draw Tree"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Draw Tree"
       ]
     },
     {
@@ -68624,33 +68655,27 @@ window.TOURNAMENT_DATA = {
       "court": "AGC",
       "result": "",
       "status": "scheduled",
-      "player1": "Joannah Yue",
-      "player1Id": "q:player:462",
-      "player2": "Karen Blom",
-      "player2Id": "q:player:790",
-      "rawText": "Women's +45 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +45 | Karen Blom | Lisa Christou | Lisa Cooper | Marama Hancy | Natalie Kapitza | Young Lee | Janine Mullay | Michelle Pym | Geraldine Ricketts | Kate Rowe | Debra Shahar | Michelle Stevenson | Katie Winterstein | Joannah Yue | Matches | Played Joannah Yue [1] Karen Blom [2] Sun 06/09/2026 11:20 Karrinyup Shopping Centre - AGC | Joannah Yue [1] Karen Blom [2] Sun 06/09/2026 11:20 Karrinyup Shopping Centre - AGC | Joannah Yue [1] W Natalie Kapitza [5/8] 11 5 11 1 11 2 Thu 03/09/2026 12:40 Karrinyup Shopping Centre - AGC Young Lee [5/8] Kate Rowe [3/4] W 4 11 10 12 1 11 Thu 03/09/2026 12:40 Belmont Saints Squash Centre - SC2 Janine Mullay [3/4] W Lisa Christou [5/8] 11 9 12 10 11 8 Thu 03/09/2026 13:20 Belmont Saints Squash Centre - SC2 Michelle Pym [9/16] Karen Blom [2] W 2 11 1 11 4 11 Thu 03/09/2026 13:20 Karrinyup Shopping Centre - AGC Joannah Yue [1] W Kate Rowe [3/4] 11 6 11 8 11 5 Fri 04/09/2026 14:00 Karrinyup Shopping Centre - AGC Janine Mullay [3/4] Karen Blom [2] W 7 11 5 11 9 11 Fri 04/09/2026 14:40 Karrinyup Shopping Centre - AGC Joannah Yue [1] Karen Blom [2] Sun 06/09/2026 11:20 Karrinyup Shopping Centre - AGC | Joannah Yue [1] W Bye Lisa Cooper [9/16] Natalie Kapitza [5/8] W 4 11 5 11 3 11 Tue 01/09/2026 12:40 Belmont Saints Squash Centre - SC1 Young Lee [5/8] W Debra Shahar [9/16] 11 4 11 1 11 2 Tue 01/09/2026 12:40 Belmont Saints Squash Centre - SC2 Michelle Stevenson [9/16] Kate Rowe [3/4] W 4 11 3 11 5 11 Tue 01/09/2026 12:40 Belmont Saints Squash Centre - SC3 Janine Mullay [3/4] W Katie Winterstein [9/16] 11 2 11 1 11 3 Tue 01/09/2026 12:40 Belmont Saints Squash Centre - SC4 Marama Hancy [9/16] Walkover Lisa Christou [5/8] W Tue 01/09/2026 12:40 Belmont Saints Squash Centre - SC5 Geraldine Ricketts [5/8] Michelle Pym [9/16] W 11 8 4 11 5 11 9 11 Tue 01/09/2026 12:40 Belmont Saints Squash Centre - SC6 Bye Karen Blom [2] W | Joannah Yue [1] W Natalie Kapitza [5/8] 11 5 11 1 11 2 Thu 03/09/2026 12:40 Karrinyup Shopping Centre - AGC Young Lee [5/8] Kate Rowe [3/4] W 4 11 10 12 1 11 Thu 03/09/2026 12:40 Belmont Saints Squash Centre - SC2 Janine Mullay [3/4] W Lisa Christou [5/8] 11 9 12 10 11 8 Thu 03/09/2026 13:20 Belmont Saints Squash Centre - SC2 Michelle Pym [9/16] Karen Blom [2] W 2 11 1 11 4 11 Thu 03/09/2026 13:20 Karrinyup Shopping Centre - AGC Joannah Yue [1] W Kate Rowe [3/4] 11 6 11 8 11 5 Fri 04/09/2026 14:00 Karrinyup Shopping Centre - AGC Janine Mullay [3/4] Karen Blom [2] W 7 11 5 11 9 11 Fri 04/09/2026 14:40 Karrinyup Shopping Centre - AGC Joannah Yue [1] Karen Blom [2] Sun 06/09/2026 11:20 Karrinyup Shopping Centre - AGC | Joannah Yue [1] W Natalie Kapitza [5/8] 11 5 11 1 11 2 Thu 03/09/2026 12:40 Karrinyup Shopping Centre - AGC Young Lee [5/8] Kate Rowe [3/4] W 4 11 10 12 1 11 Thu 03/09/2026 12:40 Belmont Saints Squash Centre - SC2 Janine Mullay [3/4] W Lisa Christou [5/8] 11 9 12 10 11 8 Thu 03/09/2026 13:20 Belmont Saints Squash Centre - SC2 Michelle Pym [9/16] Karen Blom [2] W 2 11 1 11 4 11 Thu 03/09/2026 13:20 Karrinyup Shopping Centre - AGC Joannah Yue [1] W Kate Rowe [3/4] 11 6 11 8 11 5 Fri 04/09/2026 14:00 Karrinyup Shopping Centre - AGC Janine Mullay [3/4] Karen Blom [2] W 7 11 5 11 9 11 Fri 04/09/2026 14:40 Karrinyup Shopping Centre - AGC Joannah Yue [1] Karen Blom [2] Sun 06/09/2026 11:20 Karrinyup Shopping Centre - AGC | MATCHES Joannah Yue [1] W Natalie Kapitza [5/8] 11 5 11 1 11 2 Thu 03/09/2026 12:40 Karrinyup Shopping Centre - AGC Young Lee [5/8] Kate Rowe [3/4] W 4 11 10 12 1 11 Thu 03/09/2026 12:40 Belmont Saints Squash Centre - SC2 Janine Mullay [3/4] W Lisa Christou [5/8] 11 9 12 10 11 8 Thu 03/09/2026 13:20 Belmont Saints Squash Centre - SC2 Michelle Pym [9/16] Karen Blom [2] W 2 11 1 11 4 11 Thu 03/09/2026 13:20 Karrinyup Shopping Centre - AGC Joannah Yue [1] W Kate Rowe [3/4] 11 6 11 8 11 5 Fri 04/09/2026 14:00 Karrinyup Shopping Centre - AGC Janine Mullay [3/4] Karen Blom [2] W 7 11 5 11 9 11 Fri 04/09/2026 14:40 Karrinyup Shopping Centre - AGC Joannah Yue [1] Karen Blom [2] Sun 06/09/2026 11:20 Karrinyup Shopping Centre - AGC | MATCHES Joannah Yue [1] W Natalie Kapitza [5/8] 11 5 11 1 11 2 Thu 03/09/2026 12:40 Karrinyup Shopping Centre - AGC Young Lee [5/8] Kate Rowe [3/4] W 4 11 10 12 1 11 Thu 03/09/2026 12:40 Belmont Saints Squash Centre - SC2 Janine Mullay [3/4] W Lisa Christou [5/8] 11 9 12 10 11 8 Thu 03/09/2026 13:20 Belmont Saints Squash Centre - SC2 Michelle Pym [9/16] Karen Blom [2] W 2 11 1 11 4 11 Thu 03/09/2026 13:20 Karrinyup Shopping Centre - AGC Joannah Yue [1] W Kate Rowe [3/4] 11 6 11 8 11 5 Fri 04/09/2026 14:00 Karrinyup Shopping Centre - AGC Janine Mullay [3/4] Karen Blom [2] W 7 11 5 11 9 11 Fri 04/09/2026 14:40 Karrinyup Shopping Centre - AGC Joannah Yue [1] Karen Blom [2] Sun 06/09/2026 11:20 Karrinyup Shopping Centre - AGC | Joannah Yue [1] W Kate Rowe [3/4] 11 6 11 8 11 5 Fri 04/09/2026 14:00 Karrinyup Shopping Centre - AGC Janine Mullay [3/4] Karen Blom [2] W 7 11 5 11 9 11 Fri 04/09/2026 14:40 Karrinyup Shopping Centre - AGC Joannah Yue [1] Karen Blom [2] Sun 06/09/2026 11:20 Karrinyup Shopping Centre - AGC",
+      "player1": "Aaron Rothschild",
+      "player1Id": "q:player:457",
+      "player2": "Michael Wöffler",
+      "player2Id": "q:player:900",
+      "rawText": "Men's +55 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Men's +55 | Craig Adams | Naj Alavi | Irfan Asghar | Chris Baker | Simon Barton | Peter Bastow | Christian Borgvall | Ian Brunning | Ryan Cheung | Richard Chin | Stuart Clarke | Julian Conder | David Conteh | Michael Cowhie | Phil Coyne | Grant Craig Men's +55 - ConsolationPlate | Finals | Belmont Saints Squash Centre - SC8 | Sun 06/09/2026 12:30 Belmont Saints Squash Centre - SC8 | Sun 06/09/2026 12:30",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=4",
-      "treeSource": "modern-match-wrapper",
-      "treeCaption": "",
-      "treeInputSlot1": "",
-      "treeInputSlot2": "",
-      "treeOutputSlot": "",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=14",
+      "treeSource": "legacy-slot-tree",
+      "treeCaption": "Men's +55 - ConsolationPlate",
+      "treeInputSlot1": "2001",
+      "treeInputSlot2": "2002",
+      "treeOutputSlot": "1001",
       "treeUnresolvedSlot": "",
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Draw Tree"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
-      ],
-      "winner": "",
-      "winnerId": "",
-      "resultSource": "",
-      "untrustedResultSuppressed": true
+        "TournamentSoftware Draw Tree"
+      ]
     },
     {
       "date": "2026-09-06",
@@ -68789,13 +68814,13 @@ window.TOURNAMENT_DATA = {
       "court": "SC1",
       "result": "",
       "status": "scheduled",
-      "player1": "Rennelle Karwalski",
-      "player1Id": "q:player:161",
-      "player2": "Kim Graham",
-      "player2Id": "q:player:756",
-      "rawText": "Women's +40 - Women's +40-3rd/4th World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 - Women's +40-3rd/4th | Kim Graham | Rennelle Karwalski | Matches | Sunday, 06 September 2026 Final Rennelle Karwalski Kim Graham H2H Sun 06/09/2026 11:20 Belmont Saints Squash Centre - SC1 | Final Rennelle Karwalski Kim Graham H2H Sun 06/09/2026 11:20 Belmont Saints Squash Centre - SC1 | Sunday, 06 September 2026 Final Rennelle Karwalski Kim Graham H2H Sun 06/09/2026 11:20 Belmont Saints Squash Centre - SC1 | Sunday, 06 September 2026 | Sunday, 06 September 2026 Final Rennelle Karwalski Kim Graham H2H Sun 06/09/2026 11:20 Belmont Saints Squash Centre - SC1 | Matches Sunday, 06 September 2026 Final Rennelle Karwalski Kim Graham H2H Sun 06/09/2026 11:20 Belmont Saints Squash Centre - SC1 | Women's +40 - Women's +40-3rd/4th Women's +40 Women's +40-3rd/4th Elimination Size 2 MATCHES Final Rennelle Karwalski Kim Graham Sun 06/09/2026 11:20 Belmont Saints Squash Centre - SC1 Matches Sunday, 06 September 2026 Final Rennelle Karwalski Kim Graham H2H Sun 06/09/2026 11:20 Belmont Saints Squash Centre - SC1 | Women's +40 - Women's +40-3rd/4th Women's +40 Women's +40-3rd/4th Elimination Size 2 MATCHES Final Rennelle Karwalski Kim Graham Sun 06/09/2026 11:20 Belmont Saints Squash Centre - SC1 Matches Sunday, 06 September 2026 Final Rennelle Karwalski Kim Graham H2H Sun 06/09/2026 11:20 Belmont Saints Squash Centre - SC1 | Log In World Squash Masters Championships 2026 Draw Log In World Squash Masters Championships 2026 Australia | Mirrabooka, Australia 30 Aug to 6 Sep FAVOURITE Overview Matches Players Draws Events Seeded entries Women's +40 - Women's +40-3rd/4th Women's +40 Women's +40-3rd/4th Elimination Size 2 MATCHES Final Rennelle Karwalski Kim Graham Sun 06/09/2026 11:20 Belmont Saints Squash Centre - SC1 Matches Sunday, 06 September 2026 Final Rennelle Karwalski Kim Graham H2H Sun 06/09/2026 11:20 Belmont Saints Squash Centre - SC1 Account Sign Up Log In Contact World Squash Federation 25 Russell Street Hastings East Sussex TN34 1QU VAT: GB 469 6236 49 admin@worldsquash.org Contact us HELP CENTRE Social Media Home See what's new Privacy Cookies | Sunday, 06 September 2026 Final Rennelle Karwalski Kim Graham H2H Sun 06/09/2026 11:20 Belmont Saints Squash Centre - SC1",
+      "player1": "Larissa Stephenson",
+      "player1Id": "q:player:637",
+      "player2": "Samantha Mickleson",
+      "player2Id": "q:player:561",
+      "rawText": "Women's +40 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +40 | Tanya Chapman | Kelly Ferguson | Kim Graham | Laine Heitia | Naomi Ireland | Rennelle Karwalski | Kelsi Lawrence | Yawei Li | Ilse Marais | Samantha Mickleson | Larissa Stephenson | Muffin Stollmeyer | Angela Strelow | Tze Wan Tan | Kat Taylor | Matches Larissa Stephenson [1] Samantha Mickleson [3/4] Sun 06/09/2026 12:40 Karrinyup Shopping Centre - AGC | Larissa Stephenson [1] Samantha Mickleson [3/4] Sun 06/09/2026 12:40 Karrinyup Shopping Centre - AGC | 11 8 9 11 10 12 11 9 3 11 11 3 11 7 11 3 4 11 1 11 3 11 11 3 11 3 11 2 1 11 1 11 0 11 11 0 11 5 11 5 2 11 1 11 2 11 Larissa Stephenson [1] W Naomi Ireland [5/8] 11 2 11 2 11 1 Thu 03/09/2026 15:20 Karrinyup Shopping Centre - AGC Muffin Stollmeyer [5/8] Rennelle Karwalski [3/4] W 8 11 4 11 6 11 Thu 03/09/2026 15:20 Belmont Saints Squash Centre - SC2 Samantha Mickleson [3/4] W Angela Strelow [5/8] 11 5 11 8 11 3 Thu 03/09/2026 16:00 Belmont Saints Squash Centre - SC2 Kelsi Lawrence [5/8] Kim Graham [2] W 2 11 4 11 1 11 Thu 03/09/2026 16:00 Karrinyup Shopping Centre - AGC Larissa Stephenson [1] W Rennelle Karwalski [3/4] 11 2 11 4 11 9 Fri 04/09/2026 11:20 Karrinyup Shopping Centre - AGC Samantha Mickleson [3/4] W Kim Graham [2] 9 11 7 11 11 4 11 7 11 5 Fri 04/09/2026 12:00 Karrinyup Shopping Centre - AGC Larissa Stephenson [1] Samantha Mickleson [3/4] Sun 06/09/2026 12:40 Karrinyup Shopping Centre - AGC | 11 8 9 11 10 12 11 9 3 11 11 3 11 7 11 3 4 11 1 11 3 11 11 3 11 3 11 2 1 11 1 11 0 11 11 0 11 5 11 5 2 11 1 11 2 11 | 11 8 9 11 10 12 11 9 3 11 11 3 11 7 11 3 4 11 1 11 3 11 11 3 11 3 11 2 1 11 1 11 0 11 11 0 11 5 11 5 2 11 1 11 2 11 Larissa Stephenson [1] W Naomi Ireland [5/8] 11 2 11 2 11 1 Thu 03/09/2026 15:20 Karrinyup Shopping Centre - AGC Muffin Stollmeyer [5/8] Rennelle Karwalski [3/4] W 8 11 4 11 6 11 Thu 03/09/2026 15:20 Belmont Saints Squash Centre - SC2 Samantha Mickleson [3/4] W Angela Strelow [5/8] 11 5 11 8 11 3 Thu 03/09/2026 16:00 Belmont Saints Squash Centre - SC2 Kelsi Lawrence [5/8] Kim Graham [2] W 2 11 4 11 1 11 Thu 03/09/2026 16:00 Karrinyup Shopping Centre - AGC Larissa Stephenson [1] W Rennelle Karwalski [3/4] 11 2 11 4 11 9 Fri 04/09/2026 11:20 Karrinyup Shopping Centre - AGC Samantha Mickleson [3/4] W Kim Graham [2] 9 11 7 11 11 4 11 7 11 5 Fri 04/09/2026 12:00 Karrinyup Shopping Centre - AGC Larissa Stephenson [1] Samantha Mickleson [3/4] Sun 06/09/2026 12:40 Karrinyup Shopping Centre - AGC | 11 8 9 11 10 12 11 9 3 11 11 3 11 7 11 3 4 11 1 11 3 11 11 3 11 3 11 2 1 11 1 11 0 11 11 0 11 5 11 5 2 11 1 11 2 11 Larissa Stephenson [1] W Naomi Ireland [5/8] 11 2 11 2 11 1 Thu 03/09/2026 15:20 Karrinyup Shopping Centre - AGC Muffin Stollmeyer [5/8] Rennelle Karwalski [3/4] W 8 11 4 11 6 11 Thu 03/09/2026 15:20 Belmont Saints Squash Centre - SC2 Samantha Mickleson [3/4] W Angela Strelow [5/8] 11 5 11 8 11 3 Thu 03/09/2026 16:00 Belmont Saints Squash Centre - SC2 Kelsi Lawrence [5/8] Kim Graham [2] W 2 11 4 11 1 11 Thu 03/09/2026 16:00 Karrinyup Shopping Centre - AGC Larissa Stephenson [1] W Rennelle Karwalski [3/4] 11 2 11 4 11 9 Fri 04/09/2026 11:20 Karrinyup Shopping Centre - AGC Samantha Mickleson [3/4] W Kim Graham [2] 9 11 7 11 11 4 11 7 11 5 Fri 04/09/2026 12:00 Karrinyup Shopping Centre - AGC Larissa Stephenson [1] Samantha Mickleson [3/4] Sun 06/09/2026 12:40 Karrinyup Shopping Centre - AGC | MATCHES 11 8 9 11 10 12 11 9 3 11 11 3 11 7 11 3 4 11 1 11 3 11 11 3 11 3 11 2 1 11 1 11 0 11 11 0 11 5 11 5 2 11 1 11 2 11 Larissa Stephenson [1] W Naomi Ireland [5/8] 11 2 11 2 11 1 Thu 03/09/2026 15:20 Karrinyup Shopping Centre - AGC Muffin Stollmeyer [5/8] Rennelle Karwalski [3/4] W 8 11 4 11 6 11 Thu 03/09/2026 15:20 Belmont Saints Squash Centre - SC2 Samantha Mickleson [3/4] W Angela Strelow [5/8] 11 5 11 8 11 3 Thu 03/09/2026 16:00 Belmont Saints Squash Centre - SC2 Kelsi Lawrence [5/8] Kim Graham [2] W 2 11 4 11 1 11 Thu 03/09/2026 16:00 Karrinyup Shopping Centre - AGC Larissa Stephenson [1] W Rennelle Karwalski [3/4] 11 2 11 4 11 9 Fri 04/09/2026 11:20 Karrinyup Shopping Centre - AGC Samantha Mickleson [3/4] W Kim Graham [2] 9 11 7 11 11 4 11 7 11 5 Fri 04/09/2026 12:00 Karrinyup Shopping Centre - AGC Larissa Stephenson [1] Samantha Mickleson [3/4] Sun 06/09/2026 12:40 Karrinyup Shopping Centre - AGC | MATCHES 11 8 9 11 10 12 11 9 3 11 11 3 11 7 11 3 4 11 1 11 3 11 11 3 11 3 11 2 1 11 1 11 0 11 11 0 11 5 11 5 2 11 1 11 2 11 Larissa Stephenson [1] W Naomi Ireland [5/8] 11 2 11 2 11 1 Thu 03/09/2026 15:20 Karrinyup Shopping Centre - AGC Muffin Stollmeyer [5/8] Rennelle Karwalski [3/4] W 8 11 4 11 6 11 Thu 03/09/2026 15:20 Belmont Saints Squash Centre - SC2 Samantha Mickleson [3/4] W Angela Strelow [5/8] 11 5 11 8 11 3 Thu 03/09/2026 16:00 Belmont Saints Squash Centre - SC2 Kelsi Lawrence [5/8] Kim Graham [2] W 2 11 4 11 1 11 Thu 03/09/2026 16:00 Karrinyup Shopping Centre - AGC Larissa Stephenson [1] W Rennelle Karwalski [3/4] 11 2 11 4 11 9 Fri 04/09/2026 11:20 Karrinyup Shopping Centre - AGC Samantha Mickleson [3/4] W Kim Graham [2] 9 11 7 11 11 4 11 7 11 5 Fri 04/09/2026 12:00 Karrinyup Shopping Centre - AGC Larissa Stephenson [1] Samantha Mickleson [3/4] Sun 06/09/2026 12:40 Karrinyup Shopping Centre - AGC | Larissa Stephenson [1] W Rennelle Karwalski [3/4] 11 2 11 4 11 9 Fri 04/09/2026 11:20 Karrinyup Shopping Centre - AGC Samantha Mickleson [3/4] W Kim Graham [2] 9 11 7 11 11 4 11 7 11 5 Fri 04/09/2026 12:00 Karrinyup Shopping Centre - AGC Larissa Stephenson [1] Samantha Mickleson [3/4] Sun 06/09/2026 12:40 Karrinyup Shopping Centre - AGC",
       "source": "TournamentSoftware Official Draw",
-      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=30",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=3",
       "treeSource": "modern-match-wrapper",
       "treeCaption": "",
       "treeInputSlot1": "",
@@ -69001,12 +69026,10 @@ window.TOURNAMENT_DATA = {
       "deterministicTbd": false,
       "deterministicBye": false,
       "evidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Draw Tree"
       ],
       "drawEvidenceSources": [
-        "TournamentSoftware Draw Tree",
-        "TournamentSoftware Draw Inline"
+        "TournamentSoftware Draw Tree"
       ]
     },
     {
@@ -80676,6 +80699,276 @@ window.TOURNAMENT_DATA = {
       "rawText": "",
       "source": "TournamentSoftware Draw Tree",
       "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=6",
+      "treeSource": "modern-match-wrapper-bye",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "deterministicBye": true,
+      "playerDetailOnly": true,
+      "winner": "",
+      "winnerId": "",
+      "resultSource": ""
+    },
+    {
+      "date": "",
+      "time": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "round": "",
+      "player1": "Jane Kennedy",
+      "player1Id": "q:player:761",
+      "player2": "Bye",
+      "player2Id": "",
+      "result": "",
+      "status": "bye",
+      "venue": "",
+      "court": "",
+      "rawText": "",
+      "source": "TournamentSoftware Draw Tree",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper-bye",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "deterministicBye": true,
+      "playerDetailOnly": true,
+      "winner": "",
+      "winnerId": "",
+      "resultSource": ""
+    },
+    {
+      "date": "",
+      "time": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "round": "",
+      "player1": "Melissa Martin",
+      "player1Id": "q:player:430",
+      "player2": "Bye",
+      "player2Id": "",
+      "result": "",
+      "status": "bye",
+      "venue": "",
+      "court": "",
+      "rawText": "",
+      "source": "TournamentSoftware Draw Tree",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper-bye",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "deterministicBye": true,
+      "playerDetailOnly": true,
+      "winner": "",
+      "winnerId": "",
+      "resultSource": ""
+    },
+    {
+      "date": "",
+      "time": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "round": "",
+      "player1": "Lacey Lloyd",
+      "player1Id": "q:player:621",
+      "player2": "Bye",
+      "player2Id": "",
+      "result": "",
+      "status": "bye",
+      "venue": "",
+      "court": "",
+      "rawText": "",
+      "source": "TournamentSoftware Draw Tree",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper-bye",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "deterministicBye": true,
+      "playerDetailOnly": true,
+      "winner": "",
+      "winnerId": "",
+      "resultSource": ""
+    },
+    {
+      "date": "",
+      "time": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "round": "",
+      "player1": "Kylie Anderson",
+      "player1Id": "q:player:928",
+      "player2": "Bye",
+      "player2Id": "",
+      "result": "",
+      "status": "bye",
+      "venue": "",
+      "court": "",
+      "rawText": "",
+      "source": "TournamentSoftware Draw Tree",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper-bye",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "deterministicBye": true,
+      "playerDetailOnly": true,
+      "winner": "",
+      "winnerId": "",
+      "resultSource": ""
+    },
+    {
+      "date": "",
+      "time": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "round": "",
+      "player1": "Bea Burger",
+      "player1Id": "q:player:692",
+      "player2": "Bye",
+      "player2Id": "",
+      "result": "",
+      "status": "bye",
+      "venue": "",
+      "court": "",
+      "rawText": "",
+      "source": "TournamentSoftware Draw Tree",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper-bye",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "deterministicBye": true,
+      "playerDetailOnly": true,
+      "winner": "",
+      "winnerId": "",
+      "resultSource": ""
+    },
+    {
+      "date": "",
+      "time": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "round": "",
+      "player1": "Barbara Vintcent",
+      "player1Id": "q:player:845",
+      "player2": "Bye",
+      "player2Id": "",
+      "result": "",
+      "status": "bye",
+      "venue": "",
+      "court": "",
+      "rawText": "",
+      "source": "TournamentSoftware Draw Tree",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper-bye",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "deterministicBye": true,
+      "playerDetailOnly": true,
+      "winner": "",
+      "winnerId": "",
+      "resultSource": ""
+    },
+    {
+      "date": "",
+      "time": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "round": "",
+      "player1": "Joanne Dodd",
+      "player1Id": "q:player:516",
+      "player2": "Bye",
+      "player2Id": "",
+      "result": "",
+      "status": "bye",
+      "venue": "",
+      "court": "",
+      "rawText": "",
+      "source": "TournamentSoftware Draw Tree",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper-bye",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "deterministicBye": true,
+      "playerDetailOnly": true,
+      "winner": "",
+      "winnerId": "",
+      "resultSource": ""
+    },
+    {
+      "date": "",
+      "time": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "round": "",
+      "player1": "Rumi Sano",
+      "player1Id": "q:player:603",
+      "player2": "Bye",
+      "player2Id": "",
+      "result": "",
+      "status": "bye",
+      "venue": "",
+      "court": "",
+      "rawText": "",
+      "source": "TournamentSoftware Draw Tree",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper-bye",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "deterministicBye": true,
+      "playerDetailOnly": true,
+      "winner": "",
+      "winnerId": "",
+      "resultSource": ""
+    },
+    {
+      "date": "",
+      "time": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "round": "",
+      "player1": "Shen Hong",
+      "player1Id": "q:player:158",
+      "player2": "Bye",
+      "player2Id": "",
+      "result": "",
+      "status": "bye",
+      "venue": "",
+      "court": "",
+      "rawText": "",
+      "source": "TournamentSoftware Draw Tree",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
+      "treeSource": "modern-match-wrapper-bye",
+      "treeCaption": "",
+      "treeInputSlot1": "",
+      "treeInputSlot2": "",
+      "treeOutputSlot": "",
+      "deterministicBye": true,
+      "playerDetailOnly": true,
+      "winner": "",
+      "winnerId": "",
+      "resultSource": ""
+    },
+    {
+      "date": "",
+      "time": "",
+      "event": "Women's +50 World Squash | World Squash Masters Championships 2026 | World Squash Masters Championships 2026 | Women's +50 | Kylie Anderson | Wendy Beard | Bea Burger | Janet Byrnes | Connie Kay Chevrette | Nadine Cull | Joanne Dodd | Erin Ellery | Megumi Fujimoto | Kate Gordon | Evette Griffin | Melinda Gyorgy | Michelle Higgins | Shen Hong | Lorraine Howell | Leigh-Anne Kaye",
+      "round": "",
+      "player1": "Michelle Higgins",
+      "player1Id": "q:player:306",
+      "player2": "Bye",
+      "player2Id": "",
+      "result": "",
+      "status": "bye",
+      "venue": "",
+      "court": "",
+      "rawText": "",
+      "source": "TournamentSoftware Draw Tree",
+      "sourceUrl": "https://wsf.tournamentsoftware.com/sport/draw.aspx?id=1D88743A-54E2-4073-BD30-A4F443A442F0&draw=5",
       "treeSource": "modern-match-wrapper-bye",
       "treeCaption": "",
       "treeInputSlot1": "",
