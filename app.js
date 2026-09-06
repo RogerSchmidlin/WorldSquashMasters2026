@@ -2924,21 +2924,6 @@ function venueCode(m){
   if(/Belmont|WA\s*State\s*Squash/i.test(place)) return 'B';
   return '';
 }
-function venueNameFromCode(code){
-  if(code==='G')return 'Karrinyup Shopping Centre';
-  if(code==='M')return 'Squashworld Mirrabooka';
-  if(code==='B')return 'Belmont Saints Squash Centre';
-  return '';
-}
-function resolvedVenueName(m){
-  // The venue badge classification is the site's canonical venue signal.
-  // Some refreshed fixtures can carry a stale/conflicting m.venue string while
-  // their live/draw location metadata still classifies them correctly as G/M/B.
-  // Use one resolver for badge, displayed text and Courts-page grouping so the
-  // UI can never show e.g. an M badge next to a Belmont venue name.
-  const byCode=venueNameFromCode(venueCode(m));
-  return byCode||canonicalVenue(m?.venue)||'';
-}
 function venueBadge(m){const code=venueCode(m);return code?`<span class="venue-letter venue-${code.toLowerCase()}" aria-label="${code==='G'?'Glass Court':code==='M'?'Mirrabooka':'Belmont'}">${code}</span>`:'';}
 function stripLocationDate(value,{keepStandaloneNumber=false}={}){
   let s=String(value||'')
@@ -2982,9 +2967,7 @@ function actualCourt(m){
   return current;
 }
 function cleanVenuePlace(m){
-  // Keep the court exactly as parsed, but force venue text to use the SAME
-  // canonical classification as the venue badge.
-  const venue=stripLocationDate(resolvedVenueName(m));
+  const venue=stripLocationDate(m.venue);
   const court=actualCourt(m);
   const bits=[venue,court].filter(Boolean);
   return bits.join(' · ')||'Venue / court TBD';
@@ -3538,9 +3521,7 @@ function compactScheduleRow(m,trackedNames=[],options={}){
   </article>`;
 }
 function featureVenueKey(m){
-  // Courts must group by the same canonical venue used by the badge/text.
-  // Never trust a stale m.venue independently here.
-  return resolvedVenueName(m)||canonicalVenue(cleanVenuePlace(m))||'';
+  return canonicalVenue(m?.venue)||canonicalVenue(cleanVenuePlace(m))||'';
 }
 function featureVenueOptions(){
   return [

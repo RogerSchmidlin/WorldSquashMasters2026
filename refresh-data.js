@@ -3042,6 +3042,12 @@ async function scrapeOfficialDrawSchedule(context,options={}){
               context,
               pageHead,
               source:connectorVerified?'legacy-slot-tree':'legacy-slot-sibling-scheduled',
+              // Without the retained output connector, the sibling IDs still
+              // prove the two opponents, and the printed date/time proves the
+              // scheduled fixture. But venue/court text in the intervening
+              // bracket cells can belong to a neighbouring edge. Never treat
+              // that location text as authoritative.
+              locationTrusted:connectorVerified,
               tableCaption:caption,
               round,
               inputSlot1:a.rawId,
@@ -3661,6 +3667,21 @@ async function scrapeOfficialDrawSchedule(context,options={}){
 
       const whole=clean(`${drawContext} ${t.context||''} ${t.text||''}`);
       const f=deriveFields(whole,drawContext);
+      const siblingScheduleOnly=t.source==='legacy-slot-sibling-scheduled' || t.locationTrusted===false;
+
+      // The no-connector sibling fallback was introduced to recover progressed
+      // matches that remain visible in the draw. Its odd/even slot IDs prove
+      // WHO plays, and its explicit date/time proves WHEN. They do NOT prove
+      // that venue/court/score text found between those rows belongs to this
+      // edge. Trusting that surrounding location text caused finals-day venues
+      // to be shifted between matches. Strip it here and let exact official
+      // draw/match evidence fill the location later.
+      if(siblingScheduleOnly){
+        f.venue='';
+        f.court='';
+        f.result='';
+        f.status='scheduled';
+      }
 
       // Caption/round are structural labels from the table itself.
       if(!f.round&&t.round)f.round=clean(t.round);
@@ -3710,7 +3731,11 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         player2Id:isTbd?'':unique[1].id,
         result:isTbd?'':(f.result||''),
         status:isTbd?'scheduled':(f.result?'completed':(f.status||'scheduled')),
-        rawText:whole,
+        // For a connector-less sibling recovery, raw bracket context is NOT
+        // location evidence. Keep a minimal safe trace so downstream metadata
+        // recovery cannot parse a neighbouring venue back out of rawText.
+        rawText:siblingScheduleOnly?clean(`${f.date} ${f.time} ${f.event||''} ${f.round||''}`):whole,
+        treeLocationUnverified:siblingScheduleOnly,
         source:'TournamentSoftware Draw Tree',
         sourceUrl:row.draw.href,
         treeSource:t.source||'',
@@ -6650,6 +6675,11 @@ function extractTournamentLocationFromText(text){
 }
 
 function provenLocationFromRow(row){
+  // A legacy sibling-scheduled observation has deterministic opponents and an
+  // explicit date/time, but no retained connector proving the surrounding
+  // location belongs to that edge. Never infer venue/court from it.
+  if(row?.treeLocationUnverified===true)return {venue:'',court:''};
+
   const direct={
     venue:clean(row?.venue||''),
     court:sanitizeCourtValue(row?.court)
@@ -7183,8 +7213,11 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
 
     // 3) Previous data may restore LOCATION only. Prefer exact fixture first;
     // then allow a unique same-pair/day location signature if the official time
-    // moved slightly between views.
-    if(!validLocation(m)){
+    // moved slightly between views. Do NOT use prior current/future location for
+    // a connector-less sibling recovery: yesterday's regression may already
+    // have stored the neighbouring venue there, so carrying it forward would
+    // make the corruption self-perpetuating.
+    if(!validLocation(m) && !(m.treeLocationUnverified===true && d>=today)){
       const prevExact=previousExact.get(exactKey(m))||[];
       let candidates=prevExact;
 
