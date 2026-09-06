@@ -3347,6 +3347,26 @@ document.addEventListener('click',event=>{
 
 loadLiveStreamConfig();
 
+// Mobile browsers can restore an old tab from the back/forward cache without
+// re-running the page load. In that case liveStreamConfig may still contain
+// yesterday's stream URLs even though live-streams.json has changed. Re-read
+// the authoritative config whenever the page returns to the foreground.
+let liveStreamResumeRefreshTimer=null;
+function refreshLiveStreamsAfterResume(){
+  if(document.visibilityState==='hidden')return;
+  clearTimeout(liveStreamResumeRefreshTimer);
+  liveStreamResumeRefreshTimer=setTimeout(()=>{
+    loadLiveStreamConfig({rerenderPage:true}).catch(e=>
+      console.warn('Live stream refresh after resume failed:',e?.message||e)
+    );
+  },80);
+}
+window.addEventListener('pageshow',refreshLiveStreamsAfterResume);
+window.addEventListener('focus',refreshLiveStreamsAfterResume);
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='visible')refreshLiveStreamsAfterResume();
+});
+
 function matchScoreSummary(m){
   if(!canShowPublishedResult(m))return '';
   if(!m?.result&&!m?.winner)return '';
