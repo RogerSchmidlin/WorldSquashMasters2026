@@ -1,8 +1,10 @@
 # World Squash Masters 2026 — Vic Park Edition
 
-> An unofficial companion website for the **2026 World Squash Masters Championships in Perth**, tailored to make it easier for Vic Park Squash Club members and friends to follow players, schedules, results, live matches and available live streams.
+> An unofficial companion website for the **2026 WSF World Masters Championships in Perth**, tailored to make it easier for Vic Park Squash Club members and friends to follow players, schedules, live matches, courts, favourites and final winners.
 
-The application is intentionally built as a **static website**: there is no application server and no database. Tournament data is collected ahead of time by a Node.js/Playwright refresh process, written into JavaScript data files, committed to the repository, and then served directly by GitHub Pages.
+The application is intentionally built as a **static website**: there is no application server and no database. Tournament data is written into JavaScript data files and served directly by GitHub Pages.
+
+The tournament is now complete. The final top-four placings are therefore maintained separately from the schedule/history pipeline in a dedicated, validated final-results source.
 
 ---
 
@@ -13,6 +15,7 @@ The application is intentionally built as a **static website**: there is no appl
 - [Data-source authority](#data-source-authority)
 - [Repository layout](#repository-layout)
 - [Frontend architecture](#frontend-architecture)
+- [Winners architecture](#winners-architecture)
 - [Data files and data model](#data-files-and-data-model)
 - [Refresh architecture](#refresh-architecture)
 - [Refresh commands](#refresh-commands)
@@ -29,6 +32,9 @@ The application is intentionally built as a **static website**: there is no appl
 - [Security and secrets](#security-and-secrets)
 - [Legacy and diagnostic files](#legacy-and-diagnostic-files)
 - [External services](#external-services)
+- [Time zone](#time-zone)
+- [Developer checklist](#developer-checklist)
+- [Project status](#project-status)
 
 ---
 
@@ -41,18 +47,20 @@ The main site is a single-page interface with hash-based navigation:
 | **Home** | Tournament summary, participation information and country map. |
 | **Live** | Matches currently in progress according to SquashScores, grouped by venue. |
 | **Vic Park & Friends** | Matches involving the configured tracked-player list. |
-| **Players** | Search/filter/sort the tournament player directory. |
+| **Players** | Search, filter and sort the tournament player directory. |
+| **Winners** | Final top-four placings for all 21 age/gender categories plus the medal matrix. |
 | **Fav Players** | User-selected favourite players stored locally in the browser. |
-| **Courts** | Tournament schedules grouped around the known Perth venues/courts. |
+| **Courts** | Tournament schedules grouped by the known Perth venues/courts. |
 
 There is also a separate `player.html` page for a player's full tournament schedule and history.
 
-The application combines four kinds of information:
+The application combines five kinds of information:
 
-1. **TournamentSoftware** — official tournament players, draws, schedule, venues, courts and results.
-2. **SquashScores** — current live-match state and live game scores.
-3. **SquashLevels** — player profile links, World ranking and Level.
-4. **`live-streams.json`** — manually maintained streaming URLs for selected venue/court streams.
+1. **TournamentSoftware** — official tournament players, draws, schedule, venues, courts and match results.
+2. **`final-results-source.json`** — authoritative finished-tournament 1st–4th placings.
+3. **SquashScores** — current live-match state and live game scores.
+4. **SquashLevels** — player profile links, World ranking and Level.
+5. **`live-streams.json`** — manually maintained streaming URLs for selected venue/court streams.
 
 ---
 
@@ -65,108 +73,136 @@ flowchart LR
     SL["SquashLevels\nSearch + player pages"]
     LS["live-streams.json"]
 
-    REF["refresh-data.js\nNode.js + Playwright"]
+    FULL["refresh-data.js\nNode.js + Playwright"]
+    FINAL["final-results-source.json\n84 final placements"]
+    WINBUILD["build-results-local.js\nlocal-only Winners build"]
 
     DATA["data.js\nlegacy full snapshot"]
     SUM["summary-data.js"]
     PLAYERS["players-data.js"]
     MATCHES["matches-data.js"]
     VIC["vicpark-data.js"]
+    RESULTS["results-data.js"]
 
     SITE["index.html + app.js"]
     PLAYER["player.html + player-app.js"]
     GH["GitHub Pages"]
 
-    TS --> REF
-    SL --> REF
-    SS -. current-day enrichment .-> REF
+    TS --> FULL
+    SL --> FULL
+    SS -. enrichment .-> FULL
 
-    REF --> DATA
-    REF --> SUM
-    REF --> PLAYERS
-    REF --> MATCHES
-    REF --> VIC
+    FULL --> DATA
+    FULL --> SUM
+    FULL --> PLAYERS
+    FULL --> MATCHES
+    FULL --> VIC
+
+    FINAL --> WINBUILD
+    PLAYERS -. metadata enrichment .-> WINBUILD
+    WINBUILD --> RESULTS
 
     DATA --> GH
     SUM --> GH
     PLAYERS --> GH
     MATCHES --> GH
     VIC --> GH
+    RESULTS --> GH
     SITE --> GH
     PLAYER --> GH
     LS --> GH
 
     GH --> SITE
     GH --> PLAYER
-    SS -. browser polling every ~5 s .-> SITE
-    LS -. cache-busted browser load .-> SITE
+    SS -. browser polling .-> SITE
 ```
 
 ### Design principle
 
-The browser is **not** responsible for rebuilding the tournament schedule. The static generated TournamentSoftware dataset remains the durable schedule/history source. SquashScores is an in-browser **live overlay**, not a replacement database.
+The browser is **not** responsible for rebuilding tournament data.
+
+Two independent durable data paths now exist:
+
+- the TournamentSoftware schedule/history path;
+- the finished-tournament Winners path.
+
+The Winners path deliberately does **not** infer final placings from `matches-data.js` or legacy `data.js.results`.
 
 ---
 
 ## Data-source authority
 
-This hierarchy is important. Most subtle bugs occur when one source is allowed to overwrite information that it does not actually prove.
+This hierarchy is important. Most subtle bugs occurred when one source was allowed to overwrite information that it did not actually prove.
 
-### 1. TournamentSoftware draw: fixture identity authority
+### 1. `final-results-source.json`: final placing authority
 
-For current and future tournament matches, the draw is used to establish things such as:
+For the completed tournament, this is the authoritative source for:
 
-- which two players belong to a match,
+- 1st place,
+- 2nd place,
+- 3rd place,
+- 4th place,
+- all 21 age/gender groups.
+
+Hard invariants:
+
+- exactly **84 rows**;
+- exactly **21 groups**;
+- exactly **4 places per group**;
+- four distinct real players per group;
+- **no `Bye`**;
+- **no `TBD`**.
+
+The final Winners table is never reconstructed from incomplete schedule rows.
+
+### 2. TournamentSoftware draw: fixture identity authority
+
+For tournament match schedule/history, the draw establishes things such as:
+
+- which players belong to a fixture,
 - draw progression,
 - round/placement structure,
 - date/time when explicitly tied to the match,
 - deterministic Bye progression.
 
-The draw can still contain complete match information after a match has been played and the bracket has progressed.
+A draw Bye is useful for a player's progression history, but a Bye is **never a final Winners placing**.
 
-### 2. TournamentSoftware Matches page: schedule/location/result evidence
+### 3. TournamentSoftware Matches page: schedule/location/result evidence
 
-The Matches views are used as another official source for:
+The Matches views provide additional official evidence for:
 
 - date/time,
 - venue,
 - court,
-- result/status,
-- partial `Player vs TBD` slot observations.
+- score/result,
+- status,
+- partial `Player vs TBD` slots.
 
-A Matches-page row may know the venue/court before it knows both opponents. The refresh code can combine that information with a draw fixture **only when the player/date/time slot is unique and unambiguous**.
+A Matches-page observation can be joined to a draw fixture only when the match identity is sufficiently unambiguous.
 
-### 3. Existing published data: historical continuity
+### 4. Existing published data: historical continuity
 
-Normal refreshes intentionally preserve already-published history. TournamentSoftware can render an incomplete subset from one request to the next, especially after a draw advances.
+Normal tournament refresh logic is conservative.
 
-Therefore:
+Absence from one fresh scrape is **not** enough evidence to delete a previously published historical fixture.
 
-- absence from one fresh scrape is **not** sufficient evidence to delete a previously published match;
-- past results are preserved and can be backfilled when fresh authoritative evidence becomes available;
-- future fixtures are removed/replaced only when there is positive official conflict/replacement evidence.
+### 5. SquashScores: live-state authority
 
-### 4. SquashScores: live-state authority
+SquashScores is authoritative for **what is live right now** and for current live game scores.
 
-SquashScores is authoritative for **what is live right now** and for current game scores.
+It can mark a match `IN PLAY` before the first point is entered and can remove completed matches from its live overview soon after completion.
 
-It may:
+### 6. SquashLevels: player enrichment only
 
-- mark a match `IN PLAY` before the first point has been entered,
-- contain a live match whose corresponding TournamentSoftware row is stale/moved/missing,
-- remove a finished match from its live overview soon after completion.
+SquashLevels enriches player identity with:
 
-The Live page therefore renders from the latest SquashScores feed and uses TournamentSoftware only for enrichment when a matching fixture exists.
-
-### 5. SquashLevels: player enrichment only
-
-SquashLevels must never change tournament fixture identity, schedule or results. It enriches players with:
-
-- SquashLevels profile URL / player ID,
+- profile URL / player ID,
 - World ranking,
 - Level,
-- provisional state,
-- club/location evidence used for identity verification.
+- provisional status,
+- club/location information.
+
+SquashLevels must never change tournament fixture identity or final placing order.
 
 ---
 
@@ -176,47 +212,56 @@ SquashLevels must never change tournament fixture identity, schedule or results.
 
 | File | Responsibility |
 | --- | --- |
-| `index.html` | Main SPA shell: Home, Live, Players, Fav Players, Courts, Vic Park & Friends. Also contains cache-busted `app.js` revision. |
-| `app.js` | Main frontend logic: lazy data loading, page rendering, live polling, favourites, venue/court rendering, live-stream buttons and mobile cache recovery. |
+| `index.html` | Main SPA shell: Home, Live, Players, Winners, Fav Players, Courts, Vic Park & Friends. Also contains the cache-busted `app.js` revision. |
+| `app.js` | Main frontend logic: lazy data loading, page rendering, Winners rendering, medal matrix, live polling, favourites, venue/court rendering and live streams. |
 | `styles.css` | Shared site styling and responsive/mobile layout. |
 | `player.html` | Standalone player-detail page. |
-| `player-app.js` | Player-detail rendering, history/current grouping, SquashScores overlay and auto-refresh behavior. |
+| `player-app.js` | Player-detail rendering, history/current grouping and live overlay behavior. |
 | `vic-park-players.js` | Manually maintained tracked-player list for Vic Park & Friends. |
 
-### Generated data files
+### Generated/published data files
 
 | File | Browser global | Purpose |
 | --- | --- | --- |
-| `summary-data.js` | `window.TOURNAMENT_SUMMARY` | Small Home-page summary. Loaded first for fast startup. |
+| `summary-data.js` | `window.TOURNAMENT_SUMMARY` | Small Home-page summary. |
 | `players-data.js` | `window.TOURNAMENT_PLAYERS` | Player directory and SquashLevels metadata. |
 | `matches-data.js` | `window.TOURNAMENT_MATCHES` | Full published match/Bye dataset. |
-| `vicpark-data.js` | `window.VIC_PARK_DATA` | Compact tracked-player subset. Primarily an optimisation/fallback. |
-| `data.js` | `window.TOURNAMENT_DATA` | Complete legacy/compatibility snapshot containing players + matches. |
+| `vicpark-data.js` | `window.VIC_PARK_DATA` | Compact tracked-player subset. |
+| `results-data.js` | `window.TOURNAMENT_RESULTS` | Final 84 Winners placements enriched with player metadata. |
+| `data.js` | `window.TOURNAMENT_DATA` | Legacy/compatibility snapshot containing players + matches and older result data. |
 
-`refresh-data.js` writes all five files together via `writeDataFiles()`.
-
-### Refresh/integration files
+### Winners source/build files
 
 | File | Responsibility |
 | --- | --- |
-| `refresh-data.js` | Main TournamentSoftware/SquashLevels/SquashScores refresh pipeline. |
-| `validate-data.js` | Small command-line validation/report of the generated `data.js`. |
-| `split-data.js` | Rebuilds the split data files from an existing `data.js`. Useful after migration/manual recovery. |
-| `player-links.json` | Cached TournamentSoftware player-profile identities/URLs. Not required for the current draw-based schedule crawl, but retained for identity-related tooling. |
+| `final-results-source.json` | Authoritative finished-tournament top four for every category. |
+| `build-results-local.js` | Validates the 84 placements, enriches them from local player data and writes only `results-data.js`. |
+| `test-results-local.js` | Offline Winners validation/regression test. |
+
+### Tournament refresh/integration files
+
+| File | Responsibility |
+| --- | --- |
+| `refresh-data.js` | Full TournamentSoftware/SquashLevels/SquashScores refresh pipeline. |
+| `validate-data.js` | Command-line validation/report of generated tournament data. |
+| `split-data.js` | Rebuilds split data files from an existing `data.js`. |
+| `player-links.json` | Cached TournamentSoftware player identities/URLs where present. |
 | `squashlevels-overrides.json` | Hard mappings for known ambiguous SquashLevels identities. |
-| `squashlevels-nicknames.json` | Explicit first-name equivalence groups used by the SquashLevels fallback matcher. |
-| `sync-live-streams.js` | Generates `live-streams.js` from `live-streams.json` for `file://` local-browser testing. |
+| `squashlevels-nicknames.json` | Explicit first-name equivalence groups used by SquashLevels matching. |
+| `sync-live-streams.js` | Generates `live-streams.js` from `live-streams.json` for `file://` testing. |
 | `live-streams.json` | Human-maintained live-stream configuration. |
-| `live-streams.js` | Generated JavaScript mirror used when a browser opens the site directly from disk. |
-| `live-stream.html` | Minimal redirect helper for a venue stream. |
+| `live-streams.js` | JavaScript mirror for direct local-file browsing. |
+| `live-stream.html` | Minimal stream redirect/player helper. |
 
 ### Diagnostics
+
+Examples:
 
 | File | Purpose |
 | --- | --- |
 | `refresh-audit.json` | Refresh counts and tracked-player diagnostics. |
-| `refresh-matches.json` | Diagnostic JSON copy of the latest generated matches. It is **not** the current browser runtime source. |
-| `squashlevels-debug.json` | Diagnostic output when SquashLevels matching cannot be resolved. |
+| `refresh-matches.json` | Diagnostic JSON copy of generated matches. |
+| `squashlevels-debug.json` | SquashLevels identity/parser diagnostics. |
 | `squashlevels-profile-debug.json` | SquashLevels profile parser diagnostics. |
 | `squashlevels-session-check.json` | Session/authentication diagnostics. |
 
@@ -226,54 +271,151 @@ SquashLevels must never change tournament fixture identity, schedule or results.
 
 ### Main SPA
 
-`index.html` contains the page shells. `app.js` switches them with `#hash` navigation via `setPage()`.
+`index.html` contains the page shells. `app.js` switches them with `#hash` navigation.
 
-The application deliberately lazy-loads larger datasets:
+The application lazy-loads larger datasets:
 
 ```text
 Home
-  └─ summary-data.js only
+  └─ summary-data.js
 
 Players
   └─ players-data.js
+
+Winners
+  ├─ results-data.js
+  └─ players-data.js when needed for related metadata/navigation
 
 Courts / Favourites / Live
   ├─ players-data.js
   └─ matches-data.js
 
 Vic Park & Friends
-  ├─ vicpark-data.js        (small optimisation/fallback)
+  ├─ vicpark-data.js
   ├─ players-data.js
-  └─ matches-data.js        (preferred for correctness/history)
+  └─ matches-data.js
 ```
 
-If a split file cannot be loaded, the frontend falls back to `data.js`.
+If a split tournament file cannot be loaded, older parts of the frontend can fall back to `data.js` where appropriate.
 
-### Why `vicpark-data.js` is not the source of truth
-
-The compact Vic Park file was introduced for performance, but it must never hide history because a compact generation step missed a fixture.
-
-`ensureVicParkData()` therefore prefers to derive tracked matches from the same **full `matches-data.js` dataset** used by the rest of the application. The compact file remains an optimisation/fallback.
+The Winners page does **not** fall back to legacy result inference. Its published source is `results-data.js`.
 
 ### Player detail page
 
-`player.html` is a separate page rather than a SPA section. `player-app.js`:
+`player.html` is a separate page rather than a SPA section.
 
-- resolves a player by official player ID where possible,
-- prevents same-name players in different age groups from bleeding into one another,
-- groups **today + future** under Current Matches,
-- groups **dates before today** under History,
+`player-app.js`:
+
+- resolves a player by official ID where possible;
+- prevents same-name players in different categories from bleeding into one another;
+- groups today/future matches under Current Matches;
+- groups previous dates under History;
 - overlays live SquashScores state where an exact fixture can be identified.
 
 ### Browser persistence
 
-The frontend uses browser storage for a few user/runtime features:
+The frontend uses browser storage for:
 
-- favourite player names,
-- today's completed SquashScores result cache,
-- automatic-refresh session guards.
+- favourite players;
+- today's completed SquashScores cache;
+- automatic-refresh/session guards.
 
-These are client-side conveniences. Tournament history must not depend solely on local storage.
+These are client-side conveniences. Tournament history and Winners data do not depend on browser storage.
+
+---
+
+## Winners architecture
+
+### Tab name
+
+The navigation tab is named:
+
+```text
+Winners
+```
+
+The internal page id remains `#results` for compatibility with existing frontend code.
+
+### Final source
+
+`final-results-source.json` contains only the placement essentials:
+
+```json
+{
+  "gender": "Women",
+  "ageGroup": 70,
+  "place": 1,
+  "playerName": "Pauline Douglas"
+}
+```
+
+`build-results-local.js` enriches each placement from `players-data.js`/local player metadata with fields such as:
+
+- official profile URL and player ID;
+- country and flag;
+- seed;
+- SquashLevels World ranking;
+- SquashLevels Level;
+- club/location.
+
+### Why Winners are separate from matches
+
+The flattened match schedule does not retain every result-only bracket edge required to reconstruct every terminal placing reliably.
+
+Therefore:
+
+> **Final placings are never inferred from `matches-data.js`.**
+
+The old `data.js.results` snapshot is also not considered authoritative because it contains incomplete groups from earlier tournament refresh states.
+
+### Medal matrix
+
+The medal matrix counts:
+
+- Gold = place 1;
+- Silver = place 2;
+- Bronze = place 3.
+
+Place 4 appears in the detailed Winners cards but is not counted as a medal.
+
+The medal matrix has two independent checkboxes:
+
+- **Male** — checked by default;
+- **Female** — checked by default.
+
+There is no separate Gender heading or “Most medals” frame/title above these controls.
+
+The medal matrix checkboxes are independent of the detailed Winners filters.
+
+### Detailed Winners filters
+
+The age-group result cards retain the separate filters:
+
+- Gender: All / Male / Female;
+- Age: All / available age groups;
+- Country: All / available countries.
+
+### Winners validation
+
+Before `results-data.js` is written, the builder verifies:
+
+```text
+21 groups
+× 4 placements
+= 84 real-player rows
+```
+
+It rejects:
+
+- missing positions;
+- duplicate position numbers;
+- duplicate top-four players within a group;
+- unexpected groups;
+- `Bye`;
+- `TBD`;
+- any source row count other than 84.
+
+If validation fails, `results-data.js` is left unchanged.
 
 ---
 
@@ -333,9 +475,39 @@ Representative fields:
 }
 ```
 
+### Winners row shape
+
+Representative generated `results-data.js` row:
+
+```js
+{
+  event: "Women's +70",
+  gender: "Women",
+  ageGroup: 70,
+  place: "1",
+  placeRank: 1,
+  playerName: "Pauline Douglas",
+
+  officialPlayerId: "...",
+  officialProfileUrl: "...",
+  country: "...",
+  iso3: "...",
+  flagCode: "...",
+  seed: "...",
+
+  squashLevelsWorldRank: 123,
+  squashLevelsLevel: 4567,
+  squashLevelsLevelProvisional: false,
+  club: "...",
+
+  source: "Final tournament results source",
+  resultMethod: "final-results-source-v28"
+}
+```
+
 ### Deterministic Bye rows
 
-A draw Bye is not a played match. It is stored only when useful for a player's progression view, with a strict special shape:
+A draw Bye is not a played match. It may exist in the schedule/player-history dataset only when useful for progression:
 
 ```js
 {
@@ -348,126 +520,151 @@ A draw Bye is not a played match. It is stored only when useful for a player's p
 }
 ```
 
-A valid Bye row must not have date, time, venue, court, result or winner fields.
-
-The summary count excludes these rows from the real match count.
+A deterministic Bye must never be copied into `final-results-source.json` or `results-data.js`.
 
 ### Identity rule
 
-Prefer `officialPlayerId` whenever it exists.
+Prefer `officialPlayerId` whenever available.
 
-Name comparison is deliberately tolerant of:
-
-- accents,
-- apostrophe variants,
-- `Surname, Firstname` ordering,
-- country suffixes,
-- TournamentSoftware seeds such as `[1]` or `[17/32]`.
-
-However, normalized-name matching is a fallback. It must not merge two real players who share the same displayed name.
+Name comparison is tolerant of accents, apostrophe variants, seeds and ordering, but normalized-name matching is only a fallback and must not merge distinct real players.
 
 ---
 
 ## Refresh architecture
 
-The current normal refresh is **draw based**. It does not need to crawl every player's TournamentSoftware profile for the schedule.
+There are now **two different refresh concepts**.
 
-> [!NOTE]
-> The introductory comment at the very top of `refresh-data.js` refers to an older player-profile strategy. The active normal flow near the bottom of the file is the authoritative description of the current architecture.
+### A. Winners refresh — default `npm run refresh`
 
-### Normal refresh flow
-
-```mermaid
-flowchart TD
-    A[Load existing published dataset]
-    B[Crawl all official TournamentSoftware draws]
-    C[Keep published player directory as canonical]
-    D[Crawl TournamentSoftware Matches pages]
-    E[Validate draw completeness]
-    F[Build draw-authoritative schedule]
-    G[Overlay fresh official results/location metadata]
-    H[Preserve historical results and safe unmatched history]
-    I[Resolve deterministic Byes / safe TBD opponents]
-    J[Fetch current SquashScores rows]
-    K[Overlay live status/scores on exact existing fixtures]
-    L[Validate published rows]
-    M[Refresh SquashLevels enrichment]
-    N[Write all generated data files]
-
-    A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K --> L --> M --> N
-```
-
-### Important normal-refresh behavior
-
-A normal refresh deliberately keeps the existing published player directory as the canonical directory because players can disappear from currently rendered draw branches as the event progresses.
-
-Fresh draw metadata is merged back by official identity.
-
-For history, the normal refresh is conservative: it prefers preserving known-good published rows over deleting them because one scrape was incomplete.
-
-### Write boundary
-
-The generated website data is written only after the major structural checks pass. If the refresh throws an error, the command exits non-zero so the GitHub workflow does not publish the failed dataset.
-
----
-
-## Refresh commands
-
-Install dependencies first:
-
-```bash
-npm install
-```
-
-or, in CI/reproducible environments:
-
-```bash
-npm ci
-```
-
-Playwright also needs a Chromium-compatible browser. GitHub Actions installs it automatically.
-
-### Normal refresh
+The current `package.json` maps:
 
 ```bash
 npm run refresh
 ```
 
-Use this for the complete normal pipeline:
-
-- TournamentSoftware draws,
-- TournamentSoftware Matches pages,
-- player metadata,
-- SquashScores current-day enrichment,
-- SquashLevels enrichment,
-- generated data files.
-
-### Matches-only refresh
+and:
 
 ```bash
-npm run refresh -- :matches
+npm run refresh:quick
 ```
 
-Use when you want to update tournament fixtures/results without spending time refreshing SquashLevels.
+to:
 
-This mode:
+```text
+node build-results-local.js
+```
 
-- keeps the published player directory,
-- requires a sufficiently complete existing match base,
-- crawls both Matches pages **and authoritative draw trees**,
-- preserves historical data conservatively,
-- leaves SquashLevels values unchanged.
+This is intentionally **local-only**.
 
-### Full rebuild
+Flow:
+
+```mermaid
+flowchart TD
+    A[Read final-results-source.json]
+    B[Validate 84 rows / 21 groups / no Bye-TBD]
+    C[Load players-data.js or legacy player snapshot]
+    D[Enrich each final placing with player metadata]
+    E[Validate final 84 output rows]
+    F[Write results-data.js only]
+
+    A --> B --> C --> D --> E --> F
+```
+
+It does **not**:
+
+- launch Playwright;
+- open TournamentSoftware;
+- parse `matches-data.js`;
+- infer semifinal/final relationships;
+- contact SquashScores;
+- contact SquashLevels;
+- make any network request.
+
+### B. Full tournament refresh
+
+The historical tournament scraper remains available as:
 
 ```bash
 npm run refresh:full
 ```
 
-`:`full` rebuilds the player directory from the currently exposed draw hierarchy.
+This invokes:
 
-> [!CAUTION]
-> During a progressing tournament this is more risky than a normal refresh because eliminated/advanced players may no longer appear in every current draw representation. Use a full rebuild only when the current official draws themselves still provide complete enough coverage.
+```text
+refresh-data.js :full
+```
+
+and is the separate path for TournamentSoftware/SquashLevels tournament-data maintenance.
+
+Because the event is finished, use this path only when there is a specific reason to rebuild the tournament player/match dataset.
+
+### Write boundary
+
+The Winners builder writes only:
+
+```text
+results-data.js
+```
+
+and only after all final-placement validation passes.
+
+If validation fails, it exits non-zero and leaves the existing published Winners file unchanged.
+
+---
+
+## Refresh commands
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+or:
+
+```bash
+npm ci
+```
+
+### Build Winners data
+
+```bash
+npm run refresh
+```
+
+Equivalent aliases:
+
+```bash
+npm run refresh:quick
+npm run build:results
+```
+
+Expected ending:
+
+```text
+Final groups: 21
+Final placement rows: 84
+Bye/TBD placements: 0
+```
+
+### Test Winners source
+
+```bash
+npm run test:results
+```
+
+Expected result:
+
+```text
+RESULT SOURCE V28 TESTS PASSED
+84 rows / 21 groups / 0 Bye-TBD placements
+```
+
+### Full TournamentSoftware rebuild
+
+```bash
+npm run refresh:full
+```
 
 ### SquashLevels only
 
@@ -475,9 +672,7 @@ npm run refresh:full
 npm run refresh:squashlevels
 ```
 
-This leaves TournamentSoftware matches and the main tournament refresh timestamp unchanged.
-
-Single-player diagnostic/test:
+Single-player diagnostic where supported:
 
 ```bash
 npm run refresh:squashlevels -- "Susan Hillier"
@@ -489,23 +684,13 @@ npm run refresh:squashlevels -- "Susan Hillier"
 npm run refresh:squashlevels-login
 ```
 
-This is used to create/update local saved SquashLevels browser session state.
-
-### Draw structure debug
-
-```bash
-node refresh-data.js :drawdebug
-```
-
-This scans official draw pages and produces structure diagnostics without publishing data.
-
-### Validate the generated dataset
+### Validate tournament dataset
 
 ```bash
 npm run check
 ```
 
-### Rebuild split data from `data.js`
+### Rebuild split tournament data from `data.js`
 
 ```bash
 npm run split-data
@@ -515,66 +700,57 @@ npm run split-data
 
 ## TournamentSoftware draw rules
 
-This area deserves special attention because TournamentSoftware's bracket DOM changes as the draw progresses.
+These rules apply to the schedule/history scraper, not to the final Winners source.
+
+### Draw-list names vs linked-page headings
+
+TournamentSoftware can expose misleading or context-dependent headings after opening a draw link.
+
+When draw identity is required, prefer the name attached to the draw entry on the official **Draws index** rather than assuming the linked page heading is authoritative.
+
+This was especially important for main vs placement/extra draw interpretation during the tournament.
 
 ### Do not infer venue from an `SC` court number
 
-This is a hard invariant:
+Hard invariant:
 
 > **`SC1`, `SC2`, `SC3`, etc. are not globally unique venue identifiers.**
 
-Both Belmont and Mirrabooka use `SC...` court labels. Therefore this is invalid:
+Both Belmont and Mirrabooka use `SC...` court labels.
+
+Therefore this is invalid:
 
 ```text
-SC2 -> Mirrabooka     ❌
-SC2 -> Belmont        ❌
+SC2 -> Mirrabooka    ❌
+SC2 -> Belmont       ❌
 ```
 
-Venue and court must be treated as separate fields and tied to the same official match evidence.
+Venue and court must be tied to the same official match evidence.
 
-`AGC` is special because it identifies the Karrinyup glass court in this tournament.
+`AGC` is special because it identifies the Karrinyup glass court for this event.
 
-Known canonical venue names are:
+Known canonical venues:
 
 - `Karrinyup Shopping Centre`
 - `Belmont Saints Squash Centre`
 - `Squashworld Mirrabooka`
 
-### Bracket sibling fallback
-
-A progressed draw can retain two numbered sibling player slots and an explicit match date/time while no longer rendering the connector span in the same place.
-
-The fallback may use the sibling relationship to recover:
-
-- player 1,
-- player 2,
-- date/time.
-
-It must **not** take venue/court/result text from a nearby bracket row unless that location is proven to belong to the same match. Nearby bracket cells frequently belong to a different round/match.
-
 ### Partial official slot joining
 
-A safe case looks like this:
+Example of a safe join:
 
 ```text
 Draw:          Jason Patmore vs Opponent X @ 11:30
 Matches page:  Jason Patmore vs TBD        @ 11:30, Belmont SC3
 ```
 
-The two sources may be joined when Jason has exactly one official date/time slot that matches. The draw supplies the opponent; the Matches-page observation supplies the proven location.
-
-If multiple possible locations or fixtures exist for that player/date/time, do not guess.
+The sources can be combined only when the player/date/time slot is unique and unambiguous.
 
 ### Placement draws
 
-Small placement draws such as:
+Small placement draws must not be validated against the full age-group entrant count. They are intentionally tiny terminal draws.
 
-- `3rd/4th`,
-- `3/4`,
-- `3rd-4th`,
-- placement/playoff variants
-
-must not be validated against the full age-group player count. They are intentionally tiny terminal draws.
+This rule remains relevant to historical scraper maintenance even though Winners are no longer derived from those rows.
 
 ---
 
@@ -582,62 +758,54 @@ must not be validated against the full age-group player count. They are intentio
 
 ### Browser polling
 
-`app.js` polls the SquashScores public overview roughly every **5 seconds** while relevant pages are active.
+`app.js` polls the SquashScores public overview while relevant pages are active.
 
-The polling loop is self-scheduled after the previous request completes rather than using overlapping intervals. This prevents slow requests from stacking up.
+The polling loop self-schedules after the previous request completes to avoid overlapping requests.
 
 ### Live-page source of truth
 
 The Live page uses the newest SquashScores feed directly.
 
-TournamentSoftware is used only to enrich a live row with:
-
-- official event/round,
-- player IDs,
-- official venue/court when the fixture can be matched safely.
-
-A valid SquashScores live row is **not hidden just because TournamentSoftware has a stale or missing copy**.
+TournamentSoftware is used only to enrich a live row when the fixture can be matched safely.
 
 ### `IN PLAY` at 0–0
 
-SquashScores can explicitly mark a match `IN PLAY` before any score has been entered.
+SquashScores can explicitly mark a match `IN PLAY` before a score is entered.
 
-An explicit live/`IN PLAY` state is therefore authoritative even when `result` is empty.
-
-Do not reintroduce logic that requires a non-empty score before a row can be live.
+An explicit live state therefore remains authoritative even when `result` is empty.
 
 ### Terminal states
 
-Rows indicating terminal states such as these must not remain live:
+Rows with terminal evidence must not remain Live, including:
 
-- finished/completed,
-- retired/retirement,
-- withdrawn,
-- walkover,
-- defaulted,
+- finished/completed;
+- retired/retirement;
+- withdrawn;
+- walkover;
+- defaulted;
 - abandoned/cancelled.
 
 ### Today's completed-score cache
 
-The browser temporarily retains today's explicitly completed scored SquashScores rows so a just-finished result does not vanish when SquashScores removes it from the live overview.
+The browser temporarily retains today's explicitly completed SquashScores rows so a just-finished result does not disappear immediately when removed from the live overview.
 
-This cache is **today-only** and is not a substitute for published TournamentSoftware history.
+This cache is today-only and is not a replacement for TournamentSoftware history.
 
 ### Venue grouping
 
-The Live page has exactly three venue groups:
+The Live page uses the known venue groups:
 
 1. Karrinyup Shopping Centre
 2. Belmont Saints Squash Centre
 3. Squashworld Mirrabooka
 
-Do not create an `Other venue` bucket for unresolved rows. An unresolved row should generate a diagnostic warning so the location parsing can be fixed properly.
+Do not silently create an `Other venue` group for unresolved rows.
 
 ---
 
 ## Live-stream architecture
 
-Stream configuration is deliberately separate from tournament data.
+Stream configuration is separate from tournament data.
 
 ### Configuration format
 
@@ -667,117 +835,64 @@ Stream configuration is deliberately separate from tournament data.
 
 ### Stream matching
 
-- Karrinyup has one configured stream; a current Karrinyup match can use it regardless of its displayed court token.
-- Belmont and Mirrabooka require **both venue and configured court** to match.
+- Karrinyup can use its configured venue stream regardless of displayed court token.
+- Belmont and Mirrabooka require venue + configured court to match.
 - Stream matching uses the same venue classification as the rest of the application.
 
 ### Published site loading
 
-On HTTP/HTTPS the current `app.js` tries:
-
-1. raw GitHub `main/live-streams.json`,
-2. same-origin `live-streams.json`,
-3. JavaScript fallback if available.
-
-Requests contain a timestamp and `cache: 'no-store'` to avoid stale CDN/browser copies.
-
-### Mobile browser cache recovery
-
-Some mobile browsers, particularly Samsung Internet/Safari-style tab restoration behavior, can restore a page from memory without rerunning page startup.
-
-The app therefore re-reads stream configuration when:
-
-- `pageshow` fires,
-- the window regains focus,
-- the document becomes visible again.
-
-When changing the stream loader, preserve this behavior.
+On HTTP/HTTPS the app prefers current JSON and uses cache-busting/no-store behavior where implemented.
 
 ### `file://` local testing
 
-A page opened by double-clicking `index.html` cannot reliably `fetch()` a sibling JSON file because of local-file browser security rules.
+Direct local-file browser security can block sibling JSON fetches.
 
-For `file://`, the site uses `live-streams.js` instead.
-
-After editing the JSON run:
+For direct `file://` testing, regenerate the JavaScript mirror after changing the JSON:
 
 ```bash
 node sync-live-streams.js
 ```
 
-Then reload the local page.
-
-A better development setup is to serve the directory over a small local HTTP server. In that case the browser behaves much more like GitHub Pages and reads the JSON directly.
-
-### Playback
-
-Current `app.js` behavior:
-
-- YouTube links open as normal YouTube pages.
-- HLS/non-YouTube stream URLs open in the popup player using native HLS where supported or `hls.js` otherwise.
+A local HTTP server is preferred for realistic testing.
 
 ---
 
 ## SquashLevels integration
 
-SquashLevels matching is intentionally conservative because common names and duplicate profiles are frequent.
+SquashLevels matching is intentionally conservative because duplicate/common names are frequent.
 
-### Normal matching approach
+### Matching evidence
 
-The pipeline considers:
+The pipeline can consider:
 
-- exact/normalized player name,
-- country,
-- expected age group,
-- candidate profile evidence,
-- duplicate candidates,
-- last-match/profile evidence where useful.
+- exact/normalized player name;
+- country;
+- expected age group;
+- candidate profile evidence;
+- duplicate candidates;
+- profile/last-match evidence where useful.
 
-A name-only match should not be treated as sufficient identity evidence when ambiguity exists.
+A name-only match should not be considered sufficient when ambiguity exists.
 
 ### Nickname fallback
 
-`squashlevels-nicknames.json` contains explicit equivalence groups, for example:
+`squashlevels-nicknames.json` contains explicit equivalence groups where present.
 
-```json
-{
-  "groups": [
-    ["Susan", "Sue"],
-    ["Steven", "Stephen", "Steve"]
-  ]
-}
-```
-
-Nickname fallback remains constrained by surname/country/age evidence. It is not a fuzzy-name free-for-all.
+Nickname fallback must remain constrained by surname/country/age evidence.
 
 ### Hard overrides
 
-Use `squashlevels-overrides.json` when the automatic identity resolver cannot safely choose the correct profile.
+Use `squashlevels-overrides.json` when the automatic resolver cannot safely choose the correct profile.
 
-Example:
+The override selects identity, not a frozen ranking or Level.
 
-```json
-{
-  "Philip Taylor": "https://web.squashlevels.com/player_detail?player=462936"
-}
-```
+### Winners enrichment
 
-Important rules:
+The Winners build does **not** contact SquashLevels.
 
-- the key must match the **TournamentSoftware player name used in the dataset**;
-- the override selects identity, not a frozen Level/ranking;
-- the selected profile's current metrics are still refreshed normally;
-- do not add an override for a player whose existing mapping is already correct.
+It uses the SquashLevels values already stored in the local player snapshot.
 
-### Authentication
-
-The scraper can use:
-
-- local `config.json` credentials,
-- saved Playwright storage/session state,
-- GitHub Actions environment secrets/base64 session state.
-
-A normal tournament refresh treats SquashLevels as enrichment. If SquashLevels fails while TournamentSoftware data is valid, the refresh can preserve the previously stored SquashLevels values and continue publishing the tournament update.
+This is why rebuilding Winners is fast and deterministic.
 
 ---
 
@@ -785,27 +900,21 @@ A normal tournament refresh treats SquashLevels as enrichment. If SquashLevels f
 
 ### Vic Park & Friends
 
-The tracked list is defined in one file:
+The tracked list is defined in:
 
-```js
-// vic-park-players.js
-window.VIC_PARK_PLAYERS = [
-  "Roger Schmidlin",
-  "..."
-];
+```text
+vic-park-players.js
 ```
 
-Change this file when the club watchlist changes.
+Change that file when the club watchlist changes.
 
-The page should derive matches from the full dataset whenever possible, using both name and official-player-ID matching.
+The page should use the full match dataset whenever possible, with official player IDs preferred over name-only matching.
 
 ### Favourites
 
-Fav Players are chosen by each browser user and stored in `localStorage`.
+Fav Players are selected by each browser user and stored in `localStorage`.
 
-They are not committed to the repository and do not alter `vic-park-players.js`.
-
-The Favourites page uses the same full match dataset and date/history rules as the rest of the website.
+They are not committed to the repository and do not modify the Vic Park tracked list.
 
 ---
 
@@ -815,8 +924,10 @@ The Favourites page uses the same full match dataset and date/history rules as t
 
 - Node.js 20+ recommended
 - npm
-- Playwright/Chromium for refresh work
+- Playwright/Chromium only for full scraper work
 - a modern browser
+
+The currently used Node.js 24.x runtime is compatible with the local Winners builder.
 
 ### Install
 
@@ -824,7 +935,7 @@ The Favourites page uses the same full match dataset and date/history rules as t
 npm ci
 ```
 
-If Playwright has no browser installed:
+If full scraper work requires a browser:
 
 ```bash
 npx playwright install chromium
@@ -832,19 +943,15 @@ npx playwright install chromium
 
 ### Run the static site
 
-Simplest option: open `index.html` directly.
+Directly opening `index.html` can work, but `file://` behavior is not identical to production.
 
-This works, but `file://` has special handling for data/stream files and is **not identical to production**.
-
-Preferred option: serve the repository root over HTTP, for example with any local static-server tool or IDE extension.
-
-If Python is available:
+Preferred:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open:
+then open:
 
 ```text
 http://localhost:8000/
@@ -852,58 +959,101 @@ http://localhost:8000/
 
 ### Browser cache while developing
 
-`index.html` carries an `app.js?rev=...` query string. Bump this revision when deploying significant frontend changes so clients do not keep an old JavaScript bundle.
+`index.html` carries an `app.js?rev=...` query string.
 
-For normal local development, hard reload with the browser developer tools if behavior appears inconsistent with the code on disk.
+Bump that revision when deploying significant `app.js` behavior changes so previously open browsers do not keep stale code.
+
+The current Winners UI revision uses the V31 cache-busting revision.
 
 ---
 
 ## GitHub Actions and publishing
 
-Workflow:
+The project can be published as a static GitHub Pages site.
+
+### Important current-state note
+
+`npm run refresh` now means **Winners-only local build**, not the old full TournamentSoftware refresh.
+
+Any GitHub workflow that still assumes `npm run refresh` rebuilds all tournament data should be reviewed before re-enabling automated runs.
+
+For the current Winners path, the generated file that changes is:
 
 ```text
-.github/workflows/pages.yml
+results-data.js
 ```
 
-The current workflow supports `workflow_dispatch` for manual runs. The cron block is presently commented out.
+If CI is used to rebuild Winners, make sure `results-data.js` is included in the files staged/committed by the workflow.
 
-### Safe publish sequence
+### Frontend/source changes
 
-The workflow:
-
-1. checks out `main`,
-2. installs Node dependencies and Playwright Chromium,
-3. resets to the latest remote `main`,
-4. runs the refresh,
-5. verifies generated data files are present/non-empty,
-6. runs `node --check` on generated JavaScript data files,
-7. checks whether `main` changed while the refresh was running,
-8. retries from the newest `main` if necessary,
-9. commits only the generated data files,
-10. pushes the refresh commit.
-
-This protects a long-running refresh from overwriting a newer human commit.
-
-### Generated files committed by CI
-
-The workflow currently commits:
+Files such as these are normal developer commits rather than generated Winners output:
 
 ```text
-data.js
-summary-data.js
-players-data.js
-matches-data.js
-vicpark-data.js
+index.html
+app.js
+styles.css
+final-results-source.json
+vic-park-players.js
+live-streams.json
 ```
 
-Frontend/source-file changes such as `app.js`, `styles.css`, `live-streams.json` or `vic-park-players.js` are normal developer commits and are not generated by the scheduled refresh step.
+`final-results-source.json` is authoritative source data and should be reviewed like source code, not silently regenerated by CI.
 
 ---
 
 ## Common maintenance tasks
 
-### Change the Vic Park watchlist
+### Correct a final placing
+
+1. Edit only the relevant rows in:
+
+   ```text
+   final-results-source.json
+   ```
+
+2. Run:
+
+   ```bash
+   npm run test:results
+   ```
+
+3. Rebuild:
+
+   ```bash
+   npm run refresh
+   ```
+
+4. Confirm:
+
+   ```text
+   84 rows
+   21 groups
+   0 Bye/TBD
+   ```
+
+5. Review the changed `results-data.js` before publishing.
+
+Do **not** patch a placing directly into `app.js`.
+
+### Change Winners UI
+
+For navigation, medal matrix or Winners filter changes:
+
+- edit `index.html` and/or `app.js`;
+- do not alter `final-results-source.json` unless the actual placings change;
+- bump the `app.js?rev=...` value in `index.html` when needed.
+
+Current Winners UI:
+
+- tab label = **Winners**;
+- Male checkbox = checked by default;
+- Female checkbox = checked by default;
+- no Gender title above those checkboxes;
+- no “Most medals” summary frame/title;
+- detailed Gender/Age/Country filters remain below the medal table.
+
+### Change Vic Park watchlist
 
 Edit:
 
@@ -911,145 +1061,168 @@ Edit:
 vic-park-players.js
 ```
 
-Then run a normal refresh or `npm run split-data` if you only need to regenerate the compact `vicpark-data.js` from the current full snapshot.
-
 ### Change live streams
 
 1. Edit `live-streams.json`.
-2. If local `file://` testing matters, run:
+2. If direct `file://` testing matters, run:
 
    ```bash
    node sync-live-streams.js
    ```
 
-3. Commit `live-streams.json` and the regenerated `live-streams.js`.
-4. Published browsers should re-fetch the JSON without a tournament-data refresh.
+3. Commit the updated stream configuration/mirror as appropriate.
 
 ### Fix a SquashLevels identity
 
 1. Confirm the exact TournamentSoftware player name.
-2. Add the exact profile URL to `squashlevels-overrides.json`.
+2. Add the correct mapping to `squashlevels-overrides.json`.
 3. Run:
 
    ```bash
    npm run refresh:squashlevels
    ```
 
-4. Verify the console shows the hard override being applied to the intended player only.
-
-### Add a nickname equivalence
-
-Edit `squashlevels-nicknames.json`, then run a SquashLevels refresh.
-
-### Frontend-only change
-
-For changes to HTML/CSS/rendering:
-
-- do **not** refresh tournament data unless the change actually needs regenerated data;
-- update the cache revision in `index.html` when changing `app.js` behavior that must reach already-open browsers.
+4. Verify the intended player only.
 
 ---
 
 ## Validation and safety rules
 
-The refresh intentionally fails rather than publishing suspicious data.
+### Winners safeguards
 
-Current safeguards include:
+The finished-tournament Winners build must fail rather than publish suspicious output.
 
-- canonical player directory must remain roughly complete (normal flow expects about 900+ players),
-- country/age/gender coverage must remain plausible,
-- draw-tree completeness is validated,
-- small placement draws are recognized separately from full draws,
-- real match dates must be inside the tournament date range,
-- deterministic Bye rows must have the exact special shape,
-- a matches-only refresh requires an already substantial existing base,
-- current/future fixture location must be proven rather than guessed,
-- ambiguous player/date/time location merges are rejected,
-- historical fixture collapse is guarded,
-- future result/winner metadata is sanitized,
-- duplicate/obsolete fixture rows are cleaned conservatively,
+Required:
+
+- 21 known groups;
+- four places per group;
+- exactly 84 source rows;
+- four distinct players per group;
+- no `Bye`;
+- no `TBD`;
+- no missing place;
+- no duplicate place.
+
+If any check fails:
+
+> **`results-data.js` must remain unchanged.**
+
+### Match/schedule safeguards
+
+Historical tournament refresh safeguards include:
+
+- player-directory coverage checks;
+- plausible country/age/gender coverage;
+- draw-tree completeness checks;
+- special handling for small placement draws;
+- tournament-date range validation;
+- deterministic Bye shape validation;
+- location proof rather than court-number guessing;
+- historical fixture collapse guards;
+- future result/winner sanitization;
+- conservative duplicate cleanup;
 - SquashScores cannot delete static TournamentSoftware fixtures.
 
 ### Key philosophy
 
+For schedules:
+
 > **A partial fresh scrape is evidence for additions/updates, not automatically evidence for deletions.**
 
-TournamentSoftware's rendered content can be incomplete or structurally different from one request to another. The application therefore requires positive authority before deleting/replacing previously published schedule information.
+For Winners:
+
+> **A missing bracket edge is not permission to invent a placing.**
 
 ---
 
 ## Debugging guide
 
+### Winners contains a Bye or TBD
+
+This should now be impossible.
+
+Run:
+
+```bash
+npm run test:results
+```
+
+If the test passes but the browser still shows a Bye/TBD:
+
+1. inspect the deployed `results-data.js`;
+2. verify the browser loaded the current `app.js` revision;
+3. hard-refresh/cache-clear;
+4. confirm GitHub Pages deployed the expected branch/folder.
+
+Do not add a Bye fallback to the Winners builder.
+
+### Winners build says a place is missing
+
+Inspect:
+
+```text
+final-results-source.json
+```
+
+The source must have places 1, 2, 3 and 4 for that exact gender/age group.
+
+### Correct Winners source but wrong player metadata
+
+The placement order comes from `final-results-source.json`, while country/ranking/club data is enriched from the player snapshot.
+
+Check the corresponding player in:
+
+```text
+players-data.js
+```
+
+and verify same-name player disambiguation by gender/age.
+
+### Winners page is stale after UI change
+
+Check the cache revision in `index.html`:
+
+```text
+app.js?rev=...
+```
+
+Then verify the deployed HTML actually contains the new revision.
+
 ### A Vic Park player has a match on TournamentSoftware but it is missing
 
 Check in this order:
 
-1. Is the player's name in `vic-park-players.js`?
-2. Is the match in `matches-data.js`?
-3. If yes, inspect `ensureVicParkData()` / `setupVicPark()` filtering.
-4. If no, inspect the refresh log:
-   - draw-tree observation,
-   - Matches-page observation,
-   - draw authority accepted/rejected counts,
-   - slot-location recovery,
-   - duplicate cleanup.
-5. Search `refresh-matches.json` only as a diagnostic copy of what the refresh produced.
+1. player is present in `vic-park-players.js`;
+2. fixture exists in `matches-data.js`;
+3. if yes, inspect Vic Park filtering/rendering;
+4. if no, inspect the TournamentSoftware refresh/merge diagnostics.
 
-Do not patch the UI to fabricate a fixture that the data pipeline dropped. Fix the extraction/merge rule.
+Do not patch the UI to fabricate a missing schedule row.
 
 ### Correct court, wrong venue
 
-Do **not** map the court number to a venue.
+Do **not** map `SC2`, `SC3`, etc. to a venue.
 
-Inspect the location evidence used in the refresh merge. A correct `SC2` can exist at both Belmont and Mirrabooka.
-
-The likely failure class is that one source supplied the court while another/neighboring bracket node supplied an unrelated venue.
-
-### Match disappeared after it was played earlier today
-
-Check whether the current refresh rebuilt today from an incomplete source and discarded a previously published row.
-
-Played-today fixtures must not disappear merely because a progressed draw stops exposing the same DOM shape.
+Inspect the venue evidence attached to that exact fixture.
 
 ### Live page missing a 0–0 match
 
-Check SquashScores explicit state. `IN PLAY` is live even before a score appears.
-
-Do not require `result` to be non-empty when SquashScores explicitly says the match is live.
+Check SquashScores explicit state. `IN PLAY` remains live even before score entry.
 
 ### Retired/finished match remains Live
 
-Inspect `squashScoresTerminalReason()` and the API's status/state fields. Explicit terminal evidence must win over partial score data.
+Inspect terminal state parsing. Explicit finished/retired/withdrawn evidence must win over partial scores.
 
-### Some phones open an old stream
+### SquashLevels says login failed but session is valid
 
-Confirm the deployed `index.html` has the current `app.js?rev=...` value, then check the stream-refresh events:
+Do not assume a missing Level/ranking is an authentication issue.
 
-- `pageshow`,
-- `focus`,
-- `visibilitychange`.
+First check:
 
-Mobile browsers can restore a tab from memory without doing a normal reload.
-
-### Local stream differs from published stream
-
-If the local page is opened as `file://`, regenerate the JavaScript mirror:
-
-```bash
-node sync-live-streams.js
-```
-
-The published HTTP/HTTPS site reads JSON; direct local-file mode uses the JS fallback.
-
-### SquashLevels says login failed but the browser session is valid
-
-Do not assume every missing Level/World value is authentication failure. First determine whether:
-
-- the correct SquashLevels identity was selected,
-- the profile parser found the expected metric,
-- duplicate/profile verification rejected the candidate.
-
-Use the SquashLevels diagnostic JSON files and single-player refresh mode.
+- selected player identity;
+- profile parser result;
+- duplicate/profile verification;
+- stored-session diagnostics.
 
 ---
 
@@ -1057,7 +1230,7 @@ Use the SquashLevels diagnostic JSON files and single-player refresh mode.
 
 Do not commit real SquashLevels credentials or browser session state.
 
-The repository `.gitignore` excludes:
+Typical ignored secret/diagnostic files include:
 
 ```text
 config.json
@@ -1070,7 +1243,7 @@ squashlevels-session-storage.b64.txt
 squashlevels-storage-state.b64.txt
 ```
 
-Local `config.json` has this logical shape:
+Local `config.json` logical shape:
 
 ```json
 {
@@ -1082,49 +1255,44 @@ Local `config.json` has this logical shape:
 }
 ```
 
-GitHub Actions uses repository secrets instead, including:
+Treat saved Playwright browser state as credentials.
 
-- `SQUASHLEVELS_EMAIL`
-- `SQUASHLEVELS_PASSWORD`
-- `SQUASHLEVELS_STORAGE_STATE_B64`
-- `SQUASHLEVELS_SESSION_STORAGE_B64`
-
-Treat saved Playwright storage/session state as credentials.
+`final-results-source.json` contains public tournament placement data and is safe to commit.
 
 ---
 
 ## Legacy and diagnostic files
 
-This project evolved rapidly during the tournament and contains some one-off repair/migration tooling.
-
-Examples include:
-
-- `apply-history-refresh-fix.js`
-- `refresh-data.before-history-backfill.js`
-- `optimize-refresh.js`
-- `FIX-NOTES.txt`
-- `HISTORY-FIX-NOTES.txt`
-- `LIVE-STREAM-FIX-NOTES.txt`
-- `STREAM-FIX-NOTES.txt`
-- `STREAM-REPAIR-NOTES.txt`
-
-These files are useful historical context, but **do not assume they describe the current architecture**. The current production behavior is defined by:
+This project evolved rapidly during the live tournament and contains old repair/version notes such as:
 
 ```text
-refresh-data.js
-app.js
-player-app.js
-index.html
-player.html
-styles.css
-vic-park-players.js
-live-streams.json
-squashlevels-overrides.json
-squashlevels-nicknames.json
-.github/workflows/pages.yml
+README-RESULTS-V10-FIX.txt
+README-RESULTS-V11-FIX.txt
+...
+README-RESULTS-V28.txt
 ```
 
-When debugging, start with those files and the current generated data.
+These files are historical context only.
+
+They describe intermediate algorithms that attempted to infer final placings from incomplete TournamentSoftware bracket/schedule representations.
+
+They are **not the current Winners architecture**.
+
+For current behavior, start with:
+
+```text
+final-results-source.json
+build-results-local.js
+test-results-local.js
+results-data.js
+app.js
+index.html
+players-data.js
+matches-data.js
+refresh-data.js
+```
+
+Avoid reintroducing old V18–V27 semifinal/extra-stage inference logic into the finished Winners path.
 
 ---
 
@@ -1152,13 +1320,13 @@ https://wsf.tournamentsoftware.com/tournament/1d88743a-54e2-4073-bd30-a4f443a442
 
 ### SquashScores
 
-Live page:
+Live overview used during the tournament:
 
 ```text
 https://www.squashscores.com/inprogress.php?categoryId=19&hideControls=1&tourname=World+Squash+Masters+2026&tz=Australia%2FPerth
 ```
 
-Public overview API used by the app:
+Public overview API:
 
 ```text
 https://squashscores.com/api/overview/public/?categoryId=19
@@ -1174,7 +1342,7 @@ https://www.squashlevels.com/
 
 ## Time zone
 
-All tournament “today”, live-window and day-rollover decisions should be made in:
+All tournament “today”, live-window and day-rollover decisions should use:
 
 ```text
 Australia/Perth
@@ -1182,129 +1350,58 @@ Australia/Perth
 
 Do not rely on the user's device time zone for tournament-day classification.
 
+The final Winners data itself is timeless once published and does not depend on the current date.
+
 ---
 
-## Developer checklist before changing match logic
+## Developer checklist
 
-Before modifying the scraper or merge rules, verify all of the following:
+### Before changing Winners logic
+
+- [ ] Am I changing an actual placing, or only display/metadata?
+- [ ] If a placing changed, did I edit `final-results-source.json` rather than infer from matches?
+- [ ] Does the source still contain exactly 84 rows?
+- [ ] Are there exactly 21 groups and four places per group?
+- [ ] Are all 84 placements real players?
+- [ ] Are there zero `Bye` and zero `TBD` values?
+- [ ] Are all four players in each group distinct?
+- [ ] Did I run `npm run test:results`?
+- [ ] Did I run `npm run refresh`?
+- [ ] Did I review the generated `results-data.js`?
+- [ ] If `app.js` changed, did I bump its revision in `index.html`?
+
+### Before changing match/history logic
 
 - [ ] Am I using official player IDs where available?
-- [ ] Am I treating the draw as fixture identity authority rather than scraping arbitrary nearby text?
-- [ ] Is venue evidence tied to the **same match**, not merely the same bracket area?
-- [ ] Have I avoided inferring Belmont/Mirrabooka from an `SC` number?
-- [ ] Can a partial scrape accidentally delete previously published history?
-- [ ] Can a future `Player vs TBD` be deleted by a Bye or unproven opponent?
-- [ ] Are placement draws excluded from full-draw size validation?
+- [ ] Am I using the draw as fixture identity authority rather than arbitrary nearby text?
+- [ ] Is venue evidence tied to the same match?
+- [ ] Have I avoided inferring venue from an `SC` court number?
+- [ ] Can a partial scrape accidentally delete published history?
 - [ ] Will a played-today match remain visible after the bracket progresses?
 - [ ] Does explicit SquashScores `IN PLAY` still work at 0–0?
 - [ ] Do retirement/finished states still remove matches from Live?
 - [ ] Does the change affect Vic Park, Favourites, Courts and player profiles consistently?
-- [ ] If `app.js` changed, did I bump its revision in `index.html`?
-- [ ] If `live-streams.json` changed, did I regenerate `live-streams.js` for `file://` users?
-- [ ] Did I run JavaScript syntax checks and a representative refresh/validation before publishing?
 
 ---
 
 ## Project status
 
-This codebase was built for a live tournament and contains defensive logic specifically designed around real TournamentSoftware rendering behavior observed during the event. Prefer **small, evidence-based changes** over broad parser rewrites, and preserve the existing safety checks unless you can demonstrate why an invariant is no longer valid.
+The tournament is complete.
 
+The codebase still retains the live-tournament schedule/history and integration tooling, but final Winners are now treated as a **finished, validated dataset** rather than a continually inferred bracket state.
 
+Current Winners design:
 
-## Results page
-
-The **Results** tab is derived from the official TournamentSoftware **draws**, not from the TournamentSoftware Winners page. The Winners page is not used as the placement source; quick refresh reads only its first-place entries as an independent champion validation check.
-
-Official source:
-
-`https://wsf.tournamentsoftware.com/sport/draws.aspx?id=1d88743a-54e2-4073-bd30-a4f443a442f0`
-
-For each gender/age category the refresh derives the top four structurally:
-
-- **1st** = winner of the championship main-draw final
-- **2nd** = loser of the championship main-draw final
-- **3rd** = winner of the official 3rd/4th playoff draw
-- **4th** = loser of the official 3rd/4th playoff draw
-
-Placement-draw names are not assumed to use one exact label. The parser recognises variants such as `3rd/4th`, `3rd/4th Place`, `3/4 Place`, `third/fourth`, `placement`, and `playoff`. A real TournamentSoftware example is `Women's +35 - Women's +35-3rd/4th` (Elimination / Extra). These draws are excluded from main-draw champion detection and used only for places 3 and 4.
-
-The final result rows are joined back to the canonical player snapshot so the UI can show the player's full name, country flag, long country name, seed, stored SquashLevels World ranking, stored SquashLevels level and stored club information. No new SquashLevels lookup is required for the Results page.
-
-### Medal matrix and detailed result filters
-
-The medal matrix counts **Gold / Silver / Bronze** from places **1 / 2 / 3**. Fourth place is displayed in the age-group results but is not counted as a medal.
-
-The medal matrix has its own gender filter:
-
-- All
-- Male
-- Female
-
-The detailed age-group results have independent filters immediately above the age-group cards:
-
-- Gender: All / Male / Female
-- Age: All / available age groups
-- Country: All / available countries
-
-Changing the detailed filters does not change the medal matrix.
-
-### Fast end-of-tournament refresh
-
-Use:
-
-```bash
-npm run refresh:quick
+```text
+final-results-source.json
+        ↓
+build-results-local.js
+        ↓
+results-data.js
+        ↓
+Winners tab in app.js
 ```
 
-This mode is intended for the final stage of the tournament. It:
+This separation is intentional. It prevents schedule-history cleanup, TournamentSoftware page-title quirks, missing bracket edges, Bye progression rows or live-data changes from changing the published final placings.
 
-- crawls only the latest two TournamentSoftware match dates;
-- preserves older published match history;
-- performs a read-only crawl of the official age-group draw pages to derive current 1st–4th places;
-- uses latest official match/result rows to corroborate final winners where available;
-- refreshes SquashScores live overlay data;
-- preserves the existing player snapshot and stored SquashLevels ranking/level/club values;
-- does **not** crawl player profiles or contact SquashLevels.
-
-The draw crawl in `:quick` is for Results derivation only; it does not replace/rebuild the published tournament match schedule.
-
-On Windows, `refresh-quick.bat` is included as a convenience wrapper.
-
-### Country display normalization
-
-The UI normalizes TournamentSoftware sporting country codes to long display names and matching flags before rendering. This applies across Home, Players, Results, Vic Park & Friends, Favourites, Courts match rows, Live match rows and player profiles. The refresh pipeline applies the same normalization before writing split data files. Never deliberately display a three-letter TournamentSoftware country code where a long country name is available.
-
-
-### Result extraction after completed finals
-
-Results are intentionally extracted separately from the published match schedule.
-TournamentSoftware can keep the two finalists and the structurally advancing winner in a completed bracket while removing the old date/time text from that edge. These terminal bracket edges are therefore retained as result evidence even when they are no longer valid schedule rows.
-
-`npm run refresh:quick` logs result coverage for both main finals and 3rd/4th playoff draws, including the names of any categories that still cannot be resolved.
-
-## Results completeness fix (Sep 6)
-
-The Results page is derived only from TournamentSoftware draw evidence:
-
-- 1st/2nd: main championship final
-- 3rd/4th: matching 3rd/4th playoff draw
-
-Completed bracket edges may remain visible after TournamentSoftware removes their printed date/time. Result extraction therefore uses player-pair + age/gender matching against authoritative match history to recover the score/winner without weakening schedule-location rules.
-
-Result merging is place-by-place. A refresh that sees only 3rd/4th can no longer erase a previously proven 1st/2nd (and vice versa). Legacy Winners-page rows are not carried forward.
-
-`npm run refresh:quick` logs incomplete top-four categories explicitly.
-
-## Deterministic championship top-four extraction
-
-Results are sourced from the official TournamentSoftware draws. The Winners page is **not** used as the source for places; in quick refresh it is used only as an independent champion cross-check. For every age/gender category the refresh now:
-
-1. selects the championship main draw;
-2. takes the **right-most main bracket match** (the level-2 final feeding the Winner column), not the chronologically latest match printed on the page; winner = 1st and loser = 2nd;
-3. looks for the matching sibling draw whose title is 3rd/4th/playoff-style or whose stage is `Extra`;
-4. takes that secondary draw's right-most match; winner = 3rd and loser = 4th;
-5. if no separate playoff draw exists, finds the internal bronze match, first by its explicit 3rd/4th label and then from the two structural semifinal losers;
-6. requires four distinct players and places 1-4 for every category with at least four entrants;
-7. during `npm run refresh:quick`, compares every extracted **1st place** against the official Winners page and refuses to publish Results if even one champion differs.
-
-`npm run test:results` runs offline regression tests for the known failure patterns: Men's +50, Women's +35 and Men's +85. The quick refresh does not contact SquashLevels.
+For maintenance, prefer **small, evidence-based changes** and preserve the validation barriers around both the schedule pipeline and the Winners pipeline.

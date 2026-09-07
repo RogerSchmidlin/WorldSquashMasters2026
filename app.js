@@ -174,7 +174,7 @@ async function ensureResultsData(){
     // Results are a final static tournament snapshot. Do not load the full
     // player or match datasets just to render this page, and allow the browser
     // to cache the compact results shard across visits.
-    await loadScriptOnce('results-data.js?rev=20260906-undefeated-v3');
+    await loadScriptOnce('results-data.js?rev=20260907-winners-no-summary-v31');
     const pack=window.TOURNAMENT_RESULTS;
     if(!pack)throw new Error('results-data.js did not define TOURNAMENT_RESULTS');
     data.results=Array.isArray(pack)?pack:(Array.isArray(pack.rows)?pack.rows:[]);
@@ -3099,22 +3099,12 @@ function resultsMedalRows(rows){
   );
 }
 function renderResultsMedalMatrix(scopeRows){
-  const summary=qs('#resultsMedalSummary');
   const host=qs('#resultsMedalMatrix');
-  if(!summary||!host)return;
+  if(!host)return;
   const medalRows=resultsMedalRows(scopeRows);
   if(!medalRows.length){
-    summary.innerHTML='<span>No medal results have been published for the selected gender yet.</span>';
-    host.innerHTML='';
+    host.innerHTML='<div class="empty">No medal results have been published for the selected genders yet.</div>';
     return;
-  }
-  const best=medalRows[0].total;
-  const leaders=medalRows.filter(x=>x.total===best);
-  if(leaders.length===1){
-    const x=leaders[0];
-    summary.innerHTML=`${flagImg(x,'flag-img')}<span><strong>Most medals: ${esc(x.country)}</strong> — ${x.total} total <small>(${x.gold} gold · ${x.silver} silver · ${x.bronze} bronze)</small></span>`;
-  }else{
-    summary.innerHTML=`<span><strong>Most medals: joint leaders</strong> — ${leaders.map(x=>`${esc(x.country)} (${x.total})`).join(' · ')}</span>`;
   }
   host.innerHTML=`<table class="results-medal-table">
     <thead><tr><th>Country</th><th>Gold</th><th>Silver</th><th>Bronze</th><th>Total</th></tr></thead>
@@ -3125,13 +3115,16 @@ function renderResultsMedalMatrix(scopeRows){
   </table>`;
 }
 function setupResultsFilters(allRows){
-  const medalGender=qs('#resultsMedalGenderFilter');
+  const medalMale=qs('#resultsMedalMaleFilter');
+  const medalFemale=qs('#resultsMedalFemaleFilter');
   const gender=qs('#resultsGenderFilter');
   const age=qs('#resultsAgeFilter');
   const country=qs('#resultsCountryFilter');
-  if(medalGender&&!medalGender.dataset.bound){
-    medalGender.dataset.bound='1';
-    medalGender.addEventListener('change',renderResults);
+  for(const checkbox of [medalMale,medalFemale]){
+    if(checkbox&&!checkbox.dataset.bound){
+      checkbox.dataset.bound='1';
+      checkbox.addEventListener('change',renderResults);
+    }
   }
   if(gender&&!gender.dataset.bound){
     gender.dataset.bound='1';
@@ -3169,14 +3162,15 @@ function renderResults(){
     return ga-gb||(Number(a.ageGroup)||999)-(Number(b.ageGroup)||999)||resultPlaceOrder(a)-resultPlaceOrder(b)||String(a.playerName||'').localeCompare(String(b.playerName||''));
   });
   setupResultsFilters(allRows);
-  const medalGenderFilter=qs('#resultsMedalGenderFilter')?.value||'all';
+  const medalMaleChecked=qs('#resultsMedalMaleFilter')?.checked!==false;
+  const medalFemaleChecked=qs('#resultsMedalFemaleFilter')?.checked!==false;
   const genderFilter=qs('#resultsGenderFilter')?.value||'all';
   const ageFilter=qs('#resultsAgeFilter')?.value||'all';
   const countryFilter=qs('#resultsCountryFilter')?.value||'all';
 
-  // Medal table has its own gender switch and is deliberately independent of
-  // the detailed age-group Gender / Age / Country filters below it.
-  const medalScopeRows=allRows.filter(r=>medalGenderFilter==='all'||r.gender===medalGenderFilter);
+  // Medal table has independent Male / Female checkboxes and is deliberately
+  // independent of the detailed Gender / Age / Country filters below it.
+  const medalScopeRows=allRows.filter(r=>(r.gender==='Men'&&medalMaleChecked)||(r.gender==='Women'&&medalFemaleChecked));
   renderResultsMedalMatrix(medalScopeRows);
 
   const rows=allRows.filter(r=>(genderFilter==='all'||r.gender===genderFilter)&&(ageFilter==='all'||String(r.ageGroup)===String(ageFilter))&&(countryFilter==='all'||resultCountryInfo(r).country===countryFilter));

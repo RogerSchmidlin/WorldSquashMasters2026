@@ -1,0 +1,535 @@
+{
+  "version": "2026-final-v28",
+  "event": "2026 WSF World Masters Championships, Perth",
+  "note": "Final top-four source. Placings are not inferred from matches-data.js or legacy data.js results.",
+  "rows": [
+    {
+      "gender": "Men",
+      "ageGroup": 35,
+      "place": 1,
+      "playerName": "Joshua Larkin"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 35,
+      "place": 2,
+      "playerName": "Samuel Kang"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 35,
+      "place": 3,
+      "playerName": "Daniel Ince"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 35,
+      "place": 4,
+      "playerName": "David Allman"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 40,
+      "place": 1,
+      "playerName": "Steven Finitsis"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 40,
+      "place": 2,
+      "playerName": "Matthew Karwalski"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 40,
+      "place": 3,
+      "playerName": "Devon Hendrikse"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 40,
+      "place": 4,
+      "playerName": "Jason Le Roux"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 45,
+      "place": 1,
+      "playerName": "James Bowden"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 45,
+      "place": 2,
+      "playerName": "Jeff Osborne"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 45,
+      "place": 3,
+      "playerName": "Rene Mijs"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 45,
+      "place": 4,
+      "playerName": "Guillermo Pedernera"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 50,
+      "place": 1,
+      "playerName": "Michael Corren"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 50,
+      "place": 2,
+      "playerName": "Alexander Clark"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 50,
+      "place": 3,
+      "playerName": "Zuko Kubukeli"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 50,
+      "place": 4,
+      "playerName": "Adam Dominey"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 55,
+      "place": 1,
+      "playerName": "Richard Chin"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 55,
+      "place": 2,
+      "playerName": "Thomas Grübel"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 55,
+      "place": 3,
+      "playerName": "Peter Bastow"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 55,
+      "place": 4,
+      "playerName": "Jason Oxenham"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 60,
+      "place": 1,
+      "playerName": "Jean-Jacques Pineau"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 60,
+      "place": 2,
+      "playerName": "Michael Fullick"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 60,
+      "place": 3,
+      "playerName": "Craig Van Der Wath"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 60,
+      "place": 4,
+      "playerName": "Christopher Moody"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 65,
+      "place": 1,
+      "playerName": "Mark Woodliffe"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 65,
+      "place": 2,
+      "playerName": "Willie Hosey"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 65,
+      "place": 3,
+      "playerName": "Trevor Wilkinson"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 65,
+      "place": 4,
+      "playerName": "Peter Gilbee"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 70,
+      "place": 1,
+      "playerName": "Stan Voges"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 70,
+      "place": 2,
+      "playerName": "John Macrury"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 70,
+      "place": 3,
+      "playerName": "Jim Mobbs"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 70,
+      "place": 4,
+      "playerName": "Mark Brycki"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 75,
+      "place": 1,
+      "playerName": "Kai Ki Chan"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 75,
+      "place": 2,
+      "playerName": "Geoff Chambers"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 75,
+      "place": 3,
+      "playerName": "Hongi Laing"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 75,
+      "place": 4,
+      "playerName": "Barry Featherstone"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 80,
+      "place": 1,
+      "playerName": "Gerald Poulton"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 80,
+      "place": 2,
+      "playerName": "Jose Luis Alba"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 80,
+      "place": 3,
+      "playerName": "Howard Armitage"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 80,
+      "place": 4,
+      "playerName": "Norbert Kornyei"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 85,
+      "place": 1,
+      "playerName": "Ray Villarroya",
+      "country": "Australia",
+      "iso3": "AUS",
+      "flagCode": "au"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 85,
+      "place": 2,
+      "playerName": "Peter Zillmer",
+      "country": "Australia",
+      "iso3": "AUS",
+      "flagCode": "au"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 85,
+      "place": 3,
+      "playerName": "Thomas Slattery",
+      "country": "Australia",
+      "iso3": "AUS",
+      "flagCode": "au"
+    },
+    {
+      "gender": "Men",
+      "ageGroup": 85,
+      "place": 4,
+      "playerName": "Barry Gardiner",
+      "country": "New Zealand",
+      "iso3": "NZL",
+      "flagCode": "nz"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 35,
+      "place": 1,
+      "playerName": "Samantha Foyle"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 35,
+      "place": 2,
+      "playerName": "Zoe Petrovansky"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 35,
+      "place": 3,
+      "playerName": "Kasey Bonato"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 35,
+      "place": 4,
+      "playerName": "Heather Pilley"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 40,
+      "place": 1,
+      "playerName": "Larissa Stephenson"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 40,
+      "place": 2,
+      "playerName": "Samantha Mickleson"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 40,
+      "place": 3,
+      "playerName": "Kim Graham"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 40,
+      "place": 4,
+      "playerName": "Rennelle Karwalski"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 45,
+      "place": 1,
+      "playerName": "Karen Blom"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 45,
+      "place": 2,
+      "playerName": "Joannah Yue"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 45,
+      "place": 3,
+      "playerName": "Janine Mullay"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 45,
+      "place": 4,
+      "playerName": "Kate Rowe"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 50,
+      "place": 1,
+      "playerName": "Melissa Martin"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 50,
+      "place": 2,
+      "playerName": "Jane Kennedy"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 50,
+      "place": 3,
+      "playerName": "Janet Byrnes"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 50,
+      "place": 4,
+      "playerName": "Michelle May"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 55,
+      "place": 1,
+      "playerName": "Susan Davis"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 55,
+      "place": 2,
+      "playerName": "Amanda Hart"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 55,
+      "place": 3,
+      "playerName": "Kelsey Souchereau"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 55,
+      "place": 4,
+      "playerName": "Lauren Wagner"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 60,
+      "place": 1,
+      "playerName": "Susan Hillier"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 60,
+      "place": 2,
+      "playerName": "Phoebe Trubowitz"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 60,
+      "place": 3,
+      "playerName": "Sue Williams"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 60,
+      "place": 4,
+      "playerName": "Julie Multamaki"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 65,
+      "place": 1,
+      "playerName": "Liz Hamilton"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 65,
+      "place": 2,
+      "playerName": "Kathryn Cowper"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 65,
+      "place": 3,
+      "playerName": "Janelle Briggs"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 65,
+      "place": 4,
+      "playerName": "Gillian Diggle"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 70,
+      "place": 1,
+      "playerName": "Pauline Douglas"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 70,
+      "place": 2,
+      "playerName": "Gaye Mitchell"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 70,
+      "place": 3,
+      "playerName": "Melanie Knibbs"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 70,
+      "place": 4,
+      "playerName": "Napoti Teremaki"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 75,
+      "place": 1,
+      "playerName": "Margaret Hunt-Kemp"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 75,
+      "place": 2,
+      "playerName": "Claire Bryars"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 75,
+      "place": 3,
+      "playerName": "Lynette Woodyard"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 75,
+      "place": 4,
+      "playerName": "Nikki Mccullough"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 80,
+      "place": 1,
+      "playerName": "Ann Manley",
+      "country": "England",
+      "iso3": "ENG",
+      "flagCode": "gb-eng"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 80,
+      "place": 2,
+      "playerName": "Pamela Moran",
+      "country": "Australia",
+      "iso3": "AUS",
+      "flagCode": "au"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 80,
+      "place": 3,
+      "playerName": "Gay Erskine",
+      "country": "Australia",
+      "iso3": "AUS",
+      "flagCode": "au"
+    },
+    {
+      "gender": "Women",
+      "ageGroup": 80,
+      "place": 4,
+      "playerName": "Christine Cooper",
+      "country": "Australia",
+      "iso3": "AUS",
+      "flagCode": "au"
+    }
+  ]
+}

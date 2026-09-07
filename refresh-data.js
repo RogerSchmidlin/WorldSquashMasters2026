@@ -3834,7 +3834,11 @@ async function scrapeOfficialDrawSchedule(context,options={}){
           sourceUrl:row.draw.href,
           drawUrl:row.draw.href,
           drawName:row.draw.text||'',
-          drawPlacement:isPlacementDrawText(row.draw.text),
+          canonicalDrawUrl:row.draw.href||'',
+          canonicalDrawName:row.draw.text||'',
+          canonicalDrawIndex:Number((String(row.draw.href||'').match(/[?&]draw=(\d+)/i)||[])[1]||0),
+          canonicalDrawStage:(isPlacementDrawText(`${row.draw.text||''} ${row.draw.contextText||''}`)||!!row.draw.stageExtra)?'extra':'main',
+          drawPlacement:isPlacementDrawText(`${row.draw.text||''} ${row.draw.contextText||''}`)||!!row.draw.stageExtra,
           treeSource:t.source||'',
           treeCaption:t.tableCaption||'',
           treeInputSlot1:t.inputSlot1||'',
@@ -3898,7 +3902,11 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         sourceUrl:row.draw.href,
         drawUrl:row.draw.href,
         drawName:row.draw.text||'',
-        drawPlacement:isPlacementDrawText(row.draw.text),
+        canonicalDrawUrl:row.draw.href||'',
+        canonicalDrawName:row.draw.text||'',
+        canonicalDrawIndex:Number((String(row.draw.href||'').match(/[?&]draw=(\d+)/i)||[])[1]||0),
+        canonicalDrawStage:(isPlacementDrawText(`${row.draw.text||''} ${row.draw.contextText||''}`)||!!row.draw.stageExtra)?'extra':'main',
+        drawPlacement:isPlacementDrawText(`${row.draw.text||''} ${row.draw.contextText||''}`)||!!row.draw.stageExtra,
         treeSource:t.source||'',
         treeCaption:t.tableCaption||'',
         treeInputSlot1:t.inputSlot1||'',
@@ -4137,7 +4145,11 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         sourceUrl:row.draw.href,
         drawUrl:row.draw.href,
         drawName:row.draw.text||'',
-        drawPlacement:isPlacementDrawText(row.draw.text)
+        canonicalDrawUrl:row.draw.href||'',
+        canonicalDrawName:row.draw.text||'',
+        canonicalDrawIndex:Number((String(row.draw.href||'').match(/[?&]draw=(\d+)/i)||[])[1]||0),
+        canonicalDrawStage:(isPlacementDrawText(`${row.draw.text||''} ${row.draw.contextText||''}`)||!!row.draw.stageExtra)?'extra':'main',
+        drawPlacement:isPlacementDrawText(`${row.draw.text||''} ${row.draw.contextText||''}`)||!!row.draw.stageExtra
       });
     }
   }
