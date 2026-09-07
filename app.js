@@ -19,9 +19,15 @@ if(document.readyState==='loading'){
 const data = {
   ...(window.TOURNAMENT_SUMMARY||{}),
   players:[],
-  matches:[]
+  matches:[],
+  results:[]
 };
 const loadedScripts=new Map();
+const GENERATED_DATA_CACHE_TOKEN=Date.now();
+function freshGeneratedDataSrc(name){
+  const sep=String(name||'').includes('?')?'&':'?';
+  return `${name}${sep}v=${GENERATED_DATA_CACHE_TOKEN}`;
+}
 function loadScriptOnce(src){
   if(loadedScripts.has(src))return loadedScripts.get(src);
   const promise=new Promise((resolve,reject)=>{
@@ -33,10 +39,10 @@ function loadScriptOnce(src){
 }
 async function ensureLegacyData(){
   if(window.TOURNAMENT_DATA)return window.TOURNAMENT_DATA;
-  await loadScriptOnce('data.js');
+  await loadScriptOnce(freshGeneratedDataSrc('data.js'));
   return window.TOURNAMENT_DATA||null;
 }
-let playersReady=false,matchesReady=false,vicParkDataReady=false;
+let playersReady=false,matchesReady=false,vicParkDataReady=false,resultsReady=false;
 let favoriteMatchIndex=null;
 
 
@@ -58,21 +64,141 @@ function rebuildFavoriteMatchIndex(){
 }
 
 let vicParkPlayers=[],vicParkMatches=[];
+const SITE_COUNTRY_META={
+  AND:{country:'Andorra',iso3:'AND',flagCode:'ad'},
+  AUS:{country:'Australia',iso3:'AUS',flagCode:'au'},
+  AUT:{country:'Austria',iso3:'AUT',flagCode:'at'},
+  BAR:{country:'Barbados',iso3:'BRB',flagCode:'bb'},
+  BEL:{country:'Belgium',iso3:'BEL',flagCode:'be'},
+  BRA:{country:'Brazil',iso3:'BRA',flagCode:'br'},
+  BRU:{country:'Brunei Darussalam',iso3:'BRN',flagCode:'bn'}, BRN:{country:'Brunei Darussalam',iso3:'BRN',flagCode:'bn'},
+  CAN:{country:'Canada',iso3:'CAN',flagCode:'ca'},
+  CAY:{country:'Cayman Islands',iso3:'CYM',flagCode:'ky'}, CYM:{country:'Cayman Islands',iso3:'CYM',flagCode:'ky'},
+  CHI:{country:'Chile',iso3:'CHL',flagCode:'cl'}, CHL:{country:'Chile',iso3:'CHL',flagCode:'cl'},
+  CHN:{country:'China',iso3:'CHN',flagCode:'cn'},
+  CZE:{country:'Czech Republic',iso3:'CZE',flagCode:'cz'},
+  DEN:{country:'Denmark',iso3:'DNK',flagCode:'dk'}, DNK:{country:'Denmark',iso3:'DNK',flagCode:'dk'},
+  EGY:{country:'Egypt',iso3:'EGY',flagCode:'eg'},
+  ENG:{country:'England',iso3:'GBR',flagCode:'gb-eng'},
+  ESP:{country:'Spain',iso3:'ESP',flagCode:'es'},
+  FIN:{country:'Finland',iso3:'FIN',flagCode:'fi'},
+  FRA:{country:'France',iso3:'FRA',flagCode:'fr'},
+  GBR:{country:'United Kingdom',iso3:'GBR',flagCode:'gb'},
+  GER:{country:'Germany',iso3:'DEU',flagCode:'de'}, DEU:{country:'Germany',iso3:'DEU',flagCode:'de'},
+  GRC:{country:'Greece',iso3:'GRC',flagCode:'gr'}, GRE:{country:'Greece',iso3:'GRC',flagCode:'gr'},
+  GUY:{country:'Guyana',iso3:'GUY',flagCode:'gy'},
+  HKG:{country:'Hong Kong',iso3:'HKG',flagCode:'hk'},
+  HRV:{country:'Croatia',iso3:'HRV',flagCode:'hr'}, CRO:{country:'Croatia',iso3:'HRV',flagCode:'hr'},
+  HUN:{country:'Hungary',iso3:'HUN',flagCode:'hu'},
+  IND:{country:'India',iso3:'IND',flagCode:'in'},
+  IRL:{country:'Ireland',iso3:'IRL',flagCode:'ie'},
+  ISR:{country:'Israel',iso3:'ISR',flagCode:'il'},
+  ITA:{country:'Italy',iso3:'ITA',flagCode:'it'},
+  JPN:{country:'Japan',iso3:'JPN',flagCode:'jp'},
+  KOR:{country:'South Korea',iso3:'KOR',flagCode:'kr'},
+  MAS:{country:'Malaysia',iso3:'MYS',flagCode:'my'}, MYS:{country:'Malaysia',iso3:'MYS',flagCode:'my'},
+  MEX:{country:'Mexico',iso3:'MEX',flagCode:'mx'},
+  MRI:{country:'Mauritius',iso3:'MUS',flagCode:'mu'}, MUS:{country:'Mauritius',iso3:'MUS',flagCode:'mu'},
+  NAM:{country:'Namibia',iso3:'NAM',flagCode:'na'},
+  NCL:{country:'New Caledonia',iso3:'NCL',flagCode:'nc'},
+  NED:{country:'Netherlands',iso3:'NLD',flagCode:'nl'}, NLD:{country:'Netherlands',iso3:'NLD',flagCode:'nl'},
+  NOR:{country:'Norway',iso3:'NOR',flagCode:'no'},
+  NZL:{country:'New Zealand',iso3:'NZL',flagCode:'nz'},
+  PAK:{country:'Pakistan',iso3:'PAK',flagCode:'pk'},
+  PER:{country:'Peru',iso3:'PER',flagCode:'pe'},
+  POL:{country:'Poland',iso3:'POL',flagCode:'pl'},
+  POR:{country:'Portugal',iso3:'PRT',flagCode:'pt'}, PRT:{country:'Portugal',iso3:'PRT',flagCode:'pt'},
+  RSA:{country:'South Africa',iso3:'ZAF',flagCode:'za'}, ZAF:{country:'South Africa',iso3:'ZAF',flagCode:'za'},
+  RSF:{country:'Russian Squash Federation',iso3:'RUS',flagCode:'ru'}, RUS:{country:'Russia',iso3:'RUS',flagCode:'ru'},
+  SCO:{country:'Scotland',iso3:'GBR',flagCode:'gb-sct'},
+  SIN:{country:'Singapore',iso3:'SGP',flagCode:'sg'}, SGP:{country:'Singapore',iso3:'SGP',flagCode:'sg'},
+  SLE:{country:'Sierra Leone',iso3:'SLE',flagCode:'sl'},
+  SRI:{country:'Sri Lanka',iso3:'LKA',flagCode:'lk'}, LKA:{country:'Sri Lanka',iso3:'LKA',flagCode:'lk'},
+  SUI:{country:'Switzerland',iso3:'CHE',flagCode:'ch'}, CHE:{country:'Switzerland',iso3:'CHE',flagCode:'ch'},
+  SWE:{country:'Sweden',iso3:'SWE',flagCode:'se'},
+  THA:{country:'Thailand',iso3:'THA',flagCode:'th'},
+  TPE:{country:'Chinese Taipei',iso3:'TWN',flagCode:'tw'}, TWN:{country:'Taiwan',iso3:'TWN',flagCode:'tw'},
+  TUR:{country:'Türkiye',iso3:'TUR',flagCode:'tr'},
+  UAE:{country:'United Arab Emirates',iso3:'ARE',flagCode:'ae'}, ARE:{country:'United Arab Emirates',iso3:'ARE',flagCode:'ae'},
+  UKR:{country:'Ukraine',iso3:'UKR',flagCode:'ua'},
+  USA:{country:'United States',iso3:'USA',flagCode:'us'},
+  WAL:{country:'Wales',iso3:'GBR',flagCode:'gb-wls'}
+};
+function siteCountryMeta(code,value=''){
+  const c=String(code||'').trim().toUpperCase();
+  const v=String(value||'').trim();
+  return SITE_COUNTRY_META[c]||SITE_COUNTRY_META[v.toUpperCase()]||null;
+}
+function normalizeCountryRecord(p){
+  if(!p)return p;
+  const code=String(p.drawCountryCode||p.countryCode||p.iso3||'').trim().toUpperCase();
+  const country=String(p.country||'').trim();
+  const meta=siteCountryMeta(code,country);
+  if(!meta)return p;
+  return {
+    ...p,
+    country:meta.country,
+    iso3:meta.iso3,
+    flagCode:meta.flagCode,
+    drawCountryCode:p.drawCountryCode||p.countryCode||code||undefined
+  };
+}
+function displayCountryName(value,record=null){
+  const code=String(record?.drawCountryCode||record?.countryCode||record?.iso3||'').trim().toUpperCase();
+  const meta=siteCountryMeta(code,value);
+  return meta?.country||String(value||'').trim();
+}
+function displayClubInfo(value){
+  return String(value||'').replace(/\s+/g,' ').trim();
+}
 async function ensurePlayersData(){
   if(playersReady)return;
   try{
-    await loadScriptOnce('players-data.js');
+    await loadScriptOnce(freshGeneratedDataSrc('players-data.js'));
     if(!Array.isArray(window.TOURNAMENT_PLAYERS))throw new Error('players-data.js did not define TOURNAMENT_PLAYERS');
-    data.players=window.TOURNAMENT_PLAYERS;
+    data.players=window.TOURNAMENT_PLAYERS.map(normalizeCountryRecord);
   }catch(e){
     const legacy=await ensureLegacyData();
-    data.players=legacy?.players||[];
+    data.players=(legacy?.players||[]).map(normalizeCountryRecord);
   }
   rebuildPlayerNeedles();
   playerIdentityIndexSourceCount=-1;
   cachedPlayerLevelRank=null;
   cachedPlayerLevelRankCount=-1;
   playersReady=true;
+}
+
+async function ensureResultsData(){
+  if(resultsReady)return;
+  try{
+    // Results are a final static tournament snapshot. Do not load the full
+    // player or match datasets just to render this page, and allow the browser
+    // to cache the compact results shard across visits.
+    await loadScriptOnce('results-data.js?rev=20260906-undefeated-v3');
+    const pack=window.TOURNAMENT_RESULTS;
+    if(!pack)throw new Error('results-data.js did not define TOURNAMENT_RESULTS');
+    data.results=Array.isArray(pack)?pack:(Array.isArray(pack.rows)?pack.rows:[]);
+    data.resultsRefreshedAt=pack.refreshedAt||data.resultsRefreshedAt||null;
+    data.resultsSourceUrl=pack.sourceUrl||'';
+
+    // Never let an empty generated Results shard blank the page. This can
+    // happen when a code-only patch is installed before its first refresh, or
+    // when a refresh aborts before writing new result rows. Fall back to the
+    // last successfully published draw-derived results in legacy data.js.
+    if(!data.results.length){
+      const legacy=await ensureLegacyData();
+      if(Array.isArray(legacy?.results)&&legacy.results.length){
+        data.results=legacy.results;
+        data.resultsRefreshedAt=legacy?.resultsRefreshedAt||data.resultsRefreshedAt||null;
+      }
+    }
+  }catch(e){
+    const legacy=await ensureLegacyData();
+    data.results=Array.isArray(legacy?.results)?legacy.results:[];
+    data.resultsRefreshedAt=legacy?.resultsRefreshedAt||null;
+  }
+  data.results=(data.results||[]).map(normalizeCountryRecord);
+  resultsReady=true;
 }
 
 function normalizeSelfMatchAsBye(m){
@@ -214,7 +340,7 @@ async function ensureMatchesData(){
   if(matchesReady)return;
   await ensurePlayersData();
   try{
-    await loadScriptOnce('matches-data.js');
+    await loadScriptOnce(freshGeneratedDataSrc('matches-data.js'));
     if(!Array.isArray(window.TOURNAMENT_MATCHES))throw new Error('matches-data.js did not define TOURNAMENT_MATCHES');
     data.matches=window.TOURNAMENT_MATCHES;
   }catch(e){
@@ -240,7 +366,7 @@ async function ensureVicParkData(){
   // the date rolls over.
   let pack=null;
   try{
-    await loadScriptOnce('vicpark-data.js');
+    await loadScriptOnce(freshGeneratedDataSrc('vicpark-data.js'));
     pack=window.VIC_PARK_DATA;
   }catch{}
 
@@ -2724,7 +2850,7 @@ ensureLivePageShell();
 ensureLivePageStyles();
 bindPageNavigation();
 
-let playersRendered=false,glassReady=false,vicParkReady=false,favoritesReady=false,liveReady=false;
+let playersRendered=false,glassReady=false,vicParkReady=false,favoritesReady=false,liveReady=false,resultsRendered=false;
 function showLoading(id){
   const target=
     id==='players'?qs('#playerGrid'):
@@ -2732,6 +2858,7 @@ function showLoading(id){
     id==='vicpark'?qs('#trackedPlayers'):
     id==='favorites'?qs('#favoriteMatches'):
     id==='live'?qs('#liveMatches'):
+    id==='results'?qs('#resultsGroups'):
     null;
 
   if(target&&!target.innerHTML.trim()){
@@ -2751,6 +2878,7 @@ async function setPage(id){
       await loadLiveStreamConfig({rerenderPage:false});
     }
     if(id==='players'&&!playersRendered){showLoading(id);await ensurePlayersData();renderPlayers();playersRendered=true;}
+    if(id==='results'&&!resultsRendered){showLoading(id);await ensureResultsData();renderResults();resultsRendered=true;}
     if(id==='glass'&&!glassReady){showLoading(id);await ensureMatchesData();setupGlass();glassReady=true;}
     if(id==='vicpark'&&!vicParkReady){showLoading(id);await ensureVicParkData();setupVicPark();vicParkReady=true;}
     if(id==='favorites'){showLoading(id);await ensureMatchesData();renderFavoritePlayers();favoritesReady=true;}
@@ -2768,6 +2896,7 @@ function showDataError(id,e){
     id==='glass'?qs('#glassMatches'):
     id==='favorites'?qs('#favoriteMatches'):
     id==='live'?qs('#liveMatches'):
+    id==='results'?qs('#resultsGroups'):
     qs('#trackedPlayers');
 
   if(target){
@@ -2875,8 +3004,222 @@ function renderPlayers(){
   </div>`;
   }).join('');
 }
+function resultPlaceLabel(row){
+  const p=String(row?.place||'').trim();
+  if(p==='1')return 'CHAMPION';
+  if(p==='2')return 'RUNNER-UP';
+  if(p==='3')return '3RD';
+  if(p==='4')return '4TH';
+  return p?`PLACE ${p}`:'RESULT';
+}
+function resultPlaceOrder(row){
+  const n=Number(row?.placeRank);
+  if(Number.isFinite(n)&&n>0)return n;
+  const p=String(row?.place||'');
+  return p==='1'?1:p==='2'?2:/^3/.test(p)?3:p==='4'?4:99;
+}
+function resultPlayerForRow(row){
+  if(String(row?.playerName||row?.name||'').trim().toLowerCase()==='bye')return normalizeCountryRecord(row||{});
+  const byId=playerById(row?.officialPlayerId||'');
+  if(byId)return normalizeCountryRecord(byId);
+  const rows=playersForName(row?.playerName||row?.name||'');
+  return rows.length===1?normalizeCountryRecord(rows[0]):normalizeCountryRecord(row||{});
+}
+function resultMetricValue(value){
+  const raw=String(value??'').trim();
+  if(!raw)return '—';
+  const n=Number(raw.replace(/,/g,''));
+  return Number.isFinite(n)&&n>0?n.toLocaleString('en-AU'):raw;
+}
+function resultPlayerCard(row){
+  const p=resultPlayerForRow(row);
+  const name=String(p?.name||row?.playerName||'').trim();
+  if(name.toLowerCase()==='bye')return `<article class="result-player-row result-bye-row place-${resultPlaceOrder(row)}">
+    <div class="result-place"><span>${esc(String(row?.place||''))}</span><small>${resultPlaceLabel(row)}</small></div>
+    <div class="result-flag"><span class="flag-fallback">—</span></div>
+    <div class="result-player-main"><span class="result-player-name">Bye</span><div class="result-country"><span>No playoff match</span></div></div>
+  </article>`;
+  const country=displayCountryName(p?.country||row?.country||'',p||row);
+  const seed=String(p?.seed||row?.seed||'').trim()||'—';
+  const rank=p?.squashLevelsWorldRank??row?.squashLevelsWorldRank;
+  const level=p?.squashLevelsLevel??row?.squashLevelsLevel;
+  const provisional=!!(p?.squashLevelsLevelProvisional??row?.squashLevelsLevelProvisional);
+  const club=displayClubInfo(p?.squashLevelsClubLocation||row?.club||'')||'—';
+  const profile=playerPageUrl(name,p?.officialPlayerId||row?.officialPlayerId||'');
+  return `<article class="result-player-row place-${resultPlaceOrder(row)}">
+    <div class="result-place"><span>${esc(String(row?.place||''))}</span><small>${resultPlaceLabel(row)}</small></div>
+    <div class="result-flag">${flagImg(p||row,'flag-img')}</div>
+    <div class="result-player-main">
+      <a class="result-player-name" href="${profile}">${esc(name)}</a>
+      <div class="result-country"><span>${esc(country)}</span>${club!=='—'?`<span class="result-club-inline">· ${esc(club)}</span>`:''}</div>
+      <div class="result-metrics">
+        <span><b>Seed</b> ${esc(seed)}</span>
+        <span><b>World</b> ${esc(resultMetricValue(rank))}</span>
+        <span><b>Level</b> ${esc(resultMetricValue(level))}${provisional?' (P)':''}</span>
+      </div>
+    </div>
+  </article>`;
+}
+function resultCountryInfo(row){
+  const p=resultPlayerForRow(row);
+  const name=String(p?.name||row?.playerName||'').trim();
+  if(name.toLowerCase()==='bye')return {country:'',flagCode:'',iso3:'',player:p};
+  const country=displayCountryName(p?.country||row?.country||'',p||row)||'Unknown';
+  const flagCode=String(p?.flagCode||row?.flagCode||'').toLowerCase();
+  const iso3=String(p?.iso3||row?.iso3||'').toUpperCase();
+  return {country,flagCode,iso3,player:p};
+}
+function resultMedalType(row){
+  if(String(row?.playerName||row?.name||'').trim().toLowerCase()==='bye')return '';
+  const place=String(row?.place||'').trim();
+  const rank=resultPlaceOrder(row);
+  if(place==='1'||rank===1)return 'gold';
+  if(place==='2'||rank===2)return 'silver';
+  // Bronze is the winner of the official 3rd/4th playoff.
+  // Fourth place is shown in the detailed results but is not a medal.
+  if(rank===3)return 'bronze';
+  return '';
+}
+function resultsMedalRows(rows){
+  const map=new Map();
+  for(const row of (rows||[])){
+    const medal=resultMedalType(row);
+    if(!medal)continue;
+    const info=resultCountryInfo(row);
+    const key=info.country;
+    if(!map.has(key))map.set(key,{country:key,flagCode:info.flagCode,iso3:info.iso3,gold:0,silver:0,bronze:0,total:0});
+    const rec=map.get(key);
+    if(!rec.flagCode&&info.flagCode)rec.flagCode=info.flagCode;
+    if(!rec.iso3&&info.iso3)rec.iso3=info.iso3;
+    rec[medal]++;
+    rec.total++;
+  }
+  return [...map.values()].sort((a,b)=>
+    b.total-a.total||b.gold-a.gold||b.silver-a.silver||b.bronze-a.bronze||a.country.localeCompare(b.country)
+  );
+}
+function renderResultsMedalMatrix(scopeRows){
+  const summary=qs('#resultsMedalSummary');
+  const host=qs('#resultsMedalMatrix');
+  if(!summary||!host)return;
+  const medalRows=resultsMedalRows(scopeRows);
+  if(!medalRows.length){
+    summary.innerHTML='<span>No medal results have been published for the selected gender yet.</span>';
+    host.innerHTML='';
+    return;
+  }
+  const best=medalRows[0].total;
+  const leaders=medalRows.filter(x=>x.total===best);
+  if(leaders.length===1){
+    const x=leaders[0];
+    summary.innerHTML=`${flagImg(x,'flag-img')}<span><strong>Most medals: ${esc(x.country)}</strong> — ${x.total} total <small>(${x.gold} gold · ${x.silver} silver · ${x.bronze} bronze)</small></span>`;
+  }else{
+    summary.innerHTML=`<span><strong>Most medals: joint leaders</strong> — ${leaders.map(x=>`${esc(x.country)} (${x.total})`).join(' · ')}</span>`;
+  }
+  host.innerHTML=`<table class="results-medal-table">
+    <thead><tr><th>Country</th><th>Gold</th><th>Silver</th><th>Bronze</th><th>Total</th></tr></thead>
+    <tbody>${medalRows.map(x=>`<tr>
+      <td><span class="results-medal-country">${flagImg(x,'flag-img')}<span>${esc(x.country)}</span></span></td>
+      <td class="medal-gold">${x.gold}</td><td>${x.silver}</td><td>${x.bronze}</td><td class="medal-total">${x.total}</td>
+    </tr>`).join('')}</tbody>
+  </table>`;
+}
+function setupResultsFilters(allRows){
+  const medalGender=qs('#resultsMedalGenderFilter');
+  const gender=qs('#resultsGenderFilter');
+  const age=qs('#resultsAgeFilter');
+  const country=qs('#resultsCountryFilter');
+  if(medalGender&&!medalGender.dataset.bound){
+    medalGender.dataset.bound='1';
+    medalGender.addEventListener('change',renderResults);
+  }
+  if(gender&&!gender.dataset.bound){
+    gender.dataset.bound='1';
+    gender.addEventListener('change',renderResults);
+  }
+  if(age){
+    const current=age.value||'all';
+    const ages=[...new Set((allRows||[]).map(r=>Number(r.ageGroup)).filter(Number.isFinite))].sort((a,b)=>a-b);
+    age.innerHTML='<option value="all">All</option>'+ages.map(a=>`<option value="${a}">${a}+</option>`).join('');
+    age.value=current==='all'||ages.some(a=>String(a)===String(current))?current:'all';
+    if(!age.dataset.bound){
+      age.dataset.bound='1';
+      age.addEventListener('change',renderResults);
+    }
+  }
+  if(country){
+    const current=country.value||'all';
+    const countries=[...new Set((allRows||[]).map(r=>resultCountryInfo(r).country).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+    country.innerHTML='<option value="all">All</option>'+countries.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+    country.value=current==='all'||countries.includes(current)?current:'all';
+    if(!country.dataset.bound){
+      country.dataset.bound='1';
+      country.addEventListener('change',renderResults);
+    }
+  }
+}
+function renderResults(){
+  const host=qs('#resultsGroups');
+  const count=qs('#resultsCount');
+  const stamp=qs('#resultsRefreshStamp');
+  if(!host)return;
+  const allRows=(data.results||[]).slice().sort((a,b)=>{
+    const ga=a.gender==='Men'?0:a.gender==='Women'?1:2;
+    const gb=b.gender==='Men'?0:b.gender==='Women'?1:2;
+    return ga-gb||(Number(a.ageGroup)||999)-(Number(b.ageGroup)||999)||resultPlaceOrder(a)-resultPlaceOrder(b)||String(a.playerName||'').localeCompare(String(b.playerName||''));
+  });
+  setupResultsFilters(allRows);
+  const medalGenderFilter=qs('#resultsMedalGenderFilter')?.value||'all';
+  const genderFilter=qs('#resultsGenderFilter')?.value||'all';
+  const ageFilter=qs('#resultsAgeFilter')?.value||'all';
+  const countryFilter=qs('#resultsCountryFilter')?.value||'all';
+
+  // Medal table has its own gender switch and is deliberately independent of
+  // the detailed age-group Gender / Age / Country filters below it.
+  const medalScopeRows=allRows.filter(r=>medalGenderFilter==='all'||r.gender===medalGenderFilter);
+  renderResultsMedalMatrix(medalScopeRows);
+
+  const rows=allRows.filter(r=>(genderFilter==='all'||r.gender===genderFilter)&&(ageFilter==='all'||String(r.ageGroup)===String(ageFilter))&&(countryFilter==='all'||resultCountryInfo(r).country===countryFilter));
+  if(count)count.textContent=rows.length;
+  if(stamp){
+    const d=data.resultsRefreshedAt?new Date(data.resultsRefreshedAt):null;
+    stamp.textContent=d&&!Number.isNaN(d.getTime())?`Official results refreshed ${d.toLocaleString('en-AU',{timeZone:'Australia/Perth'})}`:'';
+  }
+  if(!allRows.length){
+    const summary=qs('#resultsMedalSummary'),matrix=qs('#resultsMedalMatrix');
+    if(summary)summary.innerHTML='';
+    if(matrix)matrix.innerHTML='';
+    host.innerHTML='<div class="schedule-empty">No completed championship finals have been published yet.</div>';
+    return;
+  }
+  if(!rows.length){
+    host.innerHTML='<div class="schedule-empty">No results match the selected filters.</div>';
+    return;
+  }
+  const other=[...new Set(rows.map(r=>r.gender).filter(g=>g&&g!=='Men'&&g!=='Women'))];
+  const genders=['Men','Women',...other];
+  host.innerHTML=genders.map(gender=>{
+    const genderRows=rows.filter(r=>r.gender===gender);
+    if(!genderRows.length)return '';
+    const ages=[...new Set(genderRows.map(r=>Number(r.ageGroup)).filter(Number.isFinite))].sort((a,b)=>a-b);
+    return `<section class="results-gender-group">
+      <div class="results-gender-title"><span>${esc(gender)}</span><small>${genderRows.length} placings</small></div>
+      <div class="results-age-grid">${ages.map(age=>{
+        const ageRows=genderRows
+          .filter(r=>Number(r.ageGroup)===age)
+          .sort((a,b)=>resultPlaceOrder(a)-resultPlaceOrder(b)||String(a.playerName||'').localeCompare(String(b.playerName||'')));
+        const event=ageRows[0]?.event||`${gender} ${age}+`;
+        return `<section class="results-age-card">
+          <div class="results-age-head"><div><span>${esc(gender.toUpperCase())}</span><h3>${age}+</h3></div><small>${esc(event)}</small></div>
+          <div class="results-player-list">${ageRows.map(resultPlayerCard).join('')}</div>
+        </section>`;
+      }).join('')}</div>
+    </section>`;
+  }).join('');
+}
+
 function summaryCountries(){
-  if(Array.isArray(data.countries)&&data.countries.length)return data.countries;
+  if(Array.isArray(data.countries)&&data.countries.length)return data.countries.map(normalizeCountryRecord);
   const map=new Map();
   for(const p of (data.players||[])){const key=p.country||'Unknown';if(!map.has(key))map.set(key,{country:key,count:0,flagCode:p.flagCode||'',iso3:p.iso3||''});map.get(key).count++;}
   return [...map.values()].sort((a,b)=>b.count-a.count||a.country.localeCompare(b.country));
@@ -2910,7 +3253,7 @@ async function setupParticipationMap(counts){
   }
   // TournamentSoftware uses some sporting country codes that differ from ISO-3166 alpha-3.
   // Plotly's world map requires ISO-3166 alpha-3 (e.g. South Africa is ZAF, not RSA).
-  const mapIso3 = code => ({ RSA:'ZAF' }[String(code||'').toUpperCase()] || String(code||'').toUpperCase());
+  const mapIso3 = code => ({ RSA:'ZAF', MRI:'MUS' }[String(code||'').toUpperCase()] || String(code||'').toUpperCase());
   const grouped={}; summaryCountries().forEach(c=>{const iso=mapIso3(c.iso3);if(!iso)return;grouped[iso]={name:c.country,count:c.count};});
   const locations=Object.keys(grouped), z=locations.map(()=>1), text=locations.map(k=>`${grouped[k].name}: ${grouped[k].count} player${grouped[k].count===1?'':'s'}`);
   Plotly.newPlot('participationMap',[{type:'choropleth',locationmode:'ISO-3',locations,z,text,hovertemplate:'%{text}<extra></extra>',colorscale:[[0,'#f5c84c'],[1,'#f5c84c']],showscale:false,marker:{line:{color:'#071427',width:.7}}}],{margin:{l:0,r:0,t:0,b:0},paper_bgcolor:'rgba(0,0,0,0)',geo:{projection:{type:'natural earth'},showframe:false,showcoastlines:false,showcountries:true,countrycolor:'#294462',showland:true,landcolor:'#152b45',showocean:true,oceancolor:'rgba(5,19,35,.35)',bgcolor:'rgba(0,0,0,0)'}},{displayModeBar:false,responsive:true});
@@ -3599,9 +3942,12 @@ function preferredExistingCourtDate(dates){
   return dates.find(d=>d>today)||dates[dates.length-1];
 }
 function rebuildFeatureDates(){
-  const venueMatches=featureMatchesForVenue();
-  const dates=[...new Set(venueMatches.map(m=>canonicalDate(m.date)).filter(Boolean))].sort();
-  const useDates=dates.length?dates:tournamentDates();
+  // Courts is a tournament-wide schedule browser. Always expose the complete
+  // tournament date range instead of deriving the tabs from venue-tagged rows.
+  // A stale/missing venue field must never make Friday/Saturday/Sunday vanish.
+  const officialDates=tournamentDates();
+  const observedDates=[...new Set((data.matches||[]).map(m=>canonicalDate(m.date)).filter(Boolean))].sort();
+  const useDates=[...new Set([...officialDates,...observedDates])].sort();
   selectedFeatureDate=preferredExistingCourtDate(useDates);
   qs('#dateTabs').innerHTML=useDates.map(d=>{const f=fmtDate(d);return `<button class="date-tab ${d===selectedFeatureDate?'active':''}" data-date="${d}"><strong>${f.day}</strong><small>${f.date}</small></button>`}).join('');
   qsa('.date-tab').forEach(b=>b.addEventListener('click',()=>renderFeatureCourt(b.dataset.date)));
@@ -4218,7 +4564,7 @@ async function bootstrap(){
   // Home normally needs only summary-data.js. Load it dynamically so a missing file cannot
   // block page startup, then fall back safely to legacy data.js during migration/deployment.
   if(!window.TOURNAMENT_SUMMARY){
-    try{await loadScriptOnce('summary-data.js')}catch(e){console.warn('summary-data.js not available; deriving Home summary from data.js.');}
+    try{await loadScriptOnce(freshGeneratedDataSrc('summary-data.js'))}catch(e){console.warn('summary-data.js not available; deriving Home summary from data.js.');}
   }
   if(window.TOURNAMENT_SUMMARY){
     Object.assign(data,window.TOURNAMENT_SUMMARY,{players:[],matches:[]});
@@ -4233,7 +4579,7 @@ async function bootstrap(){
   bindPageNavigation();
 
   const initial=location.hash.slice(1);
-  if(['players','glass','vicpark','favorites','live'].includes(initial))await setPage(initial);
+  if(['players','results','glass','vicpark','favorites','live'].includes(initial))await setPage(initial);
   startAutomaticSyncRefresh();
 
   // Warm the full match dataset in the background so Fav Players opens quickly.

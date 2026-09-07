@@ -17,7 +17,82 @@ if(document.readyState==='loading'){
 }
 
 const qs=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const PLAYER_DATA_CACHE_TOKEN=Date.now();
+function freshPlayerDataSrc(name){const sep=String(name||'').includes('?')?'&':'?';return `${name}${sep}v=${PLAYER_DATA_CACHE_TOKEN}`;}
 function loadPlayerScript(src){return new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=src;s.onload=resolve;s.onerror=()=>reject(new Error(`Could not load ${src}`));document.head.appendChild(s);});}
+const SITE_COUNTRY_META={
+  AND:{country:'Andorra',iso3:'AND',flagCode:'ad'},
+  AUS:{country:'Australia',iso3:'AUS',flagCode:'au'},
+  AUT:{country:'Austria',iso3:'AUT',flagCode:'at'},
+  BAR:{country:'Barbados',iso3:'BRB',flagCode:'bb'},
+  BEL:{country:'Belgium',iso3:'BEL',flagCode:'be'},
+  BRA:{country:'Brazil',iso3:'BRA',flagCode:'br'},
+  BRU:{country:'Brunei Darussalam',iso3:'BRN',flagCode:'bn'}, BRN:{country:'Brunei Darussalam',iso3:'BRN',flagCode:'bn'},
+  CAN:{country:'Canada',iso3:'CAN',flagCode:'ca'},
+  CAY:{country:'Cayman Islands',iso3:'CYM',flagCode:'ky'}, CYM:{country:'Cayman Islands',iso3:'CYM',flagCode:'ky'},
+  CHI:{country:'Chile',iso3:'CHL',flagCode:'cl'}, CHL:{country:'Chile',iso3:'CHL',flagCode:'cl'},
+  CHN:{country:'China',iso3:'CHN',flagCode:'cn'},
+  CZE:{country:'Czech Republic',iso3:'CZE',flagCode:'cz'},
+  DEN:{country:'Denmark',iso3:'DNK',flagCode:'dk'}, DNK:{country:'Denmark',iso3:'DNK',flagCode:'dk'},
+  EGY:{country:'Egypt',iso3:'EGY',flagCode:'eg'},
+  ENG:{country:'England',iso3:'GBR',flagCode:'gb-eng'},
+  ESP:{country:'Spain',iso3:'ESP',flagCode:'es'},
+  FIN:{country:'Finland',iso3:'FIN',flagCode:'fi'},
+  FRA:{country:'France',iso3:'FRA',flagCode:'fr'},
+  GBR:{country:'United Kingdom',iso3:'GBR',flagCode:'gb'},
+  GER:{country:'Germany',iso3:'DEU',flagCode:'de'}, DEU:{country:'Germany',iso3:'DEU',flagCode:'de'},
+  GRC:{country:'Greece',iso3:'GRC',flagCode:'gr'}, GRE:{country:'Greece',iso3:'GRC',flagCode:'gr'},
+  GUY:{country:'Guyana',iso3:'GUY',flagCode:'gy'},
+  HKG:{country:'Hong Kong',iso3:'HKG',flagCode:'hk'},
+  HRV:{country:'Croatia',iso3:'HRV',flagCode:'hr'}, CRO:{country:'Croatia',iso3:'HRV',flagCode:'hr'},
+  HUN:{country:'Hungary',iso3:'HUN',flagCode:'hu'},
+  IND:{country:'India',iso3:'IND',flagCode:'in'},
+  IRL:{country:'Ireland',iso3:'IRL',flagCode:'ie'},
+  ISR:{country:'Israel',iso3:'ISR',flagCode:'il'},
+  ITA:{country:'Italy',iso3:'ITA',flagCode:'it'},
+  JPN:{country:'Japan',iso3:'JPN',flagCode:'jp'},
+  KOR:{country:'South Korea',iso3:'KOR',flagCode:'kr'},
+  MAS:{country:'Malaysia',iso3:'MYS',flagCode:'my'}, MYS:{country:'Malaysia',iso3:'MYS',flagCode:'my'},
+  MEX:{country:'Mexico',iso3:'MEX',flagCode:'mx'},
+  MRI:{country:'Mauritius',iso3:'MUS',flagCode:'mu'}, MUS:{country:'Mauritius',iso3:'MUS',flagCode:'mu'},
+  NAM:{country:'Namibia',iso3:'NAM',flagCode:'na'},
+  NCL:{country:'New Caledonia',iso3:'NCL',flagCode:'nc'},
+  NED:{country:'Netherlands',iso3:'NLD',flagCode:'nl'}, NLD:{country:'Netherlands',iso3:'NLD',flagCode:'nl'},
+  NOR:{country:'Norway',iso3:'NOR',flagCode:'no'},
+  NZL:{country:'New Zealand',iso3:'NZL',flagCode:'nz'},
+  PAK:{country:'Pakistan',iso3:'PAK',flagCode:'pk'},
+  PER:{country:'Peru',iso3:'PER',flagCode:'pe'},
+  POL:{country:'Poland',iso3:'POL',flagCode:'pl'},
+  POR:{country:'Portugal',iso3:'PRT',flagCode:'pt'}, PRT:{country:'Portugal',iso3:'PRT',flagCode:'pt'},
+  RSA:{country:'South Africa',iso3:'ZAF',flagCode:'za'}, ZAF:{country:'South Africa',iso3:'ZAF',flagCode:'za'},
+  RSF:{country:'Russian Squash Federation',iso3:'RUS',flagCode:'ru'}, RUS:{country:'Russia',iso3:'RUS',flagCode:'ru'},
+  SCO:{country:'Scotland',iso3:'GBR',flagCode:'gb-sct'},
+  SIN:{country:'Singapore',iso3:'SGP',flagCode:'sg'}, SGP:{country:'Singapore',iso3:'SGP',flagCode:'sg'},
+  SLE:{country:'Sierra Leone',iso3:'SLE',flagCode:'sl'},
+  SRI:{country:'Sri Lanka',iso3:'LKA',flagCode:'lk'}, LKA:{country:'Sri Lanka',iso3:'LKA',flagCode:'lk'},
+  SUI:{country:'Switzerland',iso3:'CHE',flagCode:'ch'}, CHE:{country:'Switzerland',iso3:'CHE',flagCode:'ch'},
+  SWE:{country:'Sweden',iso3:'SWE',flagCode:'se'},
+  THA:{country:'Thailand',iso3:'THA',flagCode:'th'},
+  TPE:{country:'Chinese Taipei',iso3:'TWN',flagCode:'tw'}, TWN:{country:'Taiwan',iso3:'TWN',flagCode:'tw'},
+  TUR:{country:'Türkiye',iso3:'TUR',flagCode:'tr'},
+  UAE:{country:'United Arab Emirates',iso3:'ARE',flagCode:'ae'}, ARE:{country:'United Arab Emirates',iso3:'ARE',flagCode:'ae'},
+  UKR:{country:'Ukraine',iso3:'UKR',flagCode:'ua'},
+  USA:{country:'United States',iso3:'USA',flagCode:'us'},
+  WAL:{country:'Wales',iso3:'GBR',flagCode:'gb-wls'}
+};
+function siteCountryMeta(code,value=''){
+  const c=String(code||'').trim().toUpperCase();
+  const v=String(value||'').trim();
+  return SITE_COUNTRY_META[c]||SITE_COUNTRY_META[v.toUpperCase()]||null;
+}
+function normalizePlayerCountryDisplay(p){
+  if(!p)return p;
+  const code=String(p.drawCountryCode||p.countryCode||p.iso3||'').trim().toUpperCase();
+  const country=String(p.country||'').trim();
+  const meta=siteCountryMeta(code,country);
+  if(!meta)return p;
+  return {...p,country:meta.country,iso3:meta.iso3,flagCode:meta.flagCode,drawCountryCode:p.drawCountryCode||p.countryCode||code||undefined};
+}
 
 const AUTO_REFRESH_CHECK_MS=60*1000;
 let autoRefreshLoadedToken='';
@@ -99,20 +174,21 @@ function startAutomaticSyncRefresh(summary){
 async function loadPlayerDetailData(){
   try{
     await Promise.all([
-      loadPlayerScript('summary-data.js'),
-      loadPlayerScript('players-data.js'),
-      loadPlayerScript('matches-data.js')
+      loadPlayerScript(freshPlayerDataSrc('summary-data.js')),
+      loadPlayerScript(freshPlayerDataSrc('players-data.js')),
+      loadPlayerScript(freshPlayerDataSrc('matches-data.js'))
     ]);
     if(!Array.isArray(window.TOURNAMENT_PLAYERS)||!Array.isArray(window.TOURNAMENT_MATCHES))throw new Error('Split data files were incomplete');
     return {...(window.TOURNAMENT_SUMMARY||{}),players:window.TOURNAMENT_PLAYERS,matches:window.TOURNAMENT_MATCHES};
   }catch(e){
-    await loadPlayerScript('data.js');
+    await loadPlayerScript(freshPlayerDataSrc('data.js'));
     if(!window.TOURNAMENT_DATA)throw e;
     return window.TOURNAMENT_DATA;
   }
 }
 async function initPlayerPage(){
   const data=await loadPlayerDetailData();
+  data.players=(data.players||[]).map(normalizePlayerCountryDisplay);
   startAutomaticSyncRefresh(data);
 
 

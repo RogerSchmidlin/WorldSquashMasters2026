@@ -29,6 +29,7 @@ const ORIGIN = 'https://wsf.tournamentsoftware.com';
 const PLAYERS_URL = `${ORIGIN}/tournament/${ID}/Players`;
 const DRAWS_URL = `${ORIGIN}/sport/draws.aspx?id=${ID}`;
 const MATCHES_URL = `${ORIGIN}/tournament/${ID}/Matches`;
+const WINNERS_URL = `${ORIGIN}/sport/winners.aspx?id=${ID}`;
 const SQUASH_SCORES_API_URL = 'https://squashscores.com/api/overview/public/?categoryId=19';
 const MIN_MATCHES = 350; // confirmed player-v-player matches; later-round TBD slots are not on player profiles
 const MIN_RAW_OBSERVATIONS = 850;
@@ -39,12 +40,14 @@ const PROFILE_WAIT = Number(process.env.PROFILE_WAIT_MS || 350);
 const FULL_REBUILD = process.argv.includes(':full');
 const NORMAL_PROFILE_CRAWL = FULL_REBUILD || process.argv.includes(':profiles') || process.env.CRAWL_PROFILES==='1';
 const MATCHES_ONLY = process.argv.includes(':matches');
+const QUICK_REFRESH = process.argv.includes(':quick');
+const RESULTS_CHECK = process.argv.includes(':resultscheck');
 const DRAW_DEBUG = process.argv.includes(':drawdebug');
 const SQUASHLEVELS_ONLY = process.argv.includes(':squashlevels');
 const SQUASHLEVELS_LOGIN_SETUP = process.argv.includes(':squashlevels-login');
 const SQUASHLEVELS_PLAYER_ONLY = (()=>{
   if(!SQUASHLEVELS_ONLY)return '';
-  const modeArgs=new Set([':full',':matches',':drawdebug',':squashlevels',':squashlevels-login']);
+  const modeArgs=new Set([':full',':matches',':quick',':drawdebug',':squashlevels',':squashlevels-login']);
   const extra=process.argv.slice(2).filter(x=>!modeArgs.has(x));
   return String(extra.join(' ')||'').replace(/\s+/g,' ').trim();
 })();
@@ -52,8 +55,8 @@ const SQUASHLEVELS_STORAGE_FILE = path.join(DIR,'squashlevels-storage-state.json
 const SQUASHLEVELS_SESSION_FILE = path.join(DIR,'squashlevels-session-storage.json');
 const SQUASHLEVELS_STORAGE_B64_FILE = path.join(DIR,'squashlevels-storage-state.b64.txt');
 const SQUASHLEVELS_SESSION_B64_FILE = path.join(DIR,'squashlevels-session-storage.b64.txt');
-if([FULL_REBUILD,MATCHES_ONLY,DRAW_DEBUG,SQUASHLEVELS_ONLY,SQUASHLEVELS_LOGIN_SETUP].filter(Boolean).length>1){
-  throw new Error('Use only one of :full, :matches, :drawdebug, :squashlevels or :squashlevels-login.');
+if([FULL_REBUILD,MATCHES_ONLY,QUICK_REFRESH,RESULTS_CHECK,DRAW_DEBUG,SQUASHLEVELS_ONLY,SQUASHLEVELS_LOGIN_SETUP].filter(Boolean).length>1){
+  throw new Error('Use only one of :full, :matches, :quick, :drawdebug, :squashlevels or :squashlevels-login.');
 }
 
 const clean = s => String(s || '').replace(/\s+/g, ' ').trim();
@@ -283,7 +286,15 @@ function loadExisting(){
   const summary=evalWindowFile('summary-data.js').TOURNAMENT_SUMMARY||{};
   const splitPlayers=evalWindowFile('players-data.js').TOURNAMENT_PLAYERS||[];
   const splitMatches=evalWindowFile('matches-data.js').TOURNAMENT_MATCHES||[];
-  const split=splitPlayers.length?{...summary,players:splitPlayers,matches:splitMatches}:null;
+  const resultPack=evalWindowFile('results-data.js').TOURNAMENT_RESULTS||{};
+  const splitResults=Array.isArray(resultPack)?resultPack:(Array.isArray(resultPack.rows)?resultPack.rows:[]);
+  const split=splitPlayers.length?{
+    ...summary,
+    players:splitPlayers,
+    matches:splitMatches,
+    results:splitResults.length?splitResults:(Array.isArray(legacy?.results)?legacy.results:[]),
+    resultsRefreshedAt:resultPack.refreshedAt||summary.resultsRefreshedAt||legacy?.resultsRefreshedAt||null
+  }:null;
 
   const candidates=[
     legacy&&{
@@ -412,8 +423,10 @@ function buildSummaryData(data){
     tournament:data.tournament||{},
     refreshedAt:data.refreshedAt||null,
     squashLevelsRefreshedAt:data.squashLevelsRefreshedAt||null,
+    resultsRefreshedAt:data.resultsRefreshedAt||null,
     playerCount:(data.players||[]).length,
     matchCount:(data.matches||[]).filter(m=>!isPlayerDetailByeRecord(m)).length,
+    resultPlacementCount:(data.results||[]).length,
     byeCount:(data.matches||[]).filter(isPlayerDetailByeRecord).length,
     countries:[...byCountry.values()].sort((a,b)=>b.count-a.count||a.country.localeCompare(b.country)),
     ageGroups:[...new Set((data.players||[]).map(p=>p.ageGroup).filter(x=>x!==null&&x!==undefined&&String(x)!==''))].sort((a,b)=>Number(a)-Number(b))
@@ -442,15 +455,25 @@ function buildVicParkData(data){
 }
 
 function writeDataFiles(data){
-  const summary=buildSummaryData(data);
-  const vicPark=buildVicParkData(data);
+  const normalized={
+    ...data,
+    players:(data.players||[]).map(normalizePlayerCountryRecord),
+    results:(data.results||[]).map(normalizeResultCountryRecord)
+  };
+  const summary=buildSummaryData(normalized);
+  const vicPark=buildVicParkData(normalized);
   // Keep data.js for backwards compatibility and local tooling, but the website no longer
   // downloads it on first load. The split files are what the browser uses.
-  fs.writeFileSync(path.join(DIR,'data.js'),`window.TOURNAMENT_DATA = ${JSON.stringify(data,null,2)};\n`);
+  fs.writeFileSync(path.join(DIR,'data.js'),`window.TOURNAMENT_DATA = ${JSON.stringify(normalized,null,2)};\n`);
   fs.writeFileSync(path.join(DIR,'summary-data.js'),`window.TOURNAMENT_SUMMARY = ${JSON.stringify(summary)};\n`);
-  fs.writeFileSync(path.join(DIR,'players-data.js'),`window.TOURNAMENT_PLAYERS = ${JSON.stringify(data.players||[])};\n`);
-  fs.writeFileSync(path.join(DIR,'matches-data.js'),`window.TOURNAMENT_MATCHES = ${JSON.stringify(data.matches||[])};\n`);
+  fs.writeFileSync(path.join(DIR,'players-data.js'),`window.TOURNAMENT_PLAYERS = ${JSON.stringify(normalized.players||[])};\n`);
+  fs.writeFileSync(path.join(DIR,'matches-data.js'),`window.TOURNAMENT_MATCHES = ${JSON.stringify(normalized.matches||[])};\n`);
   fs.writeFileSync(path.join(DIR,'vicpark-data.js'),`window.VIC_PARK_DATA = ${JSON.stringify(vicPark)};\n`);
+  fs.writeFileSync(path.join(DIR,'results-data.js'),`window.TOURNAMENT_RESULTS = ${JSON.stringify({
+    refreshedAt:normalized.resultsRefreshedAt||null,
+    sourceUrl:DRAWS_URL,
+    rows:normalized.results||[]
+  })};\n`);
 }
 
 function loadTrackedNames(){
@@ -775,7 +798,7 @@ async function collectOfficialPlayerLinks(page, canonicalPlayers){
 }
 
 
-async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMatches=[]){
+async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMatches=[],options={}){
   const byNameGroups=new Map();
   for(const p of canonicalPlayers){
     const k=nameKey(p.name);
@@ -1772,6 +1795,18 @@ async function scrapeOfficialMatchesSchedule(context,canonicalPlayers,previousMa
       return `2026-${month}-${String(Number(m[1])).padStart(2,'0')}`;
     };
 
+    if(options.latestOnly){
+      const today=perthTodayIsoRefresh();
+      const d=new Date(`${today}T12:00:00`);
+      d.setDate(d.getDate()-Math.max(0,Number(options.latestDays||2)-1));
+      const cutoff=d.toISOString().slice(0,10);
+      datesExpected.splice(0,datesExpected.length,...datesExpected.filter(label=>{
+        const iso=expectedIsoForLabel(label);
+        return iso&&iso>=cutoff&&iso<=today;
+      }));
+      console.log(`Quick Matches crawl date window: ${cutoff}..${today} (${datesExpected.join(', ')||'no tournament dates'}).`);
+    }
+
     const currentVenueText=async()=>{
       const known=[
         'All venues',
@@ -2104,11 +2139,18 @@ async function collectOfficialDrawLinks(page){
     const all=[];
     for(const frame of page.frames()){
       try{
-        const rows=await frame.evaluate(()=>[...document.querySelectorAll('a[href]')].map(a=>({
-          text:String(a.innerText||a.textContent||a.getAttribute('title')||a.getAttribute('aria-label')||'')
-            .replace(/\s+/g,' ').trim(),
-          href:a.href||''
-        })));
+        const rows=await frame.evaluate(()=>[...document.querySelectorAll('a[href]')].map(a=>{
+          const cleanText=v=>String(v||'').replace(/\s+/g,' ').trim();
+          const row=a.closest('tr,[role="row"],li');
+          const fallback=a.parentElement?.parentElement||a.parentElement;
+          const contextText=cleanText(row?.innerText||fallback?.innerText||'').slice(0,500);
+          return {
+            text:cleanText(a.innerText||a.textContent||a.getAttribute('title')||a.getAttribute('aria-label')||''),
+            href:a.href||'',
+            contextText,
+            stageExtra:/\bextra\b/i.test(contextText)
+          };
+        }));
         all.push(...rows);
       }catch{}
     }
@@ -2171,7 +2213,17 @@ async function collectOfficialDrawLinks(page){
       const href=u.href;
 
       if(!out.has(href)){
-        out.set(href,{href,text:clean(x.text)});
+        out.set(href,{
+          href,
+          text:clean(x.text),
+          contextText:clean(x.contextText||''),
+          stageExtra:!!x.stageExtra
+        });
+      }else{
+        const old=out.get(href);
+        if(!old.text&&x.text)old.text=clean(x.text);
+        if((x.contextText||'').length>(old.contextText||'').length)old.contextText=clean(x.contextText||'');
+        old.stageExtra=old.stageExtra||!!x.stageExtra;
       }
     }catch{}
   }
@@ -2369,59 +2421,35 @@ function officialScheduleMerge(rows){
 }
 
 const DRAW_COUNTRY_META={
-  AUS:{country:'Australia',iso3:'AUS',flagCode:'au'},
-  AUT:{country:'Austria',iso3:'AUT',flagCode:'at'},
-  BEL:{country:'Belgium',iso3:'BEL',flagCode:'be'},
-  CAN:{country:'Canada',iso3:'CAN',flagCode:'ca'},
-  CHE:{country:'Switzerland',iso3:'CHE',flagCode:'ch'},
-  SUI:{country:'Switzerland',iso3:'CHE',flagCode:'ch'},
-  CHL:{country:'Chile',iso3:'CHL',flagCode:'cl'},
-  COL:{country:'Colombia',iso3:'COL',flagCode:'co'},
-  CZE:{country:'Czech Republic',iso3:'CZE',flagCode:'cz'},
-  DEU:{country:'Germany',iso3:'DEU',flagCode:'de'},
-  GER:{country:'Germany',iso3:'DEU',flagCode:'de'},
-  DNK:{country:'Denmark',iso3:'DNK',flagCode:'dk'},
-  DEN:{country:'Denmark',iso3:'DNK',flagCode:'dk'},
-  EGY:{country:'Egypt',iso3:'EGY',flagCode:'eg'},
-  ENG:{country:'England',iso3:'GBR',flagCode:'gb-eng'},
-  ESP:{country:'Spain',iso3:'ESP',flagCode:'es'},
-  FIN:{country:'Finland',iso3:'FIN',flagCode:'fi'},
-  FRA:{country:'France',iso3:'FRA',flagCode:'fr'},
-  GBR:{country:'United Kingdom',iso3:'GBR',flagCode:'gb'},
-  GRC:{country:'Greece',iso3:'GRC',flagCode:'gr'},
-  GRE:{country:'Greece',iso3:'GRC',flagCode:'gr'},
-  HKG:{country:'Hong Kong',iso3:'HKG',flagCode:'hk'},
-  HRV:{country:'Croatia',iso3:'HRV',flagCode:'hr'},
-  CRO:{country:'Croatia',iso3:'HRV',flagCode:'hr'},
-  HUN:{country:'Hungary',iso3:'HUN',flagCode:'hu'},
-  IND:{country:'India',iso3:'IND',flagCode:'in'},
-  IRL:{country:'Ireland',iso3:'IRL',flagCode:'ie'},
-  ISR:{country:'Israel',iso3:'ISR',flagCode:'il'},
-  ITA:{country:'Italy',iso3:'ITA',flagCode:'it'},
-  JPN:{country:'Japan',iso3:'JPN',flagCode:'jp'},
-  KOR:{country:'South Korea',iso3:'KOR',flagCode:'kr'},
-  MAS:{country:'Malaysia',iso3:'MYS',flagCode:'my'},
-  MYS:{country:'Malaysia',iso3:'MYS',flagCode:'my'},
-  MEX:{country:'Mexico',iso3:'MEX',flagCode:'mx'},
-  NED:{country:'Netherlands',iso3:'NLD',flagCode:'nl'},
-  NLD:{country:'Netherlands',iso3:'NLD',flagCode:'nl'},
-  NOR:{country:'Norway',iso3:'NOR',flagCode:'no'},
-  NZL:{country:'New Zealand',iso3:'NZL',flagCode:'nz'},
-  PAK:{country:'Pakistan',iso3:'PAK',flagCode:'pk'},
-  POL:{country:'Poland',iso3:'POL',flagCode:'pl'},
-  POR:{country:'Portugal',iso3:'PRT',flagCode:'pt'},
-  PRT:{country:'Portugal',iso3:'PRT',flagCode:'pt'},
-  RSA:{country:'South Africa',iso3:'ZAF',flagCode:'za'},
-  ZAF:{country:'South Africa',iso3:'ZAF',flagCode:'za'},
-  SCO:{country:'Scotland',iso3:'GBR',flagCode:'gb-sct'},
-  SGP:{country:'Singapore',iso3:'SGP',flagCode:'sg'},
-  SIN:{country:'Singapore',iso3:'SGP',flagCode:'sg'},
-  SWE:{country:'Sweden',iso3:'SWE',flagCode:'se'},
-  THA:{country:'Thailand',iso3:'THA',flagCode:'th'},
-  UAE:{country:'United Arab Emirates',iso3:'ARE',flagCode:'ae'},
-  ARE:{country:'United Arab Emirates',iso3:'ARE',flagCode:'ae'},
-  USA:{country:'United States',iso3:'USA',flagCode:'us'},
-  WAL:{country:'Wales',iso3:'GBR',flagCode:'gb-wls'}
+  AND:{country:'Andorra',iso3:'AND',flagCode:'ad'},
+  AUS:{country:'Australia',iso3:'AUS',flagCode:'au'}, AUT:{country:'Austria',iso3:'AUT',flagCode:'at'},
+  BAR:{country:'Barbados',iso3:'BRB',flagCode:'bb'}, BEL:{country:'Belgium',iso3:'BEL',flagCode:'be'},
+  BRA:{country:'Brazil',iso3:'BRA',flagCode:'br'}, BRU:{country:'Brunei Darussalam',iso3:'BRN',flagCode:'bn'}, BRN:{country:'Brunei Darussalam',iso3:'BRN',flagCode:'bn'},
+  CAN:{country:'Canada',iso3:'CAN',flagCode:'ca'}, CAY:{country:'Cayman Islands',iso3:'CYM',flagCode:'ky'}, CYM:{country:'Cayman Islands',iso3:'CYM',flagCode:'ky'},
+  CHI:{country:'Chile',iso3:'CHL',flagCode:'cl'}, CHL:{country:'Chile',iso3:'CHL',flagCode:'cl'}, CHN:{country:'China',iso3:'CHN',flagCode:'cn'},
+  COL:{country:'Colombia',iso3:'COL',flagCode:'co'}, CZE:{country:'Czech Republic',iso3:'CZE',flagCode:'cz'},
+  DEU:{country:'Germany',iso3:'DEU',flagCode:'de'}, GER:{country:'Germany',iso3:'DEU',flagCode:'de'},
+  DNK:{country:'Denmark',iso3:'DNK',flagCode:'dk'}, DEN:{country:'Denmark',iso3:'DNK',flagCode:'dk'},
+  EGY:{country:'Egypt',iso3:'EGY',flagCode:'eg'}, ENG:{country:'England',iso3:'GBR',flagCode:'gb-eng'}, ESP:{country:'Spain',iso3:'ESP',flagCode:'es'},
+  FIN:{country:'Finland',iso3:'FIN',flagCode:'fi'}, FRA:{country:'France',iso3:'FRA',flagCode:'fr'}, GBR:{country:'United Kingdom',iso3:'GBR',flagCode:'gb'},
+  GRC:{country:'Greece',iso3:'GRC',flagCode:'gr'}, GRE:{country:'Greece',iso3:'GRC',flagCode:'gr'},
+  GUY:{country:'Guyana',iso3:'GUY',flagCode:'gy'}, HKG:{country:'Hong Kong',iso3:'HKG',flagCode:'hk'},
+  HRV:{country:'Croatia',iso3:'HRV',flagCode:'hr'}, CRO:{country:'Croatia',iso3:'HRV',flagCode:'hr'}, HUN:{country:'Hungary',iso3:'HUN',flagCode:'hu'},
+  IND:{country:'India',iso3:'IND',flagCode:'in'}, IRL:{country:'Ireland',iso3:'IRL',flagCode:'ie'}, ISR:{country:'Israel',iso3:'ISR',flagCode:'il'}, ITA:{country:'Italy',iso3:'ITA',flagCode:'it'},
+  JPN:{country:'Japan',iso3:'JPN',flagCode:'jp'}, KOR:{country:'South Korea',iso3:'KOR',flagCode:'kr'},
+  MAS:{country:'Malaysia',iso3:'MYS',flagCode:'my'}, MYS:{country:'Malaysia',iso3:'MYS',flagCode:'my'}, MEX:{country:'Mexico',iso3:'MEX',flagCode:'mx'},
+  MRI:{country:'Mauritius',iso3:'MUS',flagCode:'mu'}, MUS:{country:'Mauritius',iso3:'MUS',flagCode:'mu'}, NAM:{country:'Namibia',iso3:'NAM',flagCode:'na'},
+  NCL:{country:'New Caledonia',iso3:'NCL',flagCode:'nc'}, NED:{country:'Netherlands',iso3:'NLD',flagCode:'nl'}, NLD:{country:'Netherlands',iso3:'NLD',flagCode:'nl'},
+  NOR:{country:'Norway',iso3:'NOR',flagCode:'no'}, NZL:{country:'New Zealand',iso3:'NZL',flagCode:'nz'}, PAK:{country:'Pakistan',iso3:'PAK',flagCode:'pk'},
+  PER:{country:'Peru',iso3:'PER',flagCode:'pe'}, POL:{country:'Poland',iso3:'POL',flagCode:'pl'}, POR:{country:'Portugal',iso3:'PRT',flagCode:'pt'}, PRT:{country:'Portugal',iso3:'PRT',flagCode:'pt'},
+  RSA:{country:'South Africa',iso3:'ZAF',flagCode:'za'}, ZAF:{country:'South Africa',iso3:'ZAF',flagCode:'za'},
+  RSF:{country:'Russian Squash Federation',iso3:'RUS',flagCode:'ru'}, RUS:{country:'Russia',iso3:'RUS',flagCode:'ru'},
+  SCO:{country:'Scotland',iso3:'GBR',flagCode:'gb-sct'}, SIN:{country:'Singapore',iso3:'SGP',flagCode:'sg'}, SGP:{country:'Singapore',iso3:'SGP',flagCode:'sg'},
+  SLE:{country:'Sierra Leone',iso3:'SLE',flagCode:'sl'}, SRI:{country:'Sri Lanka',iso3:'LKA',flagCode:'lk'}, LKA:{country:'Sri Lanka',iso3:'LKA',flagCode:'lk'},
+  SUI:{country:'Switzerland',iso3:'CHE',flagCode:'ch'}, CHE:{country:'Switzerland',iso3:'CHE',flagCode:'ch'}, SWE:{country:'Sweden',iso3:'SWE',flagCode:'se'},
+  THA:{country:'Thailand',iso3:'THA',flagCode:'th'}, TPE:{country:'Chinese Taipei',iso3:'TWN',flagCode:'tw'}, TWN:{country:'Taiwan',iso3:'TWN',flagCode:'tw'},
+  TUR:{country:'Türkiye',iso3:'TUR',flagCode:'tr'}, UAE:{country:'United Arab Emirates',iso3:'ARE',flagCode:'ae'}, ARE:{country:'United Arab Emirates',iso3:'ARE',flagCode:'ae'},
+  UKR:{country:'Ukraine',iso3:'UKR',flagCode:'ua'}, USA:{country:'United States',iso3:'USA',flagCode:'us'}, WAL:{country:'Wales',iso3:'GBR',flagCode:'gb-wls'}
 };
 
 function drawCountryMeta(code,name='',flagCode=''){
@@ -2438,6 +2466,23 @@ function drawCountryMeta(code,name='',flagCode=''){
     flagCode:clean(flagCode).toLowerCase(),
     drawCountryCode:c
   };
+}
+
+function normalizePlayerCountryRecord(p){
+  if(!p)return p;
+  const code=clean(p.drawCountryCode||p.countryCode||p.iso3||'').toUpperCase();
+  const country=clean(p.country||'');
+  const meta=drawCountryMeta(code,country,p.flagCode||'');
+  if(!meta.country)return p;
+  return {...p,country:meta.country,iso3:meta.iso3||p.iso3||'',flagCode:meta.flagCode||p.flagCode||'',drawCountryCode:p.drawCountryCode||p.countryCode||code||meta.drawCountryCode||''};
+}
+function normalizeResultCountryRecord(r){
+  if(!r)return r;
+  const code=clean(r.drawCountryCode||r.countryCode||r.iso3||'').toUpperCase();
+  const country=clean(r.country||'');
+  const meta=drawCountryMeta(code,country,r.flagCode||'');
+  if(!meta.country)return r;
+  return {...r,country:meta.country,iso3:meta.iso3||r.iso3||'',flagCode:meta.flagCode||r.flagCode||'',countryCode:r.countryCode||r.drawCountryCode||code||meta.drawCountryCode||''};
 }
 
 function mergePreviousSquashLevelsFields(drawPlayers,previousPlayers){
@@ -3005,6 +3050,32 @@ async function scrapeOfficialDrawSchedule(context,options={}){
           const meta=clean(metaParts.join(' | '));
           const context=clean(`${caption} | ${round} | ${meta}`);
 
+          // When a match has progressed, TournamentSoftware usually repeats the
+          // advancing player in the next column. For the championship final the
+          // next column is the explicit Winner column rather than another
+          // numbered tree slot. Capture that structural winner when present.
+          let advancingPlayer=outputRec?.player||null;
+          if(!advancingPlayer){
+            const nextPlayers=[];
+            const seenNext=new Set();
+            for(let ri=lo;ri<=hi;ri++){
+              const cell=rows[ri]?.cells?.[targetColumn];
+              const p=legacyPlayerFromCell(cell);
+              if(!p?.href)continue;
+              const key=(p.href||'').split('#')[0];
+              if(seenNext.has(key))continue;
+              seenNext.add(key);
+              nextPlayers.push(p);
+            }
+            const participants=[a.player,b.player].filter(Boolean);
+            const hrefIdentity=p=>String(hrefKey((p?.href||'').split('#')[0])||'');
+            const matching=nextPlayers.filter(p=>{
+              const pk=hrefIdentity(p);
+              return !!pk&&participants.some(x=>hrefIdentity(x)===pk);
+            });
+            if(matching.length===1)advancingPlayer=matching[0];
+          }
+
           // Explicit Bye: keep the stricter connector requirement because this
           // represents progression rather than a played fixture.
           if(byePair){
@@ -3033,21 +3104,29 @@ async function scrapeOfficialDrawSchedule(context,options={}){
           // nearest-neighbour or profile-page guessing.
           if(concreteCount===2){
             const hasExplicitSchedule=dateRe.test(meta)&&timeRe.test(meta);
-            if(!connectorVerified&&!hasExplicitSchedule)continue;
-            if(!connectorVerified)siblingScheduledFallbacks++;
+            const hasStructuralWinner=!!advancingPlayer;
+            // A progressed edge with one structurally advancing participant is
+            // valid RESULT evidence even when TournamentSoftware has removed the
+            // old date/time and moved/dropped the connector. It is not schedule
+            // evidence; the outer schedule parser will still require date/time.
+            if(!connectorVerified&&!hasExplicitSchedule&&!hasStructuralWinner)continue;
+            if(!connectorVerified&&hasExplicitSchedule)siblingScheduledFallbacks++;
 
             treeMatches.push({
               players:[a.player,b.player],
               text:meta,
               context,
               pageHead,
-              source:connectorVerified?'legacy-slot-tree':'legacy-slot-sibling-scheduled',
+              source:connectorVerified
+                ?'legacy-slot-tree'
+                :(hasExplicitSchedule?'legacy-slot-sibling-scheduled':'legacy-slot-result-only'),
               // Without the retained output connector, the sibling IDs still
               // prove the two opponents, and the printed date/time proves the
               // scheduled fixture. But venue/court text in the intervening
               // bracket cells can belong to a neighbouring edge. Never treat
               // that location text as authoritative.
               locationTrusted:connectorVerified,
+              winner:advancingPlayer||null,
               tableCaption:caption,
               round,
               inputSlot1:a.rawId,
@@ -3267,6 +3346,34 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         /(?:AGC(?:\s*\d+)?|SC\s*\d+|Court\s*\d+)/i.test(x.text||'')
       ).length;
 
+      // Capture raw table standings as a separate result-only signal. Round-robin
+      // draws (Men's 85+) do not have a championship/bronze bracket. TournamentSoftware
+      // renders their ranking in a table, usually with Played/Won/Lost or W/L columns.
+      // Keep the raw headers/cells here and interpret them later in Node; this does not
+      // affect the published match schedule.
+      const roundRobinTables=[];
+      for(const table of document.querySelectorAll('table')){
+        const trs=[...table.querySelectorAll('tr')];
+        if(!trs.length)continue;
+        const headers=[...trs[0].querySelectorAll('th,td')].map(c=>clean(c.innerText||c.textContent||''));
+        const caption=clean(table.querySelector('caption')?.innerText||table.querySelector('caption')?.textContent||'');
+        const rrRows=[];
+        for(const tr of trs){
+          const cells=[...tr.querySelectorAll(':scope > th,:scope > td')];
+          if(!cells.length)continue;
+          const links=[...tr.querySelectorAll('a[href]')].filter(a=>playerHref.test(a.href||''));
+          const unique=[]; const seen=new Set();
+          for(const a of links){
+            const href=(a.href||'').split('#')[0];
+            if(!href||seen.has(href))continue;
+            seen.add(href); unique.push(playerInfo(a));
+          }
+          if(unique.length!==1)continue;
+          rrRows.push({player:unique[0],cells:cells.map(c=>clean(c.innerText||c.textContent||'')),rowText:clean(tr.innerText||tr.textContent||'')});
+        }
+        if(rrRows.length>=4)roundRobinTables.push({caption,headers,rows:rrRows});
+      }
+
       return {
         body:clean(document.body?.innerText||document.documentElement?.innerText||''),
         pageHead,
@@ -3278,7 +3385,8 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         matchLinks,
         positionedPlayers,
         nearbyText,
-        locationTextNodes
+        locationTextNodes,
+        roundRobinTables
       };
     });
   }
@@ -3307,7 +3415,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
 
     // Placement/3rd-place draws are intentionally tiny and should not inherit
     // the full age-group expectation.
-    if(isPlacementDrawText(text))return 0;
+    if(isPlacementDrawText(`${text} ${clean(draw?.contextText||'')}`)||draw?.stageExtra)return 0;
     if(!age||!gender)return 0;
 
     const normalGender=v=>{
@@ -3324,7 +3432,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   }
 
   async function crawlDraw(draw,page){
-    const isPlacement=isPlacementDrawText(draw.text);
+    const isPlacement=isPlacementDrawText(`${draw?.text||''} ${draw?.contextText||''}`)||!!draw?.stageExtra;
     const expectedPlayers=expectedPlayersForDraw(draw);
     const attempts=[];
 
@@ -3645,10 +3753,16 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   //
   // This stage only parses metadata; it never chooses opponents.
   const treeObservations=[];
+  // Result extraction is deliberately separate from the published schedule.
+  // A completed final can remain structurally visible in TournamentSoftware
+  // (two finalists + advancing winner) even after its date/time text disappears.
+  // Schedule rows still require date/time; result rows do not.
+  const resultTreeObservations=[];
   const deterministicByeObservations=[];
 
   for(const row of workerResults){
     const drawContext=clean(`${row.draw.text||''} ${row.extracted.pageHead||''}`);
+    let drawResultOrder=0;
 
     for(const t of row.extracted.treeMatches||[]){
       const unique=[];
@@ -3667,7 +3781,10 @@ async function scrapeOfficialDrawSchedule(context,options={}){
 
       const whole=clean(`${drawContext} ${t.context||''} ${t.text||''}`);
       const f=deriveFields(whole,drawContext);
-      const siblingScheduleOnly=t.source==='legacy-slot-sibling-scheduled' || t.locationTrusted===false;
+      const siblingScheduleOnly=
+        t.source==='legacy-slot-sibling-scheduled' ||
+        t.source==='legacy-slot-result-only' ||
+        t.locationTrusted===false;
 
       // The no-connector sibling fallback was introduced to recover progressed
       // matches that remain visible in the draw. Its odd/even slot IDs prove
@@ -3685,6 +3802,47 @@ async function scrapeOfficialDrawSchedule(context,options={}){
 
       // Caption/round are structural labels from the table itself.
       if(!f.round&&t.round)f.round=clean(t.round);
+
+      const treeWinnerId=String(hrefKey((t.winner?.href||'').split('#')[0])||'');
+      const treeWinner=treeWinnerId?unique.find(x=>String(x.id)===treeWinnerId):null;
+      if(treeWinner){
+        f.winner=treeWinner.player.name;
+        f.winnerId=treeWinner.id;
+        f.status='completed';
+      }
+
+      // Keep deterministic two-player bracket edges for championship result
+      // extraction BEFORE the schedule date/time gate below. This is essential
+      // for completed finals and 3rd/4th playoffs: TournamentSoftware may remove
+      // their printed schedule metadata after progression while the bracket still
+      // proves both participants and the advancing winner. These rows are never
+      // published as schedule fixtures unless they also pass the normal date/time
+      // rules below.
+      if(unique.length===2&&!isTbd&&!isBye){
+        resultTreeObservations.push({
+          ...f,
+          player1:unique[0].player.name,
+          player1Id:unique[0].id,
+          player2:unique[1].player.name,
+          player2Id:unique[1].id,
+          result:f.result||'',
+          winner:f.winner||'',
+          winnerId:f.winnerId||'',
+          status:(f.winner||f.result)?'completed':(f.status||'scheduled'),
+          rawText:whole,
+          source:'TournamentSoftware Draw Result Tree',
+          sourceUrl:row.draw.href,
+          drawUrl:row.draw.href,
+          drawName:row.draw.text||'',
+          drawPlacement:isPlacementDrawText(row.draw.text),
+          treeSource:t.source||'',
+          treeCaption:t.tableCaption||'',
+          treeInputSlot1:t.inputSlot1||'',
+          treeInputSlot2:t.inputSlot2||'',
+          treeOutputSlot:t.outputSlot||'',
+          drawResultOrder:++drawResultOrder
+        });
+      }
 
       if(isBye){
         deterministicByeObservations.push({
@@ -3730,7 +3888,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         player2:isTbd?'TBD':unique[1].player.name,
         player2Id:isTbd?'':unique[1].id,
         result:isTbd?'':(f.result||''),
-        status:isTbd?'scheduled':(f.result?'completed':(f.status||'scheduled')),
+        status:isTbd?'scheduled':((f.result||f.winner)?'completed':(f.status||'scheduled')),
         // For a connector-less sibling recovery, raw bracket context is NOT
         // location evidence. Keep a minimal safe trace so downstream metadata
         // recovery cannot parse a neighbouring venue back out of rawText.
@@ -3738,6 +3896,9 @@ async function scrapeOfficialDrawSchedule(context,options={}){
         treeLocationUnverified:siblingScheduleOnly,
         source:'TournamentSoftware Draw Tree',
         sourceUrl:row.draw.href,
+        drawUrl:row.draw.href,
+        drawName:row.draw.text||'',
+        drawPlacement:isPlacementDrawText(row.draw.text),
         treeSource:t.source||'',
         treeCaption:t.tableCaption||'',
         treeInputSlot1:t.inputSlot1||'',
@@ -3751,6 +3912,7 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   }
 
   console.log(`Official draw deterministic tree observations: ${treeObservations.length}`);
+  console.log(`Official draw result-tree observations (date/time optional): ${resultTreeObservations.length}`);
   const scheduledSiblingFallbackCount=workerResults.reduce(
     (n,x)=>n+(x.extracted.siblingScheduledFallbacks||0),0
   );
@@ -3896,7 +4058,10 @@ async function scrapeOfficialDrawSchedule(context,options={}){
       status:result?'completed':(f.status||'scheduled'),
       rawText:whole,
       source:'TournamentSoftware Match',
-      sourceUrl:x.item.href
+      sourceUrl:x.item.href,
+      drawUrl:x.item.draw?.href||'',
+      drawName:x.item.draw?.text||'',
+      drawPlacement:isPlacementDrawText(x.item.draw?.text||'')
     });
   }
 
@@ -3927,17 +4092,52 @@ async function scrapeOfficialDrawSchedule(context,options={}){
       if(linked.length!==2)continue;
       if(String(linked[0].officialPlayerId)===String(linked[1].officialPlayerId))continue;
 
+      // Inline draw rows often contain both players' per-game score cells even when
+      // the flattened text parser cannot build an oriented result. Reconstruct the
+      // score in player1-player2 orientation so round-robin wins can be counted.
+      let inlineResult=f.result||'';
+      let inlineWinner=f.winner||'';
+      let inlineWinnerId=f.winnerId||'';
+      if(Array.isArray(c.scoreRows)&&c.scoreRows.length>=2){
+        const scoreFor=p=>{
+          const r=c.scoreRows.find(x=>String(hrefKey(x.href)||'')===String(p.officialPlayerId)) || c.scoreRows.find(x=>sameName(x.name,p.name));
+          if(!r)return [];
+          let a=(r.scores||[]).map(Number).filter(Number.isFinite);
+          if(a.length===6&&a[0]>=0&&a[0]<=3)a=a.slice(1);
+          return a;
+        };
+        let a=scoreFor(linked[0]),b=scoreFor(linked[1]);
+        while(a.length&&b.length&&a.at(-1)===0&&b.at(-1)===0){a.pop();b.pop();}
+        const valid=(m,n)=>{
+          if(!Number.isInteger(m)||!Number.isInteger(n)||m<0||n<0||m>30||n>30||m===n)return false;
+          const hi=Math.max(m,n),lo=Math.min(m,n);
+          return hi>=11&&(hi===11?lo<=9:hi-lo===2);
+        };
+        if(a.length>=3&&a.length<=5&&a.length===b.length&&a.every((m,j)=>valid(m,b[j]))){
+          inlineResult=a.map((m,j)=>`${m}-${b[j]}`).join(', ');
+          const g1=a.reduce((n,m,j)=>n+(m>b[j]?1:0),0);
+          const g2=b.reduce((n,m,j)=>n+(m>a[j]?1:0),0);
+          if(g1>=3&&g1>g2){inlineWinner=linked[0].name;inlineWinnerId=linked[0].officialPlayerId;}
+          else if(g2>=3&&g2>g1){inlineWinner=linked[1].name;inlineWinnerId=linked[1].officialPlayerId;}
+        }
+      }
+
       observations.push({
         ...f,
         player1:linked[0].name,
         player1Id:linked[0].officialPlayerId,
         player2:linked[1].name,
         player2Id:linked[1].officialPlayerId,
-        result:f.result||'',
-        status:f.result?'completed':(f.status||'scheduled'),
+        result:inlineResult,
+        winner:inlineWinner,
+        winnerId:inlineWinnerId,
+        status:(inlineResult||inlineWinner)?'completed':(f.status||'scheduled'),
         rawText:whole,
         source:'TournamentSoftware Draw Inline',
-        sourceUrl:row.draw.href
+        sourceUrl:row.draw.href,
+        drawUrl:row.draw.href,
+        drawName:row.draw.text||'',
+        drawPlacement:isPlacementDrawText(row.draw.text)
       });
     }
   }
@@ -3951,10 +4151,11 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   const rawMatchLinks=officialMatchLinks.length;
 
   const treeDrawStats=workerResults.map(x=>{
-    const placement=isPlacementDrawText(x.draw.text);
+    const placement=isPlacementDrawText(`${x.draw.text||''} ${x.draw.contextText||''}`)||!!x.draw.stageExtra;
     return {
       drawIndex:Number(x.draw.index)+1,
       drawName:x.draw.text||'',
+      drawUrl:x.draw.href||'',
       placement,
       players:x.extracted.players?.length||0,
       positionedPlayers:x.extracted.positionedPlayers?.length||0,
@@ -3972,6 +4173,38 @@ async function scrapeOfficialDrawSchedule(context,options={}){
   console.log(`Official draw match/detail links: ${rawMatchLinks}`);
   console.log(`Official draw schedule: ${matches.length} unique player-v-player fixtures from ${observations.length} validated fixture observations (${failed} draw page failures, ${matchPageFailures} match-page failures).`);
 
+  // Per-draw participant snapshots are intentionally lightweight. They let the
+  // Results extractor resolve a tiny dedicated 3rd/4th or Extra draw even when
+  // TournamentSoftware renders it without numeric bracket connectors.
+  const drawSnapshots=workerResults.map(x=>({
+    drawUrl:x.draw.href||'',
+    drawName:x.draw.text||'',
+    contextText:x.draw.contextText||'',
+    stageExtra:!!x.draw.stageExtra,
+    placement:isPlacementDrawText(`${x.draw.text||''} ${x.draw.contextText||''}`)||!!x.draw.stageExtra,
+    players:(x.extracted.players||[]).map(p=>({
+      name:clean(p.name||''),
+      officialPlayerId:String(hrefKey((p.href||'').split('#')[0])||''),
+      href:p.href||''
+    })).filter(p=>p.name),
+    positionedPlayers:(x.extracted.positionedPlayers||[]).map(p=>({
+      name:clean(p.name||''),
+      officialPlayerId:String(hrefKey((p.href||'').split('#')[0])||''),
+      centerX:Number(p.centerX)||0,
+      centerY:Number(p.centerY)||0
+    })).filter(p=>p.name),
+    roundRobinTables:(x.extracted.roundRobinTables||[]).map(t=>({
+      caption:clean(t.caption||''),
+      headers:(t.headers||[]).map(h=>clean(h||'')),
+      rows:(t.rows||[]).map(r=>({
+        playerName:clean(r?.player?.name||''),
+        officialPlayerId:String(hrefKey((r?.player?.href||'').split('#')[0])||''),
+        cells:(r?.cells||[]).map(c=>clean(c||'')),
+        rowText:clean(r?.rowText||'')
+      })).filter(r=>r.playerName)
+    })).filter(t=>t.rows.length>=4)
+  }));
+
   return {
     players,
     matches,
@@ -3981,11 +4214,21 @@ async function scrapeOfficialDrawSchedule(context,options={}){
     rawFixtureCandidates,
     rawMatchLinks,
     treeObservations:treeObservations.length,
+    resultMatches:resultTreeObservations,
+    resultTreeObservations:resultTreeObservations.length,
     byeMatches:deterministicByeObservations,
     deterministicByeObservations:deterministicByeObservations.length,
     treeDrawStats,
     mainTreeDraws:mainTreeDraws.length,
     missingTreeDraws,
+    drawSnapshots,
+    drawCatalog:drawLinks.map(x=>({
+      href:x.href||'',
+      text:x.text||'',
+      contextText:x.contextText||'',
+      stageExtra:!!x.stageExtra,
+      placement:isPlacementDrawText(`${x.text||''} ${x.contextText||''}`)||!!x.stageExtra
+    })),
     trackedTbdMatches
   };
 }
@@ -4690,13 +4933,13 @@ const SQUASHLEVELS_COUNTRY_NAME_CODES={
   'czech republic':'CZE','czechia':'CZE','slovakia':'SVK','austria':'AUT','hungary':'HUN',
   'egypt':'EGY','united arab emirates':'UAE','qatar':'QAT','kuwait':'KUW','saudi arabia':'KSA',
   'mexico':'MEX','brazil':'BRA','argentina':'ARG','colombia':'COL','chile':'CHI',
-  'guyana':'GUY','bermuda':'BER','jamaica':'JAM','barbados':'BAR','trinidad and tobago':'TTO'
+  'guyana':'GUY','mauritius':'MRI','bermuda':'BER','jamaica':'JAM','barbados':'BAR','trinidad and tobago':'TTO'
 };
 const SQUASHLEVELS_COUNTRY_CODES=new Set([
   'AUS','NZL','ENG','SCO','WAL','IRL','NIR','USA','CAN','RSA','ZAF','SIN','SGP','MAS','MYS',
   'IND','PAK','JPN','HKG','CHN','KOR','SUI','CHE','GER','DEU','FRA','BEL','NED','NLD','DEN',
   'DNK','SWE','NOR','FIN','POL','ESP','POR','PRT','ITA','GRE','GRC','CRO','HRV','CZE','SVK',
-  'AUT','HUN','EGY','UAE','ARE','QAT','KUW','KSA','MEX','BRA','ARG','COL','CHI','CHL','GUY',
+  'AUT','HUN','EGY','UAE','ARE','QAT','KUW','KSA','MEX','BRA','ARG','COL','CHI','CHL','GUY','MRI','MUS',
   'BER','JAM','BAR','TTO'
 ]);
 function squashLevelsStringsFromObject(obj,maxDepth=4){
@@ -6781,6 +7024,59 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
 
   const validLocation=m=>validVenue(m?.venue)&&!!sanitizeCourtValue(m?.court);
 
+  // TournamentSoftware can render a progressed draw edge as a deterministic
+  // two-player bracket pairing while its Matches page renders the same
+  // player/date/time slot as one known player vs TBD.  The draw is authoritative
+  // for WHO plays; the Matches page is safe independent evidence for WHERE the
+  // slot is played.  Keep location evidence by player slot even when the second
+  // Matches-page player has not been resolved.
+  const matchSlotLocationMap=new Map();
+  const playerSlotAliases=(name,id)=>{
+    const out=[];
+    const sid=clean(id||'');
+    if(sid)out.push(`id:${sid}`);
+    const n=nameKey(splitPlayerSeed(name||'').name);
+    if(n)out.push(`name:${n}`);
+    return out;
+  };
+  const matchLocationSlotKey=(date,time,identity)=>
+    `${canonicalTournamentDate(date)}|${clean(time||'').toLowerCase()}|${identity}`;
+
+  for(const r of (matchesRows||[])){
+    const d=canonicalTournamentDate(r?.date);
+    const t=clean(r?.time||'').toLowerCase();
+    const venue=clean(r?.venue||'');
+    const court=sanitizeCourtValue(r?.court);
+    if(!d||!t||!validVenue(venue)||!court)continue;
+
+    for(const [name,id] of [[r?.player1,r?.player1Id],[r?.player2,r?.player2Id]]){
+      if(!realPlayer(name))continue;
+      for(const identity of playerSlotAliases(name,id)){
+        const k=matchLocationSlotKey(d,t,identity);
+        const sig=`${venue}|${court}`;
+        if(!matchSlotLocationMap.has(k)){
+          matchSlotLocationMap.set(k,{venue,court,sig,ambiguous:false});
+        }else{
+          const old=matchSlotLocationMap.get(k);
+          if(old.sig!==sig)old.ambiguous=true;
+        }
+      }
+    }
+  }
+
+  const independentMatchSlotLocation=m=>{
+    const found=[];
+    for(const [name,id] of [[m?.player1,m?.player1Id],[m?.player2,m?.player2Id]]){
+      if(!realPlayer(name))continue;
+      for(const identity of playerSlotAliases(name,id)){
+        const x=matchSlotLocationMap.get(matchLocationSlotKey(m?.date,m?.time,identity));
+        if(x&&!x.ambiguous)found.push(x);
+      }
+    }
+    const bySig=new Map(found.map(x=>[x.sig,x]));
+    return bySig.size===1?[...bySig.values()][0]:{venue:'',court:''};
+  };
+
   const fresh=(matchesRows||[])
     .filter(m=>m?.date&&m?.time&&realPlayer(m.player1)&&realPlayer(m.player2))
     .map(m=>({...m,court:sanitizeCourtValue(m.court),rawText:''}));
@@ -6838,13 +7134,34 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
     if(!isTournamentDate(dateKey(m0)))continue;
     if(treeTbd&&dateKey(m0)<today)continue;
 
-    const loc=provenLocationFromRow(m0);
+    let loc=provenLocationFromRow(m0);
+    const sourceSetForLocation=new Set([...(m0?.evidenceSources||[]),m0?.source].map(clean).filter(Boolean));
+
+    // Connector-less draw recovery deliberately carries no location.  Recover
+    // location only from an independent TournamentSoftware Matches-page slot
+    // for one/both of the exact players at this date/time.  This handles rows
+    // such as "Jason Patmore vs TBD" on Matches while preserving the draw's
+    // deterministic concrete opponent.  Conflicting slot locations are rejected.
+    if(
+      sourceSetForLocation.has('TournamentSoftware Draw Tree') &&
+      (!validVenue(loc.venue)||!sanitizeCourtValue(loc.court))
+    ){
+      const slotLoc=independentMatchSlotLocation(m0);
+      if(validVenue(slotLoc.venue)&&slotLoc.court){
+        loc=slotLoc;
+      }
+    }
+
     const m={
       ...m0,
       player1:splitPlayerSeed(m0.player1).name,
       player2:splitPlayerSeed(m0.player2).name,
       venue:loc.venue,
-      court:loc.court
+      court:loc.court,
+      locationSource:
+        (!validVenue(provenLocationFromRow(m0).venue)&&validVenue(loc.venue))
+          ? 'TournamentSoftware Match Player Slot'
+          : (m0.locationSource||'')
     };
 
     const sources=new Set([...(m.evidenceSources||[]),m.source].map(clean).filter(Boolean));
@@ -7346,6 +7663,10 @@ function buildDrawAuthoritativeTournamentSchedule(existingRows,drawRows,matchesR
     byDate[d]=(byDate[d]||0)+1;
   }
 
+  const slotLocationRecoveries=final.filter(m=>m.locationSource==='TournamentSoftware Match Player Slot').length;
+  if(slotLocationRecoveries){
+    console.log(`DRAW AUTHORITY recovered ${slotLocationRecoveries} draw fixture location(s) from exact TournamentSoftware player/date/time slots.`);
+  }
   console.log(`DRAW AUTHORITY evidence: ${JSON.stringify(evidenceSummary)}`);
   console.log(
     `DRAW AUTHORITY accepted ${authoritative.length} trusted draw fixture(s); ` +
@@ -8426,6 +8747,7 @@ function overlayFreshTournamentResults(baseRows,freshRows){
     pairKey(m)
   ].join('|');
 
+
   const byKey=new Map();
   for(const m of out){
     const k=key(m);
@@ -8727,10 +9049,1034 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
   return final;
 }
 
+
+function resultEventMeta(eventName){
+  const event=clean(eventName||'');
+  const ageMatch=event.match(/\b(35|40|45|50|55|60|65|70|75|80|85)\+?\b/);
+  const gender=/women/i.test(event)?'Women':(/\bmen/i.test(event)?'Men':'');
+  return {event,gender,ageGroup:ageMatch?Number(ageMatch[1]):null};
+}
+
+function resultPlaceRank(place){
+  const s=clean(place||'').toLowerCase();
+  if(s==='1'||/winner|champion/.test(s))return 1;
+  if(s==='2'||/runner/.test(s))return 2;
+  if(/^3(?:\/4)?$/.test(s)||/third|bronze/.test(s))return 3;
+  if(s==='4'||/fourth/.test(s))return 4;
+  return 99;
+}
+
+function resultWinnerFromMatch(row){
+  const p1=clean(row?.player1||'');
+  const p2=clean(row?.player2||'');
+  if(!p1||!p2)return null;
+
+  const winner=clean(row?.winner||'');
+  const winnerId=String(row?.winnerId||'');
+  if(winner&&sameName(winner,p1))return {name:p1,id:String(row?.player1Id||'')};
+  if(winner&&sameName(winner,p2))return {name:p2,id:String(row?.player2Id||'')};
+  if(winnerId&&winnerId===String(row?.player1Id||''))return {name:p1,id:String(row?.player1Id||'')};
+  if(winnerId&&winnerId===String(row?.player2Id||''))return {name:p2,id:String(row?.player2Id||'')};
+
+  // TournamentSoftware score pairs are stored in player1-player2 orientation.
+  // Count games only when a complete, unambiguous score is present.
+  const games=[...clean(row?.result||'').matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)]
+    .map(x=>[Number(x[1]),Number(x[2])]);
+  if(games.length>=3&&games.length<=5){
+    let a=0,b=0;
+    for(const [x,y] of games){
+      if(x>y)a++;
+      else if(y>x)b++;
+    }
+    if(a>=3&&a>b)return {name:p1,id:String(row?.player1Id||'')};
+    if(b>=3&&b>a)return {name:p2,id:String(row?.player2Id||'')};
+  }
+  return null;
+}
+
+function resultDrawKey(text){
+  const meta=resultEventMeta(text);
+  if(!meta.gender||!meta.ageGroup)return '';
+  return `${meta.gender}|${meta.ageGroup}`;
+}
+
+function resultMatchPairKey(row){
+  const ids=[String(row?.player1Id||''),String(row?.player2Id||'')].filter(Boolean).sort();
+  if(ids.length===2)return ids.join('~');
+  return [nameKey(row?.player1||''),nameKey(row?.player2||'')].sort().join('~');
+}
+
+function resultMatchOverlayKey(row){
+  return `${canonicalTournamentDate(row?.date)}|${clean(row?.time).toLowerCase()}|${resultMatchPairKey(row)}`;
+}
+
+function chooseDrawFinalMatch(rows,placement=false){
+  const concrete=(rows||[]).filter(m=>
+    m?.player1&&m?.player2&&
+    !/^(?:TBD|Bye)$/i.test(clean(m.player1))&&
+    !/^(?:TBD|Bye)$/i.test(clean(m.player2))
+  );
+  if(!concrete.length)return null;
+
+  const safeMain=concrete.filter(m=>
+    placement || !/\b(?:plate|consolation|position|3(?:rd)?\s*[\/-]\s*4(?:th)?|playoff)\b/i.test(
+      `${m.treeCaption||''} ${m.round||''}`
+    )
+  );
+  const pool=safeMain.length?safeMain:concrete;
+
+  const finalRound=pool.filter(m=>/\bfinals?\b/i.test(clean(m.round||''))&&!/semi|quarter/i.test(clean(m.round||'')));
+  if(finalRound.length){
+    return finalRound.sort((a,b)=>`${b.date} ${b.time}`.localeCompare(`${a.date} ${a.time}`))[0];
+  }
+
+  // TournamentSoftware legacy bracket levels count DOWN toward Winner.
+  // The championship final is level 2 (2001 + 2002) and feeds the Winner
+  // output at level 1 (1001). Earlier code incorrectly looked for 1001/1002.
+  const levelTwo=pool.filter(m=>/^2\d{3}$/.test(String(m.treeInputSlot1||''))&&/^2\d{3}$/.test(String(m.treeInputSlot2||'')));
+  if(levelTwo.length){
+    return levelTwo.sort((a,b)=>`${b.date} ${b.time}`.localeCompare(`${a.date} ${a.time}`))[0];
+  }
+
+  // A 3rd/4th playoff draw is normally a two-player single-match draw. If the
+  // renderer did not label its round "Final", use its latest concrete fixture.
+  if(placement){
+    return pool.sort((a,b)=>`${b.date} ${b.time}`.localeCompare(`${a.date} ${a.time}`))[0];
+  }
+  return null;
+}
+
+function resultPlacementLabel(text){
+  const s=clean(text||'');
+  return /\b3(?:rd)?\s*[\/-]\s*4(?:th)?(?:\s*[-–—]?\s*place)?\b/i.test(s) ||
+    /\bthird\s*[\/-]\s*fourth(?:\s*[-–—]?\s*place)?\b/i.test(s) ||
+    /\b(?:3rd|third)\s+place\b/i.test(s) ||
+    /\bbronze\b/i.test(s) ||
+    /\b(?:placement|play[- ]?off)\b/i.test(s);
+}
+
+function resultDrawIsExtra(draw){
+  return !!draw?.stageExtra || /\bextra\b/i.test(clean(draw?.contextText||''));
+}
+
+function resultDrawIsPlacement(draw){
+  return !!draw?.placement || resultPlacementLabel(`${draw?.text||''} ${draw?.contextText||''}`) || resultDrawIsExtra(draw);
+}
+
+function resultMatchIsThirdPlace(row){
+  return resultPlacementLabel(`${row?.round||''} ${row?.treeCaption||''} ${row?.drawName||''} ${row?.rawText||''}`);
+}
+
+
+async function scrapeOfficialChampionValidation(context){
+  const page=await context.newPage();
+  try{
+    console.log(`\nValidating draw champions against official Winners page: ${WINNERS_URL}`);
+    const extract=()=>page.evaluate(()=>{
+      const clean=s=>String(s||'').replace(/\u00a0/g,' ').replace(/\s+/g,' ').trim();const root=document.querySelector('main')||document.querySelector('[role="main"]')||document.body;
+      const rows=[];let currentEvent='',pendingPlace='';const eventRx=/\b(?:Men|Women)(?:'s)?\s*\+?\s*(?:35|40|45|50|55|60|65|70|75|80|85)\b/i;const playerHref=href=>/\/sport\/player\.aspx|\/player(?:\/|\?|$)|\/participant(?:\/|\?|$)|\/person(?:\/|\?|$)/i.test(String(href||''));
+      const walker=document.createTreeWalker(root,NodeFilter.SHOW_ELEMENT|NodeFilter.SHOW_TEXT);let node;while((node=walker.nextNode())){if(node.nodeType===Node.TEXT_NODE){const t=clean(node.nodeValue);if(currentEvent&&t==='1')pendingPlace='1';continue;}const el=node,tag=String(el.tagName||'').toUpperCase();if(!['A','H2','H3','H4','H5','STRONG'].includes(tag))continue;const text=clean(el.textContent||'');if(eventRx.test(text)&&text.length<120){currentEvent=text;pendingPlace='';continue;}if(tag!=='A'||!currentEvent||pendingPlace!=='1'||!playerHref(el.href))continue;const name=clean(el.textContent||'');if(!name)continue;rows.push({event:currentEvent,name,href:el.href});pendingPlace='';}
+      return {rows,bodyText:clean(root?.innerText||'').slice(0,3500)};
+    });
+    const attempts=[],mergedByKey=new Map();
+    for(let attempt=1;attempt<=4;attempt++){
+      // Re-navigate to the canonical URL on every attempt. TournamentSoftware
+      // occasionally leaves a thin 300-character render after the cookie wall;
+      // a simple reload can repeat that same incomplete shell.
+      await gotoTournamentSoftware(page,WINNERS_URL,4);await dismissPopups(page);await sleep(650);
+      const raw=await extract();attempts.push(raw);
+      for(const r of raw.rows||[]){const k=resultDrawKey(r.event);if(k&&!mergedByKey.has(k))mergedByKey.set(k,r);}
+      const keys=new Set(raw.rows.map(r=>resultDrawKey(r.event)).filter(Boolean));
+      if(mergedByKey.size>=21)break;
+      console.warn(`  Winners #1 render attempt ${attempt}: ${keys.size}/21 row(s), ${mergedByKey.size}/21 cumulative; ${attempt<4?'retrying...':'validation will fail if still incomplete.'}`);
+    }
+    if(!mergedByKey.size){const raw=attempts.sort((a,b)=>b.bodyText.length-a.bodyText.length)[0]||{bodyText:''};throw new Error(`Official Winners page produced no champion rows. Diagnostic: ${raw.bodyText.slice(0,900)}`);}
+    const out=[];for(const r of mergedByKey.values()){const meta=resultEventMeta(r.event);if(!meta.gender||!meta.ageGroup)continue;const key=`${meta.gender}|${meta.ageGroup}`;out.push({key,gender:meta.gender,ageGroup:meta.ageGroup,playerName:splitPlayerSeed(r.name).name,event:r.event});}out.sort((a,b)=>(a.gender==='Men'?0:1)-(b.gender==='Men'?0:1)||a.ageGroup-b.ageGroup);console.log(`Official Winners champion validation rows: ${out.length}.`);return out;
+  }finally{await page.close().catch(()=>{});}
+}
+
+function validateDrawChampionsAgainstOfficialWinners(results,officialChampions,players){
+  const genderOf=v=>/women|female/i.test(clean(v||''))?'Women':(/men|male/i.test(clean(v||''))?'Men':'');
+  const counts=new Map();
+  for(const p of players||[]){
+    const gender=genderOf(p?.gender),age=Number(p?.ageGroup)||0;
+    if(!gender||!age)continue;
+    const key=`${gender}|${age}`;
+    counts.set(key,(counts.get(key)||0)+1);
+  }
+  const expected=[...counts.entries()].filter(([,n])=>n>=4).map(([k])=>k).sort();
+  const draw=new Map();
+  for(const r of results||[]){
+    const place=Number(r?.placeRank)||resultPlaceRank(r?.place);
+    const gender=genderOf(r?.gender),age=Number(r?.ageGroup)||0;
+    if(place!==1||!gender||!age)continue;
+    draw.set(`${gender}|${age}`,clean(r?.playerName||''));
+  }
+  const official=new Map((officialChampions||[]).map(x=>[x.key,clean(x.playerName||'')]));
+
+  const missingOfficial=expected.filter(k=>!official.has(k));
+  if(missingOfficial.length){
+    throw new Error(`Official Winners champion validation is incomplete: ${missingOfficial.join(', ')}. Results were NOT published.`);
+  }
+  const missingDraw=expected.filter(k=>!draw.has(k));
+  if(missingDraw.length){
+    throw new Error(`Draw champion extraction is incomplete: ${missingDraw.join(', ')}. Results were NOT published.`);
+  }
+  const mismatches=[];
+  for(const k of expected){
+    const a=draw.get(k),b=official.get(k);
+    if(!sameName(a,b))mismatches.push(`${k}: draw="${a}" winners="${b}"`);
+  }
+  if(mismatches.length){
+    throw new Error(`Champion cross-check failed for ${mismatches.length} group(s): ${mismatches.join(' | ')}. Results were NOT published.`);
+  }
+  console.log(`Champion cross-check passed: ${expected.length}/${expected.length} draw champions match the official Winners page.`);
+  return true;
+}
+
+function buildOfficialTopFourFromDraws(drawResult,canonicalPlayers=[],officialMatchRows=[],officialChampionHints=[]){
+  const scheduleMatches=Array.isArray(drawResult?.matches)?drawResult.matches:[];
+  const resultMatches=Array.isArray(drawResult?.resultMatches)?drawResult.resultMatches:[];
+  const drawMatches=[...resultMatches,...scheduleMatches];
+  const catalog=Array.isArray(drawResult?.drawCatalog)?drawResult.drawCatalog:[];
+  const drawSnapshots=Array.isArray(drawResult?.drawSnapshots)?drawResult.drawSnapshots:[];
+  const snapshotByUrl=new Map(drawSnapshots.map(x=>[String(x.drawUrl||''),x]));
+  const officialChampionByKey=new Map((officialChampionHints||[]).map(x=>[String(x?.key||''),clean(x?.playerName||'')]));
+  if(!catalog.length)return [];
+
+  // Deliberately simple Results rule requested by the site owner:
+  //   1/2 = last championship match in the MAIN draw; then resolve that match's winner.
+  //   3/4 = last match in the matching 3rd/4th / playoff / Extra draw; then resolve its winner.
+  //         If there is no separate draw, use the explicit 3rd/4th playoff
+  //         inside the main draw.
+  // No chronological "latest match" guessing, Winners-page placement sourcing, or
+  // cross-category heuristics are used here. Structural semifinal losers are used
+  // only as the final fallback to locate an internal bronze playoff.
+  const RESULT_METHOD='simple-main-final-plus-playoff-v13-placement-edge';
+
+  const byId=new Map((canonicalPlayers||[]).filter(p=>p.officialPlayerId).map(p=>[String(p.officialPlayerId),p]));
+  const byName=new Map();
+  for(const p of canonicalPlayers||[]){
+    const k=nameKey(p.name);
+    if(!byName.has(k))byName.set(k,[]);
+    byName.get(k).push(p);
+  }
+
+  const categoryForText=text=>{
+    const meta=resultEventMeta(text||'');
+    return meta.gender&&meta.ageGroup?`${meta.gender}|${meta.ageGroup}`:'';
+  };
+  const categoryForDraw=d=>categoryForText(d?.text||'')||categoryForText(d?.contextText||'');
+  const categoryForRow=m=>categoryForText(`${m?.event||''} ${m?.drawName||''}`);
+
+  const concrete=m=>
+    !!m?.player1&&!!m?.player2&&
+    !/^(?:TBD|Bye)$/i.test(clean(m.player1))&&
+    !/^(?:TBD|Bye)$/i.test(clean(m.player2));
+
+  const pairKey=m=>{
+    const ids=[String(m?.player1Id||''),String(m?.player2Id||'')].filter(Boolean).sort();
+    if(ids.length===2)return ids.join('~');
+    return [nameKey(m?.player1||''),nameKey(m?.player2||'')].sort().join('~');
+  };
+
+  const localRowLabel=m=>clean(`${m?.round||''} ${m?.treeCaption||''}`);
+  const isSideBracketRow=m=>{
+    const s=localRowLabel(m);
+    return /\b(?:plate|consolation|position|bronze|placement)\b/i.test(s) ||
+      /\bplay[- ]?off\b/i.test(s) ||
+      /\b3(?:rd)?\s*[\/-]\s*4(?:th)?\b/i.test(s) ||
+      /\b3\s*\/\s*4\s*place\b/i.test(s) ||
+      /\bthird\s*[\/-]\s*fourth\b/i.test(s);
+  };
+  const isExplicitThirdFourthRow=m=>{
+    const s=localRowLabel(m);
+    return /\b3(?:rd)?\s*[\/-]\s*4(?:th)?(?:\s*[-–—]?\s*place)?\b/i.test(s) ||
+      /\b3\s*\/\s*4\s*place\b/i.test(s) ||
+      /\bthird\s*[\/-]\s*fourth(?:\s*place)?\b/i.test(s) ||
+      /\b(?:3rd|third)\s+place\b/i.test(s) ||
+      /\bbronze\b/i.test(s) ||
+      /\bposition\s*3\s*[-–—/]\s*4\b/i.test(s) ||
+      /\b3\s*[-–—]\s*4\s*play[- ]?off\b/i.test(s) ||
+      /\bplay[- ]?off\b/i.test(s);
+  };
+
+  const isSecondaryDraw=d=>{
+    if(d?.stageExtra)return true;
+    const s=clean(d?.text||'');
+    return /\b3(?:rd)?\s*[\/-]\s*4(?:th)?(?:\s*[-–—]?\s*place)?\b/i.test(s) ||
+      /\b3\s*\/\s*4\s*place\b/i.test(s) ||
+      /\bthird\s*[\/-]\s*fourth(?:\s*place)?\b/i.test(s) ||
+      /\bplay[- ]?off\b/i.test(s) ||
+      /\bbronze\b/i.test(s) ||
+      /\bextra\b/i.test(s);
+  };
+
+  const clockStamp=m=>{
+    const d=canonicalTournamentDate(m?.date);
+    if(!d)return '';
+    const raw=clean(m?.time||'');
+    const mt=raw.match(/\b(\d{1,2}):(\d{2})\s*(am|pm)?\b/i);
+    if(!mt)return `${d}T00:00`;
+    let h=Number(mt[1]),min=Number(mt[2]);
+    const ap=(mt[3]||'').toLowerCase();
+    if(ap==='pm'&&h<12)h+=12;
+    if(ap==='am'&&h===12)h=0;
+    return `${d}T${String(h).padStart(2,'0')}:${String(min).padStart(2,'0')}`;
+  };
+
+  // Winner enrichment is deliberately keyed by the selected MATCH, not by the
+  // event text. TournamentSoftware can repeat/broaden event text in rendered
+  // containers, which previously let a valid Women +35 final be ignored and an
+  // earlier semifinal become the published 1st/2nd pair.
+  const exactMatchKey=m=>`${pairKey(m)}|${clockStamp(m)}`;
+  const officialByPair=new Map();
+  const officialByExact=new Map();
+  for(const m of officialMatchRows||[]){
+    if(!concrete(m))continue;
+    const pair=pairKey(m);
+    if(!pair)continue;
+    if(!officialByPair.has(pair))officialByPair.set(pair,[]);
+    officialByPair.get(pair).push(m);
+    const stamp=clockStamp(m);
+    if(stamp){
+      const k=`${pair}|${stamp}`;
+      if(!officialByExact.has(k))officialByExact.set(k,[]);
+      officialByExact.get(k).push(m);
+    }
+  }
+
+  const winnerLoserFromResolved=(selected,resolved)=>{
+    const winner=resultWinnerFromMatch(resolved);
+    if(!winner)return null;
+    const loser=sameName(winner.name,resolved.player1)
+      ? {name:resolved.player2,id:String(resolved.player2Id||'')}
+      : {name:resolved.player1,id:String(resolved.player1Id||'')};
+    return {match:{...selected,...resolved,date:selected.date||resolved.date||'',time:selected.time||resolved.time||''},winner,loser};
+  };
+
+  const resolveSelectedMatch=(selected,sameDrawRows=[])=>{
+    if(!selected||!concrete(selected))return null;
+    const pair=pairKey(selected),stamp=clockStamp(selected);
+
+    // 1) The selected row itself.
+    if(resultWinnerFromMatch(selected))return winnerLoserFromResolved(selected,selected);
+
+    // 2) Another observation of the SAME draw edge. This handles the common
+    // case where the scheduled edge carries date/time while the progressed edge
+    // carries the winner.
+    const sameDraw=(sameDrawRows||[]).filter(x=>concrete(x)&&pairKey(x)===pair);
+    const sameExact=stamp?sameDraw.filter(x=>clockStamp(x)===stamp):[];
+    for(const pool of [sameExact,sameDraw]){
+      const withWinner=pool.filter(x=>resultWinnerFromMatch(x));
+      withWinner.sort((a,b)=>(Number(b.drawResultOrder)||0)-(Number(a.drawResultOrder)||0));
+      if(withWinner.length)return winnerLoserFromResolved(selected,withWinner[0]);
+    }
+
+    // 3) TournamentSoftware Matches page, exact pair + exact printed time first.
+    const exact=stamp?(officialByExact.get(`${pair}|${stamp}`)||[]):[];
+    const exactWinner=exact.find(x=>resultWinnerFromMatch(x));
+    if(exactWinner)return winnerLoserFromResolved(selected,exactWinner);
+
+    // 4) Same pair anywhere in official history. The pair is already fixed by
+    // the selected draw edge, so this does not choose a different match.
+    const pairRows=(officialByPair.get(pair)||[]).filter(x=>resultWinnerFromMatch(x));
+    pairRows.sort((a,b)=>clockStamp(b).localeCompare(clockStamp(a)));
+    if(pairRows.length)return winnerLoserFromResolved(selected,pairRows[0]);
+    return null;
+  };
+
+  // IMPORTANT: choose the LAST MATCH first, then resolve its winner. Previous
+  // code filtered to rows that already had a winner and therefore skipped a
+  // final whose winner marker was on another duplicate observation. That is why
+  // Women +35 incorrectly fell back to Catherine Mcqueen vs Joan Naarstig even
+  // though Zoe Petrovansky vs Samantha Foyle was the later final in the draw.
+  const chooseLastMatch=(rows,predicate=()=>true)=>{
+    const candidates=(rows||[]).filter(m=>concrete(m)&&predicate(m));
+    if(!candidates.length)return null;
+
+    // Prefer rows with an actual printed tournament date/time. This is the
+    // literal "last match in the draw" rule supplied by the site owner.
+    const dated=candidates.filter(m=>clockStamp(m));
+    const pool=dated.length?dated:candidates;
+    pool.sort((a,b)=>{
+      const at=clockStamp(a),bt=clockStamp(b);
+      if(at!==bt)return bt.localeCompare(at);
+      return (Number(b.drawResultOrder)||0)-(Number(a.drawResultOrder)||0);
+    });
+
+    // Duplicated render observations of the same final are harmless: try every
+    // observation at the latest timestamp before considering an older match.
+    const latestStamp=clockStamp(pool[0]);
+    const latest=latestStamp?pool.filter(m=>clockStamp(m)===latestStamp):pool;
+    for(const selected of latest){
+      const resolved=resolveSelectedMatch(selected,rows);
+      if(resolved)return resolved;
+    }
+
+    // If TournamentSoftware shows the final but has not exposed a winner yet,
+    // do NOT silently replace it with an earlier semifinal. Report unresolved.
+    return null;
+  };
+
+  const slotLevel=value=>{
+    const m=String(value||'').match(/^(\d)(\d{3})$/);
+    return m?Number(m[1]):0;
+  };
+
+  // "Last match in the draw" means the right-most championship edge in the
+  // bracket, NOT the chronologically latest fixture printed on the page.
+  // TournamentSoftware can print plate/consolation matches later in the day and
+  // can also move/remove the final's date/time after progression.  The legacy
+  // slot relationship is stable: a final is level 2 -> Winner level 1.
+  const selectedLastRawMatch=(rows,predicate=()=>true)=>{
+    const candidates=(rows||[]).filter(m=>concrete(m)&&predicate(m));
+    if(!candidates.length)return null;
+
+    const scored=candidates.map(m=>{
+      const a=slotLevel(m.treeInputSlot1),b=slotLevel(m.treeInputSlot2),o=slotLevel(m.treeOutputSlot);
+      const sameInput=!!a&&a===b;
+      let structural=0;
+      if(sameInput&&a===2&&o===1)structural=10000;
+      else if(sameInput&&o&&a===o+1)structural=7000-a*100;
+      else if(sameInput)structural=3000-a*100;
+      const label=clean(`${m.round||''} ${m.treeCaption||''}`);
+      const explicitFinal=/\bfinals?\b/i.test(label)&&!/semi|quarter/i.test(label)?500:0;
+      const hasWinner=resultWinnerFromMatch(m)?100:0;
+      const connected=/legacy-slot-tree/i.test(String(m.treeSource||''))?50:0;
+      return {m,structural,explicitFinal,hasWinner,connected,order:Number(m.drawResultOrder)||0};
+    });
+
+    const structural=scored.filter(x=>x.structural>0);
+    const pool=structural.length?structural:scored;
+    pool.sort((x,y)=>
+      y.structural-x.structural||
+      y.explicitFinal-x.explicitFinal||
+      y.hasWinner-x.hasWinner||
+      y.connected-x.connected||
+      y.order-x.order
+    );
+    return pool[0]?.m||null;
+  };
+
+  // When a draw page contains several placement trees, more than one row can
+  // look structurally like a final.  The official Winners page is used ONLY as
+  // a champion guard/disambiguator: it never supplies 2nd/3rd/4th.  We still
+  // obtain the runner-up from the exact main-draw match won by that champion.
+  const selectChampionshipFinal=(rows,key)=>{
+    const champion=officialChampionByKey.get(key)||'';
+    const candidates=(rows||[]).filter(m=>concrete(m)&&!isSideBracketRow(m));
+    if(!candidates.length)return null;
+
+    const resolved=[];
+    const seenPairs=new Set();
+    for(const raw of candidates){
+      const pair=pairKey(raw);
+      // Keep multiple structural copies when their slot/output differs.
+      const edgeKey=`${pair}|${raw.treeInputSlot1||''}|${raw.treeInputSlot2||''}|${raw.treeOutputSlot||''}`;
+      if(seenPairs.has(edgeKey))continue;
+      seenPairs.add(edgeKey);
+      const wl=resolveSelectedMatch(raw,rows);
+      if(!wl)continue;
+      const a=slotLevel(raw.treeInputSlot1),b=slotLevel(raw.treeInputSlot2),o=slotLevel(raw.treeOutputSlot);
+      const label=clean(`${raw.round||''} ${raw.treeCaption||''}`);
+      const explicitFinal=/\bfinals?\b/i.test(label)&&!/semi|quarter/i.test(label);
+      const structuralFinal=!!a&&a===b&&o&&a===o+1;
+      resolved.push({
+        raw,wl,
+        championMatch:champion&&sameName(wl.winner.name,champion)?1:0,
+        explicitFinal:explicitFinal?1:0,
+        structuralFinal:structuralFinal?1:0,
+        outputLevel:o||99,
+        order:Number(raw.drawResultOrder)||0,
+        stamp:clockStamp(raw)
+      });
+    }
+
+    if(champion){
+      const guarded=resolved.filter(x=>x.championMatch);
+      if(guarded.length){
+        guarded.sort((x,y)=>
+          y.explicitFinal-x.explicitFinal||
+          y.structuralFinal-x.structuralFinal||
+          x.outputLevel-y.outputLevel||
+          y.order-x.order||
+          y.stamp.localeCompare(x.stamp)
+        );
+        return guarded[0];
+      }
+      // Do not publish a different champion if the official #1 cannot be
+      // located as the winner of a main-draw match.
+      return null;
+    }
+
+    const raw=selectedLastRawMatch(rows,m=>!isSideBracketRow(m));
+    const wl=raw?resolveSelectedMatch(raw,rows):null;
+    return wl?{raw,wl}:null;
+  };
+
+  // In a dedicated 3rd/4th / Extra draw, TournamentSoftware can expose more
+  // than one small placement edge. The desired bronze match is the right-most
+  // placement edge feeding the first output slot (normally 1001), not simply
+  // the chronologically latest row. This is especially important for the
+  // Women's +70/+75 playoff pages, which can render two placement edges.
+  const selectPlacementMatch=(rows,finalists=new Set())=>{
+    const candidates=(rows||[]).filter(m=>
+      concrete(m)&&
+      (!finalists.size||(!finalists.has(nameKey(m.player1))&&!finalists.has(nameKey(m.player2))))
+    );
+    if(!candidates.length)return null;
+
+    const scored=candidates.map(m=>{
+      const a=slotLevel(m.treeInputSlot1),b=slotLevel(m.treeInputSlot2),o=slotLevel(m.treeOutputSlot);
+      const outRaw=String(m.treeOutputSlot||'');
+      const outNum=/^\d+$/.test(outRaw)?Number(outRaw):999999;
+      const sameInput=!!a&&a===b;
+      const exactPrimary=(sameInput&&a===2&&outRaw==='1001')?1:0;
+      const primaryOutput=(o===1&&outNum===1001)?1:0;
+      const structural=(sameInput&&o&&a===o+1)?1:0;
+      const explicit=isExplicitThirdFourthRow(m)?1:0;
+      const hasWinner=resultWinnerFromMatch(m)?1:0;
+      return {m,exactPrimary,primaryOutput,structural,explicit,hasWinner,outNum,order:Number(m.drawResultOrder)||0,stamp:clockStamp(m)};
+    });
+
+    // Output slot 1001 is the first/right-most placement result on these tiny
+    // TournamentSoftware trees. If it exists, it is the 3rd/4th match.
+    scored.sort((x,y)=>
+      y.exactPrimary-x.exactPrimary||
+      y.primaryOutput-x.primaryOutput||
+      y.explicit-x.explicit||
+      y.structural-x.structural||
+      x.outNum-y.outNum||
+      y.hasWinner-x.hasWinner||
+      x.order-y.order||
+      y.stamp.localeCompare(x.stamp)
+    );
+
+    for(const x of scored){
+      const wl=resolveSelectedMatch(x.m,rows);
+      if(wl)return wl;
+    }
+    return null;
+  };
+
+  const findInternalBronzeFromFinal=(mainRows,finalRaw,final)=>{
+    if(!finalRaw||!final)return null;
+    const finalists=[final.winner,final.loser];
+    const finalistKeys=new Set(finalists.map(x=>nameKey(x.name)));
+    const inputSlots=[String(finalRaw.treeInputSlot1||''),String(finalRaw.treeInputSlot2||'')].filter(Boolean);
+    const semiLosers=[];
+
+    // First choice: exact feeder edges into the selected championship final.
+    if(inputSlots.length===2){
+      for(const slot of inputSlots){
+        const feeders=mainRows.filter(m=>concrete(m)&&String(m.treeOutputSlot||'')===slot);
+        const resolvedFeeders=feeders.map(m=>resolveSelectedMatch(m,mainRows)).filter(Boolean);
+        const feeder=resolvedFeeders.find(wl=>finalistKeys.has(nameKey(wl.winner.name)));
+        if(feeder&&!finalistKeys.has(nameKey(feeder.loser.name))&&!semiLosers.some(x=>sameName(x.name,feeder.loser.name))){
+          semiLosers.push(feeder.loser);
+        }
+      }
+    }
+
+    // Modern wrappers sometimes omit connector IDs.  In that case choose the
+    // closest preceding win for each finalist, never a match from another draw.
+    if(semiLosers.length<2){
+      for(const finalist of finalists){
+        const wins=[];
+        const seen=new Set();
+        for(const m of mainRows){
+          if(!concrete(m)||pairKey(m)===pairKey(finalRaw)||isSideBracketRow(m))continue;
+          const pk=pairKey(m);
+          if(seen.has(pk))continue;
+          seen.add(pk);
+          const wl=resolveSelectedMatch(m,mainRows);
+          if(!wl||!sameName(wl.winner.name,finalist.name)||finalistKeys.has(nameKey(wl.loser.name)))continue;
+          wins.push({wl,order:Number(m.drawResultOrder)||0,stamp:clockStamp(m)});
+        }
+        wins.sort((a,b)=>b.order-a.order||b.stamp.localeCompare(a.stamp));
+        const loser=wins[0]?.wl?.loser;
+        if(loser&&!semiLosers.some(x=>sameName(x.name,loser.name)))semiLosers.push(loser);
+      }
+    }
+
+    if(semiLosers.length!==2)return null;
+    const bronzePair=[nameKey(semiLosers[0].name),nameKey(semiLosers[1].name)].sort().join('~');
+    const candidates=[...mainRows,...(officialMatchRows||[])].filter(m=>
+      concrete(m)&&[nameKey(m.player1),nameKey(m.player2)].sort().join('~')===bronzePair
+    );
+    candidates.sort((a,b)=>{
+      const al=isExplicitThirdFourthRow(a)?1:0,bl=isExplicitThirdFourthRow(b)?1:0;
+      const aw=resultWinnerFromMatch(a)?1:0,bw=resultWinnerFromMatch(b)?1:0;
+      return bl-al||bw-aw||(Number(b.drawResultOrder)||0)-(Number(a.drawResultOrder)||0)||clockStamp(b).localeCompare(clockStamp(a));
+    });
+    for(const raw of candidates){
+      const wl=resolveSelectedMatch(raw,candidates);
+      if(wl)return wl;
+    }
+    return null;
+  };
+
+  const snapshotPlayersForDraw=d=>{
+    const snap=snapshotByUrl.get(String(d?.href||''));
+    const out=[],seen=new Set();
+    for(const p of snap?.players||[]){
+      const id=String(p?.officialPlayerId||'');
+      const k=id||nameKey(p?.name||'');
+      if(!k||seen.has(k))continue;
+      seen.add(k);out.push(p);
+    }
+    return out;
+  };
+
+  const drawStrength=d=>{
+    const ps=snapshotPlayersForDraw(d).length;
+    const stat=(drawResult.treeDrawStats||[]).find(x=>String(x.drawUrl||'')===String(d?.href||''))||{};
+    return ps*100000+(Number(stat.deterministicTreeMatches)||0)*100+(Number(stat.positionedPlayers)||0);
+  };
+
+  const roundRobinStandingsForDraw=(draw,mainRows,key)=>{
+    const snap=snapshotByUrl.get(String(draw?.href||''))||{};
+    const roster=snapshotPlayersForDraw(draw)
+      .filter(p=>clean(p?.name||''))
+      .filter((p,i,a)=>a.findIndex(q=>nameKey(q.name)===nameKey(p.name))===i);
+    if(roster.length<4)return null;
+    const rosterByKey=new Map(roster.map(p=>[nameKey(p.name),p]));
+
+    // Preferred round-robin source: TournamentSoftware's own standings table.
+    // Rank by W/Won. A listed-but-withdrawn entrant with zero played matches is
+    // excluded from the active standings.
+    const parseIntCell=v=>{const m=clean(v||'').match(/^-?\d+$/);return m?Number(m[0]):null;};
+    const normHeader=v=>clean(v||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+    const directCandidates=[];
+    for(const table of snap.roundRobinTables||[]){
+      const headers=(table.headers||[]).map(normHeader);
+      const winIdx=headers.findIndex(h=>/^(?:w|won|win|wins|matches won|match wins)$/.test(h));
+      const lossIdx=headers.findIndex(h=>/^(?:l|lost|loss|losses|matches lost|match losses)$/.test(h));
+      const playedIdx=headers.findIndex(h=>/^(?:pld|played|p|matches played|match played)$/.test(h));
+      const posIdx=headers.findIndex(h=>/^(?:pos|position|place|rank|ranking)$/.test(h));
+      if(winIdx<0)continue;
+      const rows=[];
+      for(const r of table.rows||[]){
+        const person=rosterByKey.get(nameKey(r.playerName||''));if(!person)continue;
+        const cells=r.cells||[];const wins=parseIntCell(cells[winIdx]);if(wins==null)continue;
+        const losses=lossIdx>=0?parseIntCell(cells[lossIdx]):null;
+        const played=playedIdx>=0?parseIntCell(cells[playedIdx]):null;
+        const pos=posIdx>=0?parseIntCell(cells[posIdx]):null;
+        if(played===0||(played==null&&wins===0&&losses===0))continue;
+        rows.push({person:{name:person.name,id:String(person.officialPlayerId||'')},wins,losses:losses??0,played:played??null,pos:pos??null,gameDiff:0,pointDiff:0});
+      }
+      const unique=[...new Map(rows.map(x=>[nameKey(x.person.name),x])).values()];
+      if(unique.length>=4){unique.sort((a,b)=>b.wins-a.wins||((a.pos??999)-(b.pos??999))||a.losses-b.losses||a.person.name.localeCompare(b.person.name));directCandidates.push({rows:unique,table});}
+    }
+    directCandidates.sort((a,b)=>b.rows.length-a.rows.length);
+    if(directCandidates.length){
+      const top4=directCandidates[0].rows.slice(0,4);
+      console.log(`  TOP4 ${key}: round-robin standings table -> ${top4.map(x=>`${x.person.name} (${x.wins} wins)`).join(' > ')}`);
+      return {top4,completedPairs:null,expectedPairs:null,participantCount:directCandidates[0].rows.length,standingsTable:true};
+    }
+
+    // Fallback: calculate standings from decided head-to-heads. Determine the
+    // ACTIVE participant set from concrete pairings, not every name printed on
+    // the draw. Men +85 exposes 15 pairings = six active players; the old code
+    // incorrectly required 21 because a seventh listed entrant never played.
+    const observedKeys=new Set();
+    for(const m of mainRows||[]){if(!concrete(m))continue;const a=nameKey(m.player1),b=nameKey(m.player2);if(rosterByKey.has(a)&&rosterByKey.has(b)&&a!==b){observedKeys.add(a);observedKeys.add(b);}}
+    for(const m of officialMatchRows||[]){if(!concrete(m))continue;const rowKey=categoryForRow(m);if(rowKey&&rowKey!==key)continue;const a=nameKey(m.player1),b=nameKey(m.player2);if(rosterByKey.has(a)&&rosterByKey.has(b)&&a!==b){observedKeys.add(a);observedKeys.add(b);}}
+    let participants=roster.filter(p=>observedKeys.has(nameKey(p.name)));if(participants.length<4)participants=roster;
+    const participantKeys=new Set(participants.map(p=>nameKey(p.name)));
+    const expectedPairs=participants.length*(participants.length-1)/2;
+    const pairEvidence=new Map();
+    const parseScoreDiff=row=>{const games=[...clean(row?.result||'').matchAll(/(\d{1,2})\s*[-–—]\s*(\d{1,2})/g)].map(x=>[Number(x[1]),Number(x[2])]);let gameDiff=0,pointDiff=0;for(const [a,b] of games){gameDiff+=a>b?1:(b>a?-1:0);pointDiff+=a-b;}return {gameDiff,pointDiff};};
+    const consider=(raw,sourceRank)=>{
+      if(!concrete(raw))return;const a=nameKey(raw.player1),b=nameKey(raw.player2);if(!participantKeys.has(a)||!participantKeys.has(b)||a===b)return;const pk=[a,b].sort().join('~');
+      let wl=null;if(String(raw.drawUrl||'')===String(draw.href||''))wl=resolveSelectedMatch(raw,mainRows);if(!wl&&resultWinnerFromMatch(raw))wl=winnerLoserFromResolved(raw,raw);if(!wl)return;
+      const score=parseScoreDiff(wl.match||raw);const quality=sourceRank*100000+(clockStamp(raw)?50000:0)+(clean((wl.match||raw).result||'')?1000:0)+(Number(raw.drawResultOrder)||0);const existing=pairEvidence.get(pk);if(!existing||quality>existing.quality)pairEvidence.set(pk,{...wl,quality,score});
+    };
+    for(const m of mainRows||[])consider(m,3);
+    for(const m of officialMatchRows||[]){const rowKey=categoryForRow(m);if(rowKey&&rowKey!==key)continue;consider(m,2);}
+    if(pairEvidence.size<expectedPairs){console.warn(`  TOP4 ${key}: round-robin candidate has only ${pairEvidence.size}/${expectedPairs} completed active-player pair result(s); standings not used.`);return null;}
+    const stats=new Map(participants.map(p=>[nameKey(p.name),{person:{name:p.name,id:String(p.officialPlayerId||'')},wins:0,losses:0,gameDiff:0,pointDiff:0}]));
+    for(const e of pairEvidence.values()){const wk=nameKey(e.winner.name),lk=nameKey(e.loser.name),ws=stats.get(wk),ls=stats.get(lk);if(!ws||!ls)continue;ws.wins++;ls.losses++;const row=e.match||{},p1k=nameKey(row.player1),p2k=nameKey(row.player2),sd=e.score||{gameDiff:0,pointDiff:0};if(p1k===wk){ws.gameDiff+=sd.gameDiff;ws.pointDiff+=sd.pointDiff;ls.gameDiff-=sd.gameDiff;ls.pointDiff-=sd.pointDiff;}else if(p2k===wk){ws.gameDiff-=sd.gameDiff;ws.pointDiff-=sd.pointDiff;ls.gameDiff+=sd.gameDiff;ls.pointDiff+=sd.pointDiff;}}
+    const all=[...stats.values()];const tiedMiniWins=stat=>{const tied=new Set(all.filter(x=>x.wins===stat.wins).map(x=>nameKey(x.person.name)));let n=0;for(const e of pairEvidence.values()){const w=nameKey(e.winner.name),l=nameKey(e.loser.name);if(tied.has(w)&&tied.has(l)&&w===nameKey(stat.person.name))n++;}return n;};
+    all.sort((a,b)=>b.wins-a.wins||tiedMiniWins(b)-tiedMiniWins(a)||b.gameDiff-a.gameDiff||b.pointDiff-a.pointDiff||a.person.name.localeCompare(b.person.name));const top4=all.slice(0,4);if(top4.length<4)return null;return {top4,completedPairs:pairEvidence.size,expectedPairs,participantCount:participants.length};
+  };
+
+
+  const byKey=new Map();
+  for(const d of catalog){
+    const key=categoryForDraw(d);
+    if(!key)continue;
+    if(!byKey.has(key))byKey.set(key,[]);
+    byKey.get(key).push(d);
+  }
+
+  const rows=[];
+  const addPlacement=(eventMeta,place,resolved,person,sourceLabel)=>{
+    if(!person?.name)return;
+    const id=String(person.id||'');
+    const matches=byName.get(nameKey(person.name))||[];
+    const player=(id&&byId.get(id))||(matches.length===1?matches[0]:null);
+    const countryMeta=drawCountryMeta(
+      player?.drawCountryCode||player?.iso3||'',
+      player?.country||'',
+      player?.flagCode||''
+    );
+    rows.push(normalizeResultCountryRecord({
+      event:eventMeta.event,
+      gender:eventMeta.gender||player?.gender||'',
+      ageGroup:eventMeta.ageGroup??player?.ageGroup??null,
+      place:String(place),
+      placeRank:Number(place),
+      playerName:player?.name||person.name,
+      officialPlayerId:player?.officialPlayerId||id||'',
+      officialProfileUrl:player?.officialProfileUrl||'',
+      country:countryMeta.country||player?.country||'',
+      iso3:countryMeta.iso3||player?.iso3||'',
+      flagCode:countryMeta.flagCode||player?.flagCode||'',
+      countryCode:countryMeta.drawCountryCode||player?.drawCountryCode||'',
+      seed:clean(player?.seed||''),
+      squashLevelsWorldRank:player?.squashLevelsWorldRank??null,
+      squashLevelsLevel:player?.squashLevelsLevel??null,
+      squashLevelsLevelProvisional:!!player?.squashLevelsLevelProvisional,
+      club:clean(player?.squashLevelsClubLocation||''),
+      source:sourceLabel,
+      sourceUrl:resolved?.match?.drawUrl||resolved?.match?.sourceUrl||DRAWS_URL,
+      resultMethod:RESULT_METHOD
+    }));
+  };
+
+  const coverage=[];
+  for(const [key,draws] of byKey){
+    const [gender,ageRaw]=key.split('|');
+    const ageGroup=Number(ageRaw);
+    const meta={event:`${gender==='Women'?"Women's":"Men's"} +${ageGroup}`,gender,ageGroup};
+
+    const mainCandidates=draws.filter(d=>!isSecondaryDraw(d)).sort((a,b)=>drawStrength(b)-drawStrength(a));
+    const mainDraw=mainCandidates[0]||null;
+    if(!mainDraw){
+      coverage.push({key,places:[],mainDraw:'',secondaryDraw:''});
+      continue;
+    }
+
+    const mainRows=drawMatches.filter(m=>String(m.drawUrl||'')===String(mainDraw.href||''));
+
+    // USER RULE, literally:
+    //   main draw -> last championship match -> 1st/2nd.
+    // Select the last draw match BEFORE asking whether its particular DOM copy
+    // contains a result. Winner enrichment is done afterwards for that pair.
+    const finalChoice=selectChampionshipFinal(mainRows,key);
+    const finalRaw=finalChoice?.raw||null;
+    const final=finalChoice?.wl||null;
+    if(!final){
+      const championHint=officialChampionByKey.get(key)||'';
+      console.warn(`  TOP4 ${key}: championship match could not be resolved${championHint?` for official champion ${championHint}`:''}; checking round-robin fallback if no playoff exists.`);
+    }
+
+    const finalPair=finalRaw?pairKey(finalRaw):'';
+    const finalists=new Set(final?[nameKey(final.winner.name),nameKey(final.loser.name)]:[]);
+    const secondaryDraws=draws
+      .filter(d=>String(d.href||'')!==String(mainDraw.href||''))
+      .filter(isSecondaryDraw)
+      .sort((a,b)=>{
+        // Explicit 3rd/4th-style names before a generic Stage=Extra draw.
+        const an=resultPlacementLabel(clean(a.text||''))?1:0;
+        const bn=resultPlacementLabel(clean(b.text||''))?1:0;
+        if(an!==bn)return bn-an;
+        return drawStrength(b)-drawStrength(a);
+      });
+
+    let playoff=null,playoffDraw=null,playoffSource='';
+    for(const d of secondaryDraws){
+      const pRows=drawMatches.filter(m=>String(m.drawUrl||'')===String(d.href||''));
+      // A bronze match cannot contain either finalist.  For a dedicated
+      // 3rd/4th or Extra draw the rule is simply: take the last completed match
+      // IN THAT DRAW.  Do not apply championship-bracket slot heuristics to the
+      // tiny playoff draw; those heuristics were the reason valid bronze rows
+      // were skipped in Women +70/+75.
+      let candidate=selectPlacementMatch(pRows,finalists);
+
+      // Some TournamentSoftware 3rd/4th draws render only the two player boxes
+      // and no structural match edge.  In that case the two unique draw players
+      // identify the playoff pair exactly; resolve that pair from the published
+      // match history rather than guessing another bracket edge.
+      if(!candidate){
+        const entrants=snapshotPlayersForDraw(d)
+          .filter(x=>!finalists.size||!finalists.has(nameKey(x.name)))
+          .filter((x,i,a)=>a.findIndex(y=>nameKey(y.name)===nameKey(x.name))===i);
+        if(entrants.length===2){
+          const target=[nameKey(entrants[0].name),nameKey(entrants[1].name)].sort().join('~');
+          const evidence=[...pRows,...(officialMatchRows||[])]
+            .filter(m=>concrete(m)&&[nameKey(m.player1),nameKey(m.player2)].sort().join('~')===target)
+            .sort((a,b)=>clockStamp(b).localeCompare(clockStamp(a))||(Number(b.drawResultOrder)||0)-(Number(a.drawResultOrder)||0));
+          for(const raw of evidence){
+            const wl=String(raw.drawUrl||'')===String(d.href||'')
+              ? resolveSelectedMatch(raw,pRows)
+              : (resultWinnerFromMatch(raw)?winnerLoserFromResolved(raw,raw):null);
+            if(wl){candidate=wl;break;}
+          }
+        }
+      }
+
+      if(candidate){
+        playoff=candidate;playoffDraw=d;
+        playoffSource='TournamentSoftware 3rd/4th / Extra Draw Last Match';
+        break;
+      }
+    }
+
+    // No separate secondary draw: first use an explicitly labelled playoff in
+    // the main draw. This is still the same simple rule; it is just the fallback
+    // location supplied by the site owner.
+    if(!playoff){
+      const internalRows=mainRows.filter(m=>isExplicitThirdFourthRow(m)&&(!finalists.size||(!finalists.has(nameKey(m.player1))&&!finalists.has(nameKey(m.player2)))));
+      const raw=selectedLastRawMatch(internalRows,()=>true);
+      const candidate=raw?resolveSelectedMatch(raw,mainRows):null;
+      if(candidate){
+        playoff=candidate;
+        playoffSource='TournamentSoftware Main Draw Explicit 3rd/4th Playoff';
+      }
+    }
+
+    // No separate playoff draw and no explicit label: follow the two feeder
+    // matches into the SELECTED championship final. Their losers are the bronze
+    // finalists; their head-to-head inside this same draw gives 3rd/4th.
+    if(!playoff&&final){
+      const candidate=findInternalBronzeFromFinal(mainRows,finalRaw,final);
+      if(candidate){
+        playoff=candidate;
+        playoffSource='TournamentSoftware Main Draw Semifinal-Loser Playoff';
+      }
+    }
+
+    if(playoff&&finalists.size&&(
+      finalists.has(nameKey(playoff.winner?.name))||
+      finalists.has(nameKey(playoff.loser?.name))
+    )){
+      console.warn(`  TOP4 ${key}: rejected 3rd/4th pair because it overlaps the finalists (${playoff.winner?.name||'?'} / ${playoff.loser?.name||'?'}).`);
+      playoff=null;playoffSource='';playoffDraw=null;
+    }
+
+    // If there is no separate/in-draw playoff at all, the site owner says the
+    // category is a round robin.  In that format every entrant plays every
+    // other entrant and the standings, not a fake "final" edge, determine all
+    // four places.  This is the Men +85 case.
+    let roundRobin=null;
+    if(!playoff&&secondaryDraws.length===0){
+      roundRobin=roundRobinStandingsForDraw(mainDraw,mainRows,key);
+    }
+
+    if(roundRobin){
+      const rrResolved={match:{drawUrl:mainDraw.href||DRAWS_URL,sourceUrl:mainDraw.href||DRAWS_URL}};
+      roundRobin.top4.forEach((x,i)=>addPlacement(
+        meta,i+1,rrResolved,x.person,'TournamentSoftware Main Draw Round Robin Standings'
+      ));
+      coverage.push({
+        key,places:[1,2,3,4],mainDraw:mainDraw.text||'',secondaryDraw:'',
+        finalPair:`RR standings: ${roundRobin.top4.map(x=>`${x.person.name} (${x.wins} wins)`).join(' > ')}`,
+        playoffPair:'',roundRobin:true
+      });
+      continue;
+    }
+
+    if(final){
+      addPlacement(meta,1,final,final.winner,'TournamentSoftware Main Draw Championship Match');
+      addPlacement(meta,2,final,final.loser,'TournamentSoftware Main Draw Championship Match');
+    }
+    if(playoff){
+      addPlacement(meta,3,playoff,playoff.winner,playoffSource);
+      addPlacement(meta,4,playoff,playoff.loser,playoffSource);
+    }
+
+    const places=[final?1:null,final?2:null,playoff?3:null,playoff?4:null].filter(Boolean);
+    coverage.push({
+      key,places,
+      mainDraw:mainDraw.text||'',
+      secondaryDraw:playoffDraw?.text||'',
+      finalPair:final?`${final.winner.name} > ${final.loser.name}`:'',
+      playoffPair:playoff?`${playoff.winner.name} > ${playoff.loser.name}`:''
+    });
+  }
+
+  const dedup=[];
+  const seen=new Set();
+  for(const r of rows.sort((a,b)=>{
+    const ga=a.gender==='Men'?0:a.gender==='Women'?1:2;
+    const gb=b.gender==='Men'?0:b.gender==='Women'?1:2;
+    return ga-gb||(Number(a.ageGroup)||999)-(Number(b.ageGroup)||999)||(Number(a.placeRank)||99)-(Number(b.placeRank)||99);
+  })){
+    const k=`${r.gender}|${r.ageGroup}|${r.placeRank}`;
+    if(seen.has(k))continue;
+    seen.add(k);dedup.push(r);
+  }
+
+  for(const x of coverage){
+    if(x.roundRobin){
+      console.log(`  TOP4 ${x.key}: ${x.finalPair||'round-robin standings unresolved'}`);
+    }else{
+      console.log(`  TOP4 ${x.key}: 1/2=${x.finalPair||'(unresolved)'}; 3/4=${x.playoffPair||'(unresolved)'}${x.secondaryDraw?` via ${x.secondaryDraw}`:''}`);
+    }
+  }
+  const complete=coverage.filter(x=>[1,2,3,4].every(p=>x.places.includes(p)));
+  const incomplete=coverage.filter(x=>![1,2,3,4].every(p=>x.places.includes(p)));
+  console.log(`Official simple draw top-four: ${dedup.length} placement row(s) across ${coverage.length} age/gender group(s); ${complete.length} complete top-four group(s).`);
+  if(incomplete.length){
+    console.warn(`Incomplete simple top-four groups: ${incomplete.map(x=>`${x.key} [${x.places.join(',')||'none'}]`).join('; ')}`);
+  }
+  return dedup;
+}
+
+function assertCompleteTopFourResults(results,players,label='Results'){
+  const genderOf=v=>/women|female/i.test(clean(v||''))?'Women':(/men|male/i.test(clean(v||''))?'Men':'');
+  const expectedCounts=new Map();
+  for(const p of players||[]){
+    const gender=genderOf(p?.gender);
+    const age=Number(p?.ageGroup)||0;
+    if(!gender||!age)continue;
+    const k=`${gender}|${age}`;
+    expectedCounts.set(k,(expectedCounts.get(k)||0)+1);
+  }
+  const expected=[...expectedCounts.entries()].filter(([,count])=>count>=4).map(([k])=>k).sort();
+  const actual=new Map(),names=new Map();
+  for(const r of results||[]){
+    const gender=genderOf(r?.gender);
+    const age=Number(r?.ageGroup)||0;
+    const place=Number(r?.placeRank)||resultPlaceRank(r?.place);
+    if(!gender||!age||place<1||place>4)continue;
+    const k=`${gender}|${age}`;
+    if(!actual.has(k))actual.set(k,new Set());
+    if(!names.has(k))names.set(k,new Set());
+    actual.get(k).add(place);
+    if(clean(r?.playerName||''))names.get(k).add(nameKey(r.playerName));
+  }
+  const incomplete=expected.filter(k=>![1,2,3,4].every(p=>actual.get(k)?.has(p))||(names.get(k)?.size||0)!==4);
+  if(incomplete.length){
+    const detail=incomplete.map(k=>`${k} [places=${[...(actual.get(k)||[])].sort((a,b)=>a-b).join(',')||'none'}; uniquePlayers=${names.get(k)?.size||0}]`).join('; ');
+    console.warn(`${label} top-four extraction incomplete/invalid for ${incomplete.length} group(s): ${detail}.`);
+    return false;
+  }
+  console.log(`${label} top-four validation: ${expected.length}/${expected.length} age/gender group(s) have places 1-4.`);
+  return true;
+}
+
+function mergeOfficialResults(existingRows,freshRows){
+  const old=(existingRows||[]).map(normalizeResultCountryRecord);
+  const fresh=(freshRows||[]).map(normalizeResultCountryRecord);
+
+  const placementKey=r=>{
+    const rank=Number(r?.placeRank)||resultPlaceRank(r?.place);
+    const gender=clean(r?.gender||'');
+    const age=Number(r?.ageGroup)||0;
+    return gender&&age&&rank>=1&&rank<=4?`${gender}|${age}|${rank}`:'';
+  };
+  const categoryKey=r=>{
+    const gender=clean(r?.gender||'');
+    const age=Number(r?.ageGroup)||0;
+    return gender&&age?`${gender}|${age}`:'';
+  };
+
+  // Do not carry forward rows from the superseded v5 heuristic: those are the
+  // rows that could mistake a consolation final for the championship final.
+  // Only rows produced by this exact v13 selector are eligible as a fallback on later refreshes.
+  const trustedOld=old.filter(r=>/^simple-main-final-plus-playoff-v13-placement-edge$/i.test(String(r?.resultMethod||'')));
+
+  const group=rows=>{
+    const m=new Map();
+    for(const r of rows){
+      const k=categoryKey(r);if(!k)continue;
+      if(!m.has(k))m.set(k,[]);
+      m.get(k).push(r);
+    }
+    return m;
+  };
+  const fg=group(fresh),og=group(trustedOld);
+  const allCats=new Set([...fg.keys(),...og.keys()]);
+  const merged=[];
+  const isComplete=rows=>{
+    const ps=new Set((rows||[]).map(r=>Number(r.placeRank)||resultPlaceRank(r.place)));
+    return [1,2,3,4].every(p=>ps.has(p));
+  };
+
+  for(const cat of allCats){
+    const f=fg.get(cat)||[],o=og.get(cat)||[];
+    // Results are a coherent top-four set. A complete fresh draw replaces the
+    // whole category atomically. If a later crawl is temporarily incomplete,
+    // preserve the last COMPLETE v13 set rather than mixing unrelated halves.
+    const chosen=isComplete(f)?f:(isComplete(o)?o:f);
+    const seenPlace=new Set();
+    for(const r of chosen.sort((a,b)=>(Number(a.placeRank)||resultPlaceRank(a.place))-(Number(b.placeRank)||resultPlaceRank(b.place)))){
+      const pk=placementKey(r);if(!pk||seenPlace.has(pk))continue;
+      seenPlace.add(pk);merged.push(r);
+    }
+  }
+
+  merged.sort((a,b)=>{
+    const ga=a.gender==='Men'?0:a.gender==='Women'?1:2;
+    const gb=b.gender==='Men'?0:b.gender==='Women'?1:2;
+    return ga-gb||(Number(a.ageGroup)||999)-(Number(b.ageGroup)||999)||(Number(a.placeRank)||resultPlaceRank(a.place))-(Number(b.placeRank)||resultPlaceRank(b.place))||String(a.playerName||'').localeCompare(String(b.playerName||''));
+  });
+
+  const grouped=group(merged);
+  const incomplete=[...grouped.entries()].filter(([,rows])=>!isComplete(rows)).map(([k,rows])=>`${k} [${rows.map(r=>Number(r.placeRank)||resultPlaceRank(r.place)).sort((a,b)=>a-b).join(',')}]`);
+  console.log(`Published draw-result groups: ${grouped.size}; complete top-four groups: ${grouped.size-incomplete.length}.`);
+  if(incomplete.length)console.warn(`Incomplete published top-four groups: ${incomplete.join('; ')}`);
+  return merged;
+}
+
+function mergeQuickLatestMatches(existingRows,freshRows){
+  const out=(existingRows||[]).map(m=>({...m}));
+  const pairKey=m=>[
+    String(m?.player1Id||nameKey(m?.player1||'')),
+    String(m?.player2Id||nameKey(m?.player2||''))
+  ].sort().join('~');
+  const timeKey=m=>clean(m?.time||'').toLowerCase();
+  const dateKey=m=>canonicalTournamentDate(m?.date);
+  const concrete=n=>!!clean(n)&&!/^(?:TBD|Bye)$/i.test(clean(n));
+  const exactKey=m=>`${dateKey(m)}|${timeKey(m)}|${pairKey(m)}`;
+  const overlay=(target,fresh)=>{
+    for(const k of ['event','round','venue','court','result','winner','winnerId','resultSource','source','sourceUrl']){
+      if(clean(fresh?.[k]||''))target[k]=fresh[k];
+    }
+    if(fresh?.player1Id)target.player1Id=fresh.player1Id;
+    if(fresh?.player2Id)target.player2Id=fresh.player2Id;
+    const freshStatus=String(fresh?.status||'').toLowerCase();
+    if(freshStatus==='completed'||freshStatus==='played'||fresh?.result||fresh?.winner)target.status='completed';
+    else if(freshStatus==='live')target.status='live';
+    return target;
+  };
+
+  let updated=0,added=0,slotUpdated=0;
+  for(const fresh of freshRows||[]){
+    const d=dateKey(fresh),t=timeKey(fresh);
+    if(!d||!t)continue;
+    const exact=out.map((m,i)=>[m,i]).filter(([m])=>exactKey(m)===exactKey(fresh));
+    if(exact.length===1){overlay(exact[0][0],fresh);updated++;continue;}
+
+    const sides=[fresh.player1,fresh.player2].filter(concrete);
+    if(sides.length===1){
+      const known=sides[0];
+      const knownId=sameName(fresh.player1,known)?fresh.player1Id:fresh.player2Id;
+      const candidates=out.filter(m=>dateKey(m)===d&&timeKey(m)===t&&(
+        (knownId&&(String(m.player1Id||'')===String(knownId)||String(m.player2Id||'')===String(knownId)))||
+        sameName(m.player1,known)||sameName(m.player2,known)
+      ));
+      if(candidates.length===1){overlay(candidates[0],fresh);slotUpdated++;}
+      continue;
+    }
+
+    if(sides.length===2){
+      out.push({...fresh,court:sanitizeCourtValue(fresh.court),rawText:''});
+      added++;
+    }
+  }
+  console.log(`Quick latest-match merge: ${updated} exact update(s), ${slotUpdated} one-player slot update(s), ${added} new concrete fixture(s).`);
+  return cleanupDuplicateTournamentFixtures(out,freshRows||[]);
+}
+
 (async()=>{
   const stopTotalTiming=phaseTimer('TOTAL refresh');
   const existing=loadExisting();
-  const existingPlayers=repairDuplicateSquashLevelsIdentity(Array.isArray(existing.players)?existing.players.map(p=>normalizePlayerIdentityRecord({...p})):[]);
+  const existingPlayers=repairDuplicateSquashLevelsIdentity(Array.isArray(existing.players)?existing.players.map(p=>normalizePlayerCountryRecord(normalizePlayerIdentityRecord({...p}))):[]);
   const trackedNames=loadTrackedNames();
 
   if(FULL_REBUILD){
@@ -8805,6 +10151,115 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
     return;
   }
 
+  if(RESULTS_CHECK){
+    console.log('\n=== RESULTS LIVE CHECK (:resultscheck) ===');
+    console.log('Dry-run only: crawl official draws and the Winners #1 column, calculate all top four, validate, and write NOTHING.\n');
+    if(existingPlayers.length<850)throw new Error(`Published player snapshot has only ${existingPlayers.length} players; refusing Results check.`);
+    const existingMatches=Array.isArray(existing.matches)?existing.matches:[];
+    const browser=await launchBrowser();
+    const context=await browser.newContext({viewport:{width:1440,height:1000},locale:'en-AU',timezoneId:'Australia/Perth'});
+    try{
+      const draw=await scrapeOfficialDrawSchedule(context,{skipMatchPages:true,canonicalPlayers:existingPlayers});
+      const champions=await scrapeOfficialChampionValidation(context);
+      const results=buildOfficialTopFourFromDraws(draw,existingPlayers,existingMatches,champions);
+      if(!assertCompleteTopFourResults(results,existingPlayers,'RESULTS CHECK')){
+        throw new Error('RESULTS LIVE CHECK did not resolve 84/84 placement rows. No files were changed.');
+      }
+      validateDrawChampionsAgainstOfficialWinners(results,champions,existingPlayers);
+      console.log(`RESULTS LIVE CHECK PASSED: ${results.length} placement rows. No files were changed.`);
+    }finally{
+      await context.close().catch(()=>{});
+      await browser.close().catch(()=>{});
+    }
+    stopTotalTiming();
+    return;
+  }
+
+  if(QUICK_REFRESH){
+    console.log('\n=== QUICK MATCHES + RESULTS (:quick) ===');
+    console.log('Refreshing only the latest TournamentSoftware match dates plus championship top-four results from the official draw pages.');
+    console.log('No player-profile crawl or SquashLevels request is performed. The draw crawl is read-only for Results and does not rebuild the published match schedule.\n');
+
+    if(existingPlayers.length<850){
+      throw new Error(`Published player snapshot has only ${existingPlayers.length} players; refusing quick refresh.`);
+    }
+    const existingMatches=Array.isArray(existing.matches)?existing.matches:[];
+    if(existingMatches.length<500){
+      throw new Error(`Existing match base has only ${existingMatches.length} rows; refusing quick additive refresh.`);
+    }
+
+    const browser=await launchBrowser();
+    const context=await browser.newContext({viewport:{width:1440,height:1000},locale:'en-AU',timezoneId:'Australia/Perth'});
+    let latestOfficial={matches:[]};
+    let quickDraw={matches:[],drawCatalog:[],treeDrawStats:[]};
+    let freshResults=[];
+    try{
+      const stopLatest=phaseTimer('QUICK latest TournamentSoftware Matches crawl');
+      latestOfficial=await scrapeOfficialMatchesSchedule(
+        context,
+        existingPlayers,
+        existingMatches,
+        {latestOnly:true,latestDays:2}
+      );
+      stopLatest();
+      const stopResults=phaseTimer('QUICK TournamentSoftware draw-results crawl');
+      quickDraw=await scrapeOfficialDrawSchedule(
+        context,
+        {skipMatchPages:true,canonicalPlayers:existingPlayers}
+      );
+      // The Winners page is used only as a #1 guard/disambiguator.  2nd/3rd/4th
+      // still come entirely from the selected main-draw final and playoff match.
+      const officialChampions=await scrapeOfficialChampionValidation(context);
+      freshResults=buildOfficialTopFourFromDraws(
+        quickDraw,
+        existingPlayers,
+        [...(latestOfficial.matches||[]),...existingMatches],
+        officialChampions
+      );
+      if(!assertCompleteTopFourResults(freshResults,existingPlayers,'QUICK Results')){
+        throw new Error('QUICK Results did not resolve a complete top four for every age/gender group. Results were NOT published.');
+      }
+      validateDrawChampionsAgainstOfficialWinners(freshResults,officialChampions,existingPlayers);
+      stopResults();
+    }finally{
+      await context.close().catch(()=>{});
+      await browser.close().catch(()=>{});
+    }
+
+    let tournamentMatches=mergeQuickLatestMatches(existingMatches,latestOfficial.matches||[]);
+    tournamentMatches=resolveOfficialTbdOpponents(tournamentMatches)
+      .map(m=>({...m,court:sanitizeCourtValue(m.court)}));
+
+    const squashScoresMatches=await fetchSquashScoresLiveMatches(existingPlayers);
+    const matches=mergeSquashScoresIntoMatches(tournamentMatches,squashScoresMatches)
+      .map(m=>normalizeSelfMatchAsBye(m,existingPlayers))
+      .map(m=>({
+        ...m,
+        player1:splitPlayerSeed(m.player1).name,
+        player2:splitPlayerSeed(m.player2).name,
+        court:sanitizeCourtValue(m.court),
+        rawText:''
+      }));
+
+    validatePublishedTournamentRows(matches);
+    const results=mergeOfficialResults(existing.results||[],freshResults);
+    const next={
+      ...existing,
+      refreshedAt:new Date().toISOString(),
+      resultsRefreshedAt:new Date().toISOString(),
+      players:existingPlayers,
+      matches,
+      results
+    };
+    delete next.trackedNames;
+    writeDataFiles(next);
+
+    console.log(`QUICK refresh complete: ${(latestOfficial.matches||[]).length} fresh latest-match row(s); ${results.length} published result placement(s).`);
+    console.log('SquashLevels was not contacted; all existing ranking, level and club data was preserved.');
+    stopTotalTiming();
+    return;
+  }
+
   if(MATCHES_ONLY){
     console.log('\n=== MATCHES ONLY (:matches) ===');
     console.log('Using the currently published player identities, countries, age groups and SquashLevels values.');
@@ -8838,6 +10293,7 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
     });
 
     let officialMatches;
+    let freshResults=[];
     let officialDrawFallback={matches:[],trackedTbdMatches:[]};
     let trackedDrawFallback=[];
     try{
@@ -8888,6 +10344,14 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
         console.log(
           `Tracked draw deterministic candidates: ${trackedDrawFallback.length} concrete fixture(s), 0 guessed TBD.`
         );
+
+        freshResults=buildOfficialTopFourFromDraws(
+          officialDrawFallback,
+          existingPlayers,
+          [...(officialMatches.matches||[]),...existingMatches]
+        );
+        assertCompleteTopFourResults(freshResults,existingPlayers,'MATCHES Results');
+
       }catch(e){
         officialDrawFallback={matches:[],trackedTbdMatches:[]};
         trackedDrawFallback=[];
@@ -9046,11 +10510,14 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
 
     validatePublishedTournamentRows(matches);
 
+    const results=mergeOfficialResults(existing.results||[],freshResults);
     const next={
       ...existing,
       refreshedAt:new Date().toISOString(),
+      resultsRefreshedAt:new Date().toISOString(),
       players:existingPlayers,
-      matches
+      matches,
+      results
     };
     delete next.trackedNames;
 
@@ -9110,9 +10577,18 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
   const officialMatches=await scrapeOfficialMatchesSchedule(context,canonicalPlayers,existingMatches);
   stopMatchesTiming();
 
+  const officialSchedule=officialMatches.matches||[];
+  const stopResults=phaseTimer('TournamentSoftware draw top-four derivation');
+  const freshResults=buildOfficialTopFourFromDraws(
+    officialDraw,
+    canonicalPlayers,
+    officialSchedule
+  );
+  assertCompleteTopFourResults(freshResults,canonicalPlayers,'FULL Results');
+  stopResults();
+
   await browser.close();
 
-  const officialSchedule=officialMatches.matches||[];
 
   const metadataCounts={
     country:canonicalPlayers.filter(p=>p.country).length,
@@ -9325,8 +10801,16 @@ function mergeDateScopedTournamentMatches(existingRows,freshRows){
     console.warn(`SquashLevels enrichment skipped: ${e.message}`);
     console.warn('Continuing with TournamentSoftware/Vic Park publish and preserving previously stored SquashLevels values.');
   }
-  const normalizedCanonicalPlayers=repairDuplicateSquashLevelsIdentity(canonicalPlayers.map(normalizePlayerIdentityRecord));
-  const next={...existing,refreshedAt:new Date().toISOString(),players:normalizedCanonicalPlayers,matches};
+  const normalizedCanonicalPlayers=repairDuplicateSquashLevelsIdentity(canonicalPlayers.map(p=>normalizePlayerCountryRecord(normalizePlayerIdentityRecord(p))));
+  const results=mergeOfficialResults(existing.results||[],freshResults);
+  const next={
+    ...existing,
+    refreshedAt:new Date().toISOString(),
+    resultsRefreshedAt:new Date().toISOString(),
+    players:normalizedCanonicalPlayers,
+    matches,
+    results
+  };
   delete next.trackedNames;
 
   writeDataFiles(next);

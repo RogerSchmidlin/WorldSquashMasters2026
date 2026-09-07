@@ -1,9 +1,10 @@
-name: Refresh World Squash Masters data
+name: Refresh World Squash Masters latest results
 
 on:
   workflow_dispatch:
-  #schedule:
-  #  - cron: '17 * * * *'
+  # Uncomment for scheduled quick refreshes.
+  # schedule:
+  #   - cron: '17 * * * *'
 
 permissions:
   contents: write
@@ -15,7 +16,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 60
 
     steps:
       - name: Check out repository
@@ -36,18 +37,14 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Refresh and publish safely
+      - name: Refresh latest matches and Results page
         shell: bash
         env:
-          SQUASHLEVELS_EMAIL: ${{ secrets.SQUASHLEVELS_EMAIL }}
-          SQUASHLEVELS_PASSWORD: ${{ secrets.SQUASHLEVELS_PASSWORD }}
-          HEADLESS: '0'
-          SQUASHLEVELS_STORAGE_STATE_B64: ${{ secrets.SQUASHLEVELS_STORAGE_STATE_B64 }}
-          SQUASHLEVELS_SESSION_STORAGE_B64: ${{ secrets.SQUASHLEVELS_SESSION_STORAGE_B64 }}
+          HEADLESS: '1'
         run: |
           set -euo pipefail
 
-          DATA_FILES="data.js summary-data.js players-data.js matches-data.js vicpark-data.js"
+          DATA_FILES="data.js summary-data.js players-data.js matches-data.js vicpark-data.js results-data.js"
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -55,7 +52,7 @@ jobs:
           for ATTEMPT in 1 2; do
             echo ""
             echo "============================================================"
-            echo "Refresh attempt $ATTEMPT of 2"
+            echo "Quick refresh attempt $ATTEMPT of 2"
             echo "============================================================"
 
             git fetch origin main
@@ -63,61 +60,45 @@ jobs:
             BASE_SHA="$(git rev-parse HEAD)"
             echo "Refresh base: $BASE_SHA"
 
-            echo "Starting full tournament + SquashLevels refresh..."
-            xvfb-run --auto-servernum npm run refresh
+            xvfb-run --auto-servernum npm run refresh:quick
 
             echo "Validating generated data files..."
-
             for FILE in $DATA_FILES; do
               if [ ! -s "$FILE" ]; then
                 echo "::error::$FILE is missing or empty. Existing website data will NOT be replaced."
                 exit 1
               fi
-            done
-
-            for FILE in $DATA_FILES; do
               node --check "$FILE"
             done
 
             if git diff --quiet -- $DATA_FILES; then
-              echo "Refresh completed successfully; no data changes detected."
+              echo "Quick refresh completed successfully; no data changes detected."
               exit 0
             fi
 
-            echo "Generated data diff:"
             git diff --stat -- $DATA_FILES
 
             git fetch origin main
             REMOTE_SHA="$(git rev-parse origin/main)"
-
             if [ "$REMOTE_SHA" != "$BASE_SHA" ]; then
-              echo "::warning::main changed while the refresh was running."
-              echo "Started from: $BASE_SHA"
-              echo "Current main: $REMOTE_SHA"
-
+              echo "::warning::main changed while refresh was running."
               if [ "$ATTEMPT" -lt 2 ]; then
-                echo "Discarding this generated copy and rerunning the refresh from the newest main."
                 continue
               fi
-
-              echo "::error::main changed again during the retry. Refusing to overwrite newer repository data."
-              echo "The existing website remains untouched. The next scheduled run can try again."
+              echo "::error::main changed again during retry. Refusing to overwrite newer data."
               exit 1
             fi
 
             git add $DATA_FILES
-            git commit -m "Refresh tournament data"
-
+            git commit -m "Refresh latest matches and results"
             if git push origin HEAD:main; then
-              echo "Refresh successfully published."
+              echo "Quick refresh successfully published."
               exit 0
             fi
 
             if [ "$ATTEMPT" -lt 2 ]; then
-              echo "::warning::Push raced with another update. Rerunning from the newest main."
+              echo "::warning::Push raced with another update. Retrying."
               continue
             fi
-
-            echo "::error::Push failed again. Existing remote website data has been left untouched."
             exit 1
           done
